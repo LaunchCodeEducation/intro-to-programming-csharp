@@ -10,17 +10,17 @@ sys.path.append(os.path.abspath('../exts'))
 # Customize for the specific site. Any options in the html_theme_options
 # dictionary below may be overriden here
 site_theme_options = {
-    'navbar_title': 'Curriculum Book',
+    'navbar_title': 'Introduction to Programming in C#',
     'navbar_site_name': "",
     'bootswatch_theme': 'launchcode',
 }
 
-project = 'LaunchCode Curriculum Book'
+project = 'Introduction to Programming in C#'
 
 # -- Project information -----------------------------------------------------
 
 
-copyright = '2020, LaunchCode'
+copyright = '2021, Microsoft'
 author = 'LaunchCode'
 
 # The short X.Y version
@@ -49,7 +49,7 @@ replit_user = 'launchcode'
 templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
-source_suffix = ['.rst', '.md']
+source_suffix = ['.rst']
 
 # Configure markdown parsing
 source_parsers = {'.md': 'recommonmark.parser.CommonMarkParser'}
