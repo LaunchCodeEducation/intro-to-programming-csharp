@@ -5,7 +5,7 @@ Introduction
    :maxdepth: 3
 
    why-learn-to-code
-   why-learn-js
+   why-learn-csharp
    about-this-class
    class-platforms
    using-this-book
