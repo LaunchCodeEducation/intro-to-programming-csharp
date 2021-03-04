@@ -1,6 +1,6 @@
-=================================
+==================================
 Output With ``Console.WriteLine``
-=================================
+==================================
 
 In the :ref:`Hello World <hello-world>` section, you experimented with
 displaying text on the screen. Technically, you sent the words to the
@@ -69,5 +69,7 @@ character with the special representation ``\n``.
 In addition to the newline character, there is also a special tab character,
 ``\t``. Go back to the eight examples above and experiment with using ``\t``
 and ``\n``.
+
+
 
 

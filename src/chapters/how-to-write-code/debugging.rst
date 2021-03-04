@@ -4,7 +4,8 @@ Fixing Errors in Your Code
 
 As you progress through this class, you will find yourself having to fix problems in your code.
 Whether the code simply won't run or is giving you the wrong answer, fixing problems with code is a vital part of being a programmer.
-The process of working through issues in code is called **debugging**. We will cover debugging in depth in a later chapter, but here is what we need to know now.
+The process of working through issues in code is called **debugging**. 
+We will cover debugging in depth in a later chapter, but here is what we need to know now.
 
 #. Errors are common and even the most experienced programmers are regularly debugging their code.
 #. Asking for help from peers and mentors can be a key part of the process.
@@ -13,9 +14,11 @@ The process of working through issues in code is called **debugging**. We will c
 Asking for Help
 ---------------
 
-Before asking for help, make sure that you have the answers to some of the questions that may be asked of you and that your questions to the person who is helping you are detailed.
+Before asking for help, make sure that you have the answers to some of the questions that may be asked of you and that your 
+questions to the person who is helping you are detailed.
 "My code doesn't work" or "Why doesn't my code work?" are difficult questions for someone to answer.
-"I tried using ``Console.WriteLine()`` like the chapter outlined, but the screen says 'Invalid Input'. What does that mean and how might I go about addressing it?" is a good question to ask.
+"I tried using ``Console.WriteLine()`` like the chapter outlined, but the screen says 'Invalid Input'. 
+What does that mean and how might I go about addressing it?" is a good question to ask.
 
 Here are some tips on what information you might need when asking for help:
 
