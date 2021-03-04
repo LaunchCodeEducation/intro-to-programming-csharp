@@ -38,11 +38,11 @@ the code. If you want to save your edits, click the *Fork* button at the top of
 the workspace, and Repl.it will store a copy of the code in your personal
 account.
 
-Supplemental Content
+Bonus Missions
 --------------------
 
-Occasionally, you will find a link to "Booster Rocket".
-While not required reading, "Booster Rockets" can boost your learning.
+As you work your way through the Exercises, Studios and Assignments, you will come across "Bonus Missions".
+While not required, "Bonus Missions" can boost your learning by pushing your coding skills.  
 
 C# in Context
 ---------------------

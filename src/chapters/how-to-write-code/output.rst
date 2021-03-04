@@ -28,23 +28,19 @@ outputs:
    Console.WriteLine("Hello, C#.");
    Console.WriteLine(2001);
    Console.WriteLine("What","do","commas","do?");
-   Console.WriteLine("Does", "adding",      "space", "matter?");
-   Console.WriteLine("Launch" + "Code");
-   Console.WriteLine("LaunchCode was founded in", 2013);
+   Console.WriteLine("What" + "does" + "+" + "do?");
+   Console.WriteLine("How " + "can" + " you" + "add   " + "spaces?");
+   Console.WriteLine("LaunchCode was founded in" +  2013);
 
 Observations line by line:
 
 #. In the line 1, we print some text, which is surrounded by quotes.
 #. In the line 2, we print a number. Note the absence of quote marks.
 #. In line 3, we use four words, separated by commas, all within the same
-   set of parentheses ``()``. When these four words print, they show up on
-   the same line but separated by spaces.
-#. The code in line 4 puts extra spaces after the commas. How does this affect
-   the output?
-#. Line 5 also prints more words, but in this case the code uses ``+``
-   instead of a comma. The result is to print the words without spaces in
-   between.
-#. Line 6 prints text and a number with a space in between.
+   set of parentheses ``()``. When this statement prints, we only see the first word.
+#. The code in line 4 prints all of the words using the ``+``, but where are the spaces?
+#. Line 5 also prints all of the words including the spaces added to each word within the double quotation marks.
+#. Line 6 prints text and a number without a space in between.
 
 Two Special Characters
 -----------------------

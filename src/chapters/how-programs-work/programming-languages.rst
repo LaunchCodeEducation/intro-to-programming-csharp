@@ -64,7 +64,7 @@ gets sent to the compiler, which converts our typed commands into something the
 computer can use. The instructions are then executed by the machine, and we
 observe the results.
 
-.. figure:: figures/compiler-csharp.png
+.. figure:: figures/csharp-compiler.png
    :alt: Visual description for how a compiler works.
 
 In the example above, the *syntax* for printing ``Hello, World!`` varies

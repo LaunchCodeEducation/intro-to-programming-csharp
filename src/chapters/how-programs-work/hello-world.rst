@@ -39,11 +39,17 @@ empty.
    using repl.it when working on repl.it classroom assignments.
 
 
-Click on *new repl* to begin a new project. Scroll through the options and
-select "Node.js". Next, name your project and click "Create Repl".
+To make a *new repl* project, you have 3 options.  Options **A** and **B** will 
+take pull up a second screen where you will select your **1.** language and then **2.** name your 
+project.  Option **C** will bypass the language selection and have you name your project first.
+All options will create a new project.
 
 .. figure:: figures/replit-newrepl.png
    :alt: Repl.it new replit
+
+
+.. figure:: figures/replit-lang-name.png
+   :alt: naming new replit project
 
 The Repl.it Workspace
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -138,8 +144,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which of the following correctly prints ``Coding Rocks``? There may be more
-   than one valid option.
+   Which of the following correctly prints ``Coding Rocks``? 
 
    a. ``Console.WriteLine(Coding Rocks)``
    b. ``Console.WriteLine(Coding Rocks);``
