@@ -116,7 +116,7 @@ Repl.it Classroom
 ------------------
 
 Repl.it *Classroom* provides online code editing and submission, but it also
-allows teachers to post instructions and establish automatic code evaluation.
+allows instructors  and TAs to post instructions and establish automatic code evaluation.
 
 Assignments in a classroom can kept private from people who are not enrolled,
 and grades can only be viewed by designated instructors.
@@ -125,7 +125,7 @@ Repl.it Classroom is used for:
 
 #. Completing then submitting exercises and getting feedback
 #. Completing then submitting studios and assignments for a grade
-#. Keeping student submissions visible ONLY to the teachers in the repl.it
+#. Keeping student submissions visible ONLY to the instructors and TAs in the repl.it
    classroom
 
 .. admonition:: Tip

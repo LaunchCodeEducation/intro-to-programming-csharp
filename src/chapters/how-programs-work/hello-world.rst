@@ -91,11 +91,17 @@ Begin Your Coding Journey
 Follow this `Hello World link <https://repl.it/@launchcode/HelloWorldJS>`__ to
 open a prepared workspace for your first program.
 
-On line 2 of the editor, type:
+On line 5 of the editor, type:
 
    ``Console.WriteLine("Hello, World!");``
 
 When you finish typing, click the green "Run" button and observe the output.
+
+.. admonition:: Note
+
+   As you begin coding, make sure that you are writing your ``Console.WriteLine`` 
+   statements witnin the curly braces ``{ }`` of the Main method.  The Main method, 
+   using statements, and class details will be discussed later. 
 
 .. admonition:: Warning
 
