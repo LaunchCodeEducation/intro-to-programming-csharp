@@ -4,6 +4,7 @@ Data and Variables
 .. toctree::
    :maxdepth: 3
 
+   values-and-variables
    values-and-datatypes
    type-conversion
    variables
