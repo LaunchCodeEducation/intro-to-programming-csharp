@@ -22,7 +22,7 @@ Open the repl.it link in the example below, and note the difference between the
 outputs:
 
 .. replit:: csharp
-   :slug: ConsoleLogExamples01
+   :slug: ConsoleWriteLineExamples01
    :linenos:
 
    Console.WriteLine("Hello, C#.");
@@ -59,7 +59,7 @@ character with the special representation ``\n``.
    Experiment with the newline character.
 
    .. replit:: csharp
-      :slug: ConsoleLogExamples02
+      :slug: ConsoleWriteLineExamples02
       :linenos:
 
       Console.WriteLine("Some Programming Languages:");

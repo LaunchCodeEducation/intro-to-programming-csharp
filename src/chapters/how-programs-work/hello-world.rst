@@ -58,7 +58,7 @@ Before you dive into your ``Hello, World!`` program, let's take a look at how
 to use Repl.it. The workspace consists of three main panels and several menu
 functions.
 
-.. figure:: figures/replit-overview.png
+.. figure:: figures/repl-overview-csharp.png
    :alt: Repl.it code editor layout
 
 Features to note:
@@ -66,7 +66,7 @@ Features to note:
 #. **File panel and menus**: Allows you to add extensions, update settings, and
    add, open, or delete files.
 #. **Editor panel**: Your code goes here. Click on a file to open it in the
-   editor. For most new projects, an ``index`` file will be created and opened
+   editor. For most new projects, an ``main`` file will be created and opened
    by default.
 #. **Console panel**: Any output produced by your code will appear in this
    panel. The console also displays error messages, test results, and other
@@ -75,7 +75,7 @@ Features to note:
    the content (4) and store a copy of that project to your own account. This
    allows you to edit the files without changing the originals, and it lets
    you use other programmers' work (with permission) to enhance your own.
-#. **Run button**: Executes any code written in the ``index`` file.
+#. **Run button**: Executes any code written in the ``main`` file.
 #. **Managing projects**: When logged into Repl.it, you can create a new
    project, view saved projects, or share your projects.
 
@@ -88,7 +88,7 @@ Features to note:
 Begin Your Coding Journey
 --------------------------
 
-Follow this `Hello World link <https://repl.it/@launchcode/HelloWorldJS>`__ to
+Follow this `Hello World link <https://repl.it/@launchcode/HelloWorldCsharp>`__ to
 open a prepared workspace for your first program.
 
 On line 5 of the editor, type:

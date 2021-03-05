@@ -21,7 +21,7 @@ that stretch over multiple lines, the text falls between the symbols
    Experiment by adding and removing comments to the code.
 
    .. replit:: csharp
-      :slug: CommentExamples01
+      :slug: CSharpCommentsExample01
       :linenos:
 
       // This demo shows off comments!
