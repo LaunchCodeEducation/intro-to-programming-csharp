@@ -1,69 +1,285 @@
-=====================
+======================
 Values and Variables
-=====================
+======================
 
 Programs may be thought of as being made up of two things:
 
 1. Data
 2. Operations that manipulate data
 
-This chapter focuses primarily on the first of these two fundamental components, data.
+This chapter focuses primarily on the first of these two fundamental components, data. 
 
 .. index:: ! value
 
 Data can be stored in a program in a variety of ways. The most basic unit of data is a value.
 
-A **value** is a specific piece of data, such as a word or a number.  To store values we create variables.
-
 .. _def-value:
 
-.. _def-variable:
+.. _typeof:
 
-A **variable** is a way of referring to a value.  
-It is a container that holds the value, which makes it easier to use in your programs.  
-Imagine writing a program that uses the number miles to the moon for five different calculations.  
-Instead of manually typing 238,855 over and over again, we can create a variable called ``milesToMoon`` 
-to hold that number for us.  Then as we code we can call ``milesToMoon`` in the number’s place.  
-This can help reduce typing errors and also give your code context.  Using a variable with a specific 
-name helps someone reading your code to understand what ``milesToMoon`` is instead of looking at a random number. 
+A **value** is a specific piece of data, such as a word or a number. Some examples are ``5``, ``5.2``, ``r``, and ``"Hello, World!"``.
 
-In the code block below, we created a variable called ``milesToMoon`` which holds the value of ``238855``.  In the ``Console.WriteLine`` we 
-called that varialbe to print.  
+Variables
+=========
+
+.. index:: ! variable
+
+One of the most powerful features of a programming language is the ability to manipulate variables. 
+A **variable** is a name that refers to a value. Recall that a value is a single, specific piece of data, such as a specific number or string. 
+Variables allow us to store values for later use.
+
+A useful visual analogy for how a variable works is that of a label that *points to* a piece of data. 
+
+.. figure:: figures/variable.png
+   :alt: A label, programmingLanguages, pointing to a the string value "C#"
+
+   A variable can be visualized as a label pointing to a specific piece of data.
+
+In this figure, the name ``programmingLanguage`` points to the string value ``"C#"``. This is more than an analogy, since it also is representative of how a variable and its value are stored in a computer's memory.
+
+With this analogy in mind, let's look at how we can formally create variables in C#.
+
+Declaring and Initializing Variables 
+-------------------------------------
+
+.. index:: 
+   pair: variable; declaration
+
+.. index:: ! declaration
+
+To create a variable in C#, create a new name for the variable and precede it with the data type:
+
+.. sourcecode:: csharp
+    
+    string programmingLanguage;
+
+This creates a variable named ``programmingLanguage``. The act of creating a variable is referred to as **variable declaration**, or simply **declaration**.
+
+.. index:: 
+   pair: variable; assignment
+   pair: variable; initialization
+
+.. index:: ! assignment, ! initialization
+
+Once a variable has been declared, it may be given a value using an **assignment statement**, which uses ``=`` to give a variable a value.
+
+.. sourcecode:: csharp
+   :linenos:
+
+   string programmingLanguage;
+   programmingLanguage = "C#";
+
+The act of assigning a variable a value for the first time is called **initialization**.
+
+The first line creates a variable that does not yet have a value. The variable is a label that does not point to any data.
+
+.. figure:: figures/unassigned-variable.png
+   :height: 250px
+   :alt: The name "programmingLanguage" with no arrow connecting it to data.
+
+   The result of ``string programmingLanguage;``
+
+The second line assigns the variable a value, which connects the name to the given piece of data.
+
+.. figure:: figures/variable.png
+   :alt: A label, programmingLanguages, pointing to a the string value "C#"
+
+   The result of ``programmingLanguage = "C#";``
+
+It is possible to declare *and* initialize a variable with a single line of code. This is the most common way to create a variable.
+
+.. sourcecode:: js
+
+   string programmingLanguage = "C#";
+
+.. admonition:: Warning
+
+   It is allowed in some situations in C# to declare a variable without
+   specifying a type by using the keyword ``var``, as in
+   ``var x = "dog";``. In this case, C# still assigns a type to ``x``
+   through inference. It looks and sees that we are assigning ``x`` the
+   value ``"dog"``, which is a ``string``. Thus, ``x`` has type ``string``
+   and attempting to assign ``x = 42`` will still result in a build error.
+
+   We recommend avoiding use of ``var`` while you are learning C#. Even
+   after you become more experienced with the language you will still only
+   want to use it sparingly and in specific circumstances. Explicitly
+   declaring the type of your variables makes for more readable code, in
+   general.
+
+To give a variable a value, use the **assignment operator**, ``=``. This operator should not be confused with the concept of *equality*, 
+which expresses whether two things are the "same" (we will see later that equality uses the ``===`` operator).  
+The assignment statement links a *name*, on the left-hand side of the operator, with a *value*, on the right-hand side. 
+This is why you will get an error if you try to run:
+
+.. sourcecode:: csharp
+
+    "JavaScript" = programmingLanguage;
+
+An assignment statement must have the name on the left-hand side, and the value on the right-hand side.
+
+.. admonition:: Tip
+
+   To avoid confusion when reading or writing code, say to yourself:
+
+   ``programmingLanguage`` is assigned ``'JavaScript'``
+
+   or
+
+   ``programmingLanguage`` gets the value ``'JavaScript'``.
+
+   Don't say: 
+   
+   ``programmingLanguage`` equals ``'JavaScript'``.
+
+.. index::
+   pair: variable; global
+
+.. _global-var-intro:
+
+.. admonition:: Warning
+
+   What if, by mistake, you leave off ``let`` when declaring a variable?
+
+   .. sourcecode:: js
+
+      programmingLanguage = "JavaScript";
+
+   Contrary to what you might expect, JavaScript will not complain or throw an error. In fact, creating a variable without ``let`` is valid syntax, but it results in very different behavior. Such a variable will be a **global variable**, which we will discuss later. 
+
+   The main point to keep in mind for now is that you should *always* use ``let`` unless you have a specific reason not to do so.
+
+Evaluating Variables
+--------------------
+
+.. index:: variable; evaluation
+
+After a variable has been created, it may be used later in a program anywhere a value may be used. For example, ``console.log`` prints a value, we can also give ``console.log`` a variable.
 
 .. admonition:: Example
 
-   .. sourcecode:: csharp
+   These two examples have the exact same output.
+
+   .. sourcecode:: js
+
+      console.log("Hello, World!");
+
+   .. sourcecode:: js
       :linenos:
 
-      int milesToMoon = 238855;
-      Console.WriteLine(milesToMoon);
+      let message = "Hello, World!";
+      console.log(message);
+
+When we refer to a variable name, we are **evaluating** the variable. The effect is just as if the value of the variable is substituted for the variable name in the code when executed.
+
+.. admonition:: Example
+
+   .. sourcecode:: js
+      :linenos:
+
+      let message = "What's up, Doc?";
+      let n = 17;
+      let pi = 3.14159;
+
+      console.log(message);
+      console.log(n);
+      console.log(pi);
 
    **Console Output**
 
    ::
 
-      238855
+      What's up, Doc?
+      17
+      3.14159
 
-.. admonition:: Note
-   
-   Notice there are no commas in the number.  They are not needed in this context.  
+In each case, the printed result is the value of the variable. 
 
-If you notice that when the text, ``milesToMoon``, is called in the ``Console.WriteLine`` there are no quotation marks. 
-It is a variable and not a string of text.  If you look at the output, you will see the numeric value we intialized in line 1.
+Like values, variables also have types. We determine the type of a variable the same way we determine the type of a value, using ``typeof``.
 
-So what happend?  In line 1, we created a statement that says ``milesToMoon`` is equal to 238855.  ``milesToMoon`` is the reference point 
-for that specific value.  When the variable is sent to the ``Console.WriteLine``, the value is printed not the variable.  The varialbe is a 
-placeholder for the value, and when called it will refer back to the specific value it was assigned.  This is a very important concept and we 
-will explore it in more depth in a later section.
+.. admonition:: Example
 
+   .. sourcecode:: js
+      :linenos:
+      
+      let message = "What's up, Doc?";
+      let n = 17;
+      let pi = 3.14159;
 
-There is one piece of this code we have not talked about.  In line 1 you may have noticed **int**.  This is a data type and in this instance
-declares that we are working with an **integer** or whole number.  Data types are very important in C#.  In fact they are vital to the creation 
-of variables.  Before we explore variables more, we need to learn more about data types.    
+      console.log(typeof message);
+      console.log(typeof n);
+      console.log(typeof pi);
 
+   **Console Output**
 
+   ::
 
+      string
+      number
+      number
 
+The type of a variable is the type of the data it currently refers to.
 
+Reassigning Variables
+---------------------
 
-   
+We use variables in a program to "remember" things, like the current score at the football game. As their name implies, variables can change over time, just like the scoreboard at a football game. You can assign a value to a variable, and later assign it a different value.
+
+To see this, read and then run the following program in a code editor. You'll notice that we change the value of ``day`` three times, and on the third assignment we even give it a value that is of a different data type.
+
+.. sourcecode:: js
+   :linenos:
+
+    let day = "Thursday";
+    console.log(day);
+
+    day = "Friday";
+    console.log(day);
+
+    day = 21;
+    console.log(day);
+
+A great deal of programming involves asking the computer to remember things. For example, we might want to keep track of the number of missed calls on your phone. Each time another call is missed, we can arrange to update a variable so that it will always reflect the correct total of missed calls.
+
+.. note:: We only use ``let`` when *declaring* a variable, that is, when we create it. We do NOT use ``let`` when reassigning the variable to a different value. In fact, doing so will result in an error.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What is printed when the following code executes?
+
+   .. sourcecode:: js
+      :linenos:
+
+       let day = "Thursday";
+       day = 32.5;
+       day = 19;
+       console.log(day);
+
+   1. Nothing is printed. A runtime error occurs.
+   2. ``Thursday``
+   3. ``32.5``
+   4. ``19``
+
+    
+.. admonition:: Question
+
+   How can you determine the type of a variable?
+
+   1. Print out the value and determine the data type based on the value printed.
+   2. Use ``typeof``.
+   3. Use it in a known equation and print the result.
+   4. Look at the declaration of the variable. 
+
+.. admonition:: Question
+
+   Which line is an example of variable initialization? (*Note: only one line is such an example.*)
+
+   .. sourcecode:: js
+      :linenos:
+      
+      let a;
+      a = 42;
+      a = a + 3;

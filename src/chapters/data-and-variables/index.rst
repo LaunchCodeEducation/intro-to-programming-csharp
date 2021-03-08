@@ -4,10 +4,8 @@ Data and Variables
 .. toctree::
    :maxdepth: 3
 
-   values-and-variables
-   values-and-datatypes
-   type-conversion
-   variables
+   values-and-varialbes
+   data-types
    more-on-variables
    expressions-and-evaluations
    operations
