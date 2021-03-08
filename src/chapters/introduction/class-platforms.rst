@@ -89,83 +89,28 @@ For this class, repl.it serves two purposes:
 Repl.it Account Creation
 -------------------------
 
-Creating a standard repl.it account is covered in
+Creating a repl.it account is covered in
 :ref:`Chapter 2 <create-replit-account>`, and logging in allows students to
 complete the general practice tasks.
 
-To access the tracked and scored tasks, students must also enroll in a repl.it
-*classroom*. A link to join the classroom will be provided as part of an early
-Canvas assignment.
-
-Standard Repl.it
+Repl.it
 -----------------
 
-Standard repl.it is an online code editor for various languages. Coders
+Repl.it is an online code editor for various languages. Coders
 collaborate by sharing repl.it URLs.
 
-Standard repl.it is used for:
+Repl.it is used for:
 
 #. Publicly sharing code examples and starter code
 #. A place to practice new concepts by writing and running code
 
 
-.. _replit-classroom:
-
-
-Repl.it Classroom
-------------------
-
-Repl.it *Classroom* provides online code editing and submission, but it also
-allows instructors  and TAs to post instructions and establish automatic code evaluation.
-
-Assignments in a classroom can kept private from people who are not enrolled,
-and grades can only be viewed by designated instructors.
-
-Repl.it Classroom is used for:
-
-#. Completing then submitting exercises and getting feedback
-#. Completing then submitting studios and assignments for a grade
-#. Keeping student submissions visible ONLY to the instructors and TAs in the repl.it
-   classroom
-
 .. admonition:: Tip
 
-   You NEVER have to click save when using standard repl.it or repl.it
-   classroom. Repl.it automatically saves your code on their servers.
-
-   However, for repl.it classroom you DO have to click "Submit" to turn in your
-   work.
-
-Repl.it Classroom Workspace
-----------------------------
-
-.. figure:: figures/replit-classroom-features.png
-
-Features to note:
-
-#. **Settings menu**: Allows you to change editor settings like theme and font
-   size.
-#. **Run button**: Runs code in the editor panel (7).
-#. **Name of assignment**
-#. **Repl.it user menu**: Allows you to change account details and change
-   password.
-#. **Submit button**:
-
-   a. Submits your work.
-   b. If the assignment has been setup to be auto graded, you will received
-      instant feedback.
-   c. If the assignment is NOT auto graded, your TA will need to review and
-      provide feedback.
-
-#. **Instructions**: This describes what you need to code. READ CAREFULLY!
-#. **Editor panel**: This is where you write your code.
-#. **Console output**: After clicking the run button (2), output and errors
-   will show up here.
+   You NEVER have to click save when using repl.it. 
+   Repl.it automatically saves your code on their servers.
 
 .. admonition:: Note
-
-   Results from work submitted in repl.it classroom, appear in Canvas after
-   being verified.
 
    Remember, Canvas holds student grades and quizzes but NOT the course content.
    Instead, it provides *links* to the reading and other assignments.
