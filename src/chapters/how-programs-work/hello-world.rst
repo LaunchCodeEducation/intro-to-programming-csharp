@@ -32,12 +32,6 @@ empty.
 .. figure:: figures/replit-dashboard.png
    :alt: Repl.it dashboard
 
-.. warning::
-
-   These examples are for standard repl.it use.
-   See :ref:`repl.it classroom instructions <replit-classroom>` for instructions on
-   using repl.it when working on repl.it classroom assignments.
-
 
 To make a *new repl* project, you have 3 options.  Options **A** and **B** will 
 take pull up a second screen where you will select your **1.** language and then **2.** name your 
