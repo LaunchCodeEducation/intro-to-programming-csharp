@@ -194,7 +194,11 @@ A great deal of programming involves asking the computer to remember things.
 For example, we might want to keep track of the number of missed calls on your phone. 
 Each time another call is missed, we can arrange to update a variable so that it will always reflect the correct total of missed calls.
 
-.. note:: We only use data type when *declaring* a variable, that is, when we create it. We do NOT use the data type when reassigning the variable to a different value. In fact, doing so will result in an error as we cannot implicity convert between data types.
+.. note:: We only use data type when *declaring* a variable, that is, when we create it. 
+   We do NOT use the data type when reassigning the variable to a different value of the same type.  
+      
+
+
 
 Check Your Understanding
 =========================
