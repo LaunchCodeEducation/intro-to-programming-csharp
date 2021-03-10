@@ -1,5 +1,5 @@
 ======================
-Data Types
+More On Data Types
 ======================
 
 .. index:: ! data type, ! type 
@@ -39,9 +39,10 @@ For example, this is legal in JavaScript, a dynamically typed language:
       number
 
 After line 1 executes, ``dynamicVariable`` holds a ``string`` data type. After
-line 3 runs, ``dynamicVariable`` becomes a ``number`` type. ``dynamicVariable``
+line 3 runs, ``dynamicVariable`` is reassigned to a ``number`` type. ``dynamicVariable``
 is allowed to hold values of different types, which can be reassigned as
-needed when the program runs.
+needed when the program runs.  The keyword ``typeof`` is used in lines 2 and 4 
+to verify the data type.
 
 However, the corresponding code in C# will result in a build error:
 
@@ -57,7 +58,7 @@ However, the corresponding code in C# will result in a build error:
 
    .. sourcecode:: bash
 
-      Error CS0029: Cannot implicitly convert type 'int' to 'string' (CS0029) 
+      Error CS0029: Cannot implicitly convert type 'int' to 'string' 
 
 The compiler error occurs when we try to assign ``42`` to a variable of type
 ``string``.
@@ -91,8 +92,8 @@ let’s begin by exploring the most common data types in this language.
 Built-In Types
 --------------
 
-In C#, all of the basic data types are objects --- we'll get into this idea shortly. Though the so-called 
-built-in data types also have short names that differ from typical class name
+In C#, all of the basic data types are objects --- we'll get into this idea shortly. 
+Though the so-called built-in data types also have short names that differ from typical class name
 conventions.
 
 We provide here a list of some of the most common types, along with the official .NET class name. 
@@ -133,6 +134,28 @@ commonly used types that beginners are likely to encounter. If you’re
 curious, `read more about built-in types in
 C# <https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx>`__.
 
+.. note:: 
+   Having distinctions between integers and doubles can help with code design.
+   For example, an inventory-tracking program stores items and the number of each number in stock. Since a store cannot have 3.5 shirts in stock, the programmer makes the quantity of each item integer values as opposed to doubles.
+
+
+.. admonition:: Warning
+
+   It is allowed in some situations in C# to declare a variable without
+   specifying a type by using the keyword ``var``, as in
+   ``var x = "dog";``. In this case, C# still assigns a type to ``x``
+   through inference. It looks and sees that we are assigning ``x`` the
+   value ``"dog"``, which is a ``string``. Thus, ``x`` has type ``string``
+   and attempting to assign ``x = 42`` will still result in a build error.
+
+   We recommend avoiding use of ``var`` while you are learning C#. Even
+   after you become more experienced with the language you will still only
+   want to use it sparingly and in specific circumstances. Explicitly
+   declaring the type of your variables makes for more readable code, in
+   general.
+
+
+
 .. index:: ! primitive type
 
 Primitive Types
@@ -151,45 +174,6 @@ structures. One example is forming the ``string`` "LaunchCode" from multiple
 
 ``string`` is another built-in type in C# and it is also a non-primitive data type. We'll delve into 
 how strings work in C# in a future chapter.
-
-More On Strings
----------------
-
-What about values like ``"17"`` and ``"3.2"``? They look like numbers, but they are in double 
-quotation marks making them strings.
-
-Double-quoted strings can contain single quotes inside them, as in ``"Bruce's beard"``.
-
-
-More On Numbers
----------------
-
-When you type a large integer value, you might be tempted to use commas between groups of 
-three digits, as in ``42,000``. This is not a legal integer in C#. 
-
-.. admonition:: Example
-
-   .. sourcecode:: csharp
-      :linenos:
-
-      Console.WriteLine(42000);
-      Console.WriteLine(42,000);
-
-   **Console Output**
-
-   ::
-
-      42000
-      error CS1502: ...`System.Console.WriteLine(string, object)' has some invalid arguments
-
-Well, that's not what we expected at all! 
-Because of the comma, C# chose to treat ``42,000`` as a pair separate entries.  This causes an error in the Console.WriteLine() which was built
-to only work with a single entry as is.
-
-
-Remember not to put commas or spaces in your integers, no matter how big they are. 
-Also revisit what we said in the chapter :ref:`how-programs-work`: formal languages are strict, 
-the notation is concise, and even the smallest change might mean something quite different from what you intend.
 
 
 

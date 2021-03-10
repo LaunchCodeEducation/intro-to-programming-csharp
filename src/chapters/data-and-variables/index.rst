@@ -4,12 +4,14 @@ Data and Variables
 .. toctree::
    :maxdepth: 3
 
-   values-and-varialbes
-   data-types
+   values-and-data-types
+   more-on-data-types
+   type-conversion
+   variables
    more-on-variables
-   expressions-and-evaluations
+   expressions-and-evaluation
    operations
    other-operators
-   input-with-ReadLine
+   input
    exercises
    studio
