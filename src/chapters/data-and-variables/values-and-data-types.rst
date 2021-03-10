@@ -1,6 +1,6 @@
-======================
+=======================
 Values and Data Types
-======================
+=======================
 
 Programs may be thought of as being made up of two things:
 
