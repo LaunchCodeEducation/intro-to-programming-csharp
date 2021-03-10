@@ -252,11 +252,11 @@ compiler error).
    Numeric types such as ``int`` and ``double`` may be freely mixed when
    using numeric operators. Generally, the result of such mixing is that
    the output has the type of the more precise input. For example, the
-   following snippet would print out ``System.double``.
+   following snippet would print out ``System.Double``.
 
    .. sourcecode:: c#
 
-      float a = 2;
+      int a = 2;
       double b = 3;
       Console.WriteLine((a + b).GetType());
 
@@ -270,7 +270,7 @@ Check Your Understanding
 
    .. sourcecode:: csharp
 
-      16 - 2 * 5 / 3 + 1
+      Console.WriteLine(16 - 2 * 5 / 3 + 1);
 
    #. 14
    #. 24

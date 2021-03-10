@@ -193,12 +193,12 @@ Check Your Understanding
 
       //The user enters 25.
 
-      Console.WriteLine(input.GetType());
+      Console.WriteLine(input);
 
    #. ``System.String``
    #. ``System.Number``
    #. ``System.Int32``
-   #. ``25``
+   #. ``"25"``
 
 .. admonition:: Question
 
@@ -213,7 +213,7 @@ Check Your Understanding
 
       //The user enters 25
 
-      Console.WriteLine(ageNum);
+      Console.WriteLine(ageNum.GetType());
 
    #. ``System.String``
    #. ``System.Number``
