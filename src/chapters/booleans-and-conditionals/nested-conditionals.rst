@@ -1,5 +1,6 @@
+====================
 Nested Conditionals
-===================
+====================
 
 We can write code with more complex branching behavior by combining
 conditionals and, in particular, by nesting conditionals. Let's see how this
@@ -11,17 +12,19 @@ works by tackling the following problem.
 
 Our first attempt at a solution might look like this:
 
-.. sourcecode:: js
+.. sourcecode:: csharp
    :linenos:
 
-   let num = 7;
+   int num = 7;
 
-   if (num % 2 === 0) {
-      console.log("EVEN");
+   if (num % 2 == 0) 
+   {
+      Console.WriteLine("EVEN");
    }
 
-   if (num > 0) {
-      console.log("POSITIVE");
+   if (num > 0) 
+   {
+      Console.WriteLine("POSITIVE");
    }
 
 **Console Output**
@@ -35,17 +38,19 @@ should be printed. This code doesn't work as desired because we only want to
 test for positivity when we already know that the number is even. We can
 enable this behavior by putting the second conditional *inside* the first.
 
-.. replit:: js
+.. replit:: csharp
    :linenos:
-   :slug: Positive-and-Even
+   :slug: Positive-and-Even-CSharp
 
-   let num = 7;
+   int num = 7;
 
-   if (num % 2 === 0) {
-       console.log("EVEN");
+   if (num % 2 == 0) 
+   {
+       Console.WriteLine("EVEN");
 
-       if (num > 0) {
-           console.log("POSITIVE");
+       if (num > 0) 
+       {
+           Console.WriteLine("POSITIVE");
        }
    }
 
@@ -65,14 +70,16 @@ Check Your Understanding
 
    What is printed when the following code runs?
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      let num = 7;
+      int num = 7;
 
-      if (num % 2 === 0) {
-          if (num % 2 === 1) {
-              console.log("odd");
+      if (num % 2 == 0) 
+      {
+          if (num % 2 == 1) 
+          {
+            Console.WriteLine("odd");
           }
       }
 
@@ -86,16 +93,18 @@ Check Your Understanding
 
    Considering the same conditional used in the previous question, which values of ``num`` would result in ``"odd"`` being printed?
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      if (num % 2 === 0) {
-          if (num % 2 === 1) {
-              console.log("odd");
+      if (num % 2 == 0) 
+      {
+          if (num % 2 == 1) 
+          {
+            Console.WriteLine("odd");
           }
       }
 
    #. Even values of ``num``.
    #. Odd values of ``num``.
-   #. No values. It is impossible for the call to ``console.log`` to ever run, given the two conditions.
+   #. No values. It is impossible for the call to ``Console.WriteLine`` to ever run, given the two conditions.
    #. ``num`` is 0.

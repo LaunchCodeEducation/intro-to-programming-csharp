@@ -7,6 +7,7 @@ Chapters
    :name: chapterstoc
    
    chapters/data-and-variables/index
+   chapters/booleans-and-conditionals/index
 
 .. toctree::
 
@@ -20,6 +21,7 @@ Studios
    :name: studiostoc
    
    chapters/data-and-variables/studio
+   chapters/booleans-and-conditionals/studio
 
 Assignments
 ===========

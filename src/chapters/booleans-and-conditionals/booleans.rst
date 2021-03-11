@@ -1,7 +1,8 @@
 .. _booleans:
 
+=========
 Booleans
-========
+=========
 
 .. index:: data type
 
@@ -17,7 +18,7 @@ segment of code *only if* a given condition is met.
 
 The condition for the above example is: Send a notification of an upcoming bill
 only if the statement "the bill is unpaid" is true. In order to state something
-like this in JavaScript, we need to understand how programming languages
+like this in C#, we need to understand how programming languages
 represent true and false.
 
 Boolean Values
@@ -28,7 +29,7 @@ Boolean Values
 .. index::
    single: boolean; value
 
-The JavaScript data type for storing true and false values is ``boolean``,
+The C# data type for storing true and false values is ``boolean``,
 named after the British mathematician George Boole.
 
 .. admonition:: Fun Fact
@@ -36,67 +37,71 @@ named after the British mathematician George Boole.
    George Boole created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`_,
    which is the basis of all modern computer arithmetic.
 
-There are only two **boolean values**---``true`` and ``false``. JavaScript is
-case-sensitive, so ``True`` and ``False`` are *not* valid boolean values.
+There are only two **boolean values**---``true`` and ``false``. C# is
+case-sensitive, so ``True`` and ``False`` are *not* valid boolean values.  
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      console.log(true);
-      console.log(typeof true);
-      console.log(typeof false);
+      Console.WriteLine(true);
+      Console.WriteLine(true.GetType());
+      Console.WriteLine(false.GetType());
 
    **Console Output**
 
    ::
 
-      true
-      boolean
-      boolean
+      True
+      System.Boolean
+      System.Boolean
 
 The values ``true`` and ``false`` are *not* strings. If you use quotes to
 surround booleans (``"true"`` and ``"false"``), those values become strings.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      console.log(typeof true);
-      console.log(typeof "true");
+      Console.WriteLine(true.GetType());
+      Console.WriteLine("true".GetType());
 
    **Console Output**
 
    ::
 
-      boolean
-      string
+      System.Boolean
+      System.String
 
 Boolean Conversion
 ------------------
 
 .. index:: ! Boolean(), type conversion
 
-As with the number and string data types, the boolean type also has a
-conversion function, ``Boolean``. It works similarly to the ``Number`` and
-``String`` functions, attempting to convert a non-boolean value to a boolean.
+As with the numeric and string data types, the boolean type also has a
+conversion function, ``Convert.ToBoolean()``. It works similarly to the ``Int32.Parse()`` and
+``Double.Parse()`` methods, attempting to convert a non-boolean value to a boolean.  This is very limited as is, 
+but this could be useful if working with user input, specifically the words true and false.  
 
 .. admonition:: Try It!
 
-   Explore how ``Boolean`` converts various non-boolean values.
-
-   .. replit:: js
+   Explore how ``Convert.ToBoolean()`` converts various non-boolean values.  Explore differnt data types.
+   
+   .. replit:: csharp
       :linenos:
-      :slug: Boolean-Type-Conversion
+      :slug: Boolean-Type-Conversion-CSharp
+      
+      Console.WriteLine(Convert.ToBoolean("true"));
+      Console.WriteLine(Convert.ToBoolean("TRUE"));
+      Console.WriteLine(Convert.ToBoolean(0));
+      Console.WriteLine(Convert.ToBoolean(1));
+      Console.WriteLine(Convert.ToBoolean(''));
+      Console.WriteLine(Convert.ToBoolean("LaunchCode"));
+      
 
-      console.log(Boolean("true"));
-      console.log(Boolean("TRUE"));
-      console.log(Boolean(0));
-      console.log(Boolean(1));
-      console.log(Boolean(''));
-      console.log(Boolean('LaunchCode'));
+
 
 Boolean Expressions
 -------------------
@@ -109,41 +114,28 @@ Boolean Expressions
 
 .. index:: ! ==
 
-A **boolean expression** is an expression that evaluates to either ``true`` or
-``false``. The equality operator, ``==``, compares two values and returns true
+A **boolean expression** is an expression that evaluates to either ``True`` or
+``False``. The equality operator, ``==``, compares two values and returns true
 or false depending on whether the values are equal.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      console.log(5 == 5);
-      console.log(5 == 6);
+      Console.WriteLine(5 == 5);
+      Console.WriteLine(5 == 6);
 
    **Console Output**
 
    ::
 
-      true
-      false
+      True
+      False
 
 In the first statement, the two operands are equal, so the expression evaluates
-to ``true``. In the second statement, 5 is not equal to 6, so we get ``false``.
+to ``True``. In the second statement, 5 is not equal to 6, so we get ``False``.
 
-We can also use ``==`` to see that ``true`` and ``"true"`` are not equal.
-
-.. admonition:: Example
-
-   .. sourcecode:: js
-
-      console.log(true == "true");
-
-   **Console Output**
-
-   ::
-
-      false
 
 Comparison Operators
 ^^^^^^^^^^^^^^^^^^^^
@@ -161,10 +153,10 @@ The ``==`` operator is one of six common **comparison operators**.
 
    * - Operator
      - Description
-     - Examples Returning ``true``
-     - Examples Returning ``false``
+     - Examples Returning ``True``
+     - Examples Returning ``False``
    * - Equal (``==``)
-     - Returns ``true`` if the two operands are equal, and ``false`` otherwise.
+     - Returns ``True`` if the two operands are equal, and ``False`` otherwise.
      - ``7 == 7``
 
        ``"dog" == "dog"``
@@ -172,7 +164,7 @@ The ``==`` operator is one of six common **comparison operators**.
 
        ``"dog" == "cat"``
    * - Not equal(``!=``)
-     - Returns ``true`` if the two operands are not equal, and ``false`` otherwise.
+     - Returns ``True`` if the two operands are not equal, and ``False`` otherwise.
      - ``7 != 5``
 
        ``"dog" != "cat"``
@@ -180,7 +172,7 @@ The ``==`` operator is one of six common **comparison operators**.
 
        ``"dog" != "dog"``
    * - Greater than (``>``)
-     - Returns ``true`` if the left-hand operand is greater than the right-hand operand, and ``false`` otherwise.
+     - Returns ``True`` if the left-hand operand is greater than the right-hand operand, and ``False`` otherwise.
      - ``7 > 5``
 
        ``'b' > 'a'``
@@ -188,7 +180,7 @@ The ``==`` operator is one of six common **comparison operators**.
 
        ``'a' > 'b'``
    * - Less than (``<``)
-     - Returns ``true`` if the left-hand operand is less than the right-hand operand, and ``false`` otherwise.
+     - Returns ``True`` if the left-hand operand is less than the right-hand operand, and ``False`` otherwise.
      - ``5 < 7``
 
        ``'a' < 'b'``
@@ -196,7 +188,7 @@ The ``==`` operator is one of six common **comparison operators**.
 
        ``'b' < 'a'``
    * - Greater than or equal (``>=``)
-     - Returns ``true`` if the left-hand operand is greater than or equal to the right-hand operand, and ``false`` otherwise.
+     - Returns ``True`` if the left-hand operand is greater than or equal to the right-hand operand, and ``False`` otherwise.
      - ``7 >= 5``
 
        ``7 >= 7``
@@ -208,7 +200,7 @@ The ``==`` operator is one of six common **comparison operators**.
 
        ``'a' >= 'b'``
    * - Less than or equal (``<=``)
-     - Returns ``true`` if the left-hand operand is less than or equal to the right-hand operand, and ``false`` otherwise.
+     - Returns ``True`` if the left-hand operand is less than or equal to the right-hand operand, and ``False`` otherwise.
      - ``5 <= 7``
 
        ``5 <= 5``
@@ -221,7 +213,7 @@ The ``==`` operator is one of six common **comparison operators**.
        ``'b' <= 'a'``
 
 
-Although these operations are probably familiar, the JavaScript symbols are
+Although these operations are probably familiar, the C# symbols are
 different from the mathematical symbols. A common error is to use a single
 equal sign (``=``) instead of a double equal sign (``==``). Remember that ``=``
 is an *assignment* operator and ``==`` is a *comparison* operator. Also note
@@ -229,35 +221,23 @@ that ``=<`` and ``=>`` are not recognized operators.
 
 An equality test is *symmetric*, meaning that we can swap the places of the
 operands and the result is the same.  For a variable ``a``, if ``a == 7`` is
-``true`` then ``7 == a`` is also ``true``. However, an assignment statement is
+``True`` then ``7 == a`` is also ``True``. However, an assignment statement is
 not symmetric: ``a = 7`` is legal while ``7 = a`` is not.
 
-.. admonition:: Warning
-
-   If you explore the equality operator in more depth, you will find some
-   surprises. For example, the following comparisons return ``true``:
-
-   - ``7 == "7"``
-   - ``0 == false``
-   - ``0 == ''``
-
-   We will explore the nuances of ``==`` in the upcoming section
-   :ref:`equality`, and introduce two new operators, ``===`` and ``!==``, that
-   will align more closely with our intuitive notion of equality.
 
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-   Under which conditions does ``Boolean`` convert a string to ``true``?
+   Under which conditions does ``Convert.ToBoolean()`` convert a string to ``True``?
 
-   #. Only when the string is ``"true"``.
+   #. When the string is ``"true"``, ``"TRUE"`` or ``"True"``.
    #. Whenever the string contains any non-whitespace character.
    #. Whenever the string is non-empty.
-   #. Never. It converts all strings to ``false``.
+   #. Never. It converts all strings to ``False``.
 
-.. Answer = c
+.. Answer = a
 
 .. admonition:: Question
 
@@ -265,5 +245,5 @@ Check Your Understanding
 
    #. ``3 == 4``
    #. ``3 + 4``
-   #. ``3 + 4 === 7``
+   #. ``3 + 4 == 7``
    #. ``"false"``

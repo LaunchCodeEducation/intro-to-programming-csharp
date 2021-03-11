@@ -1,5 +1,6 @@
+==================
 Logical Operators
-=================
+==================
 
 .. index:: operators
 
@@ -24,9 +25,9 @@ Boolean Operators
    single: operator; boolean
 
 In addition to these operators, we learned about comparison operators like
-``===``, ``<``, and others. These operators are part of a larger class known as
-**boolean operators**, so-called because they return a boolean value (``true``
-or ``false``).
+``==``, ``<``, and others. These operators are part of a larger class known as
+**boolean operators**, so-called because they return a boolean value (``True``
+or ``False``).
 
 Three additional boolean operators allow us to create more complex expressions.
 These are described below.
@@ -41,12 +42,12 @@ Logical AND
    single: boolean; expression, compound
 
 A **compound boolean expression** is a boolean expression built out of smaller
-boolean expressions. JavaScript allows us to create a compound boolean
+boolean expressions. C# allows us to create a compound boolean
 expression using the logical AND operator, ``&&``.
 
-The operator takes two operands, and the resulting expression is ``true`` if
-*both* operands are ``true`` individually. If either operand is ``false``, the
-overall expression is ``false``.
+The operator takes two operands, and the resulting expression is ``True`` if
+*both* operands are ``True`` individually. If either operand is ``False``, the
+overall expression is ``False``.
 
 .. admonition:: Example
 
@@ -62,30 +63,29 @@ Let's see how this works in code.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      console.log(7 > 5 && 5 > 3);
-      console.log(7 > 5 && 2 > 3);
-      console.log(2 > 3 && 'dog' === 'cat');
+      Console.WriteLine(7 > 5 && 5 > 3);
+      Console.WriteLine(7 > 5 && 2 > 3);
+      Console.WriteLine(2 > 3 && 'dog' == 'cat');
 
    **Console Output**
 
    ::
 
-      true
-      false
-      false
+      True
+      False
+      False
 
-In line 1, ``7 > 5 && 5 > 3`` evaluates to ``true`` because both ``7 > 5`` and
-``5 > 3`` are ``true`` individually.
+In line 1, ``7 > 5 && 5 > 3`` evaluates to ``True`` because both ``7 > 5`` and
+``5 > 3`` are ``True`` individually.
 
-The expression ``7 > 5 && 2 > 3`` evaluates to ``false`` because one of the two
-expressions, ``2 > 3``, is ``false``.
+The expression ``7 > 5 && 2 > 3`` evaluates to ``False`` because one of the two
+expressions, ``2 > 3``, is ``False``.
 
-Like line 2, line 3 returns ``false`` because both sub-expressions are
-``false``. Notice that we can mix and match data types however we like, as long
-as both sides of the ``&&`` expression are themselves boolean expressions.
+Like line 2, line 3 returns ``False`` because both sub-expressions are
+``False``. 
 
 Logical OR
 ^^^^^^^^^^
@@ -95,10 +95,10 @@ Logical OR
 .. index::
    single: operator; boolean
 
-JavaScript's logical OR operator, ``||``, also creates compound boolean
+C#'s logical OR operator, ``||``, also creates compound boolean
 expressions. This operator takes two operands, and the resulting expression is
-``true`` if *either* of the operands are ``true`` individually. If both
-operands are ``false``, the overall expression is ``false``.
+``True`` if *either* of the operands are ``True`` individually. If both
+operands are ``False``, the overall expression is ``False``.
 
 .. admonition:: Example
 
@@ -109,32 +109,32 @@ operands are ``false``, the overall expression is ``false``.
 
    When both of the clauses joined by "or" are false, the statement as a whole is false. For example, "Pigs can fly or dogs can speak Spanish," is a false statement.
 
-Let's look at some examples in JavaScript.
+Let's look at some examples in C#.
 
-.. sourcecode:: js
+.. sourcecode:: csharp
    :linenos:
 
-   console.log(7 > 5 || 5 > 3);
-   console.log(7 > 5 || 2 > 3);
-   console.log(2 > 3 || 'dog' === 'cat');
+   Console.WriteLine(7 > 5 || 5 > 3);
+   Console.WriteLine(7 > 5 || 2 > 3);
+   Console.WriteLine(2 > 3 || 'dog' == 'cat');
 
 **Console Output**
 
 ::
 
-   true
-   true
-   false
+   True
+   True
+   False
 
-Lines 1 and 2 both return ``true`` because at least one of the comparison expressions joined by ``||`` is ``true``. Line 3 returns ``false`` because both sub-expressions are ``false``.
+Lines 1 and 2 both return ``True`` because at least one of the comparison expressions joined by ``||`` is ``True``. Line 3 returns ``False`` because both sub-expressions are ``False``.
 
 .. admonition:: Warning
 
-   The single symbols ``&`` and ``|`` are themselves valid JavaScript operators,
+   The single symbols ``&`` and ``|`` are themselves valid C# operators,
    so accidentally leaving off one symbols when typing ``&&`` or ``||`` will not
    result in an error message.
 
-   The operators ``&`` and ``|`` are `bitwise operators <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators>`__,
+   The operators ``&`` and ``|`` are `bitwise operators <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/bitwise-and-shift-operators>`__,
    which are beyond the scope of this course.
 
    Most programmers rarely use ``&`` and ``|``, and it is not important for you
@@ -153,35 +153,35 @@ The logical NOT operator, ``!``, takes only a single operand and reverses its bo
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      console.log(! true);
-      console.log(! false);
+      Console.WriteLine(! true);
+      Console.WriteLine(! false);
 
    **Console Output**
 
    ::
 
-      false
-      true
+      False
+      True
 
 The operator ``!`` (sometimes called "bang") has the same semantic role as the word "not" in English.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      console.log( !(5 > 7) );
-      console.log( !('dog' === 'cat') );
+      Console.WriteLine( !(5 > 7) );
+      Console.WriteLine( !('dog' == 'cat') );
 
    **Console Output**
 
    ::
 
-      true
-      true
+      True
+      True
 
 Operator Precedence
 -------------------
@@ -189,13 +189,16 @@ Operator Precedence
 .. index::
    single: operator; precedence
 
-We now have a number of operators in our toolkit. It is important to understand how these operators relate to each other with respect to **operator precedence**. Operator precedence is the set of rules that dictate in which order the operators are applied.
+We now have a number of operators in our toolkit. It is important to understand how these operators relate to each other with 
+respect to **operator precedence**. Operator precedence is the set of rules that dictate in which order the operators are applied.
 
-JavaScript will always apply the logical NOT operator, ``!``, first. Next, it applies the arithmetic operators, followed by the comparison operators. The logical AND and OR are applied last.
+C# will always apply the logical NOT operator, ``!``, first. Next, it applies the arithmetic operators, followed by the comparison operators. 
+The logical AND and OR are applied last.
 
-This means that the expression ``x * 5 >= 10 && y - 6 <= 20`` will be evaluated so as to first perform the arithmetic and then check the relationships. The ``&&`` evaluation will be done last. The order of evaluation is the same as if we were to use parentheses to group, as follows:
+This means that the expression ``x * 5 >= 10 && y - 6 <= 20`` will be evaluated so as to first perform the arithmetic and then 
+check the relationships. The ``&&`` evaluation will be done last. The order of evaluation is the same as if we were to use parentheses to group, as follows:
 
-.. sourcecode:: js
+.. sourcecode:: csharp
 
    ((x * 5) >= 10) && ((y - 6) <= 20)
 
@@ -203,7 +206,8 @@ While parentheses are not always necessary due to default operator precedence,
 they make expressions much more readable. As a best practice, we encourage you
 to use them, especially for more complicated expressions.
 
-The following table lists operators in order of precedence, from highest (applied first) to lowest (applied last). A complete table for the entire language can be found in the `MDN JavaScript Documentation <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table>`_.
+The following table lists operators in order of precedence, from highest (applied first) to lowest (applied last). 
+A complete table for the entire language can be found in the `Microsoft Documentation <https://docs.microsoft.com/en-us/cpp/c-language/precedence-and-order-of-evaluation?view=msvc-160>`_.
 
 .. list-table:: Operator Precedence
    :widths: auto
@@ -217,7 +221,7 @@ The following table lists operators in order of precedence, from highest (applie
      - ``!``
    * -
      - Exponentiation
-     - ``**``
+     - ``Math.Pow()``
    * -
      - Multiplication and division
      - ``*``, ``/``, ``%``
@@ -229,7 +233,7 @@ The following table lists operators in order of precedence, from highest (applie
      - ``<=``, ``>=``, ``>``, ``<``
    * -
      - Equality
-     - ``===``, ``!==``, ``==``, ``!=``
+     - ``!=``, ``==``
    * -
      - Logical AND
      - ``&&``
@@ -253,18 +257,18 @@ Truth Tables
       * - A
         - B
         - A ``&&`` B
-      * - ``true``
-        - ``true``
-        - ``true``
-      * - ``true``
-        - ``false``
-        - ``false``
-      * - ``false``
-        - ``true``
-        - ``false``
-      * - ``false``
-        - ``false``
-        - ``false``
+      * - ``True``
+        - ``True``
+        - ``True``
+      * - ``True``
+        - ``False``
+        - ``False``
+      * - ``False``
+        - ``True``
+        - ``False``
+      * - ``False``
+        - ``False``
+        - ``False``
 
 Consider the first row of the truth table. This row states that if A is true and B is true, then A && B is true. This is a fact, regardless of what boolean expressions A and B might actually be. The two middle rows demonstrate that if either A or B is false, then A && B is false. (If this idea is hard to grasp, try substituting actual expressions for A and B.)
 
@@ -282,41 +286,43 @@ Check Your Understanding
       * - A
         - B
         - A ``||`` B
-      * - ``true``
-        - ``true``
+      * - ``True``
+        - ``True``
         -
-      * - ``true``
-        - ``false``
+      * - ``True``
+        - ``False``
         -
-      * - ``false``
-        - ``true``
+      * - ``False``
+        - ``True``
         -
-      * - ``false``
-        - ``false``
+      * - ``False``
+        - ``False``
         -
 
 .. admonition:: Question
 
    Which of the following properly expresses the order of operations (using parentheses) in the following expression?
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
 
-      5*3 > 10 && 4 + 6 === 11
+      5*3 > 10 && 4 + 6 == 11
 
-   #. ``((5*3) > 10) && ((4+6) === 11)``
-   #. ``(5*(3 > 10)) && (4 + (6 === 11))``
-   #. ``((((5*3) > 10) && 4)+6) === 11``
-   #. ``((5*3) > (10 && (4+6))) === 11``
+   #. ``((5*3) > 10) && ((4+6) == 11)``
+   #. ``(5*(3 > 10)) && (4 + (6 == 11))``
+   #. ``((((5*3) > 10) && 4)+6) == 11``
+   #. ``((5*3) > (10 && (4+6))) == 11``
+
+.. answer = a
 
 .. admonition:: Question
 
    What is returned by the following boolean expression?
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
 
       4 < 3 || 2 < 3
 
-   #. ``true``
-   #. ``false``
-   #. ``"true"``
-   #. ``"false"``
+   #. ``True``
+   #. ``False``
+   #. ``"True"``
+   #. ``"False"``
