@@ -8,6 +8,7 @@ Chapters
    chapters/introduction/index
    chapters/how-programs-work/index
    chapters/how-to-write-code/index
+   chapters/data-and-variables/index
 
 .. toctree::
 
@@ -19,6 +20,8 @@ Studios
 .. toctree::
    :maxdepth: 1
    :name: studiostoc
+   
+   chapters/data-and-variables/studio
 
 Assignments
 ===========
