@@ -27,7 +27,7 @@ The C# construct that enables such behavior is a **conditional**.
 
 The most basic form of a conditional is an **if statement**. Here's how to create one in C#:
 
-.. figure:: figures/if.png
+.. figure:: figures/csharp-if.png
    :height: 400px
    :alt: The structure of a conditional with an if statement
 
@@ -120,7 +120,7 @@ prevent syntax errors.
 
 An **else clause** can be paired with an ``if`` statement to specify code that should be executed when the condition is false.
 
-.. figure:: figures/if-else.png
+.. figure:: figures/csharp-if-else.png
    :height: 400px
    :alt: A conditional with an else clause
 
