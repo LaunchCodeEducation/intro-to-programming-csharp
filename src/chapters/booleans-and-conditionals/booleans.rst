@@ -83,11 +83,11 @@ Boolean Conversion
 As with the numeric and string data types, the boolean type also has a
 conversion function, ``Convert.ToBoolean()``. It works similarly to the ``Int32.Parse()`` and
 ``Double.Parse()`` methods, attempting to convert a non-boolean value to a boolean.  This is very limited as is, 
-but this could be useful if working with user input, specifically the words true and false.  
+but this could be useful if working with user input, specifically the words "true" and "false".  
 
 .. admonition:: Try It!
 
-   Explore how ``Convert.ToBoolean()`` converts various non-boolean values.  Explore differnt data types.
+   Explore how ``Convert.ToBoolean()`` converts various non-boolean values.  Explore differnt data types.  
    
    .. replit:: csharp
       :linenos:

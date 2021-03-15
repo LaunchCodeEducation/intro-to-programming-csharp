@@ -3,8 +3,9 @@ Nested Conditionals
 ====================
 
 We can write code with more complex branching behavior by combining
-conditionals and, in particular, by nesting conditionals. Let's see how this
-works by tackling the following problem.
+conditionals and, in particular, by nesting conditionals. 
+
+Let's see how thisworks by tackling the following problem.
 
 .. admonition:: Example
 
@@ -54,6 +55,7 @@ enable this behavior by putting the second conditional *inside* the first.
        }
    }
 
+
 .. admonition:: Try It!
 
    Run the previous example with several different values for ``num`` (even,
@@ -62,6 +64,39 @@ enable this behavior by putting the second conditional *inside* the first.
 Notice that when we put one conditional inside another, the body of the nested
 conditional is indented by two tabs rather than one. This convention provides
 an easy, visual way to determine which code is part of which conditional.
+
+Nested ``if`` statements can also contain an ``else`` statement.  When working with nested statements, the ``else`` clause 
+belongs to the last unpaired ``if``.  Remember from them previous chapter that you can only use an ``else`` when you have an ``if``.
+
+.. sourcecode:: csharp
+   :linenos:
+
+   int num = 7;
+
+   if(num < 9)
+   {   
+      if (num % 2 == 0) 
+      {
+         Console.WriteLine("EVEN");
+      }
+
+      else 
+      {
+         Console.WriteLine("ODD");
+      }
+   }
+
+**Console Output**
+
+::
+
+   ODD
+
+When working with ``else`` statements in nested conditionals, remember that the ``else`` is 
+paired with the last ``if`` that doesn't have already have an ``else``.  In the example above, the ``else``
+statement in line 10 belongs to the ``if`` in line 5.  
+
+``else`` and ``else if`` rules apply the same way within nested conditionals as in unnested ones.  
 
 Check Your Understanding
 ------------------------

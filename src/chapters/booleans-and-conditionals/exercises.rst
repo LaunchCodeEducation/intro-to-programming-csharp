@@ -1,5 +1,6 @@
+=====================================
 Exercises: Booleans and Conditionals
-====================================
+=====================================
 
 Attempt these exercises to test your understanding. Don't worry if you struggle
 while working on them. Struggling and then reviewing the material will help you
@@ -8,7 +9,7 @@ remember it.
 In class, be sure to ask about the topics you do not understand. You are NOT
 the only person who needs help.
 
-`Code exercises 1 & 2 here <https://repl.it/@launchcode/ConditionalsExercises01>`__.
+`Code exercises 1 & 2 here <https://repl.it/@launchcode/ConditionalsExercises01Csharp#main.cs>`__.
 
 #. Declare and initialize the following variables for our space shuttle:
 
@@ -36,15 +37,20 @@ the only person who needs help.
    Use the value of ``engineIndicatorLight`` defined above to answer this
    question.
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      if (engineIndicatorLight === "green") {
-         console.log("engines have started");
-      } else if (engineIndicatorLight === "green blinking") {
-         console.log("engines are preparing to start");
-      } else {
-         console.log("engines are off");
+      if (engineIndicatorLight == "green") 
+      {
+         Console.WriteLine("engines have started");
+      } 
+      else if (engineIndicatorLight == "green blinking") 
+      {
+         Console.WriteLine("engines are preparing to start");
+      } 
+      else 
+      {
+         Console.WriteLine("engines are off");
       }
 
 #. Write conditional expressions to satisfy the safety rules below, using the
@@ -75,23 +81,35 @@ the only person who needs help.
 
    Do these code blocks produce the same result? Answer Yes or No.
 
-   .. sourcecode:: js
+   **Block 1**
+
+   .. sourcecode:: csharp
       :linenos:
 
-      if (crewStatus && computerStatusCode === 200 && spaceSuitsOn) {
-         console.log("all systems go");
-      } else {
-         console.log("WARNING. Not ready");
+      if (crewStatus && computerStatusCode == 200 && spaceSuitsOn) 
+      {
+         Console.WriteLine("all systems go");
+      } 
+      else 
+      {
+         Console.WriteLine("WARNING. Not ready");
       }
+      
+   
+   Block 2
+      .. sourcecode:: csharp
+         :linenos:
 
-   .. sourcecode:: js
-      :linenos:
+         if (!crewStatus || computerStatusCode != 200 || !spaceSuitsOn) 
+         {
+            Console.WriteLine("WARNING.  Not ready");
+         } 
+         else 
+         {
+            Console.WriteLine("all systems go");
+         }
 
-      if (!crewStatus || computerStatusCode !== 200 || !spaceSuitsOn) {
-         console.log("WARNING. Not ready");
-      } else {
-         console.log("all systems go");
-      }
+   
 
 #. The remaining exercises implement conditional code to monitor the shuttle's
    fuel status. `Code exercises 5 & 6 here <https://repl.it/@launchcode/ConditionalsExercises03>`__.

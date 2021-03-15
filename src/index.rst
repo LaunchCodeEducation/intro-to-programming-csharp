@@ -8,6 +8,7 @@ Chapters
 
    chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
+   chapters/errors-and-debugging/index
 
 .. toctree::
 
@@ -36,6 +37,8 @@ Appendices
 .. toctree::
    :maxdepth: 1
    :name: appendicestoc
+
+   appendices/bestpractices
 
 .. toctree::
    :hidden:

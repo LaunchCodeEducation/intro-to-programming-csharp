@@ -71,13 +71,14 @@ This conditional has a code block with two lines of code:
    .. sourcecode:: csharp
       :linenos:
 
-      if (num % 2 == 0 && num > 3) {
+      if (num % 2 == 0 && num > 3) 
+      {
          Console.WriteLine(num + " is even");
          Console.WriteLine(num + " is greater than 3");
       }
 
 While not required, the code within a conditional code block is typically indented to make it more readable. 
-Similarly, it is a common convention to place the opening ``{`` at the end of the first line, and the closing ``}`` on a 
+Similarly, it is a common convention to place the opening ``{`` below the first line, and the closing ``}`` on a 
 line of its own following the last line of the code block.
 
 You should follow such conventions, even though ignoring them will not create an error. 
@@ -87,14 +88,12 @@ To see why, compare the readability of this example, which is functionally equiv
    :linenos:
 
    if (num % 2 == 0 && num > 3) 
-   { 
-      Console.log(num, "is even");
-      Console.log(num, "is greater than 3"); 
-   }
+   {  Console.log(num, "is even");
+      Console.log(num, "is greater than 3"); }
 
 Aside from being more aesthetically pleasing, the first version also makes it
 easier to visually identify the pair of matching curly brackets, which helps
-prevent syntax errors.
+prevent syntax errors.  
 
 .. admonition:: Warning
 

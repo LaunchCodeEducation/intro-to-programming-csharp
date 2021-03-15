@@ -5,7 +5,6 @@ Making Decisions With Conditionals
    :maxdepth: 3
 
    booleans
-   equality
    logical-operators
    conditionals
    nested-conditionals
