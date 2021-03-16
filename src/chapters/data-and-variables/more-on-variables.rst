@@ -223,8 +223,7 @@ Such words are called **keywords**, or **reserved words**.
 Any word that is formally part of the C# language syntax is a keyword. 
 So far, we have seen only a few keywords: ``const``, ``var``, and any of the data type words.
 
-.. warning:: While ``Console`` and ``Console.WriteLine`` may seem like keywords, they are actually slightly different things. 
-They are entities (an system and a method, respectively) that are available by default in most C# environments.
+.. warning:: While ``Console`` and ``Console.WriteLine`` may seem like keywords, they are actually slightly different things. They are entities (an system and a method, respectively) that are available by default in most C# environments.
 
 Attempting to use a keyword for anything other than it's intended use will result in an error. 
 To see this, let's try to name a variable ``const``.
