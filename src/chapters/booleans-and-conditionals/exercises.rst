@@ -55,7 +55,7 @@ the only person who needs help.
 
 #. Write conditional expressions to satisfy the safety rules below, using the
    variables defined from the table above.
-   `Code exercises 3 & 4 here <https://repl.it/@launchcode/ConditionalsExercises02>`__.
+   `Code exercises 3 & 4 here <https://replit.com/@launchcode/ConditionalsExercises02CSharp#main.cs>`__.
 
    #. ``crewStatus``
 
@@ -112,7 +112,7 @@ the only person who needs help.
    
 
 #. The remaining exercises implement conditional code to monitor the shuttle's
-   fuel status. `Code exercises 5 & 6 here <https://repl.it/@launchcode/ConditionalsExercises03>`__.
+   fuel status. `Code exercises 5 & 6 here <https://replit.com/@launchcode/ConditionalsExercises03CSharp#main.cs>`__.
    Implement the checks below using ``if`` / ``else if`` / ``else``
    statements. Order is important when working with conditionals, and the
    checks below are NOT written in the correct sequence. Please read ALL of the
