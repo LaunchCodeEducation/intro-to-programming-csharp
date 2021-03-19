@@ -9,8 +9,8 @@ Errors and Debugging
    what-is-debugging
    categories-of-errors
    diagnosing-error-messages
-   error-types
    debugging-logic-errors
+   errors-and-user-input
    how-to-avoid-debugging
    asking-good-questions
    exercises

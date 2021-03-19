@@ -1,104 +1,154 @@
-.. _debugging-logic-errors:
-
+========================
 Debugging Logic Errors
-======================
+========================
 
-We can debug runtime and syntax errors using the error messages produced. Logic errors, however, do not generally produce error messages. This sometimes makes them tougher to debug.
+We can debug runtime and syntax errors using the error messages produced.  
+Logic errors, however, do not always produce error messages. This sometimes makes them tougher to debug.
 
-While we can't provide a step-by-step approach that applies to every possible logic error, we *can* give you some solid strategies. Two such strategies---using debugger tools and writing tests---will be covered in future lessons. In this section, we start with a basic and effective way to debug logic errors.
+While we can't provide a step-by-step approach that applies to every possible logic error, 
+we *can* give you some solid strategies. Two such strategies---using debugger tools and writing tests---will 
+be covered in future lessons. In this section, we start with a basic and effective way to debug logic errors.
 
 Printing Values
 ---------------
+This example will work with logic and runtime errors.  These are commonly seen in the C# environment.
 
-When your code runs but doesn't produce the expected results, it is important to check the values of the variables being used.
+When your code runs but doesn't produce the expected results, it is important to check the values of the 
+variables being used.
 
-Let's look at a program that has a logical bug.
+Let's look at a program that has a logical bug.  
 
-.. replit:: js
+This program is designed to take ask the user for the temperature in celsius and then convert it into Kelvin.  
+
+Before we get into the code let's think about all the parts: Get a number from the user then use it in a math equation.
+
+Okay, let's get building:
+
+.. replit:: csharp
    :linenos:
-   :slug: Degrees-C-to-K-Logic-Error
+   :slug: Degrees-C-to-K-Logic-Error-CSharp
+   
+      Console.WriteLine("Temp in degrees C:");    
+      string degreesC = Console.ReadLine();             
+      Console.WriteLine("Degrees K: " + degreesC + 273.15); 
 
-   const input = require('readline-sync');
+  
 
-   let degreesC = input.question('Temp in degrees C:');
-   let degreesK = degreesC + 273.15;
-
-   console.log('Degrees K:', degreesK);
-
-This program asks the user for a temperature in degrees celsius and attempts to convert it to degrees Kelvin. Degrees Kelvin differs from degrees celsius by 273.15. So if we enter 100 (in celsius) we should see a converted value of 373.15 (in Kelvin). However, running the program as-is and entering 100 gives the message:
+This program asks the user for a temperature in degrees celsius and attempts to convert it to degrees Kelvin. 
+Degrees Kelvin differs from degrees celsius by 273.15. So if we enter 100 (in celsius) we should see a converted value of 373.15 (in Kelvin). 
+However, running the program as-is and entering 100 gives the message:
 
 ::
 
-   Temp in degrees C:  100
+   Temp in degrees C: 100
    Degrees K: 100273.15
+   
+This is clearly incorrect. But the program does not generate an error, so it is not immediately clear what the issue is. 
+To figure it out, we'll use ``Console.WriteLine`` to see what the values of key variables are when the program runs. 
 
-This is clearly incorrect. But the program does not generate an error, so it is not immediately clear what the issue is. To figure it out, we'll use ``console.log`` to see what the values of key variables are when the program runs. 
+Looks like our variables were pushed together, or concatenated, instead of added.  Let's look at our data types and see if that can give us any insight.
+We declared ``degreesC`` to be a string, but what about the number ``273.15``?  We can add a ``Console.WriteLine`` statement to check the data type.
 
-Let's first make sure that the ``degreesC`` variable looks like it should by adding a ``console.log`` statement just after we create this variable.
-
-.. sourcecode:: js
+.. sourcecode:: csharp
    :linenos:
 
-   const input = require('readline-sync');
+      Console.WriteLine("Temp in degrees C:");    
+      string degreesC = Console.ReadLine();             
+      Console.WriteLine(273.15.GetType());
+      Console.WriteLine("Degrees K: " + degreesC + 273.15); 
 
-   let degreesC = input.question('Temp in degrees C: ');
-   console.log(degreesC);
-   let degreesK = degreesC + 273.15;
-
-   console.log('Degrees K:', degreesK);
 
 Running this with an input of 100 gives the output:
 
 ::
 
    Temp in degrees C:  100
-   100
+   System.Double
    Degrees K: 100273.15
 
-The second line is the value of ``degreesC``, which appears to be correct. But the final answer is still incorrect, so we need to keep digging for more information.
+The line 3 is the value of ``273.15`` is a double, but ``degreesC`` is initialized as a string.   We can join them with the ``+``, 
+but final answer is still incorrect, so we need to keep digging for more information.
 
-Looking at the line in which we set ``degreesK``, we see that we use ``degreesC`` as a numeric value in our calculation. Let's see what the data type of ``degreesC`` is. In the end, we want it to be a number.
+Looking at the line in which we set ``degreesK``, we see that we try to use ``degreesC`` as a numeric value in our calculation. 
+In the last chapter we learned how to convert datatypes using the ``Double.Parse`` method.  Let's see what happens if we use that?
+Currently the data type of ``degreesC`` is a string.  Let's create a new variable and use the ``Double.Parse`` method to convert the 
+sting into a double.  Let's also run a ``Console.WriteLine`` statement to check the data type after our ``Double.Parse``.
 
-.. sourcecode:: js
+
+.. sourcecode:: csharp
    :linenos:
 
-   const input = require('readline-sync');
+      Console.WriteLine("Temp in degrees C:");    
+      string degreesC = Console.ReadLine();             
+      double degreesCDouble = Double.Parse(degreesC);        
+      Console.WriteLine(degreesCDouble.GetType() + "  --- testing degreesCDouble");
+      Console.WriteLine(273.15.GetType() + " --- testing 273.15");
+      Console.WriteLine("Degrees K: " + degreesCDouble + 273.15);
 
-   let degreesC = input.question('Temp in degrees C: ');
-   console.log(typeof degreesC);
-   let degreesK = degreesC + 273.15;
-
-   console.log('Degrees K:', degreesK);
 
 Running this with an input of 100 gives the output:
 
 ::
 
    Temp in degrees C:  100
-   string
+   System.Double --- testing degreesCDouble
+   System.Double --- testing 273.15
    Degrees K: 100273.15
 
-That's it! The variable ``degreesC`` has the value ``100``, but it is a string rather than a number. So when we set ``degreesK`` with the formula ``degreesC + 273.15``, we are actually performing string concatenation instead of addition: ``"100" + 273.15`` is ``"100273.15"``.
+That's it! The variable ``degreesCDouble`` has the value ``100``, and is now a double; however, ``degreesC`` is still a string.
+So when we set ``degreesK`` with the formula ``degreesC + 273.15``, we are actually performing string concatenation instead of addition: ``"100" + 273.15`` is ``"100273.15"``.
+We should update the variables in this statement.
 
-We can fix our program by converting the user's input to the number data type.
+.. admonition:: Note
 
-.. sourcecode:: js
+   What are those extra strings in Line 4 and 5?  It's a *tag*.  Adding tags to your ``Console.WriteLine`` statements can also help debug your code.
+   It is basic string concatenation, but can provide valuable information.   We checked the data 
+   types of multiple variables.  Tags remind you which variable is which or what you are expecting
+   can help you stay organized as you debug and build.   
+
+
+We can fix our program by using our new variable, ``degreesCDouble``.
+
+.. sourcecode:: csharp
    :linenos:
 
-   const input = require('readline-sync');
-
-   let degreesC = input.question('Temp in degrees C: ');
-   degreesC = Number(degreesC);
-   let degreesK = degreesC + 273.15;
-
-   console.log('Degrees K:', degreesK);
+      Console.WriteLine("Temp in degrees C:");    
+      string degreesC = Console.ReadLine();             
+      double degreesCDouble = Double.Parse(degreesC);          
+      Console.WriteLine("Degrees K: " + degreesCDouble + 273.15);
 
 Running this with an input of 100 gives the output:
 
 ::
 
    Temp in degrees C:  100
+   Degrees K: 11273.15
+
+Wait what?  This is another sneaky logic error.  In line 4, we are performing concatenation with our new variable, rather than printing any results.  
+If we want to print the results of the calculation, we should make a variable to *become* the results of our calculations
+
+.. sourcecode:: csharp
+   :linenos:
+
+      Console.WriteLine("Temp in degrees C:");    
+      string degreesC = Console.ReadLine();             
+      double degreesCDouble = Double.Parse(degreesC);  
+      double degreesK = degreesCDouble + 273.15;        
+      Console.WriteLine("Degrees K: " + degreesK);
+
+Running this with an input of 100 gives the output:
+
+::
+
+   Temp in degrees C: 100
    Degrees K: 373.15
+  
+It worked!  Finally, right?  We can take in user input? Check.  
+We can use that input in a mathematical formula? 
+We can now thanks to some conversions and additional variables. Great job!
 
-Note that after debugging we removed all of our ``console.log`` statements. Be sure to do the same when using this debugging technique.
+Note that after debugging we removed all of our testing ``Console.WriteLine`` statements. Be sure to do the same when using this debugging technique.
+
+
+
 

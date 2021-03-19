@@ -1,11 +1,12 @@
+===========================
 Diagnosing Error Messages
-=========================
+===========================
 
 Syntax and runtime errors *always* produce error messages. Reading and
 understanding error messages is a crucial first step in fixing these types of
 bugs.
 
-**Error messages are your friends.** This idea can seem foreign to new
+**Error messages are your friends.**  Really.  This idea can seem foreign to new
 programmers, because an error message is a signal that your program is broken.
 When we are working with a broken program, we might feel frustrated, like we do
 not fully understand the concepts at hand.
@@ -17,12 +18,17 @@ but I have a helpful message to help me fix it."
 
 Let's consider a small program with a couple of syntax errors.
 
+
+
+
 .. admonition:: Example
 
-   ::
+   .. sourcecode:: csharp
+      :linenos:
+      
+      string name = "Julie";
+      Console.WriteLine("Hello,  +  name);
 
-      let name = Julie;
-      console.log("Hello, name);
 
 While you can spot one or more errors just by looking at the code, let's
 examine the error messages produced.
@@ -34,76 +40,97 @@ A Syntax Error
 
 Running the program at this stage results in the message:
 
-::
+.. admonition:: Example
 
-   /Users/chris/dev/sandbox/js/syntax.js:2
-   console.log("Hello, name);
-               ^^^^^^^^^^^^^^
+   .. sourcecode:: csharp
+      :linenos:
+      
+      string name = "Julie";
+      Console.WriteLine("Hello,  + name);
 
-   SyntaxError: Invalid or unexpected token
-      at new Script (vm.js:85:7)
-      at createScript (vm.js:266:10)
-      at Object.runInThisContext (vm.js:314:10)
-      at Module._compile (internal/modules/cjs/loader.js:698:28)
-      at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
-      at Module.load (internal/modules/cjs/loader.js:630:32)
-      at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
-      at Function.Module._load (internal/modules/cjs/loader.js:562:3)
-      at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)
-      at internal/main/run_main_module.js:21:11
+   **Console Output**
+
+   ::
+
+     main.cs(2,36): error CS1010: Newline in constant
+     main.cs(3,2): error CS1525: Unexpected symbol `}', expecting `)' or `,'
+     main.cs(3,3): error CS1002: ; expected
+     Compilation failed: 3 error(s), 0 warnings
+     compiler exit status 1
 
 
-While there is a lot of text in this message, the first few lines tell us
-everything we need to know.
 
-The first portion identifies where in our code the error exists:
 
-::
 
-   console.log("Hello, name);
-               ^^^^^^^^^^^^^^
+While there is a lot of text in this message, the **first** error tells us where to start.  
+The rest of the errors are typically a result of the first error.  
 
-For many simple syntax errors, we will quickly be able to spot the mistake once
-JavaScript points out its location to us.
+The first portion identifies where in our code the error exists: ``main.cs(2,36): error CS1010: Newline in constant``.
 
-If knowing the location of the error isn't enough, the next line provides more
-information:
 
-::
+This error number is telling us that error is located in the **main** namespace, line 2, character 36.  
+Which in this case is the ``;`` or the final character of this line.  Sometimes using the coordinates are enough to help you find the error.
+In this case, we see that we have a ``;`` okay, so what does that mean?  Perhaps, you can see the problem at this point.  Great!  
+If not, it's okay.  This takes practice, and with each error you make, you will be better with your syntax.  
+ 
+Sometimes you might need more information about *why* something is an error.  That is where the error numbers come in handy.  
+You are not expected to memorize error numbers.  If you need more information than the snippet that is provided, copy and 
+paste the number into your favorite search engine.  That will bring up the Microsoft Documentation, but you might also find other 
+sites that discuss the error.  Browse and find an explanation that helps you best understand the error and, hopefully, manage or correct it.
 
-   SyntaxError: Invalid or unexpected token
-
-This line identifies that actual issue that JavaScript found. It makes it clear
-that we are dealing with a ``SyntaxError``, and it provides a message that
-describes the issue.
-
-If you are scratching your head at the message, "Invalid or unexpected token,"
-don't worry. Programming languages often report errors in ways that are not
-always easy to decipher at first glance. However, a second look at the line in
-question helps us make sense of this message.
+Let's look at our first error message again.
 
 ::
 
-   console.log("Hello, name);
-               ^^^^^^^^^^^^^^
+   error CS1010: Newline in constant
+
+This line identifies that actual issue that C# found.  If you are scratching your head at the message, "CS1010" or "Newline in constant",
+don't worry. Programming languages often report errors in ways that are not always easy to decipher at first glance. 
+However, a quick copy and paste can help us find out more.  
+
+Let's start with the `Microsoft Documentation <https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs1010>`__. on this error number.  
+
+
+::
+
+   Console.WriteLine("Hello,  + name);
+               
 
 .. index:: ! token
 
-JavaScript is telling us that in the area of ``"Hello, name);`` it encountered
-an invalid token. **Token** is a fancy word that means a symbol, variable, or
-other atomic element of a program. In this case, the invalid token is ``"Hello,
-name);``. JavaScript sees the double-quote character and expects a string.
-However, the string does not have a closing ``"``, making it invalid.
+C# is telling us that in the ``Console.WriteLine`` a string was intiatied, but never closed.  
+The compiler is looking for that closing ``"``.  Without that closing ``"``, it is unable to properly ready any of the other code. 
 
 Fixing this error gives us a program with correct syntax:
 
-.. sourcecode:: js
+.. sourcecode:: csharp
    :linenos:
 
-   let name = Julie;
-   console.log("Hello", name);
+   string name = "Julie";
+   console.log("Hello, " + name);
 
-.. note:: Error messages may differ depending on where you run your code. The same program run in a `repl.it <https://repl.it/>`_ and Node.js on your computer will generate slightly different error messages. However, these differences are minor and generally unimportant. The main cause of the error will be reported in the same way.
+.. note:: Error messages may differ depending on where you run your code. The same program run in a `repl.it <https://repl.it/>`_ and other IDEs on your computer will generate slightly different error messages. However, these differences are minor and generally unimportant. The main cause of the error will be reported in the same way.
+
+A quick note on syntax errors.  Sometimes the coordinates of an error are referring to the line *above*.
+This is very common when you leave off an ``;``.  Here is a quick example:
+
+.. admonition:: Example
+
+   .. sourcecode:: csharp
+      :linenos:
+      
+      string name = "Julie"
+      Console.WriteLine("Hello, " + name);
+
+   **Console Output**
+
+   ::
+
+     main.cs(2,4): error CS1525: Unexpected symbol `Console'
+
+If you scour line 2 for errors, you are going to drive yourself crazy.  Your line 2 is correct.  
+*Why* does the complier think ``'Console'`` is a symbol?  If you look at line 1, you'll see there is no ``;`` to end the statement, 
+so C# thinks that line 2 is part of your inital expression in line 1.
 
 
 Syntax Errors and Code Highlighting
@@ -114,19 +141,18 @@ Syntax Errors and Code Highlighting
 
 Most code editors provide a feature known as **syntax highlighting**. Such
 editors highlight different types of tokens in different ways. For example,
-strings may be red, while variables may be green. This useful feature gives you
+strings may be red, while data types may be blue. This useful feature gives you
 a quick, visual way to identify syntax errors.
 
-For example, here is a screenshot of our flawed code taken within an `editor at repl.it <https://repl.it/@launchcode/Syntax-Highlighting>`_.
+For example, here is a screenshot of our flawed code taken within an `editor at repl.it <https://repl.it/@launchcode/syntaxHighlightingCSharp>`_.
 
-.. figure:: figures/syntax-highlighting.png
-   :alt: A screenshot with two lines of code. Syntax errors on each line cause
-      highlighting to differ from what is expected. On line 1, the string "Julie"
-      is green instead of red, because it is missing quotes. On line 2, the
-      symbols ); are red instead of black, because the preceding string "Hello,
-      World" doesn't have a closing double-quote.
+.. figure:: figures/syntax-highlights-csharp.png
+   :alt: A screenshot with two lines of code. Sytax error on line 1 extends the expression into the next line, but C# knows that "Console" is a built-in method, so something is wrong.  
+      Notice, however, there is no highlighting to inform you of you missin ``;``.
+      Syntax error on line 2 causes highlighting to differ from what is expected.  The ``+``, variable name, and
+      symbols ``);`` are red instead of black, because the preceding string "Hello, " doesn't have a closing double-quote.
 
-   Screenshot of a program with two syntax errors
+   Screenshot of a program with one syntax error
 
 Notice that the string ``Hello`` is colored red, while *most* of the symbols
 (``=``, ``;``, ``.``, and ``(``) are colored black. At the end of line 2,
@@ -139,49 +165,34 @@ difference in color is a clue that something is wrong with our syntax.
 A Runtime Error
 ---------------
 
-Having fixed the syntax error, we can now run our program again. Doing so displays yet another error.
-
-::
-
-   Hello
-   /Users/chris/dev/sandbox/js/syntax.js:1
-   let name = Julie;
-            ^
-
-   ReferenceError: Julie is not defined
-      at Object.<anonymous> (/Users/chris/dev/sandbox/js/syntax.js:1:74)
-      at Module._compile (internal/modules/cjs/loader.js:738:30)
-      at Object.Module._extensions..js (internal/modules/cjs/loader.js:749:10)
-      at Module.load (internal/modules/cjs/loader.js:630:32)
-      at tryModuleLoad (internal/modules/cjs/loader.js:570:12)
-      at Function.Module._load (internal/modules/cjs/loader.js:562:3)
-      at Function.Module.runMain (internal/modules/cjs/loader.js:801:12)
-      at internal/main/run_main_module.js:21:11
+Having fixed the syntax errors, let's talk about runtime errors.  These types of errors are found when you run the program.  
 
 
-We have a new error message, this time involving line 1 of our code. We didn't see this error before because it is a runtime error. Due to the syntax error on line 2, the program stopped during the parsing phase. Even though the current error involves the line *before* the original syntax error, the syntax error still gets reported first.
+So using our same code, what if we declared our varialbe, but never initialized it?
 
-Once again, we are told where the error occurs:
+.. admonition:: Example
 
-::
+   .. sourcecode:: csharp
+      :linenos:
+      
+      string name;
+      Console.WriteLine("Hello, " + name);
 
-   let name = Julie;
-            ^
+   **Console Output**
 
-There appears to be an issue with the assignment statement. You might be able to see what it is, but let's inspect the error message anyway. Doing so will help us understand JavaScript errors more generally.
+   ::
 
-The message is:
+     main.cs(2,35): error CS0165: Use of unassigned local variable `name'
 
-::
+When you look at this code in the replit code editor, all the syntax highlighting is sound.  Once we hit run, we ger a new error code.  
+This error message is very useful.  It tells us that in line 2, we are trying to call a variable that is empty.  Nothing has been assigned to it, we
+never initialized it.  
 
-   ReferenceError: Julie is not defined
+Just glancing at these two lines, you might not have noticed the error right away.  So you hit run and you got an error.  
+Congrats!  You have a clue to help you fix the reason it is not working.  This is good news!  No really, errors are your friends.
 
-The type of error is ``ReferenceError``. If we search the web for "JS ReferenceError" then one of the first results is the `MDN documentation for ReferenceError <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError>`_. No need to read the entire document, however. The first sentence on this page tells us what we need to know:
 
-.. pull-quote:: The ``ReferenceError`` object represents an error when a non-existent variable is referenced.
+These types of errors can be very helpful because they return with information about the issue.  Not all errors are this easy to sort out.  
+What happens when our syntax is sound, we are running through all the lines smoothly, but not getting the expected output?  Might be a logic error.
+Let's dive into those in the next section.
 
-This information, along with the rest of the message, "Julie is not defined," makes it clear what JavaScript is complaining about. The error message is saying, *Hey, check your variables!*
-
-To us, we see that we forgot to enclose the string ``Julie`` in quotes, because we know that we intended to assign the variable ``name`` a string value. However, to JavaScript there is nothing in the program to indicate that ``Julie`` should be a string. In fact, JavaScript sees ``Julie`` as a variable. Since there is no such defined variable in our program, it returns a ``ReferenceError``.
-
-This is one of many examples when we, as humans, describe the same error slightly differently than JavaScript. Usually, neither description is better than the other. Humans and computers simply view information differently.

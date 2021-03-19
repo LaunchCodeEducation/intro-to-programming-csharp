@@ -12,8 +12,7 @@ Many reports begin with "Studies have shown…," but no universally accepted con
 We cannot possibly restate all the conclusions here, nor will we present any
 part of the debates. Instead, here are a few simple facts for this program:
 
-#. Yes, there is a lot work, which consists of prep work: the reading, concept checks, exercises,
- the hands on work: the studios.  *Daily.*
+#. Yes, there is a lot work, which consists of prep work: the reading, concept checks, exercises, the hands on work: the studios.  *Daily.*
 #. The prep work and the hands on work are building skills for the assignments.
 #. Only the assignments count toward your final grade.
 #. You do not have to do the ungraded prep work or hands on work, but you absolutely *SHOULD*.

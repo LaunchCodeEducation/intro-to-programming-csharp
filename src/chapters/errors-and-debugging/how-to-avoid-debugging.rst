@@ -1,7 +1,6 @@
-.. _how-to-avoid-debugging:
-
+=========================
 How to Avoid Debugging
-======================
+=========================
 
 While debugging is an unavoidable part of programming, you can reduce the number of bugs you encounter by working carefully.
 

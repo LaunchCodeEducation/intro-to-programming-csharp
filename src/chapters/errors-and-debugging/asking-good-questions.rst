@@ -1,5 +1,6 @@
+======================
 Asking Good Questions
-=====================
+======================
 
 If you still cannot find the bug in your code after using the strategies outlined in this chapter, do not hesitate to reach out to other programmers.
 

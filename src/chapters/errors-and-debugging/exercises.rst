@@ -1,5 +1,6 @@
+=====================
 Exercises: Debugging
-====================
+=====================
 
 Imagine we are pirates running a space station. Captain Api Hook tells the crew the following:
 
@@ -29,18 +30,22 @@ Debugging Practice
 
    ::
 
-      let launchReady = false;
-      let fuelLevel = 17000;
-
-      if (fuelLevel >= 20000 {
-         console.log('Fuel level cleared.');
+      bool launchReady = false;
+      int fuelLevel = 17000;
+      
+      if (fuelLevel >= 20000 
+      { 
+         Console.WriteLine("Fuel level cleared.");
          launchReady = true;
-      } else {
-         console.log('WARNING: Insufficient fuel!');
+      } 
+      else 
+      {
+         Console.WriteLine("WARNING: Insufficient fuel!");
          launchReady = false;
       }
+      
 
-   `Fix it at repl.it <https://repl.it/@launchcode/Debug1stSyntaxError>`_
+   `Fix it at repl.it <https://repl.it/@launchcode/Debug1stSyntaxError-CSharp>`_
 
 #. The next block of code hides two syntax errors. Run the code as-is to
    find the mistakes. *Tip*: Don't be too hasty, Matey! Only ONE error will
@@ -49,28 +54,36 @@ Debugging Practice
 
    ::
 
-      let launchReady = false;
-      let crewStatus = true;
-      let computerStatus = 'green';
+      
+      
+      bool launchReady = false;
+      bool crewStatus = true;
+      string computerStatus = "green";
 
-      if (crewStatus &&& computerStatus === 'green') {
-         console.log('Crew & computer cleared.');
+      if (crewStatus && computerStatus === "green")
+      {
+         Console.WriteLine("Crew & computer cleared.");
          launchReady = true;
-      } else {
-         console.log('WARNING: Crew or computer not ready!');
+      } 
+      else 
+      {
+         Console.WriteLine("WARNING: Crew or computer not ready!");
          launchReady = false;
       }
 
-      if (launchReady) {
-         console.log("10, 9, 8, 7, 6, 5, 4, 3, 2, 1...");
-         console.log("Fed parrot...");
-         console.log("Ignition...");
-         console.log("Liftoff!');
-      } else {
-         console.log("Launch scrubbed.");
+      if (launchReady) 
+      {
+         Console.WriteLine(("10, 9, 8, 7, 6, 5, 4, 3, 2, 1...");
+         Console.WriteLine("Fed parrot...");
+         Console.WriteLine("Ignition...");
+         Console.WriteLine("Liftoff!");
+      } 
+      else 
+      {
+         Console.WriteLine("Launch scrubbed.");
       }
 
-   `Fix it at repl.it <https://repl.it/@launchcode/DebugSyntaxErrors2>`__
+   `Fix it at repl.it <https://repl.it/@launchcode/DebugSyntaxErrors2-CSharp>`__
 
 #. Fix **runtime errors** next. Remember to examine the error message for
    clues about what is going wrong. Pay close attention to any line
@@ -79,46 +92,57 @@ Debugging Practice
 
    ::
 
-      let launchReady = false;
-      let fuelLevel = 17000;
-
-      if (fuellevel >= 20000) {
-         console.log('Fuel level cleared.');
+      bool launchReady = false;
+      int fuelLevel = 17000;
+      
+      if (fuelLevel >= 20000)
+      {
+         Console.WriteLine("Fuel level cleared.");
          launchReady = true;
-      } else {
-         console.log('WARNING: Insufficient fuel!');
+      } 
+      else 
+      {
+         Console.WriteLine("WARNING: Insufficient fuel.");
          launchReady = false;
       }
 
-   `Fix it at repl.it <https://repl.it/@launchcode/DebugRuntimeErrors1>`__
+   `Fix it at repl.it <https://repl.it/@launchcode/DebugRuntimeErrors1-CSharp>`__
 
 #. *Arrr!*  Now find and fix the runtime error in a longer code sample.
 
    ::
 
-      let launchReady = false;
-      let fuelLevel = 27000;
 
-      if (fuelLevel >= 20000) {
-         console.log('Fuel level cleared.');
+      bool launchReady = false;
+      int fuelLevel = 27000;
+      
+      if (fuelLevel >= 20000) 
+      {
+         Console.WriteLine("Fuel level cleared.");
          launchReady = true;
-      } else {
-         console.log('WARNING: Insufficient fuel!');
+      } 
+      else 
+      {
+         Console.WriteLine("WARNING: Insufficient fuel!");
          launchReady = false;
       }
-
-      if (launchReady) {
-         console.log("10, 9, 8...");
-         console.log("Fed parrot...");
-         console.log("6, 5, 4...");
-         console.log("Ignition...");
-         consoul.log("3, 2, 1...");
-         console.log("Liftoff!");
-      } else {
-         console.log("Launch scrubbed.");
+      
+      if (launchReady) 
+      {
+         Console.WriteLine("10, 9, 8...");
+         Console.WriteLine("Fed parrot...");
+         Console.WriteLine("6, 5, 4...");
+         Console.WriteLine("Ignition...");
+         Consoul.WriteLine("3, 2, 1..."); 
+         Console.WriteLine("Liftoff!");
+      } 
+      else
+      {
+         Console.WriteLine("Launch scrubbed.");
       }
 
-   `Fix it at repl.it <https://repl.it/@launchcode/DebugRuntimeErrors2>`__
+
+   `Fix it at repl.it <https://repl.it/@launchcode/DebugRuntimeErrors2-CSharp>`__
 
 #. Solve **logic errors** last. Logic errors do not generate warning
    messages or prevent the code from running, but the program still does
@@ -130,105 +154,131 @@ Debugging Practice
 
       ::
 
-         let launchReady = false;
-         let fuelLevel = 17000;
-         let crewStatus = true;
-         let computerStatus = 'green';
-
-         if (fuelLevel >= 20000) {
-            console.log('Fuel level cleared.');
+         bool launchReady = false;
+         int fuelLevel = 17000;
+         bool crewStatus = true;
+         string computerStatus = "green";
+         
+         if (fuelLevel >= 20000) 
+         {
+            Console.WriteLine("Fuel level cleared.");
             launchReady = true;
-         } else {
-            console.log('WARNING: Insufficient fuel!');
+         } 
+         else
+         {
+            Console.WriteLine("WARNING: Insufficient fuel!");
             launchReady = false;
          }
 
-         if (crewStatus && computerStatus === 'green'){
-            console.log('Crew & computer cleared.');
+         if (crewStatus && computerStatus == "green")
+         {
+            Console.WriteLine("Crew & computer cleared.");
             launchReady = true;
-         } else {
-            console.log('WARNING: Crew or computer not ready!');
+         } 
+         else 
+         {
+            Console.WriteLine("WARNING: Crew or computer not ready!");
             launchReady = false;
          }
-
-         if (launchReady) {
-            console.log('10, 9, 8, 7, 6, 5, 4, 3, 2, 1...');
-            console.log('Liftoff!');
-         } else {
-            console.log('Launch scrubbed.');
+         
+         if (launchReady) 
+         {
+            Console.WriteLine("10, 9, 8, 7, 6, 5, 4, 3, 2, 1...");
+            Console.WriteLine("Liftoff!");
+         } 
+         else 
+         {
+            Console.WriteLine("Launch scrubbed.");
          }
 
-      `Run it at repl.it <https://repl.it/@launchcode/DebugLogicErrors1>`__
+         
+
+      `Run it at repl.it <https://repl.it/@launchcode/DebugLogicErrors1-CSharp>`__
 
       Should the shuttle have launched? Did it?
 
-   #. Let's break the code down into smaller chunks. Consider the first if/else block below. Add ``console.log(launchReady)`` after this block, then run the program.
+   #. Let's break the code down into smaller chunks. Consider the first if/else block below. Add ``Console.WriteLine(launchReady)`` after this block, then run the program.
 
       ::
 
-         let launchReady = false;
-         let fuelLevel = 17000;
-
-         if (fuelLevel >= 20000) {
-            console.log('Fuel level cleared.');
+         bool launchReady = false;
+         int fuelLevel = 17000;
+         
+         if (fuelLevel >= 20000) 
+         {
+            Console.WriteLine("Fuel level cleared.");
             launchReady = true;
-         } else {
-            console.log('WARNING: Insufficient fuel!');
+         } 
+         else 
+         {
+            Console.WriteLine("WARNING: Insufficient fuel!");
             launchReady = false;
          }
 
-      `Run it at repl.it <https://repl.it/@launchcode/DebugLogicErrors2>`__
+      `Run it at repl.it <https://repl.it/@launchcode/DebugLogicErrors2-CSharp>`__
 
       Given the ``fuelLevel`` value, should ``launchReady`` be ``true`` or ``false`` after the check? Is the program behaving as expected?
 
-   #. Now consider the second if/else block. Add another ``console.log(launchReady)`` after this block and run the program.
+   #. Now consider the second if/else block. Add another ``Console.WriteLine(launchReady)`` after this block and run the program.
 
       ::
 
-         let launchReady = false;
-         let crewStatus = true;
-         let computerStatus = 'green';
-
-         if (crewStatus && computerStatus === 'green'){
-            console.log('Crew & computer cleared.');
+         bool launchReady = false;
+         int crewStatus = true;
+         string computerStatus = "green";
+         
+         if (crewStatus && computerStatus == "green")
+         {
+            Console.WriteLine("Crew & computer cleared.");
             launchReady = true;
-         } else {
-            console.log('WARNING: Crew or computer not ready!');
+         } 
+         else 
+         {
+            Console.WriteLine("WARNING: Crew or computer not ready!");
             launchReady = false;
          }
 
-      `Run it at repl.it <https://repl.it/@launchcode/DebugLogicErrors3>`__
+
+      `Run it at repl.it <https://repl.it/@launchcode/DebugLogicErrors3-CSharp>`__
 
       Given ``crewStatus`` and ``computerStatus``, should ``launchReady`` be ``true`` or ``false`` after this check? Is the program behaving as expected?
 
-   #. Now consider both if/else blocks together (keeping the added ``console.log`` lines). Run the code and examine the output.
+   #. Now consider both if/else blocks together (keeping the added ``Console.WriteLine`` lines). Run the code and examine the output.
 
       ::
 
-         let launchReady = false;
-         let fuelLevel = 17000;
-         let crewStatus = true;
-         let computerStatus = 'green';
-
-         if (fuelLevel >= 20000) {
-            console.log('Fuel level cleared.');
+         bool launchReady = false;
+         int fuelLevel = 17000;
+         bool crewStatus = true;
+         string computerStatus = "green";
+         
+         if (fuelLevel >= 20000) 
+         {
+            Console.WriteLine("Fuel level cleared.");
             launchReady = true;
-         } else {
-            console.log('WARNING: Insufficient fuel!');
+         } 
+         else 
+         {
+            Console.WriteLine("WARNING: Insufficient fuel!");
             launchReady = false;
          }
-         console.log(launchReady);
-
-         if (crewStatus && computerStatus === 'green'){
-            console.log('Crew & computer cleared.');
+         
+         Console.WriteLine(launchReady);
+         
+         if (crewStatus && computerStatus == "green")
+         {
+            Console.WriteLine("Crew & computer cleared.");
             launchReady = true;
-         } else {
-            console.log('WARNING: Crew or computer not ready!');
+         } 
+         else 
+         {
+            Console.WriteLine("WARNING: Crew or computer not ready!");
             launchReady = false;
          }
-         console.log(launchReady);
+         
+         Console.WriteLine(launchReady);
 
-      `Run it at repl.it <https://repl.it/@launchcode/DebugLogicErrors4>`__
+      `Run it at repl.it <https://repl.it/@launchcode/DebugLogicErrors4-CSharp>`__
 
       Given the values for ``fuelLevel``, ``crewStatus`` and ``computerStatus``, should ``launchReady`` be ``true`` or ``false``? Is the program behaving as expected?
 
@@ -237,9 +287,9 @@ Debugging Practice
       block. Dangerous waters, Matey. Since the issue is with ``launchReady``,
       ONE way to fix the logic error is to use a different variable to store the
       fuel check result. Update yer code to do this. Verify that yer change works
-      by updating the ``console.log`` statements.
+      by updating the ``Console.WriteLine`` statements.
 
-      `Fix it at repl.it <https://repl.it/@launchcode/DebugLogicErrors5>`__
+      `Fix it at repl.it <https://repl.it/@launchcode/DebugLogicErrors5-CSharp>`__
 
    #. Almost done, so wipe the sweat off yer brow! Add a final ``if/else`` block
       to print a countdown and "Liftoff!" if all the checks pass, or print "Launch
