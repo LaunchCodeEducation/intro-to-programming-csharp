@@ -39,6 +39,8 @@ Appendices
    :maxdepth: 1
    :name: appendicestoc
 
+   string-method-examples/index
+
 .. toctree::
    :hidden:
 

@@ -1,6 +1,6 @@
-===================
+====================
 Strings as Objects
-===================
+====================
 
 Beyond bracket notation, there are many other tools we can use to work with strings. 
 Talking about these tools requires some new terminology.

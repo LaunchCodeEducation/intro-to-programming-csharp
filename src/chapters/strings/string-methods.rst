@@ -1,23 +1,27 @@
 .. _string-methods:
 
+===============
 String Methods
-==============
+===============
 
-JavaScript provides many useful methods for string objects. Recall that a method is a function that "belongs to" a specific object. Methods will typically result in some operation being carried out on the data within an object. For strings, this means that our methods will typically transform the characters of the given string in some way.
+C# provides many useful methods for string objects. 
+Recall that a method is a function that "belongs to" a specific object. 
+Methods will typically result in some operation being carried out on the data within an object. 
+For strings, this means that our methods will typically transform the characters of the given string in some way.
 
 As we have learned, strings are immutable. Therefore, string methods will not change the value of a string itself, but instead will *return* a new string that is the result of the given operation.
 
-We saw this behavior in the ``toLowerCase`` example.
+We saw this behavior in the ``ToLower`` example.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      let nonprofit = "LaunchCode";
+      string nonprofit = "LaunchCode";
 
-      console.log(nonprofit.toLowerCase());
-      console.log(nonprofit);
+      Console.WriteLine(nonprofit.ToLower());
+      Console.WriteLine(nonprofit);
 
    **Console Output**
 
@@ -26,7 +30,7 @@ We saw this behavior in the ``toLowerCase`` example.
       launchcode
       LaunchCode
 
-While ``nonprofit.toLowerCase()`` evaluated to ``"launchcode"``, the value of ``nonprofit`` was left unchanged. This will be case for each of the string methods.
+While ``nonprofit.ToLower()`` evaluated to ``"launchcode"``, the value of ``nonprofit`` was left unchanged. This will be case for each of the string methods.
 
 Common String Methods
 ---------------------
@@ -36,8 +40,8 @@ Common String Methods
 
 Here we present the most commonly-used string methods. You can find documentation for other string methods at:
 
-- `W3Schools <https://www.w3schools.com/jsref/jsref_obj_string.asp>`_
-- `MDN <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2>`_
+- `W3Schools <https://www.w3schools.com/cs/cs_strings.asp>`_
+- `Microsoft Documentation <https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0>`_
 
 
 .. list-table:: Common String Methods
@@ -46,26 +50,36 @@ Here we present the most commonly-used string methods. You can find documentatio
    * - Method
      - Syntax
      - Description
-   * - :ref:`indexOf <string-indexof-examples>`
-     - ``stringName.indexOf(substr)``
+   * - :ref:`IndexOf <string-indexof-examples>`
+     - ``stringName.IndexOf(substr)``
      - Returns the index of the first occurrence of the substring in the string, and returns -1 if the substring is not found.
-   * - :ref:`toLowerCase <string-tolowercase-examples>`
-     - ``stringName.toLowerCase()``
+   * - :ref:`ToLower <string-tolowercase-examples>`
+     - ``stringName.ToLower()``
      - Returns a copy of the given string, with all uppercase letters converted to lowercase.
-   * - :ref:`toUpperCase <string-touppercase-examples>`
-     - ``stringName.toUpperCase()``
+   * - :ref:`ToUpper <string-touppercase-examples>`
+     - ``stringName.ToUpper()``
      - Returns a copy of the given string, with all lowercase letters converted to uppercase.
-   * - :ref:`trim <string-trim-examples>`
-     - ``stringName.trim()``
+   * - :ref:`Trim <string-trim-examples>`
+     - ``stringName.Trim()``
      - Returns a copy of the given string with the leading and trailing whitespace removed.
-   * - :ref:`replace <string-replace-examples>`
-     - ``stringName.replace(searchChar, replacementChar)``
-     - Returns a copy of ``stringName``, with the first occurrence of ``searchChar`` replaced by ``replacementChar``.
-   * - :ref:`slice <string-slice-examples>`
-     - ``stringName.slice(i, j)``
-     - Returns the substring consisting of characters from index ``i`` through index ``j-1``.
+   * - :ref:`Replace <string-replace-examples>`
+     - ``stringName.Replace(searchChar, replacementChar)``
+     - Returns a copy of ``stringName`` with the **all** occurrence of ``searchChar`` replaced by ``replacementChar``.
+   * - :ref:`Substring <string-substring-examples>`
+     - ``stringName.Substring(i, j)``
+     - Returns the substring consisting of characters from index ``i`` for a length of ``j``.
+   * - :ref:`Insert <string-insert-examples>`
+     - ``stringName.Insert(i, substring)``
+     - Returns new ``stringName`` in which a specific substring has been inserted at index ``i``.
+   * - :ref:`Remove <string-remove-examples>`
+     - ``stringName.Remove()``
+     - Returns new string after certain number of characters have been deleted from current string.
+   * - :ref:`ToCharArray <string-to-char-array-examples>`
+     - ``stringName.ToCharArray()``
+     - Converts string into character array.
 
-.. tip:: String methods can be combined in a process called **method chaining**. Given ``word = 'JavaScript';``, word.toUpperCase() returns ``JAVASCRIPT``. What would ``word.slice(4).toUpperCase()`` return?  `Try it at repl.it <https://repl.it/@launchcode/Intro-To-Method-Chaining>`_.
+
+.. tip:: String methods can be combined in a process called **method chaining**. Given ``word = 'C Sharp';``, word.ToUpper() returns ``C SHARP``. What would ``word.Substring(1,4).ToUpper()`` return?  `Try it at repl.it <https://repl.it/@launchcode/Intro-Into-Method-Chaining-CSharp#main.cs>`_.
 
 Check Your Understanding
 ------------------------
@@ -76,37 +90,37 @@ Follow the links in the table above for the ``replace``, ``slice``, and ``trim``
 
    What is printed by the following code?
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      let language = "JavaScript";
-      language.replace('J', 'Q');
-      language.slice(0,5);
-      console.log(language);
+      string language = "C Sharp";
+      language.Replace('C', 'Q');
+      language.Substring(0,5);
+      Console.WriteLine(language);
 
-   #. ``"JavaScript"``
-   #. ``"QavaScript"``
-   #. ``"QavaSc"``
-   #. ``"QavaS"``
+   #. ``"C Sharp"``
+   #. ``"Q Sharp"``
+   #. ``"Q Sha"``
+   #. ``"C Shar"``
 
 .. admonition:: Question
 
-   Given ``language = 'JavaScript';``, what does ``language.slice(1,6)`` return?
+   Given ``string language = 'C Sharp';``, what does ``language.Substring(1,4)`` return?
 
-   #. ``"avaScr"``
-   #. ``"JavaSc"``
-   #. ``"avaSc"``
-   #. ``"JavaS"``
+   #. ``" Sha"``
+   #. ``"h"``
+   #. ``"Shar"``
+   #. ``"C Sh"``
 
 .. admonition:: Question
 
    What is the value of the string printed by the following program?
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      let org = "  The LaunchCode Foundation ";
-      let trimmed = org.trim();
+      String org = "  The LaunchCode Foundation ";
+      let trimmed = org.Trim();
 
       console.log(trimmed);
 

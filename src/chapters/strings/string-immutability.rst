@@ -1,5 +1,6 @@
+=====================
 String Immutability
-===================
+=====================
 
 .. index::
    pair: string; immutable
@@ -11,23 +12,26 @@ notation, attempting to change individual characters simply does not work.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      let nonprofit = "Launchcode";
+      string nonprofit = "Launchcode";
 
-      console.log(nonprofit);
-      nonprofit[6] = "C";
-      console.log(nonprofit);
+      Console.WriteLine(nonprofit);
+      nonprofit[6] = 'C';
+      Console.WriteLine(nonprofit);
 
    **Console Output**
 
    ::
 
       Launchcode
-      Launchcode
+      error CS0200: Property or indexer `string.this[int]' cannot be assigned to (it is read-only)
 
-We attempted to change the value of the character at index 6 from ``'c'`` to ``'C'``, by using an assignment statement along with bracket notation on line 4 (perhaps to align with official LaunchCode branding guidelines). However, this change clearly did not take place. In many programming languages strings are immutable, and while trying to change a string in some languages results in an error, JavaScript simply ignores our request to alter a string.
+We attempted to change the value of the character at index 6 from ``'c'`` to ``'C'``, by using an assignment statement 
+along with bracket notation on line 4 (perhaps to align with official LaunchCode branding guidelines). 
+However, this change clearly did not take place. In many programming languages strings are immutable, 
+and while trying to change a string in some languages results in an error, C# is not able to change this string as it is "read-only".
 
 It is important to notice that immutability applies to string *values* and not string variables.
 
@@ -35,13 +39,13 @@ It is important to notice that immutability applies to string *values* and not s
 
    We can set a variable containing a string to a different value.
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      let nonprofit = "Launchcode";
+      string nonprofit = "Launchcode";
       nonprofit = "LaunchCode";
 
-      console.log(nonprofit);
+      Console.WriteLine(nonprofit);
 
    **Console Output**
 
@@ -49,7 +53,10 @@ It is important to notice that immutability applies to string *values* and not s
 
       LaunchCode
 
-In this example, the change made on line 2 is carried out. The difference between this example and the one above is that here we are modifying the value that the variable is storing, and not the string itself. Using our visual analogy of a variable as a label that "points at" a value, the second example has the following effect:
+In this example, the change made on line 2 is carried out. 
+The difference between this example and the one above is that here we are modifying the value that the variable is storing, 
+and not the string itself. Using our visual analogy of a variable as a label that "points at" a value, 
+the second example has the following effect:
 
 .. figure:: figures/string-var-reassignment.png
    :alt: A variable, nonprofit, pointing at "LaunchCode" with a lowercase-c.
@@ -62,4 +69,4 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Given ``pet = 'cat'``, why do the statements ``console.log(pet + 's');`` and ``pet += 's';`` NOT violate the immutability of strings?
+   Given ``string pet = "cat"``, why do the statements ``Console.WriteLine(pet + 's');`` and ``pet += 's';`` NOT violate the immutability of strings?
