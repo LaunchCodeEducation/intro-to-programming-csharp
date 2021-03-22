@@ -5,17 +5,17 @@
 
 The general syntax for this method is:
 
-.. sourcecode:: js
+.. sourcecode:: csharp
 
-   stringName.toLowerCase();
+   stringName.ToLower();
 
 This method returns a copy of ``stringName`` with all uppercase letters
 replaced by their lowercase counterparts. It leaves non-alphabetic characters
 unchanged.
 
-.. sourcecode:: js
+.. sourcecode:: csharp
 
-   "LaunchCode".toLowerCase();
+   "LaunchCode".ToLower();
 
 **Output**
 
@@ -29,11 +29,11 @@ unchanged.
 
    This program standardizes an email address by converting it to all lowercase characters.
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
 
-      let input = "fake.email@LAUNCHCODE.ORG";
-      let email = input.toLowerCase();
-      console.log(email);
+      string input = "fake.email@LAUNCHCODE.ORG";
+      string email = input.ToLower();
+      Console.WriteLine(email);
 
    **Output**
 

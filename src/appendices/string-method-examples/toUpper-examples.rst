@@ -5,20 +5,20 @@
 
 The general syntax for this method is:
 
-.. sourcecode:: js
+.. sourcecode:: csharp
 
-   stringName.toUpperCase();
+   stringName.ToUpper();
 
 This method returns a copy of ``stringName`` with all lowercase letters replaced by their uppercase counterparts. It leaves non-alphabetic characters unchanged.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      console.log("LaunchCode".toUpperCase());
-      console.log("launchcode".toUpperCase());
-      console.log("LaunchCode's LC101".toUpperCase());
+      Console.WriteLine("LaunchCode".ToUpper());
+      Console.WriteLine("launchcode".ToUpper());
+      Console.WriteLine("C Sharp rocks!".ToUpper());
 
    **Output**
 
@@ -26,4 +26,4 @@ This method returns a copy of ``stringName`` with all lowercase letters replaced
 
       LAUNCHCODE
       LAUNCHCODE
-      LAUNCHCODE'S LC101
+      C SHARP ROCKS!

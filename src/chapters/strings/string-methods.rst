@@ -53,10 +53,10 @@ Here we present the most commonly-used string methods. You can find documentatio
    * - :ref:`IndexOf <string-indexof-examples>`
      - ``stringName.IndexOf(substr)``
      - Returns the index of the first occurrence of the substring in the string, and returns -1 if the substring is not found.
-   * - :ref:`ToLower <string-tolowercase-examples>`
+   * - :ref:`ToLower <string-tolower-examples>`
      - ``stringName.ToLower()``
      - Returns a copy of the given string, with all uppercase letters converted to lowercase.
-   * - :ref:`ToUpper <string-touppercase-examples>`
+   * - :ref:`ToUpper <string-toupper-examples>`
      - ``stringName.ToUpper()``
      - Returns a copy of the given string, with all lowercase letters converted to uppercase.
    * - :ref:`Trim <string-trim-examples>`
