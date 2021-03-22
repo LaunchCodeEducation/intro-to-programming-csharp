@@ -28,9 +28,9 @@ Okay, let's get building:
    :linenos:
    :slug: Degrees-C-to-K-Logic-Error-CSharp
    
-      Console.WriteLine("Temp in degrees C:");    
-      string degreesC = Console.ReadLine();             
-      Console.WriteLine("Degrees K: " + degreesC + 273.15); 
+   Console.WriteLine("Temp in degrees C:");    
+   string degreesC = Console.ReadLine();             
+   Console.WriteLine("Degrees K: " + degreesC + 273.15); 
 
   
 
@@ -52,10 +52,10 @@ We declared ``degreesC`` to be a string, but what about the number ``273.15``?  
 .. sourcecode:: csharp
    :linenos:
 
-      Console.WriteLine("Temp in degrees C:");    
-      string degreesC = Console.ReadLine();             
-      Console.WriteLine(273.15.GetType());
-      Console.WriteLine("Degrees K: " + degreesC + 273.15); 
+   Console.WriteLine("Temp in degrees C:");    
+   string degreesC = Console.ReadLine();             
+   Console.WriteLine(273.15.GetType());
+   Console.WriteLine("Degrees K: " + degreesC + 273.15); 
 
 
 Running this with an input of 100 gives the output:
@@ -70,7 +70,7 @@ The line 3 is the value of ``273.15`` is a double, but ``degreesC`` is initializ
 but final answer is still incorrect, so we need to keep digging for more information.
 
 Looking at the line in which we set ``degreesK``, we see that we try to use ``degreesC`` as a numeric value in our calculation. 
-In the last chapter we learned how to convert datatypes using the ``Double.Parse`` method.  Let's see what happens if we use that?
+In the last chapter we learned how to convert data types using the ``Double.Parse`` method.  Let's see what happens if we use that?
 Currently the data type of ``degreesC`` is a string.  Let's create a new variable and use the ``Double.Parse`` method to convert the 
 sting into a double.  Let's also run a ``Console.WriteLine`` statement to check the data type after our ``Double.Parse``.
 
@@ -78,12 +78,12 @@ sting into a double.  Let's also run a ``Console.WriteLine`` statement to check 
 .. sourcecode:: csharp
    :linenos:
 
-      Console.WriteLine("Temp in degrees C:");    
-      string degreesC = Console.ReadLine();             
-      double degreesCDouble = Double.Parse(degreesC);        
-      Console.WriteLine(degreesCDouble.GetType() + "  --- testing degreesCDouble");
-      Console.WriteLine(273.15.GetType() + " --- testing 273.15");
-      Console.WriteLine("Degrees K: " + degreesCDouble + 273.15);
+   Console.WriteLine("Temp in degrees C:");    
+   string degreesC = Console.ReadLine();             
+   double degreesCDouble = Double.Parse(degreesC);        
+   Console.WriteLine(degreesCDouble.GetType() + "  --- testing degreesCDouble");
+   Console.WriteLine(273.15.GetType() + " --- testing 273.15");
+   Console.WriteLine("Degrees K: " + degreesCDouble + 273.15);
 
 
 Running this with an input of 100 gives the output:
@@ -112,10 +112,10 @@ We can fix our program by using our new variable, ``degreesCDouble``.
 .. sourcecode:: csharp
    :linenos:
 
-      Console.WriteLine("Temp in degrees C:");    
-      string degreesC = Console.ReadLine();             
-      double degreesCDouble = Double.Parse(degreesC);          
-      Console.WriteLine("Degrees K: " + degreesCDouble + 273.15);
+   Console.WriteLine("Temp in degrees C:");    
+   string degreesC = Console.ReadLine();             
+   double degreesCDouble = Double.Parse(degreesC);          
+   Console.WriteLine("Degrees K: " + degreesCDouble + 273.15);
 
 Running this with an input of 100 gives the output:
 
@@ -130,11 +130,11 @@ If we want to print the results of the calculation, we should make a variable to
 .. sourcecode:: csharp
    :linenos:
 
-      Console.WriteLine("Temp in degrees C:");    
-      string degreesC = Console.ReadLine();             
-      double degreesCDouble = Double.Parse(degreesC);  
-      double degreesK = degreesCDouble + 273.15;        
-      Console.WriteLine("Degrees K: " + degreesK);
+   Console.WriteLine("Temp in degrees C:");    
+   string degreesC = Console.ReadLine();             
+   double degreesCDouble = Double.Parse(degreesC);  
+   double degreesK = degreesCDouble + 273.15;        
+   Console.WriteLine("Degrees K: " + degreesK);
 
 Running this with an input of 100 gives the output:
 

@@ -184,7 +184,7 @@ So using our same code, what if we declared our varialbe, but never initialized 
 
      main.cs(2,35): error CS0165: Use of unassigned local variable `name'
 
-When you look at this code in the replit code editor, all the syntax highlighting is sound.  Once we hit run, we ger a new error code.  
+When you look at this code in the replit code editor, all the syntax highlighting is sound.  Once we hit run, we get a new error code.  
 This error message is very useful.  It tells us that in line 2, we are trying to call a variable that is empty.  Nothing has been assigned to it, we
 never initialized it.  
 
