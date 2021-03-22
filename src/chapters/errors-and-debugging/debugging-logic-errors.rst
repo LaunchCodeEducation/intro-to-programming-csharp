@@ -1,3 +1,5 @@
+.. _debugging-logic-errors:
+
 ========================
 Debugging Logic Errors
 ========================
@@ -66,11 +68,12 @@ Running this with an input of 100 gives the output:
    System.Double
    Degrees K: 100273.15
 
-The line 3 is the value of ``273.15`` is a double, but ``degreesC`` is initialized as a string.   We can join them with the ``+``, 
+The value of ``273.15`` in **Line 3** is a double, but ``degreesC`` is initialized as a string.   We can join them with the ``+``, 
 but final answer is still incorrect, so we need to keep digging for more information.
 
-Looking at the line in which we set ``degreesK``, we see that we try to use ``degreesC`` as a numeric value in our calculation. 
+Looking at **Line 4** in which we try to add ``273.15`` to ``degreesC``.  All we are doing is concatenating the two togehter. 
 In the last chapter we learned how to convert data types using the ``Double.Parse`` method.  Let's see what happens if we use that?
+
 Currently the data type of ``degreesC`` is a string.  Let's create a new variable and use the ``Double.Parse`` method to convert the 
 sting into a double.  Let's also run a ``Console.WriteLine`` statement to check the data type after our ``Double.Parse``.
 
@@ -83,7 +86,7 @@ sting into a double.  Let's also run a ``Console.WriteLine`` statement to check 
    double degreesCDouble = Double.Parse(degreesC);        
    Console.WriteLine(degreesCDouble.GetType() + "  --- testing degreesCDouble");
    Console.WriteLine(273.15.GetType() + " --- testing 273.15");
-   Console.WriteLine("Degrees K: " + degreesCDouble + 273.15);
+   Console.WriteLine("Degrees K: " + degreesC + 273.15);
 
 
 Running this with an input of 100 gives the output:
@@ -95,13 +98,11 @@ Running this with an input of 100 gives the output:
    System.Double --- testing 273.15
    Degrees K: 100273.15
 
-That's it! The variable ``degreesCDouble`` has the value ``100``, and is now a double; however, ``degreesC`` is still a string.
-So when we set ``degreesK`` with the formula ``degreesC + 273.15``, we are actually performing string concatenation instead of addition: ``"100" + 273.15`` is ``"100273.15"``.
-We should update the variables in this statement.
+That's it! The variable ``degreesCDouble`` has the value ``100``, and is of data type double. However, ``degreesC`` is still a string.
 
 .. admonition:: Note
 
-   What are those extra strings in Line 4 and 5?  It's a *tag*.  Adding tags to your ``Console.WriteLine`` statements can also help debug your code.
+   What are those extra strings in **Lines 4 and 5**?  It's a **tag**.  Adding tags to your ``Console.WriteLine`` statements can also help debug your code.
    It is basic string concatenation, but can provide valuable information.   We checked the data 
    types of multiple variables.  Tags remind you which variable is which or what you are expecting
    can help you stay organized as you debug and build.   
@@ -122,9 +123,9 @@ Running this with an input of 100 gives the output:
 ::
 
    Temp in degrees C:  100
-   Degrees K: 11273.15
+   Degrees K: 100273.15
 
-Wait what?  This is another sneaky logic error.  In line 4, we are performing concatenation with our new variable, rather than printing any results.  
+Wait what?  This is another sneaky logic error.  In **Line 4**, we are performing concatenation with our new variable, rather than printing any results.  
 If we want to print the results of the calculation, we should make a variable to *become* the results of our calculations
 
 .. sourcecode:: csharp

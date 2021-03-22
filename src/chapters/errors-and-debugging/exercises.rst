@@ -85,7 +85,7 @@ Debugging Practice
 
    `Fix it at repl.it <https://repl.it/@launchcode/DebugSyntaxErrors2-CSharp>`__
 
-#. Fix **runtime errors** next. Remember to examine the error message for
+#. Fix **compiler errors** next. Remember to examine the error message for
    clues about what is going wrong. Pay close attention to any line
    numbers mentioned in the message - these will help ye locate and repair
    the mistake in the code.
@@ -108,7 +108,7 @@ Debugging Practice
 
    `Fix it at repl.it <https://repl.it/@launchcode/DebugRuntimeErrors1-CSharp>`__
 
-#. *Arrr!*  Now find and fix the runtime error in a longer code sample.
+#. *Arrr!*  Now find and fix the compiler error in a longer code sample.
 
    ::
 
@@ -146,8 +146,7 @@ Debugging Practice
 
 #. Solve **logic errors** last. Logic errors do not generate warning
    messages or prevent the code from running, but the program still does
-   not work as intended. (Refer to
-   :ref:`debugging logic errors <debugging-logic-errors>` if ye need to
+   not work as intended. (Refer to :ref:`debugging logic errors <debugging-logic-errors>` if ye need to
    review).
 
    #. First, run this sample code as-is and examine the output.

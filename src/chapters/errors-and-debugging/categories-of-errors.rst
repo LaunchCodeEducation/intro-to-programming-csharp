@@ -36,8 +36,8 @@ program---printing to the console, prompting the user for input, making
 calculations, etc.---are actually carried out. You can think of this stage as
 the plane taking flight. 
 
-Compile-Time Errors (aka "Syntax Errors")
-------------------------------------------
+Compile-Time Errors, Warnings, and Exceptions
+----------------------------------------------
 
 .. index:: syntax
 
@@ -46,11 +46,21 @@ C# can only execute a program if the program is syntactically correct.
 otherwise) and the rules about that structure. For example, in English, a
 sentence must begin with a capital letter and end with appropriate punctuation.
 
+When we run our code, two things can happen.  Either it works as expected, or it doesn't.  It's that simple.  One of the nice features of C# is
+the compiler.  The compiler works by reading each line and performing all coded tasks.  If it finds a line that doesn't work, it will stop
+the code and provide you with feedback.  
+This feedback usually falls within one of three categories:  errors, warnings, or exceptions.
+
+
+
 .. index::
    single: error; syntax
 
-A **compile-time error** is a violation of the formal rules for a given language.  This can also 
-be referred to as a **syntax error**.
+Compiler Errors
+^^^^^^^^^^^^^^^^^
+
+A **compiler error** is usually a violation of the formal rules for a given language.  
+This can also be referred to as a **syntax error**.
 
 .. admonition:: Examples
 
@@ -85,40 +95,37 @@ However, as you gain experience, you will make fewer errors, and you will find y
 
    What syntax errors did you find? What was the specific error message provided by C# in each case?
 
-Runtime Errors
---------------
+Compiler Warnings
+^^^^^^^^^^^^^^^^^^
 
-.. index::
-   single: error; runtime
+When the compiler runs across code that is sound, but has a small flaw in either the logic or execution, it will give you a **warning**.  
+Warnings, most of the time, catch small items that won't break your code at this point, but might be unused or unnecessary.  These are 
+helping you prevent errors as you build.  
 
-.. index:: exception
+.. admonition:: Try It!
 
-The second category consists of **runtime errors**, so called because they do not appear until you run the program. 
-These errors are also called **exceptions** because they usually indicate that something exceptional (and bad) has happened.
+   Run the code.  Make changes to handle the warning.
 
-Runtime errors occur during the execution phase of a program, so we will only encounter them *after* the syntax of our 
-program is completely correct.
-
-A common runtime error occurs when we try to use a variable that has not been created yet. 
-This can happen if you misspell the name of a variable, as the following example shows.
-
-.. admonition:: Example
-
-   .. sourcecode:: csharp
+   .. replit:: csharp
       :linenos:
+      :slug: Compiler-Warning-CSharp
 
-      string firstName = "Jack";
-      Console.WriteLine(firstname);
+      string firstName = "Alyce";
+      string lastName;
+      Console.WriteLine(firstName);
 
-   **Console Output**
 
-   ::
+Exceptions
+^^^^^^^^^^^^
 
-      main.cs(2,25): error CS0103: The name `firstname' does not exist in the current context
-         
+**Exceptions** occur while running the program.  
+They are usually the results of unanticipated errors that you didn't plan on as you built your code.
+Currently, you may have seen error messages about an ``Unhandled Exception``.  
+This means that something unexpected happened and crashes your code.  
+This could be an unanticipated user input, trying to divide by zero, to name a few.  
+C# has ways to handle exceptions, but we will discuss those more in later chapters.
 
-The syntax of our program is correct, but when the program executes, an error occurs at line 2. 
-We attempt to print the value of the variable ``firstname``, but such a variable does not exist.
+
 
 Logic Errors
 ------------
@@ -126,7 +133,7 @@ Logic Errors
 .. index::
    single: error; logic
 
-The third type of error is the **logic error**. If there is a logic error in your program, it will run successfully and *not* 
+The last type of error is the **logic error**. If there is a logic error in your program, it will run successfully and *not* 
 generate any error messages. However, the program will not work as intended.
 
 The characteristic of logic errors is that the program you wrote is not the program you wanted. 
@@ -160,7 +167,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Label each of the following as either a syntax, runtime, or logic error.
+   Label each of the following as either a complier error, compiler warning or logic error.
 
    #. Trying to use a variable that has not been defined.
    #. Leaving off a close parenthesis, ``)``, when calling ``Console.WriteLine``.

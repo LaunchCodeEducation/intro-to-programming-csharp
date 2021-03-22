@@ -29,7 +29,7 @@ Running this with an input of the string ``"one hundred"`` gives the output:
       System.FormatException: Input string was not in a correct format.
 
 
-In Line 3, we are converting our user input into a double data type.  
+In **Line 3**, we are converting our user input into a double data type.  
 A double data type can only be numbers, whole or decimals.  
 Anything else is unexpected and will cause your code to stop working.  
 That type of message does not provide any feedback to your user for a second attempt. 
@@ -39,8 +39,7 @@ Is there anything you can do about this?  Yes.
 ``TryParse``
 -------------
 
-The ``TryParse`` method can be used here to handle these exceptions. Exceptions are built into the C# language to 
-help you catch events like this.  This is only one example of an Exception.  We will discuss more in later chapters.  
+The ``TryParse`` method can be used here to handle this type of exception. 
 
 ``TryParse`` uses bools and conditionals to verify that the correct input data type has been entered, and then allows 
 you to create options based on the data.  This can be a helpful way to prompt the user for the desired data type.
@@ -82,25 +81,25 @@ If the in input was ``"100"`` then the output would be:
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``TryParse`` method uses the keyword ``out``.  
-In this instance, ``out`` reassigns our string value for a *valid* numeric value, which will be stored in the ``degreesCDouble`` varialbe in line 3.
+In this instance, ``out`` reassigns our string value for a *valid* numeric value, which will be stored in the ``degreesCDouble`` varialbe in **Line 3**.
 
 Let's see how ``TryParse`` and ``out`` work.
 
-- Line 1, we print the prompt asking the user to provide a temperature reading.
-- Line 2, ``degreesC`` is initialized once the user puts in their value.
-- Line 3, ``degreesCDouble`` is declared, but not initialized.
-- Line 5, we take ``degreesC`` and attempt to parse it into a double.  
+- **Line 1**, we print the prompt asking the user to provide a temperature reading.
+- **Line 2**, ``degreesC`` is initialized once the user puts in their value.
+- **Line 3**, ``degreesCDouble`` is declared, but not initialized.
+- **Line 5**, we take ``degreesC`` and attempt to parse it into a double.  
 
 If this is **true**, then a lot of things happen.
 
 - First, since the input is a valid double, ``TryParse`` will assign the parsed value to ``degreesCDouble`` via the ``out`` keyword, thereby initializing it.
 - Second, the ``degreesCDouble`` variable is initialized.
-- Third, ``degreesCDouble`` is used in Line 7 to initialize ``degreesK``.
-- Finally, Line 8 prints our results.
+- Third, ``degreesCDouble`` is used in **Line 7** to initialize ``degreesK``.
+- Finally, **Line 8** prints our results.
 
 
-If Line 5 is **false**, then ``TryParse`` is *not* able to assign any values.  
-When this happens the ``else`` clause is triggered, and Line 12 prints.  
+If **Line 5** is **false**, then ``TryParse`` is *not* able to assign any values.  
+When this happens the ``else`` clause is triggered, and **Line 12** prints.  
 
 This may seem like a lot of "extra" code, but one benefit of ``TryParse`` is that you can provide specific feedback for your user. 
 Another benefit of ``TryParse`` is that it doesn't immediately shut down your program if the user input is non-numeric.  

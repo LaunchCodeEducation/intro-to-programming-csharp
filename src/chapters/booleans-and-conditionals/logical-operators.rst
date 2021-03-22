@@ -63,7 +63,7 @@ Let's see how this works in code.
 
 .. admonition:: Example
 
-   .. sourcecode:: csharp
+   .. sourcecode:: bash
       :linenos:
 
       Console.WriteLine(7 > 5 && 5 > 3);
@@ -111,7 +111,7 @@ operands are ``False``, the overall expression is ``False``.
 
 Let's look at some examples in C#.
 
-.. sourcecode:: csharp
+.. sourcecode:: bash
    :linenos:
 
    Console.WriteLine(7 > 5 || 5 > 3);
@@ -170,7 +170,7 @@ The operator ``!`` (sometimes called "bang") has the same semantic role as the w
 
 .. admonition:: Example
 
-   .. sourcecode:: csharp
+   .. sourcecode:: bash
       :linenos:
 
       Console.WriteLine( !(5 > 7) );

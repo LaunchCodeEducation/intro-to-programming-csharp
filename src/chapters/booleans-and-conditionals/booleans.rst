@@ -89,7 +89,7 @@ but this could be useful if working with user input, specifically the words "tru
 
    Explore how ``Convert.ToBoolean()`` converts various non-boolean values.  Explore differnt data types.  
    
-   .. replit:: csharp
+   .. replit:: bash
       :linenos:
       :slug: Boolean-Type-Conversion-CSharp
       
@@ -97,7 +97,8 @@ but this could be useful if working with user input, specifically the words "tru
       Console.WriteLine(Convert.ToBoolean("TRUE"));
       Console.WriteLine(Convert.ToBoolean(0));
       Console.WriteLine(Convert.ToBoolean(1));
-      Console.WriteLine(Convert.ToBoolean(''));
+      Console.WriteLine(Convert.ToBoolean(-1));
+      Console.WriteLine(Convert.ToBoolean(""));
       Console.WriteLine(Convert.ToBoolean("LaunchCode"));
       
 

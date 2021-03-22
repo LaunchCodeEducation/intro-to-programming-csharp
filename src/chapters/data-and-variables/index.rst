@@ -1,3 +1,6 @@
+.. _data-and-variables:
+
+==================
 Data and Variables
 ==================
 
