@@ -3,7 +3,7 @@
 Errors and User Input
 ========================
 
-In our last example, we asked the user to provide us with a temperature value in celsius.
+In our last example, we asked the user to provide us with a temperature value in Celsius.
 As programmers, we all hope that our message ``"Temp in degrees C:"`` would be clear enough
 to have the user enter a numeric value.  However, things happen.
 
@@ -15,11 +15,11 @@ our program at the end of the last section.
 .. sourcecode:: csharp
    :linenos:
 
-      Console.WriteLine("Temp in degrees C:");    
-      string degreesC = Console.ReadLine();             
-      double degreesCDouble = Double.Parse(degreesC);  
-      double degreesK = degreesCDouble + 273.15;        
-      Console.WriteLine("Degrees K: " + degreesK);
+   Console.WriteLine("Temp in degrees C:");    
+   string degreesC = Console.ReadLine();             
+   double degreesCDouble = Double.Parse(degreesC);  
+   double degreesK = degreesCDouble + 273.15;        
+   Console.WriteLine("Degrees K: " + degreesK);
 
 Running this with an input of the string ``"one hundred"`` gives the output:
 
@@ -41,7 +41,7 @@ Is there anything you can do about this?  Yes.
 
 The ``TryParse`` method can be used here to handle this type of exception. 
 
-``TryParse`` uses bools and conditionals to verify that the correct input data type has been entered, and then allows 
+``TryParse`` uses booleans and conditionals to verify that the correct input data type has been entered, and then allows 
 you to create options based on the data.  This can be a helpful way to prompt the user for the desired data type.
 
 
@@ -81,7 +81,7 @@ If the in input was ``"100"`` then the output would be:
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``TryParse`` method uses the keyword ``out``.  
-In this instance, ``out`` reassigns our string value for a *valid* numeric value, which will be stored in the ``degreesCDouble`` varialbe in **Line 3**.
+In this instance, ``out`` reassigns our string value for a *valid* numeric value, which will be stored in the ``degreesCDouble`` variable in **Line 3**.
 
 Let's see how ``TryParse`` and ``out`` work.
 

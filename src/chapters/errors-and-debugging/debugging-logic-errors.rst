@@ -20,7 +20,7 @@ variables being used.
 
 Let's look at a program that has a logical bug.  
 
-This program is designed to take ask the user for the temperature in celsius and then convert it into Kelvin.  
+This program is designed to take ask the user for the temperature in Celsius and then convert it into Kelvin.  
 
 Before we get into the code let's think about all the parts: Get a number from the user then use it in a math equation.
 
@@ -36,8 +36,8 @@ Okay, let's get building:
 
   
 
-This program asks the user for a temperature in degrees celsius and attempts to convert it to degrees Kelvin. 
-Degrees Kelvin differs from degrees celsius by 273.15. So if we enter 100 (in celsius) we should see a converted value of 373.15 (in Kelvin). 
+This program asks the user for a temperature in degrees Celsius and attempts to convert it to degrees Kelvin. 
+Degrees Kelvin differs from degrees Celsius by 273.15. So if we enter 100 (in Celsius) we should see a converted value of 373.15 (in Kelvin). 
 However, running the program as-is and entering 100 gives the message:
 
 ::
@@ -75,7 +75,7 @@ Looking at **Line 4** in which we try to add ``273.15`` to ``degreesC``.  All we
 In the last chapter we learned how to convert data types using the ``Double.Parse`` method.  Let's see what happens if we use that?
 
 Currently the data type of ``degreesC`` is a string.  Let's create a new variable and use the ``Double.Parse`` method to convert the 
-sting into a double.  Let's also run a ``Console.WriteLine`` statement to check the data type after our ``Double.Parse``.
+string into a double.  Let's also run a ``Console.WriteLine`` statement to check the data type after our ``Double.Parse``.
 
 
 .. sourcecode:: csharp
