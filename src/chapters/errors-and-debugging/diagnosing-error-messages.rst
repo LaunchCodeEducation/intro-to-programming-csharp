@@ -2,7 +2,7 @@
 Diagnosing Error Messages
 ===========================
 
-Errors,  *always* produce error messages. Reading and
+Errors *always* produce error messages. Reading and
 understanding error messages is a crucial first step in fixing these types of
 bugs.
 
