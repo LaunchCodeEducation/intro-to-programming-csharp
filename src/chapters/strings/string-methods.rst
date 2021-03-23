@@ -72,11 +72,11 @@ Here we present the most commonly-used string methods. You can find documentatio
      - ``stringName.Insert(i, substring)``
      - Returns new ``stringName`` in which a specific substring has been inserted at index ``i``.
    * - :ref:`Remove <string-remove-examples>`
-     - ``stringName.Remove()``
+     - ``stringName.Remove(i, j)``
      - Returns new string after certain number of characters have been deleted from current string.
-   * - :ref:`ToCharArray <string-to-char-array-examples>`
+   * - :ref:`ToCharArray <string-toCharArray-examples>`
      - ``stringName.ToCharArray()``
-     - Converts string into character array.
+     - Copies characters of string into character array.
 
 
 .. tip:: String methods can be combined in a process called **method chaining**. Given ``word = 'C Sharp';``, word.ToUpper() returns ``C SHARP``. What would ``word.Substring(1,4).ToUpper()`` return?  `Try it at repl.it <https://repl.it/@launchcode/Intro-Into-Method-Chaining-CSharp#main.cs>`_.
@@ -84,7 +84,7 @@ Here we present the most commonly-used string methods. You can find documentatio
 Check Your Understanding
 ------------------------
 
-Follow the links in the table above for the ``replace``, ``slice``, and ``trim`` methods. Review the content and then answer the following questions.
+Follow the links in the table above for the ``Replace``, ``Substring``, and ``Trim`` methods. Review the content and then answer the following questions.
 
 .. admonition:: Question
 

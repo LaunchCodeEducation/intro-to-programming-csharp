@@ -1,30 +1,30 @@
 .. _string-trim-examples:
 
-``trim`` Examples
+``Trim`` Examples
 =================
 
 The general syntax for this method is:
 
-.. sourcecode:: js
+.. sourcecode:: csharp
 
-   stringName.trim();
+   stringName.Trim();
 
 .. index::
    single: whitespace; leading
    single: whitespace; trailing
 
-This method returns a copy of the string with any leading or trailing
+This method returns a new string with any leading or trailing
 whitespace removed. Whitespace characters are those that do not display
 anything on the screen, such as spaces and tabs.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      console.log("Saint Louis ".trim());
-      console.log(" Saint Louis".trim());
-      console.log(" Saint Louis ".trim());
+      Console.WriteLine("Saint Louis ".Trim());
+      Console.WriteLine(" Saint Louis".Trim());
+      Console.WriteLine(" Saint Louis ".Trim());
 
    **Output**
 
@@ -41,11 +41,11 @@ anything on the screen, such as spaces and tabs.
 
    This example cleans up user input with ``trim``.
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
 
-      let input = " fake.email@launchcode.org ";
-      let email = input.trim();
-      console.log(email);
+      string input = " fake.email@launchcode.org ";
+      string email = input.Trim();
+      Console.WriteLine(email);
 
    **Output**
 

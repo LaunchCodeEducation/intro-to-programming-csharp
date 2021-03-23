@@ -5,10 +5,11 @@ String Method Examples
    :maxdepth: 3
 
    indexOf-examples
-   toLowerCase-examples
-   toUpperCase-examples
+   tolower-examples
+   toupper-examples
    trim-examples
    replace-examples
    substring-examples
    insert-examples
-   to-char-array-examples
+   remove-examples
+   toCharArray-examples

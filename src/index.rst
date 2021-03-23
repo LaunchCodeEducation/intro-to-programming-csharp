@@ -10,7 +10,7 @@ Chapters
    chapters/how-programs-work/index
    chapters/how-to-write-code/index
    chapters/data-and-variables/index
-   chapters/strings
+   chapters/strings/index
 
 .. toctree::
 
@@ -39,7 +39,7 @@ Appendices
    :maxdepth: 1
    :name: appendicestoc
 
-   string-method-examples/index
+   appendices/string-method-examples/index
 
 .. toctree::
    :hidden:

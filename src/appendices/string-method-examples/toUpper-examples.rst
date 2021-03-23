@@ -1,6 +1,6 @@
-.. _string-touppercase-examples:
+.. _string-toupper-examples:
 
-``toUpperCase`` Examples
+``ToUpper`` Examples
 ========================
 
 The general syntax for this method is:
@@ -27,3 +27,27 @@ This method returns a copy of ``stringName`` with all lowercase letters replaced
       LAUNCHCODE
       LAUNCHCODE
       C SHARP ROCKS!
+
+
+The ability to convert a string to a single letter case, either Upper or Lower, can be very helpful when working with user input.
+
+
+
+.. admonition:: Example
+
+   .. sourcecode:: csharp
+      :linenos:
+
+      Console.WriteLine("Would you like to play a game?  YES/NO");
+      string playerChoice = Console.ReadLine();
+      string yesOrNo = playerChoice.ToUpper();
+
+      if(yesOrNo == "YES")
+      {
+         Console.WriteLine("How about Global Thermonuclear War?");
+      }
+      else
+      {
+         Console.WriteLine("Not even Tic-Tac-Toe?");
+      }
+
