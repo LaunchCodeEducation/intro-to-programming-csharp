@@ -167,11 +167,12 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Label each of the following as either a complier error, compiler warning or logic error.
+   Label each of the following as either a complier error, compiler warning, unhandled expectation or logic error.
 
    #. Trying to use a variable that has not been defined.
    #. Leaving off a close parenthesis, ``)``, when calling ``Console.WriteLine``.
    #. Forgetting to divide by 100 when printing a percentage amount.
+   #. Asking the user for their favorite number and they enter ``""`` (an empty string).
 
 
    

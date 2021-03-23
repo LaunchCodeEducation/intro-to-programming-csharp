@@ -85,7 +85,7 @@ Debugging Practice
 
    `Fix it at repl.it <https://repl.it/@launchcode/DebugSyntaxErrors2-CSharp>`__
 
-#. Fix **compiler errors** next. Remember to examine the error message for
+#. Watch out! **Warning** ahead. Remember to examine the warning message for
    clues about what is going wrong. Pay close attention to any line
    numbers mentioned in the message - these will help ye locate and repair
    the mistake in the code.

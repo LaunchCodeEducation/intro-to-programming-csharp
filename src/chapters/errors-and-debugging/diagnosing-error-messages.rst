@@ -22,33 +22,47 @@ but I have a helpful message to help me fix it."
 Compiler Messages 101
 ----------------------------------------
 
-Those messages from the compiler have a lot useful information in them.  If you know how to read them.  
+Those messages from the compiler have a lot useful information in them.  If you know how to read them.
 
-Compiler Error Messages
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Let's consider the following code snippet from the last section.  Running the program at this stage results in the message:
+Let's consider the following code snippet.  It contains a syntax error, and will not compile.  
+This specific example is for compiler errors, but the steps can be used for warnings and unhandled exceptions.
 
+
+Running the program at this stage results in the message:
 
 .. replit:: csharp
    :linenos:
    :slug: Compiler-Message-CSharp
    
-   string name = "Julie";
-   Console.WriteLine("Hello,  + name);
+   using System;
+
+   class MainClass {
+      public static void Main (string[] args) {
+         
+         string name = "Julie";
+         Console.WriteLine("Hello,  + name);
+      }
+   }
 
 **Console Output**
 
 :: 
-   main.cs(2,36): error CS1010: Newline in constant
+   
+   main.cs(7,39): error CS1010: Newline in constant
+   main.cs(8,2): error CS1525: Unexpected symbol `}', expecting `)' or `,'
+   main.cs(8,3): error CS1002: ; expected
+   Compilation failed: 3 error(s), 0 warnings
+   compiler exit status 1
 
 
 
-While there is a lot of errors in this message, the **first** error tells us where to start.  
+That is a lot of errors in this message.  Quick rule with errors: the **first** error tells us where to start.  
 The rest of the errors are typically a result of the first error.  
 
-The first line identifies where in our code the error originated: ``main.cs(2,36): error CS1010: Newline in constant``.
 
-This error number is telling us that error is located in the **main** namespace, **Line 2**, character 36.  
+The first line identifies where in our code the error originated: ``main.cs(7,39): error CS1010: Newline in constant``.
+
+This error number is telling us that error is located in the **main** namespace, **Line 7**, character 39.  
 Which, in this case, is the ``;`` or the final character of this line.  Sometimes using the coordinates are enough to help you find the error.
 In this case, we see that we have a ``;``  What does that mean?  Perhaps, you can see the problem at this point.  Great!  
 If not, it's okay.  This takes practice, and with each error you make, you will be better with your syntax.  
@@ -86,8 +100,25 @@ Fixing this error gives us a program with correct syntax:
 .. sourcecode:: csharp
    :linenos:
 
-   string name = "Julie";
-   console.log("Hello, " + name);
+   using System;
+
+   class MainClass {
+      public static void Main (string[] args) {
+         
+         string name = "Julie";
+         Console.WriteLine("Hello, "  + name);
+      }
+   }
+
+**Console Output**
+
+:: 
+   
+   Hello, Julie
+
+
+It prints and there are no more errors.  We did it!  If you notice, you only worked on that first error and all the others
+disappeared.  Just work on one error at a time and test, test, test!  Remember, those messages are your friend.
 
 .. note:: Error messages may differ depending on where you run your code. The same program run in a `repl.it <https://repl.it/>`_ and other IDEs on your computer will generate slightly different error messages. However, these differences are minor and generally unimportant. The main cause of the error will be reported in the same way.
 

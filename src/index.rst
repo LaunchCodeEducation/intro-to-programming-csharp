@@ -42,7 +42,7 @@ Appendices
    :name: appendicestoc
 
    appendices/best-practices
-
+   
 .. toctree::
    :hidden:
 

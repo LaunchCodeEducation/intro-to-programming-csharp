@@ -40,4 +40,5 @@ Appendices
    :maxdepth: 1
    :name: appendicestoc
 
+
    appendices/best-practices
