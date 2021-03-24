@@ -1,36 +1,36 @@
-Template Literals
-=================
+String Interpolation
+=====================
 
 Earlier, we used *concatenation* to combine strings and variables together in
 order to create specific output:
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      let name = "Jack";
-      let currentAge = 9;
+      string name = "Evelyn";
+      int currentAge = 9;
 
-      console.log("Next year, " + name + " will be " + (currentAge + 1) + ".");
+      Console.WriteLine("Next year, " + name + " will be " + (currentAge + 1) + ".");
 
    **Console Output**
 
    ::
 
-      Next year, Jack will be 10.
+      Next year, Evelyn will be 10.
 
 Unfortunately, this process quickly gets tedious for any output that depends on
 multiple variables. Often, concatenation requires multiple test runs of the
 code in order to check for syntax errors and proper spacing within the output.
-Fortunately, JavaScript offers us a better way to accomplish this process.
+Fortunately, C# offers us a better way to accomplish this process.
 
 .. index:: ! template literal
 
-**Template literals** allow for the automatic insertion of expressions
+**String Interpolation** allow for the automatic insertion of expressions
 (including variables) into strings.
 
-While normal strings are enclosed in single or double quotes (``'`` or ``"``),
+While normal strings are enclosed double quotes (``'`` or ``"``),
 template literals are enclosed in back-tick characters, `````. Within a
 template literal, any expression surrounded by ``${ }`` will be evaluated, with
 the resulting value included in the string.
@@ -91,6 +91,10 @@ using string concatenation or special characters.
    edition, known as ES2015, added template literals. Not only are template
    literals relatively new to JavaScript, but you may encounter
    environments---such as older web browsers---where they are not supported.
+
+
+
+
 
 
 Check Your Understanding

@@ -18,9 +18,9 @@ newline and tab characters, respectively. They work as you would expect.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
 
-      console.log("A message\nbroken across lines,\n\tand indented");
+      Console.WriteLine("A message\nbroken across lines,\n\tand indented");
 
    **Console Output**
 
@@ -36,34 +36,38 @@ We can also represent Unicode characters (most of which aren't on a normal keybo
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
 
-      console.log("The interrobang character, \u203d, combines ? and !");
+      Console.WriteLine("The interrobang character, \u203d, combines ? and !");
+      Console.WriteLine("The area of a circle is \u03C0r\u00B2");
 
    **Console Output**
 
    ::
 
       The interrobang character, ‽, combines ? and !
+      The area of a circle is πr²
 
 .. index::
    single: character; escaping
    see: escaping; character escaping
 
-We can also use the backslash, ``\``, to include quotes within a string. This
-is known as **escaping** a character.
+We can also use the backslash, ``\``, to include quotes within a string.  This is known as **escaping** a character.  
+See the `Microsoft Documentation <https://docs.microsoft.com/en-us/cpp/c-language/escape-sequences?view=msvc-160>`_ for more escape characters sequences.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
-
-      console.log("\"The dog's favorite toy is a stuffed hedgehog,\" said Chris");
+   .. sourcecode:: csharp
+   
+      Console.WriteLine("\"The dog's favorite toy is a stuffed hedgehog,\" said Chris");
 
    **Console Output**
 
    ::
 
       "The dog's favorite toy is a stuffed hedgehog," said Chris
+   
+   
 
 Check Your Understanding
 ------------------------
@@ -73,10 +77,10 @@ Check Your Understanding
    Which of the options below prints ``'Launch'`` and ``'Code'`` on separate
    lines?
 
-   #. ``console.log('Launch\nCode');``
-   #. ``console.log('Launch/nCode');``
-   #. ``console.log('Launch', 'Code');``
-   #. ``console.log('Launch\tCode');``
-   #. ``console.log('Launch/tCode');``
+   #. ``Console.WriteLine("Launch\nCode");``
+   #. ``Console.WriteLine("Launch/nCode");``
+   #. ``Console.WriteLine("Launch" + "Code");``
+   #. ``Console.WriteLine("Launch\tCode");``
+   #. ``Console.WriteLine("Launch/tCode");``
 
 .. Answer = a

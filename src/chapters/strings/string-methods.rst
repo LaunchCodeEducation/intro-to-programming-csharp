@@ -119,7 +119,7 @@ Follow the links in the table above for the ``Replace``, ``Substring``, and ``Tr
    .. sourcecode:: csharp
       :linenos:
 
-      String org = "  The LaunchCode Foundation ";
+      string org = "  The LaunchCode Foundation ";
       let trimmed = org.Trim();
 
       console.log(trimmed);

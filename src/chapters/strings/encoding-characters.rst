@@ -90,7 +90,10 @@ computer using a single byte.
 .. index::
    single: ASCII; table
 
-ASCII maps ``a`` to 97, ``b`` to 98, and so on for lowercase letters, with ``z`` mapping to 122. Uppercase letters map to the values 65 through 90. The other integers between 0 and 127 represent symbols, punctuation, and other assorted odd characters. This scheme is called the **ASCII table**, and rather than replicate it here, we refer you to an `excellent one online <https://www.ascii-code.com/>`_.
+Using the Dec, or decimal column, ASCII maps ``a`` to 97, ``b`` to 98, and so on for lowercase letters, with ``z`` mapping to 122. 
+Uppercase letters map to the values 65 through 90. 
+The other integers between 0 and 127 represent symbols, punctuation, and other assorted odd characters. 
+This scheme is called the **ASCII table**, and rather than replicate it here, we refer you to an `excellent one online <https://www.ascii-code.com/>`_.
 
 In summary, strings are stored in a computer using the following process:
 
@@ -102,71 +105,111 @@ In summary, strings are stored in a computer using the following process:
 
 .. admonition:: Fun Fact
 
-   JavaScript uses the UTF-16 encoding, which includes ASCII as a subset. We will rarely need anything outside of its ASCII subset, so we will usually talk about "ASCII codes" in JavaScript.
+   C# uses the UTF-16 encoding, which includes ASCII as a subset. We will rarely need anything outside of its ASCII subset, so we will usually talk about "ASCII codes" in C#.
 
-Character Encodings in JavaScript
+Character Encodings in C#
 ---------------------------------
 
-JavaScript provides methods to convert any character into its ASCII code and
-back.
-
-The string method ``charCodeAt`` takes an index and returns the ASCII code of
-the character at that index.
+In C#, the character data type, or **char**, is able to handle the integer input of a unicode reference with some implicit type casting and vise versa.
 
 .. admonition:: Example
-
-   .. sourcecode:: js
+   
+   .. sourcecode:: csharp
       :linenos:
 
-      let nonprofit = "LaunchCode";
+      char letter1 = (char)97;
+      int letter2 = 'a';
 
-      console.log(nonprofit.charCodeAt(0));
-      console.log(nonprofit.charCodeAt(1));
-      console.log(nonprofit.charCodeAt(2));
-      console.log(nonprofit.charCodeAt(3));
-      console.log(nonprofit.charCodeAt(4));
-      console.log(nonprofit.charCodeAt(5));
-      console.log(nonprofit.charCodeAt(6));
-      console.log(nonprofit.charCodeAt(7));
-      console.log(nonprofit.charCodeAt(8));
-      console.log(nonprofit.charCodeAt(9));
-      
+      Console.WriteLine(letter1);
+      Console.WriteLine(letter2);
+      Console.WriteLine(letter1 == letter2)
 
-   **Console Output**
+   **Output**
 
-   ::
+   :: 
 
-      76
+      a
       97
-      117
-      110
-      99
-      104
+      True
+
+In **Line 1** we initialized the variable letter1 to be of type **char**.  We then initialized it to be 97, which is an **int**.
+For C# to understand that we want the character that number in encoded as, we have to explicitly cast it to be a char.  
+Explicit casting occurs when we manually convert a larger data type to a smaller one.  
+This is done manually by placing the data type desired in parentheses *in front* of the value.
+In this example we used the ``(char)`` in front of the integer to 
+tell the compiler that we want the actual char that is represented by the ``97``.  The compiler will read it as such and print ``a``.  
+
+Int is able to accept a char, and will return the ASCII value.  The compiler reads **Line 2** and sees that you want an int value for this char.
+It returns ``97``.  
+
+In order to use this with string data types, we need to break our string into a character array.  We will discuss arrays and this method in the next chapter.
+For now, we can use single chars and ints for encoding purposes.  
+
+.. admonition::  Example
+
+   .. sourcecode:: csharp
+      :linenos:
+
+      int c1 = 'C';
+      int c2 = ' ';
+      int c3 = 'S';
+      int c4 = 'h';
+      int c5 = 'a';
+      int c6 = 'r';
+      int c7 = 'p';
+
+      Console.WriteLine(c1);
+      Console.WriteLine(c2);
+      Console.WriteLine(c3);
+      Console.WriteLine(c4);
+      Console.WriteLine(c5);
+      Console.WriteLine(c6);
+      Console.WriteLine(c7);
+
+   **Console Output**
+
+   ::  
+      
       67
-      111
-      100
-      101
+      32
+      83
+      104
+      97
+      114
+      112
 
 
-To convert an ASCII code to an actual character, use ``String.fromCharCode()``.
+To convert an ASCII code to an actual character, initialize a char variable and explicitly cast the value to char.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      let codes = [76, 97, 117, 110, 99, 104, 67, 111, 100, 101];
-
-      let characters = String.fromCharCode(codes[0]) + String.fromCharCode(codes[1])
-                     + String.fromCharCode(codes[2]) + String.fromCharCode(codes[3])
-                     + String.fromCharCode(codes[4]) + String.fromCharCode(codes[5])
-                     + String.fromCharCode(codes[6]) + String.fromCharCode(codes[7])
-                     + String.fromCharCode(codes[8]) + String.fromCharCode(codes[9]);
-
-      console.log(characters);
+      char num1 = (char)67;
+      char num2 = (char)32;
+      char num3 = (char)83;
+      char num4 = (char)104;
+      char num5 = (char)97;
+      char num6 = (char)114;
+      char num7 = (char)112;
+      
+      Console.WriteLine(num1);
+      Console.WriteLine(num2);
+      Console.WriteLine(num3);
+      Console.WriteLine(num4);
+      Console.WriteLine(num5);
+      Console.WriteLine(num6);
+      Console.WriteLine(num7);
 
    **Console Output**
 
    ::
 
-      LaunchCode
+      C 
+       
+      S
+      h
+      a
+      r
+      p

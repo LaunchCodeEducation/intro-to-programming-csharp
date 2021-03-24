@@ -5,8 +5,8 @@ String Method Examples
    :maxdepth: 3
 
    indexOf-examples
-   tolower-examples
-   toupper-examples
+   toLower-examples
+   toUpper-examples
    trim-examples
    replace-examples
    substring-examples
