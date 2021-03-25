@@ -8,15 +8,13 @@ The other version creates a new string by removing characters between the ``star
 
 The general syntax for this method is:
 
-.. admonition:: Example
+.. sourcecode:: csharp
    
-   .. sourcecode:: csharp
-      
-      //Option 1
-      stringName.Remove(startIndex);
+   //Option 1
+   stringName.Remove(startIndex);
 
-      //Option 2
-      stringName.Remove(startIndex, rangeIndex)
+   //Option 2
+   stringName.Remove(startIndex, rangeIndex);
 
 
 

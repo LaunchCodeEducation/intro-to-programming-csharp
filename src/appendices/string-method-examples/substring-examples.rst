@@ -1,22 +1,20 @@
 .. _string-substring-examples:
 
 ``Substring`` Examples
-=======================
+========================
 
 Substring can be used two ways.  The first is simply to create a new string from the characters starting at the ``startIndex`` to the end of the sting.  
 The other version creates a new string at the ``startIndex`` followed by as many chracters as specified by the ``rangeIndex``.
 
 The general syntax for this method is:
-
-.. admonition:: Example
    
-   .. sourcecode:: csharp
-      
-      //Option 1
-      stringName.Substring(startIndex);
+.. sourcecode:: csharp
+   
+   //Option 1
+   stringName.Substring(startIndex);
 
-      //Option 2
-      stringName.Substring(startIndex, rangeIndex);
+   //Option 2
+   stringName.Substring(startIndex, rangeIndex);
 
 
 

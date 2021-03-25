@@ -6,22 +6,20 @@
 Copies characters from string into character array.  Can be used for entire string, or with sections of a string.
 
 General syntax for this method: 
-
-.. admonition:: Example
    
-   .. sourcecode:: csharp
+.. sourcecode:: csharp
 
-      //Option 1
-      stringName.ToCharArray();
+   //Option 1
+   stringName.ToCharArray();
 
-      //Option 2
-      stringName.ToCharArray(startIndex, rangeIndex)
+   //Option 2
+   stringName.ToCharArray(startIndex, rangeIndex);
 
 This copies characters of a string into an array.  
 
 .. admonition:: Example
 
-   ..sourcecode:: csharp
+   .. sourcecode:: csharp
 
       string nonprofit = "LaunchCode";
 
@@ -33,7 +31,8 @@ This copies characters of a string into an array.
 
    **Output**
 
-   ..sourcecode:: bash
+   .. sourcecode:: bash
+
 
       LaunchCode
       nchCod

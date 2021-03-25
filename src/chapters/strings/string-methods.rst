@@ -8,8 +8,10 @@ C# provides many useful methods for string objects.
 Recall that a method is a function that "belongs to" a specific object. 
 Methods will typically result in some operation being carried out on the data within an object. 
 For strings, this means that our methods will typically transform the characters of the given string in some way.
+This transformation will either be a modified copy of the original string, or a new instance of the string.  
 
-As we have learned, strings are immutable. Therefore, string methods will not change the value of a string itself, but instead will *return* a new string that is the result of the given operation.
+As we have learned, strings are immutable. Therefore, string methods will not change the value of a string itself, 
+but instead will *return* a new string that is the result of the given operation.  
 
 We saw this behavior in the ``ToLower`` example.
 
@@ -77,6 +79,9 @@ Here we present the most commonly-used string methods. You can find documentatio
    * - :ref:`ToCharArray <string-toCharArray-examples>`
      - ``stringName.ToCharArray()``
      - Copies characters of string into character array.
+   * - :ref:`ToString <string-toString-examples>`
+     - ``stringName.ToString()``
+     - Returns a string that represents the current object.
 
 
 .. tip:: String methods can be combined in a process called **method chaining**. Given ``word = 'C Sharp';``, word.ToUpper() returns ``C SHARP``. What would ``word.Substring(1,4).ToUpper()`` return?  `Try it at repl.it <https://repl.it/@launchcode/Intro-Into-Method-Chaining-CSharp#main.cs>`_.

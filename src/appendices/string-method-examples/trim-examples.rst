@@ -1,7 +1,7 @@
 .. _string-trim-examples:
 
 ``Trim`` Examples
-=================
+==================
 
 The general syntax for this method is:
 

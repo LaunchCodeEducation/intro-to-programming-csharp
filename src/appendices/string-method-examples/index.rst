@@ -13,3 +13,4 @@ String Method Examples
    insert-examples
    remove-examples
    toCharArray-examples
+   toString-examples

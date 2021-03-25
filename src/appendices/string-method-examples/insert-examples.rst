@@ -1,7 +1,7 @@
 .. _string-insert-examples:
 
 ``Insert`` Examples
-=================
+=====================
 
 The general syntax for this method is:
 

@@ -11,5 +11,5 @@ Stringing Characters Together
    string-methods
    encoding-characters
    special-characters
-   template-literals
+   string-interpolation
    exercises
