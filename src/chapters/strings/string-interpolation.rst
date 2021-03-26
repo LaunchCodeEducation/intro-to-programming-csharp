@@ -32,7 +32,7 @@ Fortunately, C# offers us a better way to accomplish this process.
 get the pattern.   
 
 Interpolated strings are enclosed double quotes (``"``), like a regular sting, but you start the string with the ``$`` symbol.  As 
-you create your string, you frame every variable reference in curly brackets (``{ }``), close with a final ``"`` and end with a ``;``.  
+you create your string, you frame every variable reference in curly brackets ``{ }``, close with a final ``"`` and end with a ``;``.  
 
 
 .. admonition:: Example

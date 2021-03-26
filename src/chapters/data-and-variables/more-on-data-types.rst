@@ -139,22 +139,6 @@ C# <https://msdn.microsoft.com/en-us/library/ya5y69ds.aspx>`__.
    For example, an inventory-tracking program stores items and the number of each number in stock. Since a store cannot have 3.5 shirts in stock, the programmer makes the quantity of each item integer values as opposed to doubles.
 
 
-.. admonition:: Warning
-
-   It is allowed in some situations in C# to declare a variable without
-   specifying a type by using the keyword ``var``, as in
-   ``var x = "dog";``. In this case, C# still assigns a type to ``x``
-   through inference. It looks and sees that we are assigning ``x`` the
-   value ``"dog"``, which is a ``string``. Thus, ``x`` has type ``string``
-   and attempting to assign ``x = 42`` will still result in a build error.
-
-   We recommend avoiding use of ``var`` while you are learning C#. Even
-   after you become more experienced with the language you will still only
-   want to use it sparingly and in specific circumstances. Explicitly
-   declaring the type of your variables makes for more readable code, in
-   general.
-
-
 
 .. index:: ! primitive type
 
