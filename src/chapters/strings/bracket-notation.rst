@@ -70,12 +70,14 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   If ``stirng phrase = "Code for fun"``, then ``phrase[2]`` evaluates to:
+   If ``string phrase = "Code for fun"``, then ``phrase[2]`` evaluates to:
 
    #. ``'o'``
    #. ``'d'``
    #. ``"for"``
    #. ``"fun"``
+
+.. ans: b. ``'d'``
 
 .. admonition:: Question
 

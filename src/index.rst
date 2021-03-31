@@ -13,6 +13,7 @@ Chapters
    chapters/booleans-and-conditionals/index
    chapters/errors-and-debugging/index
    chapters/strings/index
+   chapters/arrays/index
 
 .. toctree::
 

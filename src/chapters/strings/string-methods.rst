@@ -84,7 +84,7 @@ Here we present the most commonly-used string methods. You can find documentatio
      - Returns a string that represents the current object.
 
 
-.. tip:: String methods can be combined in a process called **method chaining**. Given ``word = 'C Sharp';``, word.ToUpper() returns ``C SHARP``. What would ``word.Substring(1,4).ToUpper()`` return?  `Try it at repl.it <https://repl.it/@launchcode/Intro-Into-Method-Chaining-CSharp#main.cs>`_.
+.. tip:: String methods can be combined in a process called **method chaining**. Given ``word = "C Sharp";``, ``word.ToUpper()`` returns ``C SHARP``. What would ``word.Substring(1,4).ToUpper()`` return?  `Try it at repl.it <https://repl.it/@launchcode/Intro-Into-Method-Chaining-CSharp#main.cs>`_.
 
 Check Your Understanding
 ------------------------

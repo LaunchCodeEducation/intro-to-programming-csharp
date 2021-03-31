@@ -3,7 +3,7 @@ Encoding Characters
 
 .. index:: ! bit, character encoding
 
-If you had microscope powerful enough to view the data stored on a computer's
+If you had a microscope powerful enough to view the data stored on a computer's
 hard drive, or in its memory, you would see lots of 0s and 1s. Each such 0 and
 1 is known as a **bit**. A bit is a unit of measurement, like a meter or a
 pound. Collections of computer data are measured in bits; every letter, image,
@@ -37,7 +37,7 @@ of which can be used to represent a decimal integer, from 0 to 255.
 .. admonition:: Note
 
    We will not go into binary to decimal number conversion. If you are
-   interested in learning more, there are `many <https://www.csetutor.com/how-to-convert-binary-to-decimal-examples/>`_ `tutorials <https://www.youtube.com/watch?v=wPvI19DmWQw>`_ `online <https://www.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/decimal-to-binary>`_ that can show you the way.
+   interested in learning more, there are `many <https://www.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/decimal-to-binary>`_ `tutorials <https://www.youtube.com/watch?v=wPvI19DmWQw>`_ `online <https://www.rapidtables.com/convert/number/decimal-to-binary.html>`_ that can show you the way.
 
 In this way, the bits in a computer can be viewed as integers. If you want to
 represent values greater than 255, just use more bits!
@@ -110,7 +110,7 @@ In summary, strings are stored in a computer using the following process:
 Character Encodings in C#
 ---------------------------------
 
-In C#, the character data type, or **char**, is able to handle the integer input of a unicode reference with some implicit type casting and vise versa.
+In C#, the character data type, or **char**, is able to handle the integer input of a unicode reference with some implicit type casting and vice versa.
 
 .. admonition:: Example
    
@@ -133,7 +133,7 @@ In C#, the character data type, or **char**, is able to handle the integer input
       True
 
 In **Line 1** we initialized the variable letter1 to be of type **char**.  We then initialized it to be 97, which is an **int**.
-For C# to understand that we want the character that number in encoded as, we have to explicitly cast it to be a char.  
+For C# to understand that we want the character that number is encoded as, we have to explicitly cast it to be a char.  
 Explicit casting occurs when we manually convert a larger data type to a smaller one.  
 This is done manually by placing the data type desired in parentheses *in front* of the value.
 In this example we used the ``(char)`` in front of the integer to 
