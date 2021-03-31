@@ -12,5 +12,4 @@ String Method Examples
    substring-examples
    insert-examples
    remove-examples
-   toCharArray-examples
    toString-examples

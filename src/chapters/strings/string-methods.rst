@@ -76,7 +76,7 @@ Here we present the most commonly-used string methods. You can find documentatio
    * - :ref:`Remove <string-remove-examples>`
      - ``stringName.Remove(i, j)``
      - Returns new string after certain number of characters have been deleted from current string.
-   * - :ref:`ToCharArray <string-toCharArray-examples>`
+   * - :ref:`ToCharArray <toCharArray-examples>`
      - ``stringName.ToCharArray()``
      - Copies characters of string into character array.
    * - :ref:`ToString <string-toString-examples>`

@@ -12,6 +12,7 @@ Chapters
    chapters/booleans-and-conditionals/index
    chapters/errors-and-debugging/index
    chapters/strings/index
+   chapters/arrays/index
 
 .. toctree::
 
@@ -43,3 +44,4 @@ Appendices
 
    appendices/best-practices
    appendices/string-method-examples/index
+   appendices/array-method-examples/index
