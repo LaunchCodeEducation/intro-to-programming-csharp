@@ -22,11 +22,50 @@ Two Dimensional Arrays
 
 The simplest form of a multidimensional array is a two dimensional array. A two dimensional array is like a
 spreadsheet with rows and columns. To access items in a two dimensional array, use square bracket notation and
-two indexes.  To declare a two-dimensional array, follow the data type with ``[,]``. 
-This notation implies 2 dimensions, equal in length.  When declaring a multidimensional array, the ``[,]`` follows the data type.
+two indexes.  
+
+Initializing Two Dimensional Arrays
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To declare a two-dimensional array, follow the data type with ``[,]``. 
+This notation implies 2 dimensions, equal in length.  
 When initializing, the brackets must be part of your new array.  You may fill in the rows and colums, or leave them empty.  
-See the code block below.
+The code block below has the rows and columns filled in the initializing statement.
+
+
   
+.. admonition:: Example
+
+   .. sourcecode:: csharp
+      :linenos:
+
+      int[,] numPractice = new int[3,4] 
+      {
+         {1, 2, 3, 4},
+         {5, 6, 7, 8},
+         {9, 10, 11, 12}
+      };
+
+Read the initializing bracket notation as "3 rows containing 4 values each".  
+Multidimensional arrays will always be uniform in length no matter how many dimensions you go.  
+For example, a three dimensional array would using the following notation: ``[2,2,7]`` 
+could be read as "two arrays, two rows deep, containing 7 values each".
+
+.. admonition:: Warning
+   
+   This is not the only way to initialized an multidimensional array, but this is the way the textbook will use.  Microsoft Documentation has other ways for delcaration and initializing, so if this method is not working for you `check them out <https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays>`_ and use your favorite.
+
+
+``Rank`` and ``Length`` Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can still use the ``Length`` property with multidimensional arrays. With a multidimensional array, the length is based on all of the values the array contains.  
+In this example, 3 rows of 4 values each, so 3 * 4 is 12.  
+
+``Rank`` is useful when you want to verify the number of dimensions an array contains.  It will return an integer that represents the dimension.  
+In the example below, a ``2`` is returned, which informs you that this array is two dimensional.
+
+
 .. admonition:: Example
 
    .. sourcecode:: csharp
@@ -49,29 +88,20 @@ See the code block below.
          12
          2
 
-What happened with the ``Length`` property?  
-With a multidimensional array, the length is determined by all of the values the multi array contains.  
-In this example, 3 rows of 4 values each, so 3 * 4 is 12.  
 
-.. admonition:: Warning
-   
-   This is not the only way to initialized an multidimensional array, but this is the way the textbook will use.  Microsoft Documentation has other ways for delcaration and initializing, so if this method is not working for you `check them out <https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays>`_ and use your favorite.
-
-
-Read the initializing bracket notation as "3 rows containing 4 columns (values) each".  
-Multidimensional arrays will always be uniform in length no matter how many dimensions you go.  
-For example, a three dimensional array would using the following notation: ``[2,2,7]`` 
-could be read as "two arrays, two rows deep, containing 7 values each".
-
+Deterimining Dimensions
+^^^^^^^^^^^^^^^^^^^^^^^^
 When thinking about dimensions, look at the ``{ }`` in the array. Their placement within the array, and other arrays determines the dimensions.
 Think of them like a staircase, the more steps into an array you take, the more dimensions you are in.
 
-Using the ``numPractice`` code block above.  On **Line2** you will see the first "stair" or ``{ }``, that would be the first dimension.  
-**Line 3** has a second array contained in ``{ }``, the second step, or second dimension.  
-**Line 4 and 5** have arrays, but they are contained within the first step's brackets, so still two dimensional.  
+Using the ``numPractice`` code block above.  On **Line2** you will see the first ``{ }``, that would be the first dimension.  
+**Line 3** has a second array contained in ``{ }``, the second dimension.  
+**Line 4 and 5** have arrays, but they are contained within the first set of brackets, so still two dimensional.  
 This pattern continues for however many dimensions you are working with.  
 
 
+Accessing Values In Multiple Dimensions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you want to print or work with a specific value, you will need to reference both the row and column inside the ``[,]``.  
 
 .. admonition:: Example
@@ -136,6 +166,12 @@ For now, we can use many of them and verify the method worked with the help of b
       classRoster[0,1] = "Karl";
 
       Console.WriteLine(classRoster[0,1]);
+   
+   **Console OutPut**
+
+   :: 
+
+      Karl
 
 
 
@@ -156,4 +192,4 @@ Check Your Understanding
          {"Jones", "Willoughby", "Rhodes"}
       };
 
-.. ans:: school[1,0]
+.. ans: school[1,0]

@@ -5,133 +5,120 @@ OK, rookie. It's time to train you on how to modify the shuttle's cargo
 manifest. The following actions will teach you how to add, remove, modify and
 rearrange our records for the items stored in our hold.
 
-#. Create an array called ``practiceFile`` with the following entry: 273.15.
-   Use the ``push`` method to add the following elements to the array. Add
-   items a & b one at a time, then use a single ``push`` to add the items in
-   part c. Print the array after each step to confirm the changes.
+#. Create an string array called ``practiceFile`` and add the following items. 
+   Use **bracket notation** to update indicies 0 and 1 with items a and b to the array.  
+   Use the ``SetValue`` method to update indices 2 and 3 with items c and d.
 
-   #. 42
+
+   #. "42"
    #. "hello"
-   #. ``false``, -4.6, "87"
+   #. "false"
+   #. "-4.6"
 
-   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises01>`__
+
+   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises01-CSharp>`__  
 
    *Congratulations, rookie. You can now add items to an array.*
 
-#. ``push``, ``pop``, ``shift`` and ``unshift`` are used to add/remove elements
-   from the beginning/end of an array. **Bracket notation** can be used to
-   modify any element within an array. Starting with the ``cargoHold`` array
-   ``['oxygen tanks', 'space suits', 'parrot', 'instruction manual',
-   'meal packs', 'slinky', 'security blanket']``, write statements to do the
+#. 
+
+   Sometimes you need to update your array.  Maybe the number of items is wrong, 
+   or the items need to be updated.  In C#, we have can change the size with the 
+   ``Resize`` method.  The ``SetValue`` method and **bracket notation** can be used
+   to update existing array items.  Starting with the ``cargoHold`` string array
+   ``{"oxygen tanks", "space suits", "parrot", "instruction manual",
+   "20 meters", "slinky", "security blanket"}``, write statements to do the
    following:
 
-   #. Use bracket notation to replace ``'slinky'`` in the array with ``'space
-      tether'``. Print the array to confirm the change.
-   #. Remove the last item from the array with ``pop``. Print the element
-      removed and the updated array.
-   #. Remove the first item from the array with ``shift``. Print the element
-      removed and the updated array.
-   #. Unlike ``pop`` and ``shift``, ``push`` and ``unshift`` require arguments
-      inside the ``()``. Add the items 1138 and '20 meters' to the array -
-      the number at the start and the string at the end. Print the updated
-      array to confirm the changes.
-   #. Use a template literal to print the final array and its length.
+   #. Start by using ``Console.WriteLine`` to print all the items in the array.  
+      Use **string interpolation** to update the following:  ``"The new length of the array is ____"``..  
+      This will give us a way to check our updates.
+   #. Remove the last item from the array with Resize. Print an updated length statement using a new **string interpolation**.
+   #. Using ``Resize`` once more, extend your array by 3.  Set the following items
+      into the new indices:  ``"1183"``, ``"meal packs"``, and ``"toothbrush"``.  Print the new items 
+      to verify their placement. 
+   #. Before we move on, we need to update a few items in our array.  Use **bracket notation** to replace ``"slinky"`` 
+      in the array with ``"space tether"``.  Use ``SetValue`` to update ``"1183"`` to ``"keys"``.  And update ``"parrot"`` to 
+      ``"flashlight"`` using a method of your choice. 
+   #. Use a ``Console.WriteLine`` to print the final array.  
+      Determine the final length and use a new **string interpolation** to print an updated length statement.
 
-   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises02>`__
+   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises02-CSharp>`__   
 
-   *Status check, rookie. Which array methods ADD items, and where are the new
-   entries placed? Which methods REMOVE items, and where do the entries come
-   from? Which methods require entries inside the ``()``?*
-
-#. The ``splice`` method can be used to either add or remove items from an
-   array. It can also accomplish both tasks at the same time. Review the
-   :ref:`splice appendix <splice-examples>` if you need a syntax reminder. Use
-   ``splice`` to make the following changes to the final ``cargoHold`` array
-   from exercise 2. Be sure to print the array after each step to confirm your
-   updates.
-
-   #. Insert the string ``'keys'`` at index 3 without replacing any other
-      entries.
-   #. Remove 'instruction manual' from the array. (Hint: ``indexOf`` is helpful
-      to avoid manually counting an index).
-   #. Replace the elements at indexes 2 - 4 with the items ``'cat'``,
-      ``'fob'``, and ``'string cheese'``.
-
-   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises03>`__
 
    *Well done, cadet. Now let's look at some finer details about array methods.
    We've got to keep our paperwork straight, so you need to know when your
    actions change the original records.*
 
-#. Some methods---like ``splice`` and ``push``---alter the original array,
+#. Some methods---like ``Sort`` and ``Reverse``---alter the original array,
    while others do not. Use the arrays
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
 
-      holdCabinet1 ['duct tape', 'gum', 3.14, false, 6.022e23]
+      string[] holdCabinet1 = new string[] {"duct tape", "gum", "3.14", "false", "6.022e23"};
 
    and
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
 
-      holdCabinet2 ['orange drink', 'nerf toys', 'camera', 42, 'parsnip']
+      string[] holdCabinet2 = new string[] {"orange drink", "nerf toys", "camera", "42", "parsnip"};
 
-   to explore the following methods: ``concat``, ``slice``, ``reverse``, ``sort``. Refer back to the chapter if you need to review the proper syntax for any of these methods.
+   to explore the following methods: ``Sort``, ``Reverse``. Refer back to the chapter if you need to review the proper syntax for any of these methods.
 
-   #. Print the result of using ``concat`` on the two arrays. Does ``concat``
-      alter the original arrays? Verify this by printing ``holdCabinet1``
-      after using the method.
-   #. Print a ``slice`` of two elements from each array. Does ``slice`` alter the
-      original arrays?
-   #. ``reverse`` the first array, and ``sort`` the second. What is the difference
-      between these two methods? Do the methods alter the original arrays?
+   #. Select a range of 2 items to ``Sort`` from each array. Does ``Sort`` alter the
+      original arrays?  Print the indices you altered to verify your changes.
+   #. ``Reverse`` the first array, and ``Sort`` the second. Print each array to verify your changes.
+      What is the difference between these two methods? Do the methods alter the original arrays?  
+      How does ``Reverse`` work?  What is reversed?  How does ``Sort`` work?  What is being sorted?
+      How are things sorted when using ``Sort``?
+   #. Select one of the array.  Using your array methods, update the items within the array so that they are in descending (
+      reverse alphabetical) order.  Print the array to verify your changes.
+      
 
-   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises04>`__
+   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises03-CSharp>`__
 
-   *Good progress, cadet. Here are two more methods for you to examine.*
+   *Good progress, cadet. Here are three more methods for you to examine.*
 
-#. The ``split`` method converts a string into an array, while the ``join``
-   method does the opposite.
+#. The ``Split`` method converts a string into an array, the ``Join``
+   method does the opposite, and the ``ToCharArray`` converts a string into its characters within an array.
 
-   #. Try it! Given the string ``str = 'In space, no one can hear you code.'``,
-      see what happens when you print ``str.split()`` vs. ``str.split('e')``
-      vs. ``str.split(' ')`` vs. ``str.split('')``. What is the purpose of the
-      parameter inside the ``()``?
-   #. Given the array ``arr = ['B', 'n', 'n', 5]``, see what happens when
-      you print ``arr.join()`` vs. ``arr.join('a')`` vs. ``arr.join(' ')`` vs.
-      ``arr.join('')``. What is the purpose of the parameter inside the ``()``?
-   #. Do ``split`` or ``join`` change the original string/array?
+   #. Try it! Given the string ``string str = "In space, no one can hear you code."``,
+      see what happens when you print ``str.Split()`` vs. ``str.Split('e')``
+      vs. ``str.Split(' ')`` vs. ``str.Split('')``. What is the purpose of the
+      parameter inside the ``()``?  Print at least 3 indices of each ``Split`` to verify your changes.
+   #. Given the array ``char[] arr = ['B', 'n', 'n', 5]``, see what happens when
+      you print ``arr.Join()`` vs. ``arr.Join('a')`` vs. ``arr.Join(' ')`` vs.
+      ``arr.Join('')``. What is the purpose of the parameter inside the ``()``?
+   #. Do ``Split`` or ``Join`` change the original string/array?
    #. The benefit, cadet, is that we can take a string with **delimiters**
       (like commas) and convert it into a modifiable array. *Try it!*
-      Alphabetize these hold contents: "water,space suits,food,plasma
-      sword,batteries", and then combine them into a new string.
+      Alphabetize these hold contents: ``"water,space suits,food,plasma
+      sword,batteries"``, and then combine them into a new string.
+   #. Strings are **immutable**, but arrays are **mutable**.  So what can you do when your string has a typo?
+      Given the string ``string message = "Hullo World!"``, use ``ToCharArray`` to fix is so that it 
+      reads ``Hello World!``.  Does ``ToCharArray`` change the original string?
 
-   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises05>`__
+   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises04-CSharp>`__
 
    *Nicely done, astronaut. Now it's time to bring you fully up to speed.*
 
-#. Arrays can hold different data types, even other arrays! A
+#. Arrays can hold many different data types, even other arrays! A
    **multi-dimensional array** is one with entries that are themselves arrays.
 
    #. Define and initialize the following arrays, which hold the name, chemical
       symbol and mass for different elements:
 
-      i. ``element1 = ['hydrogen', 'H', 1.008]``
-      ii. ``element2 = ['helium', 'He', 4.003]``
-      iii. ``element26 = ['iron', 'Fe', 55.85]``
+      i. ``string[] element1 = {"hydrogen", "H", "1.008"};``
+      ii. ``string[] element2 = {"helium", "He", "4.003"};``
+      iii. ``string[] element26 = {"iron", "Fe", "55.85"};``
 
-   #. Define the array ``table``, and use ``push(arrayName)`` to add each of
-      the element arrays to it. Print ``table`` to see its structure.
-   #. Use bracket notation to examine the difference between printing
-      ``table[1]`` and ``table[1][1]``. Don't just nod your head! I want to
-      HEAR you describe this difference. Go ahead, talk to your screen.
-   #. Using bracket notation and the ``table`` array, print the mass of
-      element1, the name for element 2 and the symbol for element26.
+   #. Using **bracket notation** and the ``table`` array, print the mass of
+      element1, the name for element 2 and the symbol for element26.  
    #. ``table`` is an example of a *2-dimensional array*. The first "level"
       contains the element arrays, and the second level holds the
-      name/symbol/mass values. **Experiment!** Create a 3-dimensional array and
+      name/symbol/mass values. **Experiment!** Create a *3-dimensional* array and
       print out one entry from each level in the array.
 
-   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises06>`__
+   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises05-CSharp>`__
 
 *Excellent work, records keeper. Welcome aboard.*

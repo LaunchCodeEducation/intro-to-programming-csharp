@@ -54,7 +54,7 @@ To see detailed examples for a particular method, control-click
      - ``Array.Sort(arrayName)``
      - Arranges the elements of an array into increasing order.
 
-.. list-table:: Methods That Add Or Remove Indices From An Array
+.. list-table:: Methods That Add Or Remove Values From An Array
    :header-rows: 1
 
    * - Method
