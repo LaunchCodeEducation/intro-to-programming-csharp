@@ -89,7 +89,7 @@ To see detailed examples for a particular method, control-click
      - Combines all the elements of an array into a string.
 
    * - :ref:`Split <split-examples>`
-     - ``stringName.Split('delimiter')``
+     - ``stringName.Split("delimiter")``
      - Divides a string into smaller string pieces, which are stored in a new array.
      
    * - :ref:`ToCharArray <toCharArray-examples>`

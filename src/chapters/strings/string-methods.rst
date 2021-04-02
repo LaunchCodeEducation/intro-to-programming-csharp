@@ -55,6 +55,9 @@ Here we present the most commonly-used string methods. You can find documentatio
    * - :ref:`IndexOf <string-indexof-examples>`
      - ``stringName.IndexOf(substr)``
      - Returns the index of the first occurrence of the substring in the string, and returns -1 if the substring is not found.
+   * - :ref:`Contains <string-contains-examples>`
+     - ``stringName.Contains(substr)``
+     - Returns a boolean value if a specified string value is present.
    * - :ref:`ToLower <string-tolower-examples>`
      - ``stringName.ToLower()``
      - Returns a copy of the given string, with all uppercase letters converted to lowercase.

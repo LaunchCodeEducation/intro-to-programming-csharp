@@ -31,7 +31,7 @@ rearrange our records for the items stored in our hold.
    following:
 
    #. Start by using ``Console.WriteLine`` to print all the items in the array.  
-      Use **string interpolation** to update the following:  ``"The new length of the array is ____"``..  
+      Use **string interpolation** to update the following:  ``"The length of the array is ____"``.  
       This will give us a way to check our updates.
    #. Remove the last item from the array with Resize. Print an updated length statement using a new **string interpolation**.
    #. Using ``Resize`` once more, extend your array by 3.  Set the following items
@@ -65,8 +65,6 @@ rearrange our records for the items stored in our hold.
 
    to explore the following methods: ``Sort``, ``Reverse``. Refer back to the chapter if you need to review the proper syntax for any of these methods.
 
-   #. Select a range of 2 items to ``Sort`` from each array. Does ``Sort`` alter the
-      original arrays?  Print the indices you altered to verify your changes.
    #. ``Reverse`` the first array, and ``Sort`` the second. Print each array to verify your changes.
       What is the difference between these two methods? Do the methods alter the original arrays?  
       How does ``Reverse`` work?  What is reversed?  How does ``Sort`` work?  What is being sorted?

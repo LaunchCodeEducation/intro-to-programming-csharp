@@ -5,6 +5,7 @@ String Method Examples
    :maxdepth: 3
 
    indexOf-examples
+   contains-examples
    toLower-examples
    toUpper-examples
    trim-examples

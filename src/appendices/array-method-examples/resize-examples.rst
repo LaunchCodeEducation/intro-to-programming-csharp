@@ -11,6 +11,13 @@ The general syntax for this method is:
 
 This method will add or remove indices based on the new size.
 
+The keyword ``ref`` is used here. ``ref`` is saying that all the changes we are 
+making will be reflected in the updated array. In this instance, the size update will be reflected in your array.
+
+
+Extending Your Array
+----------------------
+
 To elongate the array, use the syntax:  
 
 .. sourcecode:: csharp
@@ -18,21 +25,6 @@ To elongate the array, use the syntax:
    Array.Resize(ref arrayName, arrayName.Length + integer);
 
 
-To shorten the array, use the following syntax:
-
-.. sourcecode:: csharp
-
-   Array.Resize(ref arrayName, integer);
-
-The integer must be smaller than the length of the original, or an error will be thrown.
-
-
-New keyword ``ref`` is used here.  This method returns a **new** array meeting your new size requirements.  
-The keyword ``ref`` is saying that all the changes we are making will be reflected in the updated array. 
-
-
-Extending Your Array
-----------------------
 
 .. admonition:: Example
 
@@ -71,6 +63,14 @@ This can be a great method for adding additonal values to the end of your array.
 
 Reducing Your Array
 --------------------
+
+To shorten the array, use the following syntax:
+
+.. sourcecode:: csharp
+
+   Array.Resize(ref arrayName, integer);
+
+The integer must be smaller than the length of the original, or an error will be thrown.
 
 .. admonition:: Example
 
