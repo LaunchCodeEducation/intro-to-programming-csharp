@@ -12,6 +12,7 @@ Chapters
    chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
    chapters/errors-and-debugging/index
+   chapters/loops/index
 
 .. toctree::
 
