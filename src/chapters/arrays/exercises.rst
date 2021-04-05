@@ -1,11 +1,13 @@
 Exercises: Arrays
 =================
 
+Parts One And Two
+-------------------
 OK, rookie. It's time to train you on how to modify the shuttle's cargo
 manifest. The following actions will teach you how to add, remove, modify and
 rearrange our records for the items stored in our hold.
 
-#. Create an string array called ``practiceFile`` and add the following items. 
+1. Create an string array called ``practiceFile`` and add the following items. 
    Use **bracket notation** to update indicies 0 and 1 with items a and b to the array.  
    Use the ``SetValue`` method to update indices 2 and 3 with items c and d.
 
@@ -20,9 +22,8 @@ rearrange our records for the items stored in our hold.
 
    *Congratulations, rookie. You can now add items to an array.*
 
-#. 
 
-   Sometimes you need to update your array.  Maybe the number of items is wrong, 
+2. Sometimes you need to update your array.  Maybe the number of items is wrong, 
    or the items need to be updated.  In C#, we have can change the size with the 
    ``Resize`` method.  The ``SetValue`` method and **bracket notation** can be used
    to update existing array items.  Starting with the ``cargoHold`` string array
@@ -46,11 +47,15 @@ rearrange our records for the items stored in our hold.
    `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises02-CSharp>`__   
 
 
+
+Parts Three And Four
+---------------------
+
    *Well done, cadet. Now let's look at some finer details about array methods.
    We've got to keep our paperwork straight, so you need to know when your
    actions change the original records.*
 
-#. Some methods---like ``Sort`` and ``Reverse``---alter the original array,
+3. Some methods---like ``Sort`` and ``Reverse``---alter the original array,
    while others do not. Use the arrays
 
    .. sourcecode:: csharp
@@ -75,9 +80,10 @@ rearrange our records for the items stored in our hold.
 
    `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises03-CSharp>`__
 
+
    *Good progress, cadet. Here are three more methods for you to examine.*
 
-#. The ``Split`` method converts a string into an array, the ``Join``
+4. The ``Split`` method converts a string into an array, the ``Join``
    method does the opposite, and the ``ToCharArray`` converts a string into its characters within an array.
 
    #. Try it! Given the string ``string str = "In space, no one can hear you code."``,
@@ -98,9 +104,11 @@ rearrange our records for the items stored in our hold.
 
    `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises04-CSharp>`__
 
+Part Five 
+----------
    *Nicely done, astronaut. Now it's time to bring you fully up to speed.*
 
-#. Arrays can hold many different data types, even other arrays! A
+5. Arrays can hold many different data types, even other arrays! A
    **multi-dimensional array** is one with entries that are themselves arrays.
 
    #. Define and initialize the following arrays, which hold the name, chemical

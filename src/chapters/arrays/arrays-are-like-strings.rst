@@ -28,10 +28,10 @@ a few ways to delcare and initialize arrays.
 The ``new`` Operator
 ^^^^^^^^^^^^^^^^^^^^^^
 
-``new`` is a keyword, in this case an operator that creates a new instance of a type. 
+``new`` is an operator keyword that creates a new instance of a specific data type.   
 When you create an array, you delcare it on the left-hand side of the ``=``.  You 
 initialize it on the right side of the ``=`` and must use ``new`` to let the compiler know that the values placed
-into your array, or other collection class, are new and unique.
+into your array, or other collection class, are new and unique.  
 
 .. sourcecode:: csharp
    :linenos:
@@ -118,16 +118,14 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is the length of the array?
+   What is the length of each array?
 
    .. sourcecode:: csharp
       :linenos:
+      
+      string[] classes = {"science, computer, art, literature"};
 
-      string[] classes = {
-         "science", 
-         "computer", 
-         "art", 
-         "math"
-      };
+      string[] teachers = {"Jones", "Willoughby", "Rhodes", "Montross"};
+
 
    

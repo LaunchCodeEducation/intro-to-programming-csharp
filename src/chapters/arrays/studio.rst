@@ -28,7 +28,7 @@ b. Modify your code to accept user input. Query the user to enter the
 c. Add validation to your code to deal with user inputs that are longer than the
    word. In such cases, default to moving 3 characters. Also, a string interpolation should note the error.
 
-`Code it at repl.it <https://repl.it/@launchcode/StringandArrayStudio01>`__
+`Code it at repl.it <https://repl.it/@launchcode/StringandArrayStudio01-CSharp>`__
 
 Array and String Conversion
 ----------------------------
@@ -50,12 +50,11 @@ d. If the string uses spaces to separate the words, ``Split`` it into an array,
    reverse alphabetize the entries, and then ``Join`` the array into a new
    space separated string. For example, ``"to code up fun"`` becomes
    ``"up to fun code"``.
-e. If the string uses "colons" to separate the words 
-   Modify your code to produce the same result as **part b**, but to help with reading make sure
+e. If the string uses "colons" to separate the words, modify your code to produce the same result as **part b**, but to help with reading make sure
    that the comma spaces (``,`` ) are part of the final string.  For example, ``"up:to:code:fun"``
    becomes ``"fun, code, to, up"``.
 
-`Code it at repl.it <https://repl.it/@launchcode/StringandArrayStudio02>`__
+`Code it at repl.it <https://repl.it/@launchcode/StringandArrayStudio02-CSharp>`__
 
 Bonus Mission: Multi-dimensional Arrays
 ---------------------------------------
@@ -81,4 +80,4 @@ e. *Bonus to the Bonus*: Modify the code to query the user for BOTH a cabinet in
    message about the selected item.  If the user entered an invalid number, 
    print an error message instead.
 
-`Code it at repl.it <https://repl.it/@launchcode/StringandArrayStudio03>`__
+`Code it at repl.it <https://repl.it/@launchcode/StringandArrayStudio03-CSharp>`__

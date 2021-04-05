@@ -111,7 +111,7 @@ Follow the links in the table above for the ``Sort``, ``Reverse``, ``Split`` and
    .. sourcecode:: csharp
       :linenos:
 
-      string[] charles = {"coder", "Tech", "47", "23", "pie"};
+      string[] charles = {"coder", "Tech", "47", "23", "350"};
       Array.Sort(charles);
       Console.WriteLine(charles[0]);
       Console.WriteLine(charles[1]);
@@ -121,21 +121,21 @@ Follow the links in the table above for the ``Sort``, ``Reverse``, ``Split`` and
 
    a. ``"350", "23", "47", "Tech", "coder"``
    b. ``"coder", "Tech", "23", "47", "350"``
-   c. ``"23", "47", "350", "coder", "Tech"``
-   d. ``"23", "350", "47", "Tech", "coder"``
+   c. ``"23", "47", "350", "Tech", "coder"``
+   d. ``"23", "350", "47", "coder", "Tech"``
 
-.. ans: c, ``"23", "47", "350", "coder", "Tech"``
+.. ans: d, ``"23", "350", "47", "coder", "Tech"``
 
 .. admonition:: Question
 
-   Which statement converts the string ``string str = "LaunchCode students rock!"`` into the array ``string[] words = {"LaunchCode", "students", "rock!"}``?
+   Which statement converts the string ``string phrase = "LaunchCode students rock!"`` into the array ``string[] words = {"LaunchCode", "students", "rock!"}``?
 
-   a. ``str.Join(" ");``
-   b. ``str.Split(" ");``
-   c. ``str.Join("");``
-   d. ``str.Split("");``
+   a. ``string.Join(" ", phrase);``
+   b. ``phrase.Split(" ");``
+   c. ``string.Join("", phrase);``
+   d. ``phrase.Split("");``
 
-.. ans: b, ``str.Split(" ");``
+.. ans: b, ``phrase.Split(" ");``
 
 .. admonition:: Question
 
@@ -147,7 +147,7 @@ Follow the links in the table above for the ``Sort``, ``Reverse``, ``Split`` and
       string[] groceryBag = {"bananas", "apples", "edamame", "chips", "cucumbers", "milk", "cheese"};
       string[] selectedItems = new string[4];
 
-      selectedItems = Array.Copy(groceryBag, selectedItems, 4);
+      Array.Copy(groceryBag, selectedItems, 4);
       Array.Sort(selectedItems);
 
       Console.WriteLine(selectedItems[0]);
