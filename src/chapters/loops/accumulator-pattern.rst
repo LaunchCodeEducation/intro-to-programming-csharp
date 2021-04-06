@@ -24,17 +24,18 @@ We can carry out this same procedure in code using a loop.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      let n = 6;
-      let total = 0;
+      int n = 6;
+      int total = 0;
 
-      for (let i = 1; i <= n; i++) {
+      for (int i = 1; i <= n; i++) 
+      {
          total += i;
       }
 
-      console.log(total);
+      Console.WriteLine(total);
 
    **Console Output**
 
@@ -42,7 +43,8 @@ We can carry out this same procedure in code using a loop.
 
       21
 
-The variable ``total`` is initialized to 0. The loop executes once each for the values of ``i`` from 1 to 6. Each time the loop body executes, the next value of ``i`` is added to ``total``.
+The variable ``total`` is initialized to 0. The loop executes once each for the values of ``i`` from 1 to 6. 
+Each time the loop body executes, the next value of ``i`` is added to ``total``.
 
 The loop carries out the same basic algorithm that we used to compute the sum
 ``1 + 2 + 3 + 4 + 5 + 6`` by hand. The only step that may seem different to you
@@ -60,40 +62,47 @@ This pattern of initializing a variable to some basic, or empty value, and
 updating it within a loop is commonly referred to as the
 **accumulator pattern**. We refer to the variable as the **accumulator**. In
 the example above, ``total`` is the accumulator, and it "accumulates" the
-individual integers one by one.
+individual integers one by one using the ``+=`` operator.
 
-The accumulator pattern comes up regularly in programming. The key to using it successfully is to initialize the accumulator variable before you start the iteration. Once inside the loop, update the accumulator.
+The accumulator pattern comes up regularly in programming. 
+The key to using it successfully is to initialize the accumulator variable *before* you start the iteration. 
+Once inside the loop, update the accumulator.
 
 .. _reverse-string:
 
 Reversing a String
 ------------------
 
-While some programming languages have a string method that will reverse a given string, JavaScript does not. Let's see how we can write our own program that reverses a string using the accumulator pattern.
+While some programming languages have a string method that will reverse a given string, C# does not. 
+Let's see how we can write our own program that reverses a string using the accumulator pattern.
 
-We'll start by initializing two variables: the string we want to reverse, and a variable that will eventually store the reversed value of the given string.
+We'll start by initializing two variables: the string we want to reverse, 
+and a variable that will eventually store the reversed value of the given string.
 
-.. sourcecode:: js
+.. sourcecode:: csharp
    :linenos:
 
-   let str = "blue";
-   let reversed = "";
+   string str = "blue";
+   string reversed = "";
 
-Here, ``reversed`` is our accumulator variable. Our approach to reversing the string will be to loop over ``str``, adding each subsequent character to the *beginning* of ``reversed``, so that the first character becomes the last, and the last character becomes the first.
+Here, ``reversed`` is our accumulator variable. 
+Our approach to reversing the string will be to loop over ``str``, adding each subsequent character to the 
+*beginning* of ``reversed``, so that the first character becomes the last, and the last character becomes the first.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
-
-      let str = "blue";
-      let reversed = "";
-
-      for (let i = 0; i < str.length; i++) {
+      
+      string str = "blue";
+      string reversed = "";
+      
+      for (int i = 0; i < str.Length; i++) 
+      {
          reversed = str[i] + reversed;
       }
 
-      console.log(reversed);
+      Console.WriteLine(reversed);
 
    **Console Output**
 
@@ -137,24 +146,28 @@ Let's break this down step-by-step. This table shows the values of each of our v
 
    What happens if you reverse the order of the assignment statement within the ``for`` loop, so that ``reversed = reversed + str[i];``?
 
-   `Try it at repl.it. <https://repl.it/@launchcode/Reversing-a-string>`_
+   `Try it at repl.it. <https://repl.it/@launchcode/Reversing-a-string-CSharp>`_
 
 Summing an Array
 ----------------
 
-Another common use of the accumulator pattern is to compute some value using each of the elements of an array. This is similar to adding 1...n as we did above, with the difference being we will use the items in an array rather than 1...n.
+Another common use of the accumulator pattern is to compute some value using each of the elements of an array. 
+This is similar to adding 1...n as we did above, with the difference being we will use the items in an array rather than 1...n.
 
 .. admonition:: Example
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
+      
+      int[] numbers = {2, -5, 13, 42};
+      int total = 0;
 
-      let numbers = [2, -5, 13, 42];
-      let total = 0;
-
-      for (let i = 0; i < numbers.length; i++) {
+      for (int i = 0; i < numbers.Length; i++) 
+      {
          total += numbers[i];
       }
+      
+      Console.WriteLine(total);
 
    **Console Output**
 

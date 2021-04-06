@@ -4,7 +4,7 @@
 .. index::
    single: loop; while
 
-There is another JavaScript construct that can also be used for iteration, the
+There is another C# construct that can also be used for iteration, the
 ``while`` loop. The ``while`` loop provides a much more general mechanism for
 iterating. Like a ``for`` loop, it uses a condition to determine whether the
 loop body will continue to execute. Unlike a ``for`` loop, however, it does not
@@ -41,8 +41,7 @@ Here is the flow of execution for a ``while`` loop:
 #. Evaluate the condition, which yields a value of ``true`` or ``false``.
 #. If the condition is ``false``, exit the ``while`` loop and continue
    execution at the next statement after the loop body.
-#. If the condition is ``true``, execute the loop body and then go back to step
-   1.
+#. If the condition is ``true``, execute the loop body and then go back to step 1.
 
 ``for`` Loops Rewritten as ``while`` Loops
 ------------------------------------------
@@ -51,23 +50,24 @@ We can use the ``while`` loop to create any type of iteration we wish,
 including anything that we have previously done with a ``for`` loop. For
 example, consider our initial ``for`` loop example.
 
-.. sourcecode:: js
+.. sourcecode:: csharp
    :linenos:
 
-   for (let i = 0; i < 51; i++) {
-      console.log(i);
+   for (int i = 0; i < 51; i++) 
+   {
+      Console.WriteLine(i);
    }
 
 This can be rewritten as a while loop:
 
-.. replit:: js
+.. replit:: csharp
    :linenos:
-   :slug: While-loop-example
+   :slug: While-loop-example-CSharp
 
-   let i = 0;
+   int i = 0;
 
    while (i < 51) {
-      console.log(i);
+      Console.WriteLine(i);
       i++;
    }
 
@@ -101,18 +101,21 @@ If the number is not positive, then the user is prompted again within the body
 of the loop. As long as the user continues to input non-positive numbers, the
 loop will continue to iterate.
 
-.. sourcecode:: js
+.. sourcecode:: csharp
    :linenos:
 
-   const input = require('readline-sync');
+   Console.WriteLine("Please enter a positive number:");
+   string input = Console.ReadLine();
+   int num = Int32.Parse(input);
 
-   let num = input.question('Please enter a positive number:');
-   num = Number(num);
-
-   while (num <= 0) {
-      num = input.question('Invalid input. Please enter a positive number:');
-      num = Number(num);
+   while (num <= 0) 
+   {
+      Console.WriteLine("INVALID!  Please enter a positive number:");
+      input = Console.ReadLine();
+      num = Int32.Parse(input);
    }
+	
+   Console.WriteLine("Your number was: " + num);
 
 .. index::
    pair: input; validation
@@ -133,13 +136,13 @@ It is easier to create an infinite ``while`` loop than an infinite ``for``
 loop. To see this, consider what happens to our first ``while`` loop example
 if we forget to update the loop variable.
 
-.. sourcecode:: js
+.. sourcecode:: csharp
    :linenos:
 
-   let i = 0;
+   int i = 0;
 
    while (i < 51) {
-      console.log(i);
+      Console.WriteLine(i);
    }
 
 This is an infinite loop. The variable ``i`` is initialized to 0 and never
@@ -147,15 +150,15 @@ updated, so the condition ``i < 51`` will always be true. If you ran this
 program, you would see an never-ending list of zeros.
 
 Even when we remember to update the counter, we must be careful to make sure
-that the condition will eventually be ``false``.
+that the condition will *eventually* be ``false``.
 
-.. sourcecode:: js
+.. sourcecode:: csharp
    :linenos:
 
-   let i = 0;
+   int i = 0;
 
    while (i < 51) {
-      console.log(i);
+      Console.WriteLine(i);
       i--;
    }
 
@@ -178,24 +181,28 @@ Check Your Understanding
    #. True
    #. False
 
+.. ans. true
+
 .. admonition:: Question
 
    The following code contains an infinite loop. Which is the best explanation for why the loop does not terminate?
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
-      let n = 10;
-      let answer = 1;
+      int n = 10;
+      int answer = 1;
 
       while (n > 0) {
          answer = answer + n;
          n = n + 1;
       }
 
-      console.log(answer);
+      Console.WriteLine(answer);
 
    #. ``n`` starts at 10 and is incremented by 1 each time through the loop, so it will always be positive.
    #. ``answer`` starts at 1 and is incremented by ``n`` each time, so it will always be positive
    #. You cannot compare ``n`` to 0 in a ``while`` loop. You must compare it to another variable.
    #. In the ``while`` loop body, we must set ``n`` to ``false``, and this code does not do that.
+
+.. ans. a
