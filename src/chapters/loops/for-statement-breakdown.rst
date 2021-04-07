@@ -234,11 +234,7 @@ Consider the program:
 
    #. ``Schrodinger's cat``
    #. ``Schrodinger's ca``
-   #. ``S,r,i,e,s,a``
+   #. ``S, r, i, e, s, a``
    #. ``S, o, g, s, t, ' '``
 
-S
-o
-g
-s
-t
+.. ans. S, r, i, e, s, a
