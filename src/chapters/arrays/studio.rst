@@ -21,7 +21,7 @@ String Modification
 Use string methods to convert a word into pseudo-pig latin.
 
 a. Remove the first three characters from a string and add them to the end.
-   Ex: ``'LaunchCode'`` becomes ``'nchCodeLau'``. Use string interpolation to
+   Ex: ``"LaunchCode"`` becomes ``"nchCodeLau"``. Use string interpolation to
    print the original and modified string in a descriptive phrase.
 b. Modify your code to accept user input. Query the user to enter the
    number of letters that will be relocated.
@@ -80,4 +80,4 @@ e. *Bonus to the Bonus*: Modify the code to query the user for BOTH a cabinet in
    message about the selected item.  If the user entered an invalid number, 
    print an error message instead.
 
-`Code it at repl.it <https://repl.it/@launchcode/StringandArrayStudio03-CSharp>`__
+

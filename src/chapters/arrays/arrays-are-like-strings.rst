@@ -21,7 +21,7 @@ Declaring an Array
 
 Programmers use multiple ways to declare and initialize a new array.  
 In C#, arrays are of a static length.  This means that that you need to
-declare the length upon initialzation.  With that in mind, we will walk through
+declare the length upon initialization.  With that in mind, we will walk through
 a few ways to delcare and initialize arrays.  
 
 
@@ -88,7 +88,7 @@ Array Length
 
 To check the length of an array, use the ``Length`` property, just like with
 strings. C# array length is static, but we don't have to declare the length directly with 
-each initialzation.  
+each initialization.  
 
 .. note::
 

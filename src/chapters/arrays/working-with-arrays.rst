@@ -36,7 +36,7 @@ Indexes are zero-based, going from ``0`` to ``array.Length-1``.
 
       JavaScript
       C#
-      Unhandled Expectation: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+      Unhandled Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array.
 
 Notice above that ``Unhandled Expectation: System.IndexOutOfRangeException: Index was outside the bounds of the array.`` was printed out when index 4 was referenced. This is returned when you request an index
 that the array does not contain and you don't have a way to catch it.
@@ -55,7 +55,7 @@ that the array does not contain and you don't have a way to catch it.
 
    ::
 
-      Unhandled Expectation: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+      Unhandled Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array.
        
 
 Arrays are Mutable

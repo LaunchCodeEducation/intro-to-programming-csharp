@@ -48,12 +48,12 @@ The code block below has the rows and columns filled in the initializing stateme
 
 Read the initializing bracket notation as "3 rows containing 4 values each".  
 Multidimensional arrays will always be uniform in length no matter how many dimensions you go.  
-For example, a three dimensional array would using the following notation: ``[2,2,7]`` 
+For example, a three dimensional array uses the following notation: ``[2,2,7]`` 
 could be read as "two arrays, two rows deep, containing 7 values each".
 
 .. admonition:: Warning
    
-   This is not the only way to initialized an multidimensional array, but this is the way the textbook will use.  Microsoft Documentation has other ways for delcaration and initializing, so if this method is not working for you `check them out <https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays>`_ and use your favorite.
+   This is not the only way to initialize an multidimensional array, but this is the way the textbook will use.  Microsoft Documentation has other ways for delcaration and initializing, so if this method is not working for you `check them out <https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays>`_ and use your favorite.
 
 
 ``Rank`` and ``Length`` Properties
@@ -83,10 +83,10 @@ In the example below, a ``2`` is returned, which informs you that this array is 
 
    **Console Output**
 
-      ::
+   ::
 
-         12
-         2
+      12
+      2
 
 
 Deterimining Dimensions

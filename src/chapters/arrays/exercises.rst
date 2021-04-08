@@ -24,25 +24,25 @@ rearrange our records for the items stored in our hold.
 
 
 2. Sometimes you need to update your array.  Maybe the number of items is wrong, 
-   or the items need to be updated.  In C#, we have can change the size with the 
-   ``Resize`` method.  The ``SetValue`` method and **bracket notation** can be used
+   or the items need to be updated.  In C#, we can change the size with the 
+   ``Resize`` method.  The ``SetValue`` method and bracket notation can be used
    to update existing array items.  Starting with the ``cargoHold`` string array
    ``{"oxygen tanks", "space suits", "parrot", "instruction manual",
    "20 meters", "slinky", "security blanket"}``, write statements to do the
    following:
 
    #. Start by using ``Console.WriteLine`` to print all the items in the array.  
-      Use **string interpolation** to update the following:  ``"The length of the array is ____"``.  
+      Use string interpolation to update the following:  ``"The length of the array is ____"``.  
       This will give us a way to check our updates.
-   #. Remove the last item from the array with Resize. Print an updated length statement using a new **string interpolation**.
+   #. Remove the last item from the array with Resize. Print an updated length statement using a new string interpolation.
    #. Using ``Resize`` once more, extend your array by 3.  Set the following items
       into the new indices:  ``"1183"``, ``"meal packs"``, and ``"toothbrush"``.  Print the new items 
       to verify their placement. 
-   #. Before we move on, we need to update a few items in our array.  Use **bracket notation** to replace ``"slinky"`` 
+   #. Before we move on, we need to update a few items in our array.  Use bracket notation to replace ``"slinky"`` 
       in the array with ``"space tether"``.  Use ``SetValue`` to update ``"1183"`` to ``"keys"``.  And update ``"parrot"`` to 
       ``"flashlight"`` using a method of your choice. 
    #. Use a ``Console.WriteLine`` to print the final array.  
-      Determine the final length and use a new **string interpolation** to print an updated length statement.
+      Determine the final length and use a new string interpolation to print an updated length statement.
 
    `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises02-CSharp>`__   
 
@@ -104,8 +104,8 @@ Parts Three And Four
 
    `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises04-CSharp>`__
 
-Part Five 
-----------
+Part Five:  Bonus Mission
+---------------------------------
    *Nicely done, astronaut. Now it's time to bring you fully up to speed.*
 
 5. Arrays can hold many different data types, even other arrays! A
@@ -118,13 +118,13 @@ Part Five
       ii. ``string[] element2 = {"helium", "He", "4.003"};``
       iii. ``string[] element26 = {"iron", "Fe", "55.85"};``
 
-   #. Using **bracket notation** and the ``table`` array, print the mass of
+   #. Using bracket notation and the ``table`` array, print the mass of
       element1, the name for element 2 and the symbol for element26.  
    #. ``table`` is an example of a *2-dimensional array*. The first "level"
       contains the element arrays, and the second level holds the
       name/symbol/mass values. **Experiment!** Create a *3-dimensional* array and
       print out one entry from each level in the array.
 
-   `Code it at repl.it <https://repl.it/@launchcode/ArrayExercises05-CSharp>`__
+   
 
 *Excellent work, records keeper. Welcome aboard.*
