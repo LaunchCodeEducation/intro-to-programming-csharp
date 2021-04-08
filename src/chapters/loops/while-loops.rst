@@ -1,3 +1,5 @@
+.. _while-loops:
+
 ``while`` Loops
 ===============
 
@@ -102,20 +104,21 @@ of the loop. As long as the user continues to input non-positive numbers, the
 loop will continue to iterate.
 
 .. sourcecode:: csharp
-   :linenos:
+      :linenos:
+      
+      string prompt = "Please enter a positive number: ";
+      Console.WriteLine(prompt);
+      string input = Console.ReadLine();
+      int num = Int32.Parse(input);
 
-   Console.WriteLine("Please enter a positive number:");
-   string input = Console.ReadLine();
-   int num = Int32.Parse(input);
-
-   while (num <= 0) 
-   {
-      Console.WriteLine("INVALID!  Please enter a positive number:");
-      input = Console.ReadLine();
-      num = Int32.Parse(input);
-   }
-	
-   Console.WriteLine("Your number was: " + num);
+      while (num <= 0) 
+      {
+         Console.WriteLine(prompt);
+         input = Console.ReadLine();
+         num = Int32.Parse(input);
+      }
+      
+      Console.WriteLine("Your number was: " + num);
 
 .. index::
    pair: input; validation

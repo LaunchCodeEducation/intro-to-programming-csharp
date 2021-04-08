@@ -11,6 +11,8 @@ Chapters
    chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
    chapters/errors-and-debugging/index
+   chapters/strings/index
+   chapters/arrays/index
    chapters/loops/index
 
 .. toctree::
@@ -26,6 +28,9 @@ Studios
    
    chapters/data-and-variables/studio
    chapters/booleans-and-conditionals/studio
+   chapters/arrays/studio
+   chapters/loops/studio
+
 
 Assignments
 ===========
@@ -41,5 +46,7 @@ Appendices
    :maxdepth: 1
    :name: appendicestoc
 
-
    appendices/best-practices
+   appendices/string-method-examples/index
+   appendices/array-method-examples/index
+   appendices/loops-examples/index

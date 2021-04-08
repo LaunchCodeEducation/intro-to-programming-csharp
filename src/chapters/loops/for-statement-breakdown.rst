@@ -85,7 +85,7 @@ The loop variable can be initialized to any value.
 
 To avoid confusion and bugs, you should give your loop variable a unique name, one that you have not used elsewhere in your program. 
 In cases where the loop variable is serving as a "counter" for iterations of a loop, it is conventional to use ``i`` for the variable name. 
-In the case of nested ``for`` loops (loops inside of loops), the variables ``j``, ``k``, etc. are often used.
+In the case of **nested** ``for`` loops (loops inside of loops), the variables ``j``, ``k``, etc. are often used.
 
 .. admonition:: Note
 
@@ -134,7 +134,7 @@ control+c in a terminal).
 
    This is an infinite loop, because its condition will always be true.
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
       :linenos:
 
       for (int i = 0; i > -1; i++) 
@@ -207,7 +207,7 @@ Check Your Understanding
 
 Consider the program:
 
-.. sourcecode:: js
+.. sourcecode:: csharp
    :linenos:
 
    string phrase = "Schrodinger's cat'";
