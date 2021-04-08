@@ -49,21 +49,24 @@ Part A (Put dinner together)
    c. Print out each meal.
 
 
-   
-.. image:: figures/array-of-arrays.png
-    :height: 300px
-
 Part B (Refinements)
 --------------------
 
 Update your code from part A to add user input and validation.
 
-3. Using a ``while`` loop, ask the user to select the number of meals to assemble. Validate the input to make sure it is an integer from 1 - 6.
+3. Using a ``while`` loop, ask the user to select the number of meals to assemble. 
+Validate the input to make sure it is an integer from 1 - 6.
 
-4. **Bonus Mission:** *(Optional)  To enhance your learning, modify your code to:*
+4.  Refactor your ``for`` loop to use the user input to select and print that many meals.
+
+5. **Bonus Mission:** *(Optional)  To enhance your learning, modify your code to:*
    
    a. Use string formatting to print something more interesting than a list of "chicken", "rice", "peas", "juice", "apple" for the meal outputs.
    b. Use an "array of arrays" to store the food options in a 'pantry'.
+
+   .. image:: figures/array-of-arrays.png
+    :height: 300px
+
    c. Modify your code to check each meal for kale. If present, after the meal output add, "Don't worry, you can have double chocolate tomorrow."
 
 
@@ -89,5 +92,5 @@ For the purposes of easier (human) readbility, try using the following console m
       #. If ``string code1 = "ABCDEF"`` and ``string code2 = "notyet"``, then the output will be "AnBoCtDyEeFt".
       #. If ``string ka = "LoOt"`` and ``string blam = "oku!"``, then the output will be ``"LookOut!"``.
 
-   `Code it at replt.it <https://repl.it/@launchcode/LoopstudiopartB-CSharp>`__
+   `Code it at replt.it <https://repl.it/@launchcode/LoopstudiopartC-CSharp>`__
 
