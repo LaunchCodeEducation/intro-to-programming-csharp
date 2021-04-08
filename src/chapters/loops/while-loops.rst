@@ -68,7 +68,8 @@ This can be rewritten as a while loop:
 
    int i = 0;
 
-   while (i < 51) {
+   while (i < 51) 
+   {
       Console.WriteLine(i);
       i++;
    }
@@ -144,7 +145,8 @@ if we forget to update the loop variable.
 
    int i = 0;
 
-   while (i < 51) {
+   while (i < 51) 
+   {
       Console.WriteLine(i);
    }
 
@@ -160,7 +162,8 @@ that the condition will *eventually* be ``false``.
 
    int i = 0;
 
-   while (i < 51) {
+   while (i < 51) 
+   {
       Console.WriteLine(i);
       i--;
    }
@@ -196,7 +199,8 @@ Check Your Understanding
       int n = 10;
       int answer = 1;
 
-      while (n > 0) {
+      while (n > 0) 
+      {
          answer = answer + n;
          n = n + 1;
       }
