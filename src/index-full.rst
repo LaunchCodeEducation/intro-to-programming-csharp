@@ -44,3 +44,4 @@ Appendices
 
    appendices/best-practices
    appendices/string-method-examples/index
+   appendices/array-method-examples/index

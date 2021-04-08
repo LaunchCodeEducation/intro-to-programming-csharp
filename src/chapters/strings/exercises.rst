@@ -26,7 +26,7 @@ Part One
 
    #. What if ``num`` could be EITHER an integer or a double?  Add an ``if/else``
       statement so your code can handle both cases.  (Hint: Consider the
-      ``IndexOf()`` method or ``Contains()`` `method <https://docs.microsoft.com/en-us/dotnet/api/system.string.contains?view=net-5.0>`_ string methods).
+      ``IndexOf()`` or ``Contains()`` string methods).
 
    `Code it at repl.it <https://repl.it/@launchcode/StringExercises02-CSharp/>`__
 

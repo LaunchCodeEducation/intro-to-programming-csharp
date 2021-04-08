@@ -5,6 +5,7 @@ String Method Examples
    :maxdepth: 3
 
    indexOf-examples
+   contains-examples
    toLower-examples
    toUpper-examples
    trim-examples
@@ -12,5 +13,4 @@ String Method Examples
    substring-examples
    insert-examples
    remove-examples
-   toCharArray-examples
    toString-examples

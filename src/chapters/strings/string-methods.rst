@@ -55,6 +55,9 @@ Here we present the most commonly-used string methods. You can find documentatio
    * - :ref:`IndexOf <string-indexof-examples>`
      - ``stringName.IndexOf(substr)``
      - Returns the index of the first occurrence of the substring in the string, and returns -1 if the substring is not found.
+   * - :ref:`Contains <string-contains-examples>`
+     - ``stringName.Contains(substr)``
+     - Returns a boolean value if a specified string value is present.
    * - :ref:`ToLower <string-tolower-examples>`
      - ``stringName.ToLower()``
      - Returns a copy of the given string, with all uppercase letters converted to lowercase.
@@ -76,7 +79,7 @@ Here we present the most commonly-used string methods. You can find documentatio
    * - :ref:`Remove <string-remove-examples>`
      - ``stringName.Remove(i, j)``
      - Returns new string after certain number of characters have been deleted from current string.
-   * - :ref:`ToCharArray <string-toCharArray-examples>`
+   * - :ref:`ToCharArray <toCharArray-examples>`
      - ``stringName.ToCharArray()``
      - Copies characters of string into character array.
    * - :ref:`ToString <string-toString-examples>`
