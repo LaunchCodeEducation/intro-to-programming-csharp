@@ -13,6 +13,7 @@ Chapters
    chapters/errors-and-debugging/index
    chapters/strings/index
    chapters/arrays/index
+   chapters/methods/index
 
 .. toctree::
 
