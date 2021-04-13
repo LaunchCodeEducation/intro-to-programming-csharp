@@ -5,5 +5,7 @@ Methods
    :maxdepth: 3
 
    what-is-a-method
-   method-breakdown
+   method-signatures
+   using-methods
+   methods-recap
    
