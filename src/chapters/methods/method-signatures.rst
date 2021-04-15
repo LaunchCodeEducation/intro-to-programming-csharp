@@ -19,11 +19,11 @@ run your method when you call it.  This syntax is the template for your method s
       Method Body
    }
 
-#. **Access Specifier:**  This determines visibilty of methods and variables between classes.
-#. **Return Type:**  If the method is returning a value, this indicates what data type it will be.  Not all methods return values.  Methods that do not return a value have a return type of **void**.  
-#. **Method Name:**  The method's unique identifier.  This is what you use to call your method. 
-#. **Parameter List:** A parameter is a placeholder for specific data that the method will act upon.  Paraemeters are optional.  In these cases the ``()`` are still part of the method call, but remain empty.
-#. **Method Body:**  This is where you code your method.  Note it is contain between ``{}``.
+- **Access Specifier:**  This determines visibilty of methods between classes, and whether or not it can instanciate **new** objects.
+- **Return Type:**  If the method is returning a value, this indicates what data type it will be.  Not all methods return values.  Methods that do not return a value have a return type of **void**.  
+- **Method Name:**  The method's unique identifier.  This is what you use to call your method. 
+- **Parameter List:** A parameter is a placeholder for specific data that the method will act upon.  Paraemeters are optional.  In these cases the ``()`` are still part of the method call, but remain empty.
+- **Method Body:**  This is where you code your method.  Note it is contained between ``{}``.
 
 
 Creating a Method
@@ -41,27 +41,31 @@ Using our template, let's build a simple method.
       }
 
 
-In this example, we are using **static** as our access modifier.  This is lets C# know that this method
-belongs to the current class it is contained in.  We will see this better when we review method calling later in this section.
+In this example, we are using ``static`` as our **access modifier**.  This is lets C# know that this method
+belongs to the current class it is contained in and not to expect anything **new** to be created.  
+
 Our **return type** is **int**.  This lets you know how to use the method.  If you were expecting a **double** then you will needing
-to modify your return type.  ``SquareTheNumber`` is the **method name**.  
+to modify your return type.  
+
+``SquareTheNumber`` is the **method name**.  
 Notice that it is all in `PascalCase <https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions>`_ where all words are capitalized and spaces removed.
-``SquareTheNumber`` has a single parameter, ``int num``, which is a placeholder that tells you what **input** is expected along with the data type.  
-In this example, ``SquareTheNumber`` is expecting one input of type **int**.  The input is labeled ``num`` to provide you more context on what to expect or how to use the method.  
+
+``SquareTheNumber`` has a single **parameter**, ``int num``, which is a placeholder that tells you what **input** is expected along with the data type.  
+In this example, ``SquareTheNumber`` is expecting one input of type **int**.  The input is labeled ``num`` to provide you more *context* on what to expect or how to use the method.  
+
 When writing your own methods, provide as many clues as possible to help with readability.  
 The **method body** shows you how the input will be manipulated within the method.  
-Here it will be used to square itself.  This method will ``return`` a value which we can use else where in our code.
+Here it will be used to square itself.  This method will ``return`` a value which we can use else where in our code.  Since this method is static, 
+we can treat anything returned as a regular value.  This means you can store the method as a variable, pass the method into expressions or other methods, or print it. 
 
-There you go, a small method that will take a **int** number and return its squared value.  
-
-
+To sum up the method ``SquareTheNumber``:  use with an **int** value and the method will return the squared value.
 
 Method Calls
 ^^^^^^^^^^^^^^^^
 
 A few notes about the Main method before we move on.  The Main method is where you **call** methods.  You build methods **outside** of the Main method.   
 
-Let's walk through an example about placement for building your method and calling your method.  Using our same method from above, let's add that to our Main method.
+Let's walk through an example about placement for building your method and calling your method with the ``SquareTheNumber`` method.
 
 .. admonition:: Example
 
@@ -77,7 +81,6 @@ Let's walk through an example about placement for building your method and calli
          {
             return num * num;
          }
-      
 
          public static void Main (string[] args) {
             
@@ -101,9 +104,11 @@ Let's walk through an example about placement for building your method and calli
       25
 
 
-You should be fairly familiar with the replit IDE by now.  **Line 1** us where the ``using`` statement goes.  
-**Line3** introduces the ``MainClass`` class followed by ``{``.  The closing ``}`` is in **Line 22**.  
-Starting at **Line 11** is the Main method statement, followed by a ``{`` which closes on **Line 21**.
+You should be fairly familiar with the replit IDE by now.  
+
+- **Line 1** us where the ``using`` statement goes.  
+- **Line3** introduces the ``MainClass`` class followed by ``{``.  The closing ``}`` is in **Line 21**.  
+- Starting at **Line 11** is the Main method statement, followed by a ``{`` which closes on **Line 20**.
 
 We can place our method anywhere in the ``MainClass`` but outside the Main method.  In this example, we placed our
 ``SquareTheNumber`` method between **Lines 5-8**.  

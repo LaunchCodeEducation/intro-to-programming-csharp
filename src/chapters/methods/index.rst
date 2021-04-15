@@ -7,5 +7,6 @@ Methods
    what-is-a-method
    method-signatures
    using-methods
-   methods-recap
+   scope
+   method-extras
    

@@ -4,37 +4,26 @@ Introduction
 Up until now, you have been able to write programs that function within the main method using a variety of 
 data types and collection types along with specific collection methods.  These methods are built into the C# language.
 You call them and they do their task.  You chain them and they do that task in combination with other methods.  Think of all the time
-that a method like ``ToUpper`` or ``IndexOf`` saved you from having to code yourself.  Not only that, but you can call 
-either of those methods over and over and not have to worry about *if* they will work.  Those methods are designed to work with 
-any code as long as it is the correct data type.  The other nice thing about methods is that they will only run when you call them.
-When you run your code you don't have to worry about a renegade ``ToLower`` converting all your string outputs to lowercase *unless* 
-you consciously call that method.  
-
-Some benefits of methods: 
-
-#. Methods are **reusable**, keeping your code nice and DRY.
-#. Methods only run when **called**.
-#. Methods are completely **customizable**.
+you saved using the  ``ToUpper`` or ``IndexOf`` methods instead of writing that code yourself *every* time.  Also, wasn't it nice that 
+you could use ``ToUpper`` or ``IndexOf`` on any string or array you needed?  That reusability is so nice.  
+While you do have to call them in order to work, this allows you to code freely without any fear of rogue ``ToLower`` or ``Sort``
+methods altering your code when you weren't looking.  Methods only work when you call them.
 
 As we move deeper in the C# language, you will begin to use methods more and more.  This chapter is designed to introduce you to 
 method signatures, method calls, and overall usage of methods within your code.  A **method signature** is the structure of the method, 
 including accessability, data type, parameters, and return type if applicable.  A **method call** is how you call your method based on its
 signature.  
 
-A little caveat before we continue.  Our current experience with C# is a little limited at this point, so our methods will be limited in 
-functionality and usage.  The purpose of this chapter is to provide you with exposure to the basics of a method so that when we begin to 
-learn about classes and creating objects, you will be familair with the idea methods so that you can focus more on the nuances of classes
-which include methods.  As we progress into classes, you will see how powerful methods can be.  Please take this chapter as a chance to 
-become familar with the concepts of methods so that you can build amazing code later.
-
-
+A little caveat before we continue.  Since we have not encountered C# classes at this point, we will be working with **static** methods.
+Static methods are able to ``return`` a **value** or others print directly into the console, but they do not create anything **new**.
+Methods that create new instances of objects are called **instance methods**, think of them as the opposite of static methods.  
 
 What is a Method?
 ---------------------
 
 .. index:: ! method
 
-A **method** is a reusable, callable piece of code. Methods are created to perform a single task or action.
+A **method** is a reusable, callable, and customizable piece of code. Methods are created to perform a single task or action.
 
 You have been using methods throughout your learning so far, without receiving a full explanation of how methods work. 
 
@@ -44,7 +33,8 @@ You have already become familiar with several functions:
 - The type conversion methods: ``Int32.Parse``,  ``ToString`` or even ``GetType``
 - String and array methods, such as ``IndexOf`` or ``Join``
 
-Each of the methods we have used works in the same way. By typing the methods's name, followed by parentheses, we can *call* the method, resulting in an action being carried out. 
+Each of the methods we have used works in the same way. By typing the methods's name, followed by parentheses, 
+we can *call* the method, resulting in an action being carried out. 
 Sometimes, as with ``Console.WriteLine``, we can provide input data between the parentheses, which the method will use to carry out its action.
 
 .. admonition:: Example
