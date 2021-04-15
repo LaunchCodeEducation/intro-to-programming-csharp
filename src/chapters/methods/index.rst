@@ -7,6 +7,8 @@ Methods
    what-is-a-method
    method-signatures
    using-methods
-   scope
-   method-extras
+   method-recursion
+   method-scope
+   exercises
+   studio
    

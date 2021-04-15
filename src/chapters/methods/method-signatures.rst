@@ -131,6 +131,8 @@ In this example, we called ``SquareTheNumber`` and passed ``5`` directly in the 
 These are 3 ways to call static methods that have a return type.  When working with void methods, the call is a slightly different.  
 We will walk through this in an example in the next section. 
 
+**Method invocation** or **invoking the method** are synonmous terms for calling the method.
+
 
 Check Your Understanding
 ------------------------

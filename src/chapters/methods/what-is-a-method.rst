@@ -1,13 +1,13 @@
 Introduction
 =============
 
-Up until now, you have been able to write programs that function within the main method using a variety of 
+Up until now, you have been able to write programs that function within the Main method using a variety of 
 data types and collection types along with specific collection methods.  These methods are built into the C# language.
 You call them and they do their task.  You chain them and they do that task in combination with other methods.  Think of all the time
 you saved using the  ``ToUpper`` or ``IndexOf`` methods instead of writing that code yourself *every* time.  Also, wasn't it nice that 
-you could use ``ToUpper`` or ``IndexOf`` on any string or array you needed?  That reusability is so nice.  
+you could use ``ToUpper`` or ``IndexOf`` on any string or array you needed?  Reusability is so nice.  
 While you do have to call them in order to work, this allows you to code freely without any fear of rogue ``ToLower`` or ``Sort``
-methods altering your code when you weren't looking.  Methods only work when you call them.
+methods altering your code when you aren't looking.  Methods only work when you call them.
 
 As we move deeper in the C# language, you will begin to use methods more and more.  This chapter is designed to introduce you to 
 method signatures, method calls, and overall usage of methods within your code.  A **method signature** is the structure of the method, 
@@ -16,7 +16,7 @@ signature.
 
 A little caveat before we continue.  Since we have not encountered C# classes at this point, we will be working with **static** methods.
 Static methods are able to ``return`` a **value** or others print directly into the console, but they do not create anything **new**.
-Methods that create new instances of objects are called **instance methods**, think of them as the opposite of static methods.  
+Methods that create new instances of objects are called **instance methods**, we will learn about them soon.  
 
 What is a Method?
 ---------------------
@@ -31,7 +31,7 @@ You have already become familiar with several functions:
 
 - ``Console.WriteLine``
 - The type conversion methods: ``Int32.Parse``,  ``ToString`` or even ``GetType``
-- String and array methods, such as ``IndexOf`` or ``Join``
+- Collection methods, such as ``IndexOf``,  ``Join``, ``Add``
 
 Each of the methods we have used works in the same way. By typing the methods's name, followed by parentheses, 
 we can *call* the method, resulting in an action being carried out. 
