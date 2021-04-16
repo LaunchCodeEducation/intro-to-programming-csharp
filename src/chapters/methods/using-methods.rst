@@ -147,6 +147,84 @@ we can store it in a variable or use it as a value itself like we did in **Line 
 
 ``Console.WriteLine`` was called to verify functionality.  With return methods, you will need to print them in order to verify functionality.
 
+Named and Optional Arguments
+-------------------------------
+
+Named Arguments
+^^^^^^^^^^^^^^^^
+As your code grows, you may find yourself questioning the order of parameters in a method you built somewhere in your program.
+Despite not remembering the order, you remember exactly what each parameter is called.  You could pause and serach for your 
+method to verify the order or you could use **named arguments**.  
+Naming your arguments means that you provide the parameter name ``:`` then the argument.  
+The order doesn't matter, as the compiler is clever enough to use the names to properly use the arguments in your method.
+
+.. admonition:: Example
+
+   .. sourcecode:: csharp
+      :linenos:
+
+      class MainClass {
+      
+      static void ResumeList(string jobTitle, string jobName, int numYears, string name)
+      {
+         Console.WriteLine(name + " worked at " + jobName + " as a(n)" + jobTitle + " for " + numYears + " years.");
+      }
+      
+
+         public static void Main (string[] args) {
+            
+         ResumeList("Receptionist", "Tate & Bywater", 2, "Carolyn");
+
+         //using Named Arguments
+         ResumeList(name: "Beth", jobTitle: "RVT", jobName: "Hope Center", numYears: 3);
+         
+         }
+      }
+
+   **Console Output**
+
+   :: 
+      
+      Carolyn worked at Tate & Bywater as a(n) Receptionist for 2 years.
+      Beth worked at Hope Center as a(n) RVT for 3 years.
+
+
+
+Optional Arguments
+^^^^^^^^^^^^^^^^^^^^
+
+An argument becomes optional when the parameters is coded to take a **default value**. 
+This means that if you invoke the method and don't pass it a value, the parameter will use the default value instead.
+This can be useful in testing methods.
+
+To use an optional argument, you need to program your parameter to be optional.  Name your parameter, follow it with an ``=`` 
+then the value, properly formated for its data type.  Optional parameters should be defined at the end of your parameter list.
+
+.. admonition:: Example
+
+   .. sourcecode:: csharp
+         :linenos:
+
+         static void HelloYou(string name = "You")
+         {
+            Console.WriteLine("Hello, " + name);
+         }
+            
+         public static void Main (string[] args) {
+
+            hello("Evelyn");
+            hello();
+         
+         }
+
+   **Console Output**
+
+   :: 
+      
+      Hello, Evelyn
+      Hello, You
+
+
 
 Check Your Understanding
 ---------------------------
@@ -205,7 +283,7 @@ Check Your Understanding
    #. True
    #. False
 
-.. ans:: T
+.. ans: T
 
 .. admonition:: Question
 
