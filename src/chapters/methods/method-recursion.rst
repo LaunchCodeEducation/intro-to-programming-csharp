@@ -1,6 +1,8 @@
 Recursive Methods
 =================================
 
+.. index:: ! recursion 
+
 If methods can use methods, can a method use itself?  
 
 The answer is yes.  This process is called **recursion** and is 

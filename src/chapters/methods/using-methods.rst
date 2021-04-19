@@ -6,7 +6,7 @@ Now that we see how to build a method, let's talk about using them.
 ``return`` vs. Void Methods
 ------------------------------
 
-In the previous section, we looked at methods that return a value.  That value then able to be used elsewhere in your program.  
+In the previous section, we looked at methods that return a value.  That value is then able to be used elsewhere in your program.  
 
 Sometimes we might want to use our method to manipulate data for the console output only. 
 This is when you may want to consider using a ``void`` return type.  

@@ -91,7 +91,6 @@ Asthetically it's not a "perfect" square, but a single argument led to its creat
       #####
       #####
 
-#. Now, go back and rewrite ``MakeSquare`` to use ``MakeRectangle``.
 
 Triangles
 ----------

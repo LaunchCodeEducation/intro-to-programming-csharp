@@ -2,7 +2,7 @@
 Method Signatures and Calls 
 ==============================
 
-.. index:: ! method signature, ! method call
+.. index:: ! method signature, ! method call 
 
 
 Method Signatures

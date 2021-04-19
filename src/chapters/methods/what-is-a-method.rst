@@ -3,19 +3,15 @@ Introduction
 
 Up until now, you have been able to write programs that function within the Main method using a variety of 
 data types and collection types along with specific collection methods.  These methods are built into the C# language.
-You call them and they do their task.  You chain them and they do that task in combination with other methods.  Think of all the time
-you saved using the  ``ToUpper`` or ``IndexOf`` methods instead of writing that code yourself *every* time.  Also, wasn't it nice that 
-you could use ``ToUpper`` or ``IndexOf`` on any string or array you needed?  Reusability is so nice.  
-While you do have to call them in order to work, this allows you to code freely without any fear of rogue ``ToLower`` or ``Sort``
-methods altering your code when you aren't looking.  Methods only work when you call them.
+You call them and they do their task.  
 
 As we move deeper in the C# language, you will begin to use methods more and more.  This chapter is designed to introduce you to 
-method signatures, method calls, and overall usage of methods within your code.  A **method signature** is the structure of the method, 
-including accessability, data type, parameters, and return type if applicable.  A **method call** is how you call your method based on its
+**method signatures**, **method calls**, and the ability to create your own unique methods.  A method signature is the structure of the method, 
+including accessability, data type, parameters, and return type if applicable.  A method call, or invocation, is how you call your method based on its
 signature.  
 
 A little caveat before we continue.  Since we have not encountered C# classes at this point, we will be working with **static** methods.
-Static methods are able to ``return`` a **value** or others print directly into the console, but they do not create anything **new**.
+Static methods are able to ``return`` a **value** or print directly into the console, but they do not create anything **new**.
 Methods that create new instances of objects are called **instance methods**, we will learn about them soon.  
 
 What is a Method?

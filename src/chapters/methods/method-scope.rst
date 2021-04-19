@@ -1,6 +1,8 @@
 Scope 
 ==========
 
+.. index:: ! scope
+
 **Scope** refers to visibility of a particular variable within your code.  
 So far we have defined variables directly in the Main method within the ``MainClass`` in the replit IDE, 
 but also inside loops and methods.  Perhaps you have exerienced an error when trying to print or call a variable that 
@@ -57,6 +59,8 @@ When we get to classes, we will discuss how to handle class level scope in more 
 In this example we are trying to print the variable ``total``.  
 We can access ``total`` because it has been defined within ``MainClass``, as you can see in **Line 1** in this example.
 If we had a second class, depending on the access modifier of the ``SumItUp`` method, we might not be able to access it.
+
+This will make more sense when we start learning about classes in future chapters.
 
 Method Level Scope 
 ------------------------
