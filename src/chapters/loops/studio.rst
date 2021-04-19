@@ -83,7 +83,6 @@ Update your code from part A to add user input and validation.
 
 2.  Refactor your ``for`` loop to use the user input to select and print that many meals.
 
-
 3. **Bonus Mission:** *(Optional)  To enhance your learning, modify your code to:*  
 
    a. Use string formatting to print something more interesting than a list of "chicken", "rice", "peas", "juice", "apple" for the meal outputs.
