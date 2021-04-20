@@ -14,7 +14,10 @@ Chapters
    chapters/strings/index
    chapters/arrays/index
    chapters/loops/index
+<<<<<<< HEAD
    chapters/collections-and-flow/index
+=======
+>>>>>>> main
 
 .. toctree::
 
@@ -31,7 +34,11 @@ Studios
    chapters/booleans-and-conditionals/studio
    chapters/arrays/studio
    chapters/loops/studio
+<<<<<<< HEAD
    chapters/collections-and-flow/studio
+=======
+
+>>>>>>> main
 
 Assignments
 ===========
