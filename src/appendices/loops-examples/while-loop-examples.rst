@@ -1,8 +1,5 @@
 .. _while-loop-examples:
 
-<<<<<<< HEAD
-``while`` Examples
-=====================
 =======
 ``while`` Loop Examples
 =========================
@@ -41,4 +38,3 @@ but the ``while`` loop is here to help us allow for numerous attempts.
 ``While`` loops can also be used when you have a specific number of iterations.  
 You can easily convert a ``for`` into a ``while`` loop as we discussed in :ref:`chapter 9 <while-loops>` .
       
->>>>>>> main

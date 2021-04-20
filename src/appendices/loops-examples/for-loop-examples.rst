@@ -1,9 +1,5 @@
 .. _for-loop-examples:
 
-<<<<<<< HEAD
-``for`` Examples
-======================
-=======
 ``for`` Loop Examples
 =======================
 
@@ -75,4 +71,3 @@ This loop is best used when you know exactly how many times you want to loop to 
       *
 
 Above is an example of a nested ``for`` loop, but you can nest ANY loop.
->>>>>>> main
