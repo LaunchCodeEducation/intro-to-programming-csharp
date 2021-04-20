@@ -9,7 +9,7 @@ character occurs in a string and then print the results to the console.
 Getting Started
 ---------------
 
-Create your own project from scratch. Review :ref:`create-new-csharp-project`
+Create your own project from scratch. Review ``check this out --> create-new-csharp-project``
 if you need to.
 
 Some Items to Ponder Before Coding
@@ -31,7 +31,7 @@ Some Items to Ponder Before Coding
    It’s probably better to do this as you go through the string instead of
    doing so before you loop through it. (*WHY?*)
 #. If you need to review how to create a new class, revisit the 
-   :ref:`Hello Methods <hello-methods>` program.
+   ``CREATE in REPLI --> Hello Methods <hello-methods>`` program.
 #. Don’t forget to check out the *Bonus Missions* below.
 
 .. admonition:: Tip

@@ -12,8 +12,8 @@ provided by the ``Dictionary`` class.
 
 Considering the gradebook example, we can improve our program using a
 dictionary. We'll store the students’ grades along with their names in the same
-data structure. The names will be the keys, and the grades will be the
-values.
+data structure. The names will be the **keys**, and the grades will be the
+**values**.
 
 As with the other collection structures, in C# we must specify the types of
 the objects we’ll be storing when we declare a variable or parameter to be a
@@ -24,50 +24,61 @@ We suggest you run another version of the gradebook program called ``DictionaryG
 This program lives in the `csharp-web-dev-lsn2controlflowandcollections <https://github.com/LaunchCodeEducation/csharp-web-dev-lsn2controlflowandcollections>`_ repository.
 If you haven't forked and cloned the repository, you should do so now.
 
-.. sourcecode:: csharp
-   :lineno-start: 10
+.. replit:: csharp
+   :slug: Gradebook-Dictionary-CSharp
+   :linenos:
 
-   Dictionary<string, double> students = new Dictionary<string, double>();
-   string newStudent;
+   using System;
+   using System.Collections.Generic;
 
-   Console.WriteLine("Enter your students (or ENTER to finish):");
-
-   // Get student names and grades
-   do
+   class MainClass
    {
-      Console.WriteLine("Student: ");
-      string input = Console.ReadLine();
-      newStudent = input;
+      static void Main(string[] args)
+      {
+         Dictionary<string, double> students = new Dictionary<string, double>();
+         string newStudent;
 
-      if (!Equals(newStudent, "")) {
-         Console.WriteLine("Grade: ");
-         input = Console.ReadLine();
-         double newGrade = double.Parse(input);
-         students.Add(newStudent, newGrade);
+         Console.WriteLine("Enter your students (or ENTER to finish):");
 
-         // Read in the newline before looping back
-         Console.ReadLine();
+         // Get student names and grades
+         do
+         {
+               Console.WriteLine("Student: ");
+               string input = Console.ReadLine();
+               newStudent = input;
+
+               if (!Equals(newStudent, ""))
+               {
+                  Console.WriteLine("Grade: ");
+                  input = Console.ReadLine();
+                  double newGrade = double.Parse(input);
+                  students.Add(newStudent, newGrade);
+
+                  // Read in the newline before looping back
+                  Console.ReadLine();
+               }
+
+         } while (!Equals(newStudent, ""));
+
+         // Print class roster
+         Console.WriteLine("\nClass roster:");
+         double sum = 0.0;
+
+         foreach (KeyValuePair<string, double> student in students)
+         {
+               Console.WriteLine(student.Key + " (" + student.Value + ")");
+               sum += student.Value;
+         }
+
+         double avg = sum / students.Count;
+         Console.WriteLine("Average grade: " + avg);
       }
-
-   } while(!Equals(newStudent, ""));
-
-   // Print class roster
-   Console.WriteLine("\nClass roster:");
-   double sum = 0.0;
-
-   foreach (KeyValuePair<string, double> student in students) {
-      Console.WriteLine(student.Key + " (" + student.Value + ")");
-      sum += student.Value;
    }
 
-   double avg = sum / students.Count;
-   Console.WriteLine("Average grade: " + avg);
-
-
-Notice how a ``Dictionary`` called ``students`` is declared on line 11:
+Notice how a ``Dictionary`` called ``students`` is declared on **Line 8**:
 
 .. sourcecode:: C#
-   :lineno-start: 11
+   :lineno-start: 8
 
    Dictionary<string, double> students = new Dictionary<string, double>();
 
@@ -78,12 +89,12 @@ We can add a new item with a ``.Add()`` method, specifying both key and
 value:
 
 .. sourcecode:: csharp
-   :lineno-start: 26
+   :lineno-start: 25
 
    students.Add(newStudent, newGrade);
 
 And while we don’t do so in this example, we may also access ``Dictionary``
-elements using bracket notation. If we had a key/value pair of
+elements using **bracket notation**. If we had a key/value pair of
 ``"jesse"/4.0`` in the ``students`` dictionary, we could access the grade with:
 
 .. sourcecode:: csharp
@@ -102,7 +113,7 @@ Looping through a dictionary is slightly more complex than it is for ordered lis
 Let’s look at the ``foreach`` loop from this example:
 
 .. sourcecode:: csharp
-   :lineno-start: 38
+   :lineno-start: 37
 
    for (KeyValuePair<string, double> student in students) {
       Console.WriteLine(student.Key + " (" + student.Value + ")");
@@ -204,7 +215,7 @@ planets and the number of moons associated with each.
      - ``moons.ContainsValue(79)`` returns ``true``
 
 We have only brushed the surface of how arrays, ``Lists``, and dictionaries work.
-We leave it to you to refer to the official documentation linked below for more
+We leave it to you to refer to the official documentation linked above for more
 details. You’ll certainly be using ``Lists`` and dictionaries in more ways than
 those covered in this lesson, but with the knowledge you have now, you
 should be able to use C# collections and learn new uses as you go.

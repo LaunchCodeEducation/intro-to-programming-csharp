@@ -2,11 +2,11 @@ Exercises: Control Flow and Collections
 =======================================
 
 If you haven't done so already, fork and clone 
-`csharp-web-dev-lsn2controlflowandcollections <https://github.com/LaunchCodeEducation/csharp-web-dev-lsn2controlflowandcollections>`__.
+``Create this in REPLIT ---> csharp-web-dev-lsn2controlflowandcollections``.
 Work on these exercises in this solution and create a new class for each item. 
 You may call these classes whatever you
 like, but remember to use the proper
-:ref:`C# naming conventions <naming-conventions>`.
+``FIX THIS --> C# naming conventions``.
 
 Array Practice
 --------------

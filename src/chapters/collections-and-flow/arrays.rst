@@ -1,7 +1,7 @@
 Array
 =====
 
-We learned about arrays in C# in :ref:`a previous lesson <array>`, 
+We learned about arrays in C# in `a previous lesson <arrays>`, 
 so let’s spend a moment comparing them to ``Lists``. ``Lists``  
 are generally easier to use than C#'s ``Array``. Let's see why this is.
 
@@ -18,56 +18,64 @@ fact is reason enough to use ``Lists`` in most scenarios.
 To illustrate ``Array`` usage, here is a version of the Gradebook program
 using ``Arrays`` instead of ``Lists``:
 
-.. sourcecode:: csharp
-   :lineno-start: 9
+.. replit:: csharp
+   :slug: Gradebook-Array-CSharp
+   :linenos: 
+   
+   using System;
+   
+   class MainClass
+   {
+      static void Main(string[] args)
+      {
 
-   // Allow for at most 30 students
-   int maxStudents = 30;
+      // Allow for at most 30 students
+      int maxStudents = 30;
 
-   string[] students = new string[maxStudents];
-   double[] grades = new double[maxStudents];
+      string[] students = new string[maxStudents];
+      double[] grades = new double[maxStudents];
 
-   string input;
-   string newStudent;
-   int numStudents = 0;
+      string input;
+      string newStudent;
+      int numStudents = 0;
 
-   Console.WriteLine("Enter your students (or ENTER to finish):");
+      Console.WriteLine("Enter your students (or ENTER to finish):");
 
-   // Get student names
-   do {
-      input = Console.ReadLine();
-      newStudent = input
+      // Get student names
+      do {
+         input = Console.ReadLine();
+         newStudent = input
 
-      if (!Equals(newStudent, "")) {
-         students[numStudents] = newStudent;
-         numStudents++;
+         if (!Equals(newStudent, "")) {
+            students[numStudents] = newStudent;
+            numStudents++;
+         }
+
+      } while(!Equals(newStudent, ""));
+
+      // Get student grades
+      for (int i = 0; i < numStudents; i++) {
+         Console.WriteLine("Grade for " + students[i] + ": ");
+         input = Console.ReadLine();
+         double grade = double.Parse(input);
+         grades[i] = grade;
       }
 
-   } while(!Equals(newStudent, ""));
+      // Print class roster
+      Console.WriteLine("\nClass roster:");
+      double sum = 0.0;
 
-   // Get student grades
-   for (int i = 0; i < numStudents; i++) {
-      Console.WriteLine("Grade for " + students[i] + ": ");
-      input = Console.ReadLine();
-      double grade = double.Parse(input);
-      grades[i] = grade;
+      for (int i = 0; i < numStudents; i++) {
+         Console.WriteLine(students[i] + " (" + grades[i] + ")");
+         sum += grades[i];
+      }
+
+      double avg = sum / numStudents;
+      Console.WriteLine("Average grade: " + avg);
+   
    }
 
-   // Print class roster
-   Console.WriteLine("\nClass roster:");
-   double sum = 0.0;
-
-   for (int i = 0; i < numStudents; i++) {
-      Console.WriteLine(students[i] + " (" + grades[i] + ")");
-      sum += grades[i];
-   }
-
-   double avg = sum / numStudents;
-   Console.WriteLine("Average grade: " + avg);
-
-We suggest you try running this version of the gradebook program called ``ArrayGradebook`` in Visual Studio.
-This program lives in the `csharp-web-dev-lsn2controlflowandcollections <https://github.com/LaunchCodeEducation/csharp-web-dev-lsn2controlflowandcollections>`_ repository.
-If you haven't forked and cloned the repository, you should do so now.
+We suggest you try running this version of the gradebook program in your replit IDE.
 
 .. index:: ! bracket notation
 

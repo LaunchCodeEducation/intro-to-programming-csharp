@@ -10,62 +10,61 @@ several new C# concepts, including the class ``List``. We will also
 review different kinds of ``for`` loops used in C#.
 
 Before going any further, we suggest you run the ``ListGradebook``
-program in Visual Studio. This program is in `csharp-web-dev-lsn2controlflowandcollections <https://github.com/LaunchCodeEducation/csharp-web-dev-lsn2controlflowandcollections>`_.
-Once you’ve forked and cloned the repository following the directions on how to :ref:`clone a C# project <clone-csharp-project>`, let’s look at what is happening in the source code.
+program in your replit IDE.  The link is below the Gradebook code block.
 
-.. sourcecode:: csharp
+.. replit:: csharp
+   :slug: Gradebook-List-CSharp
    :linenos:
 
    using System;
    using System.Collections.Generic;
 
-   namespace ListGradebook
+
+   class MainClass
    {
-      class Program
+      static void Main(string[] args)
       {
-         static void Main(string[] args)
+         List<string> students = new List<string>();
+         List<double> grades = new List<double>();
+         string newStudent;
+         string input;
+
+         Console.WriteLine("Enter your students (or ENTER to finish):");
+
+         // Get student names
+         do
          {
-            List<string> students = new List<string>();
-            List<double> grades = new List<double>();
-            string newStudent;
-            string input;
+            input = Console.ReadLine();
+            newStudent = input;
 
-            Console.WriteLine("Enter your students (or ENTER to finish):");
-
-            // Get student names
-            do
-            {
-               input = Console.ReadLine();
-               newStudent = input;
-
-               if (!Equals(newStudent, "")) {
-                  students.Add(newStudent);
-               }
-
-            } while(!Equals(newStudent, ""));
-
-            // Get student grades
-            foreach (string student in students) {
-               Console.WriteLine("Grade for " + student + ": ");
-               input = Console.ReadLine();
-               double grade = double.Parse(input);
-               grades.Add(grade);
+            if (!Equals(newStudent, "")) {
+               students.Add(newStudent);
             }
 
-            // Print class roster
-            Console.WriteLine("\nClass roster:");
-            double sum = 0.0;
+         } while(!Equals(newStudent, ""));
 
-            for (int i = 0; i < students.Count; i++) {
-               Console.WriteLine(students[i] + " (" + grades[i] + ")");
-               sum += grades[i];
-            }
-
-            double avg = sum / students.Count;
-            Console.WriteLine("Average grade: " + avg);
+         // Get student grades
+         foreach (string student in students) {
+            Console.WriteLine("Grade for " + student + ": ");
+            input = Console.ReadLine();
+            double grade = double.Parse(input);
+            grades.Add(grade);
          }
+
+         // Print class roster
+         Console.WriteLine("\nClass roster:");
+         double sum = 0.0;
+
+         for (int i = 0; i < students.Count; i++) {
+            Console.WriteLine(students[i] + " (" + grades[i] + ")");
+            sum += grades[i];
+         }
+
+         double avg = sum / students.Count;
+         Console.WriteLine("Average grade: " + avg);
       }
    }
+
 
 Here we declare and initialize two objects, ``students`` and ``grades``,
 which appear to be of type ``List<string>`` and
@@ -131,7 +130,7 @@ line.
 
 .. admonition:: Note
 
-   On lines 22 and 26, we use a method to compare the value of ``newStudent`` and ``""``.
+   On **Lines 22 and 26**, we use a method to compare the value of ``newStudent`` and ``""``.
    The ``Equals(a,b)`` compares two strings, ``a`` and ``b``, and returns true if the strings are the same.
    If the strings are not the same, the method returns false.
 

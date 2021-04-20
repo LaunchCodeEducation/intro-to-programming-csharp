@@ -1,6 +1,5 @@
 .. _while-loop-examples:
 
-=======
 ``while`` Loop Examples
 =========================
 
