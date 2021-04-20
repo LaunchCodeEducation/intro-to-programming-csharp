@@ -17,11 +17,7 @@ In order to prevent a rogue astronaut from activating the code, it takes
 different code, after which the computer will "zip" them together before
 overloading the engines.
 
-<<<<<<< HEAD
-For the purposes of easier (human) readability, try using the following console method ``Console.Write``. How is it different from ``Console.WriteLine``?  
-=======
 For the purposes of easier (human) readbility, try using the following console method ``Console.Write``. How is it different from ``Console.WriteLine``?  
->>>>>>> 78fd611b1c3dd60332978e583e64bad8d922f8d2
 
 1. Construct a ``for`` loop that combines two strings together, alternating the characters from each source.
 
@@ -77,11 +73,7 @@ Part B (Put dinner together)
    c. Print out each meal.
 
 
-<<<<<<< HEAD
-Part B (Refinements)
-=======
 Part C (Refinements)
->>>>>>> 78fd611b1c3dd60332978e583e64bad8d922f8d2
 --------------------
 
 Update your code from part A to add user input and validation.
@@ -91,18 +83,11 @@ Update your code from part A to add user input and validation.
 
 2.  Refactor your ``for`` loop to use the user input to select and print that many meals.
 
-<<<<<<< HEAD
-3. **Bonus Mission:** *(Optional)  To enhance your learning, modify your code to:*  
-
-   a. Use string formatting to print something more interesting than a list of "chicken", "rice", "peas", "juice", "apple" for the meal outputs.
-   b. Create a string array of labels to describe each item in a meal.  Use a nested loop print your each item with the appropriate label.
-=======
 
 3. **Bonus Mission:** *(Optional)  To enhance your learning, modify your code to:*  
 
    a. Use string formatting to print something more interesting than a list of "chicken", "rice", "peas", "juice", "apple" for the meal outputs.
    b. Create an string array of labels to describe each item in a meal.  Use a nested loop print your each item with the appropriate label.
->>>>>>> 78fd611b1c3dd60332978e583e64bad8d922f8d2
    c. Modify your code to check each meal for kale. If present, after the meal output add, "Don't worry, you can have double chocolate tomorrow."
 
 
