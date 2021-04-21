@@ -6,7 +6,7 @@ Method Signatures and Calls
 
 
 Method Signatures
-^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 When you decide to create your own method, there is a standard syntax that C# requires in order to 
 run your method when you call it.  This syntax is the template for your method signature. 
@@ -61,7 +61,7 @@ we can treat anything returned as a regular value.  This means you can store the
 To sum up the method ``SquareTheNumber``:  use with an **int** value and the method will return the squared value.
 
 Method Calls
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 A few notes about the Main method before we move on.  The Main method is where you **call** methods.  You build methods **outside** of the Main method.   
 
@@ -143,7 +143,7 @@ Check Your Understanding
    .. sourcecode:: csharp
       :linenos:
       
-      static int Perimeter(int x, int y)
+      static int Amount(int x, int y)
       {
          return (2 * x) + (2.5 * y);
       }

@@ -164,7 +164,7 @@ Check Your Understanding
          if(number % 2 == 0)
          {
             int byHundred = number * 100;    //1
-            Console.WriteLine(hundred);
+            Console.WriteLine(byHundred);
          }
          int byHalf = number/2;              //2
          return byHalf;
