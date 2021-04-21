@@ -20,12 +20,9 @@ the objects we’ll be storing when we declare a variable or parameter to be a
 dictionary. This means specifying both key and value data types, which are allowed
 to be different types for a given dictionary.
 
-We suggest you run another version of the gradebook program called ``DictionaryGradebook`` in Visual Studio.
-This program lives in the `csharp-web-dev-lsn2controlflowandcollections <https://github.com/LaunchCodeEducation/csharp-web-dev-lsn2controlflowandcollections>`_ repository.
-If you haven't forked and cloned the repository, you should do so now.
+We suggest you open the following `Dictionary Gradebook  <https://replit.com/@launchcode/Gradebook-Dictionary-CSharp#main.cs>`_ in your replit IDE.
 
-.. replit:: csharp
-   :slug: Gradebook-Dictionary-CSharp
+.. sourcecode:: csharp
    :linenos:
 
    using System;

@@ -1,5 +1,5 @@
-Conditionals Part 2
-=====================
+``switch`` Statements vs. ``else if``
+=======================================
 
 You have been exposed to basic ways to contol the flow of data within your code.
 We discussed logical operators, conditional statements, and loops.  

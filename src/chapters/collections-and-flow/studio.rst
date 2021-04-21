@@ -9,8 +9,7 @@ character occurs in a string and then print the results to the console.
 Getting Started
 ---------------
 
-Create your own project from scratch. Review ``check this out --> create-new-csharp-project``
-if you need to.
+Create your own project from scratch in your replit.
 
 Some Items to Ponder Before Coding
 ----------------------------------
@@ -30,18 +29,8 @@ Some Items to Ponder Before Coding
 #. You’ll need to *initialize* the counts for the characters in some fashion.
    It’s probably better to do this as you go through the string instead of
    doing so before you loop through it. (*WHY?*)
-#. If you need to review how to create a new class, revisit the 
-   ``CREATE in REPLI --> Hello Methods <hello-methods>`` program.
 #. Don’t forget to check out the *Bonus Missions* below.
 
-.. admonition:: Tip
-
-   Remember, you can turn a ``string`` object into an array of characters
-   using:
-
-   .. sourcecode:: c#
-
-      char[] charactersInString = myString.ToCharArray();
 
 
 Sample Input

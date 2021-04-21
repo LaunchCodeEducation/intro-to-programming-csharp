@@ -1,5 +1,11 @@
-Loops Part 2
-=============
+More Loops and Break Statements
+=====================================
+
+Earlier we learned how the ``for`` loop can iterate through a
+string or array a specific number of times in a specific way.
+
+Sometimes you might want an easier way to iterate over a collection 
+without as many steps.  This is where the ``foreach`` loop can come in handy.
 
 .. index:: ! foreach loop
 
@@ -213,11 +219,6 @@ The ``Append()`` method in the ``StringBuilder`` class adds the value of ``word`
 While concatenating strings is just one of the *many* use cases of loops in C#, ``StringBuilder`` is a fun tool to add to your toolkit.
 If we don't use a ``StringBuilder`` object, the longer ``arrayOfWords`` is, the slower our program will get.
 While at this level, we may not be too concerned with a program's performance, in enterprise applications, performance can be everything.
-
-.. admonition:: Note 
-
-   We haven't covered classes or objects yet. If it helps, a very simple explanation of how the ``StringBuilder`` class to creates objects 
-   is to think of the class as the data type and the object would be like the value in a variable.   
 
 
 Check Your Understanding

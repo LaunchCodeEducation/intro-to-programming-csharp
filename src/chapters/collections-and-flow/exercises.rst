@@ -1,16 +1,10 @@
 Exercises: Control Flow and Collections
 =======================================
 
-If you haven't done so already, fork and clone 
-``Create this in REPLIT ---> csharp-web-dev-lsn2controlflowandcollections``.
-Work on these exercises in this solution and create a new class for each item. 
-You may call these classes whatever you
-like, but remember to use the proper
-``FIX THIS --> C# naming conventions``.
-
 Array Practice
 --------------
 
+#. Fork this replit `Array Practice <https://replit.com/@launchcode/ArrayPractice#main.cs>`_. 
 #. Create and initialize an array with the following values in a single line:
 
    :: 
@@ -23,6 +17,7 @@ Array Practice
 String Practice
 ---------------
 
+#. Fork this replit `String Practice <https://replit.com/@launchcode/StringPractice#main.cs>`_.
 #. For this exercise, create a string for the value: 
 
    ::
@@ -46,6 +41,7 @@ String Practice
 List Practice
 -------------
 
+#. Fork this replit `List Practice <https://replit.com/@launchcode/ListPractice#main.cs>`_.
 #. Write a static method to find the sum of all the even numbers in a
    List. 
 #. Within ``Main``, create a list with at least 10 integers and call
@@ -54,8 +50,13 @@ List Practice
    letters.
 #. Modify your code to prompt the user to enter the word length for the search.
 
+**Bonus Mission:**  Update your solution from the *List Practice* section to use the string from the *String Practice* section. 
+Search "C# convert string to list" online to see how to split a string into the more flexible ``List`` collection.
+
 Dictionary Practice
 -------------------
+
+Fork this replit `Dictionary Practice <https://replit.com/@launchcode/DictionaryPractice#main.cs>`_.
 
 Make a program similar to ``GradebookDictionary`` that does the following:
 
@@ -65,10 +66,4 @@ Make a program similar to ``GradebookDictionary`` that does the following:
 #. Modify the roster printing code accordingly.
 
 
-Bonus Mission
--------------
 
-#. Update your solution from the *List Practice* section to use the 
-   string from the *String Practice* section. Search "C# convert string to
-   list" online to see how to split a string into the more flexible
-   ``List`` collection.

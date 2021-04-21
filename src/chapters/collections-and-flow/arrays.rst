@@ -1,7 +1,7 @@
 Array
 =====
 
-We learned about arrays in C# in `a previous lesson <arrays>`, 
+We learned about arrays in C# in :ref:`a previous lesson <arrays>`, 
 so let’s spend a moment comparing them to ``Lists``. ``Lists``  
 are generally easier to use than C#'s ``Array``. Let's see why this is.
 
@@ -15,11 +15,10 @@ expand or contract an ``Array`` after it is created, so you must know
 exactly how many elements it will need to hold when you create it. This
 fact is reason enough to use ``Lists`` in most scenarios.
 
-To illustrate ``Array`` usage, here is a version of the Gradebook program
+To illustrate ``Array`` usage, here is a version of the `Array Gradebook <https://replit.com/@launchcode/Gradebook-Array-CSharp>`_ program
 using ``Arrays`` instead of ``Lists``:
 
-.. replit:: csharp
-   :slug: Gradebook-Array-CSharp
+.. sourcecode:: csharp
    :linenos: 
    
    using System;
@@ -75,7 +74,6 @@ using ``Arrays`` instead of ``Lists``:
    
    }
 
-We suggest you try running this version of the gradebook program in your replit IDE.
 
 .. index:: ! bracket notation
 

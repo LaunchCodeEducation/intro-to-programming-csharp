@@ -9,11 +9,10 @@ To write a **List** version of the program, we will have to introduce
 several new C# concepts, including the class ``List``. We will also
 review different kinds of ``for`` loops used in C#.
 
-Before going any further, we suggest you run the ``ListGradebook``
-program in your replit IDE.  The link is below the Gradebook code block.
+Before going any further, we suggest you run the `List Gradebook <https://replit.com/@launchcode/Gradebook-List-CSharp>`_
+program in your replit IDE.  
 
-.. replit:: csharp
-   :slug: Gradebook-List-CSharp
+.. sourcecode:: csharp
    :linenos:
 
    using System;
