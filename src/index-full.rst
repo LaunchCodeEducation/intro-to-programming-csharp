@@ -13,6 +13,7 @@ Chapters
    chapters/errors-and-debugging/index
    chapters/strings/index
    chapters/arrays/index
+   chapters/loops/index
    chapters/methods/index
 
 .. toctree::
@@ -28,6 +29,10 @@ Studios
    
    chapters/data-and-variables/studio
    chapters/booleans-and-conditionals/studio
+   chapters/arrays/studio
+   chapters/loops/studio
+   chapters/methods/studio
+
 
 Assignments
 ===========
@@ -48,3 +53,4 @@ Appendices
    appendices/best-practices
    appendices/string-method-examples/index
    appendices/array-method-examples/index
+   appendices/loops-examples/index
