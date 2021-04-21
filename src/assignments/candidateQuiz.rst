@@ -3,7 +3,7 @@
 Assignment #1: Candidate Testing
 ================================
 
-The starter code can be found `here<https://replit.com/@launchcode/Assignment1-CandidateTester-CSharp#main.cs>`_.
+The starter code can be found `here <https://replit.com/@launchcode/Assignment1-CandidateTester-CSharp#main.cs>`_.
 
 OK, staff, we received many applications for our astronaut training program,
 and we need to do an initial evaluation of the candidates.  Management needs
