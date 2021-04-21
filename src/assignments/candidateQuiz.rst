@@ -3,6 +3,8 @@
 Assignment #1: Candidate Testing
 ================================
 
+The starter code can be found `here<https://replit.com/@launchcode/Assignment1-CandidateTester-CSharp#main.cs>`_.
+
 OK, staff, we received many applications for our astronaut training program,
 and we need to do an initial evaluation of the candidates.  Management needs
 you to create a quick quiz to help select the best candidates.
@@ -107,8 +109,8 @@ Helpful hint - To calculate the candidate's percentage, use the equation:
 
    (Number of Correct Answers) / (Number of Questions) * 100
 
-Note that the final report MUST have the format shown in the "Results Output"
-section.
+Note that the final report should have some formatting that will make the overall grade and status stand out.  
+Refer to the example below.
 
 Sanity Checks
 --------------
