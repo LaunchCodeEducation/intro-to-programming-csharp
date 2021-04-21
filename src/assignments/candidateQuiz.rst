@@ -35,8 +35,6 @@ testable parts. The goal is to get simple parts working first and then expand
 the code in a systematic way. The following is NOT the only way to complete
 this assignment, but it provides a framework for thinking through the project.
 
-Create a replit.com project to start building your project.  Make sure "Candidate Quiz" is part of the name.
-Use the textbook for directions.  
 
 Part 1: Minimum Viable Quiz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
