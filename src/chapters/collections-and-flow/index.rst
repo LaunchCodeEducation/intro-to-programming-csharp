@@ -8,7 +8,9 @@ Control Flow and Collections
    loops
    collections
    list
+   list-gradebook
    arrays
    dictionary
+   dictionary-gradebook
    exercises
    studio

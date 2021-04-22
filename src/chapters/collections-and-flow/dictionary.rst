@@ -6,158 +6,132 @@
 Dictionary
 ==========
 
-C# also provides us a structure to store data as key/value pairs. C# calls
-these objects **dictionaries**, and they are
-provided by the ``Dictionary`` class.
+While ``Lists`` are nice, sometimes we could use a different way to organize our data.  
+So far in the gradebook examples we have had to use two separate lists or arrays to store student
+names and grades.  The worst part is that, an index is required for both objects in order to pair 
+the student with their grade correctly.  That is two indices you have to track and manipulate 
+between two separate objects.  With a dozen students we could handle this, but what if you had one hundred? 
+What if you wanted to search for a specific name, such as Nicole, but your roster has three Nicoles.  You 
+are looking for the one who scored an 88.  But that 88 is in the other array, and another student scored 88 as well.
+There are methods for finding the right Nicole and the right 88, but talk about a logic headache.  
 
-Considering the gradebook example, we can improve our program using a
-dictionary. We'll store the students’ grades along with their names in the same
-data structure. The names will be the **keys**, and the grades will be the
-**values**.
+What if we could pair the name and the grade together in a single collection type?  That would be pretty nice, right?
 
-As with the other collection structures, in C# we must specify the types of
-the objects we’ll be storing when we declare a variable or parameter to be a
-dictionary. This means specifying both key and value data types, which are allowed
-to be different types for a given dictionary.
+Luckily, the ``Dictionary`` class allows us to do just that.  The ``Dictionary`` works with pairs of **keys** and **values**, sometimes
+referred to as **key/value** **pairs**.  The key is a reference point that holds values.  Using our gradebook analogy, we 
+could use the student names as keys and their grades as values.  We could sort through the dictionary using the keys, or we could use the values, 
+and we can also sort for specific key/value pairs.  This can simplify our search by using the student key "Nicole" with the grade value of 88 in *one* collection.  
 
-We suggest you open the following `Dictionary Gradebook  <https://replit.com/@launchcode/Gradebook-Dictionary-CSharp#main.cs>`_ in your replit IDE.
+The key/value pair structure does come with a few rules, such as *every* key must have a pair, and every pair *must* have a key.
+Only one value *object* per key.  If you use an ``int`` for the value, then only one int allowed.  If you use a ``List<int>`` as a value, you still 
+only have one value per key, your value is a list containing multiple elements.  You typically want only one key object, as keys are a fast way to 
+search a dictionary object.
+
+In the next section we will look at the gradebook again, only this time as a ``Dictionary`` and you will get to see the key/value pairs in action.
+
+``Dictionary`` Initialization
+--------------------------------
+
+As usual, there are a few ways to `initalize a dictionary <https://replit.com/@launchcode/Dictionary-Initialization#main.cs>`_.  
 
 .. sourcecode:: csharp
-   :linenos:
 
-   using System;
-   using System.Collections.Generic;
-
-   class MainClass
+   Dictionary<TKey, TValue> newDictionary = new Dictionary<TKey, TValue>
    {
-      static void Main(string[] args)
-      {
-         Dictionary<string, double> students = new Dictionary<string, double>();
-         string newStudent;
+      {key1, value1},
+      {key2, value2},
+      {key3, value3}
+   };
 
-         Console.WriteLine("Enter your students (or ENTER to finish):");
+   Dictionary<string, int> classSize = new Dictionary<string, int>
+   {
+      {"Biology", 36},
+      {"Ecology", 28},
+      {"English", 45}
+   };
 
-         // Get student names and grades
-         do
-         {
-               Console.WriteLine("Student: ");
-               string input = Console.ReadLine();
-               newStudent = input;
 
-               if (!Equals(newStudent, ""))
-               {
-                  Console.WriteLine("Grade: ");
-                  input = Console.ReadLine();
-                  double newGrade = double.Parse(input);
-                  students.Add(newStudent, newGrade);
-
-                  // Read in the newline before looping back
-                  Console.ReadLine();
-               }
-
-         } while (!Equals(newStudent, ""));
-
-         // Print class roster
-         Console.WriteLine("\nClass roster:");
-         double sum = 0.0;
-
-         foreach (KeyValuePair<string, double> student in students)
-         {
-               Console.WriteLine(student.Key + " (" + student.Value + ")");
-               sum += student.Value;
-         }
-
-         double avg = sum / students.Count;
-         Console.WriteLine("Average grade: " + avg);
-      }
-   }
-
-Notice how a ``Dictionary`` called ``students`` is declared on **Line 8**:
-
-.. sourcecode:: C#
-   :lineno-start: 8
-
-   Dictionary<string, double> students = new Dictionary<string, double>();
-
-Here, ``<string, double>`` defines the data types for this dictionary's
-``<key, value>`` pairs.
-
-We can add a new item with a ``.Add()`` method, specifying both key and
-value:
-
-.. sourcecode:: csharp
-   :lineno-start: 25
-
-   students.Add(newStudent, newGrade);
-
-And while we don’t do so in this example, we may also access ``Dictionary``
-elements using **bracket notation**. If we had a key/value pair of
-``"jesse"/4.0`` in the ``students`` dictionary, we could access the grade with:
+We can also use index initialization to create a dictionary.
 
 .. sourcecode:: csharp
 
-   double jesseGrade = students["jesse"];
+   Dictionary<TKey, TValue> demoDictionary = new Dictionary<KeyT, ValueT>
+   {
+      [key1] = value1,
+      [key2] = value2,
+      [key3] = value3
+   };
 
-Variables may be used to access elements:
+   Dictionary<int, string> roomAssignments = new Dictionary<int, string>
+   {
+      [25] = "Hernandez",
+      [35] = "Stein",
+      [27] = "Starkey"
+   };
 
-.. sourcecode:: csharp
-   :linenos:
-
-   string name = "jesse";
-   double jesseGrade = students[name];
-
-Looping through a dictionary is slightly more complex than it is for ordered lists.
-Let’s look at the ``foreach`` loop from this example:
-
-.. sourcecode:: csharp
-   :lineno-start: 37
-
-   for (KeyValuePair<string, double> student in students) {
-      Console.WriteLine(student.Key + " (" + student.Value + ")");
-      sum += student.Value;
-   }
-
-.. index:: ! KeyValuePair<T,T>
-
-The iterator variable, ``student``, is of type
-``KeyValuePair<string, double>``. The class **KeyValuePair<T,T>** is specifically
-constructed to be used in this fashion, to represent key/value pairs
-within dictionaries. Each ``KeyValuePair`` object has a ``Key`` property and a
-``Value`` property.
-
-If you only need to access the key of each item, you can
-construct a simpler loop and use the ``Keys`` property of the ``Dictionary`` class:
+And finally, you can declare the dictionary and use the ``Add`` method to initalize.
 
 .. sourcecode:: csharp
-   :linenos:
 
-   foreach (string studentName in students.Keys) {
-      Console.WriteLine(studentName);
-   }
+   Dictionary<TKey, TValue> methodDictionary = new Dictionary<TKeym TValue>();
+      methodDictionary.Add(key1, value1);
+      methodDictionary.Add(key2, value2);
+      methodDictionary.Add(key3, value3);
 
-A similar structure applies if you only need the values, using
-``students.Values``:
-
-.. sourcecode:: csharp
-   :linenos:
-
-   foreach (double grade in students.Values) {
-      Console.WriteLine(grade);
-   }
+   Dictionary<string, string> teachingAssignments = new Dictionary<string, string>();
+      teachingAssignments.Add("Biology", "E. Stein");
+      teachingAssignments.Add("English", "J. Starkey");
+      teachingAssignments.Add("Ecology", "F. Hernandez");
 
 .. admonition:: Note
    
-   We can declare and initialize a dictionary in one stroke like so:
+   The easiest way to print each key/value pair is to use the class ``KeyValuePair<TKey, TValue>``.  
+
+   ``KeyValuePair<TKey, TValue>`` will print each key/value pair as an object, which in the console can look like this:
+   
+   .. sourcecode::  csharp
+      
+      foreach(KeyValuePair kvp in dictionaryName)
+      {
+         Console.WriteLine(kvp)
+      }
+
+      //output
+      [key1, value1]
+
+   This class will also allow you to print either only keys or values when you use the ``.Key`` or ``.Value`` properties of the dictionary.
+   This is demonstrated in the `initialization replit example <https://replit.com/@launchcode/Dictionary-Initialization#main.cs>`_.
+   Be sure to match your data types when you use this class.  
+
+
+
+Accessing Dictionary Elements
+--------------------------------
+
+.. index:: ! bracket notation
+
+If you want to access a key/value pair from within your dictionary, you can do so using the indexer or **bracket notation**.
+
+
+.. admonition::  Example
 
    .. sourcecode:: csharp
-      :linenos:
 
-      Dictionary<int, string> groceries = new Dictionary<int, string> 
+
+      Dictionary<TKey, TValue> newDictionary = new Dictionary<TKey, TValue>
       {
-         {2, "Apples"},
-         {3, "Oranges"},
-         {1, "Avocado"}
+         {key1, value1},
+         {key2, value2},
+         {key3, value3}
       };
+
+      if(newDictionary.ContainsKey(key2))
+      {
+          //prints the values of key2 if contained within dictionary using bracket notation.
+         Console.WriteLine(newDictionary.[key2]);     
+      } 
+
+
 
 Dictionary Methods
 ------------------
@@ -189,33 +163,32 @@ planets and the number of moons associated with each.
    * - C# Syntax
      - Description
      - Example
-   * - ``Count``
+   * - :ref:`Count <count-examples>`
      - Returns the number of items in the dictionary, as an ``int``.
      - ``moons.Count`` returns ``8``
-   * - ``Keys``
+   * - :ref:`Keys <key-examples>`
      - Returns a collection containing all keys in the dictionary. This collection may be used in a
        ``foreach`` loop just as lists are, but the dictionary *may not be modified* within such a loop.
      - ``moons.Keys`` returns
        ``{"Earth", "Mars", "Neptune", "Jupiter", "Saturn", "Venus", "Uranus", "Mercury"}``
-   * - ``Values``
+   * - :ref:`Values <value-examples>`
      - Returns a collection containing all values in the dictionary. This collection may be used in a
        ``foreach`` loop just as lists are.
      - ``moons.Values`` returns ``{1, 2, 14, 79, 82, 0, 27, 0}``
-   * - ``Add()``
+   * - :ref:`Add() <dictionary-add-examples>`
      - Add a key/value pair to a dictionary.
      - ``moons.Add("Pluto", 5)`` adds ``"Pluto": 5`` to the ``moons``
-   * - ``ContainsKey()``
+   * - :ref:`Remove() <dictionary-remove-examples>`
+     - Removes a key/value pair to a dictionary using key as a reference.
+     - ``moons.Remove("Pluto")`` removes ``"Pluto": 5`` from the ``moons``
+   * - :ref:`ContainsKey() <containsKey-examples>`
      - Returns a boolean indicating whether or not the dictionary contains a given key.
      - ``moons.ContainsKey("Earth")`` returns ``true``
-   * - ``ContainsValue()``
+   * - :ref:`ContainsValue() <containsValue-examples>`
      - Returns a boolean indicating whether or not the dictionary contains a given value.
      - ``moons.ContainsValue(79)`` returns ``true``
 
-We have only brushed the surface of how arrays, ``Lists``, and dictionaries work.
-We leave it to you to refer to the official documentation linked above for more
-details. You’ll certainly be using ``Lists`` and dictionaries in more ways than
-those covered in this lesson, but with the knowledge you have now, you
-should be able to use C# collections and learn new uses as you go.
+
 
 Check Your Understanding
 -------------------------

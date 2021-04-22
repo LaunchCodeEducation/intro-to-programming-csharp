@@ -2,218 +2,81 @@
 
 .. index:: ! List
 
-List
-====
+Lists
+=======
+ 
+A C# ``List`` is a class, which means it contains its own properties and methods that we can 
+use in our programs.  You have seen this before when working with ``Strings`` and ``Arrays``. 
+A ``List`` is more closely related to an ``Array`` than a ``String``, as in it is mutable.  
+However, unlike an ``Array``, you do not have to declare the size of your ``List``.  In fact
+methods exist to modify the size of a ``List`` in ways that will feel effortless compared to the ``Array``.
 
-To write a **List** version of the program, we will have to introduce
-several new C# concepts, including the class ``List``. We will also
-review different kinds of ``for`` loops used in C#.
+Let's start making some ``List`` objects so we can see how they work.  You can try them `here <https://replit.com/@launchcode/List-Initialization-Three-Ways#main.cs>`_.
 
-Before going any further, we suggest you run the `List Gradebook <https://replit.com/@launchcode/Gradebook-List-CSharp>`_
-program in your replit IDE.  
+``List`` Initialization
+--------------------------
+
+Like with arrays, there are a few ways to initialize lists. 
+We could declare and initialize lists in one line like so:
 
 .. sourcecode:: csharp
-   :linenos:
 
-   using System;
-   using System.Collections.Generic;
-
-
-   class MainClass
+   List<T> newList = new List<T> {element1, element2, element3};
+            
+   List<string> sitesInSTL = new List<string> 
    {
-      static void Main(string[] args)
-      {
-         List<string> students = new List<string>();
-         List<double> grades = new List<double>();
-         string newStudent;
-         string input;
+      "The Gateway Arch", 
+      "City Museum", 
+      "Forest Park", 
+      "Busch Stadium"
+   };
+            
 
-         Console.WriteLine("Enter your students (or ENTER to finish):");
-
-         // Get student names
-         do
-         {
-            input = Console.ReadLine();
-            newStudent = input;
-
-            if (!Equals(newStudent, "")) {
-               students.Add(newStudent);
-            }
-
-         } while(!Equals(newStudent, ""));
-
-         // Get student grades
-         foreach (string student in students) {
-            Console.WriteLine("Grade for " + student + ": ");
-            input = Console.ReadLine();
-            double grade = double.Parse(input);
-            grades.Add(grade);
-         }
-
-         // Print class roster
-         Console.WriteLine("\nClass roster:");
-         double sum = 0.0;
-
-         for (int i = 0; i < students.Count; i++) {
-            Console.WriteLine(students[i] + " (" + grades[i] + ")");
-            sum += grades[i];
-         }
-
-         double avg = sum / students.Count;
-         Console.WriteLine("Average grade: " + avg);
-      }
-   }
-
-
-Here we declare and initialize two objects, ``students`` and ``grades``,
-which appear to be of type ``List<string>`` and
-``List<double>``, respectively. A list in C# is very
-similar to an array. Like an array, we must let
-the compiler know what kind of objects our list is going to
-contain. In the case of ``students``, the list will contain
-values of type
-``string`` (representing the names of the students), so we use the
-``List<string>`` syntax to inform the compiler that we intend to
-fill our list with strings. Similarly, ``grades`` will hold exclusively
-values of type ``double`` and is declared to be of type
-``List<double>``.
-
-In lines 10 and 11, we also initialize each ``List`` by creating a new, empty
-``List``. We could declare and initialize lists in one line like so:
+We can also declare and initialize using the list method ``Add()``.
 
 .. sourcecode:: csharp
 
-   List<string> newList = new List<string> {"Apples", "Oranges", "Avocados"};
+   List<T> newList = new List<T>();
+      newList.Add(element1);
+      newList.Add(element2);
+      newList.Add(element3);
+      newList.Add(element4);
+
+   List<int> houseNumbers = new List<int>();
+      houseNumbers.Add(123);
+      houseNumbers.Add(127);
+      houseNumbers.Add(131);
+      houseNumbers.Add(135);
+
+
+And finally, we can pull in elements from an array into our list.
+
+.. sourcecode:: csharp
+
+   type[] demoArray = {element1, element2, element3};
+   List<T> demoList = new List<T>(demoArray);
+
+   string[] colors = {"red", "orange", "yellow", "green", "blue", "purple"};
+   List<string> colorList = new List<string>(colors);
 
 .. index:: ! generic class, generic type
 
 .. admonition:: Note
 
    You will sometimes see the ``List`` class written as List<T>,
-   where ``T`` represents a placeholder for the type that a programmer will
+   where ``T`` represents a *placeholder* for the type that a programmer will
    declare a given List to hold. This is especially true in documentation.
-   You can think of ``T`` as representing an arbitrary type.
+   You can think of ``T`` as representing an arbitrary **type**.
 
    Classes like ``List<T>`` that take another type or class as a parameter
    are referred to as **generic classes** or **generic types**.
 
-``List`` Iteration
------------------------
-
-``do-while``
-^^^^^^^^^^^^
-
-We then use a ``do-while`` loop to collect the names of each of the students
-in the class.
-
-.. sourcecode:: csharp
-   :lineno-start: 17
-
-   // Get student names
-   do
-   {
-      newStudent = Console.ReadLine();
-
-      if (!Equals(newStudent, "")) {
-         students.Add(newStudent);
-      }
-
-   } while(!Equals(newStudent, ""));
-
-Recall that a ``do-while`` loop is very similar to a ``while`` loop, but the
-execution condition is checked at the end of the loop block. This has the net
-effect that the code block will always run at least once. In this example, we
-prompt the user for a name, which C# processes via ``Console.ReadLine()`` when
-the user hits the enter key. To finish entering names, the user enters a blank
-line.
-
-.. admonition:: Note
-
-   On **Lines 22 and 26**, we use a method to compare the value of ``newStudent`` and ``""``.
-   The ``Equals(a,b)`` compares two strings, ``a`` and ``b``, and returns true if the strings are the same.
-   If the strings are not the same, the method returns false.
-
-.. index:: ! List.Add()
-
-For each student that is entered (that is, each non-empty line), we add
-the new string to the end of our List with ``students.Add(newStudent)``.
-The ``.Add()`` method is provided by the ``List`` Class.
-There are lots of other List methods to get familiar with, some of which
-we will discuss in more detail below.
-
-``foreach``
-^^^^^^^^^^^
-
-Below the ``do-while`` loop are two different loops that demonstrate two ways
-you can loop through a List in C#. Here’s the first, which collects the
-numeric grade for each student:
-
-.. sourcecode:: csharp
-   :lineno-start: 31
-
-   // Get student grades
-   foreach (string student in students) {
-      Console.WriteLine("Grade for " + student + ": ");
-      string input = Console.ReadLine();
-      double grade = double.Parse(input);
-      grades.add(grade);
-   }
-
-This, you may recall, is C#'s ``foreach`` loop syntax. You may read this
-in your head, or even aloud, as: ``for each student in students``. As you might
-expect at this point, we must declare the iterator variable ``student``
-with its data type.
-
-``for``
-^^^^^^^
-The next loop on display prints out each student’s name and grade:
-
-.. sourcecode:: csharp
-   :lineno-start: 34
-
-   // Print class roster
-   Console.WriteLine("\nClass roster:");
-   double sum = 0.0;
-
-   for (int i = 0; i < students.Count; i++) {
-      Console.WriteLine(students[i] + " (" + grades[i] + ")");
-      sum += grades[i];
-   }
-
-.. index:: ! List.Count
-
-Here, we introduce the syntax ``students.Count`` which utilizes the ``Count``
-property of ``List``. This property holds the integer representing the
-number of items in the List. This is similar to string's ``.Length`` property.
-
-In this ``for`` loop, we use a *loop index* to define the starting point,
-ending point, and increment for iteration. It may be helpful for you to
-consider this kind of construction as something like,  ``for integer i in the
-range of the number of items in students...``. The first statement inside the
-parenthesis declares and initializes a loop index variable ``i``. The second
-statement is a boolean expression that is our exit condition. In other words,
-we will keep looping as long as this expression evaluates to ``true``. The
-third statement is used to increment the value of the loop index variable at
-the end of iteration through the loop.
-
-Again, the syntax ``i++`` is C# shorthand for ``i = i + 1``. C# also
-supports the shorthand ``i--`` to decrement the value of ``i``.
-We can also write ``i += 2`` as shorthand for ``i = i + 2``.
-
-In the final lines of the program, we compute the average grade for all
-students:
-
-.. sourcecode:: csharp
-   :lineno-start: 43
-
-   double avg = sum / students.Count;
-   Console.WriteLine("Average grade: " + avg);
 
 List Methods
 ------------
 
-Let’s gather up a few of the ``List`` methods that we’ve encountered so
-far, along with a few new ones. While these will be the most common methods and
+You've created a few new lists. Great! Now what?  Let's look at a few ``List`` methods to 
+start using them in your programs.  While the table below contains some of the more common methods and
 properties that you use with this class, they by no means represent a complete
 record. Refer to the `official documentation on the List
 class <https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.8>`__
@@ -255,22 +118,30 @@ Thus, the first item in this table:
    * - C# Syntax
      - Description
      - Example
-   * - ``Add()``
+   * - :ref:`Add() <add-examples>`
      - Adds an item to the List
      - ``planets.Add("Pluto")`` adds ``Pluto`` to ``planets``
-   * - ``Contains()``
+   * - :ref:`Contains() <contains-examples>`
      - Checks to see if the List contains a given item, returning a Boolean
      - ``planets.Contains("Earth")`` returns ``true``
-   * - ``IndexOf()``
+   * - :ref:`IndexOf() <indexOf-examples>`
      - Looks for an item in a List, returns the index of the first occurrence of the item if it exists, returns -1 otherwise
      - ``planets.IndexOf("Jupiter")`` returns ``4``
-   * - ``Sort()``
+   * - :ref:`Reverse() <reverse-examples>`
+     - Reverses the elements of a ``List`` 
+     - ``planets.Reverse()`` returns
+       ``{"Pluto", "Neptune", "Uranus", "Saturn", "Jupiter", "Mars", "Earth", "Venus", "Mercury"}``
+   * - :ref:`Sort() <sort-examples>`
      - Rearranges the elements of an ``List`` into ascending order.
      - ``planets.Sort()`` produces ``{"Earth", "Jupiter", "Mars", "Mercury", "Neptune", "Pluto", "Saturn", "Uranus", "Venus"}``
-   * - ``ToArray()``
+   * - :ref:`Remove() <remove-examples>`
+     - Removes first occurance of a specified object
+     - ``planets.Remove("Pluto")`` returns
+       ``{"Earth", "Jupiter", "Mars", "Mercury", "Neptune", "Saturn", "Uranus", "Venus"}``
+   * - :ref:`ToArray() <toArray-examples>`
      - Returns an Array containing the elements of the List
-     - ``planets.ToArray()`` returns
-       ``{"Earth", "Jupiter", "Mars", "Mercury", "Neptune", "Pluto", "Saturn", "Uranus", "Venus"}``
+     - ``planets.ToArray()`` returns and array contianing
+       ``{"Earth", "Jupiter", "Mars", "Mercury", "Neptune", "Saturn", "Uranus", "Venus"}``
    
 .. admonition:: Example
 

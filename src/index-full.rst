@@ -51,3 +51,5 @@ Appendices
    appendices/string-method-examples/index
    appendices/array-method-examples/index
    appendices/loops-examples/index
+   appendices/list-method-examples/index
+   appendices/dictionary-method-examples/index
