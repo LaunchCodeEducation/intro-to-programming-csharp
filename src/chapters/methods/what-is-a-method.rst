@@ -1,18 +1,32 @@
 Introduction
 =============
 
-Up until now, you have been able to write programs that function within the Main method using a variety of 
-data types and collection types along with specific collection methods.  These methods are built into the C# language.
-You call them and they do their task.  
+Up until now, you have been able to write programs that work within the Main method using a variety of 
+data types and collection types.  You have also worked with methods before when we learned about strings, 
+arrays, and collections.  These methods are built into the C# language and perform a speficic task when you call them.
 
-As we move deeper in the C# language, you will begin to use methods more and more.  This chapter is designed to introduce you to 
-**method signatures**, **method calls**, and the ability to create your own unique methods.  A method signature is the structure of the method, 
-including accessability, data type, parameters, and return type if applicable.  A method call, or invocation, is how you call your method based on its
-signature.  
+This chapter is designed to introduce you to **method signatures**, **method invocations**, and the ability to create your own unique methods.
 
-A little caveat before we continue.  Since we have not encountered C# classes at this point, we will be working with **static** methods.
-Static methods are able to ``return`` a **value** or print directly into the console, but they do not create anything **new**.
-Methods that create new instances of objects are called **instance methods**, we will learn about them soon.  
+.. admonition:: Note
+
+   In C# or other OOP languages, developers use methods because they are assiociated with a class.
+   In other languages, you may hear the term **function**.  A function is similar to a method, but it is 
+   not tied to a class.  Due to the similarity in overall usage, it is common to refer to 
+   methods as functions and functions as methods.  
+
+   A method or a function is typically referring to a block of code that performs a task when called.
+   
+A little caveat before we continue.  Since we have not encountered C# classes at this point, 
+we will be working within the ``MainClass`` in your replit IDE, which limits us to working with **static** methods at this point. 
+Static methods belong to the class they are created in, which in this chapter will be the ``MainClass``.  
+
+Static methods  will either ``return`` a **value** or print directly into the console.  They are not able to instantiate new objects.  
+Static methods are only able to call other static methods.  This does not make them less important or powerful than non-static methods, 
+or **instance methods**. Static methods are still methods, and are a good place to start.
+
+When we learn about classes, we will learn about instance methods
+and be able to compare and contrast them to static methods.  
+We will also be able to see a more usages and behaviors of static methods in a non-static environment.
 
 What is a Method?
 ---------------------
@@ -30,7 +44,7 @@ You have already become familiar with several functions:
 - Collection methods, such as ``IndexOf``,  ``Join``, ``Add``
 
 Each of the methods we have used works in the same way. By typing the methods's name, followed by parentheses, 
-we can *call* the method, resulting in an action being carried out. 
+we can *invoke*, or call, the method, resulting in an action being carried out. 
 Sometimes, as with ``Console.WriteLine``, we can provide input data between the parentheses, which the method will use to carry out its action.
 
 .. admonition:: Example

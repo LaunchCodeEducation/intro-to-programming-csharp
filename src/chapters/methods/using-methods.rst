@@ -13,8 +13,9 @@ This is when you may want to consider using a ``void`` return type.
 
 .. admonition:: Example
 
-   .. sourcecode:: csharp
-      :linenos:
+   .. replit:: csharp
+      :linenos: 
+      :slug: BirthdayNotes-CSharp
 
       static void BirthdayNotes(string name, int month, int day)
       {
@@ -43,7 +44,7 @@ This is when you may want to consider using a ``void`` return type.
 
 In this example, we are asking the method to print a friend's name and birth date inside a preprogrammed message.  
 This might see really simple, but if you had a list of names to run through, calling your method for each is a LOT less typing than 
-a ``Console.WriteLine`` statement with you message for each one.  That would get old fast.  
+a ``Console.WriteLine`` statement with your message for each one.  That would get old fast.  
 
 If you notice, the method itself is creating the ``Console.WriteLine`` statement.  So when we call ``BirthdayNotes`` all we need to do is 
 provide it with input.  We can directly place values of the corresponding data type directly in the parentheses of the method call, as we did in **Line 8**.
@@ -62,25 +63,25 @@ Let's revisit the method signature template.
 
 .. sourcecode:: bash
 
-   Access Specifier Return Type MethodName(Parameter List)
+   Access Specifier [static modifier] Return Type MethodName(Parameter List)
    {
       Method Body
    }
 
 Inside the parentheses is ``Parameter List``.  In the example above ``BirthdayNotes`` has three items inside the parentheses.  
-These are the parameters the method is expecting.  Parameters are *placeholders* for the method while you build it and are optional.
-**Arguments** are the spcific, real values you pass to the method.  
+These are the **parameters** the method is expecting.  Parameters are *placeholders* for the method and are optional.
+**Arguments** are the spcific, real values you pass to the method in place of the parameters.  
 
 In the ``BirthdayNotes`` example, the parameter list shows us that the method is expecting a string value and two int values in that order.  
 For our human understanding we gave the parameters helpful names, but those names are NOT variables or values.  
 They are holding space for your actual arguments.  The method will take your arguments and use them as designated by the parameters.
 
-When we call the method, we can pass our arguements directly or via variables and check the output to see if we are happy with ther results.
+When we call the method, we can pass our arguments directly or via variables and check the output to see if we are happy with the results.
 
 .. admonition:: Example
 
    .. sourcecode:: csharp
-      :linenos:
+      :linenos: 
 
       static void BirthdayNotes(string name, int month, int day)
       {
@@ -102,9 +103,9 @@ When we call the method, we can pass our arguements directly or via variables an
       This is also a string's birthday is on -55/987654321
       
 
-In the example we called BirthdayNotes twice.  The first time, ``BirthdayNotes("Willow", 8, 3)`` and the second time ``BirthdayNotes("This is a string, too", 3-5, 987654321)``.  
+In the example we called BirthdayNotes twice.  The first time, ``BirthdayNotes("Willow", 8, 3)`` and the second time ``BirthdayNotes("This is a string, too", -55, 987654321)``.  
 The code ran both times because the data types of the arguments matched those of the parameters.  The second call doesn't make any sense in the context
-of the method's overall function.  However, since it was provided with arguments of the same data type as the parameters, the method ran as expected.  
+of the method's overall job.  However, since it was provided with arguments of the same data type as the parameters, the method ran as expected.  
 
 Let's see this with a method that returns a value.
 
@@ -118,21 +119,20 @@ Let's see this with a method that returns a value.
 
       class MainClass {
       
-      static double SalesTax(double price)
-      {
-         double tax = price * 0.0423;
-         return Math.Round(tax, 2);
-      }
-      
-
          public static void Main (string[] args) {
+               
+            double purchase1 = 25.43;
+            double total1 = purchase1 + SalesTax(purchase1);
             
-         double purchase1 = 25.43;
-         double total1 = purchase1 + SalesTax(purchase1);
-         
-         Console.WriteLine(total1);
-         
+            Console.WriteLine(total1);
          }
+
+         static double SalesTax(double price)
+         {
+            double tax = price * 0.0423;
+            return Math.Round(tax, 2);
+         }
+
       }
 
    **Console Output**
@@ -160,24 +160,24 @@ The order doesn't matter, as the compiler is clever enough to use the names to p
 
 .. admonition:: Example
 
-   .. sourcecode:: csharp
+   .. replit:: csharp
       :linenos:
+      :slug: NamedArguments-CSharp
 
       class MainClass {
       
-      static void ResumeList(string jobTitle, string jobName, int numYears, string name)
-      {
-         Console.WriteLine(name + " worked at " + jobName + " as a(n)" + jobTitle + " for " + numYears + " years.");
-      }
+         static void ResumeList(string jobTitle, string jobName, int numYears, string name)
+         {
+            Console.WriteLine(name + " worked at " + jobName + " as a(n) " + jobTitle + " for " + numYears + " years.");
+         }
       
 
          public static void Main (string[] args) {
             
-         ResumeList("Receptionist", "Tate & Bywater", 2, "Carolyn");
+            ResumeList("Receptionist", "Tate & Bywater", 2, "Carolyn");
 
-         //using Named Arguments
-         ResumeList(name: "Beth", jobTitle: "RVT", jobName: "Hope Center", numYears: 3);
-         
+            //using Named Arguments
+            ResumeList(name: "Beth", numYears: 3, jobName: "Hope Center", jobTitle: "RVT");
          }
       }
 
@@ -193,7 +193,7 @@ The order doesn't matter, as the compiler is clever enough to use the names to p
 Optional Arguments
 ^^^^^^^^^^^^^^^^^^^^
 
-An argument becomes optional when the parameters is coded to take a **default value**. 
+An argument becomes optional when the parameter is coded to take a **default value**. 
 This means that if you invoke the method and don't pass it a value, the parameter will use the default value instead.
 This can be useful in testing methods.
 
@@ -202,8 +202,9 @@ then the value, properly formated for its data type.  Optional parameters should
 
 .. admonition:: Example
 
-   .. sourcecode:: csharp
+   .. replit:: csharp
          :linenos:
+         :slug: OptionalArguments-CSharp
 
          static void HelloYou(string name = "You")
          {
@@ -212,8 +213,8 @@ then the value, properly formated for its data type.  Optional parameters should
             
          public static void Main (string[] args) {
 
-            hello("Evelyn");
-            hello();
+            HelloYou("Evelyn");
+            HelloYou();
          
          }
 

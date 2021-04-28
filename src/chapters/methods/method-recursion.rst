@@ -5,8 +5,8 @@ Recursive Methods
 
 If methods can use methods, can a method use itself?  
 
-The answer is yes.  This process is called **recursion** and is 
-when a method compares itself in its current state to a **base case** to determine if it should run again or terminate.  
+The answer is yes.  This process is called **recursion**. 
+Recursion is when a method compares itself in its current state to a **base case** to determine if it should run again or terminate.  
 
 The base case is a specific condition that once reached returns a final or **base value**.  
 Every time the method is called, it compares the current input to the base case.  
@@ -25,15 +25,15 @@ Just like with loops, you have to check your logic with a recursive method, else
 
          class MainClass {
          
-            static double FactorialRecursive(double number)
+         static double FactorialRecursive(double number)
+         {
+            if(number == 0)  //base case
             {
-               if(number == 0)
-               {
-                  return 1;   
-               }
-               return number * FactorialRecursive(number-1);
+               return 1;   
             }
-            
+            return number * FactorialRecursive(number-1);  //calling function again.  Notice updated parameters
+         }
+         
          public static void Main (string[] args) {
 
             double testNumber = 7;
@@ -51,9 +51,10 @@ Just like with loops, you have to check your logic with a recursive method, else
       5040 is the factorial outcome of 7
 
 
-Here is an example of a recursive method.  In **Lines 5-12** we create the function.  
+Here is an example of a recursive method.  
+In **Lines 5-12** we create the function.  
 The base case is the ``if`` statement in **Line 7** which says that when the argument reaches ``0``, the method will return ``1`` and stop.
-But if the arguement is not ``0``, we leave the ``if`` statment and go to **Line 11** which uses the method to call itself once more, with modified parameters.
+However, if the arguement is not ``0``, we leave the ``if`` statment and go to **Line 11**.  This is where the method to call itself once more, with modified parameters.
 The method will continue to call itself until the base case is met.
 
 We could do the same thing with a loop as well.
@@ -67,16 +68,16 @@ We could do the same thing with a loop as well.
 
          class MainClass {
          
-            static double FactorialLoop(double number)
-            {               
-               double factorial = 1;
-               for(double i = number; i >= 1; i--)
-               {
-                  factorial = factorial * i;
-               }
-
-               return factorial;
+         static double FactorialLoop(double number)
+         {               
+            double factorial = 1;
+            for(double i = number; i >= 1; i--)
+            {
+               factorial = factorial * i;
             }
+
+            return factorial;
+         }
             
          public static void Main (string[] args) {
 
