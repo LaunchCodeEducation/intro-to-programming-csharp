@@ -47,7 +47,7 @@ Click here and fork the `starter code <https://replit.com/@launchcode/Hashtag-Ex
 Rectangles
 ----------
 
-#. Write a method ``MakeLine(size)`` that returns a line with exactly ``size``
+#. Write a method ``MakeLine(size)`` that prints a line with exactly ``size``
    hashes.
 
    .. sourcecode:: csharp
@@ -60,7 +60,7 @@ Rectangles
 
       #####
 
-#. Write a method called ``MakeSquare(size)`` that returns a ``size`` by
+#. Write a method called ``MakeSquare(size)`` that prints a ``size`` by
    ``size`` iteration of hashes. 
 
    .. sourcecode:: csharp
@@ -80,7 +80,7 @@ Rectangles
    
    Asthetically it's not a "perfect" square, but a single argument led to its creation.
 
-#. Write a method ``MakeRectangle(width, height)`` that returns a
+#. Write a method ``MakeRectangle(width, height)`` that prints a
    rectangle with the given width and height. 
 
    .. sourcecode:: csharp
@@ -116,7 +116,7 @@ Triangles
       ####
       #####
 
-2. Write a method ``MakeSpaceLine(numSpaces, numChars)`` that returns a line
+2. Write a method ``MakeSpaceLine(numSpaces, numChars)`` that prints a line
    with exactly the specified number of spaces, followed by the
    specified number of hashes, followed again by ``numSpaces`` more spaces.
 
@@ -130,9 +130,10 @@ Triangles
 
       ---#####---
 
-   .. note:: We have inserted dashes to represent spaces, so they are visible in the output. Don't do this in your code.
+   .. note:: We have inserted dashes to represent spaces, so they are visible in the output. 
+      This can be helpful for building the pattern, but make sure to remove them from your final code.
 
-#. Write a method ``MakeIsoscelesTriangle(height)`` that returns a triangle
+#. Write a method ``MakeIsoscelesTriangle(height)`` that prints a triangle
    of the given height.
 
    .. sourcecode:: csharp
@@ -150,15 +151,10 @@ Triangles
       #########
 
 
-.. admonition:: Tip 
-
-   Consider the top line of the triangle to be level 0, the next to be line 1, and so on. 
-   Then line ``i`` is a space-line with ``height - i - 1`` spaces and ``2 * i + 1`` hashes.
-
 Diamonds
 ---------
 
-#. Write a method ``MakeDiamond(height)`` that returns a diamond where the
+#. Write a method ``MakeDiamond(height)`` that prints a diamond where the
    triangle formed by the *top* portion has the given height.
 
    .. sourcecode:: csharp
@@ -187,6 +183,6 @@ Diamonds
 Bonus Mission
 --------------
 
-Refactor your methods so that they take a single character as a parameter,
-and draw the shapes with that character instead of always using ``'#'``. Make
-the new parameter optional, with default value ``'#'``.
+#. Refactor your methods so that they also take a single character as a parameter,
+   and draw the shapes with that character instead of always using ``#``.  Some ideas ``*`` or ``>``.
+#. Make the new parameter optional, with default value ``#``.

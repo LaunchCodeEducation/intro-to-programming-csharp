@@ -93,5 +93,5 @@ You have alredy built a function that reverses a string.  It shouldn't be too ha
 3.  Make this method accept user input. 
 4.  Will upper or lowercase be an issue?
 
-**Bonus Mission:** Modify your method to accept mulitple word palindromes.  For example, ``drab as a fool, aloof as a bard`` or ``Never odd or even``.  
+**Bonus Mission:** Modify your method to accept mulitple word palindromes.  For example, ``Drab as a fool, aloof as a bard`` or ``Never odd or even``.  
 
