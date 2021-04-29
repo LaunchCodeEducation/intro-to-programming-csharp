@@ -2,8 +2,8 @@ Introduction
 =============
 
 Up until now, you have been able to write programs that work within the Main method using a variety of 
-data types and collection types.  You have also worked with methods before when we learned about strings, 
-arrays, and collections.  These methods are built into the C# language and perform a speficic task when you call them.
+data types and collection types.  You have also worked with methods before when we learned about :ref:`strings<string-method-examples>`, 
+:ref:`arrays<array-method-examples>`, and collections.  These methods are built into the C# language and perform a speficic task when you call them.
 
 This chapter is designed to introduce you to **method signatures**, **method invocations**, and the ability to create your own unique methods.
 

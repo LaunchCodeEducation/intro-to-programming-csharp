@@ -29,16 +29,19 @@ diamond:
 .. admonition:: Note
 
    As you build your methods, remember to keep the output in mind.  
-   Do you want a value returned or are do you want the method to print directly to the console when invoked?
+   Do you want a value returned or should it print directly to the console when invoked?
    How many things are being repeated?
 
-There is no starter code for these exercises, so create a new C# project
-at `repl.it <https://repl.it/login>`__ to get started.
+
+Getting Started
+------------------
+
+Click here and fork the `starter code <https://replit.com/@launchcode/Hashtag-Exercises-CSharp>`_.  
 
 .. admonition:: Tip
 
    As you create these methods, keep the shape of your output in mind.  
-   Remember the differences between ``Console.WriteLine`` and ``Console.Write`` .  
+   Remember the differences between ``Console.WriteLine`` and ``Console.Write``.  
 
 
 Rectangles
@@ -74,22 +77,23 @@ Rectangles
       #####
       #####
 
-Asthetically it's not a "perfect" square, but a single argument led to its creation.
+   
+   Asthetically it's not a "perfect" square, but a single argument led to its creation.
 
 #. Write a method ``MakeRectangle(width, height)`` that returns a
    rectangle with the given width and height. 
 
    .. sourcecode:: csharp
 
-      MakeRectangle(5, 3);
+      MakeRectangle(8, 3);
 
    **Console Output**
 
    ::
 
-      #####
-      #####
-      #####
+      ########
+      ########
+      ########
 
 
 Triangles
@@ -124,9 +128,9 @@ Triangles
 
    ::
 
-      ___#####___
+      ---#####---
 
-   .. note:: We have inserted underscores to represent spaces, so they are visible in the output. Don't do this in your code.
+   .. note:: We have inserted dashes to represent spaces, so they are visible in the output. Don't do this in your code.
 
 #. Write a method ``MakeIsoscelesTriangle(height)`` that returns a triangle
    of the given height.

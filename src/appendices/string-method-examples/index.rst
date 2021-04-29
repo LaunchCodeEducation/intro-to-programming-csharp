@@ -1,3 +1,5 @@
+.. _string-method-examples:
+
 String Method Examples
 ======================
 
