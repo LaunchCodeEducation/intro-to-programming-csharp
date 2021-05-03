@@ -217,7 +217,7 @@ Once instantiated, you can call any class member of your object using **dot nota
 
 
 In the ``Cat`` Class:
-   - **Line 4** we create our class attribute ``name`` and set it to ``"Alyce"``.
+   - **Line 4** we create our class attribute ``name`` and set it to the string value of "Alyce".
    - **Line 6** we create the method ``PetChin``.  It is a void method, and will print "Purr" to the console when invoked.
    - **Line 11** we define the default constuctor.
 
