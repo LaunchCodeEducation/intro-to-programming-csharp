@@ -2,7 +2,7 @@
 Method Signatures and Calls 
 ==============================
 
-.. index:: ! method signature, ! method call 
+.. index:: ! method signature, ! method call, ! method invocation
 
 
 Method Signatures
@@ -10,7 +10,6 @@ Method Signatures
 
 When you decide to create your own method, there is a standard syntax that C# requires in order to 
 run your method when you call it.  This syntax is the template for your method signature. 
-
 
 .. sourcecode:: bash
 

@@ -9,6 +9,7 @@ Methods
    using-methods
    method-recursion
    method-scope
+   methods-classes-objects
    exercises
    studio
    
