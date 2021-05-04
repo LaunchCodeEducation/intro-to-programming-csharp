@@ -3,9 +3,31 @@ Introduction
 
 Up until now, you have been able to write programs that work within the Main method using a variety of 
 data types and collection types.  You have also worked with methods before when we learned about :ref:`strings<string-method-examples>`, 
-:ref:`arrays<array-method-examples>`, and collections.  These methods are built into the C# language and perform a speficic task when you call them.
+:ref:`arrays<array-method-examples>`, :ref:`Lists<list-method-examples>` and :ref:`dictionaries<dictionary-method-examples>`.  These methods are built into the C# language and perform a speficic task when you call them.
 
 This chapter is designed to introduce you to **method signatures**, **method invocations**, and the ability to create your own unique methods.
+
+.. admonition:: Note
+
+   A little caveat before we continue.  Since we have not encountered C# classes at this point, 
+   we will be working within the ``MainClass`` in your replit IDE, which limits us to working with **static** methods at this point. 
+   Static methods belong to the class they are created in, which in this chapter will be the ``MainClass``. 
+
+   When we learn about classes, we will learn about instance methods
+   and be able to compare and contrast them to static methods.  
+   We will also be able to see a more usages and behaviors of static methods in a non-static environment.
+
+   A wonderful collection of static methods comes from the ``Math`` class.  The `documentation <https://docs.microsoft.com/en-us/dotnet/api/system.math?view=net-5.0>`_ can be found here, and 
+   an appendix of methods can be found here.
+
+What is a Method?
+---------------------
+
+.. index:: ! method, ! function
+
+A **method** is a reusable, callable, and customizable piece of code. Methods are created to perform a single task or action.
+
+.. index:: ! method
 
 .. admonition:: Note
 
@@ -15,25 +37,6 @@ This chapter is designed to introduce you to **method signatures**, **method inv
    methods as functions and functions as methods.  
 
    A method or a function is typically referring to a block of code that performs a task when called.
-   
-A little caveat before we continue.  Since we have not encountered C# classes at this point, 
-we will be working within the ``MainClass`` in your replit IDE, which limits us to working with **static** methods at this point. 
-Static methods belong to the class they are created in, which in this chapter will be the ``MainClass``.  
-
-Static methods  will either ``return`` a **value** or print directly into the console.  They are not able to instantiate new objects.  
-Static methods are only able to call other static methods.  This does not make them less important or powerful than non-static methods, 
-or **instance methods**. Static methods are still methods, and are a good place to start.
-
-When we learn about classes, we will learn about instance methods
-and be able to compare and contrast them to static methods.  
-We will also be able to see a more usages and behaviors of static methods in a non-static environment.
-
-What is a Method?
----------------------
-
-.. index:: ! method
-
-A **method** is a reusable, callable, and customizable piece of code. Methods are created to perform a single task or action.
 
 You have been using methods throughout your learning so far, without receiving a full explanation of how methods work. 
 

@@ -114,11 +114,11 @@ You should be fairly familiar with the replit IDE by now.
 - **Line3** introduces the ``MainClass``.  The ``MainClass`` starts at **Line 3** and ends at **Line 21**  
 - Starting at **Line 11** is the ``Main`` method statement.   The ``Main`` method is contained between **Lines 11-20** within the ``MainClass``.  
 
-The purpose of the ``Main`` method is to exectue your program.  This is where you *call* the methods you create.
-You cannot build your methods in the ``Main`` method.  
+The purpose of the ``Main`` method is to exectue your program.  This is where you *call* or *invoke* the methods you create.
+You cannot build your methods inside the ``Main`` method.  
 They must be built outside the ``Main`` method but inside your ``MainClass``. 
 
-In this example, we placed our``SquareTheNumber`` method between **Lines 5-8**.  This makes it inside the ``MainClass`` but outside the ``Main`` method.
+In this example, we placed our ``SquareTheNumber`` method between **Lines 5-8**.  This makes it inside the ``MainClass`` but outside the ``Main`` method.
 
 
 Invoking the Method
@@ -162,7 +162,7 @@ we did in **Line 14**.
 
 .. sourcecode:: bash
 
-   16
+   32
 
 
 And the last example in **Line 18** is to use an *integer literal* or place the required data type value in the parentheses.  
@@ -181,43 +181,31 @@ In this example, we called ``SquareTheNumber`` and passed ``5`` directly in the 
    25
 
 
-These are three ways to invoke, or call, static methods that have a return type.  When working with void methods, the call is a slightly different.  
-We will walk through this in an example in the next section. 
+These are three ways to invoke, or call, static methods that have a return type.  
+Return types are not required.  Methods that return nothing are called **void** methods.
+When working with void methods, the call is a slightly different.  We will look at them next.
 
-**Method invocation** or **invoking the method** are synonmous terms for calling the method.
+**Method invocation** or **invoking the method** are synonmous terms for **calling the method**.
 
 
 Check Your Understanding
 ------------------------
 .. admonition:: Question
 
-   Where would you *invoke* this method where x = 4 and y = 30.
+   What is the expected output returned by the ``Doubles`` method if the input, ``x``, was 7?
 
    .. sourcecode:: csharp
       :linenos:
          
-      class MainClass {
-
-            //A
-
-         static int Amount(int x, int y)
+         static int Doubles(int x)
          {
-            return (2 * x) + (2 * y);
-            //B
+            return (2 * x);
          }
 
-         public static void Main (string[] args) {
 
-            //C
-         }
+   #.  14
+   #.  49
+   #.  77
+   #.  7
 
-            //D
-      }
-
-
-   #. ``A``
-   #. ``B``
-   #. ``C``
-   #. ``D``
-
-   .. ans: c. within the Main method
+   .. ans: 14

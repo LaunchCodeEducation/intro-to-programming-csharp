@@ -3,8 +3,8 @@ Using Methods
 
 Now that we see how to build a method, let's talk about using them.
 
-``return`` vs. Void Methods
-------------------------------
+``return`` vs. ``void`` Methods
+---------------------------------
 
 In the previous section, we looked at methods that return a value.  That value is then able to be used elsewhere in your program.  
 
@@ -68,9 +68,10 @@ Let's revisit the method signature template.
       Method Body
    }
 
-Inside the parentheses is ``Parameter List``.  In the example above ``BirthdayNotes`` has three items inside the parentheses.  
-These are the **parameters** the method is expecting.  Parameters are *placeholders* for the method and are optional.
-**Arguments** are the spcific, real values you pass to the method in place of the parameters.  
+Do you see ``"Parameter List"`` inside the parentheses following the ``MethodName``?
+In the example above ``BirthdayNotes`` has three items inside the parentheses.  
+These are the **parameters** the method is expecting.  Within a method, parameters are *placeholders* for the specific input required.
+**Arguments** are the spcific input, or real values, you pass to the method upon invocation.   
 
 In the ``BirthdayNotes`` example, the parameter list shows us that the method is expecting a string value and two int values in that order.  
 For our human understanding we gave the parameters helpful names, but those names are NOT variables or values.  
@@ -103,9 +104,11 @@ When we call the method, we can pass our arguments directly or via variables and
       This is also a string's birthday is on -55/987654321
       
 
-In the example we called BirthdayNotes twice.  The first time, ``BirthdayNotes("Willow", 8, 3)`` and the second time ``BirthdayNotes("This is a string, too", -55, 987654321)``.  
-The code ran both times because the data types of the arguments matched those of the parameters.  The second call doesn't make any sense in the context
-of the method's overall job.  However, since it was provided with arguments of the same data type as the parameters, the method ran as expected.  
+In the example we called BirthdayNotes twice.  
+The first time, ``BirthdayNotes("Willow", 8, 3)`` and the second time ``BirthdayNotes("This is a string, too", -55, 987654321)``.  
+The code ran both times because the data types of the arguments matched those of the parameters.  
+The second call doesn't make any sense in the context of the method's overall job.  
+However, since it was provided with arguments of the same data type as the parameters, the method ran as expected.  
 
 Let's see this with a method that returns a value.
 
@@ -142,10 +145,14 @@ Let's see this with a method that returns a value.
       26.51
 
 
-In this example, we used a variable to hold our argument, then passed the argument to the method.  Since this method returns an actual value, 
-we can store it in a variable or use it as a value itself like we did in **Line 15**.
+In this example, we used a variable to hold our argument, then passed the argument to the method.  
+Since this method returns an actual value, we can store it in a variable or use it as a value itself like we did in **Line 15**.
 
-``Console.WriteLine`` was called to verify functionality.  With return methods, you will need to print them in order to verify functionality.
+Also, inside this method we used the `Math Method <https://docs.microsoft.com/en-us/dotnet/api/system.math.round?view=net-5.0>`_ ``Round`` to round our output to 2 decimal places.  
+Methods are able to use other methods.  
+
+``Console.WriteLine`` was called to verify functionality.  
+With return methods, you will need to print them in order to verify functionality.
 
 Named and Optional Arguments
 -------------------------------

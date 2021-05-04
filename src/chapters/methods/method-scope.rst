@@ -152,16 +152,16 @@ Any signature that contains a code block can have scope issues here, such as loo
    
 There are 3 examples of block scope in this example.
 
-Starting with **Line 8**, we print the value of ``i`` from inside the ``PrintThis`` method.  
-When this runs, you will see ``0,1,2`` print on new lines after calling the method in **Line 19**.
-It works because **Line 8** is able to see the values of ``i`` via the ``for`` loop code block.
+Starting with **Line 9**, we print the value of ``i`` from inside the ``PrintThis`` method.  
+When this runs, you will see ``0,1,2`` print on new lines after calling the method in **Line 21**.
+It works because **Line 9** is able to see the values of ``i`` via the ``for`` loop code block.
 
-Moving down to **Line 14**, we see another ``for`` loop.  This loop will print each value of ``j`` from within its codeblock as is. 
+Moving down to **Line 16**, we see another ``for`` loop.  This loop will print each value of ``j`` from within its codeblock as is. 
 There are no scope issues here.  Run the code and you will see ``10, 13, 16, 19`` print to the console on new lines.
 
-**Line 20** is where we find a scope issue.  We want to know what ``j`` is *outside* the ``for`` loop.
-However, ``j`` doesn't exist outside of the context of the ``for`` loop block, so the ``Console.WriteLine`` statement in **Line 20**
-won't be able to find any values and will throw an error.  In fact, the compiler won't run ANY of your code until you fix **Line 20**.
+**Line 22** is where we find a scope issue.  We want to know what ``j`` is *outside* the ``for`` loop.
+However, ``j`` doesn't exist outside of the context of the ``for`` loop block, so the ``Console.WriteLine`` statement in **Line 22**
+won't be able to find any values and will throw an error.  In fact, the compiler won't run ANY of your code until you fix **Line 22**.
 
 Check Your Understanding
 -------------------------

@@ -17,6 +17,7 @@ Chapters
    chapters/loops/index
    chapters/collections-and-flow/index
    chapters/methods/index
+   chapters/classes-objects-math/index
 
 .. toctree::
 
@@ -58,6 +59,7 @@ Appendices
    appendices/loops-examples/index
    appendices/list-method-examples/index
    appendices/dictionary-method-examples/index
+   appendices/math-method-examples/index
    
 .. toctree::
    :hidden:
