@@ -96,7 +96,7 @@ Let’s look at the ``foreach`` loop from this example:
 .. sourcecode:: csharp
    :lineno-start: 37
 
-   for (KeyValuePair<string, double> student in students) {
+   foreach(KeyValuePair<string, double> student in students) {
       Console.WriteLine(student.Key + " (" + student.Value + ")");
       sum += student.Value;
    }

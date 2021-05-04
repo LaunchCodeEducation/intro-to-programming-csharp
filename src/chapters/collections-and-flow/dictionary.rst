@@ -115,7 +115,8 @@ If you want to access a key/value pair from within your dictionary, you can do s
 
 .. admonition::  Example
 
-   .. sourcecode:: csharp
+   .. replit:: csharp
+      :slug: DictionaryBracketNotation
 
 
       Dictionary<TKey, TValue> newDictionary = new Dictionary<TKey, TValue>
@@ -128,7 +129,7 @@ If you want to access a key/value pair from within your dictionary, you can do s
       if(newDictionary.ContainsKey(key2))
       {
           //prints the values of key2 if contained within dictionary using bracket notation.
-         Console.WriteLine(newDictionary.[key2]);     
+         Console.WriteLine(newDictionary[key2]);     
       } 
 
 

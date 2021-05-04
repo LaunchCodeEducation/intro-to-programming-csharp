@@ -174,51 +174,6 @@ printouts):
    Found it!
    Not here
 
-.. index:: ! StringBuilder
-
-Concatenating Strings in Loops
-------------------------------
-
-A use case of loops may be to concatenate strings.
-For example, if we have an array of strings containing each word in a sentence, we may want to concatenate each value in the array to reform our sentence.
-
-.. sourcecode:: csharp
-   :linenos:
-
-   string[] arrayOfWords = {"Books", "Cheese", "Trees", "Laughter"};
-
-   string finalSentence = "";
-
-   foreach (string word in arrayOfWords) {
-      finalSentence += word;
-   }
-
-This code would work well for this situation. 
-However, because strings are *immutable*, when the value of ``word`` is appended onto ``finalSentence``, a new string object is created.
-This means that the longer ``arrayOfWords`` is, the more intensive and inefficient the code becomes. 
-
-We can accomplish the same thing with the ``StringBuilder`` class.
-
-``StringBuilder`` objects are *mutable* strings of characters and the `documentation 
-<https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.8>`_ contains a full list of important properties and methods.
-
-If we wanted to use a ``StringBuilder`` object instead of a simple string in the above code, we would modify it like so:
-
-.. sourcecode:: csharp
-   :linenos:
-
-   StringBuilder finalSentence = new StringBuilder();
-
-   foreach (string word in arrayOfWords) {
-      finalSentence.Append(word);
-   }
-
-First, we need to initialize a new ``StringBuilder`` object, ``finalSentence``, with ``new StringBuilder()``.
-The ``Append()`` method in the ``StringBuilder`` class adds the value of ``word`` to the end of the ``finalSentence`` object.
-
-While concatenating strings is just one of the *many* use cases of loops in C#, ``StringBuilder`` is a fun tool to add to your toolkit.
-If we don't use a ``StringBuilder`` object, the longer ``arrayOfWords`` is, the slower our program will get.
-While at this level, we may not be too concerned with a program's performance, in enterprise applications, performance can be everything.
 
 
 Check Your Understanding
@@ -231,7 +186,7 @@ Check Your Understanding
 
       char[] chars = {'p', 'l', 'r', 's', 't'};
 
-      for (<loop-statement>) {
+      foreach (<loop-statement>) {
          Console.WriteLine(i);
       }
 

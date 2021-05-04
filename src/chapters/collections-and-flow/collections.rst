@@ -46,8 +46,38 @@ Classes that are available to you may be those in the project you are currently 
 the replit.com IDE or those that come along with the .NET class library, as well as anything you might get 
 from added dependencies.
 
+.. admonition:: Example
+
+   .. replit:: csharp
+      :linenos:
+      :slug:
+
+      using System;
+      
+      namespace TempConv
+      {
+
+         class MainClass
+         {
+            public static void Main(string[] args) 
+            {
+               double fahrenheit;
+               double celsius;
+               string input;
+
+               Console.WriteLine("Temperature in F:");
+               input = Console.ReadLine();
+               fahrenheit = double.Parse(input);
+
+               celsius = (fahrenheit - 32) * 5 / 9;
+               Console.WriteLine("The Temperature in C is: " + celsius);
+               Console.ReadLine();
+            }
+         }
+      }
+
 The class naming system in C# is very hierarchical. The *full* name of the ``Console``
-class used first on line 13 is really ``System.Console``. You can think of this name as having
+class used first on line 14 is really ``System.Console``. You can think of this name as having
 two parts. The first part, ``System``, is called the **namespace**, and
 the last part is the **class**. We’ll talk more about the class naming
 system a bit later.   You have also seen ``System`` when you are checking the data type of varialbes.

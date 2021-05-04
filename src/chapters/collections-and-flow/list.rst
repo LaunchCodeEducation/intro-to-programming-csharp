@@ -164,7 +164,7 @@ list. In our example, after we add all of the planets in the solar system,
 ``planets.Count`` has a value of ``8`` (unless you also added Pluto to
 ``planets``, in which ``planets.Count`` returns ``9``).
 
-Speaking of arrays, let's see the array version of ``Gradebook`` next.
+Let's look at our gradebook examples.  We will start with a ``List`` version, then compare it to an array version.
 
 Check Your Understanding
 -------------------------
