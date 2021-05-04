@@ -73,6 +73,9 @@ Here we present the most commonly-used string methods. You can find documentatio
    * - :ref:`Substring <string-substring-examples>`
      - ``stringName.Substring(i, j)``
      - Returns the substring consisting of characters from index ``i`` for a length of ``j``.
+   * - :ref:`Split <split-string-examples>`
+     - ``stringName.Split(delimiter)``
+     - Splits the string into sections at each ``delimiter`` and stores the sections as elements in an array.
    * - :ref:`Insert <string-insert-examples>`
      - ``stringName.Insert(i, substring)``
      - Returns new ``stringName`` in which a specific substring has been inserted at index ``i``.

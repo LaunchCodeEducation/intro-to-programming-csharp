@@ -14,6 +14,7 @@ Chapters
    chapters/strings/index
    chapters/arrays/index
    chapters/loops/index
+   chapters/collections-and-flow/index
    chapters/methods/index
 
 .. toctree::
@@ -31,6 +32,7 @@ Studios
    chapters/booleans-and-conditionals/studio
    chapters/arrays/studio
    chapters/loops/studio
+   chapters/collections-and-flow/studio
    chapters/methods/studio
 
 
@@ -54,3 +56,5 @@ Appendices
    appendices/string-method-examples/index
    appendices/array-method-examples/index
    appendices/loops-examples/index
+   appendices/list-method-examples/index
+   appendices/dictionary-method-examples/index
