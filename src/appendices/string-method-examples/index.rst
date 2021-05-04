@@ -11,6 +11,7 @@ String Method Examples
    trim-examples
    replace-examples
    substring-examples
+   split-string-examples
    insert-examples
    remove-examples
    toString-examples

@@ -1,3 +1,5 @@
+.. _arrays:
+
 Arrays Keep Things in Order
 ===========================
 
