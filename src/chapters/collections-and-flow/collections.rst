@@ -25,6 +25,8 @@ Here, we'll discuss a collection called ``List`` and compare it to the
 These three collection types will be sufficient for our basic C# needs. 
 For more, refer to the official C# documentation on `collections <https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/collections>`__.
 
+In order to be able to access these collection types, we need to include the correct ``using`` statements.  
+   
 
 .. index:: ! using, ! namespace, class, ! assembly
 

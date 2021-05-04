@@ -82,8 +82,8 @@ record. Refer to the `official documentation on the List
 class <https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.8>`__
 for such a record, and for more details.
 
-To demonstrate the use of these methods, we'll create a new ``List``
-called ``planets``.
+To `demonstrate <https://replit.com/@launchcode/ListMethodsPractice-CSharp#main.cs>`_ the use of these methods, we'll create a new ``List``
+called ``planets``.  
 
 .. sourcecode:: csharp
 

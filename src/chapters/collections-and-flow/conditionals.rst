@@ -3,7 +3,7 @@
 
 You have been exposed to basic ways to contol the flow of data within your code.
 We discussed logical operators, conditional statements, and loops.  
-Before we move on to collections, such as lists and dictionaries, we're going to discuss a few more
+Before we move on to collections, such as ``Lists`` and dictionaries, we're going to discuss a few more
 ways to control flow:  switch statements, do while and foreach loops, and break/continue statements.
 
 .. index:: ! switch, ! case, ! break

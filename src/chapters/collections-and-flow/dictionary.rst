@@ -141,7 +141,7 @@ Let’s collect some ``Dictionary`` methods as we have for ``List``. As we
 said about ``Lists``, this is by no means a comprehensive catalog. For full
 details on all properties and methods available, see the `documentation <https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=netframework-4.8>`_ on the ``Dictionary`` class.
 
-For the purposes of this table, we'll create a dictionary to hold our solar system's
+For the purposes of this table, we'll `create a dictionary <https://replit.com/@launchcode/DictionaryMethodsPractice-CSharp#main.cs>`_ to hold our solar system's
 planets and the number of moons associated with each.
 
 .. sourcecode:: csharp
@@ -167,15 +167,15 @@ planets and the number of moons associated with each.
    * - :ref:`Count <count-examples>`
      - Returns the number of items in the dictionary, as an ``int``.
      - ``moons.Count`` returns ``8``
-   * - :ref:`Keys <key-examples>`
+   * - :ref:`Key <key-examples>`
      - Returns a collection containing all keys in the dictionary. This collection may be used in a
        ``foreach`` loop just as lists are, but the dictionary *may not be modified* within such a loop.
-     - ``moons.Keys`` returns
+     - ``moons.Key`` returns
        ``{"Earth", "Mars", "Neptune", "Jupiter", "Saturn", "Venus", "Uranus", "Mercury"}``
-   * - :ref:`Values <value-examples>`
+   * - :ref:`Value <value-examples>`
      - Returns a collection containing all values in the dictionary. This collection may be used in a
        ``foreach`` loop just as lists are.
-     - ``moons.Values`` returns ``{1, 2, 14, 79, 82, 0, 27, 0}``
+     - ``moons.Value`` returns ``{1, 2, 14, 79, 82, 0, 27, 0}``
    * - :ref:`Add() <dictionary-add-examples>`
      - Add a key/value pair to a dictionary.
      - ``moons.Add("Pluto", 5)`` adds ``"Pluto": 5`` to the ``moons``
