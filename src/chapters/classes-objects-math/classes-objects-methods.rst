@@ -1,26 +1,43 @@
 Classes, Objects, and Methods! Oh My!
 =========================================
 
-Classes are templates for creating **objects**.  Objects are *instances* of classes.
-They are the endgame in OOP.  We create, modify, manipulate, and store objects in our programs. 
+Classes are templates that define **objects**.  The class becomes the type of that object, but is not an object itself.
+It's like a cookie cutter.  It shapes the cookie, but is not the cookie itself.  
 
-You have been working with classes and objecst since day 1.  ``Console.WriteLine`` is a method of the ``Console`` class.  
-You have created string objects, and instantiated new array and ``List`` objects.  
-If you recall, each of these objects have their own rules.
-You can't reverse a string as if it were an array.  
-You can't add elements to an array like you can with a ``List``, etc., etc.  
+An object is its own entity of whatever type class created it.  
+When objects are created, it is often referred to as an **instance of class**. 
+We create, modify, manipulate, and store objects in our programs.  
+Classes are a way to create many new objects using a single template.  
 
-Who dictates these rules?  The class they belong to.  
+You have been working with classes and objects since day 1.  
+``WriteLine()`` is a method of the ``Console`` class.  
+You have initalized string objects, and instantiated new array and ``List`` objects.  
+
+Classes also contain any rules and methods for the object it creates.  
+This is why  ``List`` methods don't work on **string** objects.  
+C# has many built-in classes, but as a programmer you will want to create your own.  
+In order to be able to do that, we need to explore the basics of classes and objects.
+
 
 What Is A Class?
-^^^^^^^^^^^^^^^^^
+-------------------
 
 A class is a template, or set of blueprints, used to create objects.  
 The template dictates what an object of this class requires, as well as how that object behaves.
 
 To declare a new class, you will need the keyword ``class``.  
-When working with replit.com, you will need to create a new class in a new file.  
-In order for your class to be recognized by ``MainClass`` in replit, you will need to provide your class its own unique ``namespace``.
+
+.. admonition:: Note
+
+   When working with replit.com, you will need to create a new class in a new file.  
+   In order for your class to be recognized by ``MainClass`` in replit, you will need to provide your class its own unique ``namespace``.
+   
+   We will be moving to a differnt IDE soon, so any replit.com code examples will be provided to you.  
+
+When working in a project with multiple classes, it is common to have a ``namespace`` that connects all classes within a project.
+In this context, a ``namespace`` can be more for organizational purposes, as in it will provide direction to each class within 
+the main project.  If the ``namespace`` is not part of the class that holds your ``Main method`` you will have to access it through a ``using`` statement.
+Just like we did will Collections.  This tells the compiler to look through any classes within the same ``namespace`` for definitions and requirements.
 
 .. admonition:: Example
 
@@ -84,7 +101,7 @@ In order for your class to be recognized by ``MainClass`` in replit, you will ne
 
 
 Instantiating Objects
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 When working with classes to create objects, you will see a familiar pattern.  
 To delcare a *new* object of a class you will use the keyword ``new`` as you have done with ``Lists``, arrays, and dictionaries.  
@@ -110,7 +127,7 @@ Class Constructors
 When we instantiate an object, we use the class **constructor** to provide any needed values to initialize any attributes.  
 The syntax just like the parameter list of a method.
 In fact, the constructor is a specialized method.  
-Any parameters passed to a consturctor will be used to initialize any attributes for that object.
+Any parameters passed to a consturctor will be used to initialize any attributes or behaviors for that object.
 
 Constructors can also be parameterless.  We call this the **default constructor**.  
 A default constructor is left empty, allowing the object to be created with any attributes initalized manually via dot notation.
@@ -195,7 +212,7 @@ If we wanted to update the name, you would do so like any other variable.
    :lineno-start: 10
    
    //within the Main method
-   Cat hisCat = new Cat();
+   Cat myCat = new Cat();
    
    myCat.name = "Porkchop";
    Console.WriteLine(myCat.name);
@@ -208,7 +225,7 @@ If we wanted to update the name, you would do so like any other variable.
 
 
 Creating Multiple Objects
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
 What if we want to create multiple instances of the ``Cat`` class?  
 Classes are templates remember, we can use them to do just that.
@@ -279,7 +296,7 @@ These objects were created by the same class, but are unique.
 
 
 Classes: Putting Things Together
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------
 
 Classes create objects.  Therefore, an object is an *instance* of a class. 
 Classes themselves are templates that contain attributes and methods to define an object.  
@@ -297,7 +314,7 @@ This is a very, very simple explanation of classes in C#.  We will learn more in
 
 
 Check Your Understanding
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
 .. admonition:: Example
   
@@ -334,13 +351,13 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   How would we instantiate a new car object in the Main method?
+   How would we call the method ``RevEngine`` on the car object, ``redCar``, in the Main method?
 
-   #. ``newCar.Car()``
-   #. ``string car = new Car();``
-   #. ``Car newCar = new Car();``
-   #. ``Car() newCar = new Car();``
+   #. ``redCar.Car(RevEngine)``
+   #. ``string car = new Car().RevEngine;``
+   #. ``redCar.RevEngine();``
+   #. ``RevEngine(redCar);``
 
-.. ans: c, Car newCar = new Car();
+.. ans: c, newCar.RevEngine();
 
 

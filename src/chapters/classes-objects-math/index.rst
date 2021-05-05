@@ -8,5 +8,4 @@ Classes, Objects, and Math Class
 
    class-type
    classes-objects-methods
-   class-objects
    math-class

@@ -16,20 +16,22 @@ An **int** or **char** are examples of value data types.
 While **strings** are reference types.  Classes are also reference data types that define objects, and objects are also reference types. 
 
 If you remember, a reference type does not contain the actual value.  
-Instead holds a reference point that leads to the memory location of the data. 
+Instead it holds a reference point that leads to the memory location of the data. 
 
-If we have a class ``Cat`` with a constructor that takes no arguments, we
-declare and create a new instance of ``Cat`` using its constructor.
+.. admonition:: Example
 
-.. sourcecode:: c#
+   If we have a class ``Cat`` with a constructor that takes no arguments, we
+   declare and create a new instance of ``Cat`` using its constructor.
 
-   Cat myCat = new Cat();
+   .. sourcecode:: csharp
 
-#. ``Cat myCat`` declares the variable ``myCat`` and sets it to be of type
-   ``Cat``.
-#. ``= new Cat()`` initializes the variable with a new ``Cat`` object. 
-#. Any arguments that are required to build the new ``Cat`` object must be
-   included within the parentheses. In this case, there are no required arguments.  Note the empty ``()``.
+      Cat myCat = new Cat();
+
+   #. ``Cat myCat`` declares the variable ``myCat`` and sets it to be of type
+      ``Cat``.
+   #. ``= new Cat()`` initializes the variable with a new ``Cat`` object with the keyword ``new``. 
+   #. Any arguments that are required to build the new ``Cat`` object must be
+      included within the parentheses. In this case, there are no required arguments.  Note the empty ``()``.
 
 This statement creates a new variable that is initialized to
 hold a new ``Cat`` object. Note that in C#, we must declare the
@@ -50,7 +52,7 @@ arrow pointing to the object in memory.
 
 Consider this code:
 
-.. sourcecode:: c#
+.. sourcecode:: csharp
 
    int catAge = 11;
    Cat myCat = new Cat();
@@ -92,8 +94,23 @@ type system because it implicitly boxes values types to be treated as objects.
 
 
 
-.. sourcecode:: c#
+.. sourcecode:: csharp
 
    int i = 123;     // This is a value type.
    object o = i;    // Boxing the value type into a reference type.
    int j = (int)o;  // Unboxing the reference type back into a value type.
+
+
+Check Your Understanding
+--------------------------
+
+.. admonition:: Question
+
+   How would we instantiate a new Cat object ``reneesCat`` in the Main method?
+
+   #. ``reneesCat.Cat()``
+   #. ``string cat = new Cat();``
+   #. ``Cat reneesCat = new Cat();``
+   #. ``Cat() reneesCat = new Cat();``
+
+.. ans: c, Cat reneesCat = new Cat();

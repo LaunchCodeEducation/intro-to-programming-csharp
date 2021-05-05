@@ -6,15 +6,14 @@
 .. toctree::
    :maxdepth: 3
 
-  
+   abs-examples
+   ceiling-examples
+   floor-examples
+   max-examples
+   min-examples
+   pow-examples
+   round-examples
+   sqrt-examples
+   truncate-examples
 
-Abs
-Ceiling
-Exp 
-Floor 
-Max
-Min
-Pow 
-Round 
-Sqrt 
-Truncate 
+  
