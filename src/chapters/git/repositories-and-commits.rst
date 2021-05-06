@@ -4,7 +4,7 @@ Repositories and Commits
 Create a Repository
 -------------------
 
-To get started with a git repository, the programmer must first create one.
+To get started with a git repository (or "repo" for short), the programmer must first create one.
 To create a git repository, the programmer navigates to their project directory and uses the command ``git init``, like so:
 
 .. sourcecode:: bash
@@ -19,12 +19,19 @@ Now the programmer is ready to code away!
 Making Commits
 --------------
 
-After a while, the programmer has made a lot of changes and saved their code files many times over.
+After a while, the programmer has made a lot of changes and saved their code files many times over.  
+It might be a good time to make a **commit** to their repository.  A commit is a record of changes you made to your repository.
+It allows you to document your progress by creating a time-stamp with a message that you, or others, can reference.
+When you look at a timeline of commits, you should be able to see the progress of development.
+
+.. figure:: figures/commit-tree.png
+   :alt: Image of commit tree showing 4 updates over 2 weeks with commit messages
+
 So when do they make a commit to their repository?
 
 .. pull-quote::
 
-   The general rule of thumb is that any time a significant change in      functionality is made, a commit should be made.
+   The general rule of thumb is that any time a significant change in functionality is made, a commit should be made.
 
 If the programmer has created the Git repository and is ready to commit, they can do so by following the commit process.
 

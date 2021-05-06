@@ -21,6 +21,16 @@ The master branch is the default branch of the repository.
 Many programmers keep the live version of their code in the master branch.
 For that reason, major work should be done in a new branch, so it doesn't impact the live software.
 
+.. admonition:: Note
+
+   GitHub is currently transitioning the name ``master`` to ``main``.  
+   Older repos will still have a ``master`` branch, while newer repos will have a ``main`` branch.  
+   Both ``master`` and ``main`` are the default branches for development and can be treated the same.  
+     
+   While you use this textbook, you may notice that your repos use ``main`` while the examples use ``master``.
+   This is intentional.  As of this writing, the change in language is only with GitHub repositories.  Bash and Powershell still use ``master``. 
+   You can read more about this in the `GitHub documentation <https://docs.github.com/en/github/getting-started-with-github/github-glossary#main>`_.
+
 .. figure:: figures/branches.png
    :alt: Diagram depicting two branches coming off of the main branch.
 

@@ -16,6 +16,7 @@ Chapters
    chapters/loops/index
    chapters/collections-and-flow/index
    chapters/terminal/index
+   chapters/vs-setup/index
    chapters/git/index
 
 .. toctree::
@@ -60,6 +61,7 @@ Appendices
    appendices/dictionary-method-examples/index   
    appendices/installing-software/index
    appendices/terminal-commands/index
+   appendices/vs-troubleshooting
    appendices/git/stash
    appendices/git/workflows
    
