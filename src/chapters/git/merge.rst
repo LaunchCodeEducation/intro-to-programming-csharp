@@ -14,8 +14,9 @@ Merge Conflicts
 ---------------
 
 This process is often seamless.
-In the example in the previous section, a programmer created a branch to change the HTML and the other programmer did the same to change the CSS.
-Because the two programmers changed different files, the merge of the updated HTML and updated CSS won't create a conflict.
+In the example in the previous section, a programmer created a branch to change the questions 1 and 2 and the other programmer added more questions, but didn't update their 1 and 2.
+Because the both programmers have questions 1 and 2, but not the same questions 1 and 2 there will be a merge conflict.  
+The conflict arrises because previously existing lines of code were altered between the two branches.
 A **merge conflict** is when a change was made to the same line of code on both branches.
 Git doesn't know which change to accept, so it is up to the programmers to resolve it.
 Merge conflicts are minor on small applications, but can cause issues with large enterprise applications.

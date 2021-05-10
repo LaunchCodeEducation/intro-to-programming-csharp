@@ -80,24 +80,28 @@ commands to create a new project.
    $ cd communication-log
    $ git init
 
-In that directory, open a new file ``index.html`` in the editor of your choice.
-Paste in this code:
+Now that you have a directory, open Visual Studio and :ref:`create a new file <create-new-csharp-project>`.  
 
-.. sourcecode:: html
-   :linenos:
+.. figure:: figures/studio/nameAndLocation.png
+   :alt: Name your solution and select location for your files.
 
-   <html>
-      <body>
-         <p>Radio check. Pilot, please confirm.</p>
-      </body>
-   </html>
+   Give your solution and project a name (1).  Typically they will have the same name.  Then select the directory to store your files (2).  Browse for the directory you just created.
 
-Let's check that our html looks okay by opening it in a browser. Do this by
-selecting *File > Open File* in your web browser, and navigating to the
-location of your new HTML file. The URL will look something like this:
-``file:///Users/username/Development/communication-log/index.html``.
 
-Once you've checked this file in the browser, let's stage and commit it.
+Let's check that our project works by running it. 
+
+You can continue to use your terminal, or you can use the terminal that is part of Visual Studio.  
+If you want to use the Visual Studio terminal, it can be found under the **View** tab.
+
+.. admonition:: Note
+
+   If your console window does not stay open long enough for you to see your code, try adding the ``Console.Read()`` below the ``WriteLine``.
+   This is a piece of code that will keep your terminal window open so you can read what it contains.
+   
+   If you can read your terminal window just fine and you haven't added anything, then ignore this tip.
+
+
+Once you've checked this file in the terminal, let's stage and commit it.
 
 #. First, check the ``status``.
 
@@ -106,16 +110,18 @@ Once you've checked this file in the browser, let's stage and commit it.
       $ git status
       On branch master
 
-      Initial commit
+      No commits yet.
 
       Untracked files:
       (use "Git add <file>..." to include in what will be committed)
 
-         index.html
+         communication-log.sln
+         communication-log/Program.cs
+         communication-log/communication-log.csproj
 
       nothing added to commit but untracked files present (use "git add" to track)
 
-#. The output shows is that ``index.html`` is not staged. Let's ``add``
+#. The output shows us that we have three new files that have not been staged yet. Let's ``add``
    everything in this directory, then check the ``status`` again.
 
    ::
@@ -124,22 +130,27 @@ Once you've checked this file in the browser, let's stage and commit it.
       $ git status
       On branch master
 
-      Initial commit
+      No commits yet
 
       Changes to be committed:
       (use "git rm --cached <file>..." to unstage)
 
-         new file:   index.html
+         new file:  communication-log.sln
+         new file:  communication-log/Program.cs
+         new file:  communication-log/communication-log.csproj
 
-#. The output tells us that the file is staged. Now let's ``commit``. After
+#. The output tells us that the files are staged. Now let's ``commit``. After
    that, we can see a record of our progress by using ``git log``.
 
    ::
 
       $ git commit -m 'Started communication log.'
       [master (root-commit) e1c1719] Started communication log.
-      1 file changed, 5 insertions(+)
-      create mode 100644 index.html
+      4 files changed, 451 insertions(+)
+      create mode 100644 .gitignore
+      create mode 100644 communication-log.sln
+      create mode 100644 communication-log/Program.cs
+      create mode 100644 communication-log/communication-log.csproj
 
       $ git log
       commit 679de772612099c77891d2a3fab12af8db08b651
@@ -244,10 +255,16 @@ The command should look something like this.
 
    $ git clone https://github.com/chrisbay/communication-log.git
 
-Now you can respond to Control! Open the ``index.html`` file in your editor and
+Now you can respond to Control! Open the ``communication-log.sln`` file in your editor and
 add your response to mission control. Be creative, the communication can go
 anywhere! Just don't ask your partner what you should write. After you finish,
 commit your change.
+
+.. admonition:: Note
+
+   When you open the project folder, you might not be in the same directory as the soloution.  
+   You want to open the solution or ``.sln`` file.  
+   A quick way to do that from the terminal is to ``cd`` into the folder that is holding the solution and then type ``open .sln``.
 
 ::
 
@@ -255,7 +272,7 @@ commit your change.
    On branch master
    Your branch is up-to-date with 'origin/master'.
    nothing to commit, working directory clean
-   $ git add index.html
+   $ git add .
    $ git commit -m 'Added second line to log.'
 
 Now we need to push up your changes so Control can use them as well.
@@ -317,7 +334,7 @@ Now let's go enter that command again to push up our code.
    To git@github.com:chrisbay/communication-log.git
       511239a..679de77  master -> master
 
-Anyone reading the HTML through GitHub's browser interface should now see the
+Anyone reading the code through GitHub's browser interface should now see the
 new second line.
 
 Step 6: Pull Pilot's Line and Add Another Line
@@ -339,7 +356,7 @@ repository.
       e0de62d..e851b7e  master     -> origin/master
    Updating e0de62d..e851b7e
    Fast-forward
-   index.html | 1 +
+   communication-log.sln | 1 +
    1 file changed, 1 insertion(+)
 
 
@@ -367,7 +384,7 @@ Control just made.
       e851b7e..167684c  master     -> origin/master
    Updating e851b7e..167684c
    Fast-forward
-   index.html | 1 +
+   communication-log.sln | 1 +
    1 file changed, 1 insertion(+)
 
 Now add a fourth line to the log. Again, be creative, but no planning!
@@ -399,37 +416,21 @@ to without affecting code in the ``master`` branch.
 This command creates a new branch named ``open-mic``, and switches your local
 repository to use that branch.
 
-Create a new file named ``style.css`` and add the following rules:
+Update the `background color of the console <https://docs.microsoft.com/en-us/dotnet/api/system.console.backgroundcolor?view=net-5.0>`_, and update the ``Hello World!`` statement to something more exciting.:
 
-.. sourcecode:: css
+.. sourcecode:: csharp
    :linenos:
 
-   body {
-      color: white;
-      background-color: black;
-   }
+   Console.BackgroundColor = ConsoleColor.Your-Choice-Here
 
-Then link it in ``index.html``. It should look something like this:
 
-.. sourcecode:: html
-   :linenos:
-
-   <html>
-      <head>
-         <link rel="stylesheet" type="text/css" href="style.css">
-      </head>
-      <body>
-         <p>Radio check. Pilot, please confirm.</p>
-         ... your content here
-      </body>
-   </html>
 
 Now stage and commit these changes.
 
 ::
 
    $ git add .
-   $ git commit -m 'Added style.css'
+   $ git commit -m 'Changed background color'
    $ git push origin open-mic
 
 Note that the last command is a bit different than what we've used before
@@ -502,8 +503,8 @@ This is what an opened pull request looks like:
 Step 10: Make a Change in the New Branch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Control**: You will notice that you do not see the new ``style.css`` file
-locally. Type this command to see what branches are on your local computer:
+**Control**: You will notice that you do not see the new console colors. 
+Type this command to see what branches are on your local computer:
 
 ::
 
@@ -606,8 +607,8 @@ This isn't such a big deal. In fact, it's very common. To see how we can handle
 such a situation, we'll intentionally create a merge conflict and then resolve
 it.
 
-**Pilot**: Let's change something about the style file. Our HTML is looking
-pretty plain, so let's pick a nice font and add some margins.
+**Pilot**: Let's change something about the style file. Our Console is looking
+pretty plain, so let's change the color and maybe share a joke or something to liven this up.
 
 First, switch back to the ``master`` branch.
 
@@ -615,33 +616,6 @@ First, switch back to the ``master`` branch.
 
    $ git checkout master
 
-Let's change our font. To do so, add this link to your ``index.html`` file,
-right after the first stylesheet link:
-
-.. sourcecode:: html
-
-   <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-
-
-And spice up your ``style.css`` file to look like this:
-
-.. sourcecode:: css
-   :linenos:
-
-   body {
-      color: white;
-      background-color: #333;
-      font-size: 150%;
-      font-family: 'Satisfy', cursive;
-      margin: 5em 25%;
-   }
-
-The result:
-
-.. figure:: figures/studio/fancy-text.png
-   :alt: Our HTML page with a fancy font
-
-   Satisfying!
 
 Stage and commit your changes and push them up to GitHub. If you don't remember
 how to do this, follow the instructions above. Make sure you're back in the
@@ -651,27 +625,8 @@ isolated, and you won't get the merge conflict you need to learn about.
 Meanwhile...
 
 **Control**: Let's change something about the style file that Pilot just
-edited. Change it to look like this:
-
-.. sourcecode:: css
-   :linenos:
-
-   body {
-      color: white;
-      background-color: black;
-      font-family: 'Sacramento', cursive;
-      font-size: 32px;
-      margin-top: 5%;
-      margin-left: 20%;
-      margin-right: 20%;
-   }
-
-Don't forget to link the new font in your ``index.html`` file, after the other
-link:
-
-.. sourcecode:: html
-
-  <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+edited. Change the color again.  
+Update your current Console.WriteLine statement to make an observation about the weather or something.
 
 Commit your changes to branch ``master``.
 
@@ -714,10 +669,10 @@ Let's pull these outstanding changes into our branch and resolve the errors.
    Unpacking objects: 100% (4/4), done.
    From github.com:chrisbay/communication-log
       7d7e42e..0c21659  master     -> origin/master
-   Auto-merging style.css
-   CONFLICT (content): Merge conflict in style.css
-   Auto-merging index.html
-   CONFLICT (content): Merge conflict in index.html
+   Auto-merging communication-log.sln
+   CONFLICT (content): Merge conflict in communication-log.sln
+   Auto-merging communication-log.sln
+   CONFLICT (content): Merge conflict in communication-log.sln
    Automatic merge failed; fix conflicts and then commit the result.
 
 
@@ -726,44 +681,29 @@ automatically merge the changes.
 
 The specific locations where Git could not automatically merge files are
 indicated by the lines that begin with ``CONFLICT``. You will have to edit
-these files yourself to incorporate Pilot's changes. Let's start with
-``style.css``.
+these files yourself to incorporate Pilot's changes. 
 
-.. figure:: figures/studio/conflicts-css.png
-   :alt: VS Code shows merge conflicts in the editor window
+.. figure:: figures/studio/conflict-workspace.png
+   :alt: VS shows merge conflicts in the editor window
 
-   Merge conflicts in ``style.css``, viewed in VS Code
+   Merge conflicts in ``main`` branch of communication-log, viewed in VS on a Mac.  Windows users, you will see a differnt screen, but the ``<<<<<<<``,  ``=======`` and ``>>>>>>>`` symbols will be the same.
 
 At the top and bottom, there is some code that could be merged without issue.
 
 Between the ``<<<<<<< HEAD`` and ``=======`` symbols is the version of the code
 that exists locally. These are *your* changes.
 
-Between ``=======`` and ``>>>>>>> a48e8a75...``
-are the changes that Pilot made (the hash ``a48e8a75...`` will be unique to
+Between ``=======`` and ``>>>>>>> open-mic...``
+are the changes that Pilot made (the hash ``open-mic...`` will be unique to
 the commit, so you'll see something slightly different on your screen).
 
-Let's unify our code. Change the CSS to look like this, making sure to remove
-the Git markers so that only valid CSS remains in the file.
+Let's unify our code.   Select which changes you would like to keep, or if possible select all of them.  It's up to you and your partner.
 
-.. sourcecode:: css
-   :linenos:
-
-   body {
-      color: white;
-      background-color: black;
-      font-family: 'Sacramento', cursive;
-      font-size: 150%;
-      margin: 5em 25%;
-   }
-
-.. tip:: Like many other editors, VS Code provides fancy buttons to allow you to resolve individual merge conflicts with a single click. There's nothing magic about these buttons; they do the same thing that you can do by directly editing the file.
+.. tip:: Like many other editors, VS provides fancy buttons to allow you to resolve individual merge conflicts with a single click. There's nothing magic about these buttons; they do the same thing that you can do by directly editing the file.
 
    Feel free to use them, but beware that they will not always work. If you need to incorporate parts of a change from both branches, you will need to manually edit the file to resolved the conflict.
 
-You will need to do the same thing for the ``index.html`` file. You only need
-the link for the Sacramento font, not the Satisfy font. Then stage, commit, and
-push your changes; you should not see an error message this time.
+Don't forget to stage and commit.
 
 Step 14: Pulling the Merged Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -794,26 +734,16 @@ if we just want the latest version of this branch, ``git pull``:
       0c21659..e0de62d  master     -> origin/master
    Updating 0c21659..e0de62d
    Fast-forward
-   index.html | 3 ++-
-   style.css  | 4 ++--
-   2 files changed, 4 insertions(+), 3 deletions(-)
+   communication-log.sln | 3 ++-
+   1 file changed, 4 insertions(+), 3 deletions(-)
 
-Great Scott! Looks like Control changed both ``index.html`` and ``style.css``.
+Great Scott! Looks like Control changed the ``communication-log``.
 Note that *Pilot* didn't have to deal with the hassle of resolving merge
 conflicts. Since Control intervened, Git assumes that the team is okay with the
 way they resolved it, and *fast forwards* our local repo to be in sync with the
-remote one. Let's look at ``style.css`` to make sure:
+remote one. Let's look at ``communication-log.sln`` to make sure.  
+What do you see?  What color is the text now?  Oh my!
 
-.. sourcecode:: css
-   :linenos:
-
-   body {
-      color: white;
-      background-color: black;
-      font-family: 'Sacramento', cursive;
-      font-size: 150%;
-      margin: 5em 25%;
-   }
 
 Step 15: More Merge Conflicts!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

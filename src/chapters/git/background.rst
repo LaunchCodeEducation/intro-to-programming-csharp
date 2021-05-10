@@ -17,6 +17,7 @@ A VCS has a **repository** or storage container for the code base.
 Repositories include the files within the code base, the versions over time and a log of the changes made.
 When a programmer updates the repository, it means they are making a **commit**.
 
+
 Getting Started with Git
 ------------------------
 

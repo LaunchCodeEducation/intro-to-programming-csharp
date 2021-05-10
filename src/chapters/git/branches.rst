@@ -8,13 +8,14 @@ Branching in Git
 
 So far this book has talked about Git's ability to store different versions of a code base.
 What if two programmers want to work on different features of the code base at the same time?
-They may want to start with the same version and then one programmer wants to change the HTML and the other the CSS.
+What if you wanted to work together on creating a quiz, like you did for Assignment 1.
+They may want to start with the same version and then one programmer wants to change the first and second questions and the other wants to have ten questions total.
 It would not be effective for the two programmers to commit their changes to the repository at the same time.
 Instead, Git has branches.
 A **branch** is a separate version of the same code base.
 Like a branch on a tree, a branch in Git shares the same trunk as other branches, but is an individual.
 With branches, the two programmers could work on separate versions of the same website without interfering with each other's work.
-Besides collaboration, programmers use branches for storing and testing new features of software called feature branches.
+Besides collaboration, programmers use branches for storing and testing new features of software called **feature branches**.
 
 In the previous section, when checking the status, the top line was ``On branch master``. 
 The master branch is the default branch of the repository.

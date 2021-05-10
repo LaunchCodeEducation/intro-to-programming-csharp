@@ -16,6 +16,12 @@ To create a git repository, the programmer navigates to their project directory 
 
 Now the programmer is ready to code away!
 
+.. admonition:: Note
+
+   This is an example of **local development** or creating repos and code bases on your own machine, that only you have access to.
+   Local development allows you to create functional code that only your machine can deploy.  
+   This is how we have been coding in this course so far.
+
 Making Commits
 --------------
 
