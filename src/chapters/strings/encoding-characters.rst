@@ -133,17 +133,17 @@ In C#, the character data type, or **char**, is able to handle the integer input
       True
 
 In **Line 1** we initialized the variable letter1 to be of type **char**.  We then initialized it to be 97, which is an **int**.
-For C# to understand that we want the character that number is encoded as, we have to explicitly cast it to be a char.  
+For C# to understand that we want the character that number is encoded as, we have to **explicitly cast** it to be a **char**.  
 Explicit casting occurs when we manually convert a larger data type to a smaller one.  
 This is done manually by placing the data type desired in parentheses *in front* of the value.
 In this example we used the ``(char)`` in front of the integer to 
-tell the compiler that we want the actual char that is represented by the ``97``.  The compiler will read it as such and print ``a``.  
+tell the compiler that we want the actual **char** that is represented by the ``97``.  The compiler will read it as such and print ``a``.  
 
-Int is able to accept a char, and will return the ASCII value.  The compiler reads **Line 2** and sees that you want an int value for this char.
+Int is able to accept a **char**, and will return the ASCII value.  The compiler reads **Line 2** and sees that you want an **int** value for this **char**.
 It returns ``97``.  
 
 In order to use this with string data types, we need to break our string into a character array.  We will discuss arrays and this method in the next chapter.
-For now, we can use single chars and ints for encoding purposes.  
+For now, we can use single **chars** and **ints** for encoding purposes.  
 
 .. admonition::  Example
 
@@ -179,7 +179,7 @@ For now, we can use single chars and ints for encoding purposes.
       112
 
 
-To convert an ASCII code to an actual character, initialize a char variable and explicitly cast the value to char.
+To convert an ASCII code to an actual character, initialize a **char** variable and explicitly cast the value to **char**.
 
 .. admonition:: Example
 

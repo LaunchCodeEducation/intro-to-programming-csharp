@@ -1,3 +1,5 @@
+.. _array-method-examples:
+
 Array Method Examples
 ======================
 
