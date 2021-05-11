@@ -149,7 +149,7 @@ Check Your Understanding
 
    Which of the following returns ``-3`` when applied to ``-3.87``?
 
-   #. Math.Floor(7-3.87);
+   #. Math.Floor(-3.87);
    #. Math.Abs(-3.87);
    #. Math.Round(-3.87);
    #. Math.Truncate(-3.87);
