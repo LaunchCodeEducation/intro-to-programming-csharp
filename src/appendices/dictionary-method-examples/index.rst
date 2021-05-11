@@ -1,3 +1,5 @@
+.. _dictionary-method-examples:
+
 Dictionary Method Examples
 ============================
 
