@@ -32,12 +32,14 @@ To declare a new class, you will need the keyword ``class``.
    When working with replit.com, you will need to create a new class in a new file.  
    In order for your class to be recognized by ``MainClass`` in replit, you will need to provide your class its own unique ``namespace``.
    
-   We will be moving to a differnt IDE soon, so any replit.com code examples will be provided to you.  
+   We will be moving to a different IDE soon, so any replit.com code examples will be provided to you.  
 
-When working in a project with multiple classes, it is common to have a ``namespace`` that connects all classes within a project.
-In this context, a ``namespace`` can be more for organizational purposes, as in it will provide direction to each class within 
-the main project.  If the ``namespace`` is not part of the class that holds your ``Main method`` you will have to access it through a ``using`` statement.
-Just like we did will Collections.  This tells the compiler to look through any classes within the same ``namespace`` for definitions and requirements.
+When working in a project with multiple classes, it is common to have a ``namespace``.  
+A ``namespace`` connects all classes within a project.  
+In this context, a ``namespace`` can be more for organizational purposes, providing direction to each class within the main project.  
+If the ``namespace`` is not part of the ``Main method`` you will have to access it through a ``using`` statement.
+Just like we did with Collections.  
+This tells the compiler to look through any classes within the same ``namespace`` for definitions and requirements.
 
 .. admonition:: Example
 
@@ -118,16 +120,16 @@ In our ``Cat`` class example, we instantiate ``myCat`` which is a new ``Cat`` ob
 .. sourcecode:: csharp
    :lineno-start: 10
 
-      Cat myCat = new Cat();         
+   Cat myCat = new Cat();         
 
 
 Class Constructors
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-When we instantiate an object, we use the class **constructor** to provide any needed values to initialize any attributes.  
-The syntax just like the parameter list of a method.
-In fact, the constructor is a specialized method.  
-Any parameters passed to a consturctor will be used to initialize any attributes or behaviors for that object.
+In order to instantiate a new object, we need to know what values are needed, if any.  
+To do this, we use a class **constructor**. 
+A constructor is a special method that instantiates new objects.
+Just like a method, we pass it arguments that are used to set the attributes, which will also determine behvaiors.
 
 Constructors can also be parameterless.  We call this the **default constructor**.  
 A default constructor is left empty, allowing the object to be created with any attributes initalized manually via dot notation.
@@ -160,7 +162,7 @@ Class Members
 Class definitions deterimine any **attributes** the object requires, as well as any **behaviors** of the object.
 Attributes are class variables, also called **fields**.  They can be hard coded, or filled in at the time of instantiation.
 
-Methods are the behvaiors or actions your class is able to preform on objects created by that class.  
+Methods are the behaviors or actions your class is able to perform on objects created by that class.  
 They belong to the class they are defined in.  This means that you are not able to call methods from one class on another.
 
 We can refer to the combination of class attributes and methods as **class members**.
@@ -204,7 +206,7 @@ In **Line 12** we call the ``PetChin`` method on the ``myCat`` object.
 
 
 Since we used the default constructor to create the ``myCat`` object, 
-the attribute ``name`` will "Alyce" or exactly what we coded it to be.  
+the attribute ``name`` will be "Alyce" or exactly what we coded it to be.  
 
 If we wanted to update the name, you would do so like any other variable.
 
@@ -358,6 +360,6 @@ Check Your Understanding
    #. ``redCar.RevEngine();``
    #. ``RevEngine(redCar);``
 
-.. ans: c, newCar.RevEngine();
+.. ans: c, redCar.RevEngine();
 
 

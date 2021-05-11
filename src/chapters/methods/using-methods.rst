@@ -43,7 +43,7 @@ This is when you may want to consider using a ``void`` return type.
       
 
 In this example, we are asking the method to print a friend's name and birth date inside a preprogrammed message.  
-This might see really simple, but if you had a list of names to run through, calling your method for each is a LOT less typing than 
+This might seem really simple, but if you had a list of names to run through, calling your method for each is a LOT less typing than 
 a ``Console.WriteLine`` statement with your message for each one.  That would get old fast.  
 
 If you notice, the method itself is creating the ``Console.WriteLine`` statement.  So when we call ``BirthdayNotes`` all we need to do is 

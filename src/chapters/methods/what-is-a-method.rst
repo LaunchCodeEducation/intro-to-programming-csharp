@@ -31,7 +31,7 @@ A **method** is a reusable, callable, and customizable piece of code. Methods ar
 
 .. admonition:: Note
 
-   In C# or other OOP languages, developers use methods because they are assiociated with a class.
+   In C# or other object oriented programing (OOP) languages, developers use methods because they are assiociated with a class.
    In other languages, you may hear the term **function**.  A function is similar to a method, but it is 
    not tied to a class.  Due to the similarity in overall usage, it is common to refer to 
    methods as functions and functions as methods.  

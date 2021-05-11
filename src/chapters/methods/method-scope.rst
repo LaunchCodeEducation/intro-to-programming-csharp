@@ -128,14 +128,14 @@ Any signature that contains a code block can have scope issues here, such as loo
       class MainClass 
       {
 
-      static void PrintThis()
-      {
-         int i = 0;
-         for(i = 0; i < 3; i++)
+         static void PrintThis()
          {
-            Console.WriteLine(i);
+            int i = 0;
+            for(i = 0; i < 3; i++)
+            {
+               Console.WriteLine(i);
+            }
          }
-      }
 
          public static void Main (string[] args) 
          {

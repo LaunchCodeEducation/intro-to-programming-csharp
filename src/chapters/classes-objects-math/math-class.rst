@@ -86,7 +86,7 @@ The ``Math`` Class contains several mathematical and trigonometric methods.
 Having a built in ``Math`` class can be very helpful when it comes to common math elements, such as ``PI``.  
 
 One of the benefits of constant values is that you don't have to memorize them, or define them in a variable.
-C# stores the value of pi upto 16 decimal places for us.  
+C# stores the value of pi up to 16 decimal places for us.  
 We just need to use dot notaion and we can access this class field.
 
 .. admonition:: Example

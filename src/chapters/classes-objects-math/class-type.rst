@@ -11,7 +11,7 @@ We will explore definitions and walkthrough examples that will demonstarate how 
 Class Type
 -------------------
 
-Quick refesher on data types.  As discussed in chapter 4, C# contains value types and reference types.  
+Quick refesher on data types.  As discussed in the :ref:`Data and Variables <data-and-variables>` chapter, C# contains value types and reference types.  
 An **int** or **char** are examples of value data types.
 While **strings** are reference types.  Classes are also reference data types that define objects, and objects are also reference types. 
 

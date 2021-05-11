@@ -45,7 +45,7 @@ In this example, we are skipping the **access modifier**.
 The reason for this is that we are working within a single class.  
 If we had multiple classes this would be more significant.  We will discuss this more when we get to class and class members.
 
-We are using the ``static`` modifier.   This is lets C# know that this method
+We are using the ``static`` modifier.   This lets C# know that this method
 belongs to the current class it is contained in and not to expect anything **new** to be created.  
 
 Our **return type** is **int**.  This lets you know how to use the method.  
@@ -197,10 +197,10 @@ Check Your Understanding
    .. sourcecode:: csharp
       :linenos:
          
-         static int Doubles(int x)
-         {
-            return (2 * x);
-         }
+      static int Doubles(int x)
+      {
+         return (2 * x);
+      }
 
 
    #.  14
