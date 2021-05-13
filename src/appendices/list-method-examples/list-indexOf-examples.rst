@@ -1,4 +1,4 @@
-.. _indexOf-examples:
+.. _list-indexOf-examples:
 
 ``IndexOf`` Method
 ======================

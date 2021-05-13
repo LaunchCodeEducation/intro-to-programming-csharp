@@ -1,4 +1,4 @@
-.. _reverse-examples:
+.. _list-reverse-examples:
 
 ``Reverse`` Method
 ======================

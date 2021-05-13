@@ -1,4 +1,4 @@
-.. _sort-examples:
+.. _list-sort-examples:
 
 ``Sort`` Method
 ======================
