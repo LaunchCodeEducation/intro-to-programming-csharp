@@ -17,6 +17,8 @@ Chapters
    chapters/collections-and-flow/index
    chapters/methods/index
    chapters/classes-objects-math/index
+   chapters/exceptions/index
+   chapters/vstools/index
 
 .. toctree::
 
@@ -35,6 +37,7 @@ Studios
    chapters/loops/studio
    chapters/collections-and-flow/studio
    chapters/methods/studio
+   chapters/vstools/studio
 
 
 Assignments
