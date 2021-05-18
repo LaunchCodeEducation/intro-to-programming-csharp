@@ -2,8 +2,7 @@ Debugger
 ========
  
 Watch this video to learn the basics of the debugging tools available in Visual Studio. If you want 
-to follow along, Chris is debugging the :ref:`hello-methods` program back in the introduction to 
-data types. 
+to follow along, Chris is debugging a program called HelloMethods.  You can find it `here <https://github.com/LaunchCodeEducation/csharp-web-dev-lsn1datatypes>`_.  Clone and open it on your machine.
 
 .. youtube::
    :video_id: sACkw915kmg

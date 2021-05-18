@@ -36,7 +36,7 @@ event of an exception. The ``catch`` block prevents the program from stopping wh
 Here's how we can update our Temperature constructor with a ``try/catch`` to handle the exception:
 
 .. sourcecode:: c#
-   :linenos:
+   :lineno-start: 8
 
    public Temperature(double fahrenheit)
    {
@@ -59,13 +59,18 @@ Here's how we can update our Temperature constructor with a ``try/catch`` to han
    }
 
 First the constructor method comapres the ``fahrenheit`` input to ``absoluteZeroFahrenheit``.
-If the ``fahrenheit`` input does not result in an exception being thrown, then the new ``Temperature`` object is created. 
-If the action inside the ``try`` block results in an exception,
-or specifically an ``ArgumentOutOfRange`` instance, then the ``catch`` block runs and the initial 
-value of a new ``Temperature`` object is set to absolute zero. 
+If the ``fahrenheit`` is greater than absolute zero, the code runs without any exception.
+We tried the value and it passed so we can keep the code running. 
 
-In this example, we don't explicitly do anything with the argument ``e`` ("e" for exception). 
-However, there are scenarios where you may wish to display the exception or it's message in the view of your
+If the action inside the ``try`` block results in an exception, i.e. the ``userTemp`` value is below absolute zero, 
+the catch block is triggered.  
+In this example, the catch block will reassign the inital value of fahrenheit to that of absolute zero.  
+This particular catch block is activated because we set it to the ``ArgumentOutOfRangeException``.
+
+We assigned the ``ArgumentOutOfRangeException`` a variable of ``e`` in **Line 21**.  
+In **Line 23**, the value of ``fahrenheit`` is being reassigned to ``absoluteZero``.  
+In **Line 24**, we are print the updated value via ``e``.  
+This provides feedback to the user about the error by displaying the exception or it's message in the view of your
 running app. It also an option to rethrow an exception after it has been caught. You won't need to rethrow 
 exceptions in this course, but just know that it can be done. 
 
@@ -78,15 +83,17 @@ Now, running the same sample input from the previous page does not output an exc
    .. sourcecode:: c#
       :linenos:
 
-      Temperature insideTemp = new Temperature(73);
+      //Test 1: userTemp = 73
+      Temperature insideTemp = new Temperature(userTemp);
 
-      Temperature outsideTemp = new Temperature(-8200);
+      //Test 2: userTemp = -8200
+      Temperature outsideTemp = new Temperature(UserTemp);
 
    *Output:*
 
    :: 
 
-      73
+      You entered 73 degrees F.
       -459.67
 
 Although the exception has still been thrown, the ``try/catch`` construction diverts the program from
@@ -98,7 +105,7 @@ passed into the constructor that is less than absolute zero, then the ``fahrenhe
 set to absolute zero.
 
 .. sourcecode:: c#
-   :linenos:
+   :lineno-start: 6
 
    class Program
    {
@@ -112,12 +119,13 @@ set to absolute zero.
             }
             else
             {
-               Console.WriteLine(fahrenheit);
+               Console.WriteLine("You entered " + fahrenheit + " degrees F.");
             }
          }
          catch(ArgumentOutOfRangeException e)
          {
             fahrenheit = absoluteZero;
+            Console.WriteLine(e)
          }
          finally
          {
@@ -178,7 +186,7 @@ Check For ``null`` References
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In C#, ``null`` is a keyword that represents a **null reference**.  
-A null reference is a reference that doesn't have a specific object, but is not the same as empty or zero.
+A null reference is a reference to nothing, but not like an empty string or a value of zero.
 For example, a string variable can be set to ``null``, but is not the same as an empty string.
 
 .. admonition:: Example

@@ -8,9 +8,9 @@ List Method Examples
 
    add-examples
    contains-examples
-   indexOf-examples
-   reverse-examples
-   sort-examples
+   list-indexOf-examples
+   list-reverse-examples
+   list-sort-examples
    remove-examples
    toArray-examples
    

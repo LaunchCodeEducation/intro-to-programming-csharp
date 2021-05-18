@@ -75,7 +75,11 @@ Check Your Understanding
 
    .. sourcecode:: c#
 
-      double firstTemp = temps[0].Fahrenheit;
+      foreach( double temp in temps)
+      {
+        Console.WriteLine(temp);
+      }
+      
 
    #. No exception will be thrown --- ``temps[0].Fahrenheit`` will return ``null``.
    #. ``NullReferenceException`` --- the object at ``temps[0]`` is null.

@@ -1,26 +1,75 @@
 Studio: If It Ain't Broke, Add a Breakpoint!
 ============================================
 
-On your machine, open up your copy of ``csharp-web-dev-lsn7interfaces-studio`` in Visual Studio.
+Introduction 
+--------------
+
 The purpose of this studio is to talk about your current debugging strategies and how to make the most of the debugger tools discussed in this chapter.
 
-Before we start practicing with debugging tools, go over with the group one error you encountered when working on your own version of last lesson's studio.
+Before we start practicing with debugging tools, go over with the group one error you encountered with any exercise, studio, or book example using Visual Studio.
 This could be the result of a typo or a logical error. 
 
 #. What was the error?
 #. How did you solve this error? What have been the strategies and tools you have been using so far to debug your code?
 #. Could one of the debugging tools help you when addressing this error?
-   For example, if you encountered an error where data was not being written onto a disc object, could you track the properties of the object with a debugging tool?
+   For example, if you encountered an error where scope was interferring with access to data, could you find the accessibility of the data with a debugging tool?
 
-Now, checkout the `debugging branch <https://github.com/LaunchCodeEducation/csharp-web-dev-lsn7interfaces-studio/tree/debugging>`__ of
-the studio repo. Review the code and use the debugging tools in Visual Studio to practice assessing the program.
+Part 1: Calculate The Area Of A Circle
+-----------------------------------------
+
+As you build your code for today's studio, explore the colorations, icons, and other intellisense features of Visual Studio.
+Don't forget to try the debugger if something isn't working as you planned, or even if it is working as you planned.
+
+
+**To get started:** Create a new console application in Visual Studio for the studio.
+
+Write a program that prompts the user for the radius of a circle.
+Calculate the area of the user's circle and print the result.
+
+.. admonition:: Tip
+
+   Recall that the area of a circle is ``A = pi * r * r`` where ``pi`` is
+   3.14 and ``r`` is the radius.
+
+Here’s an example of how your program should work:
+
+::
+
+   Enter a radius: 
+   2.5
+   The area of a circle of radius 2.5 is: 19.625
+
+Some questions to ask yourself:
+
+#. What data type should the radius be?
+#. What is the best way to get user input into a variable ``radius`` of
+   that type?
+#. Do you really need more than 3 decimal places?
+
+.. admonition:: Note
+
+   Don't forget the :ref:`Math class <math-method-examples>` and the :ref:`built-in PI field <math-pi>`.
+
+More Calculations
+^^^^^^^^^^^^^^^^^^^
+
+#. Using the same radius, calculate the circumference (``2*pi*r``) and diameter of the circle (``2*r``).
+#. Output the results.
+
+Road Trip!
+^^^^^^^^^^^^
+
+#. Ask the user for the miles per gallon of their car. 
+#. If the radius that they entered is in miles, output how many gallons of gas they will use to go around this circle. 
+
+
+Part 2: Working With The Debugger
+-----------------------------------
 
 To get started, try the following:
 
-#. Add ``cd.Name`` to the *Watch* pane to track the value of that property. Does it change?
+#. Add ``circumference`` to the *Watch* pane to track the value of that property. Does it change? 
 #. Add a few breakpoints inside of ``Program.cs`` and make note of where you expect the program to break its execution. 
-#. Add a breakpoint inside of some of the methods in ``BaseDisc.cs``. Anticipate what you expect to see as the last line in the 
-	*Call Stack* pane when the debugger stops.
 
 After you look through the code and try out these tasks, take it one step further by answering these questions.
 
@@ -29,3 +78,13 @@ After you look through the code and try out these tasks, take it one step furthe
 
 Once you have gone through the code, open up a piece of code you have been struggling with.
 In what ways could making use of debugging tools help you figure out what is going on with the code?
+
+
+Bonus Missions If You Want To Expand Your Code
+------------------------------------------------
+
+#. Think about how we could make this program more modular by breaking out some of the code into a separate class. For example, we could pull out the circle information into a ``Circle`` class and leave the user questions and console messages in ``Program``. Take a look at for a refresher on using another class file.
+#. Extend your program further by creating a way to prevent negative numbers from being accepted.  
+   You could use a ``while or do-while loop``, an ``if/else block``, or ``throw`` and ``try/catch`` an exception.
+#. Add additional validation to your program. If the user enters a non-numeric character or a empty string? Print an error message and quit. You’ll need to peek ahead to learn about `conditional syntax in C# <https://www.w3schools.com/cs/cs_conditions.asp>`__.
+

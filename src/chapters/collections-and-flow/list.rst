@@ -124,14 +124,14 @@ Thus, the first item in this table:
    * - :ref:`Contains() <contains-examples>`
      - Checks to see if the List contains a given item, returning a Boolean
      - ``planets.Contains("Earth")`` returns ``true``
-   * - :ref:`IndexOf() <indexOf-examples>`
+   * - :ref:`IndexOf() <list-indexOf-examples>`
      - Looks for an item in a List, returns the index of the first occurrence of the item if it exists, returns -1 otherwise
      - ``planets.IndexOf("Jupiter")`` returns ``4``
-   * - :ref:`Reverse() <reverse-examples>`
+   * - :ref:`Reverse() <list-reverse-examples>`
      - Reverses the elements of a ``List`` 
      - ``planets.Reverse()`` returns
        ``{"Pluto", "Neptune", "Uranus", "Saturn", "Jupiter", "Mars", "Earth", "Venus", "Mercury"}``
-   * - :ref:`Sort() <sort-examples>`
+   * - :ref:`Sort() <list-sort-examples>`
      - Rearranges the elements of an ``List`` into ascending order.
      - ``planets.Sort()`` produces ``{"Earth", "Jupiter", "Mars", "Mercury", "Neptune", "Pluto", "Saturn", "Uranus", "Venus"}``
    * - :ref:`Remove() <remove-examples>`

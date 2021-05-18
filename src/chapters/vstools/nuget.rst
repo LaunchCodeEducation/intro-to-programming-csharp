@@ -1,14 +1,23 @@
 NuGet
-=====
+========
+
+For the rest of this class, we will be working with Visual Studio (VS).
+Visual Studio can be overwhelming at first, but we will provide you with tools and tips as we continue through the course.
+We are going to introduce you to topics as needed so that we can cover things that you can practice right away.  
+
+In this chapter, we will discuss NuGet and the Debugger.
+
+NuGet
+----------
 
 .. index:: ! NuGet
 
 **NuGet** is a package management tool for .NET software. To use a dependency in a C# project, 
 we can rely on NuGet to connect us with third-party code. NuGet allows us to bypass downloading 
 and hosting the dependency library ourselves.
-As with MSBuild, we will only scratch the surface of the utility of a .NET package manager. That 
-said, it is still a good idea to get familiar with these tools. As your programs grow larger, 
-MSBuild and NuGet will help to maintain a robust codebase.
+We will only scratch the surface of the utility of a .NET package manager in this course. 
+That said, it is still a good idea to get familiar with these tools. 
+As your programs grow larger, NuGet will help to maintain a robust codebase.
 
 NuGet packages are readily available within the IDE itself. Perhaps you have noticed the 
 *Dependencies* directory that is created in our projects? To browse available packages, right 
@@ -49,13 +58,4 @@ Check Your Understanding
 
 .. ans: c, NuGet is a package manager for .NET programs.
 
-.. admonition:: Question
 
-   True/False: NuGet and MSBuild share responsibilities and only one is needed to deploy a C# app.
-
-   a. True
-
-   b. False
-
-.. ans: False, While NuGet gives you access to the dependencies you need for your application, 
-   MSBuild can configure how those dependencies are used in different executable environments.
