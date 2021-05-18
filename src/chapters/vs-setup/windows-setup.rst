@@ -50,7 +50,7 @@ Windows Users: Visual Studio Community Edition
 
       Launch Options, , Visual C# selected
 
-.. _vs-windows-project-opener:
+   .. _vs-windows-project-opener:
 
 #. Finally, you have made it to the project selection window. 
    This will be the item you will see when you open Visual Studio. 

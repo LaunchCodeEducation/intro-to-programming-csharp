@@ -9,7 +9,7 @@ conventions commonly used in Python or other languages.
 
 Again, these are conventions. Not following them will not prevent your
 code from running, as long as you are following `C#’s naming
-rules <https://msdn.microsoft.com/en-us/library/aa664670(v=vs.71).aspx>`__.
+rules <https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/general-naming-conventions>`__.
 
 .. list-table::
    :header-rows: 1

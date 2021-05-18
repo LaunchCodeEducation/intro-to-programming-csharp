@@ -1,7 +1,7 @@
 Mac Users: Visual Studio for Mac
 ================================
 
-#. Check that you are using supported MacOS version `here <https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?pivots=os-macos&tabs=netcore31#supported-operating-systems>`__.
+#. Check that you are using supported MacOS version `here <https://docs.microsoft.com/en-us/dotnet/core/install/macos#supported-releases>`__.
 
 #. Download `Visual Studio for Mac <https://visualstudio.microsoft.com/vs/mac/net/>`__. You may be prompted for your 
    computer's password to complete the download and begin installation.

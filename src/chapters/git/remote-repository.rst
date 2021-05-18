@@ -5,7 +5,7 @@ Local, Remote, GitHub, Oh My!
 -----------------------------
 
 So far, the book has covered how to setup a Git repository on the local machine.
-But, one of the benefits of using a VCS was storage of backups.
+But, one of the benefits of using a VCS is storage of backups.
 So, what happens to the code base if something happens to the machine?
 That is where remote repositories come in.
 Instead of keeping a Git repository only on a local machine, the code base is in a **remote repository** and the programmers working on it keep copies on their local machine. 

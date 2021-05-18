@@ -262,7 +262,7 @@ commit your change.
 
 .. admonition:: Note
 
-   When you open the project folder, you might not be in the same directory as the soloution.  
+   When you open the project folder, you might not be in the same directory as the solution.  
    You want to open the solution or ``.sln`` file.  
    A quick way to do that from the terminal is to ``cd`` into the folder that is holding the solution and then type ``open .sln``.
 
