@@ -18,6 +18,9 @@ Chapters
    chapters/collections-and-flow/index
    chapters/methods/index
    chapters/classes-objects-math/index
+   chapters/terminal/index
+   chapters/vs-setup/index
+   chapters/git/index
    chapters/exceptions/index
    chapters/vstools/index
 
@@ -38,6 +41,7 @@ Studios
    chapters/loops/studio
    chapters/collections-and-flow/studio
    chapters/methods/studio
+   chapters/git/studio
    chapters/vstools/studio
 
 Assignments
@@ -63,6 +67,14 @@ Appendices
    appendices/list-method-examples/index
    appendices/dictionary-method-examples/index
    appendices/math-method-examples/index
+   appendices/installing-software/index
+   appendices/terminal-commands/index
+   appendices/vs-troubleshooting
+   appendices/git/stash
+   appendices/git/workflows
+
+
+
    
 .. toctree::
    :hidden:
