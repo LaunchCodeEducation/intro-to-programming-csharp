@@ -230,7 +230,6 @@ Check Your Understanding
 
       public class Greeting 
       {
-
          public String name = "Jess"
 
          public void SayHello() 
@@ -239,9 +238,9 @@ Check Your Understanding
 
       }
 
-   a. line 9
+   a. line 8
    b. line 4
-   c. line 8
+   c. line 7
    d. line 1
 
 .. ans: lines 4, 8 and 9 all have bugs.
