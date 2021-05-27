@@ -33,6 +33,8 @@ If the code runs without throwing an exception, then the program continues as us
 exception, then a later ``catch`` statement will be called. ``catch`` gives the program instructions on what to do in the 
 event of an exception. The ``catch`` block prevents the program from stopping when it reaches the exception. 
 
+.. _temp-argument-exception:
+
 Here's how we can update our Temperature constructor with a ``try/catch`` to handle the exception:
 
 .. sourcecode:: c#
