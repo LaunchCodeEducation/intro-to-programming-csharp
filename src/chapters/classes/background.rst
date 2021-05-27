@@ -19,8 +19,6 @@ Before we start: There are three different code examples that you will encounter
    We will be updating it with concepts from this current chapter.
 
 
-
-
 Creating A New Class In An Exisiting C# Project
 -------------------------------------------------
 

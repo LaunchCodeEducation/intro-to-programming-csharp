@@ -189,17 +189,14 @@ front of it and therefore it will have the same public access as the property ``
       internal set { name = value; }
    }
 
-.. _temp-argument-exception:
 
-As an example of setter validation, let’s take a short detour to look at a
-``Temperature`` class. A valid temperature can only be so low (“absolute
+
+As an example of setter validation, let’s take a short detour to look at our
+``Temperature`` app from the :ref:`exceptions chapter <temp-argument-exception>`. 
+If you remember, a valid temperature can only be so low (“absolute
 zero”), so we wouldn’t want to allow somebody to set an invalid value.
 We decided to throw an exception in our ``set`` field.  
 That way if an invalid value is provided we'll be able to catch it before we commit to that value.
-
-
-TODO: link to exceptions when chapter approved for merge * * * * * * * *
---------------------------------------------------------------------------
 
 .. sourcecode:: c#
    :linenos:

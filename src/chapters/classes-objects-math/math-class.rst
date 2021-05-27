@@ -80,6 +80,8 @@ The ``Math`` Class contains several mathematical and trigonometric methods.
 
 .. index:: ! const, ! constants ! PI ! pi ! Pi
 
+.. _math-pi:
+
 ``Math`` Fields Are Constants
 ------------------------------
 
