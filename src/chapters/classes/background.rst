@@ -1,4 +1,4 @@
-.._creating-new-class:
+.. _creating-new-class:
 
 Classes for C#
 ==============

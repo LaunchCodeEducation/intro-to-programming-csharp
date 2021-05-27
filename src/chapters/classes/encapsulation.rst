@@ -22,7 +22,7 @@ Let's take a look at this by developing a new class called ``Student``.
 
 .. admonition:: Note
 
-   You will find starter code for this ``Student`` example in the excersies.  
+   You will find starter code for this ``Student`` example in the exercises.  
    Read through this and use it as a reference for the exercises.
    
    
@@ -283,7 +283,7 @@ the value of the property.
 
 At this point you may be asking yourself, why would I use an auto-implemented property
 instead of just making a field public?  It comes down to properties being more flexible
-to change in the future, such as changing the acceesibility of only the getter or setter,
+to change in the future, such as changing the accessibility of only the getter or setter,
 and more capable when used in your user interface through data binding, which we will
 explore more in later chapters.
 
