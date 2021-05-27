@@ -21,6 +21,8 @@ Chapters
    chapters/terminal/index
    chapters/vs-setup/index
    chapters/git/index
+   chapters/exceptions/index
+   chapters/vstools/index
 
 .. toctree::
 
@@ -40,6 +42,7 @@ Studios
    chapters/collections-and-flow/studio
    chapters/methods/studio
    chapters/git/studio
+   chapters/vstools/studio
 
 Assignments
 ===========
