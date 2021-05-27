@@ -114,6 +114,7 @@ helping you prevent errors as you build.
       string lastName;
       Console.WriteLine(firstName);
 
+.. index: ! exceptions
 
 Exceptions
 ^^^^^^^^^^^^

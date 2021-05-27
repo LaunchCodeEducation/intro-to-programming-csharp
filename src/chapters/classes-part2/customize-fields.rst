@@ -4,6 +4,8 @@ Customizing Fields
 In the previous chapter, we used *fields* to store data within a class, and we
 explored how to access and modify the values of those fields.
 
+You will see the following code examples from the :ref:`Classes Part 1 <classes-part1>` chapter: ``HelloWorldRunner``, ``Temperature`` and ``Student``, as well as,  ``HelloMethods`` from the :ref:`Debugger lesson <static-method-helloWorld>`.
+
 Now, we will explore several ways to configure fields based on their intended
 use.
 
@@ -189,8 +191,8 @@ Static fields cannot be referenced by class instances, but a static field can by
          }
       }
 
-In line 3, we add a static integer field that will keep track of the next
-student ID to be assigned to a student. Then, our new constructor (line 26)
+In **Line 3**, we add a static integer field that will keep track of the next
+student ID to be assigned to a student. Then, our new constructor (**Line 26**)
 takes only a name as a parameter and assigns the student the next available ID.
 This works because static fields are shared across all objects created from
 the ``Student`` class, so it functions as a counter of sorts for the number of

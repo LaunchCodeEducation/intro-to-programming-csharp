@@ -140,7 +140,7 @@ must NOT rely on data from a specific object.
 
 We call a static method by preceding it with the class name and using
 dot-notation. Here’s an example that we looked at
-:ref:`previously <static-methods>`.
+:ref:`previously <static-method-helloWorld>`.
 
 .. admonition:: Examples
 
@@ -190,7 +190,7 @@ dot-notation. Here’s an example that we looked at
          }
       }
 
-The call occurs in line 9 of ``HelloMethods/Program.cs``: ``Message.GetMessage("fr")``. We call the static
+The call occurs in **Line 9** of ``HelloMethods/Program.cs``: ``Message.GetMessage("fr")``. We call the static
 ``GetMessage`` without needing an instance of the ``Message`` class. Instead,
 we use the name of the class itself.
 
@@ -243,7 +243,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Assume that we add two methods to a ``Pet`` class---``public String MakeNoise()``
+   Assume that we add two methods to a ``Pet`` class---``public string MakeNoise()``
    and ``public static void IncreaseAge()``. Which of the following statements is
    true?
 
