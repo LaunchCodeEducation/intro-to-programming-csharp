@@ -24,6 +24,7 @@ Chapters
    chapters/exceptions/index
    chapters/vstools/index
    chapters/classes/index
+   chapters/unit-testing/index
 
 .. toctree::
 
@@ -45,6 +46,7 @@ Studios
    chapters/git/studio
    chapters/vstools/studio
    chapters/classes/studio
+   chapters/unit-testing/studio
 
 Assignments
 ===========
