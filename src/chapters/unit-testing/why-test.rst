@@ -13,7 +13,7 @@ Your development process probably looks something like this:
 #. Notice error and investigate
 #. Repeat these steps until there are no more errors
 
-.. index:: ! unit testing
+.. index:: ! unit testing ! automated testing ! automated test
 
 But there's a better way to test your code, using **automated tests**. Automated tests actively test your code and help to remove the
 burden of manual testing. There are many types of automated tests. This chapter focuses on **unit testing**, which tests the smallest

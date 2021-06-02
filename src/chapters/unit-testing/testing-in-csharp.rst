@@ -1,14 +1,7 @@
 Testing in C#
 =============
 
-.. index:: ! automated testing, ! unit testing, ! MSTest
-
-Testing your code is a crucial practice for every developer. 
-**Automated testing** ensures that your code works as expected every 
-time it runs. Tests also function as internal documentation, giving a 
-fellow programmer instructions on how to properly execute your classes 
-and methods. While these purposes are the same for C# as any other language, 
-the implementation of tests will look a bit different.
+.. index:: ! unit testing, ! MSTest
 
 This course covers **unit testing** in C# with a test framework called
 **MSTest**. Unit testing is based on breaking down the codebase into its 
