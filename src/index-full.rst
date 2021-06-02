@@ -53,6 +53,8 @@ Assignments
    :name: assignmentstoc
 
    assignments/candidateQuiz
+   assignments/scrabble-scorer
+
 
 Appendices
 ==========

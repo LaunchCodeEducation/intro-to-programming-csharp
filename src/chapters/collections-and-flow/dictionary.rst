@@ -104,6 +104,7 @@ And finally, you can declare the dictionary and use the ``Add`` method to inital
    Be sure to match your data types when you use this class.  
 
 
+.. accessing-dictionary-elements:
 
 Accessing Dictionary Elements
 --------------------------------
