@@ -7,6 +7,8 @@ data types and collection types.  You have also worked with methods before when 
 
 This chapter is designed to introduce you to **method signatures**, **method invocations**, and the ability to create your own unique methods.
 
+.. _static-methods:
+
 .. admonition:: Note
 
    A little caveat before we continue.  Since we have not encountered C# classes at this point, 

@@ -152,16 +152,17 @@ Code the Function
    ``Transform()``.
 #. Points to Consider:
 
-   a. Recall that ``foreach`` loops 
+   #. Recall that ``foreach`` loops 
       :ref:`iterate over the key/value pairs <kvp-foreach>` within an dictionary.
-   b. If you need a reminder of how to assign new key/value pairs, review the
+   #. If you need a reminder of how to assign new key/value pairs, review the
       :ref:`relevant section <initialize-dictionary>` in the
       ``Control Flow and Collections`` chapter.
-   c. To access the string of letters within ``oldPointStructure``, use bracket
+   #. To access the string of letters within ``oldPointStructure``, use bracket
       notation (``oldPointStructure[key]``).
-   d. To access a particular element within a string, 
+   #. To access a particular element within a string, 
       consider what :ref:`strings are made of <string-chars>` and 
       the various :ref:`string methods <string-method-examples>` you can use to access them.
+   #. What about the data types.  Will you need to `convert <https://docs.microsoft.com/en-us/dotnet/api/system.convert.tochar?view=net-5.0>`_ or `parse <https://docs.microsoft.com/en-us/dotnet/api/system.char.parse?view=net-5.0>`_ any of them?
 
       .. admonition:: Examples
 
@@ -172,7 +173,7 @@ Code the Function
             
             foreach(char ch in oldPointStructure[4])
             {
-                Console.Write(ch + "-");  //dash used to visually separate each char 
+                Console.Write(ch + '-');  //dash used to visually separate each char 
             }
 
          **Console Output**
@@ -186,6 +187,10 @@ Code the Function
 
 C) Scoring Algorithms
 ^^^^^^^^^^^^^^^^^^^^^^
+
+We are going to create the individual scoring methods first.  Be sure to test them as you build them.
+Once all three are working, we are going to create a different method to invoke them.
+Read through this section before coding anything.  
 
 Create a *separate* method for each of the following scoring algorithms.
 
@@ -228,8 +233,8 @@ Define ScoringAlgorithms method
 
 #. Things to Ponder:
 
-   a. Think about what each parameter will be doing and how it could be used.
-   b. Think about how to reach the desired scoring method.
+   a. Think about what each method's parameter requirement(s).
+   b. Think about how to invoke the desired scoring method.
 
 
 Take a Breath
@@ -239,6 +244,7 @@ Good! Your ``ScoringAlgorithms`` method now invokes all of the scoring
 options and passes the word to score to each.  Looks like we have a good start on this Scrabble program.
 
 To access a scoring method via ``ScoringAlgorithms``,  call it and pass the score option and a test word.
+In our example, we will be using "taxi" as our test word.
 
 .. admonition:: Examples
 
@@ -266,7 +272,7 @@ Define a ``RunProgram`` method that will do the following when called:
 #. Prompt the user to enter a word to score. The prompt should also provide the
    user an option for ending the program.
 #. When taking in a user's word, should account for case.
-#. Invoke the ``ScoringAlgorithms`` method with the correct parameters.
+#. Invoke the ``ScoringAlgorithms`` method chosen by the user with the correct parameters.
 #. Display the score for the word.
 #. Repeat steps 2 to 4 until the user ends the program by entering ``"Stop"``.
    (*Consider*: Should this check be case-insensitive?)
