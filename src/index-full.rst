@@ -69,7 +69,6 @@ Appendices
    appendices/loops-examples/index
    appendices/list-method-examples/index
    appendices/dictionary-method-examples/index 
-   appendices/dictionary-method-examples/index
    appendices/math-method-examples/index  
    appendices/installing-software/index
    appendices/terminal-commands/index
