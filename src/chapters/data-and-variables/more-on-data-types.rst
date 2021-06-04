@@ -163,6 +163,8 @@ how strings work in C# in a future chapter.
 
 .. index:: ! reference type ! value type
 
+.. _reference-variable:
+
 Reference and Value Types
 -------------------------
 
