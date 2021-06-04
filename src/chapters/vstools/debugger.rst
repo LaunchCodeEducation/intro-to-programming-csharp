@@ -1,6 +1,8 @@
 Debugger
 ========
- 
+
+.. _static-method-helloWorld:
+
 Watch this video to learn the basics of the debugging tools available in Visual Studio. If you want 
 to follow along, Chris is debugging a program called HelloMethods.  You can find it `here <https://github.com/LaunchCodeEducation/csharp-web-dev-lsn1datatypes>`_.  Clone and open it on your machine.
 
