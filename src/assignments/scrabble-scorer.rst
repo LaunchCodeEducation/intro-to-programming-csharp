@@ -88,7 +88,7 @@ Be sure to notice the data types of this dictionary.
    };
 
 The *keys* of ``oldPointStructure`` are the Scrabble points stored as ints, and the
-*values* a string letters. All letters in the array have the Scrabble
+*values* a string of letters. All letters in the array have the Scrabble
 point value equal to the key. For example, ``"A"`` and ``"R"`` are worth 1,
 ``"K"`` is worth 5, and ``"J"`` is worth 8.
 
@@ -97,8 +97,9 @@ iterate over each key in ``oldPointStructure`` and then check if the letter is
 inside the array paired with that key. *This search within a search is
 inefficient*.
 
-Try it yourself, find ``"L"`` and ``"M"``.  Unless you have the scrabble scores memorized, you had to search each string.  Tedious, right?
-You can improve this.
+Try it yourself, find ``"L"`` and ``"M"``.  
+Unless you have the scrabble scores memorized, you had to search each string.  
+Tedious, right?  You can improve this.
 
 Streamlined Score Object
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -139,150 +140,135 @@ will identify a point value. This is much more efficient than the old method.
 Do not panic! Instead of tediously hard-coding ``newPointStructure``, use your
 clever coding skills to create the new object.
 
-Code the Function   **<----  Pick up here**
+
+Code the Function   
 ~~~~~~~~~~~~~~~~~~
 
 #. Write a ``Transform`` method that returns a dictionary and has no parameters. Calling
-   ``Transform()`` will return a dictionary with *lowercase*
+   ``Transform()`` will *return* a dictionary with *lowercase*
    letters as keys. The value for each key will be the points assigned to that
    letter.
 #. Initialize an empty ``newPointStructure`` dictionary by setting it equal to
    ``Transform()``.
-#. Hints:
+#. Points to Consider:
 
-   a. Recall that ``foreach`` loops iterate over the keys within an dictionary.
+   a. Recall that ``foreach`` loops 
+      :ref:`iterate over the key/value pairs <kvp-foreach>` within an dictionary.
    b. If you need a reminder of how to assign new key/value pairs, review the
-      :ref:`relevant section <add-new-object-properties>` in the
-      ``Objects and Math`` chapter.
-   c. To access the letter arrays within ``oldPointStructure``, use bracket
-      notation (``oldPointStructure['key']``).
-   d. To access a particular element within a letter array, add a second set of
-      brackets (``oldPointStructure['key'][index]``), or assign the array to a
-      variable and use ``variableName[index]``.
+      :ref:`relevant section <initialize-dictionary>` in the
+      ``Control Flow and Collections`` chapter.
+   c. To access the string of letters within ``oldPointStructure``, use bracket
+      notation (``oldPointStructure[key]``).
+   d. To access a particular element within a string, 
+      consider what :ref:`strings are made of <string-chars>` and 
+      the various :ref:`string methods <string-method-examples>` you can use to access them.
 
       .. admonition:: Examples
 
-         .. sourcecode:: JavaScript
+         .. sourcecode:: CSharp
             :linenos:
 
-            console.log("Letters with score '4':", oldPointStructure['4']);
-            console.log("3rd letter within the key '4' array:", oldPointStructure['4'][2]);
-
-            let letters = oldPointStructure['8'];
-            console.log("Letters with score '8':", letters);
-            console.log("2nd letter within the key '8' array:", letters[1]);
+            Console.WriteLine("Letters with score 4: {0}", oldPointStructure[4]);
+            
+            foreach(char ch in oldPointStructure[4])
+            {
+                Console.Write(ch + "-");  //dash used to visually separate each char 
+            }
 
          **Console Output**
 
          ::
 
-            Letters with score '4': [ 'F', 'H', 'V', 'W', 'Y' ]
-            3rd letter within the key '4' array: V
+            Letters with score 4: F, H, V, W, Y
 
-            Letters with score '8': [ 'J', 'X' ]
-            2nd letter within the key '8' array: X
+            F-,- -H-,- -V-,- -W-,- -Y-
+
 
 C) Scoring Algorithms
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Create a separate function for each of the following scoring algorithms.
+Create a *separate* method for each of the following scoring algorithms.
 
-.. admonition:: Note
-
-   Make each scoring algorithm case *insensitive*, meaning that they
-   should all ignore case when assigning points.
-
-#. **Simple Score:** Define a function that takes a word as a parameter and
-   returns a score. Each letter within the word is worth 1 point.
-#. **Bonus Vowels:** Define a function that takes a word as a parameter and
-   returns a score. Each vowel within the word is worth 3 points, and each
+#. **Simple Score:** Define a method that takes a word as a parameter and
+   displays a score. Each letter within the word is worth 1 point.
+#. **Bonus Vowels:** Define a method that takes a word as a parameter and
+   displays a score. Each vowel within the word is worth 3 points, and each
    consonant is worth 1 point.
-#. **Scrabble Score:** Define a function that takes a word and
-   ``newPointStructure`` as parameters and returns a score. The function uses
-   the data stored in ``newPointStructure`` to determine the point value for
-   the word.
+#. **Scrabble Score:** Define a method that takes a word as a parameter and displays a score. 
+   The method uses the *transformed* ``newPointStructure``.
+#. Each method should have a way to display the *original* word and the total value of points.
+   (*Consider:* how many word parameters will you be working with?)
 
-Define Scoring Objects
-~~~~~~~~~~~~~~~~~~~~~~~
+.. admonition:: Examples
 
-#. Create an object for each of the three scoring options. Each object should
-   contain three keys: ``name``, ``description``, and ``scoreFunction``.
-#. Examine the table for the information to store in ``name`` and
-   ``description``. The ``scoreFunction`` for each object should be the name of
-   one of the algorithms you defined above.
+   .. sourcecode:: csharp
 
-   .. list-table::
-      :header-rows: 1
+      ScrabbleScorer("taxi");
+      //Output: Your word: taxi is worth 11
 
-      * - Name
-        - Description
-        - Score Function
-      * - Scrabble
-        - The traditional scoring algorithm.
-        - Uses the ``newPointStructure`` object to determine the score for a given
-          ``word``.
-      * - Simple Score
-        - Each letter is worth 1 point.
-        - A function with a ``word`` parameter that returns a score.
-      * - Bonus Vowels
-        - Vowels are 3 pts, consonants are 1 pt.
-        - A function with a ``word`` parameter that returns a score based on the
-          number of vowels and consonants.
+      SimpleScorer("taxi");
+      //Output: Your word: taxi is worth 4
 
-#. Create a ``scoringAlgorithms`` array to hold your three scorer objects.
+      BonusVowels("taxi");
+      //Output: Your word: taxi is worth 8
+
+
+
+
+Define ScoringAlgorithms method
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Create an method that will pass the user's word to the selected scoring method.
+   This method will need parameters for which score method they select and the user's word.
+#. Use the selected algorithm to determine the score for the word:
+
+   a. If the user enters ``1`` or an invalid option, use the Scrabble Scorer method.
+   b. If the user entered ``2``, use the Simple Score method.
+   c. If the user entered ``3``, use the Bonus Vowels method.
+
+#. Things to Ponder:
+
+   a. Think about what each parameter will be doing and how it could be used.
+   b. Think about how to reach the desired scoring method.
+
 
 Take a Breath
 ~~~~~~~~~~~~~~
 
-Good! Your ``scoringAlgorithms`` structure now holds all of the scoring
-information required for the new Scrabble program.
+Good! Your ``ScoringAlgorithms`` method now invokes all of the scoring
+options and passes the word to score to each.  Looks like we have a good start on this Scrabble program.
 
-To access a scoring object and its properties, use a combination of bracket
-notation and dot notation.
+To access a scoring method via ``ScoringAlgorithms``,  call it and pass the score option and a test word.
 
 .. admonition:: Examples
 
-   .. sourcecode:: js
+   .. sourcecode:: csharp
 
       // Scrabble scoring
-      console.log("algorithm name: ", scoringAlgorithms[0].name);
-      console.log("scoreFunction result: ", scoringAlgorithms[0].scoreFunction("JavaScript", newPointStructure));
+      ScoringAlgorithms(1, "taxi");
+         //Output: Your score for "taxi": 11
+
       // Simple scoring
-      console.log("algorithm name: ", scoringAlgorithms[1].name);
-      console.log("scoreFunction result: ", scoringAlgorithms[1].scoreFunction("JavaScript"));
+      ScoringAlgorithms(2, "taxi");
+         //Output: Your score for "taxi": 4
+
       // Bonus Vowel scoring
-      console.log("algorithm name: ", scoringAlgorithms[2].name);
-      console.log("scoreFunction result: ", scoringAlgorithms[2].scoreFunction("JavaScript"));
+      ScoringAlgorithms(3, "taxi");
+         //Output: Your score for "taxi": 8
 
-   Console Output
-
-   ::
-
-      algorithm name:  Scrabble
-      scoreFunction result:  24
-      algorithm name:  Simple Score
-      scoreFunction result:  10
-      algorithm name:  Bonus Vowels
-      scoreFunction result:  16
 
 D) Tie it All Together
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Define a ``runProgram`` function that will:
+Define a ``RunProgram`` method that will do the following when called:
 
-#. Accept the ``scoringAlgorithms`` array as an argument.
-#. Use ``initialPrompt`` to pick the algorithm.
+#. Invoke ``InitialPrompt`` to pick the algorithm.
 #. Prompt the user to enter a word to score. The prompt should also provide the
    user an option for ending the program.
-#. Use the selected algorithm to determine the score for the word:
-
-   a. If the user enters ``0`` or an invalid option, use the Scrabble
-      ``scoreFunction``.
-   b. If the user entered ``1``, use the Simple Score ``scoreFunction``.
-   c. If the user entered ``2``, use the Bonus Vowels ``scoreFunction``.
-
+#. When taking in a user's word, should account for case.
+#. Invoke the ``ScoringAlgorithms`` method with the correct parameters.
 #. Display the score for the word.
-#. Repeat steps 3 to 5 until the user ends the program by entering ``'Stop'``.
+#. Repeat steps 2 to 4 until the user ends the program by entering ``"Stop"``.
    (*Consider*: Should this check be case-insensitive?)
 
 Test Words
@@ -290,7 +276,7 @@ Test Words
 
 Here are some words you can use to test your code:
 
-#. ``JavaScript`` = 24 points using Scrabble, 10 using Simple Score, and 16
+#. ``CSharp`` = 13 points using Scrabble, 6 using Simple Score, and 8
    using Bonus Vowels.
 #. ``Scrabble`` = 14 points using Scrabble, 8 using Simple Score, and 12 using
    Bonus Vowels.
@@ -308,27 +294,25 @@ Example Output
 
    Which scoring algorithm would you like to use?
 
-   0 - Scrabble: The traditional scoring algorithm.
-   1 - Simple Score: Each letter is worth 1 point.
-   2 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1 pt.
+   1 - Scrabble: The traditional scoring algorithm.
+   2 - Simple Score: Each letter is worth 1 point.
+   3 - Bonus Vowels: Vowels are worth 3 pts, and consonants are 1 pt.
 
-   Enter 0, 1, or 2: 0
+   Enter 1, 2, or 3:
 
-   Using algorithm: Scrabble
+   Enter a word to be scored, or "Stop" to quit:  LaunchCode
+   Your score for "LaunchCode": 18
 
-   Enter a word to be scored, or 'Stop' to quit:  LaunchCode
-   Score for 'LaunchCode': 18
+   Enter a word to be scored, or "Stop" to quit:  Rocket
+   Your score for "Rocket": 12
 
-   Enter a word to be scored, or 'Stop' to quit:  Rocket
-   Score for 'Rocket': 12
-
-   Enter a word to be scored, or 'Stop' to quit: stop
+   Enter a word to be scored, or "Stop" to quit: stop
 
 Bonus Missions
 ---------------
 
 #. Currently, the prompts accept ANY input values. The user could enter
-   something *other* than 0, 1, or 2 when selecting the scoring algorithm, and
+   something *other* than 1, 2, or 3 when selecting the scoring algorithm, and
    they could enter numbers or symbols when asked for a word. Modify your code
    to reject invalid inputs and then re-prompt the user for the correct
    information.
@@ -338,9 +322,9 @@ Bonus Missions
 Submitting Your Work
 ---------------------
 
-#. From the address bar at the top of the browser window, copy the URL of the
-   repl.it that contains your solution.
-#. Go to the Graded Assignment #2 page in Canvas and click *Submit Assignment*.
-#. Paste the URL into the Website URL input.
-#. Click *Submit Assignment* again.
-#. Notify your TA that your assignment is ready to be graded.
+#. Finish the assignment.
+#. ``commit`` and ``push`` your work to a repository on your GitHub profile.
+#. Find the corresponding Canvas assignment on 
+   `learn.launchcode.org <https://learn.launchcode.org/>`_ and enter the GitHub URL for your project.
+#. Find a TA and demo your project for them.
+
