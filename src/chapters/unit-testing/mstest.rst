@@ -1,8 +1,59 @@
-MSTest
-======
+Unit Testing In Action With MSTest
+====================================
 
-**MSTest** is a framework that provides the methods and assertions
-for writing and executing unit tests in C#. 
+Testing is a bit of an art; there are no hard and fast rules about how to write good tests.
+That said, there are some general principles that you should follow.  
+In this section, we will explore some of these. 
+
+In particular, we will focus on identifying good **test cases** by working through a specific example.
+We will start with a very simple example which will allow us to explore formatting, positive/negeative tests, edge cases, 
+then create a larger project using multiple tests.
+
+**MSTest** is a framework that provides the methods and assertions for writing and executing unit tests in C#. 
+
+What To Test
+---------------
+
+When writing tests for your code, what should you test?
+You can't test *every* possible situation or input.  
+But you also don't want to leave out important cases.  
+A method or program that isn't well-tested might have bugs lurking beneath the surface. 
+
+.. admonition:: Note
+
+   Since we are also focused on *unit* testing, in this chapter we will generally use the term "unit" to refer to the methor or program under consideration
+
+Regadless of the situation, there are three types of test cases you should consider: positive, negative and edge cases.
+
+#. A **positive test** verifies expected behavior with valid database
+#. A **negative test** verifies expected behavior with *invalid* data.
+#. An **edge case** is a subset of positive tests, which checks the extreme edges of valid values.
+
+.. admonition:: example
+
+   Imagine a method named ``SetTemperature`` that accepts a number between ``50`` and ``100``. 
+   #. Positive test values: ``56``, ``75``, ``80``
+   #. Negative test values: ``-1``, ``101``, ``1000``
+   #. Edege case values: ``50``, ``100``
+
+
+Considering positive, negative, and edge tests will go a long way toward helping you create well-tested code.
+
+Let's see these in action by writing tests for our **SOME MYSTERY CODE**
+
+WHAT CODE DO WE WANT?
+^^^^^^^^^^^^^^^^^^^^^^
+
+* **TempExecptions from early code blocks?**
+      - they have seen this before
+      - would this make them question why we bothered with exceptions? (maybe this could be a good discussion point)
+* **IsPalindrome from methods studio??**
+      - not all would have a working palindrome, but would it matter?
+      - find block `here <https://gitlab.com/LaunchCodeEducation/csharp-web-dev/unit-1/solutions/-/blob/master/Studios/Methods/Methods.cs>`_
+* **Build on the Car/CarTest example?**
+      - already part of the chapter and repo (no extra building)
+      - could demo with EmptyTest then apply it to GasTankLevel???
+      - this would transition into the rest of the testing examples (same repo)
 
 .. _csharp-attributes:
 
@@ -261,99 +312,5 @@ Run ``CarTest`` to see that both tests pass.
    If you want to rerun only one test, right click on its listing in the results pane.
 
 
-.. index:: ! [TestInitialize]
-
-``[TestInitialize]``
---------------------
-
-While ``[TestClass]`` and ``[TestMethod]`` are required to run tests, there are many other 
-attributes you may find useful as your test files grow in scope. One such item to know
-is **[TestInitialize]**. Methods with the attribute ``[TestInitialize]`` will run before each 
-test method is run in a class. 
-
-In the case of ``CarTest``, it would be nice to not need to create a new ``Car`` instance for 
-each test we write. In your ``TestInitialGasTank()`` method, remove the line initiating ``test_car``. 
-Above your relevant test, add the following ``[TestInitialize]`` method:
-
-.. sourcecode:: c#
-   :lineno-start: 16
-
-   Car test_car;
-
-   [TestInitialize]
-   public void CreateCarObject()
-   {
-      test_car = new Car("Toyota", "Prius", 10, 50);
-   }
-
-Now, run the test project and ensure your test still passes.
-
-.. index:: ! [TestCleanup]
-
-``[TestCleanup]``
------------------
-
-``[TestCleanup]``, conversely, defines a set of conditions to be met after each test in a 
-suite is run. 
-
-.. admonition:: Note
-
-   We won't encounter a scenario where we ask you to use ``[TestCleanup]`` in this class. As you explore writing 
-   your own unit tests, you may find a yourself in a situation where you need or want it. One use case for 
-   ``[TestCleanup]`` might be testing database transactions. You don't want changes to a database to persist 
-   after test execution, so you can use ``[TestCleanup]`` to rollback, or reverse, a test transaction.
-
-You can find more information on this attribute and other items available in the Visual Studio testing 
-namespace `here <https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting?view=mstest-net-1.2.0>`__.
-
-
-Common ``Assert`` Methods
--------------------------
-
-In addition to the very commonly used ``Assert.AreEqual()`` method
-you see above, here are a few other methods you should have in 
-your unit testing playbook.
-
-.. list-table:: MSTest Assert Methods
-   :header-rows: 1
-
-   + - Assertion
-     - Description
-   + - ``AreEqual(expected, actual, optional_delta)``
-     - Asserts that two values, expected and actual, are equal to each other (optionally, within a given range of difference)
-   + - ``IsFalse(condition)``
-     - Asserts that a given condition is false
-   + - ``IsTrue(condition)``
-     - Asserts that a given condition is true
-   + - ``IsNotNull(object)``
-     - Asserts that a given object is not null
-
-Checkout `the Assert class <https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.assert?redirectedfrom=MSDN&view=mstest-net-1.2.0>`__
-for a full listing of methods.
-
 Check Your Understanding
--------------------------
-
-.. admonition:: Question
-
-   Write another version of ``TestInitialGasTank()`` using ``IsFalse()``, comparing the value to ``0``.
-
-   #. ``Assert.IsFalse(Car.GasTankLevel == 0);``
-   #. ``Assert.IsFalse(test_car.GasTankLevel == 0);``
-   #. ``Assert.False(test_car.GasTankLevel == 0);``
-   #. ``Assert.IsFalse(test_car.GasTankLevel = 0);``
-
-.. ans: b, Assert.IsFalse(test_car.GasTankLevel == 0);
-
-.. admonition:: Question
-
-   Write another version of ``TestInitialGasTank()`` using ``IsTrue()``.
-
-   #. ``Assert.IsTrue(test_car.gasTankLevel == 10);``
-   #. ``Assert.IsTrue(Car.GasTankLevel == 10);``
-   #. ``Assert.IsTrue(test_car.GasTankLevel == 0);``
-   #. ``Assert.IsTrue(test_car.GasTankLevel == 10);``
-
-..  ans: d, Assert.IsTrue(test_car.GasTankLevel == 10);
-
-
+--------------------------
