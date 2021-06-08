@@ -9,7 +9,9 @@ Unit Testing
    why-test
    testing-in-csharp
    mstest
+   running-tests
    mstest-part2
+   tdd
    exercises
    studio
    

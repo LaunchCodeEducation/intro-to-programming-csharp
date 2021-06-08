@@ -1,6 +1,10 @@
 Exercises: Unit Testing
 =======================
 
+In the last section, we walked through adding tests for checking the number of wheels in a car object.
+You are not required to have that code for the exercises.  
+If you do have it in your code, you may need to adapt the exercises to adjust to the new property.
+
 Work on these exercises in your local copy of the `csharp-web-dev-lsn5unittesting <https://github.com/LaunchCodeEducation/csharp-web-dev-lsn5unittesting>`_ repo.
 You were directed to fork and clone this repo earlier in the chapter. If you have not done so, do so now!
 Before starting work on the exercises, check out the ``exercises-start`` branch.

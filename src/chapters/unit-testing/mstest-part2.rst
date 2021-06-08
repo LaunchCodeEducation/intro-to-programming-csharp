@@ -1,7 +1,7 @@
 MSTest Part 2: 
 ================
 
-Now that you have walked through a few [TestMethod] examples, we are going to cover a few testing methods
+Now that you have walked through a few ``[TestMethod]`` examples, we are going to cover a few testing methods
 that will 
 
 .. index:: ! [TestInitialize]
