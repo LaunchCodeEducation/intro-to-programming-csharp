@@ -226,13 +226,13 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   You are creating a class registration app.  
-   In order to qualify as a class, there must be a minimum of 5 students, and no more than 30.
-   Which of the following would provide the best testing of edge cases?
+   You are creating a class registration program for your local community center.  
+   In order to qualify as a class, there must be a minimum of 5 students enrolled, but no more than 30. 
+   Which of the following numbers would be useful for testing edge cases?
 
    #. ``38`` and ``14``
    #. ``30`` and ``5``
    #. ``-1`` and ``0``
    #. ``30`` and ``30``
 
-..  ans: b, ``30`` and ``5``;
+..  ans: ``30`` and ``5``;
