@@ -24,6 +24,7 @@ Chapters
    chapters/exceptions/index
    chapters/vstools/index
    chapters/classes/index
+   chapters/classes-part2/index
    chapters/unit-testing/index
 
 .. toctree::
@@ -46,6 +47,7 @@ Studios
    chapters/git/studio
    chapters/vstools/studio
    chapters/classes/studio
+   chapters/classes-part2/studio
    chapters/unit-testing/studio
 
 Assignments
@@ -84,3 +86,4 @@ Appendices
    :hidden:
 
    index-full
+
