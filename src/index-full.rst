@@ -24,6 +24,7 @@ Chapters
    chapters/vstools/index
    chapters/classes/index
    chapters/classes-part2/index
+   chapters/inheritance/index
 
 .. toctree::
 
@@ -46,6 +47,7 @@ Studios
    chapters/vstools/studio
    chapters/classes/studio
    chapters/classes-part2/studio
+   chapters/inheritance/studio
 
 Assignments
 ===========
