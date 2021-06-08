@@ -25,7 +25,12 @@ Chapters
    chapters/vstools/index
    chapters/classes/index
    chapters/classes-part2/index
+<<<<<<< HEAD
+   
+=======
+   chapters/inheritance/index
    chapters/unit-testing/index
+>>>>>>> main
 
 .. toctree::
 
@@ -48,6 +53,7 @@ Studios
    chapters/vstools/studio
    chapters/classes/studio
    chapters/classes-part2/studio
+   chapters/inheritance/studio
    chapters/unit-testing/studio
 
 Assignments
