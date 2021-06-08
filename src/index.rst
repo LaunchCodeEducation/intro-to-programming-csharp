@@ -25,12 +25,8 @@ Chapters
    chapters/vstools/index
    chapters/classes/index
    chapters/classes-part2/index
-<<<<<<< HEAD
-   
-=======
    chapters/inheritance/index
    chapters/unit-testing/index
->>>>>>> main
 
 .. toctree::
 
