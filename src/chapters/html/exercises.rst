@@ -1,3 +1,5 @@
+.. _html-exercises:
+
 Exercises: HTML
 ===============
 

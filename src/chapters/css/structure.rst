@@ -131,6 +131,19 @@ There are three different places to add CSS in an HTML file as indicated below:
    ``rel``, ``type``, ``href`` are all HTML attributes that are required to properly link CSS and let the browser know that CSS is what is in the file and where the file is.
    ``rel`` should be set to "stylesheet", because it designates how the link relates to the page. ``type`` will be set to "text/css" for all stylesheets.
    ``href`` is where the programmer enters the path to the stylesheet that should be used for the page.
+   
+
+.. index:: ! stylesheet
+
+.. _linking-css-to-html:
+
+.. admonition:: Note
+
+   Creating a CSS stylesheet in Visual Studio is very similar to creating an HTML page.  
+   Select your project, add a either a new file or new item (mac or windows, respectively). 
+   Select Empty **CSS** file and name it ``styles``.  
+
+   You will need to manually add the link as seen in the code snippet above.
 
 2. Document or internal: All CSS styling is inside the HTML file, but within the ``<head>``. Internal use of CSS is great for when the programmer has a small amount of CSS that applies to the whole document.
 

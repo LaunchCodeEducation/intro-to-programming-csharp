@@ -1,7 +1,9 @@
 Exercises: CSS
 ==============
 
-We have built a website for you to test your CSS knowledge. Check out the `repl.it <https://repl.it/@launchcode/CSSExercises/>`_!
+We are going to add CSS to our HTML page from the :ref:`HTML exercises <html-exercises>`.
+
+You will need to create a ``styles.css`` page and :ref:`link it to your HTML <linking-css-to-html>`.
 
 For the exercises, add the following style rules to the website:
 
