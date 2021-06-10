@@ -2,19 +2,13 @@ Background
 ==========
 
 When programmers make web pages, they want their pages to be beautiful, interactive, and fun.
-C Sharp has the ability to make websites to meet all those demands, and then some.  
-However, instead of rushing off to make websites with C Sharp and its vast libraries, 
-we need to step back into the 1990s.
-The time when the HTML and CSS languages were created.
+The two most common languages used for creating websites are HTML and CSS. 
+HTML is the overall structure, CSS the design.  
+Add C Sharp and you bring the interactive elements. 
+All three combined, will allow you to create theose beautiful, interactive and fun web pages.
 
-.. admonition:: Tip
-
-   If you want to see how far websites have progressed, open your favorite search engine and look for websites from the 1990s.
-
-Don't let their age fool you, HTML and CSS are still used to build websites today.
-In unit 2, we will apply our HTML and CSS skills into the ASP.NET framework, but first we want to start with the basics.
-The next two chapters cover HTML and CSS, which are the two most common languages for structuring content and making it beautiful.
-And are used in the majority of websites today.
+For this lesson, we are going to focus on HTML and CSS.  
+We will add C Sharp to our websites in the next unit.
 
 Before jumping in to learn HTML and CSS, we need to understand how web pages appear on screens.
 The process involves the browser and the server that hosts the code.
