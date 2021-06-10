@@ -3,10 +3,15 @@
 How to Create an HTML Page in Visual Studio
 ============================================
 
+Below are two examples of how to create an HTML file that you will be able to use with Visual Studio.
+
+Creating a New Visual Studio Project
+-------------------------------------
+
 Open your Visual Studio and create a new project.
 
 For Mac Users
----------------
+^^^^^^^^^^^^^^
 #. Select either a **Generic** or **Blank** project.
 
    .. figure:: figures/blank-project-mac.png
@@ -32,7 +37,7 @@ For Mac Users
 
 
 For Windows Users
-------------------
+^^^^^^^^^^^^^^^^^^^
 
 #. Search for a **"Blank"** project, and select it.
    
@@ -57,6 +62,16 @@ For Windows Users
 
 
 Both Mac and Windows
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Once you have your HTML page created, you are ready to move on to the exercises.
+
+Using the Terminal
+--------------------
+
+You can also create the ``index.html`` file using your terminal, 
+like we did in the :ref:`Terminal chapter exercises <terminal-ex>`.
+
+Once you have the ``index.html`` file created, you can open in in Visual Studio.
+
+This method will require to provide the necessary HTML code to start any project.
