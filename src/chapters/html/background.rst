@@ -5,7 +5,7 @@ When programmers make web pages, they want their pages to be beautiful, interact
 The two most common languages used for creating websites are HTML and CSS. 
 HTML is the overall structure, CSS the design.  
 Add C Sharp and you bring the interactive elements. 
-All three combined, will allow you to create theose beautiful, interactive and fun web pages.
+All three combined, will allow you to create beautiful, interactive and fun web pages.
 
 For this lesson, we are going to focus on HTML and CSS.  
 We will add C Sharp to our websites in the next unit.

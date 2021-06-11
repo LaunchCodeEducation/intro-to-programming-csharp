@@ -110,6 +110,8 @@ In CSS, we would use the id selector to make the paragraph pink:
 
 In CSS, the id selector is preceded by ``#``.
 
+.. _linking-css-to-html:
+
 Linking CSS to HTML
 -------------------
 
@@ -135,12 +137,12 @@ There are three different places to add CSS in an HTML file as indicated below:
 
 .. index:: ! stylesheet
 
-.. _linking-css-to-html:
+
 
 .. admonition:: Note
 
-   Creating a CSS stylesheet in Visual Studio is very similar to creating an HTML page.  
-   Select your project, add a either a new file or new item (mac or windows, respectively). 
+   Creating a CSS stylesheet in Visual Studio is very similar to :ref:`creating an HTML page <creating-html-in-vs>`.  
+   Select your project, add a either a new file or new item (Mac or Windows, respectively). 
    Select Empty **CSS** file and name it ``styles``.  
 
    You will need to manually add the link as seen in the code snippet above.
