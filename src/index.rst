@@ -26,6 +26,8 @@ Chapters
    chapters/classes/index
    chapters/classes-part2/index
    chapters/inheritance/index
+   chapters/http/index
+   chapters/forms/index
 
 .. toctree::
 
@@ -49,6 +51,7 @@ Studios
    chapters/classes/studio
    chapters/classes-part2/studio
    chapters/inheritance/studio
+   chapters/forms/studio
 
 Assignments
 ===========
