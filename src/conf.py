@@ -178,6 +178,8 @@ htmlhelp_basename = 'CurriculumModuledoc'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
+html_codeblock_linenos_style = 'table'
+
 
 def setup(app):
    app.add_css_file('fa/css/all.css')
