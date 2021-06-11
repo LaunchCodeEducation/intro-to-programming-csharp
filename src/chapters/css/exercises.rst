@@ -1,7 +1,7 @@
 Exercises: CSS
 ==============
 
-We are going to add CSS to our HTML page from the :ref:`HTML exercises <html-exercises>`.
+We have built a website for you to test your CSS knowledge. Check out the `repo <https://github.com/LaunchCodeEducation/csharp-intro-to-program-lsn14-html-css>`_ here. Be sure to use the CSS-Exercises project.
 
 You will need to create a ``styles.css`` page and :ref:`link it to your HTML <linking-css-to-html>`.
 

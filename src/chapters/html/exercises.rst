@@ -6,8 +6,7 @@ Exercises: HTML
 **Getting Started:** Create a new HTML project in Visual Studio.  
 Refer back to the section on :ref:`How to Create an HTML Project in Visual Studio <creating-html-in-vs>`.
 
-Complete the HTML file for this simple web page. Add lines to your new ``index.html``
-that do the following.
+Fork and clone this `repo <https://github.com/LaunchCodeEducation/csharp-intro-to-program-lsn14-html-css>`_ for the starter code.  Use the HTML-Exdrcise project.
 
 1. Add a ``h1`` to the page that says "Why I Love Web Development"
 2. Add an ordered list to the page with 3 reasons why you love web development.
