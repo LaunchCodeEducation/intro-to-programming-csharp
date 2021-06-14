@@ -61,6 +61,7 @@ Assignments
    :name: assignmentstoc
 
    assignments/candidateQuiz
+   assignments/html-me-something
 
 Appendices
 ==========

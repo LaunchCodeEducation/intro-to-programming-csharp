@@ -61,6 +61,7 @@ Assignments
    :name: assignmentstoc
 
    assignments/candidateQuiz
+   assignments/html-me-something
 
 Appendices
 ==========
@@ -89,4 +90,6 @@ Appendices
    :hidden:
 
    index-full
+   assignments/html-me-part1
+   assignments/html-me-part2
 
