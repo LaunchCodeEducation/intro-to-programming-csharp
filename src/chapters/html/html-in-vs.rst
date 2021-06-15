@@ -66,12 +66,3 @@ Both Mac and Windows
 
 Once you have your HTML page created, you are ready to move on to the exercises.
 
-Using the Terminal
---------------------
-
-You can also create the ``index.html`` file using your terminal, 
-like we did in the :ref:`Terminal chapter exercises <terminal-ex>`.
-
-Once you have the ``index.html`` file created, you can open in in Visual Studio.
-
-This method will require to provide the necessary HTML code to start any project.
