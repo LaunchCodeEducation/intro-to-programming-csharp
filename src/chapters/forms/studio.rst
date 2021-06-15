@@ -1,11 +1,6 @@
 Studio: HTTP and Forms
 ======================
 
-
-``Need to update this``
-
-
-
 Introduction
 ------------
 
@@ -46,6 +41,14 @@ Getting Started
 
 1. Go to the `studio repository <https://github.com/LaunchCodeEducation/HTTP-and-Forms-Studio/>`_ and fork to your Github account.
 2. Clone the repository and ``cd`` into the new directory.
+
+
+.. admonition:: Warning!
+   
+   **Before you get started, let's look at the starter code.**  There is a new HTML tag, ``<script>`` and ``</script>``.
+   The HTML between these tags is JavaScript, designed to respond once the form is completed.  
+   You will not be working with this code.  However, please make sure that you are using the naming options provided for you in the exercise instructions.
+
 
 Create Form Inputs
 ------------------
