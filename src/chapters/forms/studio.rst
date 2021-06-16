@@ -39,13 +39,7 @@ sites.
 Getting Started
 ---------------
 
-1. We are using the same repo that we did in the Forms chapter.  
-2. Look for the project called ``forms-studio``.  There you will find the starter code needed to begin the studio.
-
-If you did NOT already clone this repo:
-   #. Go to the `forms repository <https://github.com/LaunchCodeEducation/csharp-intro-to-program-lsn15-http-forms>`_ and fork to your Github account.
-   #. Clone the repository and open in Visual Studio.
-
+Fork and clone the starter code from this `repo <https://github.com/LaunchCodeEducation/csharp-intro-to-program-lsn15-http-forms-studio>`_.
 
 
 .. admonition:: Warning!

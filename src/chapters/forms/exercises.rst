@@ -4,7 +4,14 @@ Exercises: Forms
 Hello programmer, we need you to make a Rocket Simulation form. Please follow
 the steps below and good luck!
 
-Code your solution in `this repl.it <https://repl.it/@launchcode/Exercises-rocket-simulation>`_.
+Getting Started
+------------------------
+
+Create a new HTML project in Visual Studio and begin creating your form.
+
+
+Create your Form
+-------------------
 
 #. Create a ``<form>`` with these attributes.
 
