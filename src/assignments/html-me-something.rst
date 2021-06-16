@@ -38,12 +38,7 @@ Getting started
 For this project, we suggest working on it one section at a time. 
 
 You will be pushing your final assignment up to GitHub; creating a repository for your work should be your first step.
-
-Resources for creating repos:
-   * :ref:`Creating a GitHub Repo Demo <create-new-repo-demo>`
-   * `GitHub Quickstart: How To Create a Repo: <https://docs.github.com/en/github/getting-started-with-github/quickstart/create-a-repo>`_
-   * :ref:`Git More Collaboration <git>`
-
+Start by creating a new project in Visual Studio that will contain your .html and .css files.
 
 .. _getting-to-work:
 

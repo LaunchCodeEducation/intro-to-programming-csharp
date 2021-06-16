@@ -9,23 +9,7 @@ In Part 1, you will get comfortable with writing markup, and with separating
 Getting Started
 ----------------
 
-Stub out ``index.html`` with these basic elements:
-
-.. sourcecode:: html
-   :linenos:
-
-   <!DOCTYPE html>
-
-   <html>
-      <head>
-         <title></title>
-      </head>
-
-      <body></body>
-   </html>
-
-Fill each element with some appropriate content. You can start by removing the
-snippet ``<p>YOUR NAME</p>`` that you used during setup.
+Add an Empty html file to your project.  Name it ``index.html``.
 
 Getting to Work
 -----------------
