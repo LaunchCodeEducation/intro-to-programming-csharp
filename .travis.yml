@@ -20,3 +20,4 @@ deploy:
   github_token: $GITHUB_ACCESS_TOKEN # access token with repo:public scope
   on:
     branch: main  
+    
