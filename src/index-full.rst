@@ -25,6 +25,7 @@ Chapters
    chapters/classes/index
    chapters/classes-part2/index
    chapters/inheritance/index
+   chapters/interfaces-and-polymorphism/index
 
 .. toctree::
 
@@ -48,6 +49,7 @@ Studios
    chapters/classes/studio
    chapters/classes-part2/studio
    chapters/inheritance/studio
+   chapters/interfaces-and-polymorphism/studio
 
 Assignments
 ===========
