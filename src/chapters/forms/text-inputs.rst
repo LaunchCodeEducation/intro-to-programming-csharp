@@ -70,7 +70,7 @@ Example
 
       Notice that the textarea value does NOT include new lines, even though it was typed that way.
 
-      `Run it <https://repl.it/@launchcode/basic-inputs-example>`__
+   `Run it <https://repl.it/@launchcode/basic-inputs-example>`__
 
 Check Your Understanding
 ------------------------

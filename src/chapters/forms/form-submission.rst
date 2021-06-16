@@ -34,7 +34,7 @@ of the current page.
 
 .. admonition:: Try It!
 
-   Open ``this form FROM GIT HUB in a VS``.
+   Open `this form <https://form-default--launchcode.repl.co/>`_ in a browser.
    Type values into the inputs, click the Submit button, and notice what happens to the
    address bar.
 
@@ -45,7 +45,7 @@ of the current page.
          <head>
             <title>Form Example</title>
             <style>
-               body { padding-right: 25px;}
+               body { padding: 25px;}
             </style>
          </head>
          <body>
