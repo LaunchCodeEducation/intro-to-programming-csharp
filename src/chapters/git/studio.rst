@@ -62,6 +62,8 @@ mimic how a real-world collaborative Git workflow can be used within a project.
    ``Git stash`` to cleanly move your changes to another branch. Read about how
    to do so in our :ref:`git-stash` tutorial.
 
+.. _create-new-git-repo:
+
 Step 1: Create a New Repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

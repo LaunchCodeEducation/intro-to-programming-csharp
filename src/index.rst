@@ -82,6 +82,8 @@ Appendices
    appendices/vs-troubleshooting
    appendices/git/stash
    appendices/git/workflows
+   appendices/git/create-new-repo
+   
 
 
 
