@@ -90,6 +90,10 @@ Variables may be used to access elements:
    string name = "jesse";
    double jesseGrade = students[name];
 
+
+.. _kvp-foreach:
+
+
 Looping through a dictionary is slightly more complex than it is for ordered lists.
 Let’s look at the ``foreach`` loop from this example:
 

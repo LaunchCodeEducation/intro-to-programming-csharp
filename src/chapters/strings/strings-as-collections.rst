@@ -12,6 +12,8 @@ Strings are also what is called a collection data type. Let's look at what this 
 Collection Data Types
 ---------------------
 
+.. _string-chars:
+
 .. index:: ! collection
 
 .. index::
@@ -32,7 +34,7 @@ We can think of strings as being built out of characters. In this way, strings c
 
    A string is made up of characters, which are of length 1.
 
-Strings are made up of smaller pieces, characters. Other data types, like ``number`` and ``boolean``, are not composed of any smaller parts.
+Strings are made up of smaller pieces, characters. 
 
 
 Ordered Collections

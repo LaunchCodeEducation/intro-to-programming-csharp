@@ -53,6 +53,7 @@ Studios
    chapters/inheritance/studio
    chapters/html/studio
 
+
 Assignments
 ===========
 
@@ -61,7 +62,9 @@ Assignments
    :name: assignmentstoc
 
    assignments/candidateQuiz
+   assignments/scrabble-scorer
    assignments/html-me-something
+
 
 Appendices
 ==========
