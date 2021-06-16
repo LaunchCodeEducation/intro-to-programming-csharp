@@ -14,7 +14,8 @@ value. The program needs to be rewritten for two reasons:
 
 Your updates will make the program more efficient and user friendly.
 
-**Starter Code** can be found here.  Fork the code then clone it to your machine and work on it in Visual Studio.
+**Starter Code** can be found `here <https://github.com/LaunchCodeEducation/Assignment2-ScrabbleScorer-csharp>`_.  
+Fork the code then :ref:`clone it <clone-csharp-project>` to your machine and work on it in Visual Studio.
 
 Requirements
 ------------
@@ -88,13 +89,13 @@ Be sure to notice the data types of this dictionary.
    };
 
 The *keys* of ``oldPointStructure`` are the Scrabble points stored as ints, and the
-*values* a string of letters. All letters in the array have the Scrabble
+*values* a string of letters. All letters in the string have the Scrabble
 point value equal to the key. For example, ``"A"`` and ``"R"`` are worth 1,
 ``"K"`` is worth 5, and ``"J"`` is worth 8.
 
 To find the point value for a letter with the old format, the program must
 iterate over each key in ``oldPointStructure`` and then check if the letter is
-inside the array paired with that key. *This search within a search is
+inside the string paired with that key. *This search within a search is
 inefficient*.
 
 Try it yourself, find ``"L"`` and ``"M"``.  
@@ -153,7 +154,7 @@ Code the Function
 #. Points to Consider:
 
    #. Recall that ``foreach`` loops 
-      :ref:`iterate over the key/value pairs <kvp-foreach>` within an dictionary.
+      :ref:`iterate over the key/value pairs <kvp-foreach>` within a dictionary.
    #. If you need a reminder of how to assign new key/value pairs, review the
       :ref:`relevant section <initialize-dictionary>` in the
       ``Control Flow and Collections`` chapter.
@@ -162,7 +163,7 @@ Code the Function
    #. To access a particular element within a string, 
       consider what :ref:`strings are made of <string-chars>` and 
       the various :ref:`string methods <string-method-examples>` you can use to access them.
-   #. What about the data types.  Will you need to `convert <https://docs.microsoft.com/en-us/dotnet/api/system.convert.tochar?view=net-5.0>`_ or `parse <https://docs.microsoft.com/en-us/dotnet/api/system.char.parse?view=net-5.0>`_ any of them?
+   #. What about the data types?  Will you need to `convert <https://docs.microsoft.com/en-us/dotnet/api/system.convert.tochar?view=net-5.0>`_ or `parse <https://docs.microsoft.com/en-us/dotnet/api/system.char.parse?view=net-5.0>`_ any of them?
 
       .. admonition:: Examples
 
@@ -202,7 +203,7 @@ Create a *separate* method for each of the following scoring algorithms.
 #. **Scrabble Score:** Define a method that takes a word as a parameter and displays a score. 
    The method uses the *transformed* ``newPointStructure``.
 #. Each method should have a way to display the *original* word and the total value of points.
-   (*Consider:* how many word parameters will you be working with?)
+   
 
 .. admonition:: Examples
 
@@ -223,17 +224,17 @@ Create a *separate* method for each of the following scoring algorithms.
 Define ScoringAlgorithms method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Create an method that will pass the user's word to the selected scoring method.
+#. Create a method that will pass the user's word to the selected scoring method.
    This method will need parameters for which score method they select and the user's word.
 #. Use the selected algorithm to determine the score for the word:
 
    a. If the user enters ``1`` or an invalid option, use the Scrabble Scorer method.
-   b. If the user entered ``2``, use the Simple Score method.
-   c. If the user entered ``3``, use the Bonus Vowels method.
+   b. If the user enters ``2``, use the Simple Score method.
+   c. If the user enters ``3``, use the Bonus Vowels method.
 
 #. Things to Ponder:
 
-   a. Think about what each method's parameter requirement(s).
+   a. Think about what each method's parameter requirements are.
    b. Think about how to invoke the desired scoring method.
 
 
@@ -241,7 +242,7 @@ Take a Breath
 ~~~~~~~~~~~~~~
 
 Good! Your ``ScoringAlgorithms`` method now invokes all of the scoring
-options and passes the word to score to each.  Looks like we have a good start on this Scrabble program.
+options and passes the user's word to the selected method.  Looks like we have a good start on this Scrabble program.
 
 To access a scoring method via ``ScoringAlgorithms``,  call it and pass the score option and a test word.
 In our example, we will be using "taxi" as our test word.
@@ -271,11 +272,11 @@ Define a ``RunProgram`` method that will do the following when called:
 #. Invoke ``InitialPrompt`` to pick the algorithm.
 #. Prompt the user to enter a word to score. The prompt should also provide the
    user an option for ending the program.
-#. When taking in a user's word, should account for case.
+#. When taking in a user's word, should account for the case.
 #. Invoke the ``ScoringAlgorithms`` method chosen by the user with the correct parameters.
 #. Display the score for the word.
 #. Repeat steps 2 to 4 until the user ends the program by entering ``"Stop"``.
-   (*Consider*: Should this check be case-insensitive?)
+   (This should also be case-insensitive.)
 
 Test Words
 -----------
