@@ -60,6 +60,7 @@ Assignments
 
    assignments/candidateQuiz
    assignments/scrabble-scorer
+   assignments/MarsRover
 
 
 Appendices
