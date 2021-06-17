@@ -27,6 +27,7 @@ Chapters
    chapters/classes-part2/index
    chapters/unit-testing/index
    chapters/inheritance/index
+   chapters/interfaces-and-polymorphism/index
 
 .. toctree::
 
@@ -51,7 +52,7 @@ Studios
    chapters/classes-part2/studio
    chapters/unit-testing/studio
    chapters/inheritance/studio
-   
+   chapters/interfaces-and-polymorphism/studio
 
 Assignments
 ===========
@@ -61,6 +62,8 @@ Assignments
    :name: assignmentstoc
 
    assignments/candidateQuiz
+   assignments/scrabble-scorer
+   
 
 Appendices
 ==========

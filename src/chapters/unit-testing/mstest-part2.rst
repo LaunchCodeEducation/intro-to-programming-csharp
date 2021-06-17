@@ -42,7 +42,7 @@ suite is run.
 .. admonition:: Note
 
    We won't encounter a scenario where we ask you to use ``[TestCleanup]`` in this class. As you explore writing 
-   your own unit tests, you may find a yourself in a situation where you need or want it. One use case for 
+   your own unit tests, you may find yourself in a situation where you need or want it. One use case for 
    ``[TestCleanup]`` might be testing database transactions. You don't want changes to a database to persist 
    after test execution, so you can use ``[TestCleanup]`` to rollback, or reverse, a test transaction.
 

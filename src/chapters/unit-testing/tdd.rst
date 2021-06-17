@@ -82,7 +82,7 @@ follows the plan we came up with earlier. Very importantly, there is an
       }
 
    *Note* that the ``test_car`` in **Line 26** is the entire object right now.  
-   This is because there is no property in the ``Car`` class for this yet.  
+   This is because no *number of wheels* property exists in the ``Car`` class yet.  
    Think of this as a placeholder, that you will update as we move forward.
 
 Now run the test! The test should fail (or not compile at all) because you have
@@ -110,7 +110,7 @@ To make the new test pass, a property must be created that will implement a ``Nu
       public int NumberOfWheels { get; set; }
 
 Now that we have updated the ``Car`` properties, we should look at our constructor.
-Add ``NumberOfWheels`` to the constuctor.  
+Add ``NumberOfWheels`` to the constructor.  
 Once this is complete, check your ``Car`` objects.  
 You will most likely see some red squiggles under your ``new Car`` objects.  
 Update your ``Car`` objects accordingly. 

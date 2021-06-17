@@ -10,7 +10,7 @@ For Mac users, run the ``CarTests`` project just like you would any other projec
 
 .. admonition:: Note
 
-   If the panel does not open once the test are finished running, look for the *Test Results* panel name on
+   If the panel does not open once the tests are finished running, look for the *Test Results* panel name on
    the margins of your IDE and open it manually.
 
 Windows Users: Running Tests
@@ -28,7 +28,7 @@ With the panel open, select the *Run All Tests* option.
 
 .. admonition:: Note
 
-   If you see that the test fails to run, neither passing nor failing, you may need to adjust a setting to use
+   If you see that the test fails to run, either passing or failing, you may need to adjust a setting to use
    64bit processing.
 
    .. figure:: ./figures/vs-windows-process-architecture-setting.png
@@ -47,7 +47,7 @@ All Users: Output and Adding More Tests
 Once you run the test, you will see a new output panel with a green check mark indicating the test passed 
 and a message stating the test passed. 
 
-We know now how the test runner behaves when a test passes and can begin the real work of unit 
+We now know how the test runner behaves when a test passes and can begin the real work of unit 
 testing the ``Car`` class. One responsibility of the ``Car`` class constructor is to set its initial 
 ``gasTankLevel`` field. This field is determined by the constructor argument for ``gasTankSize`` . 
 

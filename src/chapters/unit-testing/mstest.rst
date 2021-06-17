@@ -6,7 +6,7 @@ That said, there are some general principles that you should follow.
 In this section, we will explore some of these. 
 
 In particular, we will focus on identifying good **test cases** by working through a specific example.
-We will start with a very simple example which will allow us to explore formatting, positive/negeative tests, edge cases, 
+We will start with a very simple example which will allow us to explore formatting, positive/negative tests, edge cases, 
 then create a larger project using multiple tests.
 
 **MSTest** is a framework that provides the methods and assertions for writing and executing unit tests in C#. 
@@ -21,9 +21,9 @@ A method or program that isn't well-tested might have bugs lurking beneath the s
 
 .. admonition:: Note
 
-   Since we are also focused on *unit* testing, in this chapter we will generally use the term "unit" to refer to the methor or program under consideration
+   Since we are also focused on *unit* testing, in this chapter we will generally use the term "unit" to refer to the method or program under consideration
 
-Regadless of the situation, there are three types of test cases you should consider: positive, negative and edge cases.
+Regardless of the situation, there are three types of test cases you should consider: positive, negative and edge cases.
 
 #. A **positive test** verifies expected behavior with valid database
 #. A **negative test** verifies expected behavior with *invalid* data.
@@ -32,14 +32,14 @@ Regadless of the situation, there are three types of test cases you should consi
 .. admonition:: example
 
    Suppose we were creating an app that focused on cars.  
-   We could write tests for certain aspects, number of doors or wheels, average milage, size of gas tank, etc.
+   We could write tests for certain aspects, number of doors or wheels, average milaage, size of gas tank, etc.
 
    Let's look at the engine temperature indicator light.  If your engine temperature is above 220 degrees or higher, then a light turns on to notify the driver.
    We want to test that the light will turn on, so we can set the following values for testing:
    
    #. Positive test values: ``221`` and ``280``
    #. Negative test values: ``-1`` and ``200``
-   #. Edege case value: ``220``
+   #. Edge case value: ``220``
 
 
 Considering positive, negative, and edge tests will go a long way toward helping you create well-tested code.
@@ -157,7 +157,7 @@ not follow the AAA rule from our :ref:`testing-best-practices`, as it jumps stra
 asserting. Nor is it relevant, for that matter. The goal of this empty unit test is not to 
 demonstrate all of our best practices, but rather, to verify that our testing setup is in place.
 
-The three arguments in our test care defined as "expected", "actual", and "delta". This empty test 
+The three arguments in our test are defined as "expected", "actual", and "delta". This empty test 
 asserts an expected value of ``10`` to equal an actual value of ``10``, 
 with an accepted ``.001`` variance. 
 

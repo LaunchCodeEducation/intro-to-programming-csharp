@@ -32,7 +32,7 @@ Imagine this common workflow:
    different syntax.
 
 The features of the application will be the same, but the implementation of those features will change.
-Because the changes in implementation do not effect change in the application features, unit tests can 
+Because the changes in implementation do not affect change in the application features, unit tests can 
 help with refactoring the codebase. If your tests continue
 to pass after the refactor, you can move on, knowing you have not 
 inadvertently introduced a bug. Writing tests just once provides innumerable 
