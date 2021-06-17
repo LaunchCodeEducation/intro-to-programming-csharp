@@ -79,7 +79,7 @@ Here is an example of a line of HTML:
 HTML Writing Style
 ------------------
 
-Programmers write HTML different ways with different style guides and philosophies.
+Programmers write HTML in different ways with different style guides and philosophies.
 **Semantic HTML** is not about the appearance of the web page, but about the specific meaning of the elements.
 Semantic HTML helps programmers communicate through code and may be easier to pick up at first.
 Programmers can make a paragraph larger than a heading.
