@@ -29,6 +29,8 @@ search a dictionary object.
 
 In the next section we will look at the gradebook again, only this time as a ``Dictionary`` and you will get to see the key/value pairs in action.
 
+.. _initialize-dictionary: 
+
 ``Dictionary`` Initialization
 --------------------------------
 
@@ -104,6 +106,7 @@ And finally, you can declare the dictionary and use the ``Add`` method to inital
    Be sure to match your data types when you use this class.  
 
 
+.. _accessing-dictionary-elements:
 
 Accessing Dictionary Elements
 --------------------------------

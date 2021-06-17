@@ -11,7 +11,7 @@ Create a Form
 -------------
 
 To declare a form in HTML use the ``<form>`` tag with open and closing tags. This form element
-will serve as container for various types of other elements that are designed to capture
+will serve as a container for various types of other elements that are designed to capture
 input from the user.
 
 .. sourcecode:: html
@@ -112,7 +112,7 @@ When ``for`` is used, the ``<input>`` does NOT have to be inside of the ``<label
    <input id="username" name="username" type="text"/>
 
 What happens when a ``<label>`` is clicked? The answer depends on what the ``<label>`` is
-associated to.
+associated with.
 
 .. index:: ! focus
 

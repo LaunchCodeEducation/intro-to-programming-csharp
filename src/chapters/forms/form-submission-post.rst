@@ -24,7 +24,7 @@ and the query parameters are cached and logged, possibly leaking sensitive data.
 Send Form Submission to a Server
 --------------------------------
 
-The ``action`` and ``method`` attributes allows us to choose where the form request will be
+The ``action`` and ``method`` attributes allow us to choose where the form request will be
 sent and what type of request will be sent. How do we configure what happens in response to
 a form submission?
 

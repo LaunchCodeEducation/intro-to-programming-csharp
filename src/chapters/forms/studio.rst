@@ -14,7 +14,7 @@ use. It will look like this:
 
    The search engine selector that we will build.
 
-Most search engines work the same way. The have a single text input, and they
+Most search engines work the same way. They have a single text input, and they
 submit data using a ``GET`` request. Additionally, many of the most popular
 search engines also use the same name for the search parameter, ``q``.
 
@@ -87,7 +87,7 @@ search engines we want to work with.
 
    How is the ``value`` attribute of a submit button used?
 
-Congrats! You have just created a dynamic website by paring HTML with JavaScript.  
+Congrats! You have just created a dynamic website by pairing HTML with JavaScript.  
 In the next unit, you will learn how to create dynamic websites using C Sharp and the ASP.Net Framework.
 
 Bonus Mission
