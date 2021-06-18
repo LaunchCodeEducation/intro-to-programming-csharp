@@ -37,7 +37,7 @@ Requirements
    program.
 
 Instructions
--------------
+------------
 
 .. admonition:: Note
 
@@ -45,7 +45,7 @@ Instructions
    Will it become a parameter for another method?  Revisit the :ref:`Methods introduction chapter <methods>` if you feel unsure.
 
 A) Initial Prompt
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 In the starter code, the Scrabble Scorer only uses one scoring algorithm. For
 the new version, we want to let the user pick between three algorithms. Define
@@ -67,7 +67,7 @@ Your prompt could look something like:
    Enter 1, 2 or 3:
 
 B) Transform
-^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 Currently, the software uses the data structure below for the traditional
 Scrabble scoring algorithm. Take a few moments to review how the
@@ -103,7 +103,7 @@ Unless you have the scrabble scores memorized, you had to search each string.
 Tedious, right?  You can improve this.
 
 Streamlined Score Object
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 It would be better to create a ``newPointStructure`` dictionary that has 26 keys,
 one for each letter. The value of each key will be the Scrabble point value.
@@ -141,9 +141,8 @@ will identify a point value. This is much more efficient than the old method.
 Do not panic! Instead of tediously hard-coding ``newPointStructure``, use your
 clever coding skills to create the new object.
 
-
 Code the Function   
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 #. Write a ``Transform`` method that returns a dictionary and has no parameters. Calling
    ``Transform()`` will *return* a dictionary with *lowercase*
@@ -187,7 +186,7 @@ Code the Function
 
 
 C) Scoring Algorithms
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 We are going to create the individual scoring methods first.  Be sure to test them as you build them.
 Once all three are working, we are going to create a different method to invoke them.
@@ -219,9 +218,7 @@ Create a *separate* method for each of the following scoring algorithms.
       //Output: Your word: taxi is worth 8
 
 
-
-
-Define ScoringAlgorithms method
+Define ``ScoringAlgorithms`` method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Create a method that will pass the user's word to the selected scoring method.
@@ -236,7 +233,6 @@ Define ScoringAlgorithms method
 
    a. Think about what each method's parameter requirements are.
    b. Think about how to invoke the desired scoring method.
-
 
 Take a Breath
 ~~~~~~~~~~~~~~
@@ -330,7 +326,7 @@ Submitting Your Work
 ---------------------
 
 #. Finish the assignment.
-#. ``commit`` and ``push`` your work to a repository on your GitHub profile.
+#. ``commit`` and ``push`` your work to the repository on your GitHub profile.
 #. Find the corresponding Canvas assignment on 
    `learn.launchcode.org <https://learn.launchcode.org/>`_ and enter the GitHub URL for your project.
 #. Find a TA and demo your project for them.
