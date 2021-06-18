@@ -42,12 +42,12 @@ Instructions
 .. admonition:: Note
 
    As you create your methods, think about where the output is best utilized.  Will it be something a user only needs to read?  
-   Will it become a parameter for another method?  Revisit the :ref:`Methods introduction chapter <methods>` if you feel unsure.
+   Will it become a parameter for another method?  Revisit the :ref:`Methods chapter <methods>` if you feel unsure.
 
 A) Initial Prompt
 ^^^^^^^^^^^^^^^^^
 
-In the starter code, the Scrabble Scorer only uses one scoring algorithm. For
+The starter code is currently set up to use only one scoring algorithm. For
 the new version, we want to let the user pick between three algorithms. Define
 an ``InitialPrompt`` method that introduces the program and asks the user
 which scoring algorithm to use.
@@ -69,9 +69,8 @@ Your prompt could look something like:
 B) Transform
 ^^^^^^^^^^^^
 
-Currently, the software uses the data structure below for the traditional
-Scrabble scoring algorithm. Take a few moments to review how the
-``oldPointStructure`` dictionary relates a point value to a letter.
+Currently, the software uses the ``oldPointStructure`` dictionary for the traditional
+Scrabble scoring algorithm. Take a few moments to review the code below to see how ``oldPointStructure`` relates a point value to a letter.
 Be sure to notice the data types of this dictionary.
 
 .. sourcecode:: csharp
@@ -150,39 +149,19 @@ Code the Function
    letter.
 #. Initialize an empty ``newPointStructure`` dictionary by setting it equal to
    ``Transform()``.
-#. Points to Consider:
+#. Points to consider while coding ``Transform()``:
 
-   #. Recall that ``foreach`` loops 
+   a. Recall that ``foreach`` loops 
       :ref:`iterate over the key/value pairs <kvp-foreach>` within a dictionary.
-   #. If you need a reminder of how to assign new key/value pairs, review the
+   b. If you need a reminder of how to assign new key/value pairs, review the
       :ref:`relevant section <initialize-dictionary>` in the
-      ``Control Flow and Collections`` chapter.
-   #. To access the string of letters within ``oldPointStructure``, use bracket
+      Control Flow and Collections chapter.
+   c. To access the string of letters within ``oldPointStructure``, use bracket
       notation (``oldPointStructure[key]``).
-   #. To access a particular element within a string, 
+   d. To access a particular element within a string, 
       consider what :ref:`strings are made of <string-chars>` and 
       the various :ref:`string methods <string-method-examples>` you can use to access them.
-   #. What about the data types?  Will you need to `convert <https://docs.microsoft.com/en-us/dotnet/api/system.convert.tochar?view=net-5.0>`_ or `parse <https://docs.microsoft.com/en-us/dotnet/api/system.char.parse?view=net-5.0>`_ any of them?
-
-      .. admonition:: Examples
-
-         .. sourcecode:: CSharp
-            :linenos:
-
-            Console.WriteLine("Letters with score 4: {0}", oldPointStructure[4]);
-            
-            foreach(char ch in oldPointStructure[4])
-            {
-                Console.Write(ch + '-');  //dash used to visually separate each char 
-            }
-
-         **Console Output**
-
-         ::
-
-            Letters with score 4: F, H, V, W, Y
-
-            F-,- -H-,- -V-,- -W-,- -Y-
+   e. What about the data types?  Will you need to `convert <https://docs.microsoft.com/en-us/dotnet/api/system.convert.tochar?view=net-5.0>`_ or `parse <https://docs.microsoft.com/en-us/dotnet/api/system.char.parse?view=net-5.0>`_ any of them?
 
 
 C) Scoring Algorithms
@@ -201,9 +180,9 @@ Create a *separate* method for each of the following scoring algorithms.
    consonant is worth 1 point.
 #. **Scrabble Score:** Define a method that takes a word as a parameter and displays a score. 
    The method uses the *transformed* ``newPointStructure``.
-#. Each method should have a way to display the *original* word and the total value of points.
-   
 
+Each method should have a way to display the *original* word and the total value of points.
+   
 .. admonition:: Examples
 
    .. sourcecode:: csharp
@@ -229,7 +208,7 @@ Define ``ScoringAlgorithms`` method
    b. If the user enters ``2``, use the Simple Score method.
    c. If the user enters ``3``, use the Bonus Vowels method.
 
-#. Things to Ponder:
+#. Things to ponder while working on this method:
 
    a. Think about what each method's parameter requirements are.
    b. Think about how to invoke the desired scoring method.
@@ -312,7 +291,7 @@ Example Output
    Enter a word to be scored, or "Stop" to quit: stop
 
 Bonus Missions
----------------
+--------------
 
 #. Currently, the prompts accept ANY input values. The user could enter
    something *other* than 1, 2, or 3 when selecting the scoring algorithm, and
@@ -323,7 +302,7 @@ Bonus Missions
    ``newPointStructure`` object. The point value for a blank tile is ``0``.
 
 Submitting Your Work
----------------------
+--------------------
 
 #. Finish the assignment.
 #. ``commit`` and ``push`` your work to the repository on your GitHub profile.
