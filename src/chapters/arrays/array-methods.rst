@@ -6,7 +6,7 @@ Array Methods
 .. index::
    single: array; methods
 
-As with strings, JavaScript provides us with useful **methods** for arrays.
+As with strings, C# provides us with useful **methods** for arrays.
 These methods will either *alter* an existing array, *return* information about
 the array, or *create and return* a new array.
 
@@ -16,8 +16,9 @@ Common Array Methods
 Here is a sample of the most frequently used array methods. More complete lists
 can be found here:
 
-#. `W3 Schools Array Methods <https://www.w3schools.com/jsref/jsref_obj_array.asp>`__
-#. `MDN Web Docs <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array>`__
+#. `Microsoft Array Methods <https://docs.microsoft.com/en-us/dotnet/api/system.array?view=net-5.0>`__
+#. `Geeks for Geeks Array Methods <https://www.geeksforgeeks.org/c-sharp-array-class/>`_
+
 
 To see detailed examples for a particular method, control-click
 (or right-click) on its name.
@@ -28,14 +29,12 @@ To see detailed examples for a particular method, control-click
    * - Method
      - Syntax
      - Description
-   * - :ref:`IndexOf <indexOf-examples>`
+   * - :ref:`IndexOf <array-indexOf-examples>`
      - ``Array.IndexOf(arrayName, item)``
      - Returns the index of the FIRST occurrence of an item in the array.  
-
    * - :ref:`LastIndexOf <lastIndexOf-examples>`
      - ``Array.LastIndexOf(arrayName, item)``
      - Returns the index of the LAST occurrence of an item in the array. If the item is not in the array, -1 is returned.
-   
    * - :ref:`GetValue <getValue-examples>`
      - ``arrayName.GetValue(index)``
      - Returns the value of specified index.
@@ -46,13 +45,13 @@ To see detailed examples for a particular method, control-click
    * - Method
      - Syntax
      - Description
-   * - :ref:`Reverse <reverse-examples>`
+   * - :ref:`Reverse <array-reverse-examples>`
      - ``Array.Reverse(arrayName)``
      - Reverses the order of the elements in an array.
-
-   * - :ref:`Sort <sort-examples>`
+   * - :ref:`Sort <array-sort-examples>`
      - ``Array.Sort(arrayName)``
      - Arranges the elements of an array into increasing order.
+
 
 .. list-table:: Methods That Add Or Remove Values From An Array
    :header-rows: 1
