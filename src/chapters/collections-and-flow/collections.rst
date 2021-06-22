@@ -52,7 +52,7 @@ from added dependencies.
 
    .. replit:: csharp
       :linenos:
-      :slug:
+      :slug: usingExamples-CSharp
 
       using System;
       
