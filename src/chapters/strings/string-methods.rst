@@ -131,11 +131,13 @@ Follow the links in the table above for the ``Replace``, ``Substring``, and ``Tr
       :linenos:
 
       string org = "  The LaunchCode Foundation ";
-      let trimmed = org.Trim();
+      string trimmed = org.Trim();
 
-      console.log(trimmed);
+      Console.WriteLine(trimmed);
 
    #. ``"  The LaunchCode Foundation "``
    #. ``"The LaunchCode Foundation"``
    #. ``"TheLaunchCodeFoundation"``
    #. ``" The LaunchCode Foundation"``
+
+..ans: "The LaunchCode Foundation"

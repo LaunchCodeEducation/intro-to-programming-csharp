@@ -1,4 +1,4 @@
-.. _sort-examples:
+.. _array-sort-examples:
 
 ``Sort`` Examples
 =====================

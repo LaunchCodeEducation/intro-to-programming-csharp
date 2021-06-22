@@ -74,7 +74,7 @@ Parts Three And Four
       What is the difference between these two methods? Do the methods alter the original arrays?  
       How does ``Reverse`` work?  What is reversed?  How does ``Sort`` work?  What is being sorted?
       How are things sorted when using ``Sort``?
-   #. Select one of the array.  Using your array methods, update the items within the array so that they are in descending (
+   #. Select one of the arrays.  Using your array methods, update the items within the array so that they are in descending (
       reverse alphabetical) order.  Print the array to verify your changes.
       
 
