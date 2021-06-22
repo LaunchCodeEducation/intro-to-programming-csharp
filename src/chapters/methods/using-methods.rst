@@ -63,7 +63,7 @@ Let's revisit the method signature template.
 
 .. sourcecode:: bash
 
-   Access Specifier [static modifier] Return Type MethodName(Parameter List)
+   Access Modifier [static modifier] Return Type MethodName(Parameter List)
    {
       Method Body
    }
