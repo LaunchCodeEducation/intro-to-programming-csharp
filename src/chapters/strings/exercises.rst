@@ -67,7 +67,7 @@ Part Three
 ----------
 
 1. If we want to turn the string ``"C Sharp"`` into ``"CS"``, we might try
-   ``.Remove()``.  Too easy.  Let's our cleverness to achieve the same result and practice with other C# methods.
+   ``.Remove()``.  Too easy.  Let's use our cleverness to achieve the same result and practice with other C# methods.
 
    #. Use string concatenation and two ``Substring()`` methods to print ``"CS"`` from
       ``"C Sharp"``.

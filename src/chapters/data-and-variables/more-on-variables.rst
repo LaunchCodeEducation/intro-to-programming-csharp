@@ -205,7 +205,7 @@ In C#, most programmers use the **camel case** style, which stipulates that vari
 - capitalize each internal word.
 
 In the example from the previous section, the descriptor "area of circle" became the variable name ``areaOfCircle``. 
-This convention is called camel case because the capitalization of internal words is reminiscent of a camel's humps. A
+This convention is called camel case because the capitalization of internal words is reminiscent of a camel's humps. 
 Another common name for this convention is **lower camel case**, since names start with a lowercase letter.
 
 .. note:: Different programming languages often have different variable-naming conventions. For example, in Python the convention is to use all lowercase letters and separate words with underscores, as in ``area_of_circle``.
