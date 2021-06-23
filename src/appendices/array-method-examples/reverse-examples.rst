@@ -1,4 +1,4 @@
-.. _reverse-examples:
+.. _array-reverse-examples:
 
 ``Reverse`` Examples
 =====================
@@ -76,4 +76,4 @@ Reversing a section of an array is possible, too.  The general syntax is as foll
       
 
 If you are looking for reverse alphabetical order, 
-you will need to use this along with the ``Sort`` :ref:`method <sort-examples>`.
+you will need to use this along with the ``Sort`` :ref:`method <array-sort-examples>`.

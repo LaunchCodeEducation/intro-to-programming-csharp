@@ -55,7 +55,6 @@ Studios
    chapters/interfaces-and-polymorphism/studio
    chapters/html/studio
 
-
 Assignments
 ===========
 

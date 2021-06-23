@@ -83,7 +83,7 @@ committed it. See this for yourself by checking the status:
 ::
 
    $ git status
-   On branch master
+   On branch main
    Changes not staged for commit:
      (use "git add <file>..." to update what will be committed)
      (use "git checkout -- <file>..." to discard changes in working directory)

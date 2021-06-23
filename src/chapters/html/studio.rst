@@ -36,6 +36,11 @@ When linking to an image, pay attention to the protocol of both the site you are
 
 If the site loads over ``https`` and your image uses ``http`` then the image may not load properly due to browser security restrictions. You should try to add ``s`` to the image protocol, and if that doesn't work, look for another image.
 
+.. admonition :: Note
+
+	Head's up: We'll be covering HTTP(s) in more detail in the next lesson in this book.
+
+
 If you want to use an image of your own that is not already available via the internet, here's how:
 
 - Upload the photo to a `Dropbox <https://www.dropbox.com/>`_ account

@@ -4,11 +4,6 @@ Background
 When programmers make web pages, they want their pages to be beautiful, interactive, and fun.
 The two most common languages used for creating websites are HTML and CSS. 
 HTML is the overall structure, CSS the design.  
-Add C Sharp and you bring the interactive elements. 
-All three combined, will allow you to create beautiful, interactive and fun web pages.
-
-For this lesson, we are going to focus on HTML and CSS.  
-We will add C Sharp to our websites in the next unit.
 
 Before jumping in to learn HTML and CSS, we need to understand how web pages appear on screens.
 The process involves the browser and the server that hosts the code.
@@ -79,7 +74,7 @@ Here is an example of a line of HTML:
 HTML Writing Style
 ------------------
 
-Programmers write HTML different ways with different style guides and philosophies.
+Programmers write HTML in different ways with different style guides and philosophies.
 **Semantic HTML** is not about the appearance of the web page, but about the specific meaning of the elements.
 Semantic HTML helps programmers communicate through code and may be easier to pick up at first.
 Programmers can make a paragraph larger than a heading.
