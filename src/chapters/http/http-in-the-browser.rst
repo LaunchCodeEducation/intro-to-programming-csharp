@@ -40,14 +40,16 @@ Browser Flow
 
 As you can see from using the *Network* pane, loading a single web page usually involves *several* HTTP requests. Each resource *within* the page is loaded in a separate request. 
 
-Let's examine the flow of loading a page. We'll consider the case of an HTML page with CSS, JavaScript, and images, loaded via a ``GET`` request.
+Let's examine the flow of loading a page. We'll consider the case of an HTML page with CSS and images, loaded via a ``GET`` request.
 
 #. Browser requests a page from the server.
 #. Browser receives the HTML page and parses it.
-#. For *each* image, external CSS file, and external JavaScript file the browser issues a *new* HTTP request for the given file.
+#. For *each* image, external CSS file, and any other external file type, the browser issues a *new* HTTP request for the given file.
 #. As additional responses are received, the browser processes the data or media and updates the page. 
 
 This process explains why you will sometimes load a web page, only to see an image on that page load a few seconds later. In such situations, the HTTP request fetching the image takes substantially more time, making it noticeable.
+
+ 
 
 Check Your Understanding
 ------------------------

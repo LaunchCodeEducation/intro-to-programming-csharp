@@ -33,7 +33,7 @@ The structure has these components:
 #. **Status line:** The first line of the response is the **response line**, which contains status information about the response including the **response code**. In this example, the response code is 200, which indicates the request was fulfilled successfully.
 #. **Response headers:** Below the response line are the **response headers**. Similar to request headers, these are key-value pairs that contain metadata about the response.
 #. **Blank line:** This signifies the end of the response headers.
-#. **Response body (Optional):** Below the blank line, the request body takes up the remainder of the HTTP response. This is usually HTML, CSS, JavaScript, etc.
+#. **Response body (Optional):** Below the blank line, the request body takes up the remainder of the HTTP response. This is usually HTML, CSS, other coding language files, etc.
 
 Response Codes
 --------------
@@ -100,9 +100,12 @@ There are `quite a few response headers <https://en.wikipedia.org/wiki/List_of_H
 Response Body
 -------------
 
-While requests often don't have a body, responses almost *always* have a body. The response body is where the data that a request asked for is located. It can contain HTML, CSS, JavaScript, or image data.
+While requests often don't have a body, responses almost *always* have a body. 
+The response body is where the data that a request asked for is located. 
+It can contain HTML, CSS, image files, and/or other files that create dynamic web applications.
 
-When a response is received by a browser, it is loaded into the browser's memory, with additional processing in some cases. For HTML files, the markup is rendered into a web page. For CSS files, the style rules are parsed and applied to the given HTML page.
+When a response is received by a browser, it is loaded into the browser's memory, with additional processing in some cases. 
+For HTML files, the markup is rendered into a web page. For CSS files, the style rules are parsed and applied to the given HTML page.
 
 Check Your Understanding
 ------------------------
@@ -118,4 +121,5 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Visit `Wikipedia's article on HTTP response codes <https://en.wikipedia.org/wiki/List_of_HTTP_status_codes>`_. Which response code is used to signify that the user must authenticate themselves (that is, log in) before viewing the given resource? 
+   Visit `Wikipedia's article on HTTP response codes <https://en.wikipedia.org/wiki/List_of_HTTP_status_codes>`_. 
+   Which response code is used to signify that the user must authenticate themselves (that is, log in) before viewing the given resource? 

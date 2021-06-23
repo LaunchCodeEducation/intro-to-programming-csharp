@@ -4,7 +4,7 @@ Studio: Methods
 Getting Started
 -----------------
 
-There is no starter code for this studio.  Login to replit, create a new C# project and get coding.
+**Getting Started:**  Click `here <https://replit.com/@launchcode/StringAndArrayStudio01-CS>`_ for the starter code.  As you work through the studio, you'll be updating this code.
 
 
 Creating A Better ``Reverse`` Method
@@ -19,13 +19,13 @@ elements.
    .. sourcecode:: csharp
       :linenos:
 
-      string StringandArrayStudio01 = new string[] {"hello", "world", "123", "orange"};
+      string[] arr = new string[] {"hello", "world", "123", "orange"};
 
       Array.Reverse(arr);
 
       foreach(string a in arr)
       {
-         Console.WriteLine(a)
+         Console.WriteLine(a);
       }
 
    **Console Output**

@@ -42,7 +42,7 @@ A **protocol** is a standard for communication between computers. Most web commu
      - Hypertext Transfer Protocol
      - High-level web communication for transferring files and information, including:
 
-       - HTML, CSS, and JavaScript files
+       - Code files that create web sites (HTML, CSS, C Sharp, etc.)
        - images and other media
        - form submissions
 
@@ -115,7 +115,7 @@ When a client requests a resource from a server, it does so using a **uniform re
 
    - ``https://www.launchcode.org``
    - ``https://en.wikipedia.org/wiki/Client–server_model``
-   - ``https://duckduckgo.com/?q=javascript``
+   - ``https://duckduckgo.com/?q=c+sharp&t=h_&ia=web``
 
 A URL encodes a lot of information about the request, including *what* is being requested and *where* the request should be sent. URLs are made up of several components, each of which plays a role in enabling both client and server to understand what is being requested.
 

@@ -26,6 +26,8 @@ Chapters
    chapters/classes-part2/index
    chapters/inheritance/index
    chapters/interfaces-and-polymorphism/index
+   chapters/html/index
+   chapters/css/index
    chapters/http/index
    chapters/forms/index
 
@@ -52,6 +54,7 @@ Studios
    chapters/classes-part2/studio
    chapters/inheritance/studio
    chapters/interfaces-and-polymorphism/studio
+   chapters/html/studio
    chapters/forms/studio
 
 Assignments
