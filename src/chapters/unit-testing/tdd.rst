@@ -43,7 +43,7 @@ the behavior it is testing.
 
    Example test case for our ``Car`` project:
 
-   * We want to verify the number of wheels.  
+   * We want each Car object to have 4 wheels.
 
 Because the test is for a feature that does NOT exist *yet*, we need to think
 about how the feature will be implemented. This is the time to ask questions
