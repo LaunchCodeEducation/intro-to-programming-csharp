@@ -16,24 +16,26 @@ Why We Test
 Refactoring
 ^^^^^^^^^^^
 
-When we **refactor** code, we rewrite it without adding new features. Refactoring can 
-increase efficiency at runtime, but it may also mean inadvertently introducing some bugs in the process.
-Unit tests verify the most basic functionality of your code, thus safeguarding against 
-bugs introduced in refactoring. 
+When we **refactor** code, we rewrite it without adding new features. 
+Refactoring can increase efficiency at runtime, but it may also mean 
+inadvertently introducing some bugs in the process.
+Unit tests verify the most basic functionality of your code, 
+thus safeguarding against bugs introduced in refactoring. 
 
 Imagine this common workflow: 
 
 #. You practice **test-driven development (TDD)**, writing your tests to stipulate 
-   how your class's code should behave.
+   how your class's code should behave. (We will discuss TDD more in a later section)
 
 #. You write your class's code to pass the tests. 
 
 #. Later, a stakeholder in the project requests that you refactor your code using 
    different syntax.
 
-The features of the application will be the same, but the implementation of those features will change.
-Because the changes in implementation do not affect change in the application features, unit tests can 
-help with refactoring the codebase. If your tests continue
+The features of the application will be the same, *but* the implementation 
+of those features will change.
+Because the changes in implementation do not affect change in the application 
+features, unit tests can help with refactoring the codebase. If your tests continue
 to pass after the refactor, you can move on, knowing you have not 
 inadvertently introduced a bug. Writing tests just once provides innumerable 
 benefits for the whole lifetime of the codebase.
@@ -42,9 +44,9 @@ Documentation
 ^^^^^^^^^^^^^
 
 In addition to assisting with refactoring, unit tests serve as vital documentation 
-for fellow programmers. Again, because unit tests address the most fundamental tasks of your classes,
-they serve as live-code use-cases. You may also have an 
-external documentation directory with examples of how to run your
+for fellow programmers. Again, because unit tests address the most 
+fundamental tasks of your classes, they serve as live-code use-cases. 
+You may also have an external documentation directory with examples of how to run your
 project, or perhaps you have been writing comments within your code
 to best communicate with your teammates about your changes. Both of
 these are great choices and should be done when possible. However, these choices 
@@ -65,9 +67,9 @@ Below are some best practices to keep in mind when writing unit tests, in any la
    The AAAs of unit testing refers to the pattern to follow when 
    writing your unit tests. 
 
-   a. Arrange the variables your test requires
-   b. Act on the methods your test requires
-   c. Assert the anticipated comparison of the expected and actual values
+   a. *Arrange* the variables your test requires
+   b. *Act* on the methods your test requires
+   c. *Assert* the anticipated comparison of the expected and actual values
 
 #. Deterministic
 

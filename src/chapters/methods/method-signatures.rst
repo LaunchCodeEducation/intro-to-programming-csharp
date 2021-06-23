@@ -13,13 +13,13 @@ run your method when you call it.  This syntax is the template for your method s
 
 .. sourcecode:: bash
 
-   Access Specifier [static modifier] Return Type MethodName(Parameter List)
+   Access Modifier [static modifier] Return Type MethodName(Parameter List)
    {
       Method Body
    }
 
-- **Access Specifier:**  This determines visibilty of methods between classes, and whether or not it can instanciate **new** objects.  Since our methods in this chapter are limited to the ``MainClass`` we will leave them off.
-- **Static Modifier:**  *If* your method is static, you must include this between your access specifier and return type.  *Else* this is ommitted. 
+- **Access Modifier:**  This determines visibilty of methods between classes, and whether or not it can instanciate **new** objects.  Since our methods in this chapter are limited to the ``MainClass`` we will leave them off.
+- **Static Modifier:**  *If* your method is static, you must include this between your access modifier and return type.  *Else* this is ommitted. 
 - **Return Type:**  If the method is returning a value, this indicates what data type it will be.  Not all methods return values.  Methods that do not return a value have a return type of **void**.  
 - **Method Name:**  The method's unique identifier.  This is what you use to call your method. 
 - **Parameter List:** A parameter is a placeholder for specific data that the method will act upon.  Paraemeters are optional.  In these cases the ``()`` are still part of the method call, but remain empty.

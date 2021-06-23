@@ -13,11 +13,11 @@ Test-Driven Development
 
 Now that we know more about unit testing, we are going to learn a new way of using them.
 Unit testing can easily be added to *existing* code, but what if you could build tests
-to verify functionality of code that doesn't exist yet.  This may sound
+to verify functionality of code that *doesn't exist yet*.  This may sound
 odd, but this process has many benefits as we will learn.
 
 As the name sounds, **Test-driven development (TDD)** is a software development
-process where the unit tests are written first. However, that doesn't tell the
+process where the unit tests are written *first*. However, that doesn't tell the
 entire story. Writing the tests first and intentionally thinking more about the
 code design leads to better code. The name comes from the idea of the tests
 *driving* the development process.
@@ -63,27 +63,41 @@ helps find bugs and flaws earlier. We also have to use test utilities such as
 functions properly.
 
 Next, type out the ideas into an actual test. In this example, the test
-references a module and a method that have not been created yet. The code
-follows the plan we came up with earlier. Very importantly, there is an
-``Assert.AreEqual`` that verifies an array is returned.
+references a property that has not been created yet. 
+In this instance, the test is expecting an int value of 4.  
+
+.. _red-light:
 
 .. admonition:: Example
 
+   In the **Car class** add the following:
+
+   .. sourcecode:: csharp
+      :lineno-start: 10
+
+        public double MilesPerGallon { get; set; }
+        public double Odometer { get; set; } = 0;
+        public int NumberOfWheels;
+
+        //added property only.  No other code added to this class at this time.
+
+
+   
+   In the **CarTest class**, add the following:
+
    .. sourcecode:: csharp
       :lineno-start: 20
-
-      //within the CarTests class
 
       [TestMethod]
       public void TestNumberOfWheels()
       {
          Car test_car = new Car("Toyota", "Prius", 10, 50);
-         Assert.AreEqual(4, test_car);
+         Assert.AreEqual(4, test_car.NumberOfWheels);
       }
 
-   *Note* that the ``test_car`` in **Line 26** is the entire object right now.  
-   This is because no *number of wheels* property exists in the ``Car`` class yet.  
-   Think of this as a placeholder, that you will update as we move forward.
+   **Note:** We added the property to the Car class, but no code about where it will be used,
+   or how it will be implemented yet.  Think of this as a placeholder, 
+   that you will update as we move forward.  
 
 Now run the test! The test should fail (or not compile at all) because you have
 referenced code that does not exist yet.
@@ -97,23 +111,47 @@ referenced code that does not exist yet.
 Finally, write code to pass the new test. In the earlier chapters, this is
 where you started, but with TDD writing new code is the *last* step.
 
-To make the new test pass, a property must be created that will implement a ``NumberOfWheels`` property.
-
+To make the new test pass, we will need to update our Car class in a few places.
+First, we have the property, but how would it used in the program? 
+Let's implement this property when we create a Car object.
 
 .. admonition:: Example
    
-   .. sourcecode:: csharp
-      :lineno-start: 10 
+   In the Car class
+      .. sourcecode:: csharp
+         :lineno-start: 10 
 
-      //in the Car class
-
-      public int NumberOfWheels { get; set; }
+         public double MilesPerGallon { get; set; }
+         public double Odometer { get; set; } = 0;
+         public int NumberOfWheels { get; set; }
 
 Now that we have updated the ``Car`` properties, we should look at our constructor.
-Add ``NumberOfWheels`` to the constructor.  
-Once this is complete, check your ``Car`` objects.  
+Add ``NumberOfWheels`` to the constructor.   
+
+.. _green-light:
+
+.. admonition:: Example
+   
+   In the Car class, added ``numberOfWheels`` to the constructor 
+      .. sourcecode:: csharp
+         :lineno-start: 13
+
+         public Car(string make, string model, int gasTankSize, double milesPerGallon, int numberOfWheels)
+         {
+            Make = make;
+            Model = model;
+            GasTankSize = gasTankSize;
+            // Gas tank level defaults to a full tank
+            GasTankLevel = gasTankSize;
+            MilesPerGallon = milesPerGallon;
+            NumberOfWheels = numberOfWheels;  //<-- added NumberOfWheels here
+         }
+
+Once you have updated your constructor, you will need to update your Car objects 
+by adding an int for number of wheels. 
 You will most likely see some red squiggles under your ``new Car`` objects.  
-Update your ``Car`` objects accordingly. 
+
+
 
 .. admonition:: Example
 
@@ -129,6 +167,8 @@ Update your ``Car`` objects accordingly.
          Assert.AreEqual(4, test_car.NumberOfWheels);
       }
 
+   *Notice:* The values within the new Car object in line 25.
+
 Now when you run your tests, they should all pass.  Great job!
 
 .. figure:: figures/all-green-tests.png
@@ -140,58 +180,6 @@ Now when you run your tests, they should all pass.  Great job!
 Coding this way builds confidence in your work. No matter how large your code
 base may get, you know that each part has a test to validate its functionality.
 
-.. admonition:: Example
+Now that we have one passing test for our Car class, we could
+confidently move on to writing tests and code for any other remaining features.
 
-   Now that we have one passing test for our data parser project, we could
-   confidently move on to writing tests and code for any other remaining features.
-
-Red, Green, Refactor
---------------------
-
-.. index:: ! red green refactor
-
-.. index::
-   single: TDD; red green refactor
-
-.. index::
-   single: TDD; red, green, refactor
-
-.. index::
-   single: unit testing; red green refactor
-
-While adding new features and making our code work is the main goal, we also
-want to write readable, efficient code that makes us proud. The **red, green,
-refactor** mantra describes the process of writing tests, seeing them pass, and
-then making the code better. As the name suggests, the cycle consists of three
-steps. Red refers to test results that fail, while green represents tests that
-pass. The colors refer to test results which are often styled with red for
-failing tests and green for passing tests.
-
-#. Red -> Write a failing test.
-#. Green -> Make it pass by implementing the code.
-#. Refactor -> Make the code better.
-
-
-   .. figure:: figures/red-green-refactor.png
-      :alt: Graphic showing the cycle of phases from red the writing test, green making the test pass, and blue of refactoring code to be better which points back to red.
-
-      Red, green, refactor cycle.
-
-.. index:: ! refactor
-
-**Refactoring code** means to keep the same overall feature, but change how
-that feature is implemented. Since we have a test to verify our code, we can
-change the code with confidence, knowing that any error will be immediately
-identified by the test. Here are a few examples of refactoring:
-
-#. Using different data structures,
-#. Reducing the number of times needed to loop through an array,
-#. Moving duplicate logic into a function so it can be reused.
-
-The refactor is also done in a TDD process:
-
-#. Decide how to improve the implementation of the feature,
-#. Change the unit test to use this new idea,
-#. Run the code to see the test fail,
-#. Refactor the code to implement the new idea,
-#. Finally, see the test pass with the refactored design.

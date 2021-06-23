@@ -1,23 +1,29 @@
 Running Tests in Visual Studio
 ===============================
 
-In the previous section, we built our first tests.  Now, we need to run them.  
+In the previous section, we built ``[EmptyTest]`` in our ``CarTests`` class.
+Now, we are ready to run this test.  
+We will walk you through one way to run tests using the built in test runners in VS.
+
 
 Mac Users: Running Tests
-^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 For Mac users, run the ``CarTests`` project just like you would any other project. 
 
 .. admonition:: Note
 
-   If the panel does not open once the tests are finished running, look for the *Test Results* panel name on
+   If the panel does not open once the tests are finished running, 
+   look for the *Test Results* panel name on
    the margins of your IDE and open it manually.
 
-Windows Users: Running Tests
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   If you can't find it, search for "Test" in the VS search bar.
 
-For Windows users, you'll want to find and open the *Test Explorer* panel. If you don't already have it docked, 
-you can find it listed in the top *Test* menu. 
+Windows Users: Running Tests
+-----------------------------
+
+For Windows users, you'll want to find and open the *Test Explorer* panel. 
+If you don't already have it docked, you can find it listed in the top *Test* menu. 
 
 .. figure:: ./figures/vs-windows-test-explorer.png
    :alt: WINDOWS: User selecting Test Explorer option in Visual Studio Test Menu
@@ -28,8 +34,8 @@ With the panel open, select the *Run All Tests* option.
 
 .. admonition:: Note
 
-   If you see that the test fails to run, either passing or failing, you may need to adjust a setting to use
-   64bit processing.
+   If you see that the test fails to run, either passing or failing, 
+   you may need to adjust a setting to use 64bit processing.
 
    .. figure:: ./figures/vs-windows-process-architecture-setting.png
       :alt: WINDOWS: User selecting x64 option from Test Explorer/Settings/Processor Architecture for AnyCPU Projects in Visual Studio
@@ -41,15 +47,20 @@ With the panel open, select the *Run All Tests* option.
    in the *Update* section of the panel that opens, run the updates. Close and reopen 
    the *Team Explorer* panel and *Visual Studio* to ensure the changes are applied.
 
-All Users: Output and Adding More Tests
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+All Users: Output 
+-----------------
 
-Once you run the test, you will see a new output panel with a green check mark indicating the test passed 
-and a message stating the test passed. 
+Once you run the test, you will see a new output panel with a 
+green check mark indicating the test passed and a message stating the test passed. 
 
-We now know how the test runner behaves when a test passes and can begin the real work of unit 
-testing the ``Car`` class. One responsibility of the ``Car`` class constructor is to set its initial 
-``gasTankLevel`` field. This field is determined by the constructor argument for ``gasTankSize`` . 
+Creating Tests
+-----------------
+
+We now know how the test runner behaves when a test passes and can 
+begin the real work of unit testing the ``Car`` class. 
+One responsibility of the ``Car`` class constructor is to set its initial 
+``gasTankLevel`` field. This field is determined by the constructor 
+argument for ``gasTankSize`` . 
 
 ``Car.cs``:
 
@@ -86,9 +97,9 @@ We've done our best to address :ref:`testing-best-practices`:
 
 #. The AAAs
    
-   #. We arrange the one variable our test requires: ``test_car``.
-   #. We act on the ``Car`` constructor method as well: ``new Car("Toyota", "Prius", 10, 50);``.
-   #. We assert that the expected value of ``10`` will equal the actual value returned from getting the 
+   #. We *arrange* the one variable our test requires: ``test_car``.
+   #. We *act* on the ``Car`` constructor method as well: ``new Car("Toyota", "Prius", 10, 50);``.
+   #. We *assert* that the expected value of ``10`` will equal the actual value returned from getting the 
       tank level (``test_car.GasTankLevel``).
 
 #. Deterministic

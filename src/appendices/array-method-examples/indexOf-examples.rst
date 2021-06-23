@@ -1,4 +1,4 @@
-.. _indexOf-examples:
+.. _array-indexOf-examples:
 
 ``IndexOf`` Examples
 =====================
