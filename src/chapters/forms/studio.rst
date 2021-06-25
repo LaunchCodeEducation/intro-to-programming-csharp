@@ -87,8 +87,7 @@ search engines we want to work with.
 
    How is the ``value`` attribute of a submit button used?
 
-Congrats! You have just created a dynamic website by pairing HTML with JavaScript.  
-In the next unit, you will learn how to create dynamic websites using C Sharp and the ASP.Net Framework.
+Congrats! You have just created a dynamic website. 
 
 Bonus Mission
 ^^^^^^^^^^^^^^

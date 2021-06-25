@@ -34,9 +34,15 @@ of the current page.
 
 .. admonition:: Try It!
 
-   Open `this form <https://form-default--launchcode.repl.co/>`_ in a browser.
+   Open `this form <https://repl.it/@launchcode/form-default>`_ in a browser.
    Type values into the inputs, click the Submit button, and notice what happens to the
    address bar.
+
+   This link will take you to a replit IDE.  Go ahead and run the code.  
+   Once run, follow the directions to form in a new window.
+
+
+   **Code in the IDE:**
 
    .. sourcecode:: html
       :linenos:
@@ -67,7 +73,6 @@ of the current page.
    .. figure:: figures/default-form-submitted.png
       :alt: Browser screen shot showing form after it has been submitted. The URL has queryString showing.
 
-   `Run it <https://repl.it/@launchcode/form-default>`_.
 
 Notice in the above example that the browser address has changed to:
 
