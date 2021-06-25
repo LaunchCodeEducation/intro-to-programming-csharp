@@ -13,7 +13,7 @@ applications installed. But where do they all live? In folders. Aka,
 directories. The basics of terminal usage involve navigating these
 directories.
 
-Let's take a look at a given project opened in a Visual Studio Code (VSC) editor.  
+Let's take a look at a given project's file tree using a GUI window.  
 
 .. admonition:: Note
 
@@ -22,10 +22,12 @@ Let's take a look at a given project opened in a Visual Studio Code (VSC) editor
 
 
 
-.. figure:: ./figures/init_tree.png
-   :alt: File tree in VSCode
+.. figure:: ./figures/GUI_start.png
+   :scale: 75%
+   :alt: File tree in the Finder GUI
+   
 
-   Sample file tree in VSCode
+   Sample file tree GUI
 
 When working in the terminal, it can be helpful to think of yourself as
 physically inside of the project's file system. File trees, like the one
@@ -107,7 +109,7 @@ cover how to move locations in detail down in :ref:`terminal-cd`.
    launchcode_courses $ cd ./lc_101/
    lc_101 $
 
-You may notice that the <current_directory> has updated but apart from
+You may notice that the ``<current_directory>`` has updated but apart from
 that, the computer doesn't give us much response. This is quite common
 and is a reason why our file system visuals come in handy to help remind
 us what we're doing.
@@ -127,11 +129,12 @@ Parent Directory (``..``)
 ``..`` is a reference to your **parent directory**, aka the directory
 that CONTAINS your current location.
 
-Remember the VSCode file tree? That containment structure is represented
+Remember the GUI file tree? That containment structure is represented 
 through indentation:
 
-.. figure:: ./figures/init_tree.png
-   :alt: File tree in VSCode
+.. figure:: ./figures/GUI_start.png
+   :scale: 75%
+   :alt: File tree in GUI
 
    ``launchcode_courses`` contains ``data_analysis`` and ``lc_101``.
 
@@ -617,6 +620,13 @@ Here's what that gives us:
 
    ``touch`` adds a file
 
+
+Here's what that looks like in the GUI:
+
+.. figure:: ./figures/GUI_end.png
+   :scale: 75%
+   :alt: a new file added to data_analysis
+
 .. _terminal-clear:
 
 ``clear`` Command
@@ -642,7 +652,7 @@ like a new window.
 ``man`` Command
 ---------------
 
-``man`` is your best friend. Running ``man <command>`` gives you a manual
+``man`` is your best friend in the terminal. Running ``man <command>`` gives you a manual
 entry of what that command does, what options it takes, and more
 documentation than you could ever need. It's so thorough, it makes this
 guide blush. Any command you think you may need, but you're not sure how
@@ -662,6 +672,10 @@ Some other terminal stuff you should know when using the manual:
 
 #. Exiting: Once you're finished reading, you'll need to exit the manual page
    using the :ref:`terminal-q` command.
+
+.. admonition:: Tip
+   
+   Git bash does NOT support ``man``.  Instead, ``<command> --help`` will provide a scaled down altenative.
 
 .. _terminal-exiting-programs:
 
@@ -686,3 +700,5 @@ program for an different exit command.
 
 ``q`` is another command for exiting a running program. Notably, it is needed
 to exit the :ref:`terminal-man` pages.
+
+

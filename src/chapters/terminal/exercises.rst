@@ -22,7 +22,7 @@ Exercises: Terminal
 
 #. ``pwd`` to check your location.
 
-#. There, make a file called 'my_first_file.txt' with
+#. There, make a file called "my_first_file.txt" with
    ``touch my_first_file.txt``.
 
 #. Open the file and write yourself a message!
@@ -35,10 +35,10 @@ Exercises: Terminal
 
 #. Move back out to your Desktop directory from the terminal with ``cd ..``.
 
-#. Use ``ls`` in the terminal to verify your 'my_first_copy.txt' on your
+#. Use ``ls`` in the terminal to verify your "my_first_copy.txt" on your
    Desktop. Open it up. Is it the same as your first file?
 
-#. Move your copied file into your 'my_first_directory' with
+#. Move your copied file into your "my_first_directory" with
    ``mv my_first_copy.txt my_first_directory/``.
 
 #. Use ``ls`` to see that the copied file is no longer on your Desktop.
