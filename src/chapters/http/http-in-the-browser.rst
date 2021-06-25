@@ -6,9 +6,23 @@ While we have covered all of the HTTP concepts you need to know at this point, i
 Viewing Requests and Response Using Developer Tools
 ---------------------------------------------------
 
-.. tip::
 
-   This section requires you to use Firefox's developer tools. If you need a refresher or just a reference, visit `MDN <https://developer.mozilla.org/en-US/docs/Tools>`_.
+Before You Get Started
+^^^^^^^^^^^^^^^^^^^^^^
+
+This section uses Firefox's developer tools to explore HTTP in the browser. 
+If you need a reference for using Firefox, visit 
+`MDN <https://developer.mozilla.org/en-US/docs/Tools>`_.
+
+The overall concepts of the tools will be the same for any browser.  
+Just be aware that if you are not using Firefox, the display will vary, but the data will be there.
+
+If using chrome, this guide will help walk you through the developer tools: `Chrome DevTools <https://developer.chrome.com/docs/devtools/>`_
+
+If using Safari, this guide will also provide you the same guidance: `How to inspect request and response headers on Safari <https://jun711.github.io/web/how-to-inspect-network-request-and-response-headers-on-safari/>`_
+
+Working In the Browser
+^^^^^^^^^^^^^^^^^^^^^^
 
 Open a web browser and visit some web page, say, `our example from the HTML Me Something assignment <https://education.launchcode.org/html-me-something/submissions/chrisbay/index.html>`_. After the page loads, open your browser's developer tools and select the *Network* tab.
 

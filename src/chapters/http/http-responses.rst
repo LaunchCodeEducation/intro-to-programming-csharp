@@ -18,9 +18,9 @@ A generic HTTP response looks like this:
 
    <!DOCTYPE html>
    <html>
-   <head>
-   <meta charset="UTF-8">
-   <!--Rest of HTML page -->
+   	<head>
+   		<meta charset="UTF-8">
+   	<!--Rest of HTML page -->
    </html>
 
 The structure has these components:
@@ -54,7 +54,7 @@ Specific codes will have all 3 digits specified, such as 201, 302, or 404. Each 
 
 A 404 response code indicates that the requested resource does not exist on the server. This can occur when, for example, you make a typo when typing a URL into the address bar. Referring back to our postal service analogy, a 404 is similar to receiving a letter marked "Return to Sender" because the addressee doesn't live there anymore. 
 
-We don't expect you to memorize all of the response codes, but you should be able to quickly recall the most common codes.
+We don't expect you to memorize `all of the response codes <https://en.wikipedia.org/wiki/List_of_HTTP_status_codes>`_, but you should be able to quickly recall the most common codes.
 
 .. list-table:: Common HTTP Response Codes
    :header-rows: 1
