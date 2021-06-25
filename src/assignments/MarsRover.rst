@@ -14,7 +14,7 @@ create a *command* at mission control, convert that command into a *message*
 send it to the *rover*, then have the rover respond to that message.
 
 We will provide descriptions of the required features you need to implement in 
-four separate classes:
+three separate classes:
 
 #. ``Command``: 
    A type of object containing a ``CommandType`` field. ``CommandType`` is one
@@ -26,15 +26,10 @@ four separate classes:
    ``Message`` is responsible for bundling the commands from mission control and 
    delivering them to the rover.
 #. ``Rover``:
-   An object representing the mars rover. This class contains information on the rover's
+   An object representing Curiosity, the mars rover. This class contains information on the rover's
    ``Position``, operating ``Mode``, and ``GeneratorWatts``. It will also contain a method 
    that you will write, ``ReceiveMessage``. This method will include conditional statements 
-   for each of the various types of commands the rover receives and updates the rover's properties.
-#. ``Response``:
-   The rover returns a ``Response`` object type when it has finished receiving a ``Message`` object. 
-   The ``Response`` class contains the name of the ``Message`` it responds to, as well as a list of 
-   booleans indicating which of the commands have been completed from it's ``Message`` input. 
-   
+   for each type of command the rover receives and updates the rover's properties. 
 
 In true TDD form, you will be asked to first write the appropriate units tests for 
 these features, then write the code in the given class to pass those tests. 
@@ -50,18 +45,14 @@ Getting Started
    
       Two ``Command`` object tests have been created for you as examples.
 
-.. TODO: Add TDD ref link from unit testing PR
-
 #. Use :ref:`test-driven development (TDD) <tdd>` to create each of the
    classes described below.
 
-#. You are responsible for creating the ``Rover`` and ``Response`` classes. 
+#. You are responsible for creating the ``Rover.receiveMessage()`` method. 
 
 
 How-To TDD
 ----------
-
-.. TODO: Add test-code-cycle ref link from unit testing PR
 
 Recall that in TDD, you write the test for a given behavior before you code the
 actual function. Feel free to review the
@@ -76,7 +67,7 @@ d. There are some constraints on how you can implement these features. A descrip
 Each numbered item describes a test. *You should use the given phrases as the
 test method names* when creating your tests. 
 
-You must create 13 tests (14, if you do the bonus) for this assignment.
+You must create 11 tests (12, if you do the bonus) for this assignment.
 
 .. admonition:: Warning
 
@@ -98,7 +89,7 @@ this class, ``Command``, we've provided the functionality. ``Command`` is alread
 written for you and you do not need to modify it to write passing tests. Open up and 
 examine the file ``Command.cs``. 
 
-#. This class builds an object with three fields: ``CommandType``, ``NewPostion``, and ``NewMode``.
+#. This class builds an object with three fields: ``CommandType``, ``NewPosition``, and ``NewMode``.
 
    a. ``CommandType`` is a string that represents the type of command. A command 
       type will be one of the following: ``'MODE_CHANGE'`` or ``'MOVE'``.
@@ -106,7 +97,7 @@ examine the file ``Command.cs``.
       i. To peek ahead at the full functionality of these types, refer to 
          :ref:`Command Types table <command-types-table>`. 
 
-   b. ``NewPostion`` is an ``int`` value provided in conjunction with a "MOVE" command type.
+   b. ``NewPosition`` is an ``int`` value provided in conjunction with a "MOVE" command type.
 
    c. ``NewMode`` is a ``string`` value provided in conjunction with a "MODE_CHANGE" command type.
 
@@ -162,7 +153,8 @@ class correctly sets the ``CommandType`` property in the new object.
 a. Without editing, ``Command.cs`` contains the correct code. Click "Run" to 
    verify that the first and second tests both pass.
 b. You do not need to catch an exception in this test.
-c. You may not need to know the specific types of commands to write this test.
+c. You may not need to know the specific types of commands to write this test. In fact, you can change the ``commandType``
+   input to any string value and run the test. Does it still pass?
 
 Test 3 
 ~~~~~~
@@ -178,7 +170,7 @@ Run the tests to verify that all 3 command tests pass.
 Test 4 
 ~~~~~~
 
-Write a fourth Command class test. This should be called "ConstructorSetsInitialNewModeValue".
+Write a fourth ``Command`` class test. This should be called "ConstructorSetsInitialNewModeValue".
 This test is responsible for checking that the third field on the ``Command`` class, ``NewMode``
 is set by a ``Command`` constructor. 
 
@@ -215,7 +207,7 @@ Recall, the role of a message object is to bundle commands to send to the rover.
 
    .. sourcecode:: csharp
 
-      Command[] commands = {new Command("MODE_CHANGE", "LOW_POWER"), new Command("MOVE")};
+      Command[] commands = {new Command("MODE_CHANGE", "LOW_POWER"), new Command("MOVE", 500)};
       Message newMessage = new Message("Test message with two commands", commands);
 
 ``Message`` Tests
@@ -285,16 +277,11 @@ a method called ``ReceiveMessage`` to handle updates to its properties.
    c. Sets ``Mode`` to ``'NORMAL'``
    d. Sets default value for ``generatorWatts`` to 110
 
-#. ``public Response ReceiveMessage(Message message)``
+#. ``public void ReceiveMessage(Message message)``
 
    a. ``message`` is a ``Message`` object
-   b. Returns a ``Response`` type object. A ``Response`` instance contains two properties:
-         
-      i. ``MessageName``: the name of the original ``Message`` object
-      ii. ``CommandsCompleted``: a list of *results*. Each element in the list is a 
-          boolean that corresponds to one ``Command`` in ``Message.Commands``.
-         
-   c. Updates certain properties of the rover object
+   b. This method does not return anything
+   c. It applies the contents of the ``Message`` sent to update certain properties of the rover object
 
       i. Details about how to respond to different commands are in the
          :ref:`Command Types table <command-types-table>`.
@@ -306,14 +293,17 @@ a method called ``ReceiveMessage`` to handle updates to its properties.
       Command[] commands = {new Command("MOVE", 5000)};
       Message newMessage = new Message("Test message with one command", commands);
       Rover newRover = new Rover(98382);    // Passes 98382 as the rover's position.
-      Response newResponse = newRover.ReceiveMessage(newMessage);
-
+      
+      Console.WriteLine(newRover.ToString());
+      
+      newRover.ReceiveMessage(newMessage);
       Console.WriteLine(newRover.ToString());
 
    **Output**
 
    ::
 
+      Position: 98382 - Mode: NORMAL - GeneratorWatts: 110
       Position: 5000 - Mode: NORMAL - GeneratorWatts: 110
 
 
@@ -321,55 +311,40 @@ a method called ``ReceiveMessage`` to handle updates to its properties.
 ^^^^^^^^^^^^^^^
 
 Open ``RoverTests.cs`` and write the following tests. Write the code to
-make them pass in ``Rover.cs`` and ``Response.cs``. Remember to use the given phrase as the test
-description.
+make them pass in ``Rover.cs``. Remember to use the given phrase as the test
+method name.
 
 Test 8 
 ~~~~~~
 
-"ConstructorSetsPostionAndDefaultsForModeAndGeneratorWatts".
+"ConstructorSetsPositionAndDefaultsForModeAndGeneratorWatts".
 Refer to the :ref:`Rover Class <rover-class>` description above for these
 default values.
+
 
 Test 9
 ~~~~~~
 
-"ReceiveMessageResponseContainsMessageName"
+"RespondsCorrectlyToModeChangeCommand". 
+
+a. The test should check that when a rover object receives a message that contains a "MODE_CHANGE" 
+   command, that rover's ``Mode`` field is updated.
+b. The rover has two modes that can be passed as values to a mode change command,
+   "LOW_POWER" and "NORMAL".
 
 Test 10
 ~~~~~~~
 
-"ReceiveMessageResponseReturnsTwoResultsIfTwoCommandsAreReceived"
+"DoesNotMoveInLowPower". 
 
-.. admonition :: Note
-
-   The ``Response`` object returned from ``ReceiveMessage()`` will only be 
-   assigned one ``MessageName`` but two boolean values will be logged into the 
-   response's ``CommandsCompleted`` list property.
+a. The test confirms that the rover position does not change when sent a "MOVE" command in "LOW_POWER" mode.
+b. Use the :ref:`Rover Modes table <rover-modes-table>` for guidance on how
+   to handle move commands in different modes.
 
 Test 11
 ~~~~~~~
 
-"RespondsCorrectlyToModeChangeCommand". 
-
-a. The test should check the ``CommandsCompleted`` property and rover mode for accuracy.
-b. The rover has two modes that can be passed as values to a mode change command,
-   'LOW_POWER' and 'NORMAL'.
-
-Test 12
-~~~~~~~
-
-"RespondsWithFalseCompletedWhenMovingWithLowPower". 
-
-a. The test should check the ``CommandsCompleted`` property for accuracy and confirm 
-   that the rover position did not change.
-b. Use the :ref:`Rover Modes table <rover-modes-table>` for guidance on how
-   to handle move commands in different modes.
-
-Test 13
-~~~~~~~
-
-"RespondsWithPositionChangeFromMoveCommand".
+"PositionChangesFromMoveCommand".
 
 a. A ``MOVE`` command will update the rover's position with the position value in 
    the command.
@@ -395,9 +370,7 @@ Rover Command Types
 
 .. note::
 
-   The value for an item in a ``Response`` instance's ``CommandsCompleted`` list 
-   will be ``false`` if the command could NOT be completed. This will happen if the
-   rover is given a command to move while in "LOW_POWER" mode.
+   The rover does not move while in "LOW_POWER" mode.
 
 .. _rover-modes-table:
 
@@ -422,9 +395,9 @@ Add the following test that checks for unknown commands in
 ``RoverTests.cs``.
 
 
-Test 14
+Test 12
 ^^^^^^^
-"CompletedFalseAndAMessageForAnUnknownCommand".
+"RoverReturnsAMessageForAnUnknownCommand".
 
 Submitting Your Work
 --------------------
