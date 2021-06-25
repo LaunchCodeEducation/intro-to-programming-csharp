@@ -67,7 +67,7 @@ d. There are some constraints on how you can implement these features. A descrip
 Each numbered item describes a test. *You should use the given phrases as the
 test method names* when creating your tests. 
 
-You must create 11 tests (12, if you do the bonus) for this assignment.
+You must create 13 tests (14, if you do the bonus) for this assignment.
 
 .. admonition:: Warning
 
@@ -317,13 +317,23 @@ method name.
 Test 8 
 ~~~~~~
 
-"ConstructorSetsPositionAndDefaultsForModeAndGeneratorWatts".
-Refer to the :ref:`Rover Class <rover-class>` description above for these
-default values.
+"ConstructorSetsDefaultPosition".
+Refer to the :ref:`Rover Class <rover-class>` description above for the
+default value.
 
-
-Test 9
+Test 9 
 ~~~~~~
+
+"ConstructorSetsDefaultMode".
+
+Test 10
+~~~~~~~
+
+"ConstructorSetsDefaultGeneratorWatts".
+
+
+Test 11
+~~~~~~~
 
 "RespondsCorrectlyToModeChangeCommand". 
 
@@ -332,7 +342,7 @@ a. The test should check that when a rover object receives a message that contai
 b. The rover has two modes that can be passed as values to a mode change command,
    "LOW_POWER" and "NORMAL".
 
-Test 10
+Test 12
 ~~~~~~~
 
 "DoesNotMoveInLowPower". 
@@ -341,7 +351,7 @@ a. The test confirms that the rover position does not change when sent a "MOVE" 
 b. Use the :ref:`Rover Modes table <rover-modes-table>` for guidance on how
    to handle move commands in different modes.
 
-Test 11
+Test 13
 ~~~~~~~
 
 "PositionChangesFromMoveCommand".
@@ -395,7 +405,7 @@ Add the following test that checks for unknown commands in
 ``RoverTests.cs``.
 
 
-Test 12
+Test 14
 ^^^^^^^
 "RoverReturnsAMessageForAnUnknownCommand".
 
