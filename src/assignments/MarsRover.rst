@@ -48,7 +48,7 @@ Getting Started
 #. Use :ref:`test-driven development (TDD) <tdd>` to create each of the
    classes described below.
 
-#. You are responsible for creating the ``Rover.receiveMessage()`` method. 
+#. You are responsible for creating the ``Rover.ReceiveMessage()`` method. 
 
 
 How-To TDD
@@ -267,7 +267,7 @@ returns the results.
 Rover Class
 ^^^^^^^^^^^
 
-This class builds a rover object with a few properties, and it also contains
+This class builds a rover object with a few properties. It will also contain
 a method called ``ReceiveMessage`` to handle updates to its properties.
 
 #. ``public Rover(int position)``
