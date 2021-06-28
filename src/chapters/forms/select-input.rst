@@ -9,6 +9,11 @@ the ``<select></select>`` tag.
 if that option is selected. The text inside the
 ``<option>Option text</option>`` is what is displayed in the select menu.
 
+``<option>`` tag ``values`` can also include a **default** option.  
+This is what will be displayed first upon loading regardless of location in your html.
+To create a default option, you add ``selected`` after the ``value``.  
+See the table below for proper placement of this code. 
+
 .. role:: raw-html(raw)
    :format: html
 
@@ -23,6 +28,10 @@ if that option is selected. The text inside the
      - ``<select name="weather"><option value="1">clear</option><option value="2">cloudy</option></select>``
      - A menu that allows selection of one option. Requires options to be in ``<option>`` tags.
      - :raw-html:`<select name="weather"><option value="1">clear</option><option value="2">cloudy</option></select>`
+   * - default select option
+     - ``<select name="game"><option value="1">Checkers</option><option value="2" selected>Chess</option></select>``
+     - A menu that allows selection of one option, but the ``selected`` default option is the one the list will display once loaded. 
+     - :raw-html:`<select name="game"><option value="1">Checkers</option><option value="2" selected>Chess</option></select>`
 
 Example
 -------
@@ -42,11 +51,12 @@ Example
          </select>
          </label>
 
+         <!-- includes selected "Default" option -->
          <label>Facility:
          <select name="facility">
-            <option value="johnson">Johnson Space Center, TX</option>
             <option value="kennedy">Kennedy Space Center, FL</option>
             <option value="white-sands">White Sands Test Facility, NM</option>
+            <option value="johnson" selected>Johnson Space Center, TX</option>
          </select>
          </label>
          <button>Send Report</button>
@@ -69,7 +79,7 @@ Example
       operation=2
       facility=white-sands 
 
-   `Run it <https://repl.it/@launchcode/select-inputs-example>`__
+   `Run it <https://replit.com/@launchcode/select-inputs-example-2>`__
 
 
 Check Your Understanding

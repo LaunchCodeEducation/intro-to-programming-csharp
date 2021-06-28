@@ -5,7 +5,7 @@ Forms
 
 As a user of the web, you know that web pages both display and accept data. In this chapter
 we are going to learn more about how web pages handle data input using HTML forms.
-An HTML **form** is used to accept input from the user and send that data to the server.
+An HTML **form** is used to accept input from the user and send that data to a server.
 
 Create a Form
 -------------
@@ -13,6 +13,7 @@ Create a Form
 To declare a form in HTML use the ``<form>`` tag with open and closing tags. This form element
 will serve as a container for various types of other elements that are designed to capture
 input from the user.
+
 
 .. sourcecode:: html
    :linenos:
