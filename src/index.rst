@@ -70,7 +70,7 @@ Assignments
    assignments/candidateQuiz
    assignments/scrabble-scorer
    assignments/MarsRover
-   
+   assignments/html-me-something
 
 Appendices
 ==========
@@ -91,6 +91,8 @@ Appendices
    appendices/vs-troubleshooting
    appendices/git/stash
    appendices/git/workflows
+   appendices/git/create-new-repo
+   
 
 
 
@@ -99,4 +101,6 @@ Appendices
    :hidden:
 
    index-full
+   assignments/html-me-part1
+   assignments/html-me-part2
 
