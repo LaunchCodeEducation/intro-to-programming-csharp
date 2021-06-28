@@ -67,6 +67,7 @@ Assignments
    assignments/candidateQuiz
    assignments/scrabble-scorer
    assignments/MarsRover
+   assignments/html-me-something
 
 
 Appendices
@@ -88,4 +89,6 @@ Appendices
    appendices/vs-troubleshooting
    appendices/git/stash
    appendices/git/workflows
+   appendices/git/create-new-repo
+   
    
