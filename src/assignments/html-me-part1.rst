@@ -9,7 +9,12 @@ In Part 1, you will get comfortable with writing markup, and with separating
 Getting Started
 ----------------
 
-Add an Empty html file to your project.  Name it ``index.html``.
+You will be pushing your final assignment up to GitHub, 
+so creating a repository for your work should be one of your first steps.
+Before moving on to part 2, you will be asked to stage and commit part 1 into your repo.
+
+Create either a Generic or Blank Project file in VS.  Name it ``html-me-something``. 
+Next, add an empty html file to your project and name it ``index.html``.
 
 Getting to Work
 -----------------
@@ -53,8 +58,7 @@ Notes and Tips
 
 #. Use your browser developer tools to look at `the example
    page <http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html>`__,
-   or to troubleshoot things that don’t look right. You can mimic the
-   document structure of this example, but do NOT just copy/paste!
+   to troubleshoot things that don’t look right. 
 #. Use the example to learn how your HTML elements might be structured,
    and build your page to fit your own content.
 #. Don’t add any CSS yet. Really, we mean it! If you think your page

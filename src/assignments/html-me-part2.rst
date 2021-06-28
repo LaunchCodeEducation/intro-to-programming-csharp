@@ -9,15 +9,9 @@ display, while keeping your styles separate from your content.
 Getting Started
 ----------------
 
-#. Create a file named ``styles.css`` in your ``html-me-something/``
-   directory.
+#. Create a file named ``styles.css`` in your project directory.
 
-#. *Optional*: Add a normalization stylesheet (follow any of the links in the
-   :ref:`Normalization <normalization>` section below). You can either put
-   these normalization rules at the top of your ``styles.css``, or you can add
-   another file in the same directory and link to it in your HTML doc. This
-   will reset some of your browser’s built-in styles so that you start with a
-   cleaner slate when you add your own.
+``link back to this in css chapter``
 
 Getting to Work
 ----------------
@@ -77,11 +71,19 @@ General CSS:
 
 .. _normalization:
 
-CSS Normalization:
-^^^^^^^^^^^^^^^^^^^
+CSS Normalization or CSS Reset (Optional):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. `Eric Meyer’s reset.css <http://meyerweb.com/eric/tools/css/reset/>`__
-#. `normalize.css <http://necolas.github.io/normalize.css/>`__
+#. If you want a CSS challenge, add a normalization or reset stylesheet.
+#. Normalization and Reset CSS are two differnt approaches to dealing 
+   with built-in browser settings which can skew your CSS in a browser window.
+   `CSS Reset vs Normalization <https://frontend.turing.edu/lessons/module-1/reset-vs-normalize.html>`_
+   is a great article that addresses these two approaches and the rationale behind each.  
+#. If you choose to add normalization or reset, you can either put the rules at the top of your ``styles.css``, 
+   or you can add another file in the same directory and link to it in your HTML doc. 
+#. If you want to try Reset CSS, check out Eric Meyer's `CSS Tools: Reset CSS <https://meyerweb.com/eric/tools/css/reset/>`__
+#. If you want to try Normalization CSS, check out Nicholas Gallagher's `About normalize.css <http://nicolasgallagher.com/about-normalize-css/>`__ 
+#. *Reminder, this is completely optional.*
 
 Add and Commit Your Changes on Git
 -----------------------------------

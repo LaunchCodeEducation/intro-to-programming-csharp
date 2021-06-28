@@ -3,7 +3,7 @@
 Assignment #4: HTML Me Something
 =================================
 
-You’ve learned a bit of HTML and some CSS, but you have likely only used
+You’ve learned a bit of HTML and some CSS ``link to those chapters``, but you have likely only used
 it in bits and pieces so far, adding or modifying content in exercises
 or pre-existing files. Here, you are going to take another step forward
 by building an entire page from scratch. You will also get some practice
@@ -25,28 +25,19 @@ overall appearance of a page.
 Sections:
 ----------
 
-#. :ref:`Getting Started <getting-started>`
+#. :ref:`Getting to Work <getting-to-work>`
 #. :ref:`Part 1: HTML <html-me-part1>`
 #. :ref:`Part 2: CSS <html-me-part2>`
 #. :ref:`Submitting Your Work <submitting-your-work>`
 
-.. _getting-started:
-
-Getting started
-----------------
-
-For this project, we suggest working on it one section at a time. 
-
-You will be pushing your final assignment up to GitHub; creating a repository for your work should be your first step.
-Start by creating a new project in Visual Studio that will contain your .html and .css files.
 
 .. _getting-to-work:
 
 Getting to Work
 ---------------
 
-Repo to store your assignment? Check!  
-
+For this project, we suggest working on it one section at a time.
+ 
 It’s time to build out your page! Dive into each of the two parts below:
 
 #. :ref:`Part 1: HTML <html-me-part1>`
@@ -58,8 +49,9 @@ It’s time to build out your page! Dive into each of the two parts below:
 Submitting your work
 --------------------
 
-When you are ready to submit, complete the following steps:
+You will be pushing your final project up to GitHub.
 
+When you are ready to submit, complete the following steps:
 
 Turning In Your Work
 ---------------------
