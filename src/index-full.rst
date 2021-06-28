@@ -29,6 +29,8 @@ Chapters
    chapters/interfaces-and-polymorphism/index
    chapters/html/index
    chapters/css/index
+   chapters/http/index
+   chapters/forms/index
 
 .. toctree::
 
@@ -55,7 +57,7 @@ Studios
    chapters/inheritance/studio
    chapters/interfaces-and-polymorphism/studio
    chapters/html/studio
- 
+   chapters/forms/studio
 
 Assignments
 ===========
