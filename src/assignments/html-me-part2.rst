@@ -10,8 +10,7 @@ Getting Started
 ----------------
 
 #. Create a file named ``styles.css`` in your project directory.
-
-``link back to this in css chapter``
+#. :ref:`Link it<linking-css-to-html>` to your ``index.html``.
 
 Getting to Work
 ----------------
@@ -40,8 +39,7 @@ Your CSS must:
    c. Be creative! Make your page look great, and don’t just settle for
       checking off the items above. Have a look at `CSS Zen Garden
       <http://www.csszengarden.com>`__ for inspiration (use your browser’s
-      `developer tools <https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools>`__
-      to see how those pages’ styles are built).
+      developer tools to see how those pages’ styles are built).
 
 Notes
 ^^^^^^
@@ -50,10 +48,10 @@ Notes
    to your main document.
 #. Feel free to check out our `styled example
    <http://education.launchcode.org/html-me-something/submissions/chrisbay/index.html>`__
-   to see how we did things. Use “View Source” (by right-clicking anywhere on
-   the page and selecting *View Source*).
-#. Another thing you might find useful is your browser’s `developer tools
-   <https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools>`__.
+   to see how we did things. Right click in your browser window and select "View Page Source" 
+   to see the HTML source code.
+#. Another thing you might find useful is your browser’s developer tools by selecting "Inspect".
+   This allows you to inspect the HTML and CSS of different elements.
 #. And be sure to use the *Resources* section below as you go.
 
 Resources
@@ -74,8 +72,8 @@ General CSS:
 CSS Normalization or CSS Reset (Optional):
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. If you want a CSS challenge, add a normalization or reset stylesheet.
-#. Normalization and Reset CSS are two differnt approaches to dealing 
+#. If you want a CSS challenge, add a normalization or reset stylesheet.  
+   Normalization and Reset CSS are two different approaches to dealing 
    with built-in browser settings which can skew your CSS in a browser window.
    `CSS Reset vs Normalization <https://frontend.turing.edu/lessons/module-1/reset-vs-normalize.html>`_
    is a great article that addresses these two approaches and the rationale behind each.  

@@ -3,7 +3,7 @@
 Assignment #4: HTML Me Something
 =================================
 
-You’ve learned a bit of HTML and some CSS ``link to those chapters``, but you have likely only used
+You’ve learned a bit of :ref:`HTML <html-index>` and some :ref:`CSS <css-index>`, but you have likely only used
 it in bits and pieces so far, adding or modifying content in exercises
 or pre-existing files. Here, you are going to take another step forward
 by building an entire page from scratch. You will also get some practice
@@ -75,10 +75,10 @@ repository.
 #. In a browser, go to the Github page for your repository.
 #. Click on the *Settings* tab
 #. Scroll down to the *GitHub Pages* section and enable the GitHub Pages
-   feature by choosing your ``master`` branch from the dropdown. Hit
+   feature by choosing your ``main`` branch from the dropdown. Hit
    *Save*.
 
-   .. figure:: figures/gh-pages-set-branch.png
+   .. figure:: figures/GH-page-save.png
       :alt: Set GitHub Pages Branch
 
 #. In any browser, you should now be able to visit

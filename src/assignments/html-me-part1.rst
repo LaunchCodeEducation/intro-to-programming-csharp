@@ -11,17 +11,17 @@ Getting Started
 
 You will be pushing your final assignment up to GitHub, 
 so creating a repository for your work should be one of your first steps.
-Before moving on to part 2, you will be asked to stage and commit part 1 into your repo.
+Before moving on to Part 2, you will be asked to stage and commit Part 1 into your repo.
 
-Create either a Generic or Blank Project file in VS.  Name it ``html-me-something``. 
+Create either a Generic or Blank Project in VS.  Name it ``html-me-something``. 
 Next, add an empty html file to your project and name it ``index.html``.
 
 Getting to Work
 -----------------
 
-Your mission is to build a page that:
+Using your ``index.html``, your mission is to build a page that:
 
-#. Tells a story. This can be personal or impersonal, funny, serious or
+#. *Tells a story.* This can be personal or impersonal, funny, serious or
    neither. You can do whatever you like, but it should be something in the
    range of 3-10 paragraphs or sections. `Here is an example
    <http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html>`__,
@@ -32,7 +32,7 @@ Your mission is to build a page that:
    b. Describe a trip you took.
    c. Talk about one of your hobbies or passions.
 
-#. Does each of the following:
+#. *And does each of the following:*
 
    a. Uses each of the following structural HTML5 tags: ``<p>``,
       ``<header>``, ``<footer>``, ``<main>``, ``<article>``. If you need
@@ -57,7 +57,7 @@ Notes and Tips
 ^^^^^^^^^^^^^^^
 
 #. Use your browser developer tools to look at `the example
-   page <http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html>`__,
+   page <http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html>`__
    to troubleshoot things that don’t look right. 
 #. Use the example to learn how your HTML elements might be structured,
    and build your page to fit your own content.
