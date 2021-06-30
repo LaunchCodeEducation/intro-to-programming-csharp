@@ -16,7 +16,7 @@ Exercises: Terminal
    directory.
 
 #. In the terminal, use ``mkdir`` to create a folder on the Desktop called
-   'my_first_directory'. Look on your Desktop. Do you see it?
+   "my_first_directory". Look on your Desktop. Do you see it?
 
 #. Use ``cd my_first_directory/`` to move inside that directory.
 
@@ -30,7 +30,7 @@ Exercises: Terminal
 #. Back in the terminal, list the contents of your current directory from the
    terminal with ``ls``.
 
-#. Make a copy of your 'my_first_file.txt' from it's current spot to directly
+#. Make a copy of your "my_first_file.txt" from its current spot to directly
    on the Desktop with ``cp my_first_file.txt ../my_first_copy.txt``.
 
 #. Move back out to your Desktop directory from the terminal with ``cd ..``.
@@ -44,7 +44,7 @@ Exercises: Terminal
 #. Use ``ls`` to see that the copied file is no longer on your Desktop.
 
 #. Type ``cd my_first_directory/``, followed by ``ls`` to confirm that your
-   copy has been moved into 'my_first_directory'.
+   copy has been moved into "my_first_directory".
 
 #. ``cd ..`` to get back out to your Desktop.
 
