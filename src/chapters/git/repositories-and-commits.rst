@@ -1,6 +1,10 @@
 Repositories and Commits
 =========================
 
+.. index:: ! repository ! repo
+
+.. _create-repo:
+
 Create a Repository
 -------------------
 

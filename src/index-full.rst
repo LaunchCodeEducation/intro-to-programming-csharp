@@ -29,6 +29,8 @@ Chapters
    chapters/interfaces-and-polymorphism/index
    chapters/html/index
    chapters/css/index
+   chapters/http/index
+   chapters/forms/index
 
 .. toctree::
 
@@ -55,7 +57,7 @@ Studios
    chapters/inheritance/studio
    chapters/interfaces-and-polymorphism/studio
    chapters/html/studio
- 
+   chapters/forms/studio
 
 Assignments
 ===========
@@ -67,6 +69,7 @@ Assignments
    assignments/candidateQuiz
    assignments/scrabble-scorer
    assignments/MarsRover
+   assignments/html-me-something
 
 
 Appendices
@@ -88,4 +91,6 @@ Appendices
    appendices/vs-troubleshooting
    appendices/git/stash
    appendices/git/workflows
+   appendices/git/create-new-repo
+   
    
