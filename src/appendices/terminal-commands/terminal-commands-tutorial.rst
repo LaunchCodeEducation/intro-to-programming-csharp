@@ -702,3 +702,13 @@ program for an different exit command.
 to exit the :ref:`terminal-man` pages.
 
 
+Histroy of the Terminal
+------------------------
+
+If you want to learn more about the history of the terminal and CLI, check out the following:
+
+- `"Difference between CLI and GUI" By GeeksforGeeks <https://www.geeksforgeeks.org/difference-between-cli-and-gui/>`_
+
+- `"What is the Command Line?" By Brennen Bearnes <https://learn.adafruit.com/what-is-the-command-line/ancient-history>`_
+
+- `"In the Beginning was the Command Line" By Neal Stephenson <http://cristal.inria.fr/~weis/info/commandline.html>`_
