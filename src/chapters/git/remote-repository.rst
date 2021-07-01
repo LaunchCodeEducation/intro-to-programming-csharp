@@ -4,7 +4,7 @@ Remote Repositories
 Local, Remote, GitHub, Oh My!
 -----------------------------
 
-So far, the book has covered how to setup a Git repository on the local machine.
+So far, the book has covered how to setup a Git repository on the local machine, also known as **local development**.
 But, one of the benefits of using a VCS is storage of backups.
 So, what happens to the code base if something happens to the machine?
 That is where remote repositories come in.
@@ -33,6 +33,10 @@ Contributing to a Remote Repository
 -----------------------------------
 
 Now that the programmer has a profile on Github and a local copy of a remote repository, they start coding!
+
+.. index:: ! remote repository commit
+
+.. index:: ! remote repository push
 
 Once they create a new feature, it is time to make a commit.
 When working with a remote, the commit process has five steps:

@@ -1,7 +1,9 @@
 Repositories and Commits
 =========================
 
-.. index:: ! repository ! repo
+.. index:: ! repository 
+
+.. index:: ! repo
 
 .. _create-repo:
 
@@ -9,7 +11,8 @@ Create a Repository
 -------------------
 
 To get started with a git repository (or "repo" for short), the programmer must first create one.
-To create a git repository, the programmer navigates to their project directory and uses the command ``git init``, like so:
+To create a git repository, the programmer navigates to their project directory using the terminal.
+Then uses the command ``git init``, like so:
 
 .. sourcecode:: bash
 
@@ -20,11 +23,7 @@ To create a git repository, the programmer navigates to their project directory 
 
 Now the programmer is ready to code away!
 
-.. admonition:: Note
-
-   This is an example of **local development** or creating repos and code bases on your own machine, that only you have access to.
-   Local development allows you to create functional code that only your machine can deploy.  
-   This is how we have been coding in this course so far.
+.. index:: ! git commit
 
 Making Commits
 --------------
@@ -48,6 +47,23 @@ If the programmer has created the Git repository and is ready to commit, they ca
 .. note::
 
    Git does have a simple commit command, however, making a proper commit requires that the programmers follow a longer procedure than just one command.
+
+.. index:: ! stages of a commit
+
+.. index::
+   single: stages of a commit; git commit 
+
+.. index::
+   single: stages of a commit; git add
+
+.. index::
+   single: stages of a commit; git status
+
+.. index::
+   single: stages of a commit; git log
+
+The Four Stages of Making a ``commit`` 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The procedure for making a commit to a Git repository includes four stages.
 
@@ -87,13 +103,19 @@ Here is how the process will look in the terminal:
 
 To break down what happens in a commit even further:
 
-When using ``git status``, the output shows two categories: modified tracked files and modified untracked files.
+.. index:: ! git status
+
+When using ``git status``, the output shows two categories: **modified tracked files** and **modified untracked files**.
 Modified tracked means that the file exists in the Git repository already, but is different than the version in the repository.
 Modified untracked means that it is a new file that is not currently in the repository.
+
+.. index:: ! git add
 
 ``git add`` adds files to the commit, but it does not commit those files.
 By using ``git add .``, all the modified files were added to the commit.
 If a programmer only wants to add one modified file, they can do so.
+
+.. index:: ! git commit
 
 ``git commit`` actually commits the files that were added to the repository.
 By adding ``-m "My first commit"``, a comment was added to the commit.
@@ -102,6 +124,8 @@ This is helpful for looking through the log and seeing detailed comments of the 
 .. admonition:: Tip
 
    It's important to include a descriptive commit message. Such messages are visible in your local Git log, as well as in the commit history on GitHub. A good commit message allows you and your fellow developers to easily identify the changes made in a given commit.
+
+.. index:: ! git log
 
 ``git log`` shows the author of the commit, the date made, the comment, and a 40-character hash.
 This hash or value is a key for Git to refer to the version.
