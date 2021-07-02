@@ -241,9 +241,10 @@ interface.
 Step 3: Clone a Project from GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Pilot**: Go to Control's GitHub profile and find the communication-log repo.
-Click on the green *Clone or download* button. Use HTTPS (not SSH). Copy the
-url to your clipboard.
+**Pilot**: 
+   Go to Control's GitHub profile and find the communication-log repo.
+   Click on the green *Clone or download* button. Use HTTPS (not SSH). 
+   Copy the url to your clipboard.
 
 .. figure:: figures/studio/clone-button.png
    :alt: The clone button is on the right-hand side of a project's main page
@@ -306,8 +307,9 @@ username and click *Add Collaborator*.
 Step 5: Join the Project and Push
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Pilot**: You should receive an email invitation to join this repository.
-View and accept the invitation.
+Pilot: 
+   You should receive an email invitation to join this repository.
+   View and accept the invitation.
 
 .. note::
 
@@ -342,10 +344,11 @@ new second line.
 Step 6: Pull Pilot's Line and Add Another Line
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Control**: You might notice you don't have the second line of code in your
-copy of the project on your computer. Let's fix that. Go to the terminal and
-enter this command to pull down the updated code into your local git
-repository.
+Control: 
+   You might notice you don't have the second line of code in your
+   copy of the project on your computer. Let's fix that. Go to the terminal and
+   enter this command to pull down the updated code into your local git
+   repository.
 
 ::
 
@@ -753,15 +756,19 @@ Step 15: More Merge Conflicts!
 Let's turn the tables on the steps we just carried out, so Pilot can practice
 resolving merge conflicts.
 
-#. **Control and Pilot**: Confer to determine the particular lines in the code
-   that you will both change. Make different changes in those places.
-#. **Control**: Stage, commit, and push your changes.
-#. **Pilot**: Try to pull in Control's changes, and notice that there are merge
-   conflicts. Resolve these conflicts as we did above (ask Control for help, if
-   you're uncertain about the process). Then stage, commit, and push your
-   changes.
-#. **Control**: Pull in the changes that Pilot pushed, including the resolved
-   merge conflicts.
+#. **Control and Pilot**: 
+      Confer to determine the particular lines in the code
+      that you will both change. Make different changes in those places.
+#. **Control**: 
+      Stage, commit, and push your changes.
+#. **Pilot**: 
+      Try to pull in Control's changes, and notice that there are merge
+      conflicts. Resolve these conflicts as we did above (ask Control for help, if
+      you're uncertain about the process). Then stage, commit, and push your
+      changes.
+#. **Control**: 
+      Pull in the changes that Pilot pushed, including the resolved
+      merge conflicts.
 
 Merge conflicts are a part of the process of team development. Resolve them
 carefully in order to avoid bugs in your code.
