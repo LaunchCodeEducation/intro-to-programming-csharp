@@ -25,6 +25,17 @@ They can clone a remote repository by using the ``git clone <url>`` command.
 Github and other online Git systems give users the option to clone the repository through HTTPS or SSH depending on how their Github profile is set up.
 The ``<url>`` of the command is where the programmer adds the url to the repository that they are cloning. 
 
+``NEXT:  For some practice``
+-----------------------------
+   Let's have them clone a small VS project that is basically a for loop that runs through each item in the array
+   (5 items, already created)
+
+   Then have them create a branch that converts that array into a List
+   (keep the items)
+
+   Then they can merge the 2 branches and decide which one they want to keep (up to them)
+
+
 .. note::
 
    Throughout this book, HTTPS will be used for cloning repositories.
