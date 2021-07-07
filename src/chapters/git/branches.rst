@@ -111,6 +111,8 @@ To do so, the command is ``git checkout <branch name>``.
       * master
       quiz     
 
+.. _rename-branch:
+
 Renaming a Branch
 -------------------
 
