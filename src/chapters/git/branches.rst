@@ -174,6 +174,7 @@ We are going to create two new branches.
 Starting on your new ``pos-neg`` branch add the following code to your ``NumberChecks class`` below the ``EvenOrOddCheck`` method.
 
 .. sourcecode:: csharp
+   :lineno-start: 18
 
    //In the NumberChecks
    public static void PositiveOrNegative (double num)
@@ -201,6 +202,7 @@ In this branch we are going to add a method to check for a decimal point.
 In the ``NumberChecks`` class, add the following code below ``EvenOrOddCheck``:
 
 .. sourcecode:: csharp
+   :lineno-start: 18
 
    //In the NumberChecks
    public static void ContainsDecimal(string stringNum)
@@ -225,6 +227,19 @@ Before we move on to the next section, let's run one more ``git branch`` to chec
    * main
    pos-neg
 
+
+You have two new branches with new code added.  
+While we worked on these branches, the ``main`` branch was left undisturbed.  
+When we return to ``main``, we know that if will still work even if it doesn't have the new code we added in our branches.
+
+When me made our branches, each branch contained all the code from where it was branched off.
+In our case, we returned to the ``main`` branch to create ``pos-neg`` and ``dec-point``.  
+So both ``pos-neg`` and ``dec-point`` started with the same code that was already in the ``main`` branch.
+As we added new code to the branch, we were able to see how it would interact with the code on the ``main`` branch 
+without directly touching the ``main`` branch.  
+
+Our ``main`` branch is sparse comapred to our new branches, but the code on our ``main`` branch never broke while we worked on it.
+If you have a live app, branches are great for making updates or fixing bugs without pulling your app down.
 
 Check Your Understanding
 ------------------------
