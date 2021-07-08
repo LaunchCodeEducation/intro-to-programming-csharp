@@ -55,11 +55,31 @@ Back in your terminal, type ``git status``.
 Wow!  That's a lot of text for a your new file.  
 You saved your project on your computer, but let's commit it to your git.  
 
+
 .. admonition:: Note
 
-   If you notice, this commit has been made on the ``main`` branch. 
-   This is the default branch, which might be ``master`` on your machine.
-   We will learn how to :ref:`change the names of branches <rename-branch>` in an upcoming section .
+   **A note on the** ``main`` **branch** 
+
+   When you are using your terminal to create a repo on your own computer, you will often see
+   the ``master`` branch.   The ``main`` or ``master`` branch is your default branch.
+   
+   If you push your repo into GitHub, you may see that your ``master`` branch is now called ``main``.  
+   As of 2021, GitHub has renamed ``master`` as ``main``.  
+   Older repos will still have a ``master`` branch, while newer repos will have a ``main`` branch.  
+   Both ``master`` and ``main`` are the default branches for development and can be treated the same. 
+   The command ``git status`` can quickly help you see what the default branch is named and 
+   let you decide what you want to do about it.  
+
+   We will quickly :ref:`rename our default branch<rename-branch>` before we move on.
+   The git command ``git branch -m NEW-NAME-HERE`` is one way to change any branch name.
+
+   ::
+
+      Students-Computer:~ student$ git branch -m main
+      Students-Computer:~ student$ git status
+      On branch main
+
+
 
 
 Making Commits

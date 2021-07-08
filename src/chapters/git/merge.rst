@@ -83,7 +83,6 @@ Once you are happy with the resolved conflict, save, stage, add, and commit your
    [main 33975bb] conflicts resolved
 
 This is cause for celebration!  
-The numbers after ``main`` are the commit number created by your terminal.
 
 Merge conflicts are minor on small applications, but can cause issues with large enterprise applications.
 Even though the thought of ruining software can be scary, every programmer deals with a merge conflict during their career.
@@ -109,5 +108,5 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   If a programmer is on the branch ``test`` and wants to merge a branch called 
-   ``feature`` into ``master``, what steps should they take?
+   If a programmer is on the branch ``quiz-class`` and wants to merge a branch called 
+   ``feature`` into ``main``, what steps should they take?

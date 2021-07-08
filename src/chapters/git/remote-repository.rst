@@ -5,51 +5,73 @@ Local, Remote, GitHub, Oh My!
 -----------------------------
 
 So far, the book has covered how to setup a Git repository on the local machine, also known as **local development**.
-But, one of the benefits of using a VCS is storage of backups.
-So, what happens to the code base if something happens to the machine?
-That is where remote repositories come in.
-Instead of keeping a Git repository only on a local machine, the code base is in a **remote repository** and the programmers working on it keep copies on their local machine. 
+One of the benefits of using a VCS is storage of backups incase something happens 
+to your machine or you want to share your code with others.
+Instead of keeping a Git repository only on a local machine, the code base is in a **remote repository**, allowing any programmers working on it keep copies on their local machine. 
 
 To get started with remote repositories, create an account on `GitHub <https://www.github.com/>`_.
-From there, programmers can create a remote repository, view commit history, and report issues with the code.
- 
+From there, programmers can :ref:`create a remote repository<create-new-repo-demo>`, view commit history, and report issues with the code.
 
 Collaborating with Colleagues
 -----------------------------
 
-What if a programmer wants to start collaborating with their colleagues on a new project?
-They might need to start with the work that one of their colleagues has already done.
+If a programmer wants to start collaborating with their colleagues on a new project, they might need to start with the work that one of their colleagues has already done.
 In this particular case, the programmer has to import the work that is being stored in an online repository onto their local machine.
 
 They can clone a remote repository by using the ``git clone <url>`` command.
 Github and other online Git systems give users the option to clone the repository through HTTPS or SSH depending on how their Github profile is set up.
 The ``<url>`` of the command is where the programmer adds the url to the repository that they are cloning. 
 
-``NEXT:  For some practice``
------------------------------
-   Let's have them clone a small VS project that is basically a for loop that runs through each item in the array
-   (5 items, already created)
-
-   Then have them create a branch that converts that array into a List
-   (keep the items)
-
-   Then they can merge the 2 branches and decide which one they want to keep (up to them)
-
 
 .. note::
 
    Throughout this book, HTTPS will be used for cloning repositories.
 
+   TOKEN NOW:  https://www.youtube.com/watch?v=kHkQnuYzwoo
+
+In order to clone a repo, you will need to make a directory to store it.  Go ahead and create a ``learning-git`` repo.
+
+::
+
+   Students-Computer:~ student$ mkdir learning-git
+   Students-Computer:~ student$ cd learning-git
+
+Once you have the repo on your computer, ``clone this repo<REPO GOES HERE>``.
+
+
+::
+
+   Students-Computer:learning-git student$ git clone <url-here>
+   Cloning into 'learning-git'...
+   remote: Enumerating objects: 13, done.
+   remote: Counting objects: 100% (13/13), done.
+   remote: Compressing objects: 100% (10/10), done.
+   remote: Total 13 (delta 3), reused 13 (delta 3), pack-reused 0
+   Receiving objects: 100% (13/13), 4.77 KiB | 4.77 MiB/s, done.
+   Resolving deltas: 100% (3/3), done.
+   Students-Computer:learning-git student$
+
+
+**TODO** FORK AND CLONE
+
+   write about forking a repo (the C# repos)
+   cloning your own work
+   in the appendix - there is a section on forking
+
 Contributing to a Remote Repository
 -----------------------------------
 
-Now that the programmer has a profile on Github and a local copy of a remote repository, they start coding!
+Now that you have a profile on Github and a local copy of a remote repository, start coding!
+
+Open the repo you just cloned in Visual Studio.  Explore it, run it.  See what happens. 
+Go to the ``NumberChecks`` class and uncomment the ``EvenOrOddCheck`` method.  
+Run it again to make sure it works then save your project. 
 
 .. index:: ! remote repository commit
 
 .. index:: ! remote repository push
 
-Once they create a new feature, it is time to make a commit.
+Now it is time to make a commit.
 When working with a remote, the commit process has five steps:
 
 1. ``git status``
@@ -60,6 +82,56 @@ When working with a remote, the commit process has five steps:
 
 The fourth step uses the new command ``git push`` where the commit is pushed to the remote from the local.
 ``origin`` indicates that the commit does indeed go to the remote and ``master`` is the name of the branch that the commit goes to. 
+
+::
+
+   Students-Computer:learning-git student$ git status
+   Students-Computer:learning-git student$ git status
+   On branch main
+   Your branch is up to date with 'origin/main'.
+
+   Changes not staged for commit:
+   (use "git add <file>..." to update what will be committed)
+   (use "git checkout -- <file>..." to discard changes in working directory)
+
+         modified:   learning-git/NumberChecks.cs
+
+   no changes added to commit (use "git add" and/or "git commit -a")
+   Students-Computer:learning-git student$ git add .
+   Students-Computer:learning-git student$ git commit -m "EvenOrOddCheck active"
+   [main 72fb272] EvenOrOddCheck active
+    1 file changed, 1 insertion(+)
+   Students-Computer:learning-git student$ git push origin main
+   Counting objects: 4, done.
+   Delta compression using up to 4 threads.
+   Compressing objects: 100% (4/4), done.
+   Writing objects: 100% (4/4), 423 bytes | 423.00 KiB/s, done.
+   Total 4 (delta 2), reused 0 (delta 0)
+   remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+   To github.com:speudusa/learning-git.git
+      3163e4b..72fb272  main -> main
+   Students-Computer:learning-git student$ git log
+   commit 72fb2723b02841469bdb54e129145181e28fc5a1 (HEAD -> main, origin/main)
+   Author: Courtney Frey <cfrey@launchcode.org>
+   Date:   Thu Jul 8 16:18:22 2021 -0500
+
+      EvenOrOddCheck active
+
+
+
+Great job!  
+
+Now, you saw how easy it was to make changes to a repository and push them up.
+Since you are the only one working on this repo as we walkthrough this process, 
+you don't need to worry about interferring with the work of others.  
+
+However, you uncommented a large amount of code.  
+If you were working with a partner and they left that code commented out and built something else entirely, 
+what would happen if they pushed up their changes?  A mess.  That is what. 
+
+
+In the next section we will discuss how a way to avoid messes like that (in theory) by branching off the main branch.
+A good practice for creating new features or working collaboratively or try new features without breaking your current code.
 
 Check Your Understanding
 ------------------------------

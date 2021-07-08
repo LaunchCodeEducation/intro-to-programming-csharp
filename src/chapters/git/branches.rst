@@ -1,42 +1,50 @@
-Branches
-========
+Git Trees and Branches
+======================
 
 .. index:: ! branch
 
 Branching in Git
 ----------------
 
-So far this book has talked about Git's ability to store different versions of a code base.
-What if two programmers want to work on different features of the code base at the same time?
-What if you wanted to work together on creating a quiz, like you did for Assignment 1.
-They may want to start with the same version and then one programmer wants to change the first and second questions and the other wants to have ten questions total.
-It would not be effective for the two programmers to commit their changes to the repository at the same time.
-Instead, Git has branches.
-A **branch** is a separate version of the same code base.
+So far this book has talked about Git's ability to store different versions of a code base in time.  
+But what if you want to store different features of a code base in one place?  
+What if you want collaborate with another programmer on separate features for the same code base?
+
+This is another feature of using Git.  
+
+Let's say you were working with a fellow programmer to create an app that tests if an number is even or odd.
+Together you created a small app with a method that does just that.  Great!  
+Later, you were asked to create another method to do something else with the number.
+
+Before you get started coding, let's think about your current app.  It is functional.  
+Do you know if your new feature will work right away or could there be any breakage?
+That is not an easy question to answer.
+
+* * * * * *
+
+A great way to not have to worry about interfering with your currently functional code is to create a **branch**.
+A branch is a separate version of the same code base.  
 Like a branch on a tree, a branch in Git shares the same trunk as other branches, but is an individual.
-With branches, the two programmers could work on separate versions of the same website without interfering with each other's work.
-Besides collaboration, programmers use branches for storing and testing new features of software called **feature branches**.
+Branches are great for storing and testing new features of software called **feature branches**.
+Feature branches are great for working on a new feature without risking any potential failure or breakage of your main code base.
+
+Another great feature of branches is collaboration between programmers.
+With branches, two programmers could work on separate versions of the same code without interfering with each other's work.
+
+
+
+
+
+
+
+
 
 In the previous section, when checking the status, the top line was ``On branch master``. 
 The master branch is the *default branch* of the repository.
 Many programmers keep the live version of their code in the master branch.
 For that reason, major work should be done in a new branch, so it doesn't impact the live software.
 
-.. admonition:: Note
 
-   **A note on** ``main`` **branch vs.** ``master`` **branch.**
-
-   When you are using your terminal to create a repo on your own computer, you will often see
-   the ``master`` branch. 
-   
-   If you push your repo into GitHub, you may see that your ``master`` branch is now called ``main``.  
-   As of 2021, GitHub has renamed ``master`` as ``main``.  
-   Older repos will still have a ``master`` branch, while newer repos will have a ``main`` branch.  
-   Both ``master`` and ``main`` are the default branches for development and can be treated the same. 
-   The command ``git branch`` can quickly help you see what the default branch is named and 
-   let you decide what you want to do about it.  
-
-   We will cover how to rename branches in this section.
      
    
 .. figure:: figures/branches.png
