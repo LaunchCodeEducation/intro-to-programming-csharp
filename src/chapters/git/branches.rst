@@ -168,24 +168,33 @@ Update Your Code
 Before we move on to the next topic, merging your branches together.  We are going to add some code to our demo project.
 We are going to create two new branches.  
 
-``pos-neg`` branch
-^^^^^^^^^^^^^^^^^^^
+``pos-neg`` feature branch
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Starting on your new ``pos-neg`` branch add the following code to your ``NumberChecks class`` below the ``EvenOrOddCheck`` method.
+Starting on your new ``pos-neg`` branch add the following code to your ``NumberChecks`` class below the ``EvenOrOddCheck`` method.
 
-.. sourcecode:: csharp
-   :lineno-start: 18
+.. admonition:: Example
 
-   //In the NumberChecks
-   public static void PositiveOrNegative (double num)
-        {
-            if(num < 0)
-            {
-                Console.WriteLine("Your number is negative");
-            }
-        }
+   In the ``NumberChecks`` class add the following:
 
-   //In the Program.cs you will need to call your new "PositiveOrNegative" method
+   .. sourcecode:: csharp
+      :lineno-start: 18
+
+      public static void PositiveOrNegative (double num)
+         {
+               if(num < 0)
+               {
+                  Console.WriteLine("Your number is negative");
+               }
+         }
+
+   
+   
+   In ``Program.cs`` add the following below the "EvenOrOddCheck" method call.
+
+   .. sourcecode:: csharp
+
+      NumberChecks.PositiveOrNegative(inputNum);
 
 
 
@@ -193,27 +202,34 @@ Starting on your new ``pos-neg`` branch add the following code to your ``NumberC
 Run the program to make sure it works.  Save your code. Then stage it for a commit.  
 Do not push it at this moment.  We will work on that step in the studio.  
 
-``dec-point`` branch
-^^^^^^^^^^^^^^^^^^^^^
+``dec-point`` feature branch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Return to your ``main`` branch.  The code from your ``pos-neg`` branch won't be there and that's good.
 In this branch we are going to add a method to check for a decimal point.
 
 In the ``NumberChecks`` class, add the following code below ``EvenOrOddCheck``:
 
-.. sourcecode:: csharp
-   :lineno-start: 18
+.. admonition:: Example
 
-   //In the NumberChecks
-   public static void ContainsDecimal(string stringNum)
-        { 
-            if (stringNum.Contains("."))
-            {
-                Console.WriteLine("Your number contains a decimal point.");
-            }
-        }
+   In the ``NumberChecks`` class add the following:
 
-        //In the Program.cs you will need to call your new "ContainsDecimal" method
+   .. sourcecode:: csharp
+      :lineno-start: 18
+
+      public static void ContainsDecimal(string stringNum)
+         { 
+               if (stringNum.Contains("."))
+               {
+                  Console.WriteLine("Your number contains a decimal point.");
+               }
+         }
+
+   In ``Program.cs`` add the following below the "EvenOrOddCheck" method call.
+   
+   .. sourcecode:: csharp
+
+      NumberChecks.ContainsDecimal(input);
 
 Make sure you test and run this before saving.  Once saved, stage and commit your work.
 Again, don't push it at this time.  Return to the ``main`` branch.
