@@ -1,5 +1,5 @@
-Git Trees and Branches
-======================
+Git Branches
+============
 
 .. index:: ! branch
 
@@ -17,8 +17,8 @@ Together you created a small app with a method that does just that.  Great!
 Later, you were asked to create another method to do something else with the number.
 
 Before you get started coding, let's think about your current app.  It is functional.  
-Do you know if your new feature will work right away or could there be any breakage?
-That is not an easy question to answer.
+Do you know if your new feature will work right away? Could there be any breakage?
+Those are not easy questions to answer.
 
 A great way to not have to worry about interfering with your currently functional code is to create a **branch**.
 A branch is a separate version of the same code base.  
@@ -32,7 +32,7 @@ With branches, two programmers could work on separate versions of the same code 
 
 In the previous section, when checking the status, the top line was ``On branch main``. 
 The main branch is the *default branch* of the repository.  
-Many programmers keep the live version of their code in the master branch.
+Many programmers keep the live version of their code in the main branch.
 For that reason, major work should be done in a new branch, so it doesn't impact the live software.
 
    
@@ -68,10 +68,10 @@ Creating a New Branch
 ---------------------
 
 You are on main and you want to start building a new feature in a new branch.
-Your first step would be to create a new branch for their work.
+Your first step would be to create a new branch for your work.
 
 To create a branch, the command is ``git checkout -b <branch name>``.
-By using this command, not only is a new branch created, but also the programmer switches to their new branch.
+By using this command, not only is a new branch created, but also you switch to the new branch.
 
 .. admonition:: Example
 
@@ -92,7 +92,7 @@ By using this command, not only is a new branch created, but also the programmer
 Switching to an Existing Branch
 -------------------------------
 
-If the branch already exists, the programmer may want to switch to that branch.
+If the branch already exists, you may want to switch to that branch.
 To do so, the command is ``git checkout <branch name>``.  Let's switch back to ``main`` real fast.
 
 .. admonition:: Example
@@ -108,20 +108,49 @@ To do so, the command is ``git checkout <branch name>``.  Let's switch back to `
       * main
       num-check     
 
+.. admonition:: Warning!
+
+   Sometimes when switching between branches, 
+   you might see a lot of red squiggly lines underneath code you were confident worked when you 
+   left your branch.  
+
+   Give your IDE a few seconds to catch up and they should go away.  
+
 .. _rename-branch:
 
 Renaming a Branch
 -------------------
 
-Sometimes you might want to rename a branch.  You can do that in a few ways, with a few steps each.
+Sometimes you might want to rename a branch.  You can do that in a few ways to do this.
+While we are currently on our ``main`` branch, let's rename ``num-check`` to ``pos-neg``.
+
+.. admonition:: Example  
+   
+   **Option 1 allows you to rename a branch from another branch.**
+      
+   - Step 1: If not on ``main``, checkout your ``main`` branch:  ``git checkout main``.
+   - Step 2: You will then use the following command: ``git branch -m old-name new-name``
+
+   ::
+
+      Students-Computer:~ student$ git checkout main
+      Students-Computer:~ student$ git branch
+      * main
+      num-check
+      Students-Computer:~ student$ git branch -m num-check pos-neg
+      Students-Computer:~ student$ git branch
+      * main
+      pos-neg
+
+
+Ta-da! Do quick branch check to verify your changes.  
 
 .. admonition:: Example 
 
-   Let's rename ``num-check`` to ``pos-neg`` to remind us what the purpose of this branch is.
+   **Option 2 renames a branch while on that branch.**
 
-   **Option 1:** 
-      - Checkout the branch you want to rename:  ``git checkout old-name``  
-      - Use the following command: ``git branch -m new-name``
+   - Step 1: Checkout the branch you want to rename:  ``git checkout old-name``  
+   - Step 2: Use the following command: ``git branch -m new-name``
 
    ::
    
@@ -137,28 +166,6 @@ Sometimes you might want to rename a branch.  You can do that in a few ways, wit
       * pos-neg
 
 
-
-Ta-da! Do quick branch check to verify your changes.  
-
-.. admonition:: Example
-
-   Option 2 renames a branch while on a different branch.
-   
-   **Option 2:**  
-      - Step 1: Checkout your ``main`` branch:  ``git checkout main``.
-      - Step 2: You will then use the following command: ``git branch -m old-name new-name``
-
-   ::
-
-      Students-Computer:~ student$ git checkout main
-      Students-Computer:~ student$ git branch
-      * main
-      num-check
-      Students-Computer:~ student$ git branch -m num-check pos-neg
-      Students-Computer:~ student$ git branch
-      * main
-      pos-neg
-
 Remember, that names are up to you.  
 Just like with commit messages, create branch names that will help you remember the branch's purpose.  
 
@@ -167,11 +174,15 @@ Update Your Code
 
 Before we move on to the next topic, merging your branches together.  We are going to add some code to our demo project.
 We are going to create two new branches.  
+If you did not create a new branch called ``pos-neg`` by this point, go ahead and make one. 
+
+.. _pos-neg-branch:
 
 ``pos-neg`` feature branch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Starting on your new ``pos-neg`` branch add the following code to your ``NumberChecks`` class below the ``EvenOrOddCheck`` method.
+Starting on your new ``pos-neg`` branch, 
+add the following code to your ``NumberChecks`` class below the ``EvenOrOddCheck`` method.
 
 .. admonition:: Example
 
@@ -193,6 +204,7 @@ Starting on your new ``pos-neg`` branch add the following code to your ``NumberC
    In ``Program.cs`` add the following below the "EvenOrOddCheck" method call.
 
    .. sourcecode:: csharp
+      :lineno-start: 15
 
       NumberChecks.PositiveOrNegative(inputNum);
 
@@ -200,15 +212,20 @@ Starting on your new ``pos-neg`` branch add the following code to your ``NumberC
 
 
 Run the program to make sure it works.  Save your code. Then stage it for a commit.  
-Do not push it at this moment.  We will work on that step in the studio.  
+Do NOT push it at this moment.  We will work on that step in the studio.  
+
 
 ``dec-point`` feature branch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Return to your ``main`` branch.  The code from your ``pos-neg`` branch won't be there and that's good.
-In this branch we are going to add a method to check for a decimal point.
+In this branch we are going to add a method to check for a decimal point and nothing else.
+
+Create a new branch called ``dec-point``.  On this branch you will add the following code:
 
 In the ``NumberChecks`` class, add the following code below ``EvenOrOddCheck``:
+
+.. _dec-point-branch:
 
 .. admonition:: Example
 
@@ -217,22 +234,27 @@ In the ``NumberChecks`` class, add the following code below ``EvenOrOddCheck``:
    .. sourcecode:: csharp
       :lineno-start: 18
 
-      public static void ContainsDecimal(string stringNum)
-         { 
-               if (stringNum.Contains("."))
-               {
-                  Console.WriteLine("Your number contains a decimal point.");
-               }
-         }
+      public static void ContainsDecimalPoint(string str, double num)
+        {
+            if (!str.Contains("."))
+            {
+                NumberChecks.EvenOrOddCheck(num);
+            }
+            else
+            {
+                Console.WriteLine("Your number contains a decimal point.");
+            }
+        }
 
-   In ``Program.cs`` add the following below the "EvenOrOddCheck" method call.
-   
+   In ``Program.cs`` replace the "EvenOrOddCheck" method call with the following:
+
    .. sourcecode:: csharp
+      :lineno-start: 15
 
-      NumberChecks.ContainsDecimal(input);
+      NumberChecks.ContainsDecimal(input, inputNum);
 
 Make sure you test and run this before saving.  Once saved, stage and commit your work.
-Again, don't push it at this time.  Return to the ``main`` branch.
+Again, do NOT push it at this time.  Return to the ``main`` branch.
 
 Before we move on to the next section, let's run one more ``git branch`` to check on our new branches.
 
@@ -244,18 +266,24 @@ Before we move on to the next section, let's run one more ``git branch`` to chec
    pos-neg
 
 
-You have two new branches with new code added.  
+You have two new branches that both contain new code.  
 While we worked on these branches, the ``main`` branch was left undisturbed.  
-When we return to ``main``, we know that if will still work even if it doesn't have the new code we added in our branches.
+When we return to ``main``, we know that the basic code we started with still works.
 
 When me made our branches, each branch contained all the code from where it was branched off.
 In our case, we returned to the ``main`` branch to create ``pos-neg`` and ``dec-point``.  
-So both ``pos-neg`` and ``dec-point`` started with the same code that was already in the ``main`` branch.
-As we added new code to the branch, we were able to see how it would interact with the code on the ``main`` branch 
-without directly touching the ``main`` branch.  
+So both ``pos-neg`` and ``dec-point`` started with the same code base originally in the ``main`` branch.
+Each branch allowed us to create code in an environment isolated from the code base.
+This keeps the code base safe and functional while you experiment with other code.
 
-Our ``main`` branch is sparse comapred to our new branches, but the code on our ``main`` branch never broke while we worked on it.
-If you have a live app, branches are great for making updates or fixing bugs without pulling your app down.
+Our ``main`` branch is sparse comapred to our new branches, 
+but the code on our ``main`` branch never broke while we worked on it.  
+You also have two new methods that you know can work with your ``main`` branch code.  
+If you have a live app, branches are great for making updates or 
+fixing bugs without pulling your app down.
+
+
+Now the question is, how do you get that new code into your ``main`` branch?
 
 Check Your Understanding
 ------------------------

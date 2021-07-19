@@ -14,7 +14,7 @@ To get started with a git repository (or "repo" for short), the programmer must 
 Let's walkthrough the steps together using the terminal and a text editor.
 
 To create a git repository, you will need to navigate to your project directory using the terminal.
-Either selects a current directory or makes one.  Let's make one called ``homework``.
+Either select a current directory or make one.  Let's make one called ``homework``.
 Once created and you are inside your project directory, we are going to initiate git.
 
 Go ahead and use the command ``git init``, like so:
@@ -31,9 +31,9 @@ Now you are ready to code away!
 
 .. index:: ! git commit
 
-Let's now add a some code or files to this project.  
+Let's add some code or files to this project.  
 Since we are using the terminal, let's create a text file by using ``touch my_project.txt``.  
-Once that is done, open your new file and type your name and save your file.
+Once that is done, open your new file, type your name, and save your file.
 
 Back in your terminal, type ``git status``.
 
@@ -52,26 +52,23 @@ Back in your terminal, type ``git status``.
    nothing added to commit but untracked files present (use "git add" to track)
    Students-Computer:homework student$
 
-Wow!  That's a lot of text for a your new file.  
-You saved your project on your computer, but let's commit it to your git.  
+Wow!  That's a lot of text for your new file.  
+You saved your project on your computer, but let's commit it to your Git.  
 
 
 .. admonition:: Note
 
-   **A note on the** ``main`` **branch** 
+   **A note on the** ``default`` **branch** 
 
-   When you are using your terminal to create a repo on your own computer, you will often see
-   the ``master`` branch.   The ``main`` or ``master`` branch is your default branch.
+   When using a VCS, the first branch created is your ``default`` branch.  
+   On your computer, it is often named the ``master`` branch.  
+   Later we will be working with GitHub, which is an online repository that is commonly used when collabotating with others.
+   GitHub's default branch is called ``main``.  
+
+   The examples in this chapter will be using ``main`` as the default branch.
    
-   If you push your repo into GitHub, you may see that your ``master`` branch is now called ``main``.  
-   As of 2021, GitHub has renamed ``master`` as ``main``.  
-   Older repos will still have a ``master`` branch, while newer repos will have a ``main`` branch.  
-   Both ``master`` and ``main`` are the default branches for development and can be treated the same. 
-   The command ``git status`` can quickly help you see what the default branch is named and 
-   let you decide what you want to do about it.  
 
-   We will quickly :ref:`rename our default branch<rename-branch>` before we move on.
-   The git command ``git branch -m NEW-NAME-HERE`` is one way to change any branch name.
+   If you would like to :ref:`rename your branch<rename-branch>` to match, the git command is ``git branch -m NEW-NAME-HERE``.
 
    ::
 
@@ -86,9 +83,9 @@ Making Commits
 --------------
 
 Usually, you will have spent more time coding and saving, and will have a larger amount of code to stage and commit. 
-For the sake of our walkthrough, we are going to keep things a little more simple.
+For the sake of our walkthrough, we are going to keep things shorter and simpler.
 
-So we added our first file, ``my_project.txt``.  It might be a good time to make a **commit** to your repository.  
+Earlier we added our first file, ``my_project.txt``, to our ``homework`` directory.  It might be a good time to make a **commit** to your repository.  
 A commit is a record of changes you made to your repository.
 It allows you to document your progress by creating a time-stamp with a message that you, or others, can reference.
 When you look at a timeline of commits, you should be able to see the progress of development.
@@ -109,7 +106,7 @@ If you have created the Git repository and are ready to commit, you can do so by
 
 .. note::
 
-   Git does have a simple commit command, however, making a proper commit requires that the programmers follow a longer procedure than just one command.
+   Git does have a simple commit command, however, making a proper commit requires that you follow a longer procedure than just one command.
 
 .. index:: ! stages of a commit
 
@@ -118,12 +115,13 @@ The Four Stages of Making a ``commit``
 
 The procedure for making a commit to a Git repository includes four stages.  
 
-#. ``git status`` gives the programmer information about files that have been changed.
-#. ``git add`` allows the programmers to add specific or all changed files to a commit.
-#. ``git commit -m MESSAGE`` creates the new commit with the files that the programmer added, with a message describing the changes included in the commit. Here, ``MESSAGE`` should be a descriptive message within double-quotes.
+#. ``git status`` gives you information about files that have been changed.
+#. ``git add`` allows you to add specific or all changed files to a commit.
+#. ``git commit -m MESSAGE`` creates the new commit with the files that you added, 
+   with a message describing the changes included in the commit. Here, ``MESSAGE`` should be a descriptive message within double-quotes.
 #. ``git log`` displays a log of every commit in the repository.
 
-If the steps above are followed correctly, the programmer will find their latest commit at the top of the log.
+If the steps above are followed correctly, you will find your latest commit at the top of the log.
 
 Here is how the process will look in the terminal:
 
@@ -135,7 +133,7 @@ Here is how the process will look in the terminal:
    No commits yet
 
    Untracked files:
-      (use "git add <file>..." to include wht will be committed)
+      (use "git add <file>..." to include what will be committed)
 
          my_project.txt
    
@@ -152,7 +150,7 @@ Here is how the process will look in the terminal:
 
 
 That is even more text in your terminal.  
-What it all comes down to is that you, added your file with the ``git add`` command, 
+What it all comes down to is that you added your file with the ``git add`` command, 
 then committed it to your repo using ``git commit -m "...message here..."``.  
 This commit created a time stamp of your work.  You changed 1 file, by inserting 1 item.
 Your changes will vary based on how much you add and save before committing.

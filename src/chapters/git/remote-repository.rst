@@ -5,7 +5,7 @@ Local, Remote, GitHub, Oh My!
 -----------------------------
 
 So far, the book has covered how to setup a Git repository on the local machine, also known as **local development**.
-One of the benefits of using a VCS is storage of backups incase something happens 
+One of the benefits of using a VCS is storage of backups in case something happens 
 to your machine or you want to share your code with others.
 Instead of keeping a Git repository only on a local machine, the code base is in a **remote repository**, allowing any programmers working on it keep copies on their local machine. 
 
@@ -61,31 +61,30 @@ Once you have the repo on your computer, ``clone this repo<REPO GOES HERE>``.
 Contributing to a Remote Repository
 -----------------------------------
 
-Now that you have a profile on Github and a local copy of a remote repository, start coding!
+Now that you have a profile on Github and a local copy of a remote repository, let's start coding!
 
 Open the repo you just cloned in Visual Studio.  Explore it, run it.  See what happens. 
 Go to the ``NumberChecks`` class and uncomment the ``EvenOrOddCheck`` method.  
-Run it again to make sure it works then save your project. 
+Run it again to make sure it works. Then, save your project. 
 
 .. index:: ! remote repository commit
 
 .. index:: ! remote repository push
 
 Now it is time to make a commit.
-When working with a remote, the commit process has five steps:
+When working with a remote repo, the commit process has five steps:
 
 1. ``git status``
 2. ``git add``
 3. ``git commit``
-4. ``git push origin master``
+4. ``git push origin main``
 5. ``git log``
 
 The fourth step uses the new command ``git push`` where the commit is pushed to the remote from the local.
-``origin`` indicates that the commit does indeed go to the remote and ``master`` is the name of the branch that the commit goes to. 
+``origin`` indicates that the commit does indeed go to the remote and ``main`` is the name of the branch that the commit goes to. 
 
 ::
 
-   Students-Computer:learning-git student$ git status
    Students-Computer:learning-git student$ git status
    On branch main
    Your branch is up to date with 'origin/main'.

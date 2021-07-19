@@ -3,15 +3,15 @@
 What is Git?
 ============
 
+Git is a **Version Control System (VCS)** and is prevalent amongst programmers and corporations.
+
 Version Control Systems
 -----------------------
 
 A version control system (VCS) is a system for tracking changes to a code base and storing each version.
 Version control systems assist programmers with keeping backups and a history of the revisions made to the code base over time.
-With that history, programmers can roll back to a version without a particular bug.
+With that history, programmers can roll back to a version without a particular bug or breakage in the code base.
 A VCS also enables collaboration between programmers as they can work on different versions of a code base and share their work. 
-
-Git is one VCS and is prevalent amongst programmers and corporations.
 
 .. index:: ! repository, ! commit
 
@@ -23,7 +23,7 @@ When a programmer updates the repository, it means they are making a **commit**.
 Getting Started with Git
 ------------------------
 
-In order to get started with Git, you need to install :ref:`Git <git-install>` on your machine and :ref:`install Visual Studio <vs-setup>`.
+In order to get started with Git, you need to install :ref:`Git <git-install>` and :ref:`install Visual Studio <vs-setup>` on your machine.
 
 Check Your Understanding
 ------------------------
