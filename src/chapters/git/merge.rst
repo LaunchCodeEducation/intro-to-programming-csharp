@@ -1,6 +1,16 @@
 Merging in Git
 ==============
 
+Before we dive into merging, let's congradulate you on your local development skills.
+If you have been coding along, you should have a code base with three branches.
+This is an example of local development.  
+Creating branches is great for trying out new ideas in your own code and is NOT limited to only working with others.
+As you work on assignments and larger projects, consider working with branches when it comes to testing new ideas.
+
+Looking at our code base, we have three branches that all work.  
+Best practice is to have one branch for your code base.  
+In order to do that, we need to merge our feature branches into our ``main`` branch.
+
 .. index:: ! merge, ! merge conflict, ! stash
 
 How to Merge
@@ -118,6 +128,10 @@ or the branch we want to merge in.
 When they are in conflict, you get to decided which lines you want to keep.
 Each IDE has its own way to take the ``HEAD`` (current) version, ``dec-point`` (incoming) version or both versions.
 
+.. admonition:: Note
+
+   You are still able to edit your code.  It is NOT frozen.  
+
 Let's look at our code and think about what changes we want to keep.
 We want to merge in dec-point, so what is dec-point doing that we like and how can we incorporate it into our code?
 
@@ -158,7 +172,7 @@ Should look like this when you are done:
    >>>>>>> dec-point
 
 We now have two properly formatted methods. Fantastic! 
-Now we need to decide how which changes to keep.  
+Now we need to decide which changes to keep.  
 In this instance, select ``Accept Both`` or ``Take both``.
 Now the ``NumberChecks`` class has three separate methods.  All have the correct number of brackets.
 
@@ -178,7 +192,8 @@ If you remember the  ``ContainsDecimal`` method we created in the ``dec-point`` 
 The ``ContainsDecimal`` method will call the ``EvenOrOddCheck`` method.
 We do not need to call the ``EvenOrOddCheck`` method in the ``Main`` method.
 
-Let's copy ``NumberChecks.PositiveOrNegative`` and paste it below ``NumberChecks.ContainsDecimal``.
+Let's type ``NumberChecks.PositiveOrNegative(inputNum)`` below ``NumberChecks.ContainsDecimal(input, inputNum)``.
+Then delete ``NumberChecks.ContainsDecimalPoint`` and ``EvenOrOddCheck`` methods from the ``HEAD`` section.
 
 .. sourcecode:: csharp
 

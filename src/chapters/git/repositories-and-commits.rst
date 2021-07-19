@@ -55,6 +55,7 @@ Back in your terminal, type ``git status``.
 Wow!  That's a lot of text for your new file.  
 You saved your project on your computer, but let's commit it to your Git.  
 
+.. _rename-branch:
 
 .. admonition:: Note
 
