@@ -34,12 +34,13 @@ credentials across multiple websites. (You know who you are. Stop doing that!)
 In an effort to boost account security, GitHub changed its policy. Users must now
 create a *Personal Access Token* or an *SSH key* to verify their identity.
 
+.. index:: personal access token, ! personal access token setup 
+
 Setting up a token for your account is fairly straightforward.
 
 Create a Personal Access Token (PAT)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. index:: personal access token
+.. _personal-access-token:
 
 To use HTTPS to push and pull from GitHub, users must create a
 **personal access token**. A PAT takes the place of a password, and the token
@@ -71,6 +72,7 @@ carefully.
 
    There's no harm in selecting more options, but you won't need any of them
    for this course.
+
 #. After you generate your PAT in step 8, *copy and save it somewhere safe*!
    Your new PAT will NOT be an easy-to-remember sequence of characters (that's
    the whole point), so you need to record it somewhere.
@@ -78,6 +80,7 @@ carefully.
    If you use a password manager, that's a perfect place to keep your PAT.
    If you use an unsecured spreadsheet or a folded piece of paper, you want to
    break that habit now.
+
 #. If you will be pushing and pulling from a repository multiple times in
    quick succession, you can save your PAT in memory for a short time. Run the
    command:
@@ -90,8 +93,15 @@ carefully.
    and PAT. It will then remember your credentials for a certain amount of
    time. In the example above, ``timeout=3600`` saves your information for 1
    hour (3600 seconds). You can adjust the amount of time up or down as needed.
+
 #. **Mac Users**: At the bottom of the PAT documentation page, you can find
    some OPTIONAL instructions for saving your PAT in the MacOS *Keychain* app.
+
+
+Personal Access Token Resources:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- `Video Walkthrough of setting up and using a personal access token <https://www.youtube.com/watch?v=kHkQnuYzwoo>`_.
+- `Video for creating personal access tokens <https://www.youtube.com/watch?v=PMP3RmhkzkA>`_.
 
 Optional: The SSH Key
 ---------------------

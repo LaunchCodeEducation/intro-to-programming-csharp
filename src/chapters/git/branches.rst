@@ -36,7 +36,7 @@ Many programmers keep the live version of their code in the main branch.
 For that reason, major work should be done in a new branch, so it doesn't impact the live software.
 
    
-.. figure:: figures/branches.png
+.. figure:: figures/branches-copy.png
    :alt: Diagram depicting two branches coming off of the main branch.
 
 Checking on Your Branches
@@ -63,6 +63,8 @@ Even if you haven't added any branches yet, you can still use this command.
 
 
 .. index:: ! creating new branch
+
+.. _new-branch:
 
 Creating a New Branch
 ---------------------

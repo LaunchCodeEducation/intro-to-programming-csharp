@@ -19,7 +19,7 @@ Once created and you are inside your project directory, we are going to initiate
 
 Go ahead and use the command ``git init``, like so:
 
-.. sourcecode:: bash
+:: 
 
    Students-Computer:~ student$ mkdir homework
    Students-Computer:~ student$ cd homework

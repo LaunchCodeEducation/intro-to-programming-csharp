@@ -127,6 +127,7 @@ When the code is ready, the pull request is merged and closed. The code is then 
    :alt: A merged pull request.
    :height: 500px
 
+.. _forking:
 
 Forking a Repository at GitHub
 ------------------------------

@@ -36,7 +36,7 @@ In order to clone a repo, you will need to make a directory to store it.  Go ahe
    Students-Computer:~ student$ mkdir learning-git
    Students-Computer:~ student$ cd learning-git
 
-Once you have the repo on your computer, ``clone this repo<REPO GOES HERE>``.
+Once you have the repo on your computer, ``clone this-repo<REPO GOES HERE>``.
 
 
 ::
@@ -52,11 +52,16 @@ Once you have the repo on your computer, ``clone this repo<REPO GOES HERE>``.
    Students-Computer:learning-git student$
 
 
-**TODO** FORK AND CLONE
+.. admonition:: Fork or Clone?
 
-   write about forking a repo (the C# repos)
-   cloning your own work
-   in the appendix - there is a section on forking
+   When working with LaunchCode GitHub repositories, 
+   you will want to fork the repository rather than 
+   clone it.
+
+   Forking allows you to copy a project and modify it on a unique timeline.
+   Meaning that, once forked then cloned, any changes you make will only affect this forked version.
+
+   The :ref:`following guide<forking>` will help you with the forking process.
 
 Contributing to a Remote Repository
 -----------------------------------
