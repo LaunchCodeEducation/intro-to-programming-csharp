@@ -153,7 +153,7 @@ This allows the developer to see the exception, but will not print it to the con
 In this example, we created a static field ``absoluteZero`` to be our point of comparison.
 The constructor will evaluate the validity of incoming input with an ``if/else`` block.
 
-This example is also provided in the ``Unit1-TempExceptions`` project in this `repo <https://github.com/LaunchCodeEducation/csharp-web-dev-lsn9exceptions>`__.
+This example is also provided in the ``Unit1-TempExceptions`` project in this `repo <https://github.com/LaunchCodeEducation/csharp-web-dev-exceptions>`__.
 Clone this repo and build along.  
 
 The program now provides a plan for what to do in the event that bad data is passed into a class's field. 
