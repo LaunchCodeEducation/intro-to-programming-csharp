@@ -32,6 +32,15 @@ For that reason, major work should be done in a new branch, so it doesn't impact
    This is intentional.  As of this writing, the change in language is only with GitHub repositories.  Bash and Powershell still use ``master``. 
    You can read more about this in the `GitHub documentation <https://docs.github.com/en/github/getting-started-with-github/github-glossary#main>`_.
 
+   If your installed version of ``git`` gives the default branch a name other
+   than ``main``, you can rename it with the command:
+
+   ::
+
+      $ git branch -m old-branch-name main
+
+   In this case, ``old-branch-name`` becomes ``main``.
+
 .. figure:: figures/branches.png
    :alt: Diagram depicting two branches coming off of the main branch.
 
