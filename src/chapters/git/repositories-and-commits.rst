@@ -59,7 +59,7 @@ Here is how the process will look in the terminal:
 ::
 
    Students-Computer:homework student$ git status
-   On branch master
+   On branch main
 
    Initial commit
 
@@ -71,7 +71,7 @@ Here is how the process will look in the terminal:
    nothing added to commit but untracked files present (use "git add" to track)
    Students-Computer:homework student$ git add .
    Students-Computer:homework student$ git commit -m "My first commit"
-    [master (root-commit) 2c1e0af] My first commit
+    [main (root-commit) 2c1e0af] My first commit
      1 file changed, 1 insertion(+)
      create mode 100644 learning-git.js
    Students-Computer:homework student$ git log

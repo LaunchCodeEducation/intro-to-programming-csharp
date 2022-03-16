@@ -7,7 +7,7 @@ How to Merge
 ------------
 
 A **merge** in Git is when the code in two branches are combined in the repository.
-The command to merge a branch called ``test`` into ``master`` is ``git merge test``.
+The command to merge a branch called ``test`` into ``main`` is ``git merge test``.
 Before running the merge command, the programmer should make sure they are on the branch they want to merge into!
 
 Merge Conflicts
@@ -16,7 +16,7 @@ Merge Conflicts
 This process is often seamless.
 In the example in the previous section, a programmer created a branch to change the questions 1 and 2 and the other programmer added more questions, but didn't update their 1 and 2.
 Because the both programmers have questions 1 and 2, but not the same questions 1 and 2 there will be a merge conflict.  
-The conflict arrises because previously existing lines of code were altered between the two branches.
+The conflict arises because previously existing lines of code were altered between the two branches.
 A **merge conflict** is when a change was made to the same line of code on both branches.
 Git doesn't know which change to accept, so it is up to the programmers to resolve it.
 Merge conflicts are minor on small applications, but can cause issues with large enterprise applications.

@@ -13,6 +13,8 @@ We will use our new terminal powers to move through the Git exercises.
 #. Add "Hello World!" to the file called ``exercises.txt``.
 #. Commit your local changes following the same steps that you used for step 4.
 #. View and screenshot the result when you use ``git log``. Make note of what you see!
+#. If your default branch is not main try changing it with ``git branch -m master main``.
+#. Check that you successfully changed the name with ``git branch``.
 
 Setting up a Github Account
 ---------------------------

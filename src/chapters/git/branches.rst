@@ -17,38 +17,19 @@ Like a branch on a tree, a branch in Git shares the same trunk as other branches
 With branches, the two programmers could work on separate versions of the same website without interfering with each other's work.
 Besides collaboration, programmers use branches for storing and testing new features of software called **feature branches**.
 
-In the previous section, when checking the status, the top line was ``On branch master``. 
-The master branch is the default branch of the repository.
-Many programmers keep the live version of their code in the master branch.
+In the previous section, when checking the status, the top line was ``On branch main``. 
+The main branch is the default branch of the repository.
+Many programmers keep the live version of their code in the main branch.
 For that reason, major work should be done in a new branch, so it doesn't impact the live software.
 
-.. admonition:: Note
-
-   GitHub is currently transitioning the name ``master`` to ``main``.  
-   Older repos will still have a ``master`` branch, while newer repos will have a ``main`` branch.  
-   Both ``master`` and ``main`` are the default branches for development and can be treated the same.  
-     
-   While you use this textbook, you may notice that your repos use ``main`` while the examples use ``master``.
-   This is intentional.  As of this writing, the change in language is only with GitHub repositories.  Bash and Powershell still use ``master``. 
-   You can read more about this in the `GitHub documentation <https://docs.github.com/en/github/getting-started-with-github/github-glossary#main>`_.
-
-   If your installed version of ``git`` gives the default branch a name other
-   than ``main``, you can rename it with the command:
-
-   ::
-
-      $ git branch -m old-branch-name main
-
-   In this case, ``old-branch-name`` becomes ``main``.
-
-.. figure:: figures/branches.png
+.. figure:: figures/branches-copy.png
    :alt: Diagram depicting two branches coming off of the main branch.
 
 
 Creating a New Branch
 ---------------------
 
-A programmer is on master and they want to start building a new feature in a new branch.
+A programmer is on main and they want to start building a new feature in a new branch.
 Their first step would be to create a new branch for their work.
 
 To create a branch, the command is ``git checkout -b <branch name>``.

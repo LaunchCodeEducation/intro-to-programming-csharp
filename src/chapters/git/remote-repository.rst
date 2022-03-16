@@ -29,6 +29,40 @@ The ``<url>`` of the command is where the programmer adds the url to the reposit
 
    Throughout this book, HTTPS will be used for cloning repositories.
 
+Renaming the Default Branch
+---------------------------
+
+When we run ``git init`` to start a new repository, part of the process creates
+a single, default branch. We can see its name by running the command
+``git branch``.
+
+.. sourcecode:: bash
+   :linenos:
+
+   $ git branch
+   * main
+
+For the examples in this book, we refer to the default branch as ``main``.
+However, depending on the Git settings on your computer, you might see ``master``. 
+This won't affect the performance of your project in any way.
+That said, GitHub defaults to ``main`` for all new repositories. Older repos will still 
+have a ``master`` branch. 
+     
+As of this writing, Bash and Powershell still use ``master``. 
+You can read more about this in the `GitHub documentation <https://github.com/github/renaming>`_.
+To keep our work clear, we should match our local and remote branch names.
+
+.. admonition:: Try It!
+
+   If your installed version of Git names the default branch something other
+   than ``main``, change it with the command:
+
+   .. sourcecode:: bash
+
+      $ git branch -m old-branch-name main
+
+   In this case, ``old-branch-name`` becomes ``main``.
+
 Contributing to a Remote Repository
 -----------------------------------
 
@@ -40,11 +74,11 @@ When working with a remote, the commit process has five steps:
 1. ``git status``
 2. ``git add``
 3. ``git commit``
-4. ``git push origin master``
+4. ``git push origin main``
 5. ``git log``
 
 The fourth step uses the new command ``git push`` where the commit is pushed to the remote from the local.
-``origin`` indicates that the commit does indeed go to the remote and ``master`` is the name of the branch that the commit goes to. 
+``origin`` indicates that the commit does indeed go to the remote and ``main`` is the name of the branch that the commit goes to. 
 
 Check Your Understanding
 ------------------------------
