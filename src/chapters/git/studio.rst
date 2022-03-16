@@ -272,8 +272,8 @@ commit your change.
 ::
 
    $ git status
-   On branch master
-   Your branch is up-to-date with 'origin/master'.
+   On branch main
+   Your branch is up-to-date with 'origin/main'.
    nothing to commit, working directory clean
    $ git add .
    $ git commit -m 'Added second line to log.'
@@ -282,7 +282,7 @@ Now we need to push up your changes so Control can use them as well.
 
 ::
 
-   $ git push origin master
+   $ git push origin main
    ERROR: Permission to chrisbay/communication-log.git denied to pilot.
    fatal: Could not read from remote repository.
 
@@ -327,7 +327,7 @@ Now let's go enter that command again to push up our code.
 
 ::
 
-   $ git push origin master
+   $ git push origin main
    Counting objects: 9, done.
    Delta compression using up to 4 threads.
    Compressing objects: 100% (9/9), done.
@@ -335,7 +335,7 @@ Now let's go enter that command again to push up our code.
    Total 9 (delta 8), reused 0 (delta 0)
    remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
    To git@github.com:chrisbay/communication-log.git
-      511239a..679de77  master -> master
+      511239a..679de77  main -> main
 
 Anyone reading the code through GitHub's browser interface should now see the
 new second line.
@@ -350,13 +350,13 @@ repository.
 
 ::
 
-   $ git pull origin master
+   $ git pull origin main
    remote: Counting objects: 3, done.
    remote: Compressing objects: 100% (2/2), done.
    remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
    Unpacking objects: 100% (3/3), done.
    From github.com:chrisbay/communication-log
-      e0de62d..e851b7e  master     -> origin/master
+      e0de62d..e851b7e  main     -> origin/main
    Updating e0de62d..e851b7e
    Fast-forward
    communication-log.sln | 1 +
@@ -378,13 +378,13 @@ Control just made.
 
 ::
 
-   $ git pull origin master
+   $ git pull origin main
    remote: Counting objects: 3, done.
    remote: Compressing objects: 100% (2/2), done.
    remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
    Unpacking objects: 100% (3/3), done.
    From github.com:chrisbay/communication-log
-      e851b7e..167684c  master     -> origin/master
+      e851b7e..167684c  main     -> origin/main
    Updating e851b7e..167684c
    Fast-forward
    communication-log.sln | 1 +
@@ -409,7 +409,7 @@ will allow for simultaneous work to be carried out in a reasonable way.
 **Pilot**: While Control is working on an addition to the story, let's make
 another change simultaneously. In order to do that, we'll create a new branch.
 Recall that a branch is a separate "copy" of the codebase that you can commit
-to without affecting code in the ``master`` branch.
+to without affecting code in the ``main`` branch.
 
 ::
 
@@ -437,7 +437,7 @@ Now stage and commit these changes.
    $ git push origin open-mic
 
 Note that the last command is a bit different than what we've used before
-(``git push origin master``). The final piece of this command is the name of
+(``git push origin main``). The final piece of this command is the name of
 the branch that we want to push to GitHub.
 
 You and your partner should both now see a second branch present on the GitHub
@@ -455,7 +455,7 @@ branches:
 
    $ git branch
    * open-mic
-   master
+   main
 
 Note that creating and being able to see a branch in your local repository via
 this command does NOT mean that the branch is on GitHub. You'll need to push
@@ -482,7 +482,7 @@ and click on *Branches* and make sure you see the new branch name, *open-mic*.
    Branches Page in GitHub
 
 Click *New Pull Request* to begin the process of requesting that your changes
-in the ``open-mic`` branch be incorporated into the ``master`` branch. Add some
+in the ``open-mic`` branch be incorporated into the ``main`` branch. Add some
 text in the description box to let Control know what you did and why.
 
 Note that the branch selected in the *base* dropdown is the one you want to
@@ -512,7 +512,7 @@ Type this command to see what branches are on your local computer:
 ::
 
    $ git branch
-   * master
+   * main
 
 If you want to work with the branch before merging it in, you can do so by
 typing these commands:
@@ -523,7 +523,7 @@ typing these commands:
    ...
    $ git branch
    open-mic
-   * master
+   * main
 
 ::
 
@@ -536,16 +536,16 @@ in GitHub is updated to reflect the changes you added. The context in the
 description box is NOT updated, however, so be sure to add comments to the pull
 request to explain what you did and why.
 
-Now switch back to the ``master`` branch:
+Now switch back to the ``main`` branch:
 
 ::
 
-   $ git checkout master
-   Switched to branch 'master'
-   Your branch is up-to-date with 'origin/master'.
+   $ git checkout main
+   Switched to branch 'main'
+   Your branch is up-to-date with 'origin/main'.
 
 You will see your files no longer have the changes made in the ``open-mic``
-branch. Let's go merge those changes in, so that the ``master`` branch adopts
+branch. Let's go merge those changes in, so that the ``main`` branch adopts
 all the changes in the ``open-mic`` branch.
 
 Step 11: Merge the Pull Request
@@ -583,14 +583,14 @@ Upon a successful merge, you should see a screen similar to the following:
 
    PR Merged in GitHub
 
-The changes from ``open-mic`` are now in the ``master`` branch, but only in
+The changes from ``open-mic`` are now in the ``main`` branch, but only in
 the remote repository on GitHub. You will need to pull the updates to your
-``master`` for them to be present locally.
+``main`` for them to be present locally.
 
 ::
 
-   $ git checkout master
-   $ git pull origin master
+   $ git checkout main
+   $ git pull origin main
 
 Git is able to merge these files on its own.
 
@@ -613,16 +613,16 @@ it.
 **Pilot**: Let's change something about the style file. Our Console is looking
 pretty plain, so let's change the color and maybe share a joke or something to liven this up.
 
-First, switch back to the ``master`` branch.
+First, switch back to the ``main`` branch.
 
 ::
 
-   $ git checkout master
+   $ git checkout main
 
 
 Stage and commit your changes and push them up to GitHub. If you don't remember
 how to do this, follow the instructions above. Make sure you're back in the
-``master`` branch! If you're still in ``open-mic``, then your changes will be
+``main`` branch! If you're still in ``open-mic``, then your changes will be
 isolated, and you won't get the merge conflict you need to learn about.
 
 Meanwhile...
@@ -631,7 +631,7 @@ Meanwhile...
 edited. Change the color again.  
 Update your current Console.WriteLine statement to make an observation about the weather or something.
 
-Commit your changes to branch ``master``.
+Commit your changes to branch ``main``.
 
 Step 13: Resolving Merge Conflicts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -641,10 +641,10 @@ message. How exciting!
 
 ::
 
-   $ git push origin master
+   $ git push origin main
 
    To git@github.com:chrisbay/communication-log.git
-   ! [rejected]        master -> master (fetch first)
+   ! [rejected]        main -> main (fetch first)
    error: failed to push some refs to 'git@github.com:chrisbay/communication-log.git'
    hint: Updates were rejected because the remote contains work that you do
    hint: not have locally. This is usually caused by another repository pushing
@@ -671,7 +671,7 @@ Let's pull these outstanding changes into our branch and resolve the errors.
    remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
    Unpacking objects: 100% (4/4), done.
    From github.com:chrisbay/communication-log
-      7d7e42e..0c21659  master     -> origin/master
+      7d7e42e..0c21659  main     -> origin/main
    Auto-merging communication-log.sln
    CONFLICT (content): Merge conflict in communication-log.sln
    Auto-merging communication-log.sln
@@ -689,7 +689,7 @@ these files yourself to incorporate Pilot's changes.
 .. figure:: figures/studio/conflict-workspace.png
    :alt: VS shows merge conflicts in the editor window
 
-   Merge conflicts in ``main`` branch of communication-log, viewed in VS on a Mac.  Windows users, you will see a differnt screen, but the ``<<<<<<<``,  ``=======`` and ``>>>>>>>`` symbols will be the same.
+   Merge conflicts in ``main`` branch of communication-log, viewed in VS on a Mac.  Windows users, you will see a different screen, but the ``<<<<<<<``,  ``=======`` and ``>>>>>>>`` symbols will be the same.
 
 At the top and bottom, there is some code that could be merged without issue.
 
@@ -717,8 +717,8 @@ random ``git status`` seems reassuring:
 ::
 
    $ git status
-   On branch master
-   Your branch is up-to-date with 'origin/master'.
+   On branch main
+   Your branch is up-to-date with 'origin/main'.
    nothing to commit, working directory clean
 
 
@@ -734,7 +734,7 @@ if we just want the latest version of this branch, ``git pull``:
    remote: Total 13 (delta 4), reused 13 (delta 4), pack-reused 0
    Unpacking objects: 100% (13/13), done.
    From Github.com:chrisbay/communication-log
-      0c21659..e0de62d  master     -> origin/master
+      0c21659..e0de62d  main     -> origin/main
    Updating 0c21659..e0de62d
    Fast-forward
    communication-log.sln | 3 ++-
