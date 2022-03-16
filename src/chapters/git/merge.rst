@@ -7,8 +7,26 @@ How to Merge
 ------------
 
 A **merge** in Git is when the code in two branches are combined in the repository.
-The command to merge a branch called ``test`` into ``main`` is ``git merge test``.
-Before running the merge command, the programmer should make sure they are on the branch they want to merge into!
+
+.. admonition:: Example
+
+   Let's say a programmer wants to merge a branch called ``test`` into
+   ``main``. To accomplish this:
+
+   #. The programmer switches to the branch they want to merge into. In this
+      case:
+
+      .. sourcecode:: bash
+
+         $ git checkout main
+
+   #. The programmer then runs the merge command:
+
+      .. sourcecode:: bash
+
+         $ git merge test
+
+   When successful, the code in the ``test`` branch is pulled into ``main``.
 
 Merge Conflicts
 ---------------
