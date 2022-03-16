@@ -193,7 +193,7 @@ To create a new repository:
 
 After clicking, you should see something similar to:
 
-.. figure:: figures/studio/new-repo-push.png
+.. figure:: figures/studio/new-repo-push-main.png
    :alt: The page you see after creating an empty repository, with several options.
 
    Connecting to a repository in GitHub
@@ -203,8 +203,9 @@ instructions. These should be very similar to:
 
 ::
 
-   $ git remote add origin https://github.com:chrisbay/communication-log.git
-   $ git push origin master
+   $ git remote add origin https://github.com/your-username/communication-log.git
+   $ git branch -M main
+   $ git push -u origin main
 
 .. admonition:: Note
 
@@ -217,8 +218,8 @@ instructions. These should be very similar to:
 
    ::
 
-      To github.com:chrisbay/communication-log.git
-         c7f97814..54993de3  master -> master
+      To github.com:your-username/communication-log.git
+         c7f97814..54993de3  main -> main
 
 .. admonition:: Warning
 
