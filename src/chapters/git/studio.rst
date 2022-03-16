@@ -108,7 +108,7 @@ Once you've checked this file in the terminal, let's stage and commit it.
    ::
 
       $ git status
-      On branch master
+      On branch main
 
       No commits yet.
 
@@ -128,7 +128,7 @@ Once you've checked this file in the terminal, let's stage and commit it.
 
       $ git add .
       $ git status
-      On branch master
+      On branch main
 
       No commits yet
 
@@ -145,7 +145,7 @@ Once you've checked this file in the terminal, let's stage and commit it.
    ::
 
       $ git commit -m 'Started communication log.'
-      [master (root-commit) e1c1719] Started communication log.
+      [main (root-commit) e1c1719] Started communication log.
       4 files changed, 451 insertions(+)
       create mode 100644 .gitignore
       create mode 100644 communication-log.sln
