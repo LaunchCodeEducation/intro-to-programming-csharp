@@ -51,9 +51,9 @@ been created for us.
 
 .. admonition:: Try It!
 
-   1. Open `example form that uses POST <https://form-post--launchcode.repl.co/>`_ in a browser.
+   1. Open an `example form that uses POST <https://form-post--launchcode.repl.co/>`_ in a browser.
    2. Open the network tab of the developer tools
-   3. Check "Persist Logs" in the network tab
+   3. Check "Persist Logs" in the network tab.  ("Preserve Logs" in Chrome or Safari)
 
    .. figure:: figures/network-tab-before-submission.png
       :alt: Screen shot of firefox browser with form loaded and network tab open.
@@ -71,6 +71,10 @@ been created for us.
       :alt: Web page showing submitted values and the entries in network tab.
 
       Firefox browser with request handler loaded and network tab showing requests
+      If you are not using Firefox, you will have a differnt output.  
+      Find the 200 POST request and click on it.  
+      If in Chrome, select **Headers** and scroll through this entire window for the rest of this demo.
+
 
    6. Inspect the data sent in the POST request
 

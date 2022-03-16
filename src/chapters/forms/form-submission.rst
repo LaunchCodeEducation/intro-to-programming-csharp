@@ -9,6 +9,23 @@ chapter, communication on the web occurs via a series of HTTP requests and respo
 **form submission** is an HTTP request sent to the server containing the values
 in a form.
 
+.. admonition::  Note
+
+   In this chapter you will find many working demos.  In order to best learn from the demos, 
+   you will need to open them in a new window.  
+   This will open the Parrot Server, that was created for this chapter to show you how the input is used.
+   (Parrot, because it will parrot back what you provide each form)
+
+   To work with the Parrot Server demos, click the "New Tab" icon located centrally in the header of the replit code display space.
+
+   .. figure:: figures/open-parrot.png
+      :alt: new tab icon higlighted in the header of the replit code display space.
+   
+
+      Location of the "New Tab" icon in the Replit code display.  Click on that to open the code in its own browser window.
+
+   When running in a new window, you will see a **WARNING** message.  You may ignore this if you have opened the demo in its own window.
+
 Trigger Form Submission
 -----------------------
 
@@ -34,9 +51,15 @@ of the current page.
 
 .. admonition:: Try It!
 
-   Open `this form <https://form-default--launchcode.repl.co/>`_ in a browser.
+   Open `this form <https://repl.it/@launchcode/form-default>`_ in a browser.
    Type values into the inputs, click the Submit button, and notice what happens to the
    address bar.
+
+   This link will take you to a replit IDE.  Go ahead and run the code.  
+   Once run, follow the directions to form in a new window.
+
+
+   **Code in the IDE:**
 
    .. sourcecode:: html
       :linenos:
@@ -57,7 +80,9 @@ of the current page.
          </body>
       </html>
 
-   **Output**
+   **Output** 
+
+   *Note: the display of your form may vary by browser.*
 
    .. figure:: figures/default-form.png
       :alt: Browser screen shot showing form with two text inputs and a submit button. Both inputs have text values.
@@ -67,7 +92,6 @@ of the current page.
    .. figure:: figures/default-form-submitted.png
       :alt: Browser screen shot showing form after it has been submitted. The URL has queryString showing.
 
-   `Run it <https://repl.it/@launchcode/form-default>`_.
 
 Notice in the above example that the browser address has changed to:
 

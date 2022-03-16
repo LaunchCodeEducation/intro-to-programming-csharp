@@ -48,6 +48,17 @@ Example
    `Run it <https://repl.it/@launchcode/radio-inputs-example>`__
 
 
+Unselecting a Radio Button
+--------------------------
+
+One of the challenges with radio buttons, is that your user might want to unselect what they have chosen.  
+This is not a problem if they want pick a different radio buttton instead.  
+What if there is only one radio button option and they've already selected it and can't unselect it?
+
+They could try refreshing the page.  If that doesn't work, try a *hard refresh* by 
+pushing ``control+shift+R`` on the keyboard (``command+shift+R`` on a Mac).
+
+
 Check Your Understanding
 ------------------------
 

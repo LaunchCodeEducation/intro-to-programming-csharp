@@ -24,6 +24,7 @@ Chapters
    chapters/vstools/index
    chapters/classes/index
    chapters/classes-part2/index
+   chapters/unit-testing/index
    chapters/inheritance/index
    chapters/interfaces-and-polymorphism/index
    chapters/html/index
@@ -52,6 +53,7 @@ Studios
    chapters/vstools/studio
    chapters/classes/studio
    chapters/classes-part2/studio
+   chapters/unit-testing/studio
    chapters/inheritance/studio
    chapters/interfaces-and-polymorphism/studio
    chapters/html/studio
@@ -66,6 +68,8 @@ Assignments
 
    assignments/candidateQuiz
    assignments/scrabble-scorer
+   assignments/MarsRover
+   assignments/html-me-something
 
 
 Appendices
@@ -87,4 +91,6 @@ Appendices
    appendices/vs-troubleshooting
    appendices/git/stash
    appendices/git/workflows
+   appendices/git/create-new-repo
+   
    
