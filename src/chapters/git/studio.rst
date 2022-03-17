@@ -213,6 +213,8 @@ instructions. These should be very similar to:
       To github.com:your-username/communication-log.git
          c7f97814..54993de3  main -> main
 
+   Notice that if your local branch was named ``master`` it was automatically changed to ``main``.
+
 .. admonition:: Warning
 
    Unless you've set up an SSH key with GitHub, make sure you've selected the
