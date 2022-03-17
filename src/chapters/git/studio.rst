@@ -73,27 +73,19 @@ Step 1: Create a New Repository
    ``$`` symbols in the screenshots represent to the prompts in the terminal.
    They are NOT part of the commands.
 
-**Control**: Navigate to your development folder. Enter the following 3
-commands to create a new project.
-
-::
-
-   $ mkdir communication-log
-   $ cd communication-log
-   $ git init
-
-Now that you have a directory, open Visual Studio and :ref:`create a new file <create-new-csharp-project>`.  
+**Control**: Open Visual Studio and :ref:`create a new project <create-new-csharp-project>`.  
 
 .. figure:: figures/studio/nameAndLocation.png
+   :width: 75%
    :alt: Name your solution and select location for your files.
 
-   Give your solution and project a name (1).  Typically they will have the same name.  Then select the directory to store your files (2).  Browse for the directory you just created.
+   Give your solution and project a name (1).  Typically they will have the same name.  Then 
+   select the directory to store your files (2). Lastly, check git for version control (3).
 
 
 Let's check that our project works by running it. 
 
-You can continue to use your terminal, or you can use the terminal that is part of Visual Studio.  
-If you want to use the Visual Studio terminal, it can be found under the **View** tab.
+Open the terminal that is part of Visual Studio. It can be found under the **View** tab.
 
 .. admonition:: Note
 
