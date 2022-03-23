@@ -13,6 +13,8 @@ We will use our new terminal powers to move through the Git exercises.
 #. Add "Hello World!" to the file called ``exercises.txt``.
 #. Commit your local changes following the same steps that you used for step 4.
 #. View and screenshot the result when you use ``git log``. Make note of what you see!
+#. If your default branch is not main try changing it with ``git branch -m master main``.
+#. Check that you successfully changed the name with ``git branch``.
 
 Setting up a Github Account
 ---------------------------
@@ -25,14 +27,7 @@ To create your account, follow these steps:
 #. Click the *Sign Up* button and follow the on-screen directions.
 #. Once you have an account, you are ready to store your remote work.
 
-Before August 13, 2021, when users pushed changes to a remote repository (or
-pulled new content from it), they were prompted to enter their GitHub username
-and password. However, a username/password combination is not the most
-secure method available. This is especially true for people who reuse the same
-credentials across multiple websites. (You know who you are. Stop doing that!)
-
-In an effort to boost account security, GitHub changed its policy. Users must now
-create a *Personal Access Token* or an *SSH key* to verify their identity.
+GitHub Users must create a *Personal Access Token* or an *SSH key* to verify their identity.
 
 .. index:: personal access token, ! personal access token setup 
 
@@ -126,5 +121,4 @@ how to create an SSH key, here are the relevant instructions:
 
 .. admonition:: Warning
 
-   For each page, make sure you click on the tab that matches your operating
-   system (Mac, Windows, Linux).
+   For each page, make sure you click on the tab that matches your operating system (Mac, Windows, Linux).

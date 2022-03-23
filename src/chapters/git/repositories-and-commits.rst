@@ -55,7 +55,7 @@ Back in your terminal, type ``git status``.
 Wow!  That's a lot of text for your new file.  
 You saved your project on your computer, but let's commit it to your Git.  
 
-.. _rename-branch:
+.. index:: ! rename-branch
 
 .. admonition:: Note
 
@@ -69,7 +69,7 @@ You saved your project on your computer, but let's commit it to your Git.
    The examples in this chapter will be using ``main`` as the default branch.
    
 
-   If you would like to :ref:`rename your branch<rename-branch>` to match, the git command is ``git branch -m NEW-NAME-HERE``.
+   If you would like to rename your branch to match, the git command is ``git branch -m NEW-NAME-HERE``.
 
    ::
 
@@ -118,36 +118,36 @@ The procedure for making a commit to a Git repository includes four stages.
 
 #. ``git status`` gives you information about files that have been changed.
 #. ``git add`` allows you to add specific or all changed files to a commit.
-#. ``git commit -m MESSAGE`` creates the new commit with the files that you added, 
-   with a message describing the changes included in the commit. Here, ``MESSAGE`` should be a descriptive message within double-quotes.
+#. ``git commit -m "Your message"`` creates the new commit with the files that you added, 
+   with a message describing the changes included in the commit. Here, ``"Your message"`` should be a descriptive message within double-quotes.
 #. ``git log`` displays a log of every commit in the repository.
 
 If the steps above are followed correctly, you will find your latest commit at the top of the log.
 
 Here is how the process will look in the terminal:
 
-::
+   ::
 
-   Students-Computer:homework student$ git status
-   On main branch
+      Students-Computer:homework student$ git status
+      On branch main
 
-   No commits yet
+      No commits yet
 
-   Untracked files:
-      (use "git add <file>..." to include what will be committed)
+      Untracked files:
+         (use "git add <file>..." to include what will be committed)
 
-         my_project.txt
-   
-   nothing added to commit but untracked files present (use "git add" to track)
-   Students-Computer:homework student$ git add my_project.txt
-   Students-Computer:homework student$ git commit -m "My initial commit"
-   [main (root-commit) 7e771d7] My initial commit
-      1 file changed, 1 insertion (+)
-      create mode 100644 my_project.txt
-   Students-Computer:homework student$ git log
-   commit 7e771d788ddfd6080f0a9f10f9aed7105b1a3bcf (HEAD -> main)
-   Author: Student <lc101.student@email.com>
-   Date:  Wed Apr 24 14:36:53 2019 -0500
+            my_project.txt
+      
+      nothing added to commit but untracked files present (use "git add" to track)
+      Students-Computer:homework student$ git add my_project.txt
+      Students-Computer:homework student$ git commit -m "My initial commit"
+      [main (root-commit) 7e771d7] My initial commit
+         1 file changed, 1 insertion (+)
+         create mode 100644 my_project.txt
+      Students-Computer:homework student$ git log
+      commit 7e771d788ddfd6080f0a9f10f9aed7105b1a3bcf (HEAD -> main)
+      Author: Student <lc101.student@email.com>
+      Date:  Wed Apr 24 14:36:53 2019 -0500
 
 
 That is even more text in your terminal.  
