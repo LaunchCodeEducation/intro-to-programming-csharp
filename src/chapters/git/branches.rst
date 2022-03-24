@@ -7,27 +7,16 @@ Branching in Git
 ----------------
 
 So far this book has talked about Git's ability to store different versions of a codebase in time.  
-But what if you want to store different features of a codebase in one place?  
 What if you want collaborate with another programmer on separate features for the same codebase?
+What if you want to try something new in your code, but you don't want to break your current code?
 
-This is another feature of using Git.  
+This is where **branches** can be useful.
 
-Let's say you were working with a fellow programmer to create an app that tests if an number is even or odd.
-Together you created a small app with a method that does just that.  Great!  
-Later, you were asked to create another method to do something else with the number like check if it contains a decimal point.
-
-Before you get started coding, let's think about your current app.  It is functional.  
-Do you know if your new feature will work right away? Could there be any breakage?
-Those are not easy questions to answer.
-
-A great way to not have to worry about interfering with your currently functional code is to create a **branch**.
-A branch is a separate version of the same codebase.  
-Like a branch on a tree, a branch in Git shares the same trunk as other branches, but is an individual.
-Branches are great for storing and testing new features of software called **feature branches**.
-Feature branches are great for working on a new feature without risking any potential failure or breakage of your main code base.
-
-Another great benefit of branches is collaboration between programmers.
-With branches, two programmers could work on separate versions of the same code without interfering with each other's work.
+Branches contain a copy of the codebase they were created from, but will not interfere with the original codebase.
+These are great options for fixing bugs without risk of breaking more code or impacting any live applications of that code.
+When working with others in the same codebase, branches allow you to work on different features or bugs independently of the team.
+This allows more people to work in the code at once.
+Branches are also great for storing and testing new features without impacting any live applications.
 
 In the previous section, when checking the status, the top line was ``On branch main``. 
 The main branch is the *default branch* of the repository.  
@@ -66,7 +55,7 @@ Even if you haven't added any branches yet, you can still use this command.
 Creating a New Branch
 ---------------------
 
-You are on main and you want to start building a new feature in a new branch.
+You are on ``main`` and you want to start building a new feature in a new branch.
 Your first step would be to create a new branch for your work.
 
 To create a branch, the command is ``git checkout -b branch-name``.

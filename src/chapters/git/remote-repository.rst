@@ -86,76 +86,26 @@ For more detailed instructions on how to fork, checkout out :ref:this walkthroug
 Contributing to a Remote Repository
 -----------------------------------
 
-Fork the ``learning-git`` `repo from GitHub <https://github.com/speudusa/learning-git>`_.
-
-Open the repo you just forked in Visual Studio.  Explore it, run it.  See what happens. 
-Go to the ``NumberChecks`` class and uncomment the ``EvenOrOddCheck`` method.  
-Run it again to make sure it works. Then, save your project. 
-
-.. index:: ! remote repository commit
-
-.. index:: ! remote repository push
-
-Now it is time to make a commit.
+When working with a remote repository, you have a similar commit process as before.  Only now, you need to push your changes up to the remote repo
 When working with a remote repo, the commit process has five steps:
 
 1. ``git status``
 2. ``git add``
-3. ``git commit``
+3. ``git commit -m message-here``
 4. ``git push origin main``
 5. ``git log``
 
 The fourth step uses the new command ``git push`` where the commit is pushed to the remote from the local.
 ``origin`` indicates that the commit does indeed go to the remote and ``main`` is the name of the branch that the commit goes to. 
 
-::
+Often when pushing to a remote repo you are commiting any changes that you made to the code. 
+If you are the only one contributing to the codebase, then you are in control of what changes are being made.
+However, it is not uncommon to share a codebase remotely with others.  
+When working like this, it is not easy to manage and keep track of their changes and your own.
+What happens when multiple people are adding to a single codebase?  You get a mess.
 
-   Students-Computer:learning-git student$ git status
-   On branch main
-   Your branch is up to date with 'origin/main'.
-
-   Changes not staged for commit:
-   (use "git add <file>..." to update what will be committed)
-   (use "git checkout -- <file>..." to discard changes in working directory)
-
-         modified:   learning-git/NumberChecks.cs
-
-   no changes added to commit (use "git add" and/or "git commit -a")
-   Students-Computer:learning-git student$ git add .
-   Students-Computer:learning-git student$ git commit -m "EvenOrOddCheck active"
-   [main 72fb272] EvenOrOddCheck active
-    1 file changed, 1 insertion(+)
-   Students-Computer:learning-git student$ git push origin main
-   Counting objects: 4, done.
-   Delta compression using up to 4 threads.
-   Compressing objects: 100% (4/4), done.
-   Writing objects: 100% (4/4), 423 bytes | 423.00 KiB/s, done.
-   Total 4 (delta 2), reused 0 (delta 0)
-   remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-   To github.com:speudusa/learning-git.git
-      3163e4b..72fb272  main -> main
-   Students-Computer:learning-git student$ git log
-   commit 72fb2723b02841469bdb54e129145181e28fc5a1 (HEAD -> main, origin/main)
-   Author: Courtney Frey <cfrey@launchcode.org>
-   Date:   Thu Jul 8 16:18:22 2021 -0500
-
-      EvenOrOddCheck active
-
-
-
-Great job!  
-
-Now, you saw how easy it was to make changes to a repository and push them up.
-Since you are the only one working on this repo as we walkthrough this process, 
-you don't need to worry about interferring with the work of others.  
-
-However, you updated the code.  
-If you were working with a partner and they left that code commented out and built something else entirely, 
-what would happen if they pushed up their changes?  A mess.  That is what. 
-
-
-In the next section we will discuss how a way to avoid messes like that (in theory) by branching off the main branch.
-A good practice for creating new features or working collaboratively or try new features without breaking your current code.
+In the next section we will discuss how a way to avoid messes like that (in theory) by creating branches.
+A good practice for creating new features or working collaboratively.
 
 Check Your Understanding
 ------------------------------
