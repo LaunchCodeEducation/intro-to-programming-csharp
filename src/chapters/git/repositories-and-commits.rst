@@ -117,16 +117,8 @@ The Four Stages of Making a ``commit``
 The procedure for making a commit to a Git repository includes four stages.  
 
 #. ``git status`` gives you information about files that have been changed.
-#. ``git add`` allows you to add specific or all changed files to a commit.
-#. ``git commit -m "Your message"`` creates the new commit with the files that you added, 
-   with a message describing the changes included in the commit. Here, ``"Your message"`` should be a descriptive message within double-quotes.
-#. ``git log`` displays a log of every commit in the repository.
 
-If the steps above are followed correctly, you will find your latest commit at the top of the log.
-
-Here is how the process will look in the terminal:
-
-   ::
+   .. sourcecode:: bash
 
       Students-Computer:homework student$ git status
       On branch main
@@ -137,26 +129,42 @@ Here is how the process will look in the terminal:
          (use "git add <file>..." to include what will be committed)
 
             my_project.txt
-      
+
       nothing added to commit but untracked files present (use "git add" to track)
       Students-Computer:homework student$ git add my_project.txt
+
+
+#. ``git add`` allows you to add specific or all changed files to a commit.  
+   You can either type the name of the file you want to add to the repo or add all of the files at once by using ``git add .`` 
+
+   .. sourcecode:: bash
+
+      Students-Computer:homework student$ git add .
+
+
+#. ``git commit -m "Your message"`` creates the new commit with the files that you added, 
+   with a message describing the changes included in the commit. Here, ``"Your message"`` should be a descriptive message within double-quotes.
+
+   .. sourcecode:: bash
+
       Students-Computer:homework student$ git commit -m "My initial commit"
       [main (root-commit) 7e771d7] My initial commit
-         1 file changed, 1 insertion (+)
-         create mode 100644 my_project.txt
+      1 file changed, 1 insertion (+)
+      create mode 100644 my_project.txt
+
+#. ``git log`` displays a log of every commit in the repository.
+
+   .. sourcecode:: bash
+
       Students-Computer:homework student$ git log
       commit 7e771d788ddfd6080f0a9f10f9aed7105b1a3bcf (HEAD -> main)
       Author: Student <lc101.student@email.com>
       Date:  Wed Apr 24 14:36:53 2019 -0500
 
+If the steps above are followed correctly, you will find your latest commit at the top of the log.
 
-That is even more text in your terminal.  
-What it all comes down to is that you added your file with the ``git add`` command, 
-then committed it to your repo using ``git commit -m "...message here..."``.  
-This commit created a time stamp of your work.  You changed 1 file, by inserting 1 item.
-Your changes will vary based on how much you add and save before committing.
-We called ``git log`` to view the a time stamp of the commit.
-
+Make a second ``commit``
+^^^^^^^^^^^^^^^^^^^^^^^^^
 That was a lot very fast.  Let's add one more file for practice and look at each step more closely.
 
 In your terminal, create a second file, ``notes.txt`` using the ``touch`` command. 
@@ -233,7 +241,7 @@ In the code block below, the ``my_project.txt`` is an example of a modified trac
 
 ``git add`` adds files to the commit, but it does not commit those files.
 By using ``git add .``, *all* the modified files were added to the commit.
-If a programmer only wants to add one modified file, they can do so.
+If a programmer only wants to add one modified file, they can do so by typing the file name after the ``git add`` command.
 
 ::
 
@@ -260,7 +268,7 @@ following updates have been made.
 
 .. index:: ! git commit
 
-``git commit`` actually commits the files that were added to the repository.
+``git commit`` actually commits the files that were added to the repository on your computer.
 By adding ``-m "notes added to project"``, a comment was added to the commit.
 This is helpful for looking through the log and seeing detailed comments of the changes made in each commit.
 
@@ -275,7 +283,9 @@ This is helpful for looking through the log and seeing detailed comments of the 
 
 .. admonition:: Tip
 
-   It's important to include a descriptive commit message. Such messages are visible in your local Git log, as well as in the commit history on GitHub. A good commit message allows you and your fellow developers to easily identify the changes made in a given commit.
+   It's important to include a descriptive commit message. 
+   Such messages are visible in your local Git log, as well as in the commit history on GitHub. 
+   A good commit message allows you and your fellow developers to easily identify the changes made in a given commit.
 
 .. index:: ! git log
 

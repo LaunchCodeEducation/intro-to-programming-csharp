@@ -19,7 +19,7 @@ If a programmer wants to start collaborating with their colleagues on a new proj
 In this particular case, the programmer has to import the work that is being stored in an online repository onto their local machine.
 
 They can clone a remote repository by using the ``git clone <url>`` command.
-Github and other online Git systems give users the option to clone the repository through HTTPS or SSH depending on how their Github profile is set up.
+GitHub and other online Git systems give users the option to clone the repository through HTTPS or SSH depending on how their GitHub profile is set up.
 The ``<url>`` of the command is where the programmer adds the url to the repository that they are cloning. 
 
 
@@ -66,7 +66,7 @@ Once you have the repo on your computer, ``clone this-repo<REPO GOES HERE>``.
 Contributing to a Remote Repository
 -----------------------------------
 
-Now that you have a profile on Github and a local copy of a remote repository, let's start coding!
+Now that you have a profile on GitHub and a local copy of a remote repository, let's start coding!
 
 Open the repo you just cloned in Visual Studio.  Explore it, run it.  See what happens. 
 Go to the ``NumberChecks`` class and uncomment the ``EvenOrOddCheck`` method.  
