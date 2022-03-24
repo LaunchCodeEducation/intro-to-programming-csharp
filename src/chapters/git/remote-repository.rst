@@ -12,42 +12,74 @@ allowing any programmers working on it keep copies on their local machine.
 
 We will be using GitHub to create our remote repositories.
 You will need to create an account on `GitHub <https://www.github.com/>`_.
-Make sure you choose an appropriate username.  GitHub can be used a portfolio to share with other programming professionals. 
+Make sure you choose an appropriate username.  Many programming professionals use GitHub as a portfolio for their work. 
+
+Setting Up a Remote Repo
+------------------------
+
+Terminal and GitHub
+^^^^^^^^^^^^^^^^^^^
+
+Creating a repo from scratch on your own computer.
+
+#. Create a folder on your computer to hold your codebase.  
+#. ``cd`` into your folder and initialize it with git using the ``git init`` command.
+#. Open GitHub and create a new repository.  
+#. On the "Create a New Repository" page, name your repo the same as your folder so that you can stay organized better.
+#. Keep it public for now
+#. Don't check any boxes in the "**Initialize this repository with:**" section since we started this process on our computer.
+#. Create the repository.
+#. Select "**...or create a new repository in the command line**" option.  Copy the code and paste this into your terminal. Press the enter key.
+   *Note:*  If you get a note from git to use a different command, type it into the terminal and hit enter.
+#. Refresh your GitHub page and inspect your new repo.
+#. Back on your computer, open your IDE and select the folder your repo is contained in and start coding.
+#. Don't forget to save and commit your changes periodically.
+
+Cloning a Repo
+^^^^^^^^^^^^^^
+
+Using code from someone else's computer.
+
+#. Create a folder on your computer to hold your codebase.
+#. ``cd`` into your folder.
+#. Open the repo that contains the codebase in GitHub.
+#. Look for the button that says ``Code`` and click on it. 
+#. On the dropdown menu, copy the link to the codebase.  In this class we will use the HTTPS code.
+#. Back in your terminal, you will use the ``git clone`` command followed by the copied link. See example below:
+
+   .. sourcecode:: bash
+
+      Students-Computer:learning-git student$ git clone https://github.com:username/repo-name.git
+#. Run the ``ls`` command to see what is now in your folder.
+#. You will need to ``cd`` into the project folder in order to start coding.
 
 
+Forking a Repo
+^^^^^^^^^^^^^^
 
+Creating a fork allows you to modify codebases without changing the original codebase.  
+It is how you worked in replit.  And it is how you will gain access to any starter code in the remainder of this course.
 
+#. Open the repo you wish to fork.
+#. Locate the ``Fork`` button.  Currently is in the top right corner of a GitHub repo.
+#. Click the ``Fork`` button.  If GitHub asks, make sure you save your fork into your class GitHub account.
+#. A forked copy of the repo appear in GitHub.
+#. You need to clone this fork onto your computer in order to work with its code. 
 
-::
-
-   Students-Computer:learning-git student$ git clone <url-here>
-   Cloning into 'learning-git'...
-   remote: Enumerating objects: 13, done.
-   remote: Counting objects: 100% (13/13), done.
-   remote: Compressing objects: 100% (10/10), done.
-   remote: Total 13 (delta 3), reused 13 (delta 3), pack-reused 0
-   Receiving objects: 100% (13/13), 4.77 KiB | 4.77 MiB/s, done.
-   Resolving deltas: 100% (3/3), done.
-   Students-Computer:learning-git student$
+For more detailed instructions on how to fork, checkout out :ref:this walkthrough<forking>`.
 
 
 .. admonition:: Fork or Clone?
 
-   When working with LaunchCode GitHub repositories, 
-   you will want to fork the repository rather than 
-   clone it.
+   When working with LaunchCode GitHub repositories, you will want to fork the repository rather than clone it.
 
-   Forking allows you to copy a project and modify it on a unique timeline.
-   Meaning that, once forked then cloned, any changes you make will only affect this forked version.
-
-   The :ref:`following guide<forking>` will help you with the forking process.
 
 Contributing to a Remote Repository
 -----------------------------------
 
-Now that you have a profile on GitHub and a local copy of a remote repository, let's start coding!
+Fork the ``learning-git`` `repo from GitHub <https://github.com/speudusa/learning-git>`_.
 
-Open the repo you just cloned in Visual Studio.  Explore it, run it.  See what happens. 
+Open the repo you just forked in Visual Studio.  Explore it, run it.  See what happens. 
 Go to the ``NumberChecks`` class and uncomment the ``EvenOrOddCheck`` method.  
 Run it again to make sure it works. Then, save your project. 
 
@@ -108,7 +140,7 @@ Now, you saw how easy it was to make changes to a repository and push them up.
 Since you are the only one working on this repo as we walkthrough this process, 
 you don't need to worry about interferring with the work of others.  
 
-However, you uncommented a large amount of code.  
+However, you updated the code.  
 If you were working with a partner and they left that code commented out and built something else entirely, 
 what would happen if they pushed up their changes?  A mess.  That is what. 
 
@@ -122,24 +154,3 @@ Check Your Understanding
 .. admonition:: Question
 
    What is the new command for making a commit to a remote repository?
-
-
-Collaborating with Colleagues
------------------------------
-
-If a programmer wants to start collaborating with their colleagues on a new project, they might need to start with the work that one of their colleagues has already done.
-In this particular case, the programmer has to import the work that is being stored in an online repository onto their local machine.
-
-They can clone a remote repository by using the ``git clone <url>`` command.
-GitHub and other online Git systems give users the option to clone the repository through HTTPS or SSH depending on how their GitHub profile is set up.
-The ``<url>`` of the command is where the programmer adds the url to the repository that they are cloning. 
-
-
-.. note::
-
-   Throughout this book, HTTPS will be used for cloning repositories.
-
-   TOKEN NOW:  https://www.youtube.com/watch?v=kHkQnuYzwoo
-
-In order to clone a repo, you will need to make a directory on your computer to store it.  
-Go ahead and create a ``learning-git`` folder and initialize it as a git repo.
