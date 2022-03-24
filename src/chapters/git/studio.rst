@@ -1,64 +1,28 @@
 Studio: Communication Log
 ==========================
 
-``TODO:  revise - need setup for mac and windows WITHOUT making a repo-duckin.``
+We are going to simulate a radio conversation between the shuttle pilot and
+mission control.
 
-Code Together
--------------
+First, find a new friend to share the activity.
 
-Coding together allows you to work as a team so you can build bigger projects
-faster.
+You and your partner will alternate tasks, so designate one of you as **Pilot**
+and the other as **Control**. Even when it is not your turn to complete a task,
+read and observe what your partner is doing to complete theirs. The steps here
+mimic how a real-world collaborative Git workflow can be used within a project.
 
-In this studio, we will practice the common Git commands used when
-multiple people work on the same code base.
+.. admonition:: Warning
 
-You and a partner will begin by coding in tag-team shifts. By the end of the
-task you should have a good idea about how to have two people work on the same
-code at the same time. You will learn how to:
-
-#. Quickly add code in pull + push cycles *(Important! This is the fundamental
-   process!)*
-#. Add a collaborator to a GitHub Project
-#. Share *repositories* on GitHub
-#. Create a *branch* in Git
-#. Create a *pull request* in GitHub
-#. Resolve merge conflicts (which are not as scary as they sound)
-
-This lesson reinforces:
-
-#. Creating repositories
-#. Cloning repositories
-#. Working with Git concepts: Staging, Commits, and Status
-
-Overview
----------
-
-The instructor will discuss why GitHub is worth learning. You already know how
-to use a local Git repository with one branch, giving you the ability to move
-your code forward and backward in time. Working with branches on GitHub extends
-this ability by allowing multiple people to build different features at the
-same time, then combine their work. Pull requests act as checkpoints when code
-flows from branch to branch.
-
-Students *must* pair off for this exercise. If you have trouble finding a
-partner, ask your TA for help.
-
-Getting Ready
---------------
-
-You are going to simulate a radio conversation between a shuttle pilot and mission control.
-You and your partner will alternate tasks, so decide who will be the **Pilot** and who will be **Control**.
-
-Before you and your partner can begin your collaboration, some preparation is required first.
-You will both start by creating a new repository on your separate GitHub accounts.
+   As you go through these steps, you'll be working with branches. It's very
+   likely you will make changes to the code only to realize that you did so in the
+   wrong branch. When this happens (and it happens to all of us) you can use
+   ``Git stash`` to cleanly move your changes to another branch. Read about how
+   to do so in our :ref:`git-stash` tutorial.
 
 .. _create-new-git-repo:
 
-Step 1: Create a New Local Repository
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Windows instructions
---------------------
+Step 1: Create a New Repository
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. admonition:: Note
 
@@ -66,9 +30,10 @@ Windows instructions
    ``$`` symbols in the screenshots represent to the prompts in the terminal.
    They are NOT part of the commands.
 
-**Control**:
+Windows instructions:
+---------------------
 
-#. Navigate to your development folder and create a project folder.  
+**Control**: Navigate to your development folder and create a project folder.  
    Enter the following 3 commands to create a new project.
    Replace ``-ROLE`` with your part in this studio, either ``-pilot`` or ``-control``.
 
@@ -78,17 +43,7 @@ Windows instructions
       $ git init
       $ Initialized empty Git repository in [repo location on your machine]
 
-   .. _diff-name:
-
-   .. admonition:: Note
-
-      **IMPORTANT:** To avoid confusion later, it is *critical* that you and your partner
-      give different names to your repositories.
-
-      For the remainder of this studio, we will refer to the repo as ``communication-log``.
-      **Control**: Open Visual Studio and :ref:`create a new project <create-new-csharp-project>`.  
-
-#. Now that you have a directory, open Visual Studio and :ref:`create a new console project <create-new-csharp-project>`.  
+Now that you have a directory, open Visual Studio and :ref:`create a new console project <create-new-csharp-project>`.  
 
    .. figure:: figures/studio/name-location-verControl.png
       :alt: Name your solution and select location for your files.
@@ -101,9 +56,6 @@ Windows instructions
       A ``.gitignore`` file, is a text file will contain untracked files, or ignored filed.
       These are files that will become part of your repo, but are not very useful to other developers.
       Placing them in a ``.gitignore`` file will tell git to skip over them, which will reduce visual clutter in your terminal.
-
- 
-      **Mac Users**: Note item 3 in the image above.  Check the boxes to use git for version control and create a ``.gitignore file``. 
    
       **Windows Users**: There are a few steps to create a ``.gitignore file``.
 
@@ -128,21 +80,10 @@ Windows instructions
       Use it as a starting point, and grow from here.
 
 
-#. Back in Visual Studio, in your ``Program.cs`` file, update the ``Console.WriteLine`` print Hello to your partner.
-   Run it to make sure your updates are working.
+Mac Instructions:
+-----------------
 
-   .. admonition:: Note
-
-      If your console window does not stay open long enough for you to see your code, try adding the ``Console.Read()`` below the ``WriteLine``.
-      This is a piece of code that will keep your terminal window open so you can read what it contains.
-   
-      If you can read your terminal window just fine and you haven't added anything, then ignore this tip.
-
-   Now that you have updated your ``Program.cs`` file, be sure to save it. 
-
-
-Mac instructions
-----------------
+**Control**: Open Visual Studio and :ref:`create a new project <create-new-csharp-project>`.  
 
 .. figure:: figures/studio/nameAndLocation.png
    :width: 75%
@@ -151,49 +92,22 @@ Mac instructions
    Give your solution and project a name (1).  Typically they will have the same name.  Then 
    select the directory to store your files (2). Lastly, check git for version control (3).
 
+ **Mac Users**: Note item 3 in the image above.  Check the boxes to use git for version control and automatically create a ``.gitignore file``.
 
-#. Return to the terminal, run a ``git status`` check.
+Step 2: Let's check that our project works by running it.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Open the terminal that is part of Visual Studio. It can be found under the **View** tab.
+
+.. admonition:: Note
+
+   If your console window does not stay open long enough for you to see your code, try adding the ``Console.Read()`` below the ``WriteLine``.
+   This is a piece of code that will keep your terminal window open so you can read what it contains.
    
-   ::
+   If you can read your terminal window just fine and you haven't added anything, then ignore this tip.
 
-      $ git status
-      On branch master
 
-      No commits yet.
-
-      Changes to be committed:
-         (use "git rm --cached <file>..." to unstage)
-         new file:   .gitignore
-      
-      Untracked files:
-         (use "Git add <file>..." to include in what will be committed)
-         communication-log/
-         
-      nothing added to commit but untracked files present (use "git add" to track)
-   
-   
-
-   **Mac view after checking the boxes for Version Control and** ``.gitignore`` **files**
-
-   ::
-
-      $ git status
-      On branch master
-
-      No commits yet
-
-      Untracked files:
-      (use "git add <file>..." to include in what will be committed)
-
-         communication-log/
-
-      nothing added to commit but untracked files present (use "git add" to track)
-   
-   
-   Go ahead and ``stage``, ``add``, and ``commit`` your new changes.  
-   Remember you can use ``git add .`` to add all files to your commit.
-   At this point, you can use the stand-alone terminal that you started with or switch over to the terminal within Visual Studio.  
-   Your choice.  The output format may vary slightly between Windows, Mac, and Visual Studio terminals, but the commands and overall results will be the same.
+Once you've checked this file in the terminal, let's stage and commit it.
 
 #. First, check the ``status``.
 
@@ -207,14 +121,13 @@ Mac instructions
       Untracked files:
       (use "Git add <file>..." to include in what will be committed)
 
-         .gitignore
          communication-log.sln
          communication-log/Program.cs
          communication-log/communication-log.csproj
 
       nothing added to commit but untracked files present (use "git add" to track)
 
-#. The output shows us that we have four new (untracked) files that have not been staged yet. Let's ``add``
+#. The output shows us that we have three new files that have not been staged yet. Let's ``add``
    everything in this directory, then check the ``status`` again.
 
    ::
@@ -228,30 +141,15 @@ Mac instructions
       Changes to be committed:
       (use "git rm --cached <file>..." to unstage)
 
-         new file:  .gitignore
          new file:  communication-log.sln
          new file:  communication-log/Program.cs
          new file:  communication-log/communication-log.csproj
-
-   .. admonition:: Note
-
-      As noted earlier, output may vary across OS and terminals.  
-      You may not see as may only see your main project folder listed rather than each file contained within it.
-      Continue with your staging, adding, and committing process.  
-
-      ::
-
-         Untracked files"
-            (Use "git add <file>..." to include what will be committed)
-            communication-log/ 
 
 #. The output tells us that the files are staged. Now let's ``commit``. After
    that, we can see a record of our progress by using ``git log``.
 
    ::
 
-      $ git commit -m 'howdy partner'
-      [master (root-commit) e1c1719] howdy partner
       $ git commit -m 'Started communication log.'
       [main (root-commit) e1c1719] Started communication log.
       4 files changed, 451 insertions(+)
@@ -262,55 +160,43 @@ Mac instructions
 
       $ git log
       commit 679de772612099c77891d2a3fab12af8db08b651
-      Author: Courtney <launchcode@gmail.com>
-      Date:   Mon Jul 25 10:55:56 2021 -0500
+      Author: Cheryl <chrisbay@gmail.com>
+      Date:   Wed Apr 5 10:55:56 2017 -0500
 
-         howdy partner
+         Started communication log.
 
-   Great! We've got our project going locally, but we're going to need to make it
-   accessible for your partner. The next step is to ``push`` this up to GitHub.
+Great! We've got our project going locally, but we're going to need to make it
+accessible for **Pilot** also. Let's push this project up to GitHub.
 
-Before we move on to GitHub, double check the name of your default branch.
-If it is not ``main``, this will be a good time to :ref:`change it<rename-branch>`.
-
-.. admonition:: WARNING!
-
-   If you do NOT change your default branch to ``main``, 
-   linking your repo to GitHub will be a little more challenging.
-
-Step 2: Push Your Repository To GitHub
+Step 3: Share Your Repository On GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Control and Pilot**: Complete steps 1-5 on your separate devices and GitHub accounts.
+**Control**: Go to your GitHub profile in a web browser. Click on the "+"
+button to add a new repository (called a *repo* for short).
 
-#. Go to your GitHub profile in a web browser. Click on the "+"
-   button to add a new repository (called a *repo* for short).
+.. figure:: figures/studio/new-repo-button.png
+   :alt: The New Repository link in the dropdown menu at top right on GitHub.
 
-   .. figure:: figures/studio/new-repo-button.png
-      :alt: The New Repository link in the dropdown menu at top right on GitHub.
+   The *New Repository* link is in the dropdown menu at top right on GitHub.
 
-      The *New Repository* link is in the dropdown menu at top right on GitHub.   
+To create a new repository:
 
-#. Create a new repository
+#. Fill in the name and description. 
+#. Uncheck *Initialize this repository with a README* and click *Create Repository*.
 
-   .. figure:: figures/studio/create-GH-repo.png
-      :scale: 50%
-      :alt: Creating a new repository in GitHub by filling out the form
+.. figure:: figures/studio/create-repo.png
+   :alt: Creating a new repository in GitHub by filling out the form
 
-   #. Fill in the name 
-   #. Add a description if you want (completely optional). 
-   #. For right now, keep your repo public and do NOT check any of the boxes asking about *README files*, *.gitignore* (you already did this), or *Choose a license*.
-   #. Create your repository.
+   Create a new repository in GitHub
 
-   .. admonition:: Note
+.. admonition:: Note
 
-      If you initialize with a README, in the next step Git will refuse to merge
-      this repo with the local repo. There are ways around that, but it's faster
-      and easier to just create an empty repo here.
+   If you initialize with a README, in the next step Git will refuse to merge
+   this repo with the local repo. There are ways around that, but it's faster
+   and easier to just create an empty repo here.
 
-#. After clicking, you should see something similar to:
+After clicking, you should see something similar to:
 
-.. figure:: figures/studio/GH-repo-setup.png
 .. figure:: figures/studio/new-repo-push-main.png
    :alt: The page you see after creating an empty repository, with several options.
 
@@ -321,123 +207,20 @@ instructions. These should be very similar to:
 
 ::
 
-   $ git remote add origin https://github.com/username/communication-log.git
-   $ git branch -M main
-   $ git push -u origin main
-
-.. index:: ! GitHub Initial Authentication, ! GitHub, ! git push  
-
-
-
-**Initial Authentication**
-
-The first time you push up to GitHub, you will be prompted in the terminal to enter your account username and password. Be sure to do this.
-
-::
-
-   $ git push -u origin main
-   Username for 'https://github.com': your-username-here
-   Passowrd for 'https://username@github.com': <type your password here>
    $ git remote add origin https://github.com/your-username/communication-log.git
    $ git branch -M main
    $ git push -u origin main
 
 .. admonition:: Note
 
-   When entering your password, you will not see it.  
-   In fact, it will look like nothing is happening.  
-   This is not the case.  Type in your password, followed by *Enter* and your password will be accepted.
-   (As long as you typed it correctly).
-
-   For this inital step, your GitHub password is all that is being asked for.
-
+   The first time you push up to GitHub, you will be prompted in the terminal
+   to enter your account username and password. Do this.
    
-You will then see a large amount of output that you can safely ignore. 
-This output has information about the repo, but we don't need it at this time.
+   You will then see a large amount of output that you can safely ignore. The
+   final few lines will confirm a successful push. They will look something
+   like this:
 
-The final few lines will confirm a successful push. They will look something similar to this:
-
-::
-
-   To github.com:your-username/communication-log.git
-      c7f97814..54993de3  main -> main
-
-
-
-
-
-Now you should be able to confirm that GitHub has the same version as your
-local project. (File contents in browser match those in terminal). Click around
-and see what is there. You can read all your code through GitHub's web
-interface.
-
-.. figure:: figures/studio/GH-repo-success.png
-   :alt: A repository with one commit in GitHub
-
-   A repository with one commit and two items in GitHub
-
-Git the Teamwork Started
--------------------------
-
-You've successfully created a new GitHub repository and pushed content to it. 
-Now it's time for you and your partner to start collaborating on the same repo.
-
-For the remaining sections of this studio, keep an eye on the *Control* and *Pilot* role tags. 
-Make sure that you both perform your tasks in the recommended order. 
-Mixing things up won't destroy the universe, but it will make finishing the studio more complicated.
-
-Even when it is not your turn to complete a task, read and observe what your partner is doing. 
-The steps here mimic a real-world collaborative Git workflow.
-
-
-
-Step 3: Add A Collaborator To A GitHub Project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Control**, the first step is yours.  
-In order for **Pilot** to make changes to your GitHub repository, you must invite them to collaborate.
-
-#. **Control**: In your web browser, go to your ``communication-log`` repo. 
-   Click the *Settings* button then select the *Manage Access* option.
-
-   .. figure:: figures/studio/manage-access.png
-      :alt: Add a collaborator by typing their user name into the input on the Add Collaborator page.
-
-      Add a collaborator to your repo in GitHub
-
-#. **Control**: Click on the green *Invite a collaborator* button. 
-   Enter your partner's GitHub username and click *Add to repository*.
-
-
-   .. figure:: figures/studio/add-collab.png
-      :scale: 60%
-      :alt: Add a collaborator by typing their user name into the input on the Add Collaborator page.
-
-      Choose who else can modify your GitHub repo.
-
-#. **Pilot**: You should receive an email invitation to join this repository. 
-   View and accept the invitation.
-
-   .. admonition:: Note
-
-      **Pilot:** If you don't see the email, check your Spam folder. 
-      If you still don't have the email, login to your GitHub account. 
-      Visit the URL for Control's copy of the repo. You should see an invite notification at the top of the page.
-
-
-
-   .. _clone-from-git:
-
-
-Step 4: Clone a Project from GitHub
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. admonition:: Warning
-
-   **Pilot**, did you and your partner give :ref:`different names<diff-name>` to your 
-   communication-log repositories?
-
-   If not, take a moment to find your local communication-log folder on your machine. RENAME IT!
+   ::
 
       To github.com:your-username/communication-log.git
          c7f97814..54993de3  main -> main
@@ -450,36 +233,50 @@ Step 4: Clone a Project from GitHub
    HTTPS clone URL. If you're not sure whether you have an SSH key, you
    probably don't.
 
-#. **Pilot**: Go to Control's GitHub profile and find their ``communication-log`` repo.
-   Click on the green *Code* button. Select HTTPS and copy the url to your clipboard.
+Now you should be able to confirm that GitHub has the same version as your
+local project. (File contents in browser match those in terminal). Click around
+and see what is there. You can read all your code through GitHub's web
+interface.
 
-   .. figure:: figures/studio/code-button.png
-      :alt: The clone button is on the right-hand side of a project's main page
+.. figure:: figures/studio/repo-first-commit.png
+   :alt: A repository with one commit in GitHub
 
-      Cloning a repository in GitHub
+   A repository with one commit in GitHub
 
-#. **Pilot** In your terminal, navigate to your directory and clone **Control's** repo.
-   You should be OUTSIDE of any other Git repositories.
+.. _clone-from-git:
 
-   The clone command should look something like this.
+Step 4: Clone a Project from GitHub
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   ::
-      
-      Students-Computer: communication-log student$  git clone https://github.com/username/communication-log.git
+**Pilot**: Go to Control's GitHub profile and find the communication-log repo.
+Click on the green *Clone or download* button. Use HTTPS (not SSH). Copy the
+url to your clipboard.
 
-   Replace the URL with the address you copied from GitHub.
+.. figure:: figures/studio/clone-button.png
+   :alt: The clone button is on the right-hand side of a project's main page
+
+   Cloning a repository in GitHub
+
+In your terminal, navigate to your development folder and clone down the repo.
+The command should look something like this.
+
+::
+
+   $ git clone https://github.com/chrisbay/communication-log.git
+
+Now you can respond to Control! Open the ``communication-log.sln`` file in your editor and
+add your response to mission control. Be creative, the communication can go
+anywhere! Just don't ask your partner what you should write. After you finish,
+commit your change.
 
 .. admonition:: Note
 
-   If you have created a personal access token, you may be asked to provide your username and password at this time.
-   In this instance, the password that GitHub is looking for is your personal access token and not your GitHub password.
+   When you open the project folder, you might not be in the same directory as the solution.  
+   You want to open the solution or ``.sln`` file.  
+   A quick way to do that from the terminal is to ``cd`` into the folder that is holding the solution and then type ``open .sln``.
 
+::
 
-#. **Pilot**: You should now have a copy of **Control's** project on your own machine.
-   
-  
-Git Talking
--------------
    $ git status
    On branch main
    Your branch is up-to-date with 'origin/main'.
@@ -487,9 +284,9 @@ Git Talking
    $ git add .
    $ git commit -m 'Added second line to log.'
 
-Whew! That was quite the setup expereience.  Now you're ready to dive into the main part of the assignment.
+Now we need to push up your changes so Control can use them as well.
 
-On to :ref:`Studio Part 2!<studio-p2>`
+::
 
    $ git push origin main
    ERROR: Permission to chrisbay/communication-log.git denied to pilot.
@@ -501,7 +298,7 @@ On to :ref:`Studio Part 2!<studio-p2>`
 Great error message! It let us know exactly what went wrong: Pilot does not
 have security permissions to write to Control's repo. Let's fix that.
 
-Step 4: Add A Collaborator To A GitHub Project
+Step 5: Add A Collaborator To A GitHub Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Control**: In your web browser, go to your ``communication-log`` repo. Click
@@ -513,7 +310,7 @@ username and click *Add Collaborator*.
 
    Add a collaborator to your repo in GitHub
 
-Step 5: Join the Project and Push
+Step 6: Join the Project and Push
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Pilot**: You should receive an email invitation to join this repository.
@@ -549,7 +346,7 @@ Now let's go enter that command again to push up our code.
 Anyone reading the code through GitHub's browser interface should now see the
 new second line.
 
-Step 6: Pull Pilot's Line and Add Another Line
+Step 7: Pull Pilot's Line and Add Another Line
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Control**: You might notice you don't have the second line of code in your
@@ -578,7 +375,7 @@ and push it up.
 You can have your story go anywhere! Try to tie it in with what the pilot
 wrote, without discussing with them any plans on where the story will go.
 
-Step 7: Do It Again: Pull, Change, and Push!
+Step 8: Do It Again: Pull, Change, and Push!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Pilot**: You might notice now *you* don't have the third line on your
@@ -606,7 +403,7 @@ Then add, commit, and push your change.
 You can both play like this for a while! Feel free to repeat this cycle a few
 times to add to the story.
 
-Step 8: Create a Branch In Git
+Step 9: Create a Branch In Git
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This workflow is a common one in team development situations. You might wonder,
@@ -982,4 +779,3 @@ Resources
 * `Git Branching - Basic Branching and Merging <https://Git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>`_
 * `Adding Another Person To Your Repository <https://help.Github.com/articles/inviting-collaborators-to-a-personal-repository/>`_
 * `Resolving Conflicts In the Command Line <https://help.Github.com/articles/resolving-a-merge-conflict-using-the-command-line/>`_
-
