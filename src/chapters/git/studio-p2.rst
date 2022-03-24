@@ -11,214 +11,447 @@ You will push and pull, you will create branches, and you might possibly merge y
 
 Good luck!
 
-.. admonition:: Tip 
+.. admonition:: Warning
 
-   As you continue with the studio, you'll be working with *branches*.  
+   As you go through these steps, you'll be working with branches. It's very
+   likely you will make changes to the code only to realize that you did so in the
+   wrong branch. When this happens (and it happens to all of us) you can use
+   ``Git stash`` to cleanly move your changes to another branch. Read about how
+   to do so in our :ref:`git-stash` tutorial.
 
-   It is very likely that you will make changes to the code only to realize 
-   that you did so in the wrong branch.  When this happens (and it happens to us all)
-   you cna use ``git stash`` to cleanly move your changes to another branch.
+Step 7: Pull Pilot's Line and Add Another Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   Read about how to do this in our :ref:`Git Stash<git-stash>` tutorial.
+**Control**: You might notice you don't have the second line of code in your
+copy of the project on your computer. Let's fix that. Go to the terminal and
+enter this command to pull down the updated code into your local git
+repository.
 
+::
 
+   $ git pull origin main
+   remote: Counting objects: 3, done.
+   remote: Compressing objects: 100% (2/2), done.
+   remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+   Unpacking objects: 100% (3/3), done.
+   From github.com:chrisbay/communication-log
+      e0de62d..e851b7e  main     -> origin/main
+   Updating e0de62d..e851b7e
+   Fast-forward
+   communication-log.sln | 1 +
+   1 file changed, 1 insertion(+)
 
-Step 5: First Message Exchange
--------------------------------
 
-#. **Pilot** We left off after you successfully cloned a copy of **Control's** repo onto your machine.
-   Now you need to access the project.
+Now, in your editor, add a third line to the communication. Then add, commit,
+and push it up.
 
-   To access this project, you need to ``cd`` onto the level that contains the ``Project.cs``
-   or ``.sln`` files.  This is the level you need to be at in order to ``push`` or ``pull`` changes.
-   
-   To open these files using the terminal CLI, type ``start *.sln`` in Windows, and ``open *.sln`` in Mac.
+You can have your story go anywhere! Try to tie it in with what the pilot
+wrote, without discussing with them any plans on where the story will go.
 
-#. **Pilot** Modify the ``Program.cs`` file.  Add a new ``Console.WriteLine`` statement for your partner.  
-   Be creative, the communication can go anywhere!  Just don't ask your partner what you should write.
+Step 8: Do It Again: Pull, Change, and Push!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. **Pilot**: After you finish, save your changes and commit 
-   them using the usual ``git status/git add ./git commit -m`` process.
+**Pilot**: You might notice now *you* don't have the third line on your
+computer. Go to the terminal and enter this command to pull in the changes that
+Control just made.
 
-#. **Pilot**: Once commited, ``push`` your changes up to GitHub so that **Control** can see them as well.
-   Use the command:
+::
 
-   ::
+   $ git pull origin main
+   remote: Counting objects: 3, done.
+   remote: Compressing objects: 100% (2/2), done.
+   remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+   Unpacking objects: 100% (3/3), done.
+   From github.com:chrisbay/communication-log
+      e851b7e..167684c  main     -> origin/main
+   Updating e851b7e..167684c
+   Fast-forward
+   communication-log.sln | 1 +
+   1 file changed, 1 insertion(+)
 
-      $ git push origin main
-      Counting objects: 4, done.
-      Delta compression using up to 4 threads.
-      Compressing objects: 100% (4/4), done.
-      Writing objects: 100% (4/4), 472 bytes | 472.00 KiB/s, done.
-      Total 4 (delta 1), reused 0 (delta 0)
-      remote: Resolving deltas: 100%, completed with 8 local objects.
-      To git@github.com:username/communication-log.git
-         511239a..679de77 main -> main
+Now add a fourth line to the log. Again, be creative, but no planning!
 
-   .. admonition:: Tip
+Then add, commit, and push your change.
 
-      Remember, the exact number of objects will vary based on your own changes.
-      The key is to look at the commands and the final outcome.
+You can both play like this for a while! Feel free to repeat this cycle a few
+times to add to the story.
 
-      As we continue, we will pare down the examples to contain only the most useful data.
+Step 9: Create a Branch In Git
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+This workflow is a common one in team development situations. You might wonder,
+however, if professional developers sit around waiting for their teammates to
+commit and push a change before embarking on additional work on their own. That
+would be a drag, and thankfully, there is a nice addition to this workflow that
+will allow for simultaneous work to be carried out in a reasonable way.
 
-#. **Control**:  Pull **Pilots's** changes down from GitHub with the following command:
+**Pilot**: While Control is working on an addition to the story, let's make
+another change simultaneously. In order to do that, we'll create a new branch.
+Recall that a branch is a separate "copy" of the codebase that you can commit
+to without affecting code in the ``main`` branch.
 
-   ::
+::
 
-      $ git pull origin main
-      remote: Enumerating objects: 7, done
-      remote: Counting objects: 100% (7/7), done.
-      remote: Compressing objects: 100% (3/3), done.
-      remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
-      Unpacking objects: 100% (4/4), 452 bytes | 37.00 KiB/s, done.
-      From github.com:username/communication-log 
-         * branch       main     -> FETCH_HEAD  
-         e0de62d..e851b7e main   -> origin/main
-      Updating e0de62d..e851b7e
-      Fast-forward
-      communication-log/Program.cs | 1 +
-      1 file changed, 1 insertion(+)
+   $ git checkout -b open-mic
+   Switched to a new branch 'open-mic'
 
+This command creates a new branch named ``open-mic``, and switches your local
+repository to use that branch.
 
-#. **Control**: Notice that the code in your local ``Program.cs`` file now has **Pilot's** additions.  How cool is that!?!
-   Go ahead and respond by adding a new ``Console.WriteLine`` message. Save your changes, then commit and push your changes up to GitHub.
+Update the `background color of the console <https://docs.microsoft.com/en-us/dotnet/api/system.console.backgroundcolor?view=net-5.0>`_, and update the ``Hello World!`` statement to something more exciting.:
 
-#. **Pilot and Control**:  Play with the ``pull/edit/push`` process a few more times.  Repeat the cycle for a few more times to add to your story.  
-   Be sure to run your program with each change to verify functionality.
-   
+.. sourcecode:: csharp
+   :linenos:
 
-Step 6: Create a Branch in Git
--------------------------------
+   Console.BackgroundColor = ConsoleColor.Your-Choice-Here
 
-This back-and-forth workflow is nice, but it can get in the way.
-Afterall, professional developers don't sit around waiting for their 
-teammates to commit and push a change before starting their own work.  
-That could take forever as programs increase in size and function.
-Fortunately, Git branches allow partners to work on a project at the
-*same* time and at their own pace.
 
-#. **Pilot**:  While **Control** is working on the next part of the story, use the terminal 
-   to :ref:`create a new branch<new-branch>` called ``open-mic``.  
-   Recall that a branch is a separate copy of the 
-   codebase.  This lets you commit changes without affecting the code in the ``main`` branch.
 
-   ::
+Now stage and commit these changes.
 
-      $ git checkout -b open-mic
-      Switched to a new branch 'open-mic'
+::
 
-      $ git branch
-      main
-      * open-mic
+   $ git add .
+   $ git commit -m 'Changed background color'
+   $ git push origin open-mic
 
-   This command creates a new branch named ``open-mic``, and switches your local
-   repository to use that branch.
+Note that the last command is a bit different than what we've used before
+(``git push origin main``). The final piece of this command is the name of
+the branch that we want to push to GitHub.
 
-#. **Pilot**: Copy and paste following code block *above* your ``Console.WriteLine`` stories.
+You and your partner should both now see a second branch present on the GitHub
+project page. To view branches on GitHub, select *Branches* from the navigation
+section just below the repository title.
 
-   .. sourcecode:: csharp
+.. figure:: figures/studio/two-branches.png
 
-      Console.WriteLine("Enter a number.");
-      string input = Console.ReadLine();
+   Branches Button in GitHub
 
-      if(Int32.Parse(input) % 2 == 0)
-      {
-         Console.WriteLine("Your number is even");
-      }
-      else
-      {
-         Console.WriteLine("Your number is odd.");
-      }
+In your terminal, you can type this command to see a list of the available
+branches:
 
-#. **Pilot**: Now save, stage, commit and push these changes.
+::
 
-   ::
+   $ git branch
+   * open-mic
+   main
 
-      $ git add .
-      $ git commit -m 'even or odd test added'
-      . . .
+Note that creating and being able to see a branch in your local repository via
+this command does NOT mean that the branch is on GitHub. You'll need to push
+the branch for it to appear on GitHub.
 
-      $ git push origin open-mic
-      . . .
-      To github.com:username/communication-log.git
-      * [new branch] open-mic -> open-mic
+.. note::
 
-   Note that the last command is a bit different than what we've used before
-   (``git push origin main``). The final piece of this command is the name of
-   the branch that we want to push to GitHub.
+   The \* to the left of ``open-mic`` indicates that this is the active branch.
 
-#. **Control**:  You will want to pull down the new ``open-mic`` branch. 
-   The following command can help you do that:
 
-   ::
+Great! Now let's show the other player your work in GitHub and ask them to
+merge it in to the main branch.
 
-      $ git pull origin open-mic
+Create a Pull Request In GitHub
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   .. admonition:: Tip
-      
-      If this is not working right away, the following steps can be used:
-      
-      #. Create a branch ``open-mic`` 
+**Pilot**: If you haven't already, in your browser, go to the GitHub project
+and click on *Branches* and make sure you see the new branch name, *open-mic*.
 
-         ::
+.. figure:: figures/studio/new-pr-button.png
+   :alt: The Branches page of a repo, with a button to open a new pull request to the right of each feature branch.
+   :height: 300px
 
-            $ git checkout -b open-mic
-            $ git pull origin open-mic
+   Branches Page in GitHub
 
-      #. If you do not see any changes in your IDE, try closing your IDE and reopening it in your new branch.
+Click *New Pull Request* to begin the process of requesting that your changes
+in the ``open-mic`` branch be incorporated into the ``main`` branch. Add some
+text in the description box to let Control know what you did and why.
 
-      #. Still no changes?  Try the following:
+Note that the branch selected in the *base* dropdown is the one you want to
+merge *into*, while the selected branch in the *compare* dropdown is the one
+you want to merge *from*.
 
-         ::
+.. figure:: figures/studio/create-pr.png
+   :alt: The form for creating a new pull request.
+   :height: 500px
 
-            $ git pull 
+   Open a PR in GitHub
 
-         If git prompts you to use a specific command, use that command.
-         For example:
+This is what an opened pull request looks like:
 
-         ::
+.. figure:: figures/studio/open-pr.png
+   :alt: An open pull request.
+   :height: 500px
 
-            If you wish to set tracking information for this branch you do so with this:
+   An open PR in GitHub
 
-               git branch --set-upstream-to=origin/<branch> open-mic
+Step 10: Make a Change in the New Branch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-         With this command, replace the <branch> with the name of your branch.  In this example, they will match.
+**Control**: You will notice that you do not see the new console colors. 
+Type this command to see what branches are on your local computer:
 
-         ::
+::
 
-            $ git branch --set-upstream-to=origin/open-mic open-mic
-            Branch 'open-mic' set up to track remote branch 'open-mic' from 'origin'
+   $ git branch
+   * main
 
-         Now you can pull down the latest changes from this branch.
+If you want to work with the branch before merging it in, you can do so by
+typing these commands:
 
+::
 
+   $ git fetch origin open-mic
+   ...
+   $ git branch
+   open-mic
+   * main
 
-   .. admonition:: Note
+::
 
-      If you don't know the name of the new branch, then just enter ``git pull``.  
-      This will pull down *all* of the new branches and show you a list of the options.
+   $ git checkout open-mic
+   Switched to branch 'open-mic'
+   Your branch is up-to-date with 'origin/open-mic'.
 
-#.  **Pilot and Control**:  If you haven't already done so, open ``Program.cs`` and see what it looks like.
+Make a change, commit, and push this branch--you will see that the pull request
+in GitHub is updated to reflect the changes you added. The context in the
+description box is NOT updated, however, so be sure to add comments to the pull
+request to explain what you did and why.
 
-Good!  Now let's take a look at GitHub and find the new ``open-mic`` branch.
+Now switch back to the ``main`` branch:
 
+::
 
-View Branches in GitHub
-^^^^^^^^^^^^^^^^^^^^^^^
+   $ git checkout main
+   Switched to branch 'main'
+   Your branch is up-to-date with 'origin/main'.
 
-**Control and Pilot**: On GitHub, you and your partner should both now see a second branch present on the project page. 
-To view branches on GitHub, select *Branches* from the navigation
-section just below the repository title (inside the bright orange rectangle).
+You will see your files no longer have the changes made in the ``open-mic``
+branch. Let's go merge those changes in, so that the ``main`` branch adopts
+all the changes in the ``open-mic`` branch.
 
-.. figure:: figures/studio/2-branches-and-pr.png
-   :alt: screenshot of control's view of GitHub repo with 2 branches
+Step 11: Merge the Pull Request
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   This is Control's view of GitHub.  A new box has popped out letting Control know that a Pull Request (PR) has been made.  
+**Control**: Go to the repo in GitHub. Click on *Pull Requests*.
 
+.. figure:: figures/studio/pr-link.png
 
-Great progress!  Now let's figure out how to merge these two branches in GitHub.
+   PR Open in GitHub
+
+Explore this page to see all the information GitHub shows you about the pull
+request.
+
+.. figure:: figures/studio/open-pr.png
+   :alt: A pull request ready to merge
+   :height: 500px
+
+   Merge a Pull Request in GitHub
+
+When you're happy with the changes, merge them in. Click *Merge Pull Request*
+then *Confirm Merge*.
+
+.. figure:: figures/studio/confirm-merge-pr.png
+   :alt: Confirming a merge
+   :height: 500px
+
+   Confirm PR Merge in GitHub
+
+Upon a successful merge, you should see a screen similar to the following:
+
+.. figure:: figures/studio/pr-merged.png
+   :alt: The screen displayed after a PR is merged
+   :height: 500px
+
+   PR Merged in GitHub
+
+The changes from ``open-mic`` are now in the ``main`` branch, but only in
+the remote repository on GitHub. You will need to pull the updates to your
+``main`` for them to be present locally.
+
+::
+
+   $ git checkout main
+   $ git pull origin main
+
+Git is able to merge these files on its own.
+
+Step 12: Merge Conflicts!
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When collaborating on a project, things won't always go smoothly. It's common
+for two people to make changes to the same line(s) of code, at roughly the same
+time, which will prevent Git from being able to merge the changes together.
+
+.. figure:: figures/studio/git-merge.gif
+   :alt: An animated GIF file showing two opposing armies colliding in a mess
+
+   Git Merge Conflicts
+
+This isn't such a big deal. In fact, it's very common. To see how we can handle
+such a situation, we'll intentionally create a merge conflict and then resolve
+it.
+
+**Pilot**: Let's change something about the style file. Our Console is looking
+pretty plain, so let's change the color and maybe share a joke or something to liven this up.
+
+First, switch back to the ``main`` branch.
+
+::
+
+   $ git checkout main
+
+
+Stage and commit your changes and push them up to GitHub. If you don't remember
+how to do this, follow the instructions above. Make sure you're back in the
+``main`` branch! If you're still in ``open-mic``, then your changes will be
+isolated, and you won't get the merge conflict you need to learn about.
+
+Meanwhile...
+
+**Control**: Let's change something about the style file that Pilot just
+edited. Change the color again.  
+Update your current Console.WriteLine statement to make an observation about the weather or something.
+
+Commit your changes to branch ``main``.
+
+Step 13: Resolving Merge Conflicts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Control**: Try to push your changes up to GitHub. You should get an error
+message. How exciting!
+
+::
+
+   $ git push origin main
+
+   To git@github.com:chrisbay/communication-log.git
+   ! [rejected]        main -> main (fetch first)
+   error: failed to push some refs to 'git@github.com:chrisbay/communication-log.git'
+   hint: Updates were rejected because the remote contains work that you do
+   hint: not have locally. This is usually caused by another repository pushing
+   hint: to the same ref. You may want to first integrate the remote changes
+   hint: (e.g., 'git pull ...') before pushing again.
+   hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+There's a lot of jargon in that message, including some terminology we haven't
+encountered. However, the core of the message is indeed understandable to us:
+"Updates were rejected because the remote contains work that you do not have
+locally." In other words, somebody (Pilot, in this case), pushed changes to the
+same branch, and you don't have those changes on your computer. Git will not
+let you push to a branch in another repository unless you have incorporated all
+of the work present in that branch.
+
+Let's pull these outstanding changes into our branch and resolve the errors.
+
+::
+
+   $ git pull
+   remote: Counting objects: 4, done.
+   remote: Compressing objects: 100% (3/3), done.
+   remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+   Unpacking objects: 100% (4/4), done.
+   From github.com:chrisbay/communication-log
+      7d7e42e..0c21659  main     -> origin/main
+   Auto-merging communication-log.sln
+   CONFLICT (content): Merge conflict in communication-log.sln
+   Auto-merging communication-log.sln
+   CONFLICT (content): Merge conflict in communication-log.sln
+   Automatic merge failed; fix conflicts and then commit the result.
+
+
+Since Pilot made changes to some of the same lines you did, Git was unable to
+automatically merge the changes.
+
+The specific locations where Git could not automatically merge files are
+indicated by the lines that begin with ``CONFLICT``. You will have to edit
+these files yourself to incorporate Pilot's changes. 
+
+.. figure:: figures/studio/conflict-workspace.png
+   :alt: VS shows merge conflicts in the editor window
+
+   Merge conflicts in ``main`` branch of communication-log, viewed in VS on a Mac.  Windows users, you will see a different screen, but the ``<<<<<<<``,  ``=======`` and ``>>>>>>>`` symbols will be the same.
+
+At the top and bottom, there is some code that could be merged without issue.
+
+Between the ``<<<<<<< HEAD`` and ``=======`` symbols is the version of the code
+that exists locally. These are *your* changes.
+
+Between ``=======`` and ``>>>>>>> open-mic...``
+are the changes that Pilot made (the hash ``open-mic...`` will be unique to
+the commit, so you'll see something slightly different on your screen).
+
+Let's unify our code.   Select which changes you would like to keep, or if possible select all of them.  It's up to you and your partner.
+
+.. tip:: Like many other editors, VS provides fancy buttons to allow you to resolve individual merge conflicts with a single click. There's nothing magic about these buttons; they do the same thing that you can do by directly editing the file.
+
+   Feel free to use them, but beware that they will not always work. If you need to incorporate parts of a change from both branches, you will need to manually edit the file to resolved the conflict.
+
+Don't forget to stage and commit.
+
+Step 14: Pulling the Merged Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Pilot**: Meanwhile, Pilot is sitting at home, minding their own business. A
+random ``git status`` seems reassuring:
+
+::
+
+   $ git status
+   On branch main
+   Your branch is up-to-date with 'origin/main'.
+   nothing to commit, working directory clean
+
+
+Your local Git thinks the status is quo. Little does it know that up at GitHub,
+the status is not quo. We'd find this out by doing either a ``git fetch``, or
+if we just want the latest version of this branch, ``git pull``:
+
+::
+
+   $ git pull
+   remote: Counting objects: 13, done.
+   remote: Compressing objects: 100% (8/8), done.
+   remote: Total 13 (delta 4), reused 13 (delta 4), pack-reused 0
+   Unpacking objects: 100% (13/13), done.
+   From Github.com:chrisbay/communication-log
+      0c21659..e0de62d  main     -> origin/main
+   Updating 0c21659..e0de62d
+   Fast-forward
+   communication-log.sln | 3 ++-
+   1 file changed, 4 insertions(+), 3 deletions(-)
+
+Great Scott! Looks like Control changed the ``communication-log``.
+Note that *Pilot* didn't have to deal with the hassle of resolving merge
+conflicts. Since Control intervened, Git assumes that the team is okay with the
+way they resolved it, and *fast forwards* our local repo to be in sync with the
+remote one. Let's look at ``communication-log.sln`` to make sure.  
+What do you see?  What color is the text now?  Oh my!
+
+
+Step 15: More Merge Conflicts!
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's turn the tables on the steps we just carried out, so Pilot can practice
+resolving merge conflicts.
+
+#. **Control and Pilot**: Confer to determine the particular lines in the code
+   that you will both change. Make different changes in those places.
+#. **Control**: Stage, commit, and push your changes.
+#. **Pilot**: Try to pull in Control's changes, and notice that there are merge
+   conflicts. Resolve these conflicts as we did above (ask Control for help, if
+   you're uncertain about the process). Then stage, commit, and push your
+   changes.
+#. **Control**: Pull in the changes that Pilot pushed, including the resolved
+   merge conflicts.
+
+Merge conflicts are a part of the process of team development. Resolve them
+carefully in order to avoid bugs in your code.
+
+Resources
+^^^^^^^^^^
+
+* `Git Branching - Basic Branching and Merging <https://Git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>`_
+* `Adding Another Person To Your Repository <https://help.Github.com/articles/inviting-collaborators-to-a-personal-repository/>`_
+* `Resolving Conflicts In the Command Line <https://help.Github.com/articles/resolving-a-merge-conflict-using-the-command-line/>`_
 
 Step 7: Open a Pull Request in GitHub
 -------------------------------------
