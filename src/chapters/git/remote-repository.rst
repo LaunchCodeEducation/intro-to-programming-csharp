@@ -35,6 +35,16 @@ Creating a repo from scratch on your own computer.
 #. Back on your computer, open your IDE and select the folder your repo is contained in and start coding.
 #. Don't forget to save and commit your changes periodically.
 
+Collaborating with Colleagues
+-----------------------------
+
+If a programmer wants to start collaborating with their colleagues on a new project, they might need to start with the work that one of their colleagues has already done.
+In this particular case, the programmer has to import the work that is being stored in an online repository onto their local machine.
+
+They can clone a remote repository by using the ``git clone url`` command.
+Github and other online Git systems give users the option to clone the repository through HTTPS or SSH depending on how their Github profile is set up.
+The ``url`` of the command is where the programmer adds the url to the repository that they are cloning. 
+
 Cloning a Repo
 ^^^^^^^^^^^^^^
 
@@ -52,16 +62,6 @@ Using code from someone else's computer.
       Students-Computer:learning-git student$ git clone https://github.com:username/repo-name.git
 #. Run the ``ls`` command to see what is now in your folder.
 #. You will need to ``cd`` into the project folder in order to start coding.
-
-Collaborating with Colleagues
------------------------------
-
-If a programmer wants to start collaborating with their colleagues on a new project, they might need to start with the work that one of their colleagues has already done.
-In this particular case, the programmer has to import the work that is being stored in an online repository onto their local machine.
-
-They can clone a remote repository by using the ``git clone url`` command.
-Github and other online Git systems give users the option to clone the repository through HTTPS or SSH depending on how their Github profile is set up.
-The ``url`` of the command is where the programmer adds the url to the repository that they are cloning. 
 
 Forking a Repo
 ^^^^^^^^^^^^^^
