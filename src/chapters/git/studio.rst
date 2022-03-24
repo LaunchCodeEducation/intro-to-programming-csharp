@@ -35,11 +35,10 @@ Windows instructions:
 
 **Control**: Navigate to your development folder and create a project folder.  
    Enter the following 3 commands to create a new project.
-   Replace ``-ROLE`` with your part in this studio, either ``-pilot`` or ``-control``.
-
+   
    ::
 
-      $ cd communication-log-ROLE
+      $ cd communication-log
       $ git init
       $ Initialized empty Git repository in [repo location on your machine]
 
