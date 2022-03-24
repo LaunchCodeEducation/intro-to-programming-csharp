@@ -13,3 +13,4 @@ Git More Collaboration
    exercises
    studio
    studio-p2
+   bonus-mission
