@@ -32,15 +32,17 @@ This lesson reinforces:
 Overview
 --------
 
-The instructor will discuss why GitHub is worth learning. You already know how to use a local Git repository with one branch, giving you the ability to move your code forward and backward in time. Working with branches on GitHub extends this ability by allowing multiple people to build different features at the same time, then combine their work. Pull requests act as checkpoints when code flows from branch to branch.
-
-Students must pair off for this exercise. If you have trouble finding a partner, ask your TA for help.
-
+The instructor will discuss why GitHub is worth learning. You already know how to use a 
+local Git repository with one branch, giving you the ability to move your code forward and 
+backward in time. Working with branches on GitHub extends this ability by allowing multiple 
+people to build different features at the same time, then combine their work. Pull requests 
+act as checkpoints when code flows from branch to branch.
 
 We are going to simulate a radio conversation between the shuttle pilot and
 mission control.
 
-First, find a new friend to share the activity.
+Students must pair off for this exercise. If you have trouble finding a partner, ask your 
+TA for help.
 
 You and your partner will alternate tasks, so designate one of you as **Pilot**
 and the other as **Control**. Even when it is not your turn to complete a task,
@@ -50,7 +52,7 @@ mimic how a real-world collaborative Git workflow can be used within a project.
 .. _create-new-git-repo:
 
 Step 1: Create a New Repository
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 
 .. admonition:: Note
 
@@ -59,7 +61,7 @@ Step 1: Create a New Repository
    They are NOT part of the commands.
 
 Windows instructions:
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 **Control**: Navigate to your development folder and enter the following 3 commands to create a new project.
    
@@ -106,7 +108,7 @@ Now that you have a directory, open Visual Studio and :ref:`create a new console
 
 
 Mac Instructions:
------------------
+^^^^^^^^^^^^^^^^^
 
 **Control**: Open Visual Studio and :ref:`create a new project <create-new-csharp-project>`.  
 
@@ -119,7 +121,7 @@ Mac Instructions:
    and automatically create a ``.gitignore file`` (3).
 
 Step 2: First Commit
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 Let's check that our project works by running it.
 
@@ -194,7 +196,7 @@ Great! We've got our project going locally, but we're going to need to make it
 accessible for **Pilot** also. Let's push this project up to GitHub.
 
 Step 3: Share Your Repository On GitHub
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------
 
 **Control**: Go to your GitHub profile in a web browser. Click on the "+"
 button to add a new repository (called a *repo* for short).
@@ -271,7 +273,7 @@ interface.
 .. _clone-from-git:
 
 Step 4: Clone a Project from GitHub
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 **Pilot**: Go to Control's GitHub profile and find the communication-log repo.
 Click on the green *Clone or download* button. Use HTTPS (not SSH). Copy the
@@ -324,7 +326,7 @@ Great error message! It let us know exactly what went wrong: Pilot does not
 have security permissions to write to Control's repo. Let's fix that.
 
 Step 5: Add A Collaborator To A GitHub Project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------
 
 **Control**: In your web browser, go to your ``communication-log`` repo. Click
 the *Settings* button then click on *Collaborators*. Enter in Pilot's GitHub
@@ -336,7 +338,7 @@ username and click *Add Collaborator*.
    Add a collaborator to your repo in GitHub
 
 Step 6: Join the Project and Push
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
 **Pilot**: You should receive an email invitation to join this repository.
 View and accept the invitation.

@@ -1,8 +1,6 @@
 Bonus Mission: Merge Conflicts!
 -------------------------------
 
-.. index:: ! merge conflicts
-    
 Merge Conflicts!
 ^^^^^^^^^^^^^^^^
 
