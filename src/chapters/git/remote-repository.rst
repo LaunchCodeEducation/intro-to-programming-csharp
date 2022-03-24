@@ -66,23 +66,8 @@ The ``url`` of the command is where the programmer adds the url to the repositor
 Forking a Repo
 ^^^^^^^^^^^^^^
 
-<<<<<<< HEAD
 Creating a fork allows you to modify codebases without changing the original codebase.  
 It is how you worked in replit.  And it is how you will gain access to any starter code in the remainder of this course.
-=======
-.. note::
-
-   Throughout this book, HTTPS will be used for cloning repositories.
-
-   TOKEN NOW:  https://www.youtube.com/watch?v=kHkQnuYzwoo
-
-In order to clone a repo, either navigate to the directory you want to store in or create a new directory to store it.  Go ahead and create a ``learning-git`` directory and navigate into it.
-
-::
-
-
-Once you have navigated into the directory that will hold the repo on your computer use ``git clone url`` to connect to a github repo and clone a copy locally. This will make a new directory with the name of the repo you are cloning within ``learning-git``.  Once created navigate into your cloned repo. 
->>>>>>> origin/windows-studio
 
 #. Open the repo you wish to fork.
 #. Locate the ``Fork`` button.  Currently is in the top right corner of a GitHub repo.
@@ -90,23 +75,7 @@ Once you have navigated into the directory that will hold the repo on your compu
 #. A forked copy of the repo appear in GitHub.
 #. You need to clone this fork onto your computer in order to work with its code. 
 
-<<<<<<< HEAD
 For more detailed instructions on how to fork, checkout out :ref:this walkthrough<forking>`.
-=======
-::
-
-   Students-Computer:learning-git student$ git clone https://github.com/studentUserName/name-of-repo.git
-   Cloning into 'name-of-repo'...
-   remote: Enumerating objects: 13, done.
-   remote: Counting objects: 100% (13/13), done.
-   remote: Compressing objects: 100% (10/10), done.
-   remote: Total 13 (delta 3), reused 13 (delta 3), pack-reused 0
-   Receiving objects: 100% (13/13), 4.77 KiB | 4.77 MiB/s, done.
-   Resolving deltas: 100% (3/3), done.
-   Students-Computer:learning-git student$ls
-   name-of-repo
-   Students-Computer:learning-git student$cd name-of-repo
->>>>>>> origin/windows-studio
 
 
 .. admonition:: Fork or Clone?
