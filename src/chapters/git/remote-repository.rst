@@ -14,21 +14,44 @@ We will be using GitHub to create our remote repositories.
 You will need to create an account on `GitHub <https://www.github.com/>`_.
 Make sure you choose an appropriate username.  GitHub can be used a portfolio to share with other programming professionals. 
 
+Collaborating with Colleagues
+-----------------------------
+
+If a programmer wants to start collaborating with their colleagues on a new project, they might need to start with the work that one of their colleagues has already done.
+In this particular case, the programmer has to import the work that is being stored in an online repository onto their local machine.
+
+They can clone a remote repository by using the ``git clone url`` command.
+Github and other online Git systems give users the option to clone the repository through HTTPS or SSH depending on how their Github profile is set up.
+The ``url`` of the command is where the programmer adds the url to the repository that they are cloning. 
 
 
+.. note::
+
+   Throughout this book, HTTPS will be used for cloning repositories.
+
+   TOKEN NOW:  https://www.youtube.com/watch?v=kHkQnuYzwoo
+
+In order to clone a repo, either navigate to the directory you want to store in or create a new directory to store it.  Go ahead and create a ``learning-git`` directory and navigate into it.
+
+::
+
+
+Once you have navigated into the directory that will hold the repo on your computer use ``git clone url`` to connect to a github repo and clone a copy locally. This will make a new directory with the name of the repo you are cloning within ``learning-git``.  Once created navigate into your cloned repo. 
 
 
 ::
 
-   Students-Computer:learning-git student$ git clone <url-here>
-   Cloning into 'learning-git'...
+   Students-Computer:learning-git student$ git clone https://github.com/studentUserName/name-of-repo.git
+   Cloning into 'name-of-repo'...
    remote: Enumerating objects: 13, done.
    remote: Counting objects: 100% (13/13), done.
    remote: Compressing objects: 100% (10/10), done.
    remote: Total 13 (delta 3), reused 13 (delta 3), pack-reused 0
    Receiving objects: 100% (13/13), 4.77 KiB | 4.77 MiB/s, done.
    Resolving deltas: 100% (3/3), done.
-   Students-Computer:learning-git student$
+   Students-Computer:learning-git student$ls
+   name-of-repo
+   Students-Computer:learning-git student$cd name-of-repo
 
 
 .. admonition:: Fork or Clone?
