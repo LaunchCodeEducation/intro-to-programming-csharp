@@ -4,23 +4,30 @@ Studio: Communication Log
 Getting Ready: Code Together
 ----------------------------
 
-Coding together allows you to work as a team so you can build bigger projects faster.
+Coding together allows you to work as a team so you can build bigger projects
+faster.
 
-In this studio, we will practice the common Git commands used when multiple people work on the same code base.
+In this studio, we will practice the common Git commands used when
+multiple people work on the same code base.
 
-You and a partner will begin by coding in tag-team shifts. By the end of the task you should have a good idea about how to have two people work on the same code at the same time. You will learn how to:
+You and a partner will begin by coding in tag-team shifts. By the end of the
+task you should have a good idea about how to have two people work on the same
+code at the same time. You will learn how to:
 
-Quickly add code in pull + push cycles (Important! This is the fundamental process!)
-Add a collaborator to a GitHub Project
-Share repositories on GitHub
-Create a branch in Git
-Create a pull request in GitHub
-Resolve merge conflicts (which are not as scary as they sound)
+#. Quickly add code in pull + push cycles *(Important! This is the fundamental
+   process!)*
+#. Add a collaborator to a GitHub Project
+#. Share *repositories* on GitHub
+#. Create a *branch* in Git
+#. Create a *pull request* in GitHub
+#. Resolve merge conflicts (which are not as scary as they sound)
+
 This lesson reinforces:
 
-Creating repositories
-Cloning repositories
-Working with Git concepts: Staging, Commits, and Status
+#. Creating repositories
+#. Cloning repositories
+#. Working with Git concepts: Staging, Commits, and Status
+
 
 Overview
 --------
