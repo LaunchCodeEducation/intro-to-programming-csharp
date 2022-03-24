@@ -57,13 +57,16 @@ You will both start by creating a new repository on your separate GitHub account
 Step 1: Create a New Local Repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Windows instructions
+--------------------
+
 .. admonition:: Note
 
    Be careful if you try to use ``copy/paste`` with the ``git`` commands! The
    ``$`` symbols in the screenshots represent to the prompts in the terminal.
    They are NOT part of the commands.
 
-**Control and Pilot**: Both of you need to complete steps 1-8 on your own machines.
+**Control**:
 
 #. Navigate to your development folder and create a project folder.  
    Enter the following 3 commands to create a new project.
@@ -84,14 +87,6 @@ Step 1: Create a New Local Repository
 
       For the remainder of this studio, we will refer to the repo as ``communication-log``.
       **Control**: Open Visual Studio and :ref:`create a new project <create-new-csharp-project>`.  
-
-.. figure:: figures/studio/nameAndLocation.png
-   :width: 75%
-   :alt: Name your solution and select location for your files.
-
-   Give your solution and project a name (1).  Typically they will have the same name.  Then 
-   select the directory to store your files (2). Lastly, check git for version control (3).
-
 
 #. Now that you have a directory, open Visual Studio and :ref:`create a new console project <create-new-csharp-project>`.  
 
@@ -145,9 +140,19 @@ Step 1: Create a New Local Repository
 
    Now that you have updated your ``Program.cs`` file, be sure to save it. 
 
-#. Return to the terminal, run a ``git status`` check.
 
-   **Windows view after adding** ``.gitignore`` **file**
+Mac instructions
+----------------
+
+.. figure:: figures/studio/nameAndLocation.png
+   :width: 75%
+   :alt: Name your solution and select location for your files.
+
+   Give your solution and project a name (1).  Typically they will have the same name.  Then 
+   select the directory to store your files (2). Lastly, check git for version control (3).
+
+
+#. Return to the terminal, run a ``git status`` check.
    
    ::
 
@@ -186,7 +191,7 @@ Step 1: Create a New Local Repository
    
    
    Go ahead and ``stage``, ``add``, and ``commit`` your new changes.  
-   Remebmer you can use ``git add .`` to add all files to your commit.
+   Remember you can use ``git add .`` to add all files to your commit.
    At this point, you can use the stand-alone terminal that you started with or switch over to the terminal within Visual Studio.  
    Your choice.  The output format may vary slightly between Windows, Mac, and Visual Studio terminals, but the commands and overall results will be the same.
 
