@@ -7,36 +7,15 @@ Local, Remote, GitHub, Oh My!
 So far, the book has covered how to setup a Git repository on the local machine, also known as **local development**.
 One of the benefits of using a VCS is storage of backups in case something happens 
 to your machine or you want to share your code with others.
-Instead of keeping a Git repository only on a local machine, the code base is in a **remote repository**, allowing any programmers working on it keep copies on their local machine. 
+Instead of keeping a Git repository only on a local machine, the code base is in a **remote repository**, 
+allowing any programmers working on it keep copies on their local machine. 
 
-To get started with remote repositories, create an account on `GitHub <https://www.github.com/>`_.
-From there, programmers can :ref:`create a remote repository<create-new-repo-demo>`, view commit history, and report issues with the code.
-
-Collaborating with Colleagues
------------------------------
-
-If a programmer wants to start collaborating with their colleagues on a new project, they might need to start with the work that one of their colleagues has already done.
-In this particular case, the programmer has to import the work that is being stored in an online repository onto their local machine.
-
-They can clone a remote repository by using the ``git clone <url>`` command.
-GitHub and other online Git systems give users the option to clone the repository through HTTPS or SSH depending on how their GitHub profile is set up.
-The ``<url>`` of the command is where the programmer adds the url to the repository that they are cloning. 
+We will be using GitHub to create our remote repositories.
+You will need to create an account on `GitHub <https://www.github.com/>`_.
+Make sure you choose an appropriate username.  GitHub can be used a portfolio to share with other programming professionals. 
 
 
-.. note::
 
-   Throughout this book, HTTPS will be used for cloning repositories.
-
-   TOKEN NOW:  https://www.youtube.com/watch?v=kHkQnuYzwoo
-
-In order to clone a repo, you will need to make a directory to store it.  Go ahead and create a ``learning-git`` repo.
-
-::
-
-   Students-Computer:~ student$ mkdir learning-git
-   Students-Computer:~ student$ cd learning-git
-
-Once you have the repo on your computer, ``clone this-repo<REPO GOES HERE>``.
 
 
 ::
@@ -143,3 +122,24 @@ Check Your Understanding
 .. admonition:: Question
 
    What is the new command for making a commit to a remote repository?
+
+
+Collaborating with Colleagues
+-----------------------------
+
+If a programmer wants to start collaborating with their colleagues on a new project, they might need to start with the work that one of their colleagues has already done.
+In this particular case, the programmer has to import the work that is being stored in an online repository onto their local machine.
+
+They can clone a remote repository by using the ``git clone <url>`` command.
+GitHub and other online Git systems give users the option to clone the repository through HTTPS or SSH depending on how their GitHub profile is set up.
+The ``<url>`` of the command is where the programmer adds the url to the repository that they are cloning. 
+
+
+.. note::
+
+   Throughout this book, HTTPS will be used for cloning repositories.
+
+   TOKEN NOW:  https://www.youtube.com/watch?v=kHkQnuYzwoo
+
+In order to clone a repo, you will need to make a directory on your computer to store it.  
+Go ahead and create a ``learning-git`` folder and initialize it as a git repo.

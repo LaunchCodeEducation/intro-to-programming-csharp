@@ -92,6 +92,7 @@ Appendices
    appendices/git/stash
    appendices/git/workflows
    appendices/git/create-new-repo
+   appendices/git/new-repo
    
 
 
