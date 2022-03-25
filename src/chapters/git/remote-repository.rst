@@ -14,6 +14,8 @@ We will be using GitHub to create our remote repositories.
 You will need to create an account on `GitHub <https://www.github.com/>`_.
 Make sure you choose an appropriate username.  Many programming professionals use GitHub as a portfolio for their work. 
 
+.. _remote-repo-setup:
+
 Setting Up a Remote Repo
 ------------------------
 
@@ -24,12 +26,15 @@ Creating a repo from scratch on your own computer.
 
 #. Create a folder on your computer to hold your codebase.  
 #. ``cd`` into your folder and initialize it with git using the ``git init`` command.
+#. Open your IDE and save all your work in your new directory.
+#. ``commit`` your new project locally.
 #. Open GitHub and create a new repository.  
 #. On the "Create a New Repository" page, name your repo the same as your folder so that you can stay organized better.
 #. Keep it public for now
 #. Don't check any boxes in the "**Initialize this repository with:**" section since we started this process on our computer.
 #. Create the repository.
-#. Select "**...or create a new repository in the command line**" option.  Copy the code and paste this into your terminal. Press the enter key.
+#. Select "**...or push an existing repository from the command line**" option.  Copy the code and paste this into your terminal. 
+   Press the enter key.
    *Note:*  If you get a note from git to use a different command, type it into the terminal and hit enter.
 #. Refresh your GitHub page and inspect your new repo.
 #. Back on your computer, open your IDE and select the folder your repo is contained in and start coding.
@@ -60,6 +65,7 @@ Using code from someone else's computer.
    .. sourcecode:: bash
 
       Students-Computer:learning-git student$ git clone https://github.com:username/repo-name.git
+      
 #. Run the ``ls`` command to see what is now in your folder.
 #. You will need to ``cd`` into the project folder in order to start coding.
 

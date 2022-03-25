@@ -106,6 +106,8 @@ If you have created the Git repository and are ready to commit, you can do so by
 
 .. index:: ! stages of a commit
 
+.. _local-commit:
+
 The Four Stages of Making a ``commit`` 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

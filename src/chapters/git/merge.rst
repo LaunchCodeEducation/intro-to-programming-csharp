@@ -27,6 +27,8 @@ Once your merge is complete, commit your work.
 
    Before running the merge command, the programmer should make sure they are on the branch they want to merge into!
 
+.. _merge-conflict:
+
 Merge Conflicts
 ---------------
 
