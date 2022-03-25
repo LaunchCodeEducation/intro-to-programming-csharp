@@ -1,61 +1,31 @@
 Merging in Git
 ==============
-
-Before we dive into merging, let's congradulate you on your local development skills.
-If you have been coding along, you should have a code base with three branches.
-This is an example of local development.  
-Creating branches is great for trying out new ideas in your own code and is NOT limited to only working with others.
-As you work on assignments and larger projects, consider working with branches when it comes to testing new ideas.
-
-Looking at our code base, we have three branches that all work.  
-Best practice is to have one branch for your code base.  
-In order to do that, we need to merge our feature branches into our ``main`` branch.
-
 .. index:: ! merge, ! merge conflict, ! stash
 
-How to Merge
-------------
 
 A **merge** in Git is when the code in two branches are combined in the repository.
 When merging you need to be on the branch you want to merge INTO.  
-If we wanted to merge ``pos-neg`` into the ``main`` branch, 
+
+If we wanted to merge a branch that had a new feature into the ``main`` branch, 
 the first step would be to checkout the ``main`` branch.
 
-::
+.. sourcecode:: bash
 
    Students-Computer:~ student$ git checkout main
-   Students-Computer:~ student$ git status
-   On branch main
-   nothing to commit, working tree clean
+ 
 
 
-
-While on the ``main`` branch, the command would be ``git merge pos-neg``.
-This will combine the two branches by pulling our code from ``pos-neg`` into ``main``. 
-Anything we build on the ``pos-neg`` branch will now be incorporated into ``main``.
+While on the ``main`` branch, the command would be ``git merge feature-branch``.
+This will combine the two branches by pulling our code from ``feature-branch`` into ``main``. 
 
 
-::
-
-   Students-Computer:~ student$ git merge pos-neg
-   Updating 61f4faf...d7a6ef6
-   Fast-forward
-      learning-git/NumberChecks.cs | 8 +++++++-
-      learning-git/Program.cs 1 | +
-      2 files changed, 8 insertions (+), 1 deletion (-)
-   Students-Computer:~ student$
-
-The specific numbers in our your output may vary based on any changes you made in your code, 
-so don't worry if you have differences in your insertions or deletions.  
-The key here is to look at which files were changed and that your merge was successful.  
-Once merged, stage and commit your ``main`` branch.
+Anything built on the ``feature-branch`` branch will now be incorporated into ``main``.
+Git will provide output that indicates any changes that the ``feature-branch`` merged into the ``main`` branch.
+Once your merge is complete, commit your work.
 
 .. admonition:: Tip
 
    Before running the merge command, the programmer should make sure they are on the branch they want to merge into!
-
-If all goes to plan, you will ``git merge [whatever branch]`` and the two branches will not have any conflicts.
-But that is not always the case.
 
 Merge Conflicts
 ---------------
@@ -65,155 +35,26 @@ A merge conflicts occur when a previously existing line of code was altered betw
 Git raises a conflict when it is not sure which code you actually want to keep.  
 It is waiting for a human to review the issue and decide.
 
-Let's see this in action when we merge our ``dec-point`` branch into ``main``.
-
-::
-  
-   Students-Computer:~ student$ git status
-    On branch main
-    nothing to commit, working tree clean
-   Students-Computer:~ student$ git merge dec-point
-   Auto-merging learning-git/Programs.cs
-   CONFLICT (content): Merge comflict in learning-git/Program.cs
-   Auto-merging learning-git/NumberChecks.cs
-   CONFLICT (content): Merge conflict in learning-git/NumbersCheck.cs
-   Automatic merge failed; fix conflicts and commit the result.
-
-  
-Well that didn't really go as planned.
-Luckily, Git has detailed messages that will guide us to where the issues are in your program.
-In this case, we have issues in our Program.cs file and our NumbersCheck.cs class.
-Pair these Git message with your IDE, and you will be able to find the issues relatively quickly.
-
-Let's look at our code and see if we can figure out where things went awry.
-
 Merge Conflict Symbols 
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Visual Studio uses the following symbols in a conflict.  
-The visual output may vary between Mac and Windows; however, the same symbols are used.
-There are a few of areas of conflict between our branches since we are trying to add a new method into the ``main`` branch.
+Your IDE uses symbols to let you know where a conflict is located as well as show you which branch is responsible for which code.
 
-Let's start with our NumberChecks class.
+Some terms and symbols to pay attention to when conflict arrises.
 
-::
+In Your Terminal:
+   Git will be the first warning.  ``CONFLICT`` will appear in your git output.  Usually followed by a location for the error.
 
-   <<<<<<< HEAD
-        public static void PositiveOrNegative (double num)
-        {
-            if(num < 0)
-            {
-                Console.WriteLine("Your number is negative.");
-   =======
-        public static void ContainsDecimalPoint(string str, double num)
-        {
-            if (!str.Contains("."))
-            {
-                NumberChecks.EvenOrOddCheck(num);
-            }
-            else
-            {
-                Console.WriteLine("Your number contains a decimal point.");
-   >>>>>>> dec-point
-            }
-        }
+ 
+In Your IDE:
+   #. ``<<<<<<<`` or ``<<<<<<< HEAD`` will appear at the first line of code where a conflict has been found.
+      ``HEAD`` points to the current branch you are on, or the current changes.  Some IDEs will use the branch name instead of ``HEAD``.
+   #.  ``=======`` will be the dividing line between the ``HEAD`` branch and the incoming branch.
+   #. ``>>>>>>>`` or ``>>>>>>> branch-name`` contains code from the incoming branch to merge in. Often this notation will be found below the last line of code.
+      This code may also be referred to as the incoming changes. 
 
-
-The term ``HEAD`` is pointing to the current branch. Which happens to be the one you are merging into at the moment.
-So the notation ``<<<<<<< HEAD`` tells us that any code contained within this notation and ``=======`` is what is 
-in the current branch (or HEAD branch).
-The code found between the ``=======`` and ``>>>>>>> dec-point`` is part of the incoming branch, 
-or the branch we want to merge in.
-
-When they are in conflict, you get to decided which lines you want to keep.
-Each IDE has its own way to take the ``HEAD`` (current) version, ``dec-point`` (incoming) version or both versions.
-
-.. admonition:: Note
-
-   You are still able to edit your code.  It is NOT frozen.  
-
-Let's look at our code and think about what changes we want to keep.
-We want to merge in dec-point, so what is dec-point doing that we like and how can we incorporate it into our code?
-
-Notice where the ``=======`` starts.  
-We seem to be in the middle of the ``PositiveOrNegative`` method.  Count your ``{ }`` to check and see. 
-
-A simple way to fix this particular conflict would be to adjust the code inside the conflict markers.
-
-Within the ``<<<<<<< HEAD`` close the ``if`` statement and the method, by typing the closing ``}`` for each.
-If you look at the ``ContainsDecimal`` method, you will see that the ``else`` statement and the entire method are
-also missing the ``}``.  Go ahead and add those within the ``=======`` to ``>>>>>>> dec-point`` section.
-
-Finally, remove the two ``}`` right below ``>>>>>>> dec-point``.
-Should look like this when you are done:
-
-.. sourcecode:: csharp
-
-   <<<<<<< HEAD
-        public static void PositiveOrNegative(double num)
-        {
-            if (num < 0)
-            {
-                Console.WriteLine("Your number is negative.");
-            }
-        }
-   =======
-        public static void ContainsDecimalPoint(string str, double num)
-        {
-            if (!str.Contains("."))
-            {
-                NumberChecks.EvenOrOddCheck(num);
-            }
-            else
-            {
-                Console.WriteLine("Your number contains a decimal point.");
-            }
-        }
-   >>>>>>> dec-point
-
-We now have two properly formatted methods. Fantastic! 
-Now we need to decide which changes to keep.  
-In this instance, select ``Accept Both`` or ``Take both``.
-Now the ``NumberChecks`` class has three separate methods.  All have the correct number of brackets.
-
-If we go back to the ``Program.cs`` file, we still have a conflict waiting for us.
-
-.. sourcecode:: csharp
-
-   <<<<<<< HEAD
-            NumberChecks.EvenOrOddCheck(inputNum);
-            NumberChecks.PositiveOrNegative(inputNum);
-   =======
-            NumberChecks.ContainsDecimalPoint(input, inputNum);
-   >>>>>>> dec-point
-
-We are calling all of the methods.  We don't need all three.
-If you remember the  ``ContainsDecimal`` method we created in the ``dec-point`` branch.
-The ``ContainsDecimal`` method will call the ``EvenOrOddCheck`` method.
-We do not need to call the ``EvenOrOddCheck`` method in the ``Main`` method.
-
-Let's type ``NumberChecks.PositiveOrNegative(inputNum)`` below ``NumberChecks.ContainsDecimal(input, inputNum)``.
-Then delete ``NumberChecks.ContainsDecimalPoint`` and ``EvenOrOddCheck`` methods from the ``HEAD`` section.
-
-.. sourcecode:: csharp
-
-   =======
-            NumberChecks.ContainsDecimalPoint(input, inputNum);
-            NumberChecks.PositiveOrNegative(inputNum);
-   >>>>>>> dec-point
-
-We will then ``Accept incoming changes`` or ``Take dec-point``.  
-Be sure to test this program to make sure everything is working.  
-Once you are happy with the resolved conflict, save and commit your branch.
-
-::
-
-   [main 33975bb] conflicts resolved
-
-This is cause for celebration!  
-
-This was one way to deal with conflict merges.
-Use this as a guide as you grow your coding skills.
+When a conflict arrives, you get to decide which code you want to keep.  Do you want the incoming changes, do you want the current code? 
+You get to decide.  
 
 Merge conflicts are minor on small applications, but can cause issues with large enterprise applications.
 Even though the thought of ruining software can be scary, every programmer deals with a merge conflict during their career.
