@@ -60,29 +60,78 @@ Step 1: Create a New Repository
    ``$`` symbols in the screenshots represent to the prompts in the terminal.
    They are NOT part of the commands.
 
+Step 1: Create a New Repository
+-------------------------------
+
+.. admonition:: Note
+
+   Be careful if you try to use ``copy/paste`` with the ``git`` commands! The
+   ``$`` symbols in the screenshots represent to the prompts in the terminal.
+   They are NOT part of the commands.
+
 Windows instructions:
 ^^^^^^^^^^^^^^^^^^^^^
 
-**Control**: 
-   1. Navigate to your development folder and enter the following 3 commands to create a new project.
-      
+**Control**: Navigate to your development folder and enter the following 3 commands to create a new project.
+   
    ::
 
       $ mkdir communication-log
       $ cd communication-log
       $ git init
 
-   2. Now that you have a directory, open Visual Studio and :ref:`create a new console project <create-new-csharp-project>` with the same name as your directory.  
+Now that you have a directory, open Visual Studio and :ref:`create a new console project <create-new-csharp-project>`.  
+
+.. figure:: figures/studio/config-win-project.png
+   :alt: Name your solution and select location for your files.
+   
+   Give your solution and project a name (1).  Typically they will have the same name.  
+   Then select the directory to store your files (2).  
+   Browse for the directory you just created by clicking on the box with the ``...`` inside (3).  
+   
+.. admonition:: Setting Up a ``.gitignore`` File
+
+   A ``.gitignore`` file, is a text file that will contain untracked files or ignored files.
+   These are files that will become part of your repo but are not very useful to other developers.
+   Placing them in a ``.gitignore`` file will tell git to skip over them, which will reduce visual clutter in your terminal.
+
+   **Mac Users** this is part of your initial configuration.
+
+   **Windows Users**: There are a few steps to create a ``.gitignore file``.
+
+   #. Select the **Git** tab.  Scroll down to **Settings**.
+
+      .. figure:: figures/studio/git-settings-tab.png
+         :scale: 60%
+         :alt: Select the Settings for Git in Visual Studio
+
+   #. **Settings** will open the **Source Control** option.
+      Under **Sorce Control** select **Git Repository Settings** then **General**
+      in the right-side pane, look for the *Git files* section.
+      Select **Add** for **Ignore file:**
+      Select **OK** to add your new files.
+
+      .. figure:: figures/studio/win-ignore-files.png
+         :scale: 60%
+         :alt: View of the General Git Repository Settins.
+
+
+   Again, this is only one way to create this type of file.  
+   Use it as a starting point, and grow from here.
 
 
 Mac Instructions:
 ^^^^^^^^^^^^^^^^^
 
-**Control**: 
-   #. Open Visual Studio and :ref:`create a new project <create-new-csharp-project>`.  
-   #. Give your solution and project a name.  Typically they will have the same name.  
-   #. Then select the directory to store your files.
+**Control**: Open Visual Studio and :ref:`create a new project <create-new-csharp-project>`.  
 
+.. figure:: figures/studio/nameAndLocation.png
+   :width: 75%
+   :alt: Name your solution and select location for your files.
+
+   Give your solution and project a name (1).  Typically they will have the same name.  Then 
+   select the directory to store your files (2). Check the boxes to use git for version control 
+   and automatically create a ``.gitignore file`` (3).
 Step 2: First Commit
 --------------------
 
