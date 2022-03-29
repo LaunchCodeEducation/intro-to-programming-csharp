@@ -142,14 +142,185 @@ Step 3: Share Your Repository On GitHub
 
 **Control**: 
    #. Go to your GitHub profile in a web browser. 
-      Click on the "**+**" button to add a new repository (called a *repo* for short). Look in the upper right corner for this button.
-   #. Create a :ref:`new repository<remote-repo-setup>` by copying the code for pushing into an existing repo. 
+      Click on the "**+**" button to add a new repository (called a *repo* for short).
+
+      .. figure:: figures/studio/new-repo-button.png
+         :alt: The New Repository link in the dropdown menu at top right on GitHub.
+
+         The *New Repository* link is in the dropdown menu at top right on GitHub.
+
+   #. Fill in the name and description.
+   #. Uncheck *Initialize this repository with a README* and click *Create Repository*.
+
+      .. figure:: figures/studio/create-repo.png
+         :alt: Creating a new repository in GitHub by filling out the form
+
+         Create a new repository in GitHub
+
+      .. admonition:: Note
+
+         If you initialize with a README, in the next step Git will refuse to merge
+         this repo with the local repo. There are ways around that, but it's faster
+         and easier to just create an empty repo here.
+
+   #. :ref:`Connecting to a repository in GitHub<remote-repo-setup>` by copying the code for pushing into an existing repo. 
       Remember, you already initalized and commited your console app.  
-      Notice your branch names should be updated from ``master`` to ``main``.
+
+      .. figure:: figures/studio/new-repo-push-main.png
+         :alt: The page you see after creating an empty repository, with several options.
+
+   #. Now go back to your terminal and copy/paste the commands shown in the GitHub instructions. These should be very similar to:
+
+      ::
+
+         $ git remote add origin https://github.com/your-username/communication-log.git
+         $ git branch -M main
+         $ git push -u origin main
+
+      .. admonition:: Note
+
+         The first time you push up to GitHub, you will be prompted in the terminal
+         to enter your account username and password. Do this.
+         
+         You will then see a large amount of output that you can safely ignore. The
+         final few lines will confirm a successful push. They will look something
+         like this:
+
+         ::
+
+            To github.com:your-username/communication-log.git
+               c7f97814..54993de3  main -> main
+
+         Notice that if your local branch was named ``master`` it was automatically changed to ``main``.
+
    #. Verify your repo has been created by refreshing your GitHub page.
 
 
+
+
+
+   
+
+
+.. admonition:: Warning
+
+   Unless you've set up an SSH key with GitHub, make sure you've selected the
+   HTTPS clone URL. If you're not sure whether you have an SSH key, you
+   probably don't.
+
+Now you should be able to confirm that GitHub has the same version as your
+local project. (File contents in browser match those in terminal). Click around
+and see what is there. You can read all your code through GitHub's web
+interface.
+
+.. figure:: figures/studio/repo-first-commit.png
+   :alt: A repository with one commit in GitHub
+
+   A repository with one commit in GitHub
+
 .. _clone-from-git:
+
+Step 4: Clone a Project from GitHub
+-----------------------------------
+
+**Pilot**: Go to Control's GitHub profile and find the communication-log repo.
+Click on the green *Clone or download* button. Use HTTPS (not SSH). Copy the
+url to your clipboard.
+
+.. figure:: figures/studio/clone-button.png
+   :alt: The clone button is on the right-hand side of a project's main page
+
+   Cloning a repository in GitHub
+
+In your terminal, navigate to your development folder and clone down the repo.
+The command should look something like this.
+
+::
+
+   $ git clone https://github.com/chrisbay/communication-log.git
+
+Now you can respond to Control! Open the ``communication-log.sln`` file in your editor and
+add your response to mission control. Be creative, the communication can go
+anywhere! Just don't ask your partner what you should write. After you finish,
+commit your change.
+
+.. admonition:: Note
+
+   When you open the project folder, you might not be in the same directory as the solution.  
+   You want to open the solution or ``.sln`` file.  
+   A quick way to do that from the terminal is to ``cd`` into the folder that is holding the solution and then type ``open .sln``.
+
+::
+
+   $ git status
+   On branch main
+   Your branch is up-to-date with 'origin/main'.
+   nothing to commit, working directory clean
+   $ git add .
+   $ git commit -m 'Added second line to log.'
+
+Now we need to push up your changes so Control can use them as well.
+
+::
+
+   $ git push origin main
+   ERROR: Permission to chrisbay/communication-log.git denied to pilot.
+   fatal: Could not read from remote repository.
+
+   Please make sure you have the correct access rights
+   and the repository exists.
+
+Great error message! It let us know exactly what went wrong: Pilot does not
+have security permissions to write to Control's repo. Let's fix that.
+
+Step 5: Add A Collaborator To A GitHub Project
+----------------------------------------------
+
+**Control**: In your web browser, go to your ``communication-log`` repo. Click
+the *Settings* button then click on *Collaborators*. Enter in Pilot's GitHub
+username and click *Add Collaborator*.
+
+.. figure:: figures/studio/add-collaborator.png
+   :alt: Add a collaborator by typing their user name into the input on the Add Collaborator page.
+
+   Add a collaborator to your repo in GitHub
+
+Step 6: Join the Project and Push
+---------------------------------
+
+**Pilot**: You should receive an email invitation to join this repository.
+View and accept the invitation.
+
+.. note::
+
+   If you don't see an email (it may take a few minutes to arrive in your inbox),
+   check your Spam folder. If you still don't have an email, visit the
+   repository page for the repo that Control created (ask them for the link), and
+   you'll see a notification at the top of the page.
+
+.. figure:: figures/studio/repo-invite.png
+   :alt: The email invite to join a GitHub repository
+   :height: 400px
+
+   Invited to collaborate email in GitHub
+
+Now let's go enter that command again to push up our code.
+
+::
+
+   $ git push origin main
+   Counting objects: 9, done.
+   Delta compression using up to 4 threads.
+   Compressing objects: 100% (9/9), done.
+   Writing objects: 100% (9/9), 1.01 KiB | 0 bytes/s, done.
+   Total 9 (delta 8), reused 0 (delta 0)
+   remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
+   To git@github.com:chrisbay/communication-log.git
+      511239a..679de77  main -> main
+
+Anyone reading the code through GitHub's browser interface should now see the
+new second line.
+
 
 Step 4: Clone a Project from GitHub
 -----------------------------------
@@ -167,7 +338,7 @@ Step 4: Clone a Project from GitHub
 
    Now you can respond to Control! 
 
-   4. Open the ``communication-log.sln`` file in your editor and add your response to mission control. Be creative, the communication can go anywhere! Just don't ask your partner what you should write. 
+   1. Open the ``communication-log.sln`` file in your editor and add your response to mission control. Be creative, the communication can go anywhere! Just don't ask your partner what you should write. 
   
 
    .. admonition:: Note
@@ -177,8 +348,8 @@ Step 4: Clone a Project from GitHub
       A quick way to do that from the terminal is to ``cd`` into the folder that is holding the solution 
       and then type ``open .sln`` on a Mac and ``start .sln`` in Windows.
 
-   5. After you finish, ``commit`` your change.
-   6. Now we need to ``push`` up your changes so Control can use them as well.
+   1. After you finish, ``commit`` your change.
+   2. Now we need to ``push`` up your changes so Control can use them as well.
 
    ::
 
