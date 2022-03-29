@@ -88,13 +88,13 @@ Step 2: First Commit
 
 **Control**
    #. Run your new project to make sure it works.
-   #. Use terminal to commit your new console app. 
+   #. Use terminal to ``commit`` your new console app. 
       You can use your stand-alone terminal or use the terminal built-in to your IDE.
       In Visual Studio, the terminal is found in the **View** menu.
    #. Once in your terminal, :ref:`commit<local-commit>` your project.
 
 Great! We've got our project going locally, but we're going to need to make it
-accessible for **Pilot** also. Let's push this project up to GitHub.
+accessible for **Pilot** also. Let's ``push`` this project up to GitHub.
 
 Step 3: Share Your Repository On GitHub
 ---------------------------------------
@@ -136,8 +136,8 @@ Step 4: Clone a Project from GitHub
       A quick way to do that from the terminal is to ``cd`` into the folder that is holding the solution 
       and then type ``open .sln`` on a Mac and ``start .sln`` in Windows.
 
-   5. After you finish, commit your change.
-   6. Now we need to push up your changes so Control can use them as well.
+   5. After you finish, ``commit`` your change.
+   6. Now we need to ``push`` up your changes so Control can use them as well.
 
    ::
 
@@ -177,7 +177,7 @@ Step 6: Join the Project and Push
       repository page for the repo that Control created (ask them for the link), and
       you'll see a notification at the top of the page.
 
-   4. Now let's go enter that command again to push up our code.
+   4. Now let's go enter that command again to ``push`` up our code.
 
    .. sourcecode:: bash
 

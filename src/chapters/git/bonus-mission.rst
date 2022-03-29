@@ -20,14 +20,14 @@ it.
 **Pilot**: 
    #. Checkout the ``main`` branch.
    #. Change the Console.BackgroundColor again and save your work.
-   #. Commit and push up your changes to ``main``.
+   #. ``commit`` and ``push`` up your changes to ``main``.
 
 Meanwhile...
 
 **Control**: 
    #. Checkout a new branch called ``color-update``.
    #. Change the Background color.
-   #. Commit and push up your changes.
+   #. ``commit`` and ``push`` up your changes.
    #. Create a pull request.   You will receive a message that you are not able to merge this branch into main, and that is okay.
       There are merge conflicts, but Pilot will be handling them at this point.
 
@@ -35,7 +35,7 @@ Resolving Merge Conflicts
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Pilot**: 
-   1. Pull down the latest ``main`` to check for updates.
+   1. ``pull`` down the latest ``main`` to check for updates.
    2. Look for Control's ``color-update`` branch.  
    3. If you don't see it, run the following command: ``git branch -a``.
    4. Merge the ``color-update`` branch into ``main`` using the following command:
@@ -63,7 +63,7 @@ Resolving Merge Conflicts
       The symbols are the same.  Look for the following :ref:`symbols<merge-conflict>` in your code: ``<<<<<<<``,  ``=======`` and ``>>>>>>>``.
 
    7. Once you find the conflict, it is up to you to decide which code to keep.
-   8. Save your changes, commit, and push up to ``main``.
+   8. Save your changes, ``commit``, and ``push`` up to ``main``.
 
 
    .. admonition:: Note
@@ -91,7 +91,7 @@ Pulling the Merged Code
 
    Your local Git thinks the status is quo. Little does it know that up at GitHub, the status is *not* quo.  
    Depending on where Pilot is when you run this status, if Pilot has pushed up the git message will be a little different. 
-   If git detects changes between branches, it will let you know how many changes are ahead of your current branch and will suggest you pull. 
+   If git detects changes between branches, it will let you know how many changes are ahead of your current branch and will suggest you ``pull``. 
 
    2. We'd find this out by doing either a ``git fetch``, or if we just want the latest version of this branch, ``git pull``:
 
@@ -110,7 +110,7 @@ Pulling the Merged Code
       1 file changed, 4 insertions(+), 3 deletions(-)
 
 Great Scott! Looks like Pilot changed the ``communication-log``.
-Note that *Control* didn't have to deal with the hassle of resolving merge
+Note that Control didn't have to deal with the hassle of resolving merge
 conflicts. Since Control intervened, Git assumes that the team is okay with the
 way they resolved it, and *fast forwards* our local repo to be in sync with the
 remote one. Let's look at ``communication-log.sln`` to make sure.  
@@ -125,12 +125,12 @@ resolving merge conflicts.
 
 #. **Control and Pilot**: Confer to determine the particular lines in the code
    that you will both change. Make different changes in those places.
-#. **Control**: Stage, commit, and push your changes.
-#. **Control**: Try to pull in Pilot's changes, and notice that there are merge
+#. **Control**: Stage, ``commit``, and ``push`` your changes.
+#. **Control**: Try to ``pull`` in Pilot's changes, and notice that there are merge
    conflicts. Resolve these conflicts as we did above (ask Pilot for help, if
-   you're uncertain about the process). Then stage, commit, and push your
+   you're uncertain about the process). Then stage, ``commit``, and ``push`` your
    changes.
-#. **Pilot**: Pull in the changes that *Control* pushed, including the resolved 
+#. **Pilot**: ``pull`` in the changes that Control pushed, including the resolved 
    merge conflicts.
 
 Merge conflicts are a part of the process of team development. Resolve them

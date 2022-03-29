@@ -42,7 +42,7 @@ Step 7: Pull Pilot's Line and Add Another Line
       1 file changed, 1 insertion(+)
 
 
-   2. Now, in your editor, add a third line to the communication. Then add, commit, and push it up.
+   2. Now, in your editor, add a third line to the communication. Then ``add``, ``commit``, and ``push`` it up.
 
 You can have your story go anywhere! Try to tie it in with what Pilot
 wrote, without discussing with them any plans on where the story will go.
@@ -70,7 +70,7 @@ Step 8: Do It Again: Pull, Change, and Push!
       1 file changed, 1 insertion(+)
 
    2. Add a fourth line to the log. Again, be creative, but no planning!
-   3. Then add, commit, and push your change.
+   3. Then ``add``, ``commit``, and ``push`` your change.
 
 You can both play like this for a while! Feel free to repeat this cycle a few times to add to the story.
 
@@ -99,9 +99,9 @@ will allow for simultaneous work to be carried out in a reasonable way.
 
    .. sourcecode:: csharp
 
-      Console.BackgroundColor = ConsoleColor.Your-Choice-Here
+      Console.BackgroundColor = ConsoleColor.Your-Choice-Here;
 
-   3. Now stage and commit these changes.  Push your changes to the remote repo using ``git push origin open-mic``.  
+   3. Stage and ``commit`` these changes.  Push your changes to the remote repo using ``git push origin open-mic``.  
       Note that the last command is a bit different than what we've used before (``git push origin main``). The final piece of this command is the name of the branch that we want to push to GitHub.
 
    .. sourcecode:: bash
