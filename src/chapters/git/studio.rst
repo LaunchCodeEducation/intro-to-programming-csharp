@@ -60,15 +60,6 @@ Step 1: Create a New Repository
    ``$`` symbols in the screenshots represent to the prompts in the terminal.
    They are NOT part of the commands.
 
-Step 1: Create a New Repository
--------------------------------
-
-.. admonition:: Note
-
-   Be careful if you try to use ``copy/paste`` with the ``git`` commands! The
-   ``$`` symbols in the screenshots represent to the prompts in the terminal.
-   They are NOT part of the commands.
-
 Windows instructions:
 ^^^^^^^^^^^^^^^^^^^^^
 
