@@ -80,7 +80,35 @@ Now that you have a directory, open Visual Studio and :ref:`create a new console
    Then select the directory to store your files (2).  
    Browse for the directory you just created by clicking on the box with the ``...`` inside (3).  
    
+.. admonition:: Setting Up a ``.gitignore`` File
 
+   A ``.gitignore`` file, is a text file that will contain untracked files or ignored files.
+   These are files that will become part of your repo but are not very useful to other developers.
+   Placing them in a ``.gitignore`` file will tell git to skip over them, which will reduce visual clutter in your terminal.
+
+   **Mac Users** this is part of your initial configuration.
+
+   **Windows Users**: There are a few steps to create a ``.gitignore file``.
+
+   #. Select the **Git** tab.  Scroll down to **Settings**.
+
+      .. figure:: figures/studio/git-settings-tab.png
+         :scale: 60%
+         :alt: Select the Settings for Git in Visual Studio
+
+   #. **Settings** will open the **Source Control** option.
+      Under **Sorce Control** select **Git Repository Settings** then **General**
+      in the right-side pane, look for the *Git files* section.
+      Select **Add** for **Ignore file:**
+      Select **OK** to add your new files.
+
+      .. figure:: figures/studio/win-ignore-files.png
+         :scale: 60%
+         :alt: View of the General Git Repository Settins.
+
+
+   Again, this is only one way to create this type of file.  
+   Use it as a starting point, and grow from here.
 
 
 Mac Instructions:
