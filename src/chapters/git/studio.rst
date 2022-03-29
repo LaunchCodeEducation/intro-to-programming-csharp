@@ -82,7 +82,7 @@ Windows instructions:
 
 Now that you have a directory, open Visual Studio and :ref:`create a new console project <create-new-csharp-project>`.  
 
-.. figure:: figures/studio/config-win-project.png
+.. figure:: figures/studio/create-win-project.png
    :alt: Name your solution and select location for your files.
    
    Give your solution and project a name (1).  Typically they will have the same name.  
@@ -132,6 +132,7 @@ Mac Instructions:
    Give your solution and project a name (1).  Typically they will have the same name.  Then 
    select the directory to store your files (2). Check the boxes to use git for version control 
    and automatically create a ``.gitignore file`` (3).
+
 Step 2: First Commit
 --------------------
 
