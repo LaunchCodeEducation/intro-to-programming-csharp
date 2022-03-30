@@ -1,7 +1,9 @@
 Repositories and Commits
 =========================
 
-.. index:: ! repository ! repo
+.. index:: ! repository 
+
+.. index:: ! repo
 
 .. _create-repo:
 
@@ -9,103 +11,166 @@ Create a Repository
 -------------------
 
 To get started with a git repository (or "repo" for short), the programmer must first create one.
-To create a git repository, the programmer navigates to their project directory and uses the command ``git init``, like so:
+Let's walk through the steps together using the terminal and a text editor.
 
-.. sourcecode:: bash
+To create a git repository, you will need to navigate to your project directory using the terminal.
+Either select a current directory or make one.  Let's make one called ``homework``.
+Once created and you are inside your project directory, we are going to initialize git.
+
+Go ahead and use the command ``git init``, like so:
+
+:: 
 
    Students-Computer:~ student$ mkdir homework
    Students-Computer:~ student$ cd homework
    Students-Computer:homework student$ git init
       Initialized empty Git repository in /Users/student/homework/.git/
 
-Now the programmer is ready to code away!
+Congrats! You have initialized git version control in this directory.
+Now you are ready to code away!
 
-.. admonition:: Note
+.. index:: ! git commit
 
-   This is an example of **local development** or creating repos and code bases on your own machine, that only you have access to.
-   Local development allows you to create functional code that only your machine can deploy.  
-   This is how we have been coding in this course so far.
+Let's add some code or files to this project.  
+Since we are using the terminal, let's create a text file by using ``touch my_project.txt``.  
+Now open your new file, type your name, and save your file.
 
-Making Commits
---------------
-
-After a while, the programmer has made a lot of changes and saved their code files many times over.  
-It might be a good time to make a **commit** to their repository.  A commit is a record of changes you made to your repository.
-It allows you to document your progress by creating a time-stamp with a message that you, or others, can reference.
-When you look at a timeline of commits, you should be able to see the progress of development.
-
-.. figure:: figures/commit-tree.png
-   :alt: Image of commit tree showing 4 updates over 2 weeks with commit messages
-
-So when do they make a commit to their repository?
-
-.. pull-quote::
-
-   The general rule of thumb is that any time a significant change in functionality is made, a commit should be made.
-
-If the programmer has created the Git repository and is ready to commit, they can do so by following the commit process.
-
-.. note::
-
-   Git does have a simple commit command, however, making a proper commit requires that the programmers follow a longer procedure than just one command.
-
-The procedure for making a commit to a Git repository includes four stages.
-
-1. ``git status`` gives the programmer information about files that have been changed.
-2. ``git add`` allows the programmers to add specific or all changed files to a commit.
-3. ``git commit -m MESSAGE`` creates the new commit with the files that the programmer added, with a message describing the changes included in the commit. Here, ``MESSAGE`` should be a descriptive message within double-quotes.
-4. ``git log`` displays a log of every commit in the repository.
-
-If the steps above are followed correctly, the programmer will find their latest commit at the top of the log.
-
-Here is how the process will look in the terminal:
+Back in your terminal, type ``git status``.
 
 ::
 
    Students-Computer:homework student$ git status
-   On branch master
+   On main branch
 
-   Initial commit
+   No commits yet
 
    Untracked files:
-     (use "git add <file>..." to include in what will be committed)
+      (use "git add <file>..." to include wht will be committed)
 
-           learning-git.js
-
+         my_project.txt
+   
    nothing added to commit but untracked files present (use "git add" to track)
-   Students-Computer:homework student$ git add .
-   Students-Computer:homework student$ git commit -m "My first commit"
-    [master (root-commit) 2c1e0af] My first commit
-     1 file changed, 1 insertion(+)
-     create mode 100644 learning-git.js
-   Students-Computer:homework student$ git log
-   commit 2c1e0af9467217d76c7e3c48bcf9389ceaa4714b
-   Author: Student <lc101.student@email.com>
-   Date:  Wed Apr 24 14:44:59 2019 -0500
+   Students-Computer:homework student$
 
-       My first commit
+You saved your project on your computer, but let's commit it to your Git.  
 
-To break down what happens in a commit even further:
+.. index:: ! rename-branch
 
-When using ``git status``, the output shows two categories: modified tracked files and modified untracked files.
-Modified tracked means that the file exists in the Git repository already, but is different than the version in the repository.
-Modified untracked means that it is a new file that is not currently in the repository.
+.. admonition:: Note
 
-``git add`` adds files to the commit, but it does not commit those files.
-By using ``git add .``, all the modified files were added to the commit.
-If a programmer only wants to add one modified file, they can do so.
+   **A note on the** ``default`` **branch** 
 
-``git commit`` actually commits the files that were added to the repository.
-By adding ``-m "My first commit"``, a comment was added to the commit.
-This is helpful for looking through the log and seeing detailed comments of the changes made in each commit.
+   When using a VCS, the first branch created is your ``default`` branch.  
+   On your computer, it is often named the ``master`` branch.  
+   
+   Later we will be working with GitHub, which is an online repository commonly used when collaborating with others.
+   GitHub's default branch is called ``main``.  
 
-.. admonition:: Tip
+   The examples in this chapter will be using ``main`` as the default branch.
+   
+   If you would like to rename your branch to match, the git command is ``git branch -m NEW-NAME-HERE``.
 
-   It's important to include a descriptive commit message. Such messages are visible in your local Git log, as well as in the commit history on GitHub. A good commit message allows you and your fellow developers to easily identify the changes made in a given commit.
+   ::
 
-``git log`` shows the author of the commit, the date made, the comment, and a 40-character hash.
-This hash or value is a key for Git to refer to the version.
-Programmers use these hashes to reference specific commits, or snapshots, in the repository's history.
+      Students-Computer:~ student$ git branch -m main
+      Students-Computer:~ student$ git status
+      On branch main
+
+Making Commits
+--------------
+
+Usually, you will have spent more time coding and saving, and will have a larger amount of code to stage and commit. 
+For the sake of our walkthrough, we are going to keep things shorter and simpler.
+
+Earlier we added our first file, ``my_project.txt``, to our ``homework`` directory.  It might be a good time to make a **commit** to your repository.  
+A commit is a record of changes you made to your repository.
+It allows you to document your progress by creating a time-stamp with a message that you, or others, can reference.
+When you look at a timeline of commits, you should be able to see the progress of development.
+
+.. figure:: figures/git_commit_2x.png
+   :scale: 50%
+   :alt: Image of commit tree showing a degression in commit messages as project drags on.
+   
+   Comic Source: `XKCD.com <https://xkcd.com/1296/>`_.  Used with permission.
+
+So when do you make a commit to your repository?
+
+.. pull-quote::
+
+   Any time you make a significant change in functionality, you should a commit your work.
+
+If you have created the Git repository and are ready to commit, you can do so by following the commit process.
+
+.. note::
+
+   Git does have a simple commit command; however, making a proper commit requires 
+   that you follow a longer procedure.
+
+.. index:: ! stages of a commit
+
+.. _local-commit:
+
+The Four Stages of Making a ``commit`` 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The procedure for making a commit to a Git repository includes four stages.  
+
+#. ``git status`` gives you information about any changed files. Will also tell you which branch you are currently on.
+
+   .. sourcecode:: bash
+
+      Students-Computer:homework student$ git status
+      On branch main
+
+      No commits yet
+
+      Untracked files:
+         (use "git add <file>..." to include what will be committed)
+
+            my_project.txt
+
+      nothing added to commit but untracked files present (use "git add" to track)
+      Students-Computer:homework student$ git add my_project.txt
+
+
+#. ``git add`` allows you to add specific or all changed files to a commit.  
+   You can type the name of the file or files you want to add to the repo.
+
+   .. sourcecode:: bash
+
+      Students-Computer:homework student$ git add my_project.txt
+
+
+#. ``git commit -m "Your message"`` creates the new commit with the files that you added and a message describing the changes.  
+   Here, ``"Your message"`` should be a descriptive message within double-quotes.
+
+   .. sourcecode:: bash
+
+      Students-Computer:homework student$ git commit -m "My initial commit"
+      [main (root-commit) 7e771d7] My initial commit
+      1 file changed, 1 insertion (+)
+      create mode 100644 my_project.txt
+
+#. ``git log`` displays a log of every commit in the repository.
+
+   .. sourcecode:: bash
+
+      Students-Computer:homework student$ git log
+      commit 7e771d788ddfd6080f0a9f10f9aed7105b1a3bcf (HEAD -> main)
+      Author: Student <lc101.student@email.com>
+      Date:  Wed Apr 24 14:36:53 2019 -0500
+
+If the steps above are followed correctly, you will find your latest commit at the top of the log.
+
+git Tips and Tricks
+-------------------
+
+A few other commands that you might find helpful.
+
+* ``git add .`` this command is useful when you have multiple files that you would like to stage for a commit.  This command will add *all* files to that next commit.
+
+* ``clear`` this command is for the terminal.  This will clear all text from your terminal.
+
 
 Check Your Understanding
 ------------------------
