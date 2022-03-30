@@ -126,23 +126,37 @@ Step 10: Create a Pull Request In GitHub
 **Pilot**: 
    1. If you haven't already, in your browser, go to the GitHub project and click on *Branches* and make sure you see the new branch name, *open-mic*.  
       This option will be located next to the button that says "**main**".
+
+      .. figure:: figures/studio/branches-loc.png
+         :alt: Location of branches button in GitHub Repo
+
+
    2. On the Branches page, click *New Pull Request* to begin the process of requesting that your changes in the ``open-mic`` 
       branch be incorporated into the ``main`` branch. 
+
+      .. figure:: figures/studio/pr-request.png
+         :alt: Location of New Pull Request button on branch view in GitHub
+
    3. Add some text in the description box to let Control know what you did and why.  Click the **Create pull request** button.
 
    .. admonition:  Note 
       
       The branch selected in the *base* dropdown is the one you want to merge *into*.  
-      The branch in the *compare* drowpdown is waiting for a review before it is merged into the *base*.
+      The branch in the *compare* dropdown is waiting for a review before it is merged into the *base*.
       We want the *base* to be **main** and the *compare* branch to be **open-mic**.
 
-   4.  GitHub will take you to your new pull request.  Now you can wait for Control.
+   1.  GitHub will take you to your new pull request.  Now you can wait for Control.
 
 Step 11: Merge the Pull Request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Control**: 
    #. Go to the repo in GitHub. Click on *Pull Requests*.  It is located above the repo files. 
+
+      .. figure:: figures/studio/pullrequests.png
+         :alt: Location of Pull Request button on GitHub repo page
+
+
    #. Explore this page to see all the information GitHub shows you about the pull request.
    #. Look for the new PR (pull request) from Pilot.  Click on the title of the request.  This will bring you to the PR page.
    #. Examine this page, you should see any commits made by Pilot.  Look for verification that you can merge this branch.  You should see a green circle with a checkmark inside along with a message "This branch has no conflicts with the base branch".

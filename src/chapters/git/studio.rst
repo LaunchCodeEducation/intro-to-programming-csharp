@@ -163,7 +163,7 @@ Step 3: Share Your Repository On GitHub
          this repo with the local repo. There are ways around that, but it's faster
          and easier to just create an empty repo here.
 
-   #. :ref:`Connecting to a repository in GitHub<remote-repo-setup>` by copying the code for pushing into an existing repo. 
+   #. Connect your local repo to GitHub by copying the code for pushing into an existing repo. 
       Remember, you already initalized and commited your console app.  
 
       .. figure:: figures/studio/new-repo-push-main.png
@@ -191,136 +191,17 @@ Step 3: Share Your Repository On GitHub
             To github.com:your-username/communication-log.git
                c7f97814..54993de3  main -> main
 
-         Notice that if your local branch was named ``master`` it was automatically changed to ``main``.
+      Notice that if your local branch was named ``master`` it was automatically changed to ``main``.
 
-   #. Verify your repo has been created by refreshing your GitHub page.
+      .. admonition:: Warning
 
+         Unless you've set up an SSH key with GitHub, make sure you've selected the
+         HTTPS clone URL. If you're not sure whether you have an SSH key, you
+         probably don't.
 
-
-
-
-   
-
-
-.. admonition:: Warning
-
-   Unless you've set up an SSH key with GitHub, make sure you've selected the
-   HTTPS clone URL. If you're not sure whether you have an SSH key, you
-   probably don't.
-
-Now you should be able to confirm that GitHub has the same version as your
-local project. (File contents in browser match those in terminal). Click around
-and see what is there. You can read all your code through GitHub's web
-interface.
-
-.. figure:: figures/studio/repo-first-commit.png
-   :alt: A repository with one commit in GitHub
-
-   A repository with one commit in GitHub
+   #. Confirm that GitHub has the same version as your local project (file contents match) by refreshing your GitHub page. Click around and see what is there. You can read all your code through GitHub's web interface.
 
 .. _clone-from-git:
-
-Step 4: Clone a Project from GitHub
------------------------------------
-
-**Pilot**: Go to Control's GitHub profile and find the communication-log repo.
-Click on the green *Clone or download* button. Use HTTPS (not SSH). Copy the
-url to your clipboard.
-
-.. figure:: figures/studio/clone-button.png
-   :alt: The clone button is on the right-hand side of a project's main page
-
-   Cloning a repository in GitHub
-
-In your terminal, navigate to your development folder and clone down the repo.
-The command should look something like this.
-
-::
-
-   $ git clone https://github.com/chrisbay/communication-log.git
-
-Now you can respond to Control! Open the ``communication-log.sln`` file in your editor and
-add your response to mission control. Be creative, the communication can go
-anywhere! Just don't ask your partner what you should write. After you finish,
-commit your change.
-
-.. admonition:: Note
-
-   When you open the project folder, you might not be in the same directory as the solution.  
-   You want to open the solution or ``.sln`` file.  
-   A quick way to do that from the terminal is to ``cd`` into the folder that is holding the solution and then type ``open .sln``.
-
-::
-
-   $ git status
-   On branch main
-   Your branch is up-to-date with 'origin/main'.
-   nothing to commit, working directory clean
-   $ git add .
-   $ git commit -m 'Added second line to log.'
-
-Now we need to push up your changes so Control can use them as well.
-
-::
-
-   $ git push origin main
-   ERROR: Permission to chrisbay/communication-log.git denied to pilot.
-   fatal: Could not read from remote repository.
-
-   Please make sure you have the correct access rights
-   and the repository exists.
-
-Great error message! It let us know exactly what went wrong: Pilot does not
-have security permissions to write to Control's repo. Let's fix that.
-
-Step 5: Add A Collaborator To A GitHub Project
-----------------------------------------------
-
-**Control**: In your web browser, go to your ``communication-log`` repo. Click
-the *Settings* button then click on *Collaborators*. Enter in Pilot's GitHub
-username and click *Add Collaborator*.
-
-.. figure:: figures/studio/add-collaborator.png
-   :alt: Add a collaborator by typing their user name into the input on the Add Collaborator page.
-
-   Add a collaborator to your repo in GitHub
-
-Step 6: Join the Project and Push
----------------------------------
-
-**Pilot**: You should receive an email invitation to join this repository.
-View and accept the invitation.
-
-.. note::
-
-   If you don't see an email (it may take a few minutes to arrive in your inbox),
-   check your Spam folder. If you still don't have an email, visit the
-   repository page for the repo that Control created (ask them for the link), and
-   you'll see a notification at the top of the page.
-
-.. figure:: figures/studio/repo-invite.png
-   :alt: The email invite to join a GitHub repository
-   :height: 400px
-
-   Invited to collaborate email in GitHub
-
-Now let's go enter that command again to push up our code.
-
-::
-
-   $ git push origin main
-   Counting objects: 9, done.
-   Delta compression using up to 4 threads.
-   Compressing objects: 100% (9/9), done.
-   Writing objects: 100% (9/9), 1.01 KiB | 0 bytes/s, done.
-   Total 9 (delta 8), reused 0 (delta 0)
-   remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
-   To git@github.com:chrisbay/communication-log.git
-      511239a..679de77  main -> main
-
-Anyone reading the code through GitHub's browser interface should now see the
-new second line.
-
 
 Step 4: Clone a Project from GitHub
 -----------------------------------
@@ -367,12 +248,21 @@ Step 5: Add A Collaborator To A GitHub Project
 
 **Control**: 
    #. In your web browser, go to your ``communication-log`` repo. 
-   #. Click the *Settings* button then click on *Collaborators*. 
-   #. Click the **Add people** button to invite collabotators. 
-   #. Enter in Pilot's GitHub username and click *Select a collaborator above*.
-   #. When you see Pilot's username, select it and then click the button to add that user to your repo.
+   #. Click the *Settings* button 
+   
+      .. figure:: figures/studio/settings.png
+         :alt: Location of Settings button for a GitHub Repo
+
+   #. Click the *Collaborators* button
+
+      .. figure:: figures/studio/add-people.png
+         :alt: Location of Collaborators button to grant access to GitHub Repo
+
+   #. Click the green **Add people** button to invite collaborators. 
+   #. Enter in Pilot's GitHub username. 
+   #. When you see Pilot's profile, select it and then click *Select a collaborator above*.
    #. You should now see a "Manage access" pane on GitHub.  
-      Pilot's username should be visible along with their collabotation status.  At this point, you should see "Pending invite".
+      Pilot's username should be visible along with their collaboration status.  At this point, you should see "Pending invite".
 
 Step 6: Join the Project and Push
 ---------------------------------
@@ -389,7 +279,7 @@ Step 6: Join the Project and Push
       repository page for the repo that Control created (ask them for the link), and
       you'll see a notification at the top of the page.
 
-   4. Now let's go enter that command again to ``push`` up our code.
+   1. Now let's go enter that command again to ``push`` up our code.
 
    .. sourcecode:: bash
 
