@@ -52,7 +52,6 @@ Back in your terminal, type ``git status``.
    nothing added to commit but untracked files present (use "git add" to track)
    Students-Computer:homework student$
 
-Wow!  That's a lot of text for your new file.  
 You saved your project on your computer, but let's commit it to your Git.  
 
 .. index:: ! rename-branch
@@ -68,7 +67,6 @@ You saved your project on your computer, but let's commit it to your Git.
 
    The examples in this chapter will be using ``main`` as the default branch.
    
-
    If you would like to rename your branch to match, the git command is ``git branch -m NEW-NAME-HERE``.
 
    ::
@@ -76,9 +74,6 @@ You saved your project on your computer, but let's commit it to your Git.
       Students-Computer:~ student$ git branch -m main
       Students-Computer:~ student$ git status
       On branch main
-
-
-
 
 Making Commits
 --------------
@@ -111,22 +106,16 @@ If you have created the Git repository and are ready to commit, you can do so by
 
 .. index:: ! stages of a commit
 
+.. _local-commit:
+
 The Four Stages of Making a ``commit`` 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The procedure for making a commit to a Git repository includes four stages.  
 
-#. ``git status`` gives you information about files that have been changed.
-#. ``git add`` allows you to add specific or all changed files to a commit.
-#. ``git commit -m "Your message"`` creates the new commit with the files that you added, 
-   with a message describing the changes included in the commit. Here, ``"Your message"`` should be a descriptive message within double-quotes.
-#. ``git log`` displays a log of every commit in the repository.
+#. ``git status`` gives you information about files that have been changed.  Will also tell you which branch you are currently on.
 
-If the steps above are followed correctly, you will find your latest commit at the top of the log.
-
-Here is how the process will look in the terminal:
-
-   ::
+   .. sourcecode:: bash
 
       Students-Computer:homework student$ git status
       On branch main
@@ -137,177 +126,49 @@ Here is how the process will look in the terminal:
          (use "git add <file>..." to include what will be committed)
 
             my_project.txt
-      
+
       nothing added to commit but untracked files present (use "git add" to track)
       Students-Computer:homework student$ git add my_project.txt
+
+
+#. ``git add`` allows you to add specific or all changed files to a commit.  
+   You can type the name of the file or files you want to add to the repo.
+
+   .. sourcecode:: bash
+
+      Students-Computer:homework student$ git add my_project.txt
+
+
+#. ``git commit -m "Your message"`` creates the new commit with the files that you added, 
+   with a message describing the changes included in the commit. Here, ``"Your message"`` should be a descriptive message within double-quotes.
+
+   .. sourcecode:: bash
+
       Students-Computer:homework student$ git commit -m "My initial commit"
       [main (root-commit) 7e771d7] My initial commit
-         1 file changed, 1 insertion (+)
-         create mode 100644 my_project.txt
+      1 file changed, 1 insertion (+)
+      create mode 100644 my_project.txt
+
+#. ``git log`` displays a log of every commit in the repository.
+
+   .. sourcecode:: bash
+
       Students-Computer:homework student$ git log
       commit 7e771d788ddfd6080f0a9f10f9aed7105b1a3bcf (HEAD -> main)
       Author: Student <lc101.student@email.com>
       Date:  Wed Apr 24 14:36:53 2019 -0500
 
+If the steps above are followed correctly, you will find your latest commit at the top of the log.
 
-That is even more text in your terminal.  
-What it all comes down to is that you added your file with the ``git add`` command, 
-then committed it to your repo using ``git commit -m "...message here..."``.  
-This commit created a time stamp of your work.  You changed 1 file, by inserting 1 item.
-Your changes will vary based on how much you add and save before committing.
-We called ``git log`` to view the a time stamp of the commit.
+git Tips and Tricks
+-------------------
 
-That was a lot very fast.  Let's add one more file for practice and look at each step more closely.
+A few other commands that you might find helpful.
 
-In your terminal, create a second file, ``notes.txt`` using the ``touch`` command. 
-Open that up, and write yourself another note.  Save your changes.  
-Also, make changes in your ``my_project.txt`` file and save those changes.
-Return to your terminal.
+* ``git add .`` this command is useful when you have multiple files that you would like to stage for a commit.  This command will add *all* files to that next commit.
 
-Let's go through the four steps to commit our repo.  
-Once you get to step four, ``git log``, you should get a printout that looks similar to this:
+* ``clear`` this command is for the terminal.  This will clear all text from your terminal.
 
-::
-
-   Students-Computer:~ student$ git status
-      On branch main
-      Your branch is up to date with 'origin/main'.
-
-      Changes note staged for commit:
-        (use "git add <file>..." to update what will be committed)
-        (use "git checkout -- <file>..." to discard changes in working directory)
-
-        modified: my_project.txt
-
-      Untracked files:
-        (use "git add <file>..." to update what will be committed)
-
-        notes.txt
-
-      no changes added to commit (use "git add" and/or "git commit -a")
-   Students-Computer:homework student$ git add my_project.txt
-   Students-Computer:homework student$ git add notes.txt
-   Students-Computer:homework student$ git commit -m "notes added to project"
-    [main (root-commit) 2c1e0af] notes added to project
-     2 file changed, 4 insertion(+), 1 deletion(-)
-     create mode 100644 notes.txt
-   Students-Computer:homework student$ git log
-   commit 2c1e0af9467217d76c7e3c48bcf9389ceaa4714b (HEAD -> master)
-   Author: Student <lc101.student@email.com>
-   Date:  Wed Apr 24 14:44:59 2019 -0500
-
-      notes added to project
-
-To break down what happens in a commit even further, we will examine each step for 
-meaning and the code.
-
-.. index:: ! git status
-
-When using ``git status``, the output shows two categories: **modified tracked files** and **modified untracked files**.
-Modified tracked means that the file exists in the Git repository already, but is different than the version in the repository.
-Modified untracked means that it is a new file that is not currently in the repository.
-
-In the code block below, the ``my_project.txt`` is an example of a modified tracked file because we added to it before committing. 
-``notes.txt`` is an example of a modified untracked file because it is brand new and has not been previously committed.
-
-::
-
-      Students-Computer:~ student$ git status
-      On branch main
-
-      Changes note staged for commit:
-        (use "git add <file>..." to update what will be committed)
-        (use "git checkout -- <file>..." to discard changes in working directory)
-
-        modified: my_project.txt
-
-      Untracked files:
-        (use "git add <file>..." to update what will be committed)
-
-        notes.txt
-
-      no changes added to commit (use "git add" and/or "git commit -a")
-      Students-Computer:~ student$
-
-.. index:: ! git add
-
-``git add`` adds files to the commit, but it does not commit those files.
-By using ``git add .``, *all* the modified files were added to the commit.
-If a programmer only wants to add one modified file, they can do so.
-
-::
-
-   Students-Computer:homework student$ git add notes.txt
-   Students-Computer:homework student$
-
-
-Now, if we were to run a ``git status`` following our ``git add`` we would see the
-following updates have been made.
-
-::
-
-   Students-Computer:homework student$ git status
-   On main branch
-
-   Changes to be committed:
-      (use "git reset HEAD <file>..." to unstage)
-
-      modified: my_project.txt
-      new file: notes.txt
-   
-   Students-Computer:homework student$
-
-
-.. index:: ! git commit
-
-``git commit`` actually commits the files that were added to the repository.
-By adding ``-m "notes added to project"``, a comment was added to the commit.
-This is helpful for looking through the log and seeing detailed comments of the changes made in each commit.
-
-::
-
-   Students-Computer:homework student$ git commit -m "notes added to project"
-    [main (root-commit) 2c1e0af] notes added to project
-     2 file changed, 4 insertion(+), 1 deletion (-)
-     create mode 100644 notes.txt
-   
-   Students-Computer:homework student$
-
-.. admonition:: Tip
-
-   It's important to include a descriptive commit message. Such messages are visible in your local Git log, as well as in the commit history on GitHub. A good commit message allows you and your fellow developers to easily identify the changes made in a given commit.
-
-.. index:: ! git log
-
-``git log`` shows the author of the commit, the date made, the comment, and a 40-character hash.
-This hash or value is a key for Git to refer to the version.
-Programmers use these hashes to reference specific commits, or snapshots, in the repository's history.
-
-::
-
-   Students-Computer:homework student$ git log
-   commit 2c1e0af9467217d76c7e3c48bcf9389ceaa4714b (HEAD -> master)
-   Author: Student <lc101.student@email.com>
-   Date:  Wed Apr 24 14:44:59 2019 -0500
-
-      notes added to project
-
-   Students-Computer:homework student$
-
-And if you were to run a final ``git status`` (your git best friend), you will see output similar to this:
-
-::
-
-      Students-Computer:homework student$ git status
-      On branch main
-      nothing to commit, working tree clean
-
-This lets you know that you have committed all of your latest changes.  Great job!
-
-.. admonition:: Tip
-
-   If your terminal is getting too crowded for you, the command ``clear`` 
-   will clear all lines in your terminal.  After this command runs, your cursor will be at the top of the terminal window.
 
 Check Your Understanding
 ------------------------
