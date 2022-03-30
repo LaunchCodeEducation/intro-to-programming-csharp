@@ -25,24 +25,24 @@ Step 7: Pull Pilot's Line and Add Another Line
 **Control**: 
    You might notice you don't have the second line of code in your copy of the project on your computer. Let's fix that. 
    
-   1. Go to the terminal and enter this command to ``pull`` down the updated code into your local git repository. Use the command ``git pull origin main``.
+   #. Go to the terminal and enter this command to ``pull`` down the updated code into your local git repository. Use the command ``git pull origin main``.
 
-   .. sourcecode:: bash
+      .. sourcecode:: bash
 
-      $ git pull origin main
-      remote: Counting objects: 3, done.  
-      remote: Compressing objects: 100% (2/2), done.
-      remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
-      Unpacking objects: 100% (3/3), done.
-      From github.com:chrisbay/communication-log
-         e0de62d..e851b7e  main     -> origin/main
-      Updating e0de62d..e851b7e
-      Fast-forward
-      communication-log.sln | 1 +
-      1 file changed, 1 insertion(+)
+         $ git pull origin main
+         remote: Counting objects: 3, done.  
+         remote: Compressing objects: 100% (2/2), done.
+         remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+         Unpacking objects: 100% (3/3), done.
+         From github.com:chrisbay/communication-log
+            e0de62d..e851b7e  main     -> origin/main
+         Updating e0de62d..e851b7e
+         Fast-forward
+         communication-log.sln | 1 +
+         1 file changed, 1 insertion(+)
 
 
-   2. Now, in your editor, add a third line to the communication. Then ``add``, ``commit``, and ``push`` it up.
+   #. Now, in your editor, add a third line to the communication. Then ``add``, ``commit``, and ``push`` it up.
 
 You can have your story go anywhere! Try to tie it in with what Pilot
 wrote, without discussing with them any plans on where the story will go.
@@ -53,24 +53,24 @@ Step 8: Do It Again: Pull, Change, and Push!
 **Pilot**: 
    You might notice now *you* don't have the third line on your computer. 
    
-   1. Go to the terminal and enter this command to pull in the changes that Control just made. Use the command ``git pull origin main``.
+   #. Go to the terminal and enter this command to pull in the changes that Control just made. Use the command ``git pull origin main``.
 
-   ::
+      ::
 
-      $ git pull origin main
-      remote: Counting objects: 3, done.
-      remote: Compressing objects: 100% (2/2), done.
-      remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
-      Unpacking objects: 100% (3/3), done.
-      From github.com:chrisbay/communication-log
-         e851b7e..167684c  main     -> origin/main
-      Updating e851b7e..167684c
-      Fast-forward
-      communication-log.sln | 1 +
-      1 file changed, 1 insertion(+)
+         $ git pull origin main
+         remote: Counting objects: 3, done.
+         remote: Compressing objects: 100% (2/2), done.
+         remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+         Unpacking objects: 100% (3/3), done.
+         From github.com:chrisbay/communication-log
+            e851b7e..167684c  main     -> origin/main
+         Updating e851b7e..167684c
+         Fast-forward
+         communication-log.sln | 1 +
+         1 file changed, 1 insertion(+)
 
-   2. Add a fourth line to the log. Again, be creative, but no planning!
-   3. Then ``add``, ``commit``, and ``push`` your change.
+   #. Add a fourth line to the log. Again, be creative, but no planning!
+   #. Then ``add``, ``commit``, and ``push`` your change.
 
 You can both play like this for a while! Feel free to repeat this cycle a few times to add to the story.
 
@@ -86,29 +86,29 @@ will allow for simultaneous work to be carried out in a reasonable way.
 **Pilot**: 
    While Control is working on an addition to the story, let's make another change simultaneously. 
    
-   1.  In order to do that, we'll create a :ref:`new branch<new-branch>`. Recall that a branch is a separate "copy" of the codebase that you can commit to without affecting code in the ``main`` branch.
+   #. In order to do that, we'll create a :ref:`new branch<new-branch>`. Recall that a branch is a separate "copy" of the codebase that you can commit to without affecting code in the ``main`` branch.
 
-   .. sourcecode:: bash
+      .. sourcecode:: bash
 
-      $ git checkout -b open-mic
-      Switched to a new branch 'open-mic'
+         $ git checkout -b open-mic
+         Switched to a new branch 'open-mic'
 
-   This command creates a new branch named ``open-mic``, and switches your local repository to use that branch.
+      This command creates a new branch named ``open-mic``, and switches your local repository to use that branch.
 
-   2. Update the `background color of the console <https://docs.microsoft.com/en-us/dotnet/api/system.console.backgroundcolor?view=net-5.0>`_, and update the ``Hello World!`` statement to something more exciting.:
+   #. Update the `background color of the console <https://docs.microsoft.com/en-us/dotnet/api/system.console.backgroundcolor?view=net-5.0>`_, and update the ``Hello World!`` statement to something more exciting.:
 
-   .. sourcecode:: csharp
+      .. sourcecode:: csharp
 
-      Console.BackgroundColor = ConsoleColor.Your-Choice-Here;
+         Console.BackgroundColor = ConsoleColor.Your-Choice-Here;
 
-   3. Stage and ``commit`` these changes.  Push your changes to the remote repo using ``git push origin open-mic``.  
+   #. Stage and ``commit`` these changes.  Push your changes to the remote repo using ``git push origin open-mic``.  
       Note that the last command is a bit different than what we've used before (``git push origin main``). The final piece of this command is the name of the branch that we want to push to GitHub.
 
-   .. sourcecode:: bash
+      .. sourcecode:: bash
 
-      $ git add .
-      $ git commit -m 'Changed background color'
-      $ git push origin open-mic
+         $ git add .
+         $ git commit -m 'Changed background color'
+         $ git push origin open-mic
 
 
 **Control and Pilot**
@@ -124,28 +124,28 @@ Step 10: Create a Pull Request In GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Pilot**: 
-   1. If you haven't already, in your browser, go to the GitHub project and click on *Branches* and make sure you see the new branch name, *open-mic*.  
+   #. If you haven't already, in your browser, go to the GitHub project and click on *Branches* and make sure you see the new branch name, *open-mic*.  
       This option will be located next to the button that says "**main**".
 
       .. figure:: figures/studio/branches-loc.png
          :alt: Location of branches button in GitHub Repo
 
 
-   2. On the Branches page, click *New Pull Request* to begin the process of requesting that your changes in the ``open-mic`` 
+   #. On the Branches page, click *New Pull Request* to begin the process of requesting that your changes in the ``open-mic`` 
       branch be incorporated into the ``main`` branch. 
 
       .. figure:: figures/studio/pr-request.png
          :alt: Location of New Pull Request button on branch view in GitHub
 
-   3. Add some text in the description box to let Control know what you did and why.  Click the **Create pull request** button.
+   #. Add some text in the description box to let Control know what you did and why.  Click the **Create pull request** button.
 
-   .. admonition:  Note 
-      
-      The branch selected in the *base* dropdown is the one you want to merge *into*.  
-      The branch in the *compare* dropdown is waiting for a review before it is merged into the *base*.
-      We want the *base* to be **main** and the *compare* branch to be **open-mic**.
+      .. admonition:  Note 
+         
+         The branch selected in the *base* dropdown is the one you want to merge *into*.  
+         The branch in the *compare* dropdown is waiting for a review before it is merged into the *base*.
+         We want the *base* to be **main** and the *compare* branch to be **open-mic**.
 
-   1.  GitHub will take you to your new pull request.  Now you can wait for Control.
+   #.  GitHub will take you to your new pull request.  Now you can wait for Control.
 
 Step 11: Merge the Pull Request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -168,11 +168,11 @@ Upon a successful merge, you should see a screen similar to the following: "**Pu
 The changes from ``open-mic`` are now in the ``main`` branch, but only in the remote repository on GitHub. 
 You will need to pull the updates to your ``main`` for them to be present locally by using ``git pull origin main``.
 
-.. sourcecode:: bash
+   .. sourcecode:: bash
 
-   $ git checkout main
-   $ git pull origin main
-      
+      $ git checkout main
+      $ git pull origin main
+         
 Git is able to merge these files on its own.  Your git output will show you the changes in your files.
 
 **Pilot**

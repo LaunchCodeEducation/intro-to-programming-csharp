@@ -35,44 +35,44 @@ Resolving Merge Conflicts
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Pilot**: 
-   1. ``pull`` down the latest ``main`` to check for updates.
-   2. Look for Control's ``color-update`` branch.  
-   3. If you don't see it, run the following command: ``git branch -a``.
-   4. Merge the ``color-update`` branch into ``main`` using the following command:
+   #. ``pull`` down the latest ``main`` to check for updates.
+   #. Look for Control's ``color-update`` branch.  
+   #. If you don't see it, run the following command: ``git branch -a``.
+   #. Merge the ``color-update`` branch into ``main`` using the following command:
 
       .. sourcecode:: bash
 
          $ git merge origin/color-update
    
-   5. Note the output.
+   #. Note the output.
 
-   .. sourcecode:: bash
+      .. sourcecode:: bash
 
-         $ git merge origin/color-update
-         Auto-merging communication-log/Program.cs
-         CONFLICT (Content): Merge conflict in communication-log/Program.cs
-         Automatic merge failed: fix conflicts and commit the result.
+            $ git merge origin/color-update
+            Auto-merging communication-log/Program.cs
+            CONFLICT (Content): Merge conflict in communication-log/Program.cs
+            Automatic merge failed: fix conflicts and commit the result.
 
-   That is great feedback!  Git has detected conflicting code, and has noted its location for you.
+      That is great feedback!  Git has detected conflicting code, and has noted its location for you.
 
-   6. Open your IDE and look in the file git pointed out.  Look for the conflict symbols.
+   #. Open your IDE and look in the file git pointed out.  Look for the conflict symbols.
 
-   .. admonition:: Note
+      .. admonition:: Note
 
-      Merge conflicts may appear different based on your IDE and if you are using a Mac or Windows computer.
-      The symbols are the same.  Look for the following :ref:`symbols<merge-conflict>` in your code: ``<<<<<<<``,  ``=======`` and ``>>>>>>>``.
+         Merge conflicts may appear different based on your IDE and if you are using a Mac or Windows computer.
+         The symbols are the same.  Look for the following :ref:`symbols<merge-conflict>` in your code: ``<<<<<<<``,  ``=======`` and ``>>>>>>>``.
 
-   7. Once you find the conflict, it is up to you to decide which code to keep.
-   8. Save your changes, ``commit``, and ``push`` up to ``main``.
+   #. Once you find the conflict, it is up to you to decide which code to keep.
+   #. Save your changes, ``commit``, and ``push`` up to ``main``.
 
 
-   .. admonition:: Note
-      
-      Many code editors provide fancy buttons to allow you to resolve individual merge conflicts with a single click. 
-      There's nothing magic about these buttons; they do the same thing that you can do by directly editing the file.
+      .. admonition:: Note
+         
+         Many code editors provide fancy buttons to allow you to resolve individual merge conflicts with a single click. 
+         There's nothing magic about these buttons; they do the same thing that you can do by directly editing the file.
 
-      Feel free to use them, but beware that they will not always work. 
-      If you need to incorporate parts of a change from both branches, you will need to manually edit the file to resolved the conflict.
+         Feel free to use them, but beware that they will not always work. 
+         If you need to incorporate parts of a change from both branches, you will need to manually edit the file to resolved the conflict.
 
   
 
@@ -82,32 +82,32 @@ Pulling the Merged Code
 **Control**: 
    #. While Pilot is working on a merge conflict, checkout your ``main`` brancn and run a git status.
 
-   .. sourcecode:: bash
+      .. sourcecode:: bash
 
-      $ git status
-      On branch main
-      Your branch is up-to-date with 'origin/main'.
-      nothing to commit, working directory clean
+         $ git status
+         On branch main
+         Your branch is up-to-date with 'origin/main'.
+         nothing to commit, working directory clean
 
-   Your local Git thinks the status is quo. Little does it know that up at GitHub, the status is *not* quo.  
-   Depending on where Pilot is when you run this status, if Pilot has pushed up the git message will be a little different. 
-   If git detects changes between branches, it will let you know how many changes are ahead of your current branch and will suggest you ``pull``. 
+      Your local Git thinks the status is quo. Little does it know that up at GitHub, the status is *not* quo.  
+      Depending on where Pilot is when you run this status, if Pilot has pushed up the git message will be a little different. 
+      If git detects changes between branches, it will let you know how many changes are ahead of your current branch and will suggest you ``pull``. 
 
-   2. We'd find this out by doing either a ``git fetch``, or if we just want the latest version of this branch, ``git pull``:
+   #. We'd find this out by doing either a ``git fetch``, or if we just want the latest version of this branch, ``git pull``:
 
-   .. sourcecode:: bash
+      .. sourcecode:: bash
 
-      $ git pull
-      remote: Counting objects: 13, done.
-      remote: Compressing objects: 100% (8/8), done.
-      remote: Total 13 (delta 4), reused 13 (delta 4), pack-reused 0
-      Unpacking objects: 100% (13/13), done.
-      From Github.com:chrisbay/communication-log
-         0c21659..e0de62d  main     -> origin/main
-      Updating 0c21659..e0de62d
-      Fast-forward
-      communication-log.sln | 3 ++-
-      1 file changed, 4 insertions(+), 3 deletions(-)
+         $ git pull
+         remote: Counting objects: 13, done.
+         remote: Compressing objects: 100% (8/8), done.
+         remote: Total 13 (delta 4), reused 13 (delta 4), pack-reused 0
+         Unpacking objects: 100% (13/13), done.
+         From Github.com:chrisbay/communication-log
+            0c21659..e0de62d  main     -> origin/main
+         Updating 0c21659..e0de62d
+         Fast-forward
+         communication-log.sln | 3 ++-
+         1 file changed, 4 insertions(+), 3 deletions(-)
 
 Great Scott! Looks like Pilot changed the ``communication-log``.
 Note that Control didn't have to deal with the hassle of resolving merge

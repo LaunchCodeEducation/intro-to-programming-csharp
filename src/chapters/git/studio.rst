@@ -207,41 +207,41 @@ Step 4: Clone a Project from GitHub
 -----------------------------------
 
 **Pilot**: 
-   1. Go to Control's GitHub profile and find the communication-log repo.
-   2. Click on the green **Code** button. **Clone** the HTTPS (not SSH) url. Copy the url to your clipboard.  
-   3. In your terminal, navigate to your development folder and clone down the repo.
+   #. Go to Control's GitHub profile and find the communication-log repo.
+   #. Click on the green **Code** button. **Clone** the HTTPS (not SSH) url. Copy the url to your clipboard.  
+   #. In your terminal, navigate to your development folder and clone down the repo.
       
-   The command should look something like this.
+      The command should look something like this.
    
-   .. sourcecode:: bash
+      .. sourcecode:: bash
 
-      $ git clone https://github.com/chrisbay/communication-log.git
+         $ git clone https://github.com/chrisbay/communication-log.git
 
-   Now you can respond to Control! 
+      Now you can respond to Control! 
 
-   1. Open the ``communication-log.sln`` file in your editor and add your response to mission control. Be creative, the communication can go anywhere! Just don't ask your partner what you should write. 
+   #. Open the ``communication-log.sln`` file in your editor and add your response to mission control. Be creative, the communication can go anywhere! Just don't ask your partner what you should write. 
   
 
-   .. admonition:: Note
+      .. admonition:: Note
 
-      When you open the project folder, you might not be in the same directory as the solution.  
-      You want to open the solution or ``.sln`` file.  
-      A quick way to do that from the terminal is to ``cd`` into the folder that is holding the solution 
-      and then type ``open .sln`` on a Mac and ``start .sln`` in Windows.
+         When you open the project folder, you might not be in the same directory as the solution.  
+         You want to open the solution or ``.sln`` file.  
+         A quick way to do that from the terminal is to ``cd`` into the folder that is holding the solution 
+         and then type ``open .sln`` on a Mac and ``start .sln`` in Windows.
 
-   1. After you finish, ``commit`` your change.
-   2. Now we need to ``push`` up your changes so Control can use them as well.
+   #. After you finish, ``commit`` your change.
+   #. Now we need to ``push`` up your changes so Control can use them as well.
 
-   ::
+      ::
 
-      $ git push origin main
-      ERROR: Permission to chrisbay/communication-log.git denied to Pilot.
-      fatal: Could not read from remote repository.
+         $ git push origin main
+         ERROR: Permission to chrisbay/communication-log.git denied to Pilot.
+         fatal: Could not read from remote repository.
 
-      Please make sure you have the correct access rights
-      and the repository exists.
+         Please make sure you have the correct access rights
+         and the repository exists.
 
-Great error message! It let us know exactly what went wrong: Pilot does not have security permissions to write to Control's repo. Let's fix that.
+      Great error message! It let us know exactly what went wrong: Pilot does not have security permissions to write to Control's repo. Let's fix that.
 
 Step 5: Add A Collaborator To A GitHub Project
 ----------------------------------------------
@@ -268,30 +268,30 @@ Step 6: Join the Project and Push
 ---------------------------------
 
 **Pilot**: 
-   1. Check your email.  You should receive an email invitation to join this repository.
-   2. View and accept the invitation.
-   3. This should take you to Control's repo.
+   #. Check your email.  You should receive an email invitation to join this repository.
+   #. View and accept the invitation.
+   #. This should take you to Control's repo.
 
-   .. note::
+      .. note::
 
-      If you don't see an email (it may take a few minutes to arrive in your inbox),
-      check your Spam folder. If you still don't have an email, visit the
-      repository page for the repo that Control created (ask them for the link), and
-      you'll see a notification at the top of the page.
+         If you don't see an email (it may take a few minutes to arrive in your inbox),
+         check your Spam folder. If you still don't have an email, visit the
+         repository page for the repo that Control created (ask them for the link), and
+         you'll see a notification at the top of the page.
 
-   1. Now let's go enter that command again to ``push`` up our code.
+   #. Now let's go enter that command again to ``push`` up our code.
 
-   .. sourcecode:: bash
+      .. sourcecode:: bash
 
-      $ git push origin main
-      Counting objects: 9, done.
-      Delta compression using up to 4 threads.
-      Compressing objects: 100% (9/9), done.
-      Writing objects: 100% (9/9), 1.01 KiB | 0 bytes/s, done.
-      Total 9 (delta 8), reused 0 (delta 0)
-      remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
-      To git@github.com:chrisbay/communication-log.git
-         511239a..679de77  main -> main
+         $ git push origin main
+         Counting objects: 9, done.
+         Delta compression using up to 4 threads.
+         Compressing objects: 100% (9/9), done.
+         Writing objects: 100% (9/9), 1.01 KiB | 0 bytes/s, done.
+         Total 9 (delta 8), reused 0 (delta 0)
+         remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
+         To git@github.com:chrisbay/communication-log.git
+            511239a..679de77  main -> main
 
 Anyone reading the code through GitHub's browser interface should now see the new second line.
 
