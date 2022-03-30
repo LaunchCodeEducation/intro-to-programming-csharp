@@ -104,7 +104,7 @@ Now that you have a directory, open Visual Studio and :ref:`create a new console
 
       .. figure:: figures/studio/win-ignore-files.png
          :scale: 60%
-         :alt: View of the General Git Repository Settins.
+         :alt: View of the General Git Repository Settings.
 
    Again, this is only one way to create this type of file.  
    Use it as a starting point, and grow from here.
@@ -163,7 +163,7 @@ Step 3: Share Your Repository On GitHub
          and easier to just create an empty repo here.
 
    #. Connect your local repo to GitHub by copying the code for pushing into an existing repo. 
-      Remember, you already initalized and commited your console app.  
+      Remember, you already initialized and committed your console app.  
 
       .. figure:: figures/studio/new-repo-push-main.png
          :alt: The page you see after creating an empty repository, with several options.
