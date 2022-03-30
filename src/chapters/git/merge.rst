@@ -2,30 +2,26 @@ Merging in Git
 ==============
 .. index:: ! merge, ! merge conflict, ! stash
 
+A **merge** in Git combines the code between two branches in a repository. 
+When merging you need to be on the branch you want to merge INTO.
 
-A **merge** in Git is when the code in two branches are combined in the repository.
-When merging you need to be on the branch you want to merge INTO.  
-
-If we wanted to merge a branch that had a new feature into the ``main`` branch, 
-the first step would be to checkout the ``main`` branch.
+To merge a branch that had a new feature into the ``main`` branch, 
+the first step would be to ``checkout`` the ``main`` branch.
 
 .. sourcecode:: bash
 
    Students-Computer:~ student$ git checkout main
  
+While on the ``main`` branch, the command would be git merge ``feature-branch``. 
+This will combine the two branches by pulling our code from ``feature-branch`` into ``main``.
 
-
-While on the ``main`` branch, the command would be ``git merge feature-branch``.
-This will combine the two branches by pulling our code from ``feature-branch`` into ``main``. 
-
-
-Anything built on the ``feature-branch`` branch will now be incorporated into ``main``.
-Git will provide output that indicates any changes that the ``feature-branch`` merged into the ``main`` branch.
+The ``main`` now contains all code on the ``feature-branch``.
+Git provides output noting that ``feature-branch`` merged into the ``main`` branch.
 Once your merge is complete, commit your work.
 
 .. admonition:: Tip
 
-   Before running the merge command, the programmer should make sure they are on the branch they want to merge into!
+   Before running the merge command, verify that you are on the branch you want to merge into!
 
 .. _merge-conflict:
 
@@ -40,7 +36,8 @@ It is waiting for a human to review the issue and decide.
 Merge Conflict Symbols 
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Your IDE uses symbols to let you know where a conflict is located as well as show you which branch is responsible for which code.
+Your IDE uses symbols to show you the location of any conflicts.  
+It will also provide the names of the conflicting branches.
 
 Some terms and symbols to pay attention to when conflict arrises.
 
@@ -49,10 +46,10 @@ In Your Terminal:
 
  
 In Your IDE:
-   #. ``<<<<<<<`` or ``<<<<<<< HEAD`` will appear at the first line of code where a conflict has been found.
+   #. ``<<<<<<<`` or ``<<<<<<< HEAD`` will appear at the first line of code where a conflict.
       ``HEAD`` points to the current branch you are on, or the current changes.  Some IDEs will use the branch name instead of ``HEAD``.
    #.  ``=======`` will be the dividing line between the ``HEAD`` branch and the incoming branch.
-   #. ``>>>>>>>`` or ``>>>>>>> branch-name`` contains code from the incoming branch to merge in. Often this notation will be found below the last line of code.
+   #. ``>>>>>>>`` or ``>>>>>>> branch-name`` contains code from the incoming branch to merge in. This notation is often found below the last line of code.
       This code may also be referred to as the incoming changes. 
 
 When a conflict arrives, you get to decide which code you want to keep.  Do you want the incoming changes, do you want the current code? 
@@ -73,9 +70,9 @@ Here are some tips on how to avoid a merge conflict:
    When a programmer uses that option, Git outputs what WILL happen, but doesn't DO it.
    With merging in Git, the command to run a dry-run and make sure there aren't any conflicts is ``git merge --no-commit --no-ff <branch>``.
    ``--no-commit`` and ``--no-ff`` tell Git to run the merge without committing the result to the repository.
-#. Before merging in a branch, any uncommitted work that would cause a conflict needs to be dealt with.
+#. Before merging in a branch, you must deal with any uncommitted work that would cause a conflict.
    A programmer can opt to not commit that work and instead **stash** it.
-   By using the ``git stash`` command, the uncommitted work is saved in the stash and the repository is returned to the state at the last commit.
+   Using the ``git stash`` command saves the uncommitted work in the stash and returns the repository to the state at the last commit.
 
 Check Your Understanding
 ------------------------

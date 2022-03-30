@@ -11,7 +11,7 @@ In this studio, we will practice the common Git commands used when
 multiple people work on the same code base.
 
 You and a partner will begin by coding in tag-team shifts. By the end of the
-task you should have a good idea about how to have two people work on the same
+task, you should have a good idea about how to have two people work on the same
 code at the same time. You will learn how to:
 
 #. Quickly add code in pull + push cycles *(Important! This is the fundamental
@@ -37,7 +37,6 @@ local Git repository with one branch, giving you the ability to move your code f
 backward in time. Working with branches on GitHub extends this ability by allowing multiple 
 people to build different features at the same time, then combine their work. Pull requests 
 act as checkpoints when code flows from branch to branch.
-
 We are going to simulate a radio conversation between the shuttle pilot and
 mission control.
 
@@ -57,7 +56,7 @@ Step 1: Create a New Repository
 .. admonition:: Note
 
    Be careful if you try to use ``copy/paste`` with the ``git`` commands! The
-   ``$`` symbols in the screenshots represent to the prompts in the terminal.
+   ``$`` symbols in the screenshots represent the prompts in the terminal.
    They are NOT part of the commands.
 
 Windows instructions:
@@ -82,7 +81,7 @@ Now that you have a directory, open Visual Studio and :ref:`create a new console
    
 .. admonition:: Setting Up a ``.gitignore`` File
 
-   A ``.gitignore`` file, is a text file that will contain untracked files or ignored files.
+   A ``.gitignore`` file is a text file that will contain untracked files or ignored files.
    These are files that will become part of your repo but are not very useful to other developers.
    Placing them in a ``.gitignore`` file will tell git to skip over them, which will reduce visual clutter in your terminal.
 
@@ -128,7 +127,7 @@ Step 2: First Commit
 
 **Control**
    #. Run your new project to make sure it works.
-   #. Use terminal to ``commit`` your new console app. 
+   #. Use the terminal to ``commit`` your new console app. 
       You can use your stand-alone terminal or use the terminal built-in to your IDE.
       In Visual Studio, the terminal is found in the **View** menu.
    #. Once in your terminal, :ref:`commit<local-commit>` your project.
@@ -296,4 +295,5 @@ Anyone reading the code through GitHub's browser interface should now see the ne
 
 
 **Control**
-   #. If you refresh the collaboration page, the "Pending invitation" should disappear once Pilot has accepted the invite.
+   #. If you refresh the collaboration page, the "Pending invitation" 
+      should disappear once Pilot has accepted the invite.

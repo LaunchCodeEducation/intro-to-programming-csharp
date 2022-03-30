@@ -4,9 +4,9 @@ Bonus Mission: Merge Conflicts!
 Merge Conflicts!
 ^^^^^^^^^^^^^^^^
 
-When collaborating on a project, things won't always go smoothly. It's common
-for two people to make changes to the same line(s) of code, at roughly the same
-time, which will prevent Git from being able to merge the changes together.
+When collaborating on a project, things won’t always go smoothly. 
+It’s common for two people to make changes to the same line(s) of code, 
+at the same time, preventing Git from being able to merge the changes together.
 
 .. figure:: figures/studio/git-merge.gif
    :alt: An animated GIF file showing two opposing armies colliding in a mess
@@ -28,7 +28,7 @@ Meanwhile...
    #. Checkout a new branch called ``color-update``.
    #. Change the Background color.
    #. ``commit`` and ``push`` up your changes.
-   #. Create a pull request.   You will receive a message that you are not able to merge this branch into main, and that is okay.
+   #. Create a pull request.   You will receive a message that you are not able to merge this branch into ``main``, and that is okay.
       There are merge conflicts, but Pilot will be handling them at this point.
 
 Resolving Merge Conflicts
@@ -53,7 +53,7 @@ Resolving Merge Conflicts
             CONFLICT (Content): Merge conflict in communication-log/Program.cs
             Automatic merge failed: fix conflicts and commit the result.
 
-      That is great feedback!  Git has detected conflicting code, and has noted its location for you.
+      That is great feedback!  Git has detected conflicting code and has noted its location for you.
 
    #. Open your IDE and look in the file git pointed out.  Look for the conflict symbols.
 
@@ -68,19 +68,19 @@ Resolving Merge Conflicts
 
       .. admonition:: Note
          
-         Many code editors provide fancy buttons to allow you to resolve individual merge conflicts with a single click. 
-         There's nothing magic about these buttons; they do the same thing that you can do by directly editing the file.
-
+         Many code editors have buttons to resolve merge conflicts with a single click. 
+         There’s nothing magic about these buttons; they do the same thing that you can do by editing the file.
+         
          Feel free to use them, but beware that they will not always work. 
-         If you need to incorporate parts of a change from both branches, you will need to manually edit the file to resolved the conflict.
-
+         If you need to incorporate parts of a change from **both** branches, 
+         resolve the conflict by manually editing.
   
 
 Pulling the Merged Code
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 **Control**: 
-   #. While Pilot is working on a merge conflict, checkout your ``main`` brancn and run a git status.
+   #. While Pilot is working on a merge conflict, checkout your ``main`` branch and run a git status.
 
       .. sourcecode:: bash
 
@@ -90,8 +90,8 @@ Pulling the Merged Code
          nothing to commit, working directory clean
 
       Your local Git thinks the status is quo. Little does it know that up at GitHub, the status is *not* quo.  
-      Depending on where Pilot is when you run this status, if Pilot has pushed up the git message will be a little different. 
-      If git detects changes between branches, it will let you know how many changes are ahead of your current branch and will suggest you ``pull``. 
+      Depending on where Pilot is when you run this status, the git message will be a little different. 
+      If git detects changes between branches, it will tell you and offer suggestions to ``pull``.
 
    #. We'd find this out by doing either a ``git fetch``, or if we just want the latest version of this branch, ``git pull``:
 
@@ -133,8 +133,7 @@ resolving merge conflicts.
 #. **Pilot**: ``pull`` in the changes that Control pushed, including the resolved 
    merge conflicts.
 
-Merge conflicts are a part of the process of team development. Resolve them
-carefully in order to avoid bugs in your code.
+Merge conflicts are a part of the process of team development. Resolve them to avoid bugs in your code.
 
 Avoiding Conflicts
 ^^^^^^^^^^^^^^^^^^
@@ -144,7 +143,7 @@ Still, the best way to handle them is to try to avoid them in the first place. H
 
 #. Deal with any uncommitted work before trying to merge.
 #. Partners should avoid working on the same file at the same time.
-#. Try to avoid adding code directly into main. New ideas should be explored in a different branch first and then merged.
+#. Try to avoid adding code directly into ``main``. Explore new ideas in a different branch first and then merged.
 
 
 

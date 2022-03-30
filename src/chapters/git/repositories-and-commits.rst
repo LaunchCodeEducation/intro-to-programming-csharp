@@ -11,11 +11,11 @@ Create a Repository
 -------------------
 
 To get started with a git repository (or "repo" for short), the programmer must first create one.
-Let's walkthrough the steps together using the terminal and a text editor.
+Let's walk through the steps together using the terminal and a text editor.
 
 To create a git repository, you will need to navigate to your project directory using the terminal.
 Either select a current directory or make one.  Let's make one called ``homework``.
-Once created and you are inside your project directory, we are going to initiate git.
+Once created and you are inside your project directory, we are going to initialize git.
 
 Go ahead and use the command ``git init``, like so:
 
@@ -33,7 +33,7 @@ Now you are ready to code away!
 
 Let's add some code or files to this project.  
 Since we are using the terminal, let's create a text file by using ``touch my_project.txt``.  
-Once that is done, open your new file, type your name, and save your file.
+Now open your new file, type your name, and save your file.
 
 Back in your terminal, type ``git status``.
 
@@ -62,7 +62,8 @@ You saved your project on your computer, but let's commit it to your Git.
 
    When using a VCS, the first branch created is your ``default`` branch.  
    On your computer, it is often named the ``master`` branch.  
-   Later we will be working with GitHub, which is an online repository that is commonly used when collabotating with others.
+   
+   Later we will be working with GitHub, which is an online repository commonly used when collaborating with others.
    GitHub's default branch is called ``main``.  
 
    The examples in this chapter will be using ``main`` as the default branch.
@@ -96,13 +97,14 @@ So when do you make a commit to your repository?
 
 .. pull-quote::
 
-   The general rule of thumb is that any time a significant change in functionality is made, a commit should be made.
+   Any time you make a significant change in functionality, you should a commit your work.
 
 If you have created the Git repository and are ready to commit, you can do so by following the commit process.
 
 .. note::
 
-   Git does have a simple commit command, however, making a proper commit requires that you follow a longer procedure than just one command.
+   Git does have a simple commit command; however, making a proper commit requires 
+   that you follow a longer procedure.
 
 .. index:: ! stages of a commit
 
@@ -113,7 +115,7 @@ The Four Stages of Making a ``commit``
 
 The procedure for making a commit to a Git repository includes four stages.  
 
-#. ``git status`` gives you information about files that have been changed.  Will also tell you which branch you are currently on.
+#. ``git status`` gives you information about any changed files. Will also tell you which branch you are currently on.
 
    .. sourcecode:: bash
 
@@ -139,8 +141,8 @@ The procedure for making a commit to a Git repository includes four stages.
       Students-Computer:homework student$ git add my_project.txt
 
 
-#. ``git commit -m "Your message"`` creates the new commit with the files that you added, 
-   with a message describing the changes included in the commit. Here, ``"Your message"`` should be a descriptive message within double-quotes.
+#. ``git commit -m "Your message"`` creates the new commit with the files that you added and a message describing the changes.  
+   Here, ``"Your message"`` should be a descriptive message within double-quotes.
 
    .. sourcecode:: bash
 

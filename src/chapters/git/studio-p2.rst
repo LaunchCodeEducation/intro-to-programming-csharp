@@ -6,8 +6,9 @@ Studio: Communication Log (continued)
 Congrats! You have successfully created a GitHub repo and started the collaboration process.  
 The more you practice these steps, the easier and faster this process becomes.  
 
-As we progress through the rest of the studio, you will be working with your partner in the same code base.
-You will push and pull, you will create branches, and you might possibly merge your changes in and resolve possible merge conflicts.
+As we progress through the rest of the studio, you will be working with your partner in the same code base. 
+You will push and pull, you will create branches.  
+You might merge your changes, and if you might create conflicts,  you will resolve them.
 
 Good luck!
 
@@ -15,7 +16,7 @@ Good luck!
 
    As you go through these steps, you'll be working with branches. It's very
    likely you will make changes to the code only to realize that you did so in the
-   wrong branch. When this happens (and it happens to all of us) you can use
+   wrong branch. When this happens (and it happens to us all) you can use
    ``Git stash`` to cleanly move your changes to another branch. Read about how
    to do so in our :ref:`git-stash` tutorial.
 
@@ -77,16 +78,14 @@ You can both play like this for a while! Feel free to repeat this cycle a few ti
 Step 9: Create a Branch In Git
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This workflow is a common one in team development situations. You might wonder,
-however, if professional developers sit around waiting for their teammates to
-commit and push a change before embarking on additional work on their own. That
-would be a drag, and thankfully, there is a nice addition to this workflow that
-will allow for simultaneous work to be carried out in a reasonable way.
+This workflow is a common one in team development situations. 
+Do professional developers wait for newly pushed changes before 
+they start any work? That would be a drag. Instead, branches allow for simultaneous work.
 
 **Pilot**: 
-   While Control is working on an addition to the story, let's make another change simultaneously. 
+   While Control is working on an addition to the story, make another change. 
    
-   #. In order to do that, we'll create a :ref:`new branch<new-branch>`. Recall that a branch is a separate "copy" of the codebase that you can commit to without affecting code in the ``main`` branch.
+   #. Create a :ref:`new branch<new-branch>`. Recall that a branch is a separate "copy" of the codebase. You can commit to without affecting code in the ``main`` branch.
 
       .. sourcecode:: bash
 
@@ -95,7 +94,7 @@ will allow for simultaneous work to be carried out in a reasonable way.
 
       This command creates a new branch named ``open-mic``, and switches your local repository to use that branch.
 
-   #. Update the `background color of the console <https://docs.microsoft.com/en-us/dotnet/api/system.console.backgroundcolor?view=net-5.0>`_, and update the ``Hello World!`` statement to something more exciting.:
+   #. Update the `background color of the console <https://docs.microsoft.com/en-us/dotnet/api/system.console.foregroundcolor?view=net-6.0>`_, and update the ``Hello World!`` statement to something more exciting.:
 
       .. sourcecode:: csharp
 
@@ -112,19 +111,19 @@ will allow for simultaneous work to be carried out in a reasonable way.
 
 
 **Control and Pilot**
-   #. Verify the new branch has been successfully pushed up in your terminal by pulling down the latest main.
+   #. To verify the new branch has been successfully pushed up in your terminal, pull down the latest main.
    #. Control, you will need to run the command ``git branch -a`` to see *all* branches in this codebase.
-   #. Pilot, since you created the new branch running the command ``git branch`` should show you your new branch in the terminal.
+   #. Pilot, run the command ``git branch``.  Is your new branch in the terminal?
    #. You can also verify the branch in GitHub, by clicking on the *Branches* button about the repo code.
 
 Great! Now let's show the other player your work in GitHub and ask them to
-merge it in to the main branch.
+merge it into the main branch.
 
 Step 10: Create a Pull Request In GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Pilot**: 
-   #. If you haven't already, in your browser, go to the GitHub project and click on *Branches* and make sure you see the new branch name, *open-mic*.  
+   #. In your browser, go to the GitHub project and click on *Branches* and make sure you see the new branch name, *open-mic*.  
       This option will be located next to the button that says "**main**".
 
       .. figure:: figures/studio/branches-loc.png
@@ -159,7 +158,7 @@ Step 11: Merge the Pull Request
 
    #. Explore this page to see all the information GitHub shows you about the pull request.
    #. Look for the new PR (pull request) from Pilot.  Click on the title of the request.  This will bring you to the PR page.
-   #. Examine this page, you should see any commits made by Pilot.  Look for verification that you can merge this branch.  You should see a green circle with a checkmark inside along with a message "This branch has no conflicts with the base branch".
+   #. Examine this page, you should see any commits made by Pilot.  Look for verification that you can merge this branch.  You should see a green circle with a check the message "This branch has no conflicts with the base branch".
    #. If you are able to merge, click the button that says "**Merge pull request**".
    #. A textbox will pop up containing a message about this merge.  You can change any of the text if you want.
    #. Click "**Confirm merge**" 

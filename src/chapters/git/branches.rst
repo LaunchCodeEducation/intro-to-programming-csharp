@@ -6,22 +6,23 @@ Git Branches
 Branching in Git
 ----------------
 
-So far this book has talked about Git's ability to store different versions of a codebase in time.  
-What if you want collaborate with another programmer on separate features for the same codebase?
-What if you want to try something new in your code, but you don't want to break your current code?
-
+So far this book has talked about Git’s ability to store different versions of a codebase in time. 
+What if you and a fellow programmer on separate features for the same codebase? 
+What if you want to try something new in your code, but you don’t want to break your current code?
 This is where **branches** can be useful.
 
-Branches contain a copy of the codebase they were created from, but will not interfere with the original codebase.
-These are great options for fixing bugs without risk of breaking more code or impacting any live applications of that code.
-When working with others in the same codebase, branches allow you to work on different features or bugs independently of the team.
-This allows more people to work in the code at once.
-Branches are also great for storing and testing new features without impacting any live applications.
+A branch is a contained copy of the codebase.  
+Any code written in a branch will not interfere with the original codebase. 
+Many programmers use branches to fix bugs or add features to a codebase.  
+Branches enable you to share work between programmers.  
+They provide each programmer with code in their own branch, 
+allowing more people to work on the code at once. 
+Branches allow for changes to an already functional codebase.
 
 In the previous section, when checking the status, the top line was ``On branch main``. 
 The main branch is the *default branch* of the repository.  
 Many programmers keep the live version of their code in the main branch.
-For that reason, major work should be done in a new feature branch, so it doesn't impact the live software.
+For that reason, complete any major work in a new feature branch, so it doesn't impact the live software.
 
 .. figure:: figures/branches-copy.png
    :alt: Diagram depicting two branches coming off of the main branch.
@@ -31,10 +32,10 @@ Checking on Your Branches
 
 A quick way to check on your branches is to use the command ``git branch``.  
 This will display a complete list of your branches.
-There will also be some visual cue to let you know which branch you are on.  
+There will also be some visual cues to let you know which branch you are on.  
 This could be a unique color or an ``*``; it depends on the terminal.  
 
-Before you start coding, it can be a good idea to start by running a 
+Before you start coding, run a 
 ``git status`` or ``git branch`` to make sure you are in the right place.
 Even if you haven't added any branches yet, you can still use this command.
 
@@ -83,20 +84,13 @@ To do so, the command is ``git checkout branch-name``.
       * main
       update-branch      
 
-.. admonition:: Warning!
-
-   Sometimes when switching between branches, 
-   you might see a lot of red squiggly lines underneath code you were confident worked when you 
-   left your branch.  
-
-   Give your IDE a few seconds to catch up and they should go away.  
 
 .. _rename-branch:
 
 Renaming a Branch
 -------------------
 
-Sometimes you might want to rename a branch.  You can do that in a few ways to do this.
+Sometimes you might want to rename a branch.  You can do that in a few ways.
 While we are currently on our ``main`` branch, let's rename ``update-branch`` to ``array-update``.
 
 .. admonition:: Example  
@@ -118,7 +112,7 @@ While we are currently on our ``main`` branch, let's rename ``update-branch`` to
       * main
 
 
-Ta-da! Do quick branch check to verify your changes.  
+Ta-da! Do a quick branch check to verify your changes.  
 
 .. admonition:: Example 
 
@@ -139,7 +133,7 @@ Ta-da! Do quick branch check to verify your changes.
 
 
 Remember, that names are up to you.  
-Just like with commit messages, create branch names that will help you remember the branch's purpose.  
+Create branch names that will help you remember the branch's purpose.  
 
 
 Check Your Understanding
@@ -147,4 +141,4 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is a reason for creating a branch in Git?
+   What is one reason for creating a branch in Git?
