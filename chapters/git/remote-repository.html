@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15.3. Remote Repositories &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="15.4. Git Branches" href="branches.html" />
+    <link rel="prev" title="15.2. Repositories and Commits" href="repositories-and-commits.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">15. </span>Git More Collaboration</a></li>
+    <li class="active"><span class="section-number">15.3. </span>Remote Repositories</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="remote-repositories">
+<h1><span class="section-number">15.3. </span>Remote Repositories<a class="headerlink" href="#remote-repositories" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="local-remote-github-oh-my">
+<h2><span class="section-number">15.3.1. </span>Local, Remote, GitHub, Oh My!<a class="headerlink" href="#local-remote-github-oh-my" title="Permalink to this headline">¶</a></h2>
+<p>So far, the book has covered how to set up a Git repository on the local machine,
+also known as <strong>local development</strong>.
+VCS is a great tool for backing up your codebase.
+VCS also allows you to share your code with others in  <strong>remote repositories</strong>.
+Remote repositories are hosted on a server and accessible to others.</p>
+<p>We will be using GitHub to create our remote repositories.
+You will need to create an account on <a class="reference external" href="https://www.github.com/" target="_blank">GitHub<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+Make sure you choose an appropriate username.  Many programming professionals use GitHub as a portfolio for their work.</p>
+</div>
+<div class="section" id="setting-up-a-remote-repo">
+<span id="remote-repo-setup"></span><h2><span class="section-number">15.3.2. </span>Setting Up a Remote Repo<a class="headerlink" href="#setting-up-a-remote-repo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="terminal-and-github">
+<h3><span class="section-number">15.3.2.1. </span>Terminal and GitHub<a class="headerlink" href="#terminal-and-github" title="Permalink to this headline">¶</a></h3>
+<p>Creating a repo from scratch on your own computer.</p>
+<ol class="arabic simple">
+<li>Create a folder on your computer to hold your codebase.</li>
+<li><code class="docutils literal notranslate"><span class="pre">cd</span></code> into your folder and initialize it with git using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> command.</li>
+<li>Open your IDE and save all your work in your new directory.</li>
+<li><code class="docutils literal notranslate"><span class="pre">commit</span></code> your new project locally.</li>
+<li>Open GitHub and create a new repository.</li>
+<li>On the “Create a New Repository” page, name your repo the same as your folder so that you can stay organized better.</li>
+<li>Keep it public for now</li>
+<li>Don’t check any boxes in the “<strong>Initialize this repository with:</strong>” section since we started this process on our computer.</li>
+<li>Create the repository.</li>
+<li>Select “<strong>…or push an existing repository from the command line</strong>” option.  Copy the code and paste this into your terminal.
+Press the enter key.
+<em>Note:</em>  If you get a note from git to use a different command, type it into the terminal and hit enter.</li>
+<li>Refresh your GitHub page and inspect your new repo.</li>
+<li>Back on your computer, open your IDE and select the folder that contains your repo and start coding.</li>
+<li>Don’t forget to save and commit your changes periodically.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="collaborating-with-colleagues">
+<h2><span class="section-number">15.3.3. </span>Collaborating with Colleagues<a class="headerlink" href="#collaborating-with-colleagues" title="Permalink to this headline">¶</a></h2>
+<p>To start collaborating with their colleagues on a project, a programmer needs access to the codebase.
+The programmer has to import the code from a remote repository onto their local machine.</p>
+<p>They can clone a remote repository by using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">url-here</span></code> command.
+Online VCSs, like GitHub, give users the option to clone the repository
+through HTTPS or SSH.
+The <code class="docutils literal notranslate"><span class="pre">url-here</span></code> of the command is where the programmer adds the url to the repository that they are cloning.</p>
+<div class="section" id="cloning-a-repo">
+<h3><span class="section-number">15.3.3.1. </span>Cloning a Repo<a class="headerlink" href="#cloning-a-repo" title="Permalink to this headline">¶</a></h3>
+<p>Using code from someone else’s computer or repo.</p>
+<ol class="arabic">
+<li><p class="first">Create a folder on your computer to hold your codebase.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">cd</span></code> into your folder.</p>
+</li>
+<li><p class="first">Open the repo that contains the codebase in GitHub.</p>
+</li>
+<li><p class="first">Look for the button that says <code class="docutils literal notranslate"><span class="pre">Code</span></code> and click on it.</p>
+</li>
+<li><p class="first">On the dropdown menu, copy the link to the codebase.  In this class, we will use the HTTPS code.</p>
+</li>
+<li><p class="first">Back in your terminal, you will use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command followed by the copied link. See the example below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Students-Computer:learning-git student$ git clone https://github.com:username/repo-name.git
+</pre></div>
+</div>
+</li>
+<li><p class="first">Run the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to see what is now in your folder.</p>
+</li>
+<li><p class="first">You will need to <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the project folder to start coding.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="forking-a-repo">
+<h3><span class="section-number">15.3.3.2. </span>Forking a Repo<a class="headerlink" href="#forking-a-repo" title="Permalink to this headline">¶</a></h3>
+<p>Creating a fork allows you to modify codebases without changing the original codebase.
+It is how you worked in replit.  And it is how you will gain access to any starter code in the remainder of this course.</p>
+<ol class="arabic simple">
+<li>Open the repo you wish to fork.</li>
+<li>Locate the <code class="docutils literal notranslate"><span class="pre">Fork</span></code> button.  Currently is in the top right corner of a GitHub repo.</li>
+<li>Click the <code class="docutils literal notranslate"><span class="pre">Fork</span></code> button.  If GitHub asks, make sure you save your fork into your class GitHub account.</li>
+<li>A forked copy of the repo appears in GitHub.</li>
+<li>You need to clone this fork onto your computer to work with its code.</li>
+</ol>
+<p>For more detailed instructions on how to fork, checkout out :ref:this walkthrough&lt;forking&gt;`.</p>
+<div class="admonition-fork-or-clone admonition">
+<p class="first admonition-title">Fork or Clone?</p>
+<p class="last">When working with LaunchCode GitHub repositories, you will want to fork the repository rather than clone it.</p>
+</div>
+</div>
+</div>
+<div class="section" id="contributing-to-a-remote-repository">
+<h2><span class="section-number">15.3.4. </span>Contributing to a Remote Repository<a class="headerlink" href="#contributing-to-a-remote-repository" title="Permalink to this headline">¶</a></h2>
+<p>When working with a remote repository, you have a similar commit process as before.
+Now you need to push your changes up to the remote repo.
+When working with a remote repo, the commit process has five steps:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">message-here</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">main</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code></li>
+</ol>
+<p>The fourth step uses the new command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push...</span></code>.
+This pushes the commit to the remote from the local. <code class="docutils literal notranslate"><span class="pre">origin</span></code> indicates that the commit
+goes to the remote and <code class="docutils literal notranslate"><span class="pre">main</span></code> is the name of the branch that the commit goes to.</p>
+<p>Often when pushing to a remote repo you are committing any changes that you made to the code.
+If you are the only one contributing to the codebase, then you are in control of what changes are being made.
+Yet, it is not uncommon to share a codebase remotely with others.
+When working like this, it is not easy to manage and keep track of their changes and your own.
+What happens when multiple people are adding to a single codebase?  You get a mess.</p>
+<p>In the next section, we will discuss how a way to avoid messes like that (in theory) by creating branches.
+A good practice for creating new features or working collaboratively.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">15.3.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What is the new command for making a commit to a remote repository?</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="repositories-and-commits.html"><span aria-hidden="true">&larr;</span> <span class="section-number">15.2. </span>Repositories and Commits</a></li>
+        
+        
+        <li class="next"><a href="branches.html"><span class="section-number">15.4. </span>Git Branches <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

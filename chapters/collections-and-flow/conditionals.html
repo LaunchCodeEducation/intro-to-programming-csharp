@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10.1. switch Statements vs. else if &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10.2. More Loops and Break Statements" href="loops.html" />
+    <link rel="prev" title="10. Control Flow and Collections" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">10. </span>Control Flow and Collections</a></li>
+    <li class="active"><span class="section-number">10.1. </span><code class="docutils literal notranslate"><span class="pre">switch</span></code> Statements vs. <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code></li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="switch-statements-vs-else-if">
+<h1><span class="section-number">10.1. </span><code class="docutils literal notranslate"><span class="pre">switch</span></code> Statements vs. <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code><a class="headerlink" href="#switch-statements-vs-else-if" title="Permalink to this headline">¶</a></h1>
+<p>You have been exposed to basic ways to contol the flow of data within your code.
+We discussed logical operators, conditional statements, and loops.
+Before we move on to collections, such as <code class="docutils literal notranslate"><span class="pre">Lists</span></code> and dictionaries, we’re going to discuss a few more
+ways to control flow:  switch statements, do while and foreach loops, and break/continue statements.</p>
+<div class="section" id="switch-statements">
+<span id="index-0"></span><span id="id1"></span><h2><span class="section-number">10.1.1. </span><code class="docutils literal notranslate"><span class="pre">switch</span></code> Statements<a class="headerlink" href="#switch-statements" title="Permalink to this headline">¶</a></h2>
+<p>C# also supports a <strong>switch</strong> statement that acts something like an
+<code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> statement under certain conditions, called <strong>cases</strong>. The
+<code class="docutils literal notranslate"><span class="pre">switch</span></code> statement is not used very often, and we generally recommend you
+avoid using it. It is not as powerful as the <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> model because the
+<code class="docutils literal notranslate"><span class="pre">switch</span></code> variable can only be compared for equality with a very small class
+of types.</p>
+<p>Here is a quick example of a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter an integer: &quot;</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">dayString</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="kt">int</span> <span class="n">dayNum</span> <span class="p">=</span> <span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">dayString</span><span class="p">);</span>
+
+<span class="kt">string</span> <span class="n">day</span><span class="p">;</span>
+<span class="k">switch</span> <span class="p">(</span><span class="n">dayNum</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">case</span> <span class="m">0</span><span class="p">:</span>
+      <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Sunday&quot;</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+   <span class="k">case</span> <span class="m">1</span><span class="p">:</span>
+      <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Monday&quot;</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+   <span class="k">case</span> <span class="m">2</span><span class="p">:</span>
+      <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Tuesday&quot;</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+   <span class="k">case</span> <span class="m">3</span><span class="p">:</span>
+      <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Wednesday&quot;</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+   <span class="k">case</span> <span class="m">4</span><span class="p">:</span>
+      <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Thursday&quot;</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+   <span class="k">case</span> <span class="m">5</span><span class="p">:</span>
+      <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Friday&quot;</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+   <span class="k">case</span> <span class="m">6</span><span class="p">:</span>
+      <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Saturday&quot;</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+   <span class="k">default</span><span class="p">:</span>
+      <span class="c1">// in this example, this block runs if none of the above blocks match</span>
+      <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Int does not correspond to a day of the week&quot;</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">day</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Note that each case ends with a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement.
+We will look at why this is in the following section.</p>
+<p>In the example above, here’s the output if a user enters the number <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Enter an integer:
+4
+Thursday
+</pre></div>
+</div>
+<p>And the output if that user enters <code class="docutils literal notranslate"><span class="pre">10</span></code>? Below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Enter an integer:
+10
+Int does not correspond to a day of the week
+</pre></div>
+</div>
+<p>Here’s how the above example looks using the <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> construction:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter an integer: &quot;</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">dayString</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">dayNum</span> <span class="p">=</span> <span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">dayString</span><span class="p">);</span>
+
+<span class="kt">string</span> <span class="n">day</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">dayNum</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Sunday&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">dayNum</span> <span class="p">==</span> <span class="m">1</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Monday&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">dayNum</span> <span class="p">==</span> <span class="m">2</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Tuesday&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">dayNum</span> <span class="p">==</span> <span class="m">3</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Wednesday&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">dayNum</span> <span class="p">==</span> <span class="m">4</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Thursday&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">dayNum</span> <span class="p">==</span> <span class="m">5</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Friday&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">dayNum</span> <span class="p">==</span> <span class="m">6</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Saturday&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+   <span class="n">day</span> <span class="p">=</span> <span class="s">&quot;Int does not correspond to a day of the week&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">day</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="fallthrough">
+<span id="index-1"></span><h3><span class="section-number">10.1.1.1. </span>Fallthrough<a class="headerlink" href="#fallthrough" title="Permalink to this headline">¶</a></h3>
+<p>Many C-based languages utilize switch statements.
+However, not all languages share the same behavior when it comes to <strong>fallthrough</strong>.
+Fallthrough is what happens when a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is omitted and is described in detail in this article on <a class="reference external" href="https://en.wikipedia.org/wiki/Switch_statement#Fallthrough" target="_blank">switch statements<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+In C#, you can take advantage of fallthrough behavior in specific circumstances with blank cases.
+If the behavior we want matches for two cases, then we can take advantage of this fallthrough action.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>We want to use a switch statement to tell us if it is the weekend or a weekday. Here is how we might modify the switch statement from above and make use of fallthrough.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter an integer: &quot;</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">dayString</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">dayNum</span> <span class="p">=</span> <span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">dayString</span><span class="p">);</span>
+
+<span class="kt">string</span> <span class="n">weekZone</span><span class="p">;</span>
+<span class="k">switch</span> <span class="p">(</span><span class="n">dayNum</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">case</span> <span class="m">0</span><span class="p">:</span>
+      <span class="n">weekZone</span> <span class="p">=</span> <span class="s">&quot;Weekend&quot;</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+   <span class="k">case</span> <span class="m">1</span><span class="p">:</span>
+   <span class="k">case</span> <span class="m">2</span><span class="p">:</span>
+   <span class="k">case</span> <span class="m">3</span><span class="p">:</span>
+   <span class="k">case</span> <span class="m">4</span><span class="p">:</span>
+   <span class="k">case</span> <span class="m">5</span><span class="p">:</span>
+      <span class="n">weekZone</span> <span class="p">=</span> <span class="s">&quot;Week Day&quot;</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+   <span class="k">case</span> <span class="m">6</span><span class="p">:</span>
+      <span class="n">weekZone</span> <span class="p">=</span> <span class="s">&quot;Weekend&quot;</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+   <span class="k">default</span><span class="p">:</span>
+      <span class="c1">// in this example, this block runs if none of the above blocks match</span>
+      <span class="n">weekZone</span> <span class="p">=</span> <span class="s">&quot;Int does not correspond to a day of the week&quot;</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">day</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="last">Because we want to set the value of <code class="docutils literal notranslate"><span class="pre">weekZone</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;Week</span> <span class="pre">Day&quot;</span></code> for cases 1-5, we omit the <code class="docutils literal notranslate"><span class="pre">break</span></code> statements and any other code.</p>
+</div>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">10.1.2. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>When does fallthrough occur in C#?</p>
+<ol class="last arabic simple">
+<li>Omitting an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause from a conditional.</li>
+<li>Omitting an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause from switch statement.</li>
+<li>Omitting a <code class="docutils literal notranslate"><span class="pre">default</span></code> case from a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement.</li>
+<li>Omitting a <code class="docutils literal notranslate"><span class="pre">break</span></code> line from a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement.</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Are you a space cadet? yes or no&quot;</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">response</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+
+<span class="k">switch</span> <span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">case</span> <span class="s">&quot;yes&quot;</span><span class="p">:</span>
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Greetings cadet.&quot;</span><span class="p">);</span>
+   <span class="k">case</span> <span class="s">&quot;no&quot;</span><span class="p">:</span>
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Greetings normie.&quot;</span><span class="p">);</span>
+   <span class="k">default</span><span class="p">:</span>
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Are you an alien?&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Given the code above, what prints if the user enters <code class="docutils literal notranslate"><span class="pre">no</span></code> after the prompt?</p>
+<ol class="last arabic">
+<li><div class="first highlight-bash notranslate"><div class="highlight"><pre><span></span>Greetings cadet.
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-bash notranslate"><div class="highlight"><pre><span></span>Greetings normie.
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-bash notranslate"><div class="highlight"><pre><span></span>Greetings normie.
+Are you an alien?
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-bash notranslate"><div class="highlight"><pre><span></span>Greetings cadet.
+Greetings normie.
+</pre></div>
+</div>
+</li>
+<li><p class="first">The program doesn’t work as written.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> <span class="section-number">10. </span>Control Flow and Collections</a></li>
+        
+        
+        <li class="next"><a href="loops.html"><span class="section-number">10.2. </span>More Loops and Break Statements <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

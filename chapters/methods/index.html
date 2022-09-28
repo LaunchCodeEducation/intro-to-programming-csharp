@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11. Methods &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.1. Introduction" href="what-is-a-method.html" />
+    <link rel="prev" title="10.10. Studio: Counting Characters" href="../collections-and-flow/studio.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active"><span class="section-number">11. </span>Methods</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="methods">
+<span id="id1"></span><h1><span class="section-number">11. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="what-is-a-method.html">11.1. Introduction</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="what-is-a-method.html#what-is-a-method">11.1.1. What is a Method?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="what-is-a-method.html#check-your-understanding">11.1.2. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="method-signatures.html">11.2. Method Signatures and Calls</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="method-signatures.html#method-signatures">11.2.1. Method Signatures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="method-signatures.html#creating-a-method">11.2.2. Creating a Method</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="method-signatures.html#method-calls">11.2.2.1. Method Calls</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="method-signatures.html#invoking-the-method">11.2.3. Invoking the Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="method-signatures.html#check-your-understanding">11.2.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using-methods.html">11.3. Using Methods</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="using-methods.html#return-vs-void-methods">11.3.1. <code class="docutils literal notranslate"><span class="pre">return</span></code> vs. <code class="docutils literal notranslate"><span class="pre">void</span></code> Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-methods.html#parameters-and-arguments">11.3.2. Parameters and Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-methods.html#named-and-optional-arguments">11.3.3. Named and Optional Arguments</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="using-methods.html#named-arguments">11.3.3.1. Named Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using-methods.html#optional-arguments">11.3.3.2. Optional Arguments</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="using-methods.html#check-your-understanding">11.3.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="method-recursion.html">11.4. Recursive Methods</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="method-recursion.html#factorialrecursive-a-recursive-example">11.4.1. <code class="docutils literal notranslate"><span class="pre">FactorialRecursive</span></code> A Recursive Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="method-recursion.html#factorialloop-a-loop-example">11.4.2. <code class="docutils literal notranslate"><span class="pre">FactorialLoop</span></code> A Loop Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="method-recursion.html#recursion-or-loops">11.4.3. Recursion or Loops?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="method-recursion.html#check-your-understanding">11.4.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="method-scope.html">11.5. Scope</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="method-scope.html#class-level-scope">11.5.1. Class Level Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="method-scope.html#method-level-scope">11.5.2. Method Level Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="method-scope.html#block-level-scope">11.5.3. Block Level Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="method-scope.html#check-your-understanding">11.5.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">11.6. Exercises: Methods</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#getting-started">11.6.1. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#rectangles">11.6.2. Rectangles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#triangles">11.6.3. Triangles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#diamonds">11.6.4. Diamonds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#bonus-mission">11.6.5. Bonus Mission</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="studio.html">11.7. Studio: Methods</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#getting-started">11.7.1. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#creating-a-better-reverse-method">11.7.2. Creating A Better <code class="docutils literal notranslate"><span class="pre">Reverse</span></code> Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#warm-up-reverse-a-number-array">11.7.3. Warm-Up: Reverse a Number Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#reverse-a-string">11.7.4. Reverse a String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#palindrome-checker">11.7.5. Palindrome Checker</a></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../collections-and-flow/studio.html"><span aria-hidden="true">&larr;</span> <span class="section-number">10.10. </span>Studio: Counting Characters</a></li>
+        
+        
+        <li class="next"><a href="what-is-a-method.html"><span class="section-number">11.1. </span>Introduction <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

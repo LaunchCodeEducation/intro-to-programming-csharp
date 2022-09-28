@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12.3. The Math Class &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="13. Terminal" href="../terminal/index.html" />
+    <link rel="prev" title="12.2. Classes, Objects, and Methods! Oh My!" href="classes-objects-methods.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">12. </span>Classes, Objects, and Math Class</a></li>
+    <li class="active"><span class="section-number">12.3. </span>The <code class="docutils literal notranslate"><span class="pre">Math</span></code> Class</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="the-math-class">
+<span id="math-class"></span><h1><span class="section-number">12.3. </span>The <code class="docutils literal notranslate"><span class="pre">Math</span></code> Class<a class="headerlink" href="#the-math-class" title="Permalink to this headline">¶</a></h1>
+<p>C# has a few built in classes that can be called directly by the user.
+Arrays, collections, strings are only a few.
+One of these classes is the <code class="docutils literal notranslate"><span class="pre">Math</span></code> class,
+which contains more than just the standard mathematical operations(<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>).</p>
+<p>In the previous sections we learned how to construct, modify, and use classes to create objects.
+However built-in C# classes are not allowed to be modified.
+The fields and methods available are what you get.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Math</span></code> class is <code class="docutils literal notranslate"><span class="pre">static</span></code>; containing <code class="docutils literal notranslate"><span class="pre">static</span></code> methods and <code class="docutils literal notranslate"><span class="pre">const</span></code> fields.</p>
+<div class="section" id="math-class-is-static">
+<h2><span class="section-number">12.3.1. </span><code class="docutils literal notranslate"><span class="pre">Math</span></code> Class is <code class="docutils literal notranslate"><span class="pre">static</span></code><a class="headerlink" href="#math-class-is-static" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Math</span></code> methods are all static.
+We do not have to instantiate the <code class="docutils literal notranslate"><span class="pre">Math</span></code> class in order to use it.
+It is part of the <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">System</span></code> that is commonly found in your C# IDEs, like the <code class="docutils literal notranslate"><span class="pre">Console</span></code> class.</p>
+<p>When we want to use members of the <code class="docutils literal notranslate"><span class="pre">Math</span></code> class, we need to directly call the class then the member name.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Math</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="m">3.293823</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>However, if we want to do something with the output of this <code class="docutils literal notranslate"><span class="pre">Math.Round</span></code> method, we will need to store it in a variable.
+Being <code class="docutils literal notranslate"><span class="pre">static</span></code>, it cannot create its own instance.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Math</span></code> class has built-in methods that you can call.  We will review a few in this chapter, but for a complete list
+you can read the <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.math?view=net-5.0" target="_blank">documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> on the <code class="docutils literal notranslate"><span class="pre">Math</span></code> Class.</p>
+</div>
+<div class="section" id="math-methods-are-static">
+<span id="index-0"></span><h2><span class="section-number">12.3.2. </span><code class="docutils literal notranslate"><span class="pre">Math</span></code> Methods Are <code class="docutils literal notranslate"><span class="pre">static</span></code><a class="headerlink" href="#math-methods-are-static" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Math</span></code> Class contains several mathematical and trigonometric methods.</p>
+<table border="1" class="docutils align-default" id="id1">
+<caption><span class="caption-text">Math Methods in C#</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">C# Syntax</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/math-method-examples/abs-examples.html#abs-examples"><span class="std std-ref">Abs()</span></a></td>
+<td>Returns the absolute value, or positive value, of a number.  Can be used with any numeric type.</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.Abs(number)</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/math-method-examples/ceiling-examples.html#ceiling-examples"><span class="std std-ref">Ceiling()</span></a></td>
+<td>Rounds the <code class="docutils literal notranslate"><span class="pre">double</span></code> or <code class="docutils literal notranslate"><span class="pre">decimal</span></code> value UP to the closest whole number.</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.Ceiling(number)</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/math-method-examples/floor-examples.html#floor-examples"><span class="std std-ref">Floor()</span></a></td>
+<td>Rounds the <code class="docutils literal notranslate"><span class="pre">double</span></code> or <code class="docutils literal notranslate"><span class="pre">decimal</span></code> value DOWN to the closest whole number.</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.Floor(number)</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/math-method-examples/max-examples.html#max-examples"><span class="std std-ref">Max()</span></a></td>
+<td>Returns larger of 2 numeric types.</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.Max(number1,</span> <span class="pre">number2)</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/math-method-examples/min-examples.html#min-examples"><span class="std std-ref">Min()</span></a></td>
+<td>Returns smaller of 2 numeric types.</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.Min(number1,</span> <span class="pre">number2)</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/math-method-examples/pow-examples.html#pow-examples"><span class="std std-ref">Pow()</span></a></td>
+<td>Returns specified number raised to specified power.  Takes <code class="docutils literal notranslate"><span class="pre">double</span></code> types.</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.Pow(number,</span> <span class="pre">power)</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/math-method-examples/round-examples.html#round-examples"><span class="std std-ref">Round()</span></a></td>
+<td>Returns number rounded to nearest integral value OR specified number of decimal places</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.Round(number)</span></code> OR <code class="docutils literal notranslate"><span class="pre">Math.Round(number,</span> <span class="pre">decimalPlaces)</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/math-method-examples/sqrt-examples.html#sqrt-examples"><span class="std std-ref">Sqrt()</span></a></td>
+<td>Returns the square root of specified number.  Takes <code class="docutils literal notranslate"><span class="pre">double</span></code> types.</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.Sqrt(double)</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/math-method-examples/truncate-examples.html#truncate-examples"><span class="std std-ref">Truncate()</span></a></td>
+<td>Removes any decimals and returns interger part of number.  Takes <code class="docutils literal notranslate"><span class="pre">double</span></code> or <code class="docutils literal notranslate"><span class="pre">decimal</span></code> types.</td>
+<td><code class="docutils literal notranslate"><span class="pre">Math.Truncate(double)</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="math-fields-are-constants">
+<span id="math-pi"></span><span id="index-1"></span><h2><span class="section-number">12.3.3. </span><code class="docutils literal notranslate"><span class="pre">Math</span></code> Fields Are Constants<a class="headerlink" href="#math-fields-are-constants" title="Permalink to this headline">¶</a></h2>
+<p>Having a built in <code class="docutils literal notranslate"><span class="pre">Math</span></code> class can be very helpful when it comes to common math elements, such as <code class="docutils literal notranslate"><span class="pre">PI</span></code>.</p>
+<p>One of the benefits of constant values is that you don’t have to memorize them, or define them in a variable.
+C# stores the value of pi up to 16 decimal places for us.
+We just need to use dot notaion and we can access this class field.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">PI</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">PI</span><span class="p">*</span><span class="m">4</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">PI</span> <span class="p">+</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>3.14159265358979
+12.5663706143592
+6.28318530717959
+</pre></div>
+</div>
+</div>
+<p>However, this value is a constant, or <code class="docutils literal notranslate"><span class="pre">const</span></code>.  You are NOT able to alter it.
+<code class="docutils literal notranslate"><span class="pre">const</span></code> values are fixed and unable to be updated or overwritten.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">PI</span><span class="p">);</span>
+
+<span class="kt">double</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span> <span class="p">=</span> <span class="m">1234.56</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">PI</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>3.1415926535897931
+error CS1525: Unexpected symbol `.&#39;, expecting `,&#39;, `;&#39;, or `=&#39;
+</pre></div>
+</div>
+</div>
+<p>The error message shows that the compiler was not expecting you to try and update <code class="docutils literal notranslate"><span class="pre">Math.PI</span></code>.
+Again, users are not allowed to update the <code class="docutils literal notranslate"><span class="pre">Math.PI</span></code> field.</p>
+<table border="1" class="docutils align-default" id="id2">
+<caption><span class="caption-text">Math Fields in C#</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">C# Syntax</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Math.PI</span></code></td>
+<td>Ratio of circumference of a circle to its diameter.</td>
+<td>3.1415926535897931</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">12.3.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following returns <code class="docutils literal notranslate"><span class="pre">-3</span></code> when applied to <code class="docutils literal notranslate"><span class="pre">-3.87</span></code>?</p>
+<ol class="last arabic simple">
+<li>Math.Floor(-3.87);</li>
+<li>Math.Abs(-3.87);</li>
+<li>Math.Round(-3.87);</li>
+<li>Math.Truncate(-3.87);</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="classes-objects-methods.html"><span aria-hidden="true">&larr;</span> <span class="section-number">12.2. </span>Classes, Objects, and Methods! Oh My!</a></li>
+        
+        
+        <li class="next"><a href="../terminal/index.html"><span class="section-number">13. </span>Terminal <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

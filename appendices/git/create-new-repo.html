@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating a New Visual Studio Repo for GitHub &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapters" href="../../index-full.html" />
+    <link rel="prev" title="Git Workflows" href="workflows.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active">Creating a New Visual Studio Repo for GitHub</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="creating-a-new-visual-studio-repo-for-github">
+<span id="create-new-repo-demo"></span><h1>Creating a New Visual Studio Repo for GitHub<a class="headerlink" href="#creating-a-new-visual-studio-repo-for-github" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-1-create-a-new-repository">
+<h2>Step 1: Create a New Repository<a class="headerlink" href="#step-1-create-a-new-repository" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Be careful if you try to use <code class="docutils literal notranslate"><span class="pre">copy/paste</span></code> with the <code class="docutils literal notranslate"><span class="pre">git</span></code> commands! The
+<code class="docutils literal notranslate"><span class="pre">$</span></code> symbols in the screenshots represent to the prompts in the terminal.
+They are NOT part of the commands.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Navigate to your development folder. Enter the following 3 commands to create a new project.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ mkdir communication-log
+$ cd communication-log
+$ git init
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now that you have a directory, open Visual Studio and <a class="reference internal" href="../../chapters/vs-setup/creating-a-csharp-project.html#create-new-csharp-project"><span class="std std-ref">create a new file</span></a>.</p>
+<div class="figure align-default" id="id1">
+<img alt="Name your solution and select location for your files." src="../../_images/nameAndLocation.png" />
+<p class="caption"><span class="caption-text">Give your solution and project a name (1).  Typically they will have the same name.  Then select the directory to store your files (2).  Browse for the directory you just created.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Let’s check that our project works by running it.</p>
+<p>You can continue to use your terminal, or you can use the terminal that is part of Visual Studio.
+If you want to use the Visual Studio terminal, it can be found under the <strong>View</strong> tab.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If your console window does not stay open long enough for you to see your code, try adding the <code class="docutils literal notranslate"><span class="pre">Console.Read()</span></code> below the <code class="docutils literal notranslate"><span class="pre">WriteLine</span></code>.
+This is a piece of code that will keep your terminal window open so you can read what it contains.</p>
+<p class="last">If you can read your terminal window just fine and you haven’t added anything, then ignore this tip.</p>
+</div>
+</li>
+<li><p class="first">Once you’ve checked this file in the terminal, let’s stage and commit it.</p>
+</li>
+<li><p class="first">First, check the <code class="docutils literal notranslate"><span class="pre">status</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch master
+
+No commits yet.
+
+Untracked files:
+(use &quot;Git add &lt;file&gt;...&quot; to include in what will be committed)
+
+   communication-log.sln
+   communication-log/Program.cs
+   communication-log/communication-log.csproj
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</pre></div>
+</div>
+</li>
+<li><p class="first">The output shows us that we have three new files that have not been staged yet. Let’s <code class="docutils literal notranslate"><span class="pre">add</span></code>
+everything in this directory, then check the <code class="docutils literal notranslate"><span class="pre">status</span></code> again.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git add .
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+(use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+
+   new file:  communication-log.sln
+   new file:  communication-log/Program.cs
+   new file:  communication-log/communication-log.csproj
+</pre></div>
+</div>
+</li>
+<li><p class="first">The output tells us that the files are staged. Now let’s <code class="docutils literal notranslate"><span class="pre">commit</span></code>. After
+that, we can see a record of our progress by using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git commit -m &#39;Started communication log.&#39;
+[master (root-commit) e1c1719] Started communication log.
+4 files changed, 451 insertions(+)
+create mode 100644 .gitignore
+create mode 100644 communication-log.sln
+create mode 100644 communication-log/Program.cs
+create mode 100644 communication-log/communication-log.csproj
+
+$ git log
+commit 679de772612099c77891d2a3fab12af8db08b651
+Author: Cheryl &lt;chrisbay@gmail.com&gt;
+Date:   Wed Apr 5 10:55:56 2017 -0500
+
+   Started communication log.
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Great! We’ve got our project going locally, but we’re going to need to make it
+accessible for others to view. Super important, since that’s how your work will be visible for your teaching staff.</p>
+<p>Let’s push this project up to GitHub.</p>
+</div>
+<div class="section" id="step-2-share-your-repository-on-github">
+<h2>Step 2: Share Your Repository On GitHub<a class="headerlink" href="#step-2-share-your-repository-on-github" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Go to your GitHub profile in a web browser. Click on the “+” button to add a new repository (called a <em>repo</em> for short).</li>
+</ol>
+<div class="figure align-default" id="id2">
+<img alt="The New Repository link in the dropdown menu at top right on GitHub." src="../../_images/new-repo-button.png" />
+<p class="caption"><span class="caption-text">The <em>New Repository</em> link is in the dropdown menu at top right on GitHub.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>To create a new repository:</p>
+<ol class="arabic simple">
+<li>Fill in the name and description.</li>
+<li>Uncheck <em>Initialize this repository with a README</em> and click <em>Create Repository</em>.</li>
+</ol>
+<div class="figure align-default" id="id3">
+<img alt="Creating a new repository in GitHub by filling out the form" src="../../_images/create-repo.png" />
+<p class="caption"><span class="caption-text">Create a new repository in GitHub</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you initialize with a README, in the next step Git will refuse to merge
+this repo with the local repo. There are ways around that, but it’s faster
+and easier to just create an empty repo here.</p>
+</div>
+<p>After clicking, you should see something similar to:</p>
+<div class="figure align-default" id="id4">
+<img alt="The page you see after creating an empty repository, with several options." src="../../_images/new-repo-push.png" />
+<p class="caption"><span class="caption-text">Connecting to a repository in GitHub</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now go back to your terminal and copy/paste the commands shown in the GitHub
+instructions. These should be very similar to:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com:chrisbay/communication-log.git
+$ git push origin master
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The first time you push up to GitHub, you will be prompted in the terminal
+to enter your account username and password. Do this.</p>
+<p>You will then see a large amount of output that you can safely ignore. The
+final few lines will confirm a successful push. They will look something
+like this:</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>To github.com:chrisbay/communication-log.git
+   c7f97814..54993de3  master -&gt; master
+</pre></div>
+</div>
+</div>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Unless you’ve set up an SSH key with GitHub, make sure you’ve selected the
+HTTPS clone URL. If you’re not sure whether you have an SSH key, you
+probably don’t.</p>
+</div>
+<p>Now you should be able to confirm that GitHub has the same version as your
+local project. (File contents in browser match those in terminal). Click around
+and see what is there. You can read all your code through GitHub’s web interface.</p>
+<div class="figure align-default" id="id5">
+<img alt="A repository with one commit in GitHub" src="../../_images/repo-first-commit.png" />
+<p class="caption"><span class="caption-text">A repository with one commit in GitHub</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>Congrats! You have a connected repo that you can work on remotely.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="workflows.html"><span aria-hidden="true">&larr;</span> Git Workflows</a></li>
+        
+        
+        <li class="next"><a href="../../index-full.html">Chapters <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

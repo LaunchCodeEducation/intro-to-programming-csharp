@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6.5. Errors and User Input &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.6. How to Avoid Debugging" href="how-to-avoid-debugging.html" />
+    <link rel="prev" title="6.4. Debugging Logic Errors" href="debugging-logic-errors.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">6. </span>Errors and Debugging</a></li>
+    <li class="active"><span class="section-number">6.5. </span>Errors and User Input</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="errors-and-user-input">
+<h1><span class="section-number">6.5. </span>Errors and User Input<a class="headerlink" href="#errors-and-user-input" title="Permalink to this headline">¶</a></h1>
+<p>In our last example, we asked the user to provide us with a temperature value in Celsius.
+As programmers, we all hope that our message <code class="docutils literal notranslate"><span class="pre">&quot;Temp</span> <span class="pre">in</span> <span class="pre">degrees</span> <span class="pre">C:&quot;</span></code> would be clear enough
+to have the user enter a numeric value.  However, things happen.</p>
+<p>Have you tried your code with a non-numeric <code class="docutils literal notranslate"><span class="pre">&quot;Temp</span> <span class="pre">in</span> <span class="pre">degrees</span> <span class="pre">C:&quot;</span></code> value?</p>
+<p>Let’s look at what happens if a user were to enter non-numeric data.  This is where we left
+our program at the end of the last section.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Temp in degrees C:&quot;</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">degreesC</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="kt">double</span> <span class="n">degreesCDouble</span> <span class="p">=</span> <span class="n">Double</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">degreesC</span><span class="p">);</span>
+<span class="kt">double</span> <span class="n">degreesK</span> <span class="p">=</span> <span class="n">degreesCDouble</span> <span class="p">+</span> <span class="m">273.15</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Degrees K: &quot;</span> <span class="p">+</span> <span class="n">degreesK</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Running this with an input of the string <code class="docutils literal notranslate"><span class="pre">&quot;one</span> <span class="pre">hundred&quot;</span></code> gives the output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Unhandled Exception:
+   System.FormatException: Input string was not in a correct format.
+</pre></div>
+</div>
+<p>In <strong>Line 3</strong>, we are converting our user input into a double data type.
+A double data type can only be numbers, whole or decimals.
+Anything else is unexpected and will cause your code to stop working.
+That type of message does not provide any feedback to your user for a second attempt.</p>
+<p>Is there anything you can do about this?  Yes.</p>
+<div class="section" id="tryparse">
+<h2><span class="section-number">6.5.1. </span><code class="docutils literal notranslate"><span class="pre">TryParse</span></code><a class="headerlink" href="#tryparse" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">TryParse</span></code> method can be used here to handle this type of exception.</p>
+<p><code class="docutils literal notranslate"><span class="pre">TryParse</span></code> uses booleans and conditionals to verify that the correct input data type has been entered, and then allows
+you to create options based on the data.  This can be a helpful way to prompt the user for the desired data type.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Temp in degrees C:&quot;</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">degreesC</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="kt">double</span> <span class="n">degreesCDouble</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">Double</span><span class="p">.</span><span class="n">TryParse</span><span class="p">(</span><span class="n">degreesC</span><span class="p">,</span> <span class="k">out</span> <span class="n">degreesCDouble</span><span class="p">))</span>
+<span class="p">{</span>
+   <span class="kt">double</span> <span class="n">degreesK</span> <span class="p">=</span> <span class="n">degreesCDouble</span> <span class="p">+</span> <span class="m">273.15</span><span class="p">;</span>
+   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Degrees K: &quot;</span> <span class="p">+</span> <span class="n">degreesK</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Please enter a numeric value.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Running this with an input of the word <code class="docutils literal notranslate"><span class="pre">&quot;one</span> <span class="pre">hundred&quot;</span></code> gives the output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Please enter a numeric value.
+</pre></div>
+</div>
+<p>If the in input was <code class="docutils literal notranslate"><span class="pre">&quot;100&quot;</span></code> then the output would be:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Degress K: 373.15
+</pre></div>
+</div>
+<div class="section" id="tryparse-and-out">
+<h3><span class="section-number">6.5.1.1. </span><code class="docutils literal notranslate"><span class="pre">TryParse</span></code> and <code class="docutils literal notranslate"><span class="pre">out</span></code><a class="headerlink" href="#tryparse-and-out" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">TryParse</span></code> method uses the keyword <code class="docutils literal notranslate"><span class="pre">out</span></code>.
+In this instance, <code class="docutils literal notranslate"><span class="pre">out</span></code> reassigns our string value for a <em>valid</em> numeric value, which will be stored in the <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> variable in <strong>Line 3</strong>.</p>
+<p>Let’s see how <code class="docutils literal notranslate"><span class="pre">TryParse</span></code> and <code class="docutils literal notranslate"><span class="pre">out</span></code> work.</p>
+<ul class="simple">
+<li><strong>Line 1</strong>, we print the prompt asking the user to provide a temperature reading.</li>
+<li><strong>Line 2</strong>, <code class="docutils literal notranslate"><span class="pre">degreesC</span></code> is initialized once the user puts in their value.</li>
+<li><strong>Line 3</strong>, <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> is declared, but not initialized.</li>
+<li><strong>Line 5</strong>, we take <code class="docutils literal notranslate"><span class="pre">degreesC</span></code> and attempt to parse it into a double.</li>
+</ul>
+<p>If this is <strong>true</strong>, then a lot of things happen.</p>
+<ul class="simple">
+<li>First, since the input is a valid double, <code class="docutils literal notranslate"><span class="pre">TryParse</span></code> will assign the parsed value to <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> via the <code class="docutils literal notranslate"><span class="pre">out</span></code> keyword, thereby initializing it.</li>
+<li>Second, the <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> variable is initialized.</li>
+<li>Third, <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> is used in <strong>Line 7</strong> to initialize <code class="docutils literal notranslate"><span class="pre">degreesK</span></code>.</li>
+<li>Finally, <strong>Line 8</strong> prints our results.</li>
+</ul>
+<p>If <strong>Line 5</strong> is <strong>false</strong>, then <code class="docutils literal notranslate"><span class="pre">TryParse</span></code> is <em>not</em> able to assign any values.
+When this happens the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is triggered, and <strong>Line 12</strong> prints.</p>
+<p>This may seem like a lot of “extra” code, but one benefit of <code class="docutils literal notranslate"><span class="pre">TryParse</span></code> is that you can provide specific feedback for your user.
+Another benefit of <code class="docutils literal notranslate"><span class="pre">TryParse</span></code> is that it doesn’t immediately shut down your program if the user input is non-numeric.</p>
+<p><code class="docutils literal notranslate"><span class="pre">TryParse</span></code> in this example is used with a <strong>double</strong>, but can be used for all of the primitive data types, including <strong>ints</strong>.
+Here’s a short <a class="reference external" href="https://repl.it/&#64;launchcode/TryParse-Int-CSharp#main.cs" target="_blank">practice repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> using <code class="docutils literal notranslate"><span class="pre">TryParse</span></code> and <strong>ints</strong>.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="debugging-logic-errors.html"><span aria-hidden="true">&larr;</span> <span class="section-number">6.4. </span>Debugging Logic Errors</a></li>
+        
+        
+        <li class="next"><a href="how-to-avoid-debugging.html"><span class="section-number">6.6. </span>How to Avoid Debugging <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

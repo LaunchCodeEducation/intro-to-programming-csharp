@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.9. Input with ReadLine &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.10. Exercises: Data and Variables" href="exercises.html" />
+    <link rel="prev" title="4.8. Other Operators" href="other-operators.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">4. </span>Data and Variables</a></li>
+    <li class="active"><span class="section-number">4.9. </span>Input with <code class="docutils literal notranslate"><span class="pre">ReadLine</span></code></li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="input-with-readline">
+<span id="readline-sync"></span><h1><span class="section-number">4.9. </span>Input with <code class="docutils literal notranslate"><span class="pre">ReadLine</span></code><a class="headerlink" href="#input-with-readline" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code> works fine for printing static (unchanging) messages to the
+screen. If we wanted to print a phrase greeting a specific user, then
+<code class="docutils literal notranslate"><span class="pre">Console.WriteLine(&quot;Hello,</span> <span class="pre">Dave.&quot;);</span></code> would be OK as long as Dave is the actual
+user.</p>
+<p>What if we want to greet someone else? We could change the string inside the
+<code class="docutils literal notranslate"><span class="pre">()</span></code> to be <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">Sarah'</span></code> or <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">Elastigirl'</span></code> or any other name we
+need. However, this is inefficient. Also, what if we do not know the name of
+the user beforehand? We need to make our code more general and able to respond
+to different conditions.</p>
+<p>It would be great if we could ask the user to enter a name, store that string
+in a variable, and then print a personalized greeting using <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code>.
+Variables to the rescue!</p>
+<div class="section" id="requesting-data">
+<h2><span class="section-number">4.9.1. </span>Requesting Data<a class="headerlink" href="#requesting-data" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-0"></span><p id="index-1">To personalize the greeting, we have to get <strong>input</strong> from the user. This
+involves displaying a <strong>prompt</strong> on the screen (e.g. “Please enter a number:
+“), and then waiting for the user to respond. Whatever information the user
+enters gets stored for later use.</p>
+<p>As we saw earlier, each programming language has its own way of accomplishing
+the same task. For example, the Python syntax is <code class="docutils literal notranslate"><span class="pre">input(&quot;Please</span> <span class="pre">enter</span> <span class="pre">your</span>
+<span class="pre">name:</span> <span class="pre">&quot;)</span></code>.</p>
+<p>C# has a built-in module for collecting data from the user, called
+<code class="docutils literal notranslate"><span class="pre">Console.ReadLine</span></code>.</p>
+</div>
+<div class="section" id="syntax">
+<h2><span class="section-number">4.9.2. </span>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<p>Gathering input from the user requires the following setup:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter your name&quot;</span><span class="p">);</span>
+
+<span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Your name is &quot;</span> <span class="p">+</span> <span class="n">name</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>There is a lot going on here behind the scenes, but for now you should follow
+this bit of wisdom:</p>
+<blockquote>
+<div>I turn the key, and it goes.</div></blockquote>
+<p>Most of us do not need to know all the details about how cars, phones, or
+microwave ovens work. We just know enough to interact with them in our day to
+day lives. Similarly, we do not need to understand how <code class="docutils literal notranslate"><span class="pre">ReadLine</span></code> works
+at this time. We just need to know enough to collect information from a user.</p>
+<p>As you move through the course, you WILL learn about all of the pieces that fit
+together to make this process work. For now, here is a brief overview.</p>
+<div class="section" id="how-to-prompt-the-user">
+<h3><span class="section-number">4.9.2.1. </span>How to Prompt the User<a class="headerlink" href="#how-to-prompt-the-user" title="Permalink to this headline">¶</a></h3>
+<p>In order to collect data from a user, you have to provide directions to ensure that the correct data is entered.
+This means we have to prompt the user.</p>
+<p>To display a prompt and wait for a response, we use the following syntax:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Question here...&quot;</span><span class="p">);</span>
+
+<span class="kt">string</span> <span class="n">input</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<p>When C# evaluates the expression, it follows the instructions:</p>
+<ol class="arabic simple">
+<li>Display <code class="docutils literal notranslate"><span class="pre">Question</span> <span class="pre">text</span></code> on the screen.</li>
+<li>Wait for the user to respond.</li>
+<li>Store the data in the variable <code class="docutils literal notranslate"><span class="pre">input</span></code>.</li>
+</ol>
+<p>For our greeting program, we would code <code class="docutils literal notranslate"><span class="pre">Console.WriteLine(&quot;What</span> <span class="pre">is</span> <span class="pre">your</span> <span class="pre">name?&quot;);</span></code>.
+This prints the question for the user.  We follow this question with <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">Console.ReadLine()</span></code>.
+In the console, you will notice the cursor blinking in the line below.  This is where the user enters a name and
+presses the Return or Enter key. When this happens, any text entered is
+collected by the ReadLine function and stored in <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Let’s play around with the <code class="docutils literal notranslate"><span class="pre">input</span></code> statement. Open the repl.it link below
+and click the “Run” button.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter your name: &quot;</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/CSharpInputExamples01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+<p>Note that after entering a name, the program does not actually DO anything with
+the information. If we want to print the data as part of a message, we need to
+put <code class="docutils literal notranslate"><span class="pre">name</span></code> inside a <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code> statement.</p>
+<p>After line 3, add <code class="docutils literal notranslate"><span class="pre">Console.WriteLine(&quot;Hello,</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">name</span> <span class="pre">+</span> <span class="pre">&quot;!&quot;);</span></code>, then run the
+code several times, trying different responses to the input prompt.</p>
+<p>By storing the user’s name inside <code class="docutils literal notranslate"><span class="pre">name</span></code>, we gain the ability to hold onto
+the data and use it when and where we see fit.</p>
+<p>Try adding another <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">name</span></code> term inside the <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code> statement and see
+what happens. Next, add code to prompt the user for a second name. Store the
+response in <code class="docutils literal notranslate"><span class="pre">otherName</span></code>, then print both names using <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code>.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Update your code to request a user’s first and last name, then print an
+output that looks like:</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>First name: Elite
+Last name: Coder
+Last, First: Coder, Elite
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="critical-input-detail">
+<h2><span class="section-number">4.9.3. </span>Critical Input Detail<a class="headerlink" href="#critical-input-detail" title="Permalink to this headline">¶</a></h2>
+<p>There is one very important quirk about the input function that we need to
+remember. Given <code class="docutils literal notranslate"><span class="pre">Console.WriteLine(7</span> <span class="pre">+</span> <span class="pre">2);</span></code>, the output would be <code class="docutils literal notranslate"><span class="pre">9</span></code>.</p>
+<p>Now explore the following code, which prompts the user for two numbers and then
+prints their sum:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter a number&quot;</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">num1</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter a number&quot;</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">num2</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">num1</span> <span class="p">+</span> <span class="n">num2</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/CSharpInputExamples02" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p>Run the program, enter your choice of numbers, and examine the output. Do you
+see what you expected?</p>
+<p>If we enter <code class="docutils literal notranslate"><span class="pre">7</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code>, we expect an output of <code class="docutils literal notranslate"><span class="pre">9</span></code>.  We do NOT expect
+<code class="docutils literal notranslate"><span class="pre">72</span></code>, but that is the result printed. What gives?!?!?</p>
+<p>The quirk with the <code class="docutils literal notranslate"><span class="pre">ReadLine</span></code> method is that it <em>treats all entries as
+strings</em>, so numbers get concatenated rather than added.  Just like
+“Hello, ” + “World” outputs as <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code>, “7” + “2” outputs as <code class="docutils literal notranslate"><span class="pre">72</span></code>.</p>
+<blockquote>
+<div>In C#, ReadLine entries must be strings!</div></blockquote>
+<p>If we want our program to perform math on the entered numbers, we must recast its type.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<ol class="last arabic simple">
+<li>In line 3, Initialize a new int variable to hold your type conversion of num1.</li>
+<li>To convert num1 into your new int varialbe, use <code class="docutils literal notranslate"><span class="pre">Int32.Parse()</span></code>.</li>
+<li>Run the program and examine the result.</li>
+<li>Repeat step 2 for <code class="docutils literal notranslate"><span class="pre">num2</span></code> starting in line 7.</li>
+<li>What happens if a user enters <code class="docutils literal notranslate"><span class="pre">Hi</span></code> instead of a number?</li>
+<li>If you want to work with doubles try it again using <code class="docutils literal notranslate"><span class="pre">Double.Parse()</span></code></li>
+</ol>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">4.9.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is printed when the following program runs?</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Please enter your age: &quot;</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">input</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+
+<span class="c1">//The user enters 25.</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">System.String</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">System.Number</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">System.Int32</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;25&quot;</span></code></li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is printed when the following program runs?</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Please enter your age: &quot;</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">input</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="kt">int</span> <span class="n">ageNum</span> <span class="p">=</span> <span class="n">Int32</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+
+<span class="c1">//The user enters 25</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">ageNum</span><span class="p">.</span><span class="n">GetType</span><span class="p">());</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">System.String</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">System.Number</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">System.Int32</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">25</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="other-operators.html"><span aria-hidden="true">&larr;</span> <span class="section-number">4.8. </span>Other Operators</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">4.10. </span>Exercises: Data and Variables <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

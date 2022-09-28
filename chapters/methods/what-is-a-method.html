@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11.1. Introduction &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.2. Method Signatures and Calls" href="method-signatures.html" />
+    <link rel="prev" title="11. Methods" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">11. </span>Methods</a></li>
+    <li class="active"><span class="section-number">11.1. </span>Introduction</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="introduction">
+<h1><span class="section-number">11.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Up until now, you have been able to write programs that work within the Main method using a variety of
+data types and collection types.  You have also worked with methods before when we learned about <a class="reference internal" href="../../appendices/string-method-examples/index.html#string-method-examples"><span class="std std-ref">strings</span></a>,
+<a class="reference internal" href="../../appendices/array-method-examples/index.html#array-method-examples"><span class="std std-ref">arrays</span></a>, <a class="reference internal" href="../../appendices/list-method-examples/index.html#list-method-examples"><span class="std std-ref">Lists</span></a> and <a class="reference internal" href="../../appendices/dictionary-method-examples/index.html#dictionary-method-examples"><span class="std std-ref">dictionaries</span></a>.  These methods are built into the C# language and perform a speficic task when you call them.</p>
+<p>This chapter is designed to introduce you to <strong>method signatures</strong>, <strong>method invocations</strong>, and the ability to create your own unique methods.</p>
+<div class="admonition-note admonition" id="static-methods">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>A little caveat before we continue.  Since we have not encountered C# classes at this point,
+we will be working within the <code class="docutils literal notranslate"><span class="pre">MainClass</span></code> in your replit IDE, which limits us to working with <strong>static</strong> methods at this point.
+Static methods belong to the class they are created in, which in this chapter will be the <code class="docutils literal notranslate"><span class="pre">MainClass</span></code>.</p>
+<p>When we learn about classes, we will learn about instance methods
+and be able to compare and contrast them to static methods.
+We will also be able to see a more usages and behaviors of static methods in a non-static environment.</p>
+<p class="last">A wonderful collection of static methods comes from the <code class="docutils literal notranslate"><span class="pre">Math</span></code> class.  The <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.math?view=net-5.0" target="_blank">documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> can be found here, and
+an appendix of methods can be found here.</p>
+</div>
+<div class="section" id="what-is-a-method">
+<h2><span class="section-number">11.1.1. </span>What is a Method?<a class="headerlink" href="#what-is-a-method" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">A <strong>method</strong> is a reusable, callable, and customizable piece of code. Methods are created to perform a single task or action.</p>
+<div class="admonition-note admonition" id="index-1">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>In C# or other object oriented programing (OOP) languages, developers use methods because they are assiociated with a class.
+In other languages, you may hear the term <strong>function</strong>.  A function is similar to a method, but it is
+not tied to a class.  Due to the similarity in overall usage, it is common to refer to
+methods as functions and functions as methods.</p>
+<p class="last">A method or a function is typically referring to a block of code that performs a task when called.</p>
+</div>
+<p>You have been using methods throughout your learning so far, without receiving a full explanation of how methods work.</p>
+<p>You have already become familiar with several functions:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code></li>
+<li>The type conversion methods: <code class="docutils literal notranslate"><span class="pre">Int32.Parse</span></code>,  <code class="docutils literal notranslate"><span class="pre">ToString</span></code> or even <code class="docutils literal notranslate"><span class="pre">GetType</span></code></li>
+<li>Collection methods, such as <code class="docutils literal notranslate"><span class="pre">IndexOf</span></code>,  <code class="docutils literal notranslate"><span class="pre">Join</span></code>, <code class="docutils literal notranslate"><span class="pre">Add</span></code></li>
+</ul>
+<p>Each of the methods we have used works in the same way. By typing the methods’s name, followed by parentheses,
+we can <em>invoke</em>, or call, the method, resulting in an action being carried out.
+Sometimes, as with <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code>, we can provide input data between the parentheses, which the method will use to carry out its action.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code> prints the provided value or values (the input data).</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, World!
+</pre></div>
+</div>
+</div>
+<p>This is an example of a method receiving <em>input</em>. Methods may also provide
+<em>output</em>. For example, the type conversion methods give back the result of
+converting a value.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Type conversion methods <em>return</em> a value, that can be used by the calling code. Often, we store the return value of a method in a variable.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">num</span> <span class="p">=</span> <span class="n">Int32</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="s">&quot;42&quot;</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">num</span> <span class="p">+</span> <span class="m">12</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>54
+</pre></div>
+</div>
+</div>
+<p id="index-2">Methods are extremely powerful. They allow us to repeat actions without repeating each individual step of code that the actions are built from.
+By grouping actions together, methods allow us to be removed from the details of what they are actually doing.</p>
+<p>When we want to print a message to the console using <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code>, we don’t have to know what the console is, or how a string can be displayed on it.
+The behavior is wrapped up within the method itself. This is an example of a broader programming concept known as <strong>encapsulation</strong>.
+Encapsulation is the process of packaging up code in a reusable way, without the programmer needing to be concerned with how it works.</p>
+<p id="function-machine"><span id="index-3"></span>One analogy for describing the concept of a method is that of a factory that takes input, carries out an action, and gives back a result.
+Each line of code is like one step on an assembly line.  Data enters, is manipulated by the code in the method producing a unique result.</p>
+<div class="figure align-default" id="id1">
+<img alt="A &quot;method factory,&quot; consisting of a box which takes inputs, and from which output emerges." src="../../_images/function-machine.png" />
+<p class="caption"><span class="caption-text">The method factory</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>If we want to use a method, we must provide it with some input. It carries
+out an action on that input and returns a result. The action occurs within the
+method, or “inside the factory”. If we know the purpose of a method, we
+simply provide it with input and receive the output. The rest is up to the
+factory itself.</p>
+<p>Methods also allow us to keep our code DRY, a concept that you learned about <a class="reference internal" href="../loops/iteration.html#dry-code"><span class="std std-ref">when we introduced loops</span></a>. If we want to do the same basic task 17 times across a program, we can reduce code repetition by writing one method and calling it 17 times.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">11.1.2. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">In your own words, explain what a method is.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> <span class="section-number">11. </span>Methods</a></li>
+        
+        
+        <li class="next"><a href="method-signatures.html"><span class="section-number">11.2. </span>Method Signatures and Calls <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7.8. String Interpolation &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7.9. Exercises: Strings" href="exercises.html" />
+    <link rel="prev" title="7.7. Special Characters" href="special-characters.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">7. </span>Stringing Characters Together</a></li>
+    <li class="active"><span class="section-number">7.8. </span>String Interpolation</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="string-interpolation">
+<h1><span class="section-number">7.8. </span>String Interpolation<a class="headerlink" href="#string-interpolation" title="Permalink to this headline">¶</a></h1>
+<p>Earlier, we used <em>concatenation</em> to combine strings and variables together in
+order to create specific output:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Evelyn&quot;</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">currentAge</span> <span class="p">=</span> <span class="m">9</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Next year, &quot;</span> <span class="p">+</span> <span class="n">name</span> <span class="p">+</span> <span class="s">&quot; will be &quot;</span> <span class="p">+</span> <span class="p">(</span><span class="n">currentAge</span> <span class="p">+</span> <span class="m">1</span><span class="p">)</span> <span class="p">+</span> <span class="s">&quot;.&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Next year, Evelyn will be 10.
+</pre></div>
+</div>
+</div>
+<p>Unfortunately, this process quickly gets tedious for any output that depends on
+multiple variables. Often, concatenation requires multiple test runs of the
+code in order to check for syntax errors and proper spacing within the output.
+Fortunately, C# offers us a better way to accomplish this process.</p>
+<p id="index-0"><strong>String Interpolation</strong> allow for the automatic insertion of expressions
+(including variables) into strings.  You can do this as you create the string without having to worry too much about proper syntax once you
+get the pattern.</p>
+<p>Interpolated strings are enclosed double quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>), like a regular sting, but you start the string with the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol.  As
+you create your string, you frame every variable reference in curly brackets <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>, close with a final <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and end with a <code class="docutils literal notranslate"><span class="pre">;</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>String Interpolation allows for variables and other expressions to be directly
+included in strings.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>string <span class="nv">name</span> <span class="o">=</span> <span class="s2">&quot;Evelyn&quot;</span><span class="p">;</span>
+int <span class="nv">currentAge</span> <span class="o">=</span> <span class="m">9</span><span class="p">;</span>
+
+Console.WriteLine<span class="o">(</span><span class="s2">$&quot;Next year, {name} will be {currentAge + 1}.&quot;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Next year, Evelyn will be 10.
+</pre></div>
+</div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The 6th edition of C# added string interpolation in 2015. Not only is string
+interpolation relatively new to C#, but you may encounter Composit Formatting.
+This is very similar, but cumbersome with syntax.  This method is used within some of the
+documentation you may find, so we will walk through it.</p>
+</div>
+<div class="section" id="composit-format-strings">
+<h2><span class="section-number">7.8.1. </span>Composit Format Strings<a class="headerlink" href="#composit-format-strings" title="Permalink to this headline">¶</a></h2>
+<p>Composit formatting is typically used for larger data types in C#, such as objects.  Strings are objects, so that is why we can use this
+type of formatting on them as well.</p>
+<p>Creating a composite string is very simiple, and similar to interpolation.  It uses <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> as well, but no <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Evelyn&quot;</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">currentAge</span> <span class="p">=</span> <span class="m">9</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">ageNextYear</span> <span class="p">=</span> <span class="n">currentAge</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Next year, {0} will be {1}.&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ageNextYear</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Next year, Evelyn will be 10.
+</pre></div>
+</div>
+<p>Instead of directly referencing the variables within the string, we create placeholders which we number.
+We close the string with <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, place a <code class="docutils literal notranslate"><span class="pre">,</span></code> and then list the variables in the order we want to use them.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">7.8.2. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Mad Libs are games where one player asks the group to supply random words
+(e.g. “Give me a verb,” or, “I need a color”). The words are substituted
+into blanks within a story, which is then read for everyone’s amusement. In
+elementary school classrooms, giggles and hilarity often ensue. TRY IT!</p>
+<p>Refactor the following code to replace the awkward string concatenation with string interpolation.
+Be sure to add your own choices for the variables.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span> <span class="n">pluralNoun</span> <span class="p">=</span> <span class="p">;</span>
+<span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="p">;</span>
+<span class="kt">string</span> <span class="n">verb</span> <span class="p">=</span> <span class="p">;</span>
+<span class="kt">string</span> <span class="n">adjective</span> <span class="p">=</span> <span class="p">;</span>
+<span class="kt">string</span> <span class="n">color</span> <span class="p">=</span> <span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;C# provides a &quot;</span><span class="p">+</span> <span class="n">color</span> <span class="p">+</span><span class="s">&quot; collection of tools — including &quot;</span> <span class="p">+</span> <span class="n">adjective</span> <span class="p">+</span> <span class="s">&quot; syntax and &quot;</span> <span class="p">+</span> <span class="n">pluralNoun</span> <span class="p">+</span> <span class="s">&quot; — that allows &quot;</span><span class="p">+</span> <span class="n">name</span> <span class="p">+</span><span class="s">&quot; to &quot;</span><span class="p">+</span> <span class="n">verb</span> <span class="p">+</span><span class="s">&quot; with strings.&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/String-Mad-Lib-CSharp" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="special-characters.html"><span aria-hidden="true">&larr;</span> <span class="section-number">7.7. </span>Special Characters</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">7.9. </span>Exercises: Strings <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

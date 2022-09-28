@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6.2. Categories of Errors &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.3. Diagnosing Error Messages" href="diagnosing-error-messages.html" />
+    <link rel="prev" title="6.1. What is Debugging?" href="what-is-debugging.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">6. </span>Errors and Debugging</a></li>
+    <li class="active"><span class="section-number">6.2. </span>Categories of Errors</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="categories-of-errors">
+<h1><span class="section-number">6.2. </span>Categories of Errors<a class="headerlink" href="#categories-of-errors" title="Permalink to this headline">¶</a></h1>
+<p>It is useful to distinguish between categories of errors in order to quickly
+identify and fix them. Each category manifests itself in a different way, and
+some strategies may be more useful for certain types of errors.</p>
+<div class="section" id="stages-of-c-execution">
+<h2><span class="section-number">6.2.1. </span>Stages of C# Execution<a class="headerlink" href="#stages-of-c-execution" title="Permalink to this headline">¶</a></h2>
+<p>In order to understand programming errors it is useful to understand the two
+stages of code execution.</p>
+<div class="section" id="complilation">
+<h3><span class="section-number">6.2.1.1. </span>Complilation<a class="headerlink" href="#complilation" title="Permalink to this headline">¶</a></h3>
+<p id="index-0">Before code can be run, it must first be compiled, or validated and prepared for
+execution. This is known as the <strong>compilation stage</strong>, and you can think of it like
+the pre-flight check for a plane or space craft.</p>
+<p>A lot of detailed, low-level tasks are carried out during this process, but it
+is enough for us to understand that compiling verifies the syntax and structure
+of the code.</p>
+</div>
+<div class="section" id="execution">
+<span id="error-categories"></span><h3><span class="section-number">6.2.1.2. </span>Execution<a class="headerlink" href="#execution" title="Permalink to this headline">¶</a></h3>
+<p>Once our code has been compiled, its syntax has been verified and the program is
+ready to run. The <strong>execution stage</strong> is when the actions written into our
+program—printing to the console, prompting the user for input, making
+calculations, etc.—are actually carried out. You can think of this stage as
+the plane taking flight.</p>
+</div>
+</div>
+<div class="section" id="compile-time-errors-warnings-and-exceptions">
+<h2><span class="section-number">6.2.2. </span>Compile-Time Errors, Warnings, and Exceptions<a class="headerlink" href="#compile-time-errors-warnings-and-exceptions" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">C# can only execute a program if the program is syntactically correct.
+<strong>Syntax</strong> refers to the structure of a language (spoken, programming, or
+otherwise) and the rules about that structure. For example, in English, a
+sentence must begin with a capital letter and end with appropriate punctuation.</p>
+<p>When we run our code, two things can happen.  Either it works as expected, or it doesn’t.  It’s that simple.  One of the nice features of C# is
+the compiler.  The compiler works by reading each line and performing all coded tasks.  If it finds a line that doesn’t work, it will stop
+the code and provide you with feedback.
+This feedback usually falls within one of three categories:  errors, warnings, or exceptions.</p>
+<div class="section" id="compiler-errors">
+<span id="index-2"></span><h3><span class="section-number">6.2.2.1. </span>Compiler Errors<a class="headerlink" href="#compiler-errors" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>compiler error</strong> is usually a violation of the formal rules for a given language.
+This can also be referred to as a <strong>syntax error</strong>.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p>this sentence contains a syntax error.</p>
+<p class="last">So does this one</p>
+</div>
+<p>For most readers of English, a few syntax errors are not a significant problem.
+Our brains are often flexible enough to determine the intended meaning of a
+sentence even if it contains one or more syntax errors.</p>
+<p>Programming languages are not so forgiving. If there is a single syntax error anywhere in your program,
+C# will display an error message and quit <em>immediately</em>. Since syntax is validated during the compilation stage,
+syntax errors are the first we see when running a program.</p>
+<p>During the first few weeks of your programming career, you will probably spend a lot of time tracking down syntax errors.
+However, as you gain experience, you will make fewer errors, and you will find your errors faster.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Find the syntax errors in the program.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span> <span class="n">day</span> <span class="p">=</span> <span class="n">Wednesday</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">day</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/Syntax-Errors-CSharp" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">What syntax errors did you find? What was the specific error message provided by C# in each case?</p>
+</div>
+</div>
+<div class="section" id="compiler-warnings">
+<h3><span class="section-number">6.2.2.2. </span>Compiler Warnings<a class="headerlink" href="#compiler-warnings" title="Permalink to this headline">¶</a></h3>
+<p>When the compiler runs across code that is sound, but has a small flaw in either the logic or execution, it will give you a <strong>warning</strong>.
+Warnings, most of the time, catch small items that won’t break your code at this point, but might be unused or unnecessary.  These are
+helping you prevent errors as you build.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Run the code.  Make changes to handle the warning.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span> <span class="n">firstName</span> <span class="p">=</span> <span class="s">&quot;Alyce&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">lastName</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">firstName</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/Compiler-Warning-CSharp" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+</div>
+<div class="section" id="exceptions">
+<h3><span class="section-number">6.2.2.3. </span>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h3>
+<p><strong>Exceptions</strong> occur while running the program.
+They are usually the results of unanticipated errors that you didn’t plan on as you built your code.
+Currently, you may have seen error messages about an <code class="docutils literal notranslate"><span class="pre">Unhandled</span> <span class="pre">Exception</span></code>.
+This means that something unexpected happened and crashes your code.
+This could be an unanticipated user input, trying to divide by zero, to name a few.
+C# has ways to handle exceptions, but we will discuss those more in later chapters.</p>
+</div>
+</div>
+<div class="section" id="logic-errors">
+<h2><span class="section-number">6.2.3. </span>Logic Errors<a class="headerlink" href="#logic-errors" title="Permalink to this headline">¶</a></h2>
+<p id="index-3">The last type of error is the <strong>logic error</strong>. If there is a logic error in your program, it will run successfully and <em>not</em>
+generate any error messages. However, the program will not work as intended.</p>
+<p>The characteristic of logic errors is that the program you wrote is not the program you wanted.
+For example, say you want a program to calculate your daily earnings based on your weekly salary. You might try the following:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">weeklyPay</span> <span class="p">=</span> <span class="m">600</span><span class="p">;</span>
+
+<span class="kt">double</span> <span class="n">dailyEarnings</span> <span class="p">=</span> <span class="n">weeklyPay</span> <span class="p">/</span> <span class="m">7</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">dailyEarnings</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>85.71428571428571
+</pre></div>
+</div>
+</div>
+<p>The result surprises you because you thought you were making at least $100 per day (you work Monday through Friday).
+According to this program, though, you are making about $85 per day. The error is a logic one because you divided your weekly pay by 7.
+It would have been more accurate to divide your weekly pay by 5, since that is how many days a week you come to work.</p>
+<p>Identifying logic errors can be tricky because unlike syntax and runtime problems, there are no error messages to help us identify the issue.
+We must examine the output of the program and work backward to figure out what it is doing wrong.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">6.2.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Label each of the following as either a complier error, compiler warning, unhandled expectation or logic error.</p>
+<ol class="last arabic simple">
+<li>Trying to use a variable that has not been defined.</li>
+<li>Leaving off a close parenthesis, <code class="docutils literal notranslate"><span class="pre">)</span></code>, when calling <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code>.</li>
+<li>Forgetting to divide by 100 when printing a percentage amount.</li>
+<li>Asking the user for their favorite number and they enter <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> (an empty string).</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="what-is-debugging.html"><span aria-hidden="true">&larr;</span> <span class="section-number">6.1. </span>What is Debugging?</a></li>
+        
+        
+        <li class="next"><a href="diagnosing-error-messages.html"><span class="section-number">6.3. </span>Diagnosing Error Messages <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

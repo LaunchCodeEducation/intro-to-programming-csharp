@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15.7. Studio: Communication Log &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="15.8. Studio: Communication Log (continued)" href="studio-p2.html" />
+    <link rel="prev" title="15.6. Exercises: Git" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">15. </span>Git More Collaboration</a></li>
+    <li class="active"><span class="section-number">15.7. </span>Studio: Communication Log</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="studio-communication-log">
+<h1><span class="section-number">15.7. </span>Studio: Communication Log<a class="headerlink" href="#studio-communication-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-ready-code-together">
+<h2><span class="section-number">15.7.1. </span>Getting Ready: Code Together<a class="headerlink" href="#getting-ready-code-together" title="Permalink to this headline">¶</a></h2>
+<p>Coding together allows you to work as a team so you can build bigger projects
+faster.</p>
+<p>In this studio, we will practice the common Git commands used when
+multiple people work on the same code base.</p>
+<p>You and a partner will begin by coding in tag-team shifts. By the end of the
+task, you should have a good idea about how to have two people work on the same
+code at the same time. You will learn how to:</p>
+<ol class="arabic simple">
+<li>Quickly add code in pull + push cycles <em>(Important! This is the fundamental
+process!)</em></li>
+<li>Add a collaborator to a GitHub Project</li>
+<li>Share <em>repositories</em> on GitHub</li>
+<li>Create a <em>branch</em> in Git</li>
+<li>Create a <em>pull request</em> in GitHub</li>
+<li>Resolve merge conflicts (which are not as scary as they sound)</li>
+</ol>
+<p>This lesson reinforces:</p>
+<ol class="arabic simple">
+<li>Creating repositories</li>
+<li>Cloning repositories</li>
+<li>Working with Git concepts: Staging, Commits, and Status</li>
+</ol>
+</div>
+<div class="section" id="overview">
+<h2><span class="section-number">15.7.2. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The instructor will discuss why GitHub is worth learning. You already know how to use a
+local Git repository with one branch, giving you the ability to move your code forward and
+backward in time. Working with branches on GitHub extends this ability by allowing multiple
+people to build different features at the same time, then combine their work. Pull requests
+act as checkpoints when code flows from branch to branch.
+We are going to simulate a radio conversation between the shuttle pilot and
+mission control.</p>
+<p>Students must pair off for this exercise. If you have trouble finding a partner, ask your
+TA for help.</p>
+<p>You and your partner will alternate tasks, so designate one of you as <strong>Pilot</strong>
+and the other as <strong>Control</strong>. Even when it is not your turn to complete a task,
+read and observe what your partner is doing to complete theirs. The steps here
+mimic how a real-world collaborative Git workflow can be used within a project.</p>
+</div>
+<div class="section" id="step-1-create-a-new-repository">
+<span id="create-new-git-repo"></span><h2><span class="section-number">15.7.3. </span>Step 1: Create a New Repository<a class="headerlink" href="#step-1-create-a-new-repository" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Be careful if you try to use <code class="docutils literal notranslate"><span class="pre">copy/paste</span></code> with the <code class="docutils literal notranslate"><span class="pre">git</span></code> commands! The
+<code class="docutils literal notranslate"><span class="pre">$</span></code> symbols in the screenshots represent the prompts in the terminal.
+They are NOT part of the commands.</p>
+</div>
+<div class="section" id="windows-instructions">
+<h3><span class="section-number">15.7.3.1. </span>Windows instructions:<a class="headerlink" href="#windows-instructions" title="Permalink to this headline">¶</a></h3>
+<p><strong>Control</strong>: Navigate to your development folder and enter the following 3 commands to create a new project.</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ mkdir communication-log
+$ cd communication-log
+$ git init
+</pre></div>
+</div>
+</div></blockquote>
+<p>Now that you have a directory, open Visual Studio and <a class="reference internal" href="../vs-setup/creating-a-csharp-project.html#create-new-csharp-project"><span class="std std-ref">create a new console project</span></a>.</p>
+<div class="figure align-default" id="id1">
+<img alt="Name your solution and select location for your files." src="../../_images/create-win-project.png" />
+<p class="caption"><span class="caption-text">Give your solution and project a name (1).  Typically they will have the same name.
+Then select the directory to store your files (2).
+Browse for the directory you just created by clicking on the box with the <code class="docutils literal notranslate"><span class="pre">...</span></code> inside (3).</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-setting-up-a-gitignore-file admonition">
+<p class="first admonition-title">Setting Up a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> File</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file is a text file that will contain untracked files or ignored files.
+These are files that will become part of your repo but are not very useful to other developers.
+Placing them in a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file will tell git to skip over them, which will reduce visual clutter in your terminal.</p>
+<p><strong>Mac Users</strong> this is part of your initial configuration.</p>
+<p><strong>Windows Users</strong>: There are a few steps to create a <code class="docutils literal notranslate"><span class="pre">.gitignore</span> <span class="pre">file</span></code>.</p>
+<ol class="arabic">
+<li><p class="first">Select the <strong>Git</strong> tab.  Scroll down to <strong>Settings</strong>.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/git-settings-tab.png"><img alt="Select the Settings for Git in Visual Studio" src="../../_images/git-settings-tab.png" style="width: 205.2px; height: 241.2px;" /></a>
+</div>
+</li>
+<li><p class="first"><strong>Settings</strong> will open the <strong>Source Control</strong> option.
+Under <strong>Sorce Control</strong> select <strong>Git Repository Settings</strong> then <strong>General</strong>
+in the right-side pane, look for the <em>Git files</em> section.
+Select <strong>Add</strong> for <strong>Ignore file:</strong>
+Select <strong>OK</strong> to add your new files.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/win-ignore-files.png"><img alt="View of the General Git Repository Settings." src="../../_images/win-ignore-files.png" style="width: 498.59999999999997px; height: 416.4px;" /></a>
+</div>
+</li>
+</ol>
+<p class="last">Again, this is only one way to create this type of file.
+Use it as a starting point, and grow from here.</p>
+</div>
+</div>
+<div class="section" id="mac-instructions">
+<h3><span class="section-number">15.7.3.2. </span>Mac Instructions:<a class="headerlink" href="#mac-instructions" title="Permalink to this headline">¶</a></h3>
+<p><strong>Control</strong>: Open Visual Studio and <a class="reference internal" href="../vs-setup/creating-a-csharp-project.html#create-new-csharp-project"><span class="std std-ref">create a new project</span></a>.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/nameAndLocation1.png"><img alt="Name your solution and select location for your files." src="../../_images/nameAndLocation1.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-text">Give your solution and project a name (1).  Typically they will have the same name.  Then
+select the directory to store your files (2). Check the boxes to use git for version control
+and automatically create a <code class="docutils literal notranslate"><span class="pre">.gitignore</span> <span class="pre">file</span></code> (3).</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="step-2-first-commit">
+<h2><span class="section-number">15.7.4. </span>Step 2: First Commit<a class="headerlink" href="#step-2-first-commit" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>Control</strong></dt><dd><ol class="arabic simple">
+<li>Run your new project to make sure it works.</li>
+<li>Use the terminal to <code class="docutils literal notranslate"><span class="pre">commit</span></code> your new console app.
+You can use your stand-alone terminal or use the terminal built-in to your IDE.
+In Visual Studio, the terminal is found in the <strong>View</strong> menu.</li>
+<li>Once in your terminal, <a class="reference internal" href="repositories-and-commits.html#local-commit"><span class="std std-ref">commit</span></a> your project.</li>
+</ol>
+</dd>
+</dl>
+<p>Great! We’ve got our project going locally, but we’re going to need to make it
+accessible for <strong>Pilot</strong> also. Let’s <code class="docutils literal notranslate"><span class="pre">push</span></code> this project up to GitHub.</p>
+</div>
+<div class="section" id="step-3-share-your-repository-on-github">
+<h2><span class="section-number">15.7.5. </span>Step 3: Share Your Repository On GitHub<a class="headerlink" href="#step-3-share-your-repository-on-github" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>Control</strong>:</dt><dd><ol class="arabic">
+<li><p class="first">Go to your GitHub profile in a web browser.
+Click on the “<strong>+</strong>” button to add a new repository (called a <em>repo</em> for short).</p>
+<div class="figure align-default" id="id3">
+<img alt="The New Repository link in the dropdown menu at top right on GitHub." src="../../_images/new-repo-button1.png" />
+<p class="caption"><span class="caption-text">The <em>New Repository</em> link is in the dropdown menu at top right on GitHub.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Fill in the name and description.</p>
+</li>
+<li><p class="first">Uncheck <em>Initialize this repository with a README</em> and click <em>Create Repository</em>.</p>
+<div class="figure align-default" id="id4">
+<img alt="Creating a new repository in GitHub by filling out the form" src="../../_images/create-repo1.png" />
+<p class="caption"><span class="caption-text">Create a new repository in GitHub</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you initialize with a README, in the next step Git will refuse to merge
+this repo with the local repo. There are ways around that, but it’s faster
+and easier to just create an empty repo here.</p>
+</div>
+</li>
+<li><p class="first">Connect your local repo to GitHub by copying the code for pushing into an existing repo.
+Remember, you already initialized and committed your console app.</p>
+<div class="figure align-default">
+<img alt="The page you see after creating an empty repository, with several options." src="../../_images/new-repo-push-main.png" />
+</div>
+</li>
+<li><p class="first">Now go back to your terminal and copy/paste the commands shown in the GitHub instructions. These should be very similar to:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com/your-username/communication-log.git
+$ git branch -M main
+$ git push -u origin main
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The first time you push up to GitHub, you will be prompted in the terminal
+to enter your account username and password. Do this.</p>
+<p>You will then see a large amount of output that you can safely ignore. The
+final few lines will confirm a successful push. They will look something
+like this:</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>To github.com:your-username/communication-log.git
+   c7f97814..54993de3  main -&gt; main
+</pre></div>
+</div>
+</div>
+<p>Notice that if your local branch was named <code class="docutils literal notranslate"><span class="pre">master</span></code> it was automatically changed to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Unless you’ve set up an SSH key with GitHub, make sure you’ve selected the
+HTTPS clone URL. If you’re not sure whether you have an SSH key, you
+probably don’t.</p>
+</div>
+</li>
+<li><p class="first">Confirm that GitHub has the same version as your local project (file contents match) by refreshing your GitHub page. Click around and see what is there. You can read all your code through GitHub’s web interface.</p>
+</li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="step-4-clone-a-project-from-github">
+<span id="clone-from-git"></span><h2><span class="section-number">15.7.6. </span>Step 4: Clone a Project from GitHub<a class="headerlink" href="#step-4-clone-a-project-from-github" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>Pilot</strong>:</dt><dd><ol class="arabic">
+<li><p class="first">Go to Control’s GitHub profile and find the communication-log repo.</p>
+</li>
+<li><p class="first">Click on the green <strong>Code</strong> button. <strong>Clone</strong> the HTTPS (not SSH) url. Copy the url to your clipboard.</p>
+</li>
+<li><p class="first">In your terminal, navigate to your development folder and clone down the repo.</p>
+<p>The command should look something like this.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/chrisbay/communication-log.git
+</pre></div>
+</div>
+<p>Now you can respond to Control!</p>
+</li>
+<li><p class="first">Open the <code class="docutils literal notranslate"><span class="pre">communication-log.sln</span></code> file in your editor and add your response to mission control. Be creative, the communication can go anywhere! Just don’t ask your partner what you should write.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">When you open the project folder, you might not be in the same directory as the solution.
+You want to open the solution or <code class="docutils literal notranslate"><span class="pre">.sln</span></code> file.
+A quick way to do that from the terminal is to <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the folder that is holding the solution
+and then type <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">.sln</span></code> on a Mac and <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">.sln</span></code> in Windows.</p>
+</div>
+</li>
+<li><p class="first">After you finish, <code class="docutils literal notranslate"><span class="pre">commit</span></code> your change.</p>
+</li>
+<li><p class="first">Now we need to <code class="docutils literal notranslate"><span class="pre">push</span></code> up your changes so Control can use them as well.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin main
+ERROR: Permission to chrisbay/communication-log.git denied to Pilot.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+</pre></div>
+</div>
+<p>Great error message! It let us know exactly what went wrong: Pilot does not have security permissions to write to Control’s repo. Let’s fix that.</p>
+</li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="step-5-add-a-collaborator-to-a-github-project">
+<h2><span class="section-number">15.7.7. </span>Step 5: Add A Collaborator To A GitHub Project<a class="headerlink" href="#step-5-add-a-collaborator-to-a-github-project" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>Control</strong>:</dt><dd><ol class="arabic">
+<li><p class="first">In your web browser, go to your <code class="docutils literal notranslate"><span class="pre">communication-log</span></code> repo.</p>
+</li>
+<li><p class="first">Click the <em>Settings</em> button</p>
+<div class="figure align-default">
+<img alt="Location of Settings button for a GitHub Repo" src="../../_images/settings.png" />
+</div>
+</li>
+<li><p class="first">Click the <em>Collaborators</em> button</p>
+<div class="figure align-default">
+<img alt="Location of Collaborators button to grant access to GitHub Repo" src="../../_images/add-people.png" />
+</div>
+</li>
+<li><p class="first">Click the green <strong>Add people</strong> button to invite collaborators.</p>
+</li>
+<li><p class="first">Enter in Pilot’s GitHub username.</p>
+</li>
+<li><p class="first">When you see Pilot’s profile, select it and then click <em>Select a collaborator above</em>.</p>
+</li>
+<li><p class="first">You should now see a “Manage access” pane on GitHub.
+Pilot’s username should be visible along with their collaboration status.  At this point, you should see “Pending invite”.</p>
+</li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="step-6-join-the-project-and-push">
+<h2><span class="section-number">15.7.8. </span>Step 6: Join the Project and Push<a class="headerlink" href="#step-6-join-the-project-and-push" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>Pilot</strong>:</dt><dd><ol class="arabic">
+<li><p class="first">Check your email.  You should receive an email invitation to join this repository.</p>
+</li>
+<li><p class="first">View and accept the invitation.</p>
+</li>
+<li><p class="first">This should take you to Control’s repo.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you don’t see an email (it may take a few minutes to arrive in your inbox),
+check your Spam folder. If you still don’t have an email, visit the
+repository page for the repo that Control created (ask them for the link), and
+you’ll see a notification at the top of the page.</p>
+</div>
+</li>
+<li><p class="first">Now let’s go enter that command again to <code class="docutils literal notranslate"><span class="pre">push</span></code> up our code.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push origin main
+Counting objects: <span class="m">9</span>, <span class="k">done</span>.
+Delta compression using up to <span class="m">4</span> threads.
+Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">9</span>/9<span class="o">)</span>, <span class="k">done</span>.
+Writing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">9</span>/9<span class="o">)</span>, <span class="m">1</span>.01 KiB <span class="p">|</span> <span class="m">0</span> bytes/s, <span class="k">done</span>.
+Total <span class="m">9</span> <span class="o">(</span>delta <span class="m">8</span><span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>
+remote: Resolving deltas: <span class="m">100</span>% <span class="o">(</span><span class="m">8</span>/8<span class="o">)</span>, completed with <span class="m">8</span> <span class="nb">local</span> objects.
+To git@github.com:chrisbay/communication-log.git
+   511239a..679de77  main -&gt; main
+</pre></div>
+</div>
+</li>
+</ol>
+</dd>
+</dl>
+<p>Anyone reading the code through GitHub’s browser interface should now see the new second line.</p>
+<dl class="docutils">
+<dt><strong>Control</strong></dt><dd><ol class="arabic simple">
+<li>If you refresh the collaboration page, the “Pending invitation”
+should disappear once Pilot has accepted the invite.</li>
+</ol>
+</dd>
+</dl>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> <span class="section-number">15.6. </span>Exercises: Git</a></li>
+        
+        
+        <li class="next"><a href="studio-p2.html"><span class="section-number">15.8. </span>Studio: Communication Log (continued) <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

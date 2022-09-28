@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6.3. Diagnosing Error Messages &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.4. Debugging Logic Errors" href="debugging-logic-errors.html" />
+    <link rel="prev" title="6.2. Categories of Errors" href="categories-of-errors.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">6. </span>Errors and Debugging</a></li>
+    <li class="active"><span class="section-number">6.3. </span>Diagnosing Error Messages</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="diagnosing-error-messages">
+<h1><span class="section-number">6.3. </span>Diagnosing Error Messages<a class="headerlink" href="#diagnosing-error-messages" title="Permalink to this headline">¶</a></h1>
+<p>Errors <em>always</em> produce error messages. Reading and
+understanding error messages is a crucial first step in fixing these types of
+bugs.</p>
+<p><strong>Error messages are your friends.</strong>  Really.  This idea can seem foreign to new
+programmers, because an error message is a signal that your program is broken.
+When we are working with a broken program, we might feel frustrated, like we do
+not fully understand the concepts at hand.</p>
+<p>However, the reality is that <em>all</em> programmers, no matter how experienced,
+regularly make simple mistakes. If you run your program and it produces an
+error message, your first reaction should be, “Great! My program has an error,
+but I have a helpful message to help me fix it.”</p>
+<div class="section" id="compiler-messages-101">
+<span id="syntax-error"></span><h2><span class="section-number">6.3.1. </span>Compiler Messages 101<a class="headerlink" href="#compiler-messages-101" title="Permalink to this headline">¶</a></h2>
+<p>Those messages from the compiler have a lot useful information in them.  If you know how to read them.</p>
+<p>Let’s consider the following code snippet.  It contains a syntax error, and will not compile.
+This specific example is for compiler errors, but the steps can be used for warnings and unhandled exceptions.</p>
+<p>Running the program at this stage results in the message:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MainClass</span> <span class="p">{</span>
+   <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span> <span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Julie&quot;</span><span class="p">;</span>
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello,  + name);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/Compiler-Message-CSharp" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>main.cs(7,39): error CS1010: Newline in constant
+main.cs(8,2): error CS1525: Unexpected symbol `}&#39;, expecting `)&#39; or `,&#39;
+main.cs(8,3): error CS1002: ; expected
+Compilation failed: 3 error(s), 0 warnings
+compiler exit status 1
+</pre></div>
+</div>
+<p>That is a lot of errors in this message.  Quick rule with errors: the <strong>first</strong> error tells us where to start.
+The rest of the errors are typically a result of the first error.</p>
+<p>The first line identifies where in our code the error originated: <code class="docutils literal notranslate"><span class="pre">main.cs(7,39):</span> <span class="pre">error</span> <span class="pre">CS1010:</span> <span class="pre">Newline</span> <span class="pre">in</span> <span class="pre">constant</span></code>.</p>
+<p>This error number is telling us that error is located in the <strong>main</strong> namespace, <strong>Line 7</strong>, character 39.
+Which, in this case, is the <code class="docutils literal notranslate"><span class="pre">;</span></code> or the final character of this line.  Sometimes using the coordinates are enough to help you find the error.
+In this case, we see that we have a <code class="docutils literal notranslate"><span class="pre">;</span></code>  What does that mean?  Perhaps, you can see the problem at this point.  Great!
+If not, it’s okay.  This takes practice, and with each error you make, you will be better with your syntax.</p>
+<p>Sometimes you might need more information about <em>why</em> something is an error.  That is where the error numbers come in handy.
+You are not expected to memorize error numbers.  If you need more information than the snippet that is provided, copy and
+paste the number into your favorite search engine.  That will bring up the Microsoft Documentation, but you might also find other
+sites that discuss the error.  Browse and find an explanation that helps you best understand the error and, hopefully, manage or correct it.</p>
+<p>Let’s look at our first error message again.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>error CS1010: Newline in constant
+</pre></div>
+</div>
+<p>This line identifies that actual issue that C# found.  If you are scratching your head at the message, “CS1010” or “Newline in constant”,
+don’t worry. Programming languages often report errors in ways that are not always easy to decipher at first glance.
+However, a quick copy and paste can help us find out more.</p>
+<p>Let’s start with the <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs1010" target="_blank">Microsoft Documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. on this error number.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Console.WriteLine(&quot;Hello,  + name);
+</pre></div>
+</div>
+<p id="index-0">C# is telling us that in the <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code> a string was intiatied, but never closed.
+Without that closing <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, it is unable to properly ready any of the other code.</p>
+<p>Fixing this error gives us a program with correct syntax:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MainClass</span> <span class="p">{</span>
+   <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span> <span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Julie&quot;</span><span class="p">;</span>
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello, &quot;</span>  <span class="p">+</span> <span class="n">name</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, Julie
+</pre></div>
+</div>
+<p>It prints and there are no more errors.  We did it!  If you notice, you only worked on that first error and all the others
+disappeared.  Just work on one error at a time and test, test, test!  Remember, those messages are your friend.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Error messages may differ depending on where you run your code. The same program run in a <a class="reference external" href="https://repl.it/" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and other IDEs on your computer will generate slightly different error messages. However, these differences are minor and generally unimportant. The main cause of the error will be reported in the same way.</p>
+</div>
+<p>The same process can be done for warnings and exceptions too.  Don’t be afraid to look around for answers.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>A quick note on Compiler messages.  Sometimes the coordinates of an error are referring to the line <em>above</em>.  This is very common when you leave off an <code class="docutils literal notranslate"><span class="pre">;</span></code>.  Here is a quick example:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Julie&quot;</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello, &quot;</span> <span class="p">+</span> <span class="n">name</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>main.cs(2,4): error CS1525: Unexpected symbol `Console&#39;
+</pre></div>
+</div>
+<p class="last">If you scour <strong>Line 2</strong> for errors, you are going to drive yourself crazy.  Your <strong>Line 2</strong> is correct.  <em>Why</em> does the complier think <code class="docutils literal notranslate"><span class="pre">'Console'</span></code> is a symbol?  If you look at <strong>Line 1</strong>, you’ll see there is no <code class="docutils literal notranslate"><span class="pre">;</span></code> to end the statement, so C# thinks that <strong>Line 2</strong> is part of your inital expression in <strong>Line 1</strong>.</p>
+</div>
+</div>
+<div class="section" id="syntax-highlighting">
+<h2><span class="section-number">6.3.2. </span>Syntax Highlighting<a class="headerlink" href="#syntax-highlighting" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">Most code editors provide a feature known as <strong>syntax highlighting</strong>. Such
+editors highlight different types of tokens in different ways. For example,
+strings may be red, while data types may be blue. This useful feature gives you
+a quick, visual way to identify syntax errors.</p>
+<p>For example, here is a screenshot of our flawed code taken within an <a class="reference external" href="https://repl.it/&#64;launchcode/syntaxHighlightingCSharp" target="_blank">editor at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<div class="figure align-default" id="id1">
+<img alt="A screenshot with two lines of code. Sytax error on **Line 1** extends the expression into the next line, but C# knows that &quot;Console&quot; is a built-in method, so something is wrong. Notice, however, there is no highlighting to inform you of you missin ``;``. Syntax error on **Line 2** causes highlighting to differ from what is expected.  The ``+``, variable name, and symbols ``);`` are red instead of black, because the preceding string &quot;Hello, &quot; doesn't have a closing double-quote." src="../../_images/syntax-highlights-csharp.png" />
+<p class="caption"><span class="caption-text">Screenshot of a program with one syntax error</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Notice that the string <code class="docutils literal notranslate"><span class="pre">Hello</span></code> is colored red, while <em>most</em> of the symbols
+(<code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">;</span></code>, <code class="docutils literal notranslate"><span class="pre">.</span></code>, and <code class="docutils literal notranslate"><span class="pre">(</span></code>) are colored black. At the end of <strong>Line 2</strong>,
+however, the final <code class="docutils literal notranslate"><span class="pre">)</span></code> and <code class="docutils literal notranslate"><span class="pre">;</span></code> are both red rather than black. Since we
+haven’t closed the string, the editor assumes that these two symbols are <em>part
+of</em> the string. Since we expect <code class="docutils literal notranslate"><span class="pre">);</span></code> to be black in this editor, the
+difference in color is a clue that something is wrong with our syntax.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="categories-of-errors.html"><span aria-hidden="true">&larr;</span> <span class="section-number">6.2. </span>Categories of Errors</a></li>
+        
+        
+        <li class="next"><a href="debugging-logic-errors.html"><span class="section-number">6.4. </span>Debugging Logic Errors <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

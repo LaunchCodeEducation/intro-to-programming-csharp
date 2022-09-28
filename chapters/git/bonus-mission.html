@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15.9. Bonus Mission: Merge Conflicts! &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="16. Rules to the Exceptions" href="../exceptions/index.html" />
+    <link rel="prev" title="15.8. Studio: Communication Log (continued)" href="studio-p2.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">15. </span>Git More Collaboration</a></li>
+    <li class="active"><span class="section-number">15.9. </span>Bonus Mission: Merge Conflicts!</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="bonus-mission-merge-conflicts">
+<h1><span class="section-number">15.9. </span>Bonus Mission: Merge Conflicts!<a class="headerlink" href="#bonus-mission-merge-conflicts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="merge-conflicts">
+<h2><span class="section-number">15.9.1. </span>Merge Conflicts!<a class="headerlink" href="#merge-conflicts" title="Permalink to this headline">¶</a></h2>
+<p>When collaborating on a project, things won’t always go smoothly.
+It’s common for two people to make changes to the same line(s) of code,
+at the same time, preventing Git from being able to merge the changes together.</p>
+<div class="figure align-default" id="id1">
+<img alt="An animated GIF file showing two opposing armies colliding in a mess" src="../../_images/git-merge.gif" />
+<p class="caption"><span class="caption-text">Git Merge Conflicts</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>This isn’t such a big deal. In fact, it’s very common. To see how we can handle
+such a situation, we’ll intentionally create a merge conflict and then resolve
+it.</p>
+<dl class="docutils">
+<dt><strong>Pilot</strong>:</dt><dd><ol class="arabic simple">
+<li>Checkout the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</li>
+<li>Change the Console.BackgroundColor again and save your work.</li>
+<li><code class="docutils literal notranslate"><span class="pre">commit</span></code> and <code class="docutils literal notranslate"><span class="pre">push</span></code> up your changes to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</li>
+</ol>
+</dd>
+</dl>
+<p>Meanwhile…</p>
+<dl class="docutils">
+<dt><strong>Control</strong>:</dt><dd><ol class="arabic simple">
+<li>Checkout a new branch called <code class="docutils literal notranslate"><span class="pre">color-update</span></code>.</li>
+<li>Change the Background color.</li>
+<li><code class="docutils literal notranslate"><span class="pre">commit</span></code> and <code class="docutils literal notranslate"><span class="pre">push</span></code> up your changes.</li>
+<li>Create a pull request.   You will receive a message that you are not able to merge this branch into <code class="docutils literal notranslate"><span class="pre">main</span></code>, and that is okay.
+There are merge conflicts, but Pilot will be handling them at this point.</li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="resolving-merge-conflicts">
+<h2><span class="section-number">15.9.2. </span>Resolving Merge Conflicts<a class="headerlink" href="#resolving-merge-conflicts" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>Pilot</strong>:</dt><dd><ol class="arabic">
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">pull</span></code> down the latest <code class="docutils literal notranslate"><span class="pre">main</span></code> to check for updates.</p>
+</li>
+<li><p class="first">Look for Control’s <code class="docutils literal notranslate"><span class="pre">color-update</span></code> branch.</p>
+</li>
+<li><p class="first">If you don’t see it, run the following command: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-a</span></code>.</p>
+</li>
+<li><p class="first">Merge the <code class="docutils literal notranslate"><span class="pre">color-update</span></code> branch into <code class="docutils literal notranslate"><span class="pre">main</span></code> using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git merge origin/color-update
+</pre></div>
+</div>
+</li>
+<li><p class="first">Note the output.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git merge origin/color-update
+Auto-merging communication-log/Program.cs
+CONFLICT <span class="o">(</span>Content<span class="o">)</span>: Merge conflict <span class="k">in</span> communication-log/Program.cs
+Automatic merge failed: fix conflicts and commit the result.
+</pre></div>
+</div>
+<p>That is great feedback!  Git has detected conflicting code and has noted its location for you.</p>
+</li>
+<li><p class="first">Open your IDE and look in the file git pointed out.  Look for the conflict symbols.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Merge conflicts may appear different based on your IDE and if you are using a Mac or Windows computer.
+The symbols are the same.  Look for the following <a class="reference internal" href="merge.html#merge-conflict"><span class="std std-ref">symbols</span></a> in your code: <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></code>,  <code class="docutils literal notranslate"><span class="pre">=======</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></code>.</p>
+</div>
+</li>
+<li><p class="first">Once you find the conflict, it is up to you to decide which code to keep.</p>
+</li>
+<li><p class="first">Save your changes, <code class="docutils literal notranslate"><span class="pre">commit</span></code>, and <code class="docutils literal notranslate"><span class="pre">push</span></code> up to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Many code editors have buttons to resolve merge conflicts with a single click.
+There’s nothing magic about these buttons; they do the same thing that you can do by editing the file.</p>
+<p class="last">Feel free to use them, but beware that they will not always work.
+If you need to incorporate parts of a change from <strong>both</strong> branches,
+resolve the conflict by manually editing.</p>
+</div>
+</li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="pulling-the-merged-code">
+<h2><span class="section-number">15.9.3. </span>Pulling the Merged Code<a class="headerlink" href="#pulling-the-merged-code" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>Control</strong>:</dt><dd><ol class="arabic">
+<li><p class="first">While Pilot is working on a merge conflict, checkout your <code class="docutils literal notranslate"><span class="pre">main</span></code> branch and run a git status.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch main
+Your branch is up-to-date with <span class="s1">&#39;origin/main&#39;</span>.
+nothing to commit, working directory clean
+</pre></div>
+</div>
+<p>Your local Git thinks the status is quo. Little does it know that up at GitHub, the status is <em>not</em> quo.
+Depending on where Pilot is when you run this status, the git message will be a little different.
+If git detects changes between branches, it will tell you and offer suggestions to <code class="docutils literal notranslate"><span class="pre">pull</span></code>.</p>
+</li>
+<li><p class="first">We’d find this out by doing either a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code>, or if we just want the latest version of this branch, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git pull
+remote: Counting objects: <span class="m">13</span>, <span class="k">done</span>.
+remote: Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">8</span>/8<span class="o">)</span>, <span class="k">done</span>.
+remote: Total <span class="m">13</span> <span class="o">(</span>delta <span class="m">4</span><span class="o">)</span>, reused <span class="m">13</span> <span class="o">(</span>delta <span class="m">4</span><span class="o">)</span>, pack-reused <span class="m">0</span>
+Unpacking objects: <span class="m">100</span>% <span class="o">(</span><span class="m">13</span>/13<span class="o">)</span>, <span class="k">done</span>.
+From Github.com:chrisbay/communication-log
+   0c21659..e0de62d  main     -&gt; origin/main
+Updating 0c21659..e0de62d
+Fast-forward
+communication-log.sln <span class="p">|</span> <span class="m">3</span> ++-
+<span class="m">1</span> file changed, <span class="m">4</span> insertions<span class="o">(</span>+<span class="o">)</span>, <span class="m">3</span> deletions<span class="o">(</span>-<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</dd>
+</dl>
+<p>Great Scott! Looks like Pilot changed the <code class="docutils literal notranslate"><span class="pre">communication-log</span></code>.
+Note that Control didn’t have to deal with the hassle of resolving merge
+conflicts. Since Control intervened, Git assumes that the team is okay with the
+way they resolved it, and <em>fast forwards</em> our local repo to be in sync with the
+remote one. Let’s look at <code class="docutils literal notranslate"><span class="pre">communication-log.sln</span></code> to make sure.
+What do you see?  What color is the text now?  Oh my!</p>
+</div>
+<div class="section" id="more-merge-conflicts-bonus-of-the-bonus">
+<h2><span class="section-number">15.9.4. </span>More Merge Conflicts! (Bonus of the Bonus)<a class="headerlink" href="#more-merge-conflicts-bonus-of-the-bonus" title="Permalink to this headline">¶</a></h2>
+<p>Let’s turn the tables on the steps we just carried out, so Pilot can practice
+resolving merge conflicts.</p>
+<ol class="arabic simple">
+<li><strong>Control and Pilot</strong>: Confer to determine the particular lines in the code
+that you will both change. Make different changes in those places.</li>
+<li><strong>Control</strong>: Stage, <code class="docutils literal notranslate"><span class="pre">commit</span></code>, and <code class="docutils literal notranslate"><span class="pre">push</span></code> your changes.</li>
+<li><strong>Control</strong>: Try to <code class="docutils literal notranslate"><span class="pre">pull</span></code> in Pilot’s changes, and notice that there are merge
+conflicts. Resolve these conflicts as we did above (ask Pilot for help, if
+you’re uncertain about the process). Then stage, <code class="docutils literal notranslate"><span class="pre">commit</span></code>, and <code class="docutils literal notranslate"><span class="pre">push</span></code> your
+changes.</li>
+<li><strong>Pilot</strong>: <code class="docutils literal notranslate"><span class="pre">pull</span></code> in the changes that Control pushed, including the resolved
+merge conflicts.</li>
+</ol>
+<p>Merge conflicts are a part of the process of team development. Resolve them to avoid bugs in your code.</p>
+</div>
+<div class="section" id="avoiding-conflicts">
+<h2><span class="section-number">15.9.5. </span>Avoiding Conflicts<a class="headerlink" href="#avoiding-conflicts" title="Permalink to this headline">¶</a></h2>
+<p>Git happens. Merge conflicts will pop up, but they’re not a big deal.
+Still, the best way to handle them is to try to avoid them in the first place. Here are some tips:</p>
+<ol class="arabic simple">
+<li>Deal with any uncommitted work before trying to merge.</li>
+<li>Partners should avoid working on the same file at the same time.</li>
+<li>Try to avoid adding code directly into <code class="docutils literal notranslate"><span class="pre">main</span></code>. Explore new ideas in a different branch first and then merged.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="studio-p2.html"><span aria-hidden="true">&larr;</span> <span class="section-number">15.8. </span>Studio: Communication Log (continued)</a></li>
+        
+        
+        <li class="next"><a href="../exceptions/index.html"><span class="section-number">16. </span>Rules to the Exceptions <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

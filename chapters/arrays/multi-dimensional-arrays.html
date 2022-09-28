@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8.4. Multidimensional Arrays &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.5. Exercises: Arrays" href="exercises.html" />
+    <link rel="prev" title="8.3. Array Methods" href="array-methods.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">8. </span>Arrays Keep Things in Order</a></li>
+    <li class="active"><span class="section-number">8.4. </span>Multidimensional Arrays</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="multidimensional-arrays">
+<h1><span class="section-number">8.4. </span>Multidimensional Arrays<a class="headerlink" href="#multidimensional-arrays" title="Permalink to this headline">¶</a></h1>
+<p>Earlier we learned that arrays can store any type of value. If that is true, can we store arrays inside
+of arrays? Well yes we can….</p>
+<p id="index-0">A <strong>multidimensional array</strong> is an collection of one dimensional arrays of the same length.
+Multidimensional arrays are often called “rectangular arrays”, because the consistency in length of all the inner arrays.
+The <em>inner</em> arrays must store the same data types as the outer array.</p>
+<p>The figure below demonstrates a synonyms array that has arrays as values. The <em>inner</em> arrays contain words that
+are synonyms of each other. Notice each inner array has an index position.</p>
+<div class="figure align-default">
+<img alt="A label, synonyms, pointing to an array that contains arrays at it's four indexes. Each inner array has a list of words that are synonyms." src="../../_images/multidim-array.png" />
+</div>
+<div class="section" id="two-dimensional-arrays">
+<h2><span class="section-number">8.4.1. </span>Two Dimensional Arrays<a class="headerlink" href="#two-dimensional-arrays" title="Permalink to this headline">¶</a></h2>
+<p>The simplest form of a multidimensional array is a two dimensional array. A two dimensional array is like a
+spreadsheet with rows and columns. To access items in a two dimensional array, use square bracket notation and
+two indexes.</p>
+<div class="section" id="initializing-two-dimensional-arrays">
+<h3><span class="section-number">8.4.1.1. </span>Initializing Two Dimensional Arrays<a class="headerlink" href="#initializing-two-dimensional-arrays" title="Permalink to this headline">¶</a></h3>
+<p>To declare a two-dimensional array, follow the data type with <code class="docutils literal notranslate"><span class="pre">[,]</span></code>.
+This notation implies 2 dimensions, equal in length.
+When initializing, the brackets must be part of your new array.  You may fill in the rows and colums, or leave them empty.
+The code block below has the rows and columns filled in the initializing statement.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[,]</span> <span class="n">numPractice</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">]</span>
+<span class="p">{</span>
+   <span class="p">{</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">},</span>
+   <span class="p">{</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">},</span>
+   <span class="p">{</span><span class="m">9</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">12</span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Read the initializing bracket notation as “3 rows containing 4 values each”.
+Multidimensional arrays will always be uniform in length no matter how many dimensions you go.
+For example, a three dimensional array uses the following notation: <code class="docutils literal notranslate"><span class="pre">[2,2,7]</span></code>
+could be read as “two arrays, two rows deep, containing 7 values each”.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">This is not the only way to initialize an multidimensional array, but this is the way the textbook will use.  Microsoft Documentation has other ways for delcaration and initializing, so if this method is not working for you <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays" target="_blank">check them out<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and use your favorite.</p>
+</div>
+</div>
+<div class="section" id="rank-and-length-properties">
+<h3><span class="section-number">8.4.1.2. </span><code class="docutils literal notranslate"><span class="pre">Rank</span></code> and <code class="docutils literal notranslate"><span class="pre">Length</span></code> Properties<a class="headerlink" href="#rank-and-length-properties" title="Permalink to this headline">¶</a></h3>
+<p>You can still use the <code class="docutils literal notranslate"><span class="pre">Length</span></code> property with multidimensional arrays. With a multidimensional array, the length is based on all of the values the array contains.
+In this example, 3 rows of 4 values each, so 3 * 4 is 12.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Rank</span></code> is useful when you want to verify the number of dimensions an array contains.  It will return an integer that represents the dimension.
+In the example below, a <code class="docutils literal notranslate"><span class="pre">2</span></code> is returned, which informs you that this array is two dimensional.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[,]</span> <span class="n">numPractice</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">]</span>
+<span class="p">{</span>
+   <span class="p">{</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">},</span>
+   <span class="p">{</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">},</span>
+   <span class="p">{</span><span class="m">9</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">12</span><span class="p">}</span>
+<span class="p">};</span>
+
+   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">numPractice</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">numPractice</span><span class="p">.</span><span class="n">Rank</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>12
+2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="deterimining-dimensions">
+<h3><span class="section-number">8.4.1.3. </span>Deterimining Dimensions<a class="headerlink" href="#deterimining-dimensions" title="Permalink to this headline">¶</a></h3>
+<p>When thinking about dimensions, look at the <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> in the array. Their placement within the array, and other arrays determines the dimensions.
+Think of them like a staircase, the more steps into an array you take, the more dimensions you are in.</p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">numPractice</span></code> code block above.  On <strong>Line2</strong> you will see the first <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>, that would be the first dimension.
+<strong>Line 3</strong> has a second array contained in <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>, the second dimension.
+<strong>Line 4 and 5</strong> have arrays, but they are contained within the first set of brackets, so still two dimensional.
+This pattern continues for however many dimensions you are working with.</p>
+</div>
+<div class="section" id="accessing-values-in-multiple-dimensions">
+<h3><span class="section-number">8.4.1.4. </span>Accessing Values In Multiple Dimensions<a class="headerlink" href="#accessing-values-in-multiple-dimensions" title="Permalink to this headline">¶</a></h3>
+<p>If you want to print or work with a specific value, you will need to reference both the row and column inside the <code class="docutils literal notranslate"><span class="pre">[,]</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Use the two dimensional array to print the following shuttleCrews members:  “Mae Jemison”, “Ellen Ochoa”, and “Winston Scott”.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="p">[,]</span> <span class="n">shuttleCrews</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">]</span>
+<span class="p">{</span>
+   <span class="p">{</span><span class="s">&quot;Robert Gibson&quot;</span><span class="p">,</span> <span class="s">&quot;Mark Lee&quot;</span><span class="p">,</span> <span class="s">&quot;Mae Jemison&quot;</span><span class="p">},</span>
+   <span class="p">{</span><span class="s">&quot;Kent Rominger&quot;</span><span class="p">,</span> <span class="s">&quot;Ellen Ochoa&quot;</span><span class="p">,</span> <span class="s">&quot;Bernard Harris&quot;</span><span class="p">},</span>
+   <span class="p">{</span><span class="s">&quot;Eilen Collins&quot;</span><span class="p">,</span> <span class="s">&quot;Winston Scott&quot;</span><span class="p">,</span>  <span class="s">&quot;Catherin Coleman&quot;</span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">shuttleCrews</span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="m">2</span><span class="p">]);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">shuttleCrews</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">]);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">shuttleCrews</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">]);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Mae Jemison
+Ellen Ochoa
+Winston Scott
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="beyond-two-dimensional-arrays">
+<h2><span class="section-number">8.4.2. </span>Beyond Two Dimensional Arrays<a class="headerlink" href="#beyond-two-dimensional-arrays" title="Permalink to this headline">¶</a></h2>
+<p>Generally, there is no limit to how many dimensions you can have when creating
+arrays. However it is rare that you will use more than two dimensions. Later on
+in the class we will learn about more collection types that can handle complex
+problems beyond the scope of two dimensional arrays.</p>
+</div>
+<div class="section" id="multidimensions-and-array-methods">
+<h2><span class="section-number">8.4.3. </span>Multidimensions and Array Methods<a class="headerlink" href="#multidimensions-and-array-methods" title="Permalink to this headline">¶</a></h2>
+<p>Most array methods will only work on one dimensional arrays.
+Fortunately, the inner arrays within multidimensional arrays are one dimensional.
+It all comes down to accessing those inner arrays in order to manipulate them.
+We will learn how to access these more in the next chapter as we discuss loops.</p>
+<p>For now, we can use many of them and verify the method worked with the help of bracket notation.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Use bracket notation to update “Ori” with “Karl”.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="p">[,]</span> <span class="n">classRoster</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">]</span>
+<span class="p">{</span>
+   <span class="p">{</span><span class="s">&quot;Rubi&quot;</span><span class="p">,</span> <span class="s">&quot;Ori&quot;</span><span class="p">,</span> <span class="s">&quot;Evelyn&quot;</span><span class="p">,</span> <span class="s">&quot;Alyce&quot;</span><span class="p">,</span> <span class="s">&quot;Willow&quot;</span> <span class="p">},</span>
+   <span class="p">{</span><span class="s">&quot;Oliver&quot;</span><span class="p">,</span> <span class="s">&quot;Quintin&quot;</span><span class="p">,</span> <span class="s">&quot;Sato&quot;</span><span class="p">,</span> <span class="s">&quot;Olivia&quot;</span><span class="p">,</span> <span class="s">&quot;James&quot;</span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">classRoster</span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;Karl&quot;</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">classRoster</span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">]);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console OutPut</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Karl
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">8.4.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is the two dimensional index for <code class="docutils literal notranslate"><span class="pre">&quot;Jones&quot;</span></code>?</p>
+<div class="last highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="p">[,]</span> <span class="n">school</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span> <span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">]</span>
+<span class="p">{</span>
+   <span class="p">{</span><span class="s">&quot;science&quot;</span><span class="p">,</span> <span class="s">&quot;computer&quot;</span><span class="p">,</span> <span class="s">&quot;art&quot;</span><span class="p">},</span>
+   <span class="p">{</span><span class="s">&quot;Jones&quot;</span><span class="p">,</span> <span class="s">&quot;Willoughby&quot;</span><span class="p">,</span> <span class="s">&quot;Rhodes&quot;</span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="array-methods.html"><span aria-hidden="true">&larr;</span> <span class="section-number">8.3. </span>Array Methods</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">8.5. </span>Exercises: Arrays <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15. Git More Collaboration &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="15.1. What is Git?" href="background.html" />
+    <link rel="prev" title="14.6. C# Naming Conventions" href="../vs-setup/naming-conventions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active"><span class="section-number">15. </span>Git More Collaboration</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="git-more-collaboration">
+<span id="git-chapter"></span><h1><span class="section-number">15. </span>Git More Collaboration<a class="headerlink" href="#git-more-collaboration" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="background.html">15.1. What is Git?</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="background.html#version-control-systems">15.1.1. Version Control Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#getting-started-with-git">15.1.2. Getting Started with Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#check-your-understanding">15.1.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="repositories-and-commits.html">15.2. Repositories and Commits</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="repositories-and-commits.html#create-a-repository">15.2.1. Create a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repositories-and-commits.html#making-commits">15.2.2. Making Commits</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="repositories-and-commits.html#the-four-stages-of-making-a-commit">15.2.2.1. The Four Stages of Making a <code class="docutils literal notranslate"><span class="pre">commit</span></code></a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="repositories-and-commits.html#git-tips-and-tricks">15.2.3. git Tips and Tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repositories-and-commits.html#check-your-understanding">15.2.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote-repository.html">15.3. Remote Repositories</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="remote-repository.html#local-remote-github-oh-my">15.3.1. Local, Remote, GitHub, Oh My!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote-repository.html#setting-up-a-remote-repo">15.3.2. Setting Up a Remote Repo</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="remote-repository.html#terminal-and-github">15.3.2.1. Terminal and GitHub</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="remote-repository.html#collaborating-with-colleagues">15.3.3. Collaborating with Colleagues</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="remote-repository.html#cloning-a-repo">15.3.3.1. Cloning a Repo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="remote-repository.html#forking-a-repo">15.3.3.2. Forking a Repo</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="remote-repository.html#contributing-to-a-remote-repository">15.3.4. Contributing to a Remote Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote-repository.html#check-your-understanding">15.3.5. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="branches.html">15.4. Git Branches</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="branches.html#branching-in-git">15.4.1. Branching in Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branches.html#checking-on-your-branches">15.4.2. Checking on Your Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branches.html#creating-a-new-branch">15.4.3. Creating a New Branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branches.html#switching-to-an-existing-branch">15.4.4. Switching to an Existing Branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branches.html#renaming-a-branch">15.4.5. Renaming a Branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branches.html#check-your-understanding">15.4.6. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="merge.html">15.5. Merging in Git</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="merge.html#merge-conflicts">15.5.1. Merge Conflicts</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="merge.html#merge-conflict-symbols">15.5.1.1. Merge Conflict Symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="merge.html#ways-to-avoid-merge-conflicts">15.5.1.2. Ways to Avoid Merge Conflicts</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="merge.html#check-your-understanding">15.5.2. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">15.6. Exercises: Git</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#working-in-a-local-repository">15.6.1. Working in a Local Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#setting-up-a-github-account">15.6.2. Setting up a Github Account</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#create-a-personal-access-token-pat">15.6.2.1. Create a Personal Access Token (PAT)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#personal-access-token-resources">15.6.2.2. Personal Access Token Resources:</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#optional-the-ssh-key">15.6.3. Optional: The SSH Key</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="studio.html">15.7. Studio: Communication Log</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#getting-ready-code-together">15.7.1. Getting Ready: Code Together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#overview">15.7.2. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#step-1-create-a-new-repository">15.7.3. Step 1: Create a New Repository</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="studio.html#windows-instructions">15.7.3.1. Windows instructions:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="studio.html#mac-instructions">15.7.3.2. Mac Instructions:</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#step-2-first-commit">15.7.4. Step 2: First Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#step-3-share-your-repository-on-github">15.7.5. Step 3: Share Your Repository On GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#step-4-clone-a-project-from-github">15.7.6. Step 4: Clone a Project from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#step-5-add-a-collaborator-to-a-github-project">15.7.7. Step 5: Add A Collaborator To A GitHub Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#step-6-join-the-project-and-push">15.7.8. Step 6: Join the Project and Push</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="studio-p2.html">15.8. Studio: Communication Log (continued)</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="studio-p2.html#step-7-pull-pilot-s-line-and-add-another-line">15.8.1. Step 7: Pull Pilot’s Line and Add Another Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio-p2.html#step-8-do-it-again-pull-change-and-push">15.8.2. Step 8: Do It Again: Pull, Change, and Push!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio-p2.html#step-9-create-a-branch-in-git">15.8.3. Step 9: Create a Branch In Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio-p2.html#step-10-create-a-pull-request-in-github">15.8.4. Step 10: Create a Pull Request In GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio-p2.html#step-11-merge-the-pull-request">15.8.5. Step 11: Merge the Pull Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio-p2.html#resources">15.8.6. Resources</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bonus-mission.html">15.9. Bonus Mission: Merge Conflicts!</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="bonus-mission.html#merge-conflicts">15.9.1. Merge Conflicts!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonus-mission.html#resolving-merge-conflicts">15.9.2. Resolving Merge Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonus-mission.html#pulling-the-merged-code">15.9.3. Pulling the Merged Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonus-mission.html#more-merge-conflicts-bonus-of-the-bonus">15.9.4. More Merge Conflicts! (Bonus of the Bonus)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bonus-mission.html#avoiding-conflicts">15.9.5. Avoiding Conflicts</a></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../vs-setup/naming-conventions.html"><span aria-hidden="true">&larr;</span> <span class="section-number">14.6. </span>C# Naming Conventions</a></li>
+        
+        
+        <li class="next"><a href="background.html"><span class="section-number">15.1. </span>What is Git? <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

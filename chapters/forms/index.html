@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>26. User Input with Forms &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="26.1. Forms" href="creating-forms.html" />
+    <link rel="prev" title="25.5. HTTP in the Browser" href="../http/http-in-the-browser.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active"><span class="section-number">26. </span>User Input with Forms</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="user-input-with-forms">
+<h1><span class="section-number">26. </span>User Input with Forms<a class="headerlink" href="#user-input-with-forms" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="creating-forms.html">26.1. Forms</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="creating-forms.html#create-a-form">26.1.1. Create a Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-forms.html#input-element">26.1.2. Input Element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-forms.html#labels">26.1.3. Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-forms.html#value-attribute">26.1.4. Value Attribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-forms.html#check-your-understanding">26.1.5. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="form-submission.html">26.2. Form Submission</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="form-submission.html#trigger-form-submission">26.2.1. Trigger Form Submission</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="form-submission.html#key-value-pairs">26.2.1.1. Key-value Pairs</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="form-submission.html#check-your-understanding">26.2.2. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="form-submission-post.html">26.3. POST Form Submission</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="form-submission-post.html#form-submission-using-post">26.3.1. Form Submission Using POST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form-submission-post.html#send-form-submission-to-a-server">26.3.2. Send Form Submission to a Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form-submission-post.html#check-your-understanding">26.3.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text-inputs.html">26.4. Text Inputs</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="text-inputs.html#example">26.4.1. Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text-inputs.html#check-your-understanding">26.4.2. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="specialized-text-inputs.html">26.5. Specialized Text Inputs</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="specialized-text-inputs.html#example">26.5.1. Example</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="checkbox-input.html">26.6. Checkbox Input</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="checkbox-input.html#examples">26.6.1. Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checkbox-input.html#check-your-understanding">26.6.2. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="radio-input.html">26.7. Radio Input</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="radio-input.html#example">26.7.1. Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio-input.html#unselecting-a-radio-button">26.7.2. Unselecting a Radio Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radio-input.html#check-your-understanding">26.7.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="select-input.html">26.8. Select Input</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="select-input.html#example">26.8.1. Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="select-input.html#check-your-understanding">26.8.2. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">26.9. Exercises: Forms</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#getting-started">26.9.1. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#create-your-form">26.9.2. Create your Form</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="studio.html">26.10. Studio: HTTP and Forms</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#introduction">26.10.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#getting-started">26.10.2. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#create-form-inputs">26.10.3. Create Form Inputs</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="studio.html#bonus-mission">26.10.3.1. Bonus Mission</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="studio.html#uploading-your-work">26.10.4. Uploading Your Work</a></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../http/http-in-the-browser.html"><span aria-hidden="true">&larr;</span> <span class="section-number">25.5. </span>HTTP in the Browser</a></li>
+        
+        
+        <li class="next"><a href="creating-forms.html"><span class="section-number">26.1. </span>Forms <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.1. Values and Data Types &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.2. More On Data Types" href="more-on-data-types.html" />
+    <link rel="prev" title="4. Data and Variables" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">4. </span>Data and Variables</a></li>
+    <li class="active"><span class="section-number">4.1. </span>Values and Data Types</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="values-and-data-types">
+<h1><span class="section-number">4.1. </span>Values and Data Types<a class="headerlink" href="#values-and-data-types" title="Permalink to this headline">¶</a></h1>
+<p>Programs may be thought of as being made up of two things:</p>
+<ol class="arabic simple">
+<li>Data</li>
+<li>Operations that manipulate data</li>
+</ol>
+<p>This chapter focuses primarily on the first of these two fundamental components, data.</p>
+<p id="index-0">Data can be stored in a program in a variety of ways. The most basic unit of data is a value.</p>
+<p id="typeof"><span id="def-value"></span>A <strong>value</strong> is a specific piece of data, such as a word or a number.
+Some examples are <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">5.2</span></code>, <code class="docutils literal notranslate"><span class="pre">'r</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>.</p>
+<p id="index-1">Each value belongs to a category called a <strong>data type</strong>. We will see many
+different data types throughout the course, the first three of which are the
+<strong>int</strong>, <strong>double</strong>, and <strong>string</strong> types. Whole numeric values such as <code class="docutils literal notranslate"><span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">33</span></code> are
+<strong>ints</strong>.  <strong>Doubles</strong> deal with decimal points, some examples include <code class="docutils literal notranslate"><span class="pre">2.34</span></code> and <code class="docutils literal notranslate"><span class="pre">3.14159265</span></code>. Sequences of characters enclosed in double quotes, such as
+<code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>, are <strong>strings</strong>, so-called because they contain a string of
+letters. Strings must be enclosed in double quotes.</p>
+<span class="target" id="index-2"></span><p id="index-3">If you are not sure what data type a value falls into, follow the value with <code class="docutils literal notranslate"><span class="pre">GetType</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">((</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">).</span><span class="n">GetType</span><span class="p">());</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="m">17.</span><span class="n">GetType</span><span class="p">());</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="m">3.14</span><span class="p">.</span><span class="n">GetType</span><span class="p">());</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>System.String
+System.Int32
+System.Double
+</pre></div>
+</div>
+</div>
+<p>Not surprisingly, C# reports that the data type of <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> is <code class="docutils literal notranslate"><span class="pre">string</span></code>.
+The data type of <code class="docutils literal notranslate"><span class="pre">17</span></code> is assumed <code class="docutils literal notranslate"><span class="pre">int</span></code> because it is a whole number, and <code class="docutils literal notranslate"><span class="pre">3.14</span></code>
+is <code class="docutils literal notranslate"><span class="pre">double</span></code> because of the decimal point.</p>
+<div class="admonition" id="index-4">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Notice that <code class="docutils literal notranslate"><span class="pre">Console.WriteLine((&quot;Hello,</span> <span class="pre">World!&quot;).GetType());</span></code> prints out <code class="docutils literal notranslate"><span class="pre">System.String</span></code> to the console.  The <code class="docutils literal notranslate"><span class="pre">GetType</span></code> method is not printed to the console because the statement <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span> <span class="pre">GetType</span></code> is an <strong>expression</strong>. Briefly, expressions are code segments that are reduced to a value. We will learn more about expressions soon.</p>
+</div>
+<div class="admonition" id="index-5">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">GetType</span></code> is a C# entity known as an <strong>method</strong>. It carries out some kind of action, which is already built into it.</p>
+</div>
+<p>There are data types other than string and number, including object and method, which we will learn about in future chapters.</p>
+<div class="section" id="more-on-strings">
+<h2><span class="section-number">4.1.1. </span>More On Strings<a class="headerlink" href="#more-on-strings" title="Permalink to this headline">¶</a></h2>
+<p>What about values like <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;3.2&quot;</span></code>? They look like numbers, but they are in double
+quotation marks making them strings.</p>
+<p>Double-quoted strings can contain single quotes inside them, as in <code class="docutils literal notranslate"><span class="pre">&quot;Bruce's</span> <span class="pre">beard&quot;</span></code>.</p>
+</div>
+<div class="section" id="more-on-numbers">
+<h2><span class="section-number">4.1.2. </span>More On Numbers<a class="headerlink" href="#more-on-numbers" title="Permalink to this headline">¶</a></h2>
+<p>When you type a large integer value, you might be tempted to use commas between groups of
+three digits, as in <code class="docutils literal notranslate"><span class="pre">42,000</span></code>. This is not a legal integer in C#.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="m">42000</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="m">42</span><span class="p">,</span><span class="m">000</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>42000
+error CS1502: ...`System.Console.WriteLine(string, object)&#39; has some invalid arguments
+</pre></div>
+</div>
+</div>
+<p>Well, that’s not what we expected at all!
+Because of the comma, C# chose to treat <code class="docutils literal notranslate"><span class="pre">42,000</span></code> as a pair separate entries.
+This causes an error in the Console.WriteLine() which was built to only work with a single entry.
+Adding additional entries separated by commas will overload it, causing an error.</p>
+<p>Remember not to put commas or spaces in your integers, no matter how big they are.
+Also revisit what we said in the chapter <a class="reference internal" href="../how-programs-work/index.html#how-programs-work"><span class="std std-ref">How Programs Work</span></a>: formal languages are strict,
+the notation is concise, and even the smallest change might mean something quite different from what you intend.</p>
+</div>
+<div class="section" id="type-systems">
+<h2><span class="section-number">4.1.3. </span>Type Systems<a class="headerlink" href="#type-systems" title="Permalink to this headline">¶</a></h2>
+<p id="index-6">Every programming language has a <strong>type system</strong>, which is the set of rules that determine how the languages deals with data of different types. In particular, how values are divided up into different data types is one characteristic of a type system.</p>
+<p>When discussing the differences between programming languages, the details of type systems are one of the main factors that programmers consider. There are other aspects of type systems beyond just how values are categorized. We will explore these in future lessons.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">4.1.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of these is <em>not</em> a data type in C#?</p>
+<ol class="last arabic simple">
+<li>integer</li>
+<li>string</li>
+<li>letter</li>
+<li>object</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> <span class="section-number">4. </span>Data and Variables</a></li>
+        
+        
+        <li class="next"><a href="more-on-data-types.html"><span class="section-number">4.2. </span>More On Data Types <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

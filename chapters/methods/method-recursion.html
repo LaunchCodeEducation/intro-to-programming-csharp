@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11.4. Recursive Methods &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.5. Scope" href="method-scope.html" />
+    <link rel="prev" title="11.3. Using Methods" href="using-methods.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">11. </span>Methods</a></li>
+    <li class="active"><span class="section-number">11.4. </span>Recursive Methods</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="recursive-methods">
+<h1><span class="section-number">11.4. </span>Recursive Methods<a class="headerlink" href="#recursive-methods" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">If methods can use methods, can a method use itself?</p>
+<p>The answer is yes.  This process is called <strong>recursion</strong>.
+Recursion is when a method compares itself in its current state to a <strong>base case</strong> to determine if it should run again or terminate.</p>
+<p>The base case is a specific condition that once reached returns a final or <strong>base value</strong>.
+Every time the method is called, it compares the current input to the base case.
+If the base case is not met, the method will run once more.
+If the base case is met, the base value will be returned and the method will stop calling itself.</p>
+<p>Just like with loops, you have to check your logic with a recursive method, else you will have an endless recursion.</p>
+<div class="section" id="factorialrecursive-a-recursive-example">
+<h2><span class="section-number">11.4.1. </span><code class="docutils literal notranslate"><span class="pre">FactorialRecursive</span></code> A Recursive Example<a class="headerlink" href="#factorialrecursive-a-recursive-example" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+   <span class="k">class</span> <span class="nc">MainClass</span> <span class="p">{</span>
+
+   <span class="k">static</span> <span class="kt">double</span> <span class="nf">FactorialRecursive</span><span class="p">(</span><span class="kt">double</span> <span class="n">number</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">number</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>  <span class="c1">//base case</span>
+      <span class="p">{</span>
+         <span class="k">return</span> <span class="m">1</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="n">number</span> <span class="p">*</span> <span class="n">FactorialRecursive</span><span class="p">(</span><span class="n">number</span><span class="p">-</span><span class="m">1</span><span class="p">);</span>  <span class="c1">//calling function again.  Notice updated parameters</span>
+   <span class="p">}</span>
+
+   <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span> <span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="kt">double</span> <span class="n">testNumber</span> <span class="p">=</span> <span class="m">7</span><span class="p">;</span>
+
+      <span class="kt">double</span> <span class="n">factorialTest</span> <span class="p">=</span> <span class="n">FactorialRecursive</span><span class="p">(</span><span class="n">testNumber</span><span class="p">);</span>
+
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">factorialTest</span> <span class="p">+</span> <span class="s">&quot; is the factorial outcome of &quot;</span> <span class="p">+</span> <span class="n">testNumber</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>5040 is the factorial outcome of 7
+</pre></div>
+</div>
+</div>
+<p>Here is an example of a recursive method.
+<strong>Lines 5-8</strong> contain the method <code class="docutils literal notranslate"><span class="pre">FactorialRecursive</span></code>.
+<strong>Line 7</strong> is the base case.  Whether or not the method will terminate or invoke itself again is determined by the base case.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">number</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>  <span class="c1">//base case</span>
+<span class="p">{</span>
+   <span class="k">return</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>If the number is <code class="docutils literal notranslate"><span class="pre">0</span></code> then the methods will return <code class="docutils literal notranslate"><span class="pre">1</span></code> and not call itself.  When this line is true, the recursion will stop.
+If the number is NOT <code class="docutils literal notranslate"><span class="pre">0</span></code> then <strong>Line 11</strong> will execute.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">number</span> <span class="p">*</span> <span class="n">FactorialRecursive</span><span class="p">(</span><span class="n">number</span><span class="p">-</span><span class="m">1</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Line 11</strong> returns the <code class="docutils literal notranslate"><span class="pre">number</span></code> times the method once again.
+However, notice that the parameters have been updated with this repeated call.  If we never updated the parameters, this would never terminate.
+We would have created an infinite recursion.</p>
+<p>Luckily, we updated the parameter in a way that the base case will eventually be met and the method call will stop.
+In a way this is similar to how loops work.</p>
+<p>In fact, we could do the same thing with a loop as well.</p>
+</div>
+<div class="section" id="factorialloop-a-loop-example">
+<h2><span class="section-number">11.4.2. </span><code class="docutils literal notranslate"><span class="pre">FactorialLoop</span></code> A Loop Example<a class="headerlink" href="#factorialloop-a-loop-example" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+   <span class="k">class</span> <span class="nc">MainClass</span> <span class="p">{</span>
+
+   <span class="k">static</span> <span class="kt">double</span> <span class="nf">FactorialLoop</span><span class="p">(</span><span class="kt">double</span> <span class="n">number</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="kt">double</span> <span class="n">factorial</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+
+      <span class="k">for</span><span class="p">(</span><span class="kt">double</span> <span class="n">i</span> <span class="p">=</span> <span class="n">number</span><span class="p">;</span> <span class="n">i</span> <span class="p">&gt;=</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span><span class="p">--)</span>
+      <span class="p">{</span>
+         <span class="n">factorial</span> <span class="p">=</span> <span class="n">factorial</span> <span class="p">*</span> <span class="n">i</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="k">return</span> <span class="n">factorial</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span> <span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="kt">double</span> <span class="n">testNumber</span> <span class="p">=</span> <span class="m">7</span><span class="p">;</span>
+
+      <span class="kt">double</span> <span class="n">factorialTest</span> <span class="p">=</span> <span class="n">FactorialLoop</span><span class="p">(</span><span class="n">testNumber</span><span class="p">);</span>
+
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">factorialTest</span> <span class="p">+</span> <span class="s">&quot; is the factorial outcome of &quot;</span> <span class="p">+</span> <span class="n">testNumber</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>5040 is the factorial outcome of 7
+</pre></div>
+</div>
+</div>
+<p>This method, <code class="docutils literal notranslate"><span class="pre">FactorialLoop</span></code> does the same thing as the <code class="docutils literal notranslate"><span class="pre">FactorialRecursive</span></code> method only using a loop rather than recursion.
+The loop sets the index <code class="docutils literal notranslate"><span class="pre">i</span></code> at the value of parameter, if <code class="docutils literal notranslate"><span class="pre">i</span></code> is greater or equal to 1, then decrease <code class="docutils literal notranslate"><span class="pre">i</span></code> by 1 value.
+Each iteration updates the variable <code class="docutils literal notranslate"><span class="pre">factorial</span></code> in <strong>Line 15</strong> and returns the final version once the loop has reached 0.</p>
+</div>
+<div class="section" id="recursion-or-loops">
+<h2><span class="section-number">11.4.3. </span>Recursion or Loops?<a class="headerlink" href="#recursion-or-loops" title="Permalink to this headline">¶</a></h2>
+<p>Both methods complete the same task, but is one better than the other?
+If you ask developers in the real world, you will get a wide range of answers.
+Some use recursion all the time, while others only used it in school.
+Where you work, who you work with, and your own development style will provide you with a better answer for this.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">11.4.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">In your own words, what is recursion?</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="using-methods.html"><span aria-hidden="true">&larr;</span> <span class="section-number">11.3. </span>Using Methods</a></li>
+        
+        
+        <li class="next"><a href="method-scope.html"><span class="section-number">11.5. </span>Scope <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

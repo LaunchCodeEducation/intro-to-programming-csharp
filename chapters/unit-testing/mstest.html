@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20.3. Unit Testing In Action With MSTest &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="20.4. Running Tests in Visual Studio" href="running-tests.html" />
+    <link rel="prev" title="20.2. Testing in C#" href="testing-in-csharp.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">20. </span>Unit Testing</a></li>
+    <li class="active"><span class="section-number">20.3. </span>Unit Testing In Action With MSTest</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="unit-testing-in-action-with-mstest">
+<h1><span class="section-number">20.3. </span>Unit Testing In Action With MSTest<a class="headerlink" href="#unit-testing-in-action-with-mstest" title="Permalink to this headline">¶</a></h1>
+<p>Testing is a bit of an art; there are no hard and
+fast rules about how to write good tests.
+That said, there are some general principles that you should follow.
+In this section, we will explore some of these.</p>
+<p>In particular, we will focus on identifying good <strong>test cases</strong>
+by working through a specific example.
+We will start with a very simple example which will allow us to
+explore formatting, positive/negative tests, edge cases,
+then create a larger project using multiple tests.</p>
+<p><strong>MSTest</strong> is a framework that provides the methods and assertions
+for writing and executing unit tests in C#.</p>
+<div class="section" id="what-to-test">
+<h2><span class="section-number">20.3.1. </span>What To Test<a class="headerlink" href="#what-to-test" title="Permalink to this headline">¶</a></h2>
+<p>When writing tests for your code, what should you test?
+You can’t test <em>every</em> possible situation or input.
+But you also don’t want to leave out important cases.
+A method or program that isn’t well-tested might have bugs
+lurking beneath the surface.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Since we are also focused on <em>unit</em> testing, in this chapter we will
+generally use the term “unit” to refer to the method or program under consideration</p>
+</div>
+<p>Regardless of the situation, there are three types of test cases you should
+consider: positive, negative and edge cases.</p>
+<ol class="arabic simple">
+<li>A <strong>positive test</strong> verifies expected behavior with valid database</li>
+<li>A <strong>negative test</strong> verifies expected behavior with <em>invalid</em> data.</li>
+<li>An <strong>edge case</strong> is a subset of positive tests, which checks the
+extreme edges of valid values.</li>
+</ol>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>example</p>
+<p>Suppose we were creating an app that focused on cars.
+We could write tests for certain aspects, number of doors or wheels,
+average milaage, size of gas tank, etc.</p>
+<p>Let’s look at the engine temperature indicator light.
+If your engine temperature is above 220 degrees or higher,
+then a light turns on to notify the driver.
+We want to test that the light will turn on, so we can set the
+following values for testing:</p>
+<ol class="last arabic simple">
+<li>Positive test values: <code class="docutils literal notranslate"><span class="pre">221</span></code> and <code class="docutils literal notranslate"><span class="pre">280</span></code></li>
+<li>Negative test values: <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">200</span></code></li>
+<li>Edge case value: <code class="docutils literal notranslate"><span class="pre">220</span></code></li>
+</ol>
+</div>
+<p>Considering positive, negative, and edge tests will go a long way
+toward helping you create well-tested code.
+Planning out your tests will save you time writing them.
+Just like with any code, testing has its own syntax.</p>
+<span class="target" id="csharp-attributes"></span></div>
+<div class="section" id="c-attributes">
+<span id="index-0"></span><h2><span class="section-number">20.3.2. </span>C# Attributes<a class="headerlink" href="#c-attributes" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">In C#, <strong>attributes</strong> are formalized bits of information about a program.
+They operate somewhere between actual code syntax and a comment on the code.
+Attributes do not directly affect the code they annotate, but they do supply
+information to the compiler.
+An attribute is enclosed in square brackets, <code class="docutils literal notranslate"><span class="pre">[]</span></code>, and placed above the item it decorates.</p>
+<p>To run unit tests using the native tools available in Visual Studio,
+the attributes <strong>[TestClass]</strong> and <strong>[TestMethod]</strong> are used to
+indicate that certain classes and methods should be treated as test cases.
+We describe how to use these in the examples that follow.</p>
+</div>
+<div class="section" id="testing-setup">
+<h2><span class="section-number">20.3.3. </span>Testing Setup<a class="headerlink" href="#testing-setup" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">To test a simple .NET Core console project, we add an MSTest
+project into the same solution. An MSTest
+project is a console project with an added MSTest dependency.</p>
+<p>Fork and clone <a class="reference external" href="https://github.com/LaunchCodeEducation/csharp-web-dev-lsn5unittesting" target="_blank">this repo<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+Inside the solution, we have two projects, <code class="docutils literal notranslate"><span class="pre">Car</span></code> and <code class="docutils literal notranslate"><span class="pre">CarTests</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">Car</span></code> project is a simple .NET Console app like the others you have encountered
+in this course so far. <code class="docutils literal notranslate"><span class="pre">CarTests</span></code> is a new type of project, MSTest Project.</p>
+<p>On a Mac, to select this type of project looks like so:</p>
+<div class="figure align-default" id="id1">
+<img alt="MAC: User selects MSTest project template in Visual Studio" src="../../_images/mac-create-mstest-project.png" />
+<p class="caption"><span class="caption-text">MAC: Creating MSTest project in Visual Studio</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>On a Windows:</p>
+<div class="figure align-default" id="id2">
+<img alt="WINDOWS: User selects MSTest project template in Visual Studio" src="../../_images/windows-create-mstest-project.png" />
+<p class="caption"><span class="caption-text">WINDOWS: Creating MSTest project in Visual Studio</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>MSTest is a C# testing framework. When we create a Visual Studio MSTest Project, the
+necessary API and classes are added as <strong>dependencies</strong> of the <code class="docutils literal notranslate"><span class="pre">CarTests</span></code> project.
+A dependency is a separately developed program or piece of code that another
+program or piece of code uses to carry out its function.
+Our C# tests will <em>depend</em> on MSTest code.</p>
+<p>Along the same lines, since <code class="docutils literal notranslate"><span class="pre">CarTests</span></code> tests the methods
+inside of <code class="docutils literal notranslate"><span class="pre">Car</span></code>, we must add the <code class="docutils literal notranslate"><span class="pre">Car</span></code> project as a dependency of <code class="docutils literal notranslate"><span class="pre">CarTests</span></code>.</p>
+<p>Right click on the <code class="docutils literal notranslate"><span class="pre">Dependencies</span></code> directory in <code class="docutils literal notranslate"><span class="pre">CarTests</span></code> and add a reference to
+the <code class="docutils literal notranslate"><span class="pre">Car</span></code> project.</p>
+<div class="figure align-default" id="id3">
+<img alt="User selects project to add as a dependency reference to test project" src="../../_images/vs-add-dependency-reference.png" />
+<p class="caption"><span class="caption-text">Add main project as dependency for test project</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="car-and-cartests">
+<h3><span class="section-number">20.3.3.1. </span><code class="docutils literal notranslate"><span class="pre">Car</span></code> and <code class="docutils literal notranslate"><span class="pre">CarTests</span></code><a class="headerlink" href="#car-and-cartests" title="Permalink to this headline">¶</a></h3>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class and look around. Here, we provide a class, <code class="docutils literal notranslate"><span class="pre">Car</span></code>, with basic
+information about a make, model, gas level, and mileage.
+We also give it getters, setters, and a few other methods.</p>
+<p>In the same project, the <code class="docutils literal notranslate"><span class="pre">Program</span></code> class contains a main method that prints the
+<code class="docutils literal notranslate"><span class="pre">make</span></code> and <code class="docutils literal notranslate"><span class="pre">model</span></code> of a given <code class="docutils literal notranslate"><span class="pre">Car</span></code> object. Run the project to verify it works.
+Now, open <code class="docutils literal notranslate"><span class="pre">CarTests</span></code>. It’s empty, save for a few TODOs. Let’s tackle the
+first TODO to make a new empty test.
+Starting with an empty test lets us validate that we can use MSTest in our current environment.</p>
+</div>
+</div>
+<div class="section" id="testclass-and-testmethod">
+<span id="index-3"></span><h2><span class="section-number">20.3.4. </span><code class="docutils literal notranslate"><span class="pre">[TestClass]</span></code> and <code class="docutils literal notranslate"><span class="pre">[TestMethod]</span></code><a class="headerlink" href="#testclass-and-testmethod" title="Permalink to this headline">¶</a></h2>
+<p>Another benefit of coding in an IDE, Visual Studio contains its own <strong>test runner</strong>.
+A test runner is simply a tool to execute tests and deliver their results.
+In order to indicate that <code class="docutils literal notranslate"><span class="pre">CarTests</span></code> contains unit tests that we want the test runner to run,
+we must give it the <code class="docutils literal notranslate"><span class="pre">[TestClass]</span></code> attribute. As you might
+guess, <code class="docutils literal notranslate"><span class="pre">[TestMethod]</span></code> annotates a method to signal it as a test case.
+Both of these attributes come to us via the Visual Studio test runner.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">CarTests</span></code>, on top of <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">class</span> <span class="pre">CarTests</span></code>, add <code class="docutils literal notranslate"><span class="pre">[TestClass]</span></code>.
+Then, create the following empty test underneath the first TODO.
+As usual, be sure write this code rather than copy/paste it:</p>
+<div class="highlight-c# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Microsoft.VisualStudio.TestTools.UnitTesting</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">CarTests</span>
+<span class="p">{</span>
+<span class="na">   [TestClass]</span>
+   <span class="k">public</span> <span class="k">class</span> <span class="nc">CarTests</span>
+   <span class="p">{</span>
+      <span class="c1">//TODO: add emptyTest so we can configure our runtime environment</span>
+<span class="na">      [TestMethod]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">EmptyTest</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">Assert</span><span class="p">.</span><span class="n">AreEqual</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,.</span><span class="m">001</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="c1">// ... other TODOs omitted here</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Our empty test is aptly named <code class="docutils literal notranslate"><span class="pre">EmptyTest()</span></code> as a description of its role.
+This test does not follow the AAA rule from our <a class="reference internal" href="testing-in-csharp.html#testing-best-practices"><span class="std std-ref">Testing Best Practices</span></a>,
+as it jumps straight to asserting. Nor is it relevant, for that matter.
+The goal of this empty unit test is not to demonstrate all of our best practices,
+but rather, to verify that our testing setup is in place.</p>
+<p>The three arguments in our test are defined as “expected”, “actual”, and “delta”.
+This empty test asserts an expected value of <code class="docutils literal notranslate"><span class="pre">10</span></code> to equal an actual value of <code class="docutils literal notranslate"><span class="pre">10</span></code>,
+with an accepted <code class="docutils literal notranslate"><span class="pre">.001</span></code> variance.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The third argument, called <code class="docutils literal notranslate"><span class="pre">delta</span></code>, is the amount of allowed difference between the
+expected and actual values. If the difference between the two values is within
+that range, then the test still passes.</p>
+<p>This argument is optional for some comparisons and required for others. One
+scenario in which it is required is when comparing doubles.</p>
+<p class="last">Why is it required? Well, that’s kind of a long story. Some number types are
+<a class="reference external" href="https://en.wikipedia.org/wiki/Floating-point_arithmetic" target="_blank">floating-point numbers<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+Due to the nature of their storage, these types carry with them a certain
+degree of
+<a class="reference external" href="https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems" target="_blank">inaccuracy<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+In brief, the <code class="docutils literal notranslate"><span class="pre">delta</span></code> argument ensures we can still reasonably compare two doubles.</p>
+</div>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Visual Studio can offer info on the parameters of a previously defined function.
+Hover over the function call to see a tooltip:</p>
+<div class="last figure align-default" id="id4">
+<img alt="User hovers mouse over a function to see its parameter names" src="../../_images/function-parameters-tooltip.png" />
+<p class="caption"><span class="caption-text">Hover over a function to see its parameters</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<p>Of course, <code class="docutils literal notranslate"><span class="pre">10</span></code> equals <code class="docutils literal notranslate"><span class="pre">10</span></code>. But let’s run it so
+we know our test runner works.</p>
+<p>This would be a good time to try a negative and edge case test as well.
+We recommend practicing these extra cases so you can see what the output
+would look like in your Visual Studio.</p>
+<div class="highlight-c# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">Microsoft.VisualStudio.TestTools.UnitTesting</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">CarTests</span>
+<span class="p">{</span>
+<span class="na">   [TestClass]</span>
+   <span class="k">public</span> <span class="k">class</span> <span class="nc">CarTests</span>
+   <span class="p">{</span>
+      <span class="c1">//TODO: add emptyTest so we can configure our runtime environment</span>
+<span class="na">      [TestMethod]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">EmptyTest</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">Assert</span><span class="p">.</span><span class="n">AreEqual</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,.</span><span class="m">001</span><span class="p">);</span>     <span class="c1">//positive test case</span>
+         <span class="n">Assert</span><span class="p">.</span><span class="n">AreEqual</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="m">11</span><span class="p">,.</span><span class="m">001</span><span class="p">);</span>     <span class="c1">//negative test case</span>
+         <span class="n">Assert</span><span class="p">.</span><span class="n">AreEqual</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="m">10.0009</span><span class="p">,.</span><span class="m">001</span><span class="p">)</span> <span class="c1">//edge case</span>
+      <span class="p">}</span>
+      <span class="c1">// ... other TODOs omitted here</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now that we have our test created, we can walk through how to run them.
+Like running console projects, there are many ways to run unit
+tests and view the results.
+In the next section, we will explore how to run tests and use the data they provide to us.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">20.3.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>You are creating a class registration program for your local community center.
+In order to qualify as a class, there must be a minimum of 5 students enrolled, but no more than 30.
+Which of the following numbers would be useful for testing edge cases?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">38</span></code> and <code class="docutils literal notranslate"><span class="pre">14</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">30</span></code> and <code class="docutils literal notranslate"><span class="pre">5</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">30</span></code> and <code class="docutils literal notranslate"><span class="pre">30</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="testing-in-csharp.html"><span aria-hidden="true">&larr;</span> <span class="section-number">20.2. </span>Testing in C#</a></li>
+        
+        
+        <li class="next"><a href="running-tests.html"><span class="section-number">20.4. </span>Running Tests in Visual Studio <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

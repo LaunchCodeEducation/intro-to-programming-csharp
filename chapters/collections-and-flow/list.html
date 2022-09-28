@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10.4. Lists &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10.5. List Gradebook" href="list-gradebook.html" />
+    <link rel="prev" title="10.3. Collections" href="collections.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">10. </span>Control Flow and Collections</a></li>
+    <li class="active"><span class="section-number">10.4. </span>Lists</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <span class="target" id="list"></span><div class="section" id="lists">
+<span id="index-0"></span><h1><span class="section-number">10.4. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h1>
+<p>A C# <code class="docutils literal notranslate"><span class="pre">List</span></code> is a class, which means it contains its own properties and methods that we can
+use in our programs.  You have seen this before when working with <code class="docutils literal notranslate"><span class="pre">Strings</span></code> and <code class="docutils literal notranslate"><span class="pre">Arrays</span></code>.
+A <code class="docutils literal notranslate"><span class="pre">List</span></code> is more closely related to an <code class="docutils literal notranslate"><span class="pre">Array</span></code> than a <code class="docutils literal notranslate"><span class="pre">String</span></code>, as in it is mutable.
+However, unlike an <code class="docutils literal notranslate"><span class="pre">Array</span></code>, you do not have to declare the size of your <code class="docutils literal notranslate"><span class="pre">List</span></code>.  In fact
+methods exist to modify the size of a <code class="docutils literal notranslate"><span class="pre">List</span></code> in ways that will feel effortless compared to the <code class="docutils literal notranslate"><span class="pre">Array</span></code>.</p>
+<p>Let’s start making some <code class="docutils literal notranslate"><span class="pre">List</span></code> objects so we can see how they work.  You can try them <a class="reference external" href="https://replit.com/&#64;launchcode/List-Initialization-Three-Ways#main.cs" target="_blank">here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<div class="section" id="list-initialization">
+<h2><span class="section-number">10.4.1. </span><code class="docutils literal notranslate"><span class="pre">List</span></code> Initialization<a class="headerlink" href="#list-initialization" title="Permalink to this headline">¶</a></h2>
+<p>Like with arrays, there are a few ways to initialize lists.
+We could declare and initialize lists in one line like so:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">newList</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span><span class="n">element1</span><span class="p">,</span> <span class="n">element2</span><span class="p">,</span> <span class="n">element3</span><span class="p">};</span>
+
+<span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">sitesInSTL</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span>
+<span class="p">{</span>
+   <span class="s">&quot;The Gateway Arch&quot;</span><span class="p">,</span>
+   <span class="s">&quot;City Museum&quot;</span><span class="p">,</span>
+   <span class="s">&quot;Forest Park&quot;</span><span class="p">,</span>
+   <span class="s">&quot;Busch Stadium&quot;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>We can also declare and initialize using the list method <code class="docutils literal notranslate"><span class="pre">Add()</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">newList</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;();</span>
+   <span class="n">newList</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">element1</span><span class="p">);</span>
+   <span class="n">newList</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">element2</span><span class="p">);</span>
+   <span class="n">newList</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">element3</span><span class="p">);</span>
+   <span class="n">newList</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">element4</span><span class="p">);</span>
+
+<span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">houseNumbers</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;();</span>
+   <span class="n">houseNumbers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">123</span><span class="p">);</span>
+   <span class="n">houseNumbers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">127</span><span class="p">);</span>
+   <span class="n">houseNumbers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">131</span><span class="p">);</span>
+   <span class="n">houseNumbers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">135</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>And finally, we can pull in elements from an array into our list.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="p">[]</span> <span class="n">demoArray</span> <span class="p">=</span> <span class="p">{</span><span class="n">element1</span><span class="p">,</span> <span class="n">element2</span><span class="p">,</span> <span class="n">element3</span><span class="p">};</span>
+<span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">demoList</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">demoArray</span><span class="p">);</span>
+
+<span class="kt">string</span><span class="p">[]</span> <span class="n">colors</span> <span class="p">=</span> <span class="p">{</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="s">&quot;yellow&quot;</span><span class="p">,</span> <span class="s">&quot;green&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="s">&quot;purple&quot;</span><span class="p">};</span>
+<span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">colorList</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;(</span><span class="n">colors</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition-note admonition" id="index-1">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>You will sometimes see the <code class="docutils literal notranslate"><span class="pre">List</span></code> class written as List&lt;T&gt;,
+where <code class="docutils literal notranslate"><span class="pre">T</span></code> represents a <em>placeholder</em> for the type that a programmer will
+declare a given List to hold. This is especially true in documentation.
+You can think of <code class="docutils literal notranslate"><span class="pre">T</span></code> as representing an arbitrary <strong>type</strong>.</p>
+<p class="last">Classes like <code class="docutils literal notranslate"><span class="pre">List&lt;T&gt;</span></code> that take another type or class as a parameter
+are referred to as <strong>generic classes</strong> or <strong>generic types</strong>.</p>
+</div>
+</div>
+<div class="section" id="list-methods">
+<h2><span class="section-number">10.4.2. </span>List Methods<a class="headerlink" href="#list-methods" title="Permalink to this headline">¶</a></h2>
+<p>You’ve created a few new lists. Great! Now what?  Let’s look at a few <code class="docutils literal notranslate"><span class="pre">List</span></code> methods to
+start using them in your programs.  While the table below contains some of the more common methods and
+properties that you use with this class, they by no means represent a complete
+record. Refer to the <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.8" target="_blank">official documentation on the List
+class<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+for such a record, and for more details.</p>
+<p>To <a class="reference external" href="https://replit.com/&#64;launchcode/ListMethodsPractice-CSharp#main.cs" target="_blank">demonstrate<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> the use of these methods, we’ll create a new <code class="docutils literal notranslate"><span class="pre">List</span></code>
+called <code class="docutils literal notranslate"><span class="pre">planets</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">planets</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+</pre></div>
+</div>
+<p>Ok, we’ve got an empty List. We need to use the class’s <code class="docutils literal notranslate"><span class="pre">.Add()</span></code> method
+to populate this collection with items.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">.Add()</span></code> to populate <code class="docutils literal notranslate"><span class="pre">planets</span></code>:</p>
+<div class="highlight-C# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">planets</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Mercury&quot;</span><span class="p">);</span>
+<span class="n">planets</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Venus&quot;</span><span class="p">);</span>
+<span class="n">planets</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Earth&quot;</span><span class="p">);</span>
+<span class="n">planets</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Mars&quot;</span><span class="p">);</span>
+<span class="n">planets</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Jupiter&quot;</span><span class="p">);</span>
+<span class="n">planets</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Saturn&quot;</span><span class="p">);</span>
+<span class="n">planets</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Uranus&quot;</span><span class="p">);</span>
+<span class="n">planets</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Neptune&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Thus, the first item in this table:</p>
+<span id="listsort"></span><span id="id1"></span><table border="1" class="docutils align-default" id="id2">
+<caption><span class="caption-text">List Methods in C#</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">C# Syntax</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/list-method-examples/add-examples.html#add-examples"><span class="std std-ref">Add()</span></a></td>
+<td>Adds an item to the List</td>
+<td><code class="docutils literal notranslate"><span class="pre">planets.Add(&quot;Pluto&quot;)</span></code> adds <code class="docutils literal notranslate"><span class="pre">Pluto</span></code> to <code class="docutils literal notranslate"><span class="pre">planets</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/list-method-examples/contains-examples.html#contains-examples"><span class="std std-ref">Contains()</span></a></td>
+<td>Checks to see if the List contains a given item, returning a Boolean</td>
+<td><code class="docutils literal notranslate"><span class="pre">planets.Contains(&quot;Earth&quot;)</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/list-method-examples/list-indexOf-examples.html#list-indexof-examples"><span class="std std-ref">IndexOf()</span></a></td>
+<td>Looks for an item in a List, returns the index of the first occurrence of the item if it exists, returns -1 otherwise</td>
+<td><code class="docutils literal notranslate"><span class="pre">planets.IndexOf(&quot;Jupiter&quot;)</span></code> returns <code class="docutils literal notranslate"><span class="pre">4</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/list-method-examples/list-reverse-examples.html#list-reverse-examples"><span class="std std-ref">Reverse()</span></a></td>
+<td>Reverses the elements of a <code class="docutils literal notranslate"><span class="pre">List</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">planets.Reverse()</span></code> returns
+<code class="docutils literal notranslate"><span class="pre">{&quot;Pluto&quot;,</span> <span class="pre">&quot;Neptune&quot;,</span> <span class="pre">&quot;Uranus&quot;,</span> <span class="pre">&quot;Saturn&quot;,</span> <span class="pre">&quot;Jupiter&quot;,</span> <span class="pre">&quot;Mars&quot;,</span> <span class="pre">&quot;Earth&quot;,</span> <span class="pre">&quot;Venus&quot;,</span> <span class="pre">&quot;Mercury&quot;}</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/list-method-examples/list-sort-examples.html#list-sort-examples"><span class="std std-ref">Sort()</span></a></td>
+<td>Rearranges the elements of an <code class="docutils literal notranslate"><span class="pre">List</span></code> into ascending order.</td>
+<td><code class="docutils literal notranslate"><span class="pre">planets.Sort()</span></code> produces <code class="docutils literal notranslate"><span class="pre">{&quot;Earth&quot;,</span> <span class="pre">&quot;Jupiter&quot;,</span> <span class="pre">&quot;Mars&quot;,</span> <span class="pre">&quot;Mercury&quot;,</span> <span class="pre">&quot;Neptune&quot;,</span> <span class="pre">&quot;Pluto&quot;,</span> <span class="pre">&quot;Saturn&quot;,</span> <span class="pre">&quot;Uranus&quot;,</span> <span class="pre">&quot;Venus&quot;}</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../../appendices/list-method-examples/remove-examples.html#remove-examples"><span class="std std-ref">Remove()</span></a></td>
+<td>Removes first occurance of a specified object</td>
+<td><code class="docutils literal notranslate"><span class="pre">planets.Remove(&quot;Pluto&quot;)</span></code> returns
+<code class="docutils literal notranslate"><span class="pre">{&quot;Earth&quot;,</span> <span class="pre">&quot;Jupiter&quot;,</span> <span class="pre">&quot;Mars&quot;,</span> <span class="pre">&quot;Mercury&quot;,</span> <span class="pre">&quot;Neptune&quot;,</span> <span class="pre">&quot;Saturn&quot;,</span> <span class="pre">&quot;Uranus&quot;,</span> <span class="pre">&quot;Venus&quot;}</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../appendices/list-method-examples/toArray-examples.html#toarray-examples"><span class="std std-ref">ToArray()</span></a></td>
+<td>Returns an Array containing the elements of the List</td>
+<td><code class="docutils literal notranslate"><span class="pre">planets.ToArray()</span></code> returns and array contianing
+<code class="docutils literal notranslate"><span class="pre">{&quot;Earth&quot;,</span> <span class="pre">&quot;Jupiter&quot;,</span> <span class="pre">&quot;Mars&quot;,</span> <span class="pre">&quot;Mercury&quot;,</span> <span class="pre">&quot;Neptune&quot;,</span> <span class="pre">&quot;Saturn&quot;,</span> <span class="pre">&quot;Uranus&quot;,</span> <span class="pre">&quot;Venus&quot;}</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>In order to use <code class="docutils literal notranslate"><span class="pre">ToArray</span></code>, we could first declare a <code class="docutils literal notranslate"><span class="pre">planetsArray</span></code> of the same size as <code class="docutils literal notranslate"><span class="pre">planets</span></code> or do it in one line of code.</p>
+<div class="last highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Option A</span>
+<span class="kt">string</span><span class="p">[]</span> <span class="n">planetsArray</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span><span class="p">[</span><span class="n">planets</span><span class="p">.</span><span class="n">Count</span><span class="p">];</span>
+<span class="n">planetsArray</span> <span class="p">=</span> <span class="n">planets</span><span class="p">.</span><span class="n">ToArray</span><span class="p">();</span>
+
+<span class="c1">// Option B</span>
+<span class="kt">string</span><span class="p">[]</span> <span class="n">planetsArray</span> <span class="p">=</span> <span class="n">planets</span><span class="p">.</span><span class="n">ToArray</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>In addition to these different methods we can use, the <code class="docutils literal notranslate"><span class="pre">List</span></code> class has a
+number of properties that are very helpful. You may find yourself using the
+<code class="docutils literal notranslate"><span class="pre">Count</span></code> property quite a bit. This property holds the number of values in the
+list. In our example, after we add all of the planets in the solar system,
+<code class="docutils literal notranslate"><span class="pre">planets.Count</span></code> has a value of <code class="docutils literal notranslate"><span class="pre">8</span></code> (unless you also added Pluto to
+<code class="docutils literal notranslate"><span class="pre">planets</span></code>, in which <code class="docutils literal notranslate"><span class="pre">planets.Count</span></code> returns <code class="docutils literal notranslate"><span class="pre">9</span></code>).</p>
+<p>Let’s look at our gradebook examples.  We will start with a <code class="docutils literal notranslate"><span class="pre">List</span></code> version, then compare it to an array version.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">10.4.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>The number of entries in a <code class="docutils literal notranslate"><span class="pre">List</span></code> may not be modified.</p>
+<ol class="last arabic simple">
+<li>True</li>
+<li>False</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">List</span></code> called <code class="docutils literal notranslate"><span class="pre">charStars</span></code> containing <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
+<ol class="last arabic">
+<li><div class="first highlight-C# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">charStars</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+<span class="n">charStars</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span>
+<span class="n">charStars</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="sc">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">charStars</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="sc">&#39;c&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><div class="first highlight-C# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">&lt;</span><span class="kt">char</span><span class="p">&gt;</span> <span class="n">charStars</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+<span class="n">charStars</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span>
+<span class="n">charStars</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="sc">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">charStars</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="sc">&#39;c&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><div class="first highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">&lt;</span><span class="kt">char</span><span class="p">&gt;</span> <span class="n">charStars</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">char</span><span class="p">&gt;(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-C# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">charStars</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+<span class="n">charStars</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">);</span>
+<span class="n">charStars</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">);</span>
+<span class="n">charStars</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="collections.html"><span aria-hidden="true">&larr;</span> <span class="section-number">10.3. </span>Collections</a></li>
+        
+        
+        <li class="next"><a href="list-gradebook.html"><span class="section-number">10.5. </span>List Gradebook <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

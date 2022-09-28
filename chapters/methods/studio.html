@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11.7. Studio: Methods &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="12. Classes, Objects, and Math Class" href="../classes-objects-math/index.html" />
+    <link rel="prev" title="11.6. Exercises: Methods" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">11. </span>Methods</a></li>
+    <li class="active"><span class="section-number">11.7. </span>Studio: Methods</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="studio-methods">
+<h1><span class="section-number">11.7. </span>Studio: Methods<a class="headerlink" href="#studio-methods" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-started">
+<h2><span class="section-number">11.7.1. </span>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p><strong>Getting Started:</strong>  Click <a class="reference external" href="https://replit.com/&#64;launchcode/StringAndArrayStudio01-CS" target="_blank">here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> for the starter code.  As you work through the studio, you’ll be updating this code.</p>
+</div>
+<div class="section" id="creating-a-better-reverse-method">
+<h2><span class="section-number">11.7.2. </span>Creating A Better <code class="docutils literal notranslate"><span class="pre">Reverse</span></code> Method<a class="headerlink" href="#creating-a-better-reverse-method" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Reverse</span></code> method flips the order of the elements within an array.
+However, <code class="docutils literal notranslate"><span class="pre">Reverse</span></code> does not affect the digits or characters within those
+elements.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="p">[]</span> <span class="n">arr</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span><span class="p">[]</span> <span class="p">{</span><span class="s">&quot;hello&quot;</span><span class="p">,</span> <span class="s">&quot;world&quot;</span><span class="p">,</span> <span class="s">&quot;123&quot;</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span><span class="p">};</span>
+
+<span class="n">Array</span><span class="p">.</span><span class="n">Reverse</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+
+<span class="k">foreach</span><span class="p">(</span><span class="kt">string</span> <span class="n">a</span> <span class="k">in</span> <span class="n">arr</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>orange
+123
+world
+hello
+</pre></div>
+</div>
+</div>
+<p>What if we wanted the reversed array to be</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>egnaro
+321
+dlrow
+olleh
+</pre></div>
+</div>
+<p>Let’s have some fun by creating a process that reverses BOTH the order of the
+entries in an array AND the order of characters within the individual elements.</p>
+<p>Remember that a method should perform only <em>one</em> task.</p>
+</div>
+<div class="section" id="warm-up-reverse-a-number-array">
+<h2><span class="section-number">11.7.3. </span>Warm-Up: Reverse a Number Array<a class="headerlink" href="#warm-up-reverse-a-number-array" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Define a method called <code class="docutils literal notranslate"><span class="pre">ReverseNumbers</span></code> that will sort the numbers within an array in descending order.</li>
+<li>Within the method, <code class="docutils literal notranslate"><span class="pre">Sort</span></code> the array.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">Reverse</span></code> method to put the items into descending order.</li>
+<li>Using a loop of your choice, print your final array to the console.</li>
+<li>Be sure to test your method, call it at least twice with arrays of different sizes and numbers.</li>
+</ol>
+</div>
+<div class="section" id="reverse-a-string">
+<h2><span class="section-number">11.7.4. </span>Reverse a String<a class="headerlink" href="#reverse-a-string" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Define a method called <code class="docutils literal notranslate"><span class="pre">ReverseLetters</span></code> that will reverse each character inside a string and print the results to the console.  This will be similar to the <code class="docutils literal notranslate"><span class="pre">ReverseNumbers</span></code> method.</li>
+<li>Look through the <a class="reference external" href="string-methods" target="_blank">String Methods<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>  and <a class="reference external" href="array-methods" target="_blank">Array Methods<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to figure out the best approach for this.  Consider the following: How can you access or alter characters within strings? What data types are going into your method, being used in your method, and printed by your method?</li>
+<li>Be sure to test your method by invoking it a few times.  Some test examples you could use: <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">Sharp</span></code>, <code class="docutils literal notranslate"><span class="pre">Hello</span></code>, <code class="docutils literal notranslate"><span class="pre">Coding</span> <span class="pre">is</span> <span class="pre">fun!</span></code> they should return as <code class="docutils literal notranslate"><span class="pre">prahS</span> <span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">olleH</span></code>, and <code class="docutils literal notranslate"><span class="pre">!nuf</span> <span class="pre">si</span> <span class="pre">gniodC</span></code> .</li>
+<li>Now make this method take input from a user.  Print a message that contains the original string and the newly reversed string.</li>
+</ol>
+</div>
+<div class="section" id="palindrome-checker">
+<h2><span class="section-number">11.7.5. </span>Palindrome Checker<a class="headerlink" href="#palindrome-checker" title="Permalink to this headline">¶</a></h2>
+<p>Now that you can completely reverse a string, let’s use this to check to see if a word is a palindrome.
+A palindrome is a word that is spelled the same forwards and backwards.  Some examples are <code class="docutils literal notranslate"><span class="pre">sagas</span></code>, <code class="docutils literal notranslate"><span class="pre">kayak</span></code>, and <code class="docutils literal notranslate"><span class="pre">racecar</span></code>.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">There are other factors that are sometimes included in the definition of a palindrome. For example, an alternative definition is that a palindrome is a sentence or phrase that contains letters in the same order, whether considered from beginning-to-end, or end-to beginning, ignoring punctuation, case, and spaces.</p>
+</div>
+<p>One way to state a palindrome condition is to say that a palindrome is a string that is equal to its reverse.
+When we think about it that way, what we need to do is create a method that will take a string, reverse it, compare it to the original and verify if they are equal.</p>
+<p>You have alredy built a function that reverses a string.  It shouldn’t be too hard to extend that method to be able to detect palindromes.</p>
+<ol class="arabic simple">
+<li>Define your method <code class="docutils literal notranslate"><span class="pre">IsPalindrome</span></code>, to check if a string is equal to its reverse.  Think what data type the overall outcome will require.</li>
+<li>Make sure your method provides a message that informs whether or not the input is a palidrome or not.  Some single word examples you can test:  <code class="docutils literal notranslate"><span class="pre">racecar</span></code>, <code class="docutils literal notranslate"><span class="pre">civic</span></code>, <code class="docutils literal notranslate"><span class="pre">sagas</span></code>.</li>
+<li>Make this method accept user input.</li>
+<li>Will upper or lowercase be an issue?</li>
+</ol>
+<p><strong>Bonus Mission:</strong> Modify your method to accept mulitple word palindromes.  For example, <code class="docutils literal notranslate"><span class="pre">Drab</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">fool,</span> <span class="pre">aloof</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">bard</span></code> or <code class="docutils literal notranslate"><span class="pre">Never</span> <span class="pre">odd</span> <span class="pre">or</span> <span class="pre">even</span></code>.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> <span class="section-number">11.6. </span>Exercises: Methods</a></li>
+        
+        
+        <li class="next"><a href="../classes-objects-math/index.html"><span class="section-number">12. </span>Classes, Objects, and Math Class <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

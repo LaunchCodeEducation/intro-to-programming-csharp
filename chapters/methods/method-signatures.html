@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11.2. Method Signatures and Calls &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.3. Using Methods" href="using-methods.html" />
+    <link rel="prev" title="11.1. Introduction" href="what-is-a-method.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">11. </span>Methods</a></li>
+    <li class="active"><span class="section-number">11.2. </span>Method Signatures and Calls</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="method-signatures-and-calls">
+<h1><span class="section-number">11.2. </span>Method Signatures and Calls<a class="headerlink" href="#method-signatures-and-calls" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="method-signatures">
+<span id="index-0"></span><h2><span class="section-number">11.2.1. </span>Method Signatures<a class="headerlink" href="#method-signatures" title="Permalink to this headline">¶</a></h2>
+<p>When you decide to create your own method, there is a standard syntax that C# requires in order to
+run your method when you call it.  This syntax is the template for your method signature.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Access Modifier <span class="o">[</span>static modifier<span class="o">]</span> Return Type MethodName<span class="o">(</span>Parameter List<span class="o">)</span>
+<span class="o">{</span>
+   Method Body
+<span class="o">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>Access Modifier:</strong>  This determines visibilty of methods between classes, and whether or not it can instanciate <strong>new</strong> objects.  Since our methods in this chapter are limited to the <code class="docutils literal notranslate"><span class="pre">MainClass</span></code> we will leave them off.</li>
+<li><strong>Static Modifier:</strong>  <em>If</em> your method is static, you must include this between your access modifier and return type.  <em>Else</em> this is ommitted.</li>
+<li><strong>Return Type:</strong>  If the method is returning a value, this indicates what data type it will be.  Not all methods return values.  Methods that do not return a value have a return type of <strong>void</strong>.</li>
+<li><strong>Method Name:</strong>  The method’s unique identifier.  This is what you use to call your method.</li>
+<li><strong>Parameter List:</strong> A parameter is a placeholder for specific data that the method will act upon.  Paraemeters are optional.  In these cases the <code class="docutils literal notranslate"><span class="pre">()</span></code> are still part of the method call, but remain empty.</li>
+<li><strong>Method Body:</strong>  This is where you code your method.  Note it is contained between <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="creating-a-method">
+<h2><span class="section-number">11.2.2. </span>Creating a Method<a class="headerlink" href="#creating-a-method" title="Permalink to this headline">¶</a></h2>
+<p>Using our template, let’s build a simple method.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="kt">int</span> <span class="nf">SquareTheNumber</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">return</span> <span class="n">num</span> <span class="p">*</span> <span class="n">num</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>In this example, we are skipping the <strong>access modifier</strong>.
+The reason for this is that we are working within a single class.
+If we had multiple classes this would be more significant.  We will discuss this more when we get to class and class members.</p>
+<p>We are using the <code class="docutils literal notranslate"><span class="pre">static</span></code> modifier.   This lets C# know that this method
+belongs to the current class it is contained in and not to expect anything <strong>new</strong> to be created.</p>
+<p>Our <strong>return type</strong> is <strong>int</strong>.  This lets you know how to use the method.
+If you were expecting a <strong>double</strong> then you will need to modify your return type.</p>
+<p><code class="docutils literal notranslate"><span class="pre">SquareTheNumber</span></code> is the <strong>method name</strong>.
+Notice that it is all in <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions" target="_blank">PascalCase<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> where all words are capitalized and spaces removed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">SquareTheNumber</span></code> has a single <strong>parameter</strong>, <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">num</span></code>, which is a placeholder that tells you what <strong>input</strong> is expected along with the data type.
+In this example, <code class="docutils literal notranslate"><span class="pre">SquareTheNumber</span></code> is expecting one input of type <strong>int</strong>.  The input is labeled <code class="docutils literal notranslate"><span class="pre">num</span></code> to provide you more <em>context</em> on what to expect or how to use the method.</p>
+<p>When writing your own methods, provide as many clues as possible to help with readability.
+The <strong>method body</strong> shows you how the input will be manipulated within the method.
+Here it will be used to square itself.  This method will <code class="docutils literal notranslate"><span class="pre">return</span></code> a value which we can use elsewhere in our code.  Since this method is static,
+we can treat anything returned as a regular value.  This means you can store the method as a variable, pass the method into expressions or other methods, or print it.</p>
+<p>To sum up the method <code class="docutils literal notranslate"><span class="pre">SquareTheNumber</span></code>:  use with an <strong>int</strong> value and the method will return the squared value.</p>
+<div class="section" id="method-calls">
+<h3><span class="section-number">11.2.2.1. </span>Method Calls<a class="headerlink" href="#method-calls" title="Permalink to this headline">¶</a></h3>
+<p>A few notes about the Main method before we move on.  The Main method is where you <strong>call</strong> methods.  You build methods <strong>outside</strong> of the Main method.</p>
+<p>Let’s walk through an example about placement for building your method and calling your method with the <code class="docutils literal notranslate"><span class="pre">SquareTheNumber</span></code> method.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MainClass</span> <span class="p">{</span>
+
+   <span class="k">static</span> <span class="kt">int</span> <span class="nf">SquareTheNumber</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="k">return</span> <span class="n">num</span> <span class="p">*</span> <span class="n">num</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span> <span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="kt">int</span> <span class="n">digit</span> <span class="p">=</span> <span class="m">4</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">squaredNum</span> <span class="p">=</span> <span class="n">SquareTheNumber</span><span class="p">(</span><span class="n">digit</span><span class="p">);</span>
+      <span class="kt">int</span> <span class="n">squaredAndSummed</span> <span class="p">=</span> <span class="n">squaredNum</span> <span class="p">+</span> <span class="n">SquareTheNumber</span><span class="p">(</span><span class="n">digit</span><span class="p">);</span>
+
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">squaredNum</span><span class="p">);</span>
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">squaredAndSummed</span><span class="p">);</span>
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">SquareTheNumber</span><span class="p">(</span><span class="m">5</span><span class="p">));</span>
+
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/MethodBuildingAndCalling-CSharp" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">16</span>
+<span class="m">32</span>
+<span class="m">25</span>
+</pre></div>
+</div>
+</div>
+<p>You should be fairly familiar with the replit IDE by now.</p>
+<ul class="simple">
+<li><strong>Line 1</strong> is where the <code class="docutils literal notranslate"><span class="pre">using</span></code> statement goes.</li>
+<li><strong>Line3</strong> introduces the <code class="docutils literal notranslate"><span class="pre">MainClass</span></code>.  The <code class="docutils literal notranslate"><span class="pre">MainClass</span></code> starts at <strong>Line 3</strong> and ends at <strong>Line 21</strong></li>
+<li>Starting at <strong>Line 11</strong> is the <code class="docutils literal notranslate"><span class="pre">Main</span></code> method statement.   The <code class="docutils literal notranslate"><span class="pre">Main</span></code> method is contained between <strong>Lines 11-20</strong> within the <code class="docutils literal notranslate"><span class="pre">MainClass</span></code>.</li>
+</ul>
+<p>The purpose of the <code class="docutils literal notranslate"><span class="pre">Main</span></code> method is to exectue your program.  This is where you <em>call</em> or <em>invoke</em> the methods you create.
+You cannot build your methods inside the <code class="docutils literal notranslate"><span class="pre">Main</span></code> method.
+They must be built outside the <code class="docutils literal notranslate"><span class="pre">Main</span></code> method but inside your <code class="docutils literal notranslate"><span class="pre">MainClass</span></code>.</p>
+<p>In this example, we placed our <code class="docutils literal notranslate"><span class="pre">SquareTheNumber</span></code> method between <strong>Lines 5-8</strong>.  This makes it inside the <code class="docutils literal notranslate"><span class="pre">MainClass</span></code> but outside the <code class="docutils literal notranslate"><span class="pre">Main</span></code> method.</p>
+</div>
+</div>
+<div class="section" id="invoking-the-method">
+<h2><span class="section-number">11.2.3. </span>Invoking the Method<a class="headerlink" href="#invoking-the-method" title="Permalink to this headline">¶</a></h2>
+<p>We are using static methods with expected returns, these take input and return output, or values.
+So we must provide them with input if we want to see them work.
+Since this method is returning a numeric value, it needs to be stored somewhere.
+You can create a variable to do so, as we did in <strong>Line 13</strong> with the variable <code class="docutils literal notranslate"><span class="pre">squaredNum</span></code>.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">digit</span> <span class="p">=</span> <span class="m">4</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">squaredNum</span> <span class="p">=</span> <span class="n">SquareTheNumber</span><span class="p">(</span><span class="n">digit</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">squaredNum</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">16</span>
+</pre></div>
+</div>
+<p>If you notice in <strong>Line 13</strong> we also invoked the method with the input variable <code class="docutils literal notranslate"><span class="pre">digit</span></code> from <strong>Line 12</strong>.
+When we print <code class="docutils literal notranslate"><span class="pre">squaredNum</span></code> we see the result <code class="docutils literal notranslate"><span class="pre">16</span></code>, as expected since 4 * 4 is 16.</p>
+<p>Another way to take advantage of the returned value in this static method is to use the method call as part of an expression.  This is what
+we did in <strong>Line 14</strong>.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">digit</span> <span class="p">=</span> <span class="m">4</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">squaredNum</span> <span class="p">=</span> <span class="n">SquareTheNumber</span><span class="p">(</span><span class="n">digit</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">squaredAndSummed</span> <span class="p">=</span> <span class="n">squaredNum</span> <span class="p">+</span> <span class="n">SquareTheNumber</span><span class="p">(</span><span class="n">digit</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">squaredAndSummed</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">32</span>
+</pre></div>
+</div>
+<p>And the last example in <strong>Line 18</strong> is to use an <em>integer literal</em> or place the required data type value in the parentheses.
+In this example, we called <code class="docutils literal notranslate"><span class="pre">SquareTheNumber</span></code> and passed <code class="docutils literal notranslate"><span class="pre">5</span></code> directly in the parentheses.  When we printed the results, we got <code class="docutils literal notranslate"><span class="pre">25</span></code>, as expected.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">squaredNum</span><span class="p">(</span><span class="m">5</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Output</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">25</span>
+</pre></div>
+</div>
+<p>These are three ways to invoke, or call, static methods that have a return type.
+Return types are not required.  Methods that return nothing are called <strong>void</strong> methods.
+When working with void methods, the call is a slightly different.  We will look at them next.</p>
+<p><strong>Method invocation</strong> or <strong>invoking the method</strong> are synonmous terms for <strong>calling the method</strong>.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">11.2.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is the expected output returned by the <code class="docutils literal notranslate"><span class="pre">Doubles</span></code> method if the input, <code class="docutils literal notranslate"><span class="pre">x</span></code>, was 7?</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="kt">int</span> <span class="nf">Doubles</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">return</span> <span class="p">(</span><span class="m">2</span> <span class="p">*</span> <span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic simple">
+<li>14</li>
+<li>49</li>
+<li>77</li>
+<li>7</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="what-is-a-method.html"><span aria-hidden="true">&larr;</span> <span class="section-number">11.1. </span>Introduction</a></li>
+        
+        
+        <li class="next"><a href="using-methods.html"><span class="section-number">11.3. </span>Using Methods <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

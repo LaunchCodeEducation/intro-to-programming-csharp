@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10.8. Dictionary Gradebook &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10.9. Exercises: Control Flow and Collections" href="exercises.html" />
+    <link rel="prev" title="10.7. Dictionary" href="dictionary.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">10. </span>Control Flow and Collections</a></li>
+    <li class="active"><span class="section-number">10.8. </span>Dictionary Gradebook</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="dictionary-gradebook">
+<h1><span class="section-number">10.8. </span>Dictionary Gradebook<a class="headerlink" href="#dictionary-gradebook" title="Permalink to this headline">¶</a></h1>
+<p>We suggest you open the following <a class="reference external" href="https://replit.com/&#64;launchcode/Gradebook-Dictionary-CSharp#main.cs" target="_blank">Dictionary Gradebook<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> in your replit IDE.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MainClass</span>
+<span class="p">{</span>
+   <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">double</span><span class="p">&gt;</span> <span class="n">students</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">double</span><span class="p">&gt;();</span>
+      <span class="kt">string</span> <span class="n">newStudent</span><span class="p">;</span>
+
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Enter your students (or ENTER to finish):&quot;</span><span class="p">);</span>
+
+      <span class="c1">// Get student names and grades</span>
+      <span class="k">do</span>
+      <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Student: &quot;</span><span class="p">);</span>
+            <span class="kt">string</span> <span class="n">input</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+            <span class="n">newStudent</span> <span class="p">=</span> <span class="n">input</span><span class="p">;</span>
+
+            <span class="k">if</span> <span class="p">(!</span><span class="n">Equals</span><span class="p">(</span><span class="n">newStudent</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">))</span>
+            <span class="p">{</span>
+               <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Grade: &quot;</span><span class="p">);</span>
+               <span class="n">input</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+               <span class="kt">double</span> <span class="n">newGrade</span> <span class="p">=</span> <span class="kt">double</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+               <span class="n">students</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">newStudent</span><span class="p">,</span> <span class="n">newGrade</span><span class="p">);</span>
+
+               <span class="c1">// Read in the newline before looping back</span>
+               <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+            <span class="p">}</span>
+
+      <span class="p">}</span> <span class="k">while</span> <span class="p">(!</span><span class="n">Equals</span><span class="p">(</span><span class="n">newStudent</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">));</span>
+
+      <span class="c1">// Print class roster</span>
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;\nClass roster:&quot;</span><span class="p">);</span>
+      <span class="kt">double</span> <span class="n">sum</span> <span class="p">=</span> <span class="m">0.0</span><span class="p">;</span>
+
+      <span class="k">foreach</span> <span class="p">(</span><span class="n">KeyValuePair</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">double</span><span class="p">&gt;</span> <span class="n">student</span> <span class="k">in</span> <span class="n">students</span><span class="p">)</span>
+      <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="n">Key</span> <span class="p">+</span> <span class="s">&quot; (&quot;</span> <span class="p">+</span> <span class="n">student</span><span class="p">.</span><span class="n">Value</span> <span class="p">+</span> <span class="s">&quot;)&quot;</span><span class="p">);</span>
+            <span class="n">sum</span> <span class="p">+=</span> <span class="n">student</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="kt">double</span> <span class="n">avg</span> <span class="p">=</span> <span class="n">sum</span> <span class="p">/</span> <span class="n">students</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Average grade: &quot;</span> <span class="p">+</span> <span class="n">avg</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Notice how a <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> called <code class="docutils literal notranslate"><span class="pre">students</span></code> is declared on <strong>Line 8</strong>:</p>
+<div class="highlight-C# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">double</span><span class="p">&gt;</span> <span class="n">students</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">double</span><span class="p">&gt;();</span>
+</pre></div>
+</td></tr></table></div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">&lt;string,</span> <span class="pre">double&gt;</span></code> defines the data types for this dictionary’s
+<code class="docutils literal notranslate"><span class="pre">&lt;key,</span> <span class="pre">value&gt;</span></code> pairs.</p>
+<p>We can add a new item with a <code class="docutils literal notranslate"><span class="pre">.Add()</span></code> method, specifying both key and
+value:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">students</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">newStudent</span><span class="p">,</span> <span class="n">newGrade</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p id="index-0">And while we don’t do so in this example, we may also access <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>
+elements using <strong>bracket notation</strong>. If we had a key/value pair of
+<code class="docutils literal notranslate"><span class="pre">&quot;jesse&quot;/4.0</span></code> in the <code class="docutils literal notranslate"><span class="pre">students</span></code> dictionary, we could access the grade with:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">jesseGrade</span> <span class="p">=</span> <span class="n">students</span><span class="p">[</span><span class="s">&quot;jesse&quot;</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>Variables may be used to access elements:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">&quot;jesse&quot;</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">jesseGrade</span> <span class="p">=</span> <span class="n">students</span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
+</pre></div>
+</td></tr></table></div>
+<p id="kvp-foreach">Looping through a dictionary is slightly more complex than it is for ordered lists.
+Let’s look at the <code class="docutils literal notranslate"><span class="pre">foreach</span></code> loop from this example:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>37
+38
+39
+40</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">foreach</span><span class="p">(</span><span class="n">KeyValuePair</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">double</span><span class="p">&gt;</span> <span class="n">student</span> <span class="k">in</span> <span class="n">students</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="n">Key</span> <span class="p">+</span> <span class="s">&quot; (&quot;</span> <span class="p">+</span> <span class="n">student</span><span class="p">.</span><span class="n">Value</span> <span class="p">+</span> <span class="s">&quot;)&quot;</span><span class="p">);</span>
+   <span class="n">sum</span> <span class="p">+=</span> <span class="n">student</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p id="index-1">The iterator variable, <code class="docutils literal notranslate"><span class="pre">student</span></code>, is of type
+<code class="docutils literal notranslate"><span class="pre">KeyValuePair&lt;string,</span> <span class="pre">double&gt;</span></code>. The class <strong>KeyValuePair&lt;T,T&gt;</strong> is specifically
+constructed to be used in this fashion, to represent key/value pairs
+within dictionaries. Each <code class="docutils literal notranslate"><span class="pre">KeyValuePair</span></code> object has a <code class="docutils literal notranslate"><span class="pre">Key</span></code> property and a
+<code class="docutils literal notranslate"><span class="pre">Value</span></code> property.</p>
+<p>If you only need to access the key of each item, you can
+construct a simpler loop and use the <code class="docutils literal notranslate"><span class="pre">Keys</span></code> property of the <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> class:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">foreach</span> <span class="p">(</span><span class="kt">string</span> <span class="n">studentName</span> <span class="k">in</span> <span class="n">students</span><span class="p">.</span><span class="n">Keys</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">studentName</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>A similar structure applies if you only need the values, using
+<code class="docutils literal notranslate"><span class="pre">students.Values</span></code>:</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">foreach</span> <span class="p">(</span><span class="kt">double</span> <span class="n">grade</span> <span class="k">in</span> <span class="n">students</span><span class="p">.</span><span class="n">Values</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">grade</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>We have only brushed the surface of how arrays, <code class="docutils literal notranslate"><span class="pre">Lists</span></code>, and dictionaries work.
+We leave it to you to refer to the official documentation linked througout the chapter for more
+details. You’ll certainly be using <code class="docutils literal notranslate"><span class="pre">Lists</span></code> and dictionaries in more ways than
+those covered in this lesson, but with the knowledge you have now, you
+should be able to use C# collections and learn new uses as you go.</p>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="dictionary.html"><span aria-hidden="true">&larr;</span> <span class="section-number">10.7. </span>Dictionary</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">10.9. </span>Exercises: Control Flow and Collections <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

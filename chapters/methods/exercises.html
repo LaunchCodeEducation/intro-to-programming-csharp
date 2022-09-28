@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11.6. Exercises: Methods &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.7. Studio: Methods" href="studio.html" />
+    <link rel="prev" title="11.5. Scope" href="method-scope.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">11. </span>Methods</a></li>
+    <li class="active"><span class="section-number">11.6. </span>Exercises: Methods</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="exercises-methods">
+<h1><span class="section-number">11.6. </span>Exercises: Methods<a class="headerlink" href="#exercises-methods" title="Permalink to this headline">¶</a></h1>
+<p>To become good at solving problems with code you need to be able to break large
+problems into small ones. Usually, these smaller problems will take the form of
+methods that are used to solve the larger problem. Therefore, to become good
+at solving problems you need to become good at writing methods. And to master
+methods, you need to write a <em>lot</em> of them.</p>
+<p>These exercises ask you to write lots of methods, starting with
+small one and end with a larger, more complicated one.</p>
+<p>At the end, you will be able to create strings of shapes, like this nifty
+diamond:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #
+   ###
+  #####
+ #######
+#########
+#########
+ #######
+  #####
+   ###
+    #
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">As you build your methods, remember to keep the output in mind.
+Do you want a value returned or should it print directly to the console when invoked?
+How many things are being repeated?</p>
+</div>
+<div class="section" id="getting-started">
+<h2><span class="section-number">11.6.1. </span>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>Click here and fork the <a class="reference external" href="https://replit.com/&#64;launchcode/Hashtag-Exercises-CSharp" target="_blank">starter code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">As you create these methods, keep the shape of your output in mind.
+Remember the differences between <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code> and <code class="docutils literal notranslate"><span class="pre">Console.Write</span></code>.</p>
+</div>
+</div>
+<div class="section" id="rectangles">
+<h2><span class="section-number">11.6.2. </span>Rectangles<a class="headerlink" href="#rectangles" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Write a method <code class="docutils literal notranslate"><span class="pre">MakeLine(size)</span></code> that prints a line with exactly <code class="docutils literal notranslate"><span class="pre">size</span></code>
+hashes.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">MakeLine</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#####
+</pre></div>
+</div>
+</li>
+<li><p class="first">Write a method called <code class="docutils literal notranslate"><span class="pre">MakeSquare(size)</span></code> that prints a <code class="docutils literal notranslate"><span class="pre">size</span></code> by
+<code class="docutils literal notranslate"><span class="pre">size</span></code> iteration of hashes.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">MakeSquare</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#####
+#####
+#####
+#####
+#####
+</pre></div>
+</div>
+<p>Asthetically it’s not a “perfect” square, but a single argument led to its creation.</p>
+</li>
+<li><p class="first">Write a method <code class="docutils literal notranslate"><span class="pre">MakeRectangle(width,</span> <span class="pre">height)</span></code> that prints a
+rectangle with the given width and height.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">MakeRectangle</span><span class="p">(</span><span class="m">8</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>########
+########
+########
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="triangles">
+<h2><span class="section-number">11.6.3. </span>Triangles<a class="headerlink" href="#triangles" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Write a method <code class="docutils literal notranslate"><span class="pre">MakeDownwardStairs(height)</span></code> that prints the staircase
+pattern shown below, with the given height.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">MakeDownwardStairs</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#
+##
+###
+####
+#####
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic" start="2">
+<li><p class="first">Write a method <code class="docutils literal notranslate"><span class="pre">MakeSpaceLine(numSpaces,</span> <span class="pre">numChars)</span></code> that prints a line
+with exactly the specified number of spaces, followed by the
+specified number of hashes, followed again by <code class="docutils literal notranslate"><span class="pre">numSpaces</span></code> more spaces.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">MakeSpaceLine</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---#####---
+</pre></div>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">We have inserted dashes to represent spaces, so they are visible in the output.
+This can be helpful for building the pattern, but make sure to remove them from your final code.</p>
+</div>
+</li>
+<li><p class="first">Write a method <code class="docutils literal notranslate"><span class="pre">MakeIsoscelesTriangle(height)</span></code> that prints a triangle
+of the given height.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">MakeIsoscelesTriangle</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #
+   ###
+  #####
+ #######
+#########
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="diamonds">
+<h2><span class="section-number">11.6.4. </span>Diamonds<a class="headerlink" href="#diamonds" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Write a method <code class="docutils literal notranslate"><span class="pre">MakeDiamond(height)</span></code> that prints a diamond where the
+triangle formed by the <em>top</em> portion has the given height.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">MakeDiamond</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #
+   ###
+  #####
+ #######
+#########
+#########
+ #######
+  #####
+   ###
+    #
+</pre></div>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Consider what happens if you create a triangle and reverse it within the same method?</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="bonus-mission">
+<h2><span class="section-number">11.6.5. </span>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Refactor your methods so that they also take a single character as a parameter,
+and draw the shapes with that character instead of always using <code class="docutils literal notranslate"><span class="pre">#</span></code>.  Some ideas <code class="docutils literal notranslate"><span class="pre">*</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.</li>
+<li>Make the new parameter optional, with default value <code class="docutils literal notranslate"><span class="pre">#</span></code>.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="method-scope.html"><span aria-hidden="true">&larr;</span> <span class="section-number">11.5. </span>Scope</a></li>
+        
+        
+        <li class="next"><a href="studio.html"><span class="section-number">11.7. </span>Studio: Methods <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

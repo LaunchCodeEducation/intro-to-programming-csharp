@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15.2. Repositories and Commits &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="15.3. Remote Repositories" href="remote-repository.html" />
+    <link rel="prev" title="15.1. What is Git?" href="background.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">15. </span>Git More Collaboration</a></li>
+    <li class="active"><span class="section-number">15.2. </span>Repositories and Commits</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="repositories-and-commits">
+<h1><span class="section-number">15.2. </span>Repositories and Commits<a class="headerlink" href="#repositories-and-commits" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="index-0"></span><div class="section" id="create-a-repository">
+<span id="create-repo"></span><span id="index-1"></span><h2><span class="section-number">15.2.1. </span>Create a Repository<a class="headerlink" href="#create-a-repository" title="Permalink to this headline">¶</a></h2>
+<p>To get started with a git repository (or “repo” for short), the programmer must first create one.
+Let’s walk through the steps together using the terminal and a text editor.</p>
+<p>To create a git repository, you will need to navigate to your project directory using the terminal.
+Either select a current directory or make one.  Let’s make one called <code class="docutils literal notranslate"><span class="pre">homework</span></code>.
+Once created and you are inside your project directory, we are going to initialize git.</p>
+<p>Go ahead and use the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>, like so:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Students-Computer:~ student$ mkdir homework
+Students-Computer:~ student$ cd homework
+Students-Computer:homework student$ git init
+   Initialized empty Git repository in /Users/student/homework/.git/
+</pre></div>
+</div>
+<p>Congrats! You have initialized git version control in this directory.
+Now you are ready to code away!</p>
+<p id="index-2">Let’s add some code or files to this project.
+Since we are using the terminal, let’s create a text file by using <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">my_project.txt</span></code>.
+Now open your new file, type your name, and save your file.</p>
+<p>Back in your terminal, type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Students-Computer:homework student$ git status
+On main branch
+
+No commits yet
+
+Untracked files:
+   (use &quot;git add &lt;file&gt;...&quot; to include wht will be committed)
+
+      my_project.txt
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+Students-Computer:homework student$
+</pre></div>
+</div>
+<p>You saved your project on your computer, but let’s commit it to your Git.</p>
+<div class="admonition-note admonition" id="index-3">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p><strong>A note on the</strong> <code class="docutils literal notranslate"><span class="pre">default</span></code> <strong>branch</strong></p>
+<p>When using a VCS, the first branch created is your <code class="docutils literal notranslate"><span class="pre">default</span></code> branch.
+On your computer, it is often named the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p>
+<p>Later we will be working with GitHub, which is an online repository commonly used when collaborating with others.
+GitHub’s default branch is called <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<p>The examples in this chapter will be using <code class="docutils literal notranslate"><span class="pre">main</span></code> as the default branch.</p>
+<p>If you would like to rename your branch to match, the git command is <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-m</span> <span class="pre">NEW-NAME-HERE</span></code>.</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Students-Computer:~ student$ git branch -m main
+Students-Computer:~ student$ git status
+On branch main
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="making-commits">
+<h2><span class="section-number">15.2.2. </span>Making Commits<a class="headerlink" href="#making-commits" title="Permalink to this headline">¶</a></h2>
+<p>Usually, you will have spent more time coding and saving, and will have a larger amount of code to stage and commit.
+For the sake of our walkthrough, we are going to keep things shorter and simpler.</p>
+<p>Earlier we added our first file, <code class="docutils literal notranslate"><span class="pre">my_project.txt</span></code>, to our <code class="docutils literal notranslate"><span class="pre">homework</span></code> directory.  It might be a good time to make a <strong>commit</strong> to your repository.
+A commit is a record of changes you made to your repository.
+It allows you to document your progress by creating a time-stamp with a message that you, or others, can reference.
+When you look at a timeline of commits, you should be able to see the progress of development.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/git_commit_2x.png"><img alt="Image of commit tree showing a degression in commit messages as project drags on." src="../../_images/git_commit_2x.png" style="width: 439.0px; height: 250.5px;" /></a>
+<p class="caption"><span class="caption-text">Comic Source: <a class="reference external" href="https://xkcd.com/1296/" target="_blank">XKCD.com<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.  Used with permission.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>So when do you make a commit to your repository?</p>
+<blockquote class="pull-quote">
+<div>Any time you make a significant change in functionality, you should a commit your work.</div></blockquote>
+<p>If you have created the Git repository and are ready to commit, you can do so by following the commit process.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Git does have a simple commit command; however, making a proper commit requires
+that you follow a longer procedure.</p>
+</div>
+<div class="section" id="the-four-stages-of-making-a-commit">
+<span id="local-commit"></span><span id="index-4"></span><h3><span class="section-number">15.2.2.1. </span>The Four Stages of Making a <code class="docutils literal notranslate"><span class="pre">commit</span></code><a class="headerlink" href="#the-four-stages-of-making-a-commit" title="Permalink to this headline">¶</a></h3>
+<p>The procedure for making a commit to a Git repository includes four stages.</p>
+<ol class="arabic">
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> gives you information about any changed files. Will also tell you which branch you are currently on.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Students-Computer:homework student$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+   <span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to include what will be committed<span class="o">)</span>
+
+      my_project.txt
+
+nothing added to commit but untracked files present <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> to track<span class="o">)</span>
+Students-Computer:homework student$ git add my_project.txt
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> allows you to add specific or all changed files to a commit.
+You can type the name of the file or files you want to add to the repo.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Students-Computer:homework student$ git add my_project.txt
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Your</span> <span class="pre">message&quot;</span></code> creates the new commit with the files that you added and a message describing the changes.
+Here, <code class="docutils literal notranslate"><span class="pre">&quot;Your</span> <span class="pre">message&quot;</span></code> should be a descriptive message within double-quotes.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Students-Computer:homework student$ git commit -m <span class="s2">&quot;My initial commit&quot;</span>
+<span class="o">[</span>main <span class="o">(</span>root-commit<span class="o">)</span> 7e771d7<span class="o">]</span> My initial commit
+<span class="m">1</span> file changed, <span class="m">1</span> insertion <span class="o">(</span>+<span class="o">)</span>
+create mode <span class="m">100644</span> my_project.txt
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> displays a log of every commit in the repository.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Students-Computer:homework student$ git log
+commit 7e771d788ddfd6080f0a9f10f9aed7105b1a3bcf <span class="o">(</span>HEAD -&gt; main<span class="o">)</span>
+Author: Student &lt;lc101.student@email.com&gt;
+Date:  Wed Apr <span class="m">24</span> <span class="m">14</span>:36:53 <span class="m">2019</span> -0500
+</pre></div>
+</div>
+</li>
+</ol>
+<p>If the steps above are followed correctly, you will find your latest commit at the top of the log.</p>
+</div>
+</div>
+<div class="section" id="git-tips-and-tricks">
+<h2><span class="section-number">15.2.3. </span>git Tips and Tricks<a class="headerlink" href="#git-tips-and-tricks" title="Permalink to this headline">¶</a></h2>
+<p>A few other commands that you might find helpful.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> this command is useful when you have multiple files that you would like to stage for a commit.  This command will add <em>all</em> files to that next commit.</li>
+<li><code class="docutils literal notranslate"><span class="pre">clear</span></code> this command is for the terminal.  This will clear all text from your terminal.</li>
+</ul>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">15.2.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What git command is NOT a part of the commit process?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="background.html"><span aria-hidden="true">&larr;</span> <span class="section-number">15.1. </span>What is Git?</a></li>
+        
+        
+        <li class="next"><a href="remote-repository.html"><span class="section-number">15.3. </span>Remote Repositories <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

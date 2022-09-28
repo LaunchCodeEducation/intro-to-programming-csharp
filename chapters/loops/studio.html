@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9.10. Studio: Loops &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10. Control Flow and Collections" href="../collections-and-flow/index.html" />
+    <link rel="prev" title="9.9. Exercises: Loops" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">9. </span>Repeating With Loops</a></li>
+    <li class="active"><span class="section-number">9.10. </span>Studio: Loops</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="studio-loops">
+<span id="loop-studio"></span><h1><span class="section-number">9.10. </span>Studio: Loops<a class="headerlink" href="#studio-loops" title="Permalink to this headline">¶</a></h1>
+<p>Now that we’ve launched our shuttle, let’s use loops (iteration) to
+automate some tasks.</p>
+<div class="section" id="part-a-self-destruct-system">
+<h2><span class="section-number">9.10.1. </span>Part A (Self-destruct system)<a class="headerlink" href="#part-a-self-destruct-system" title="Permalink to this headline">¶</a></h2>
+<p>If the shuttle gets hijacked by space pirates, the astronauts can activate
+a self-destruct sequence to provide some drama for the viewers at home.</p>
+<p>In order to prevent a rogue astronaut from activating the code, it takes
+<em>two</em> crew members to begin the countdown.  Each person must enter a
+different code, after which the computer will “zip” them together before
+overloading the engines.</p>
+<p>For the purposes of easier (human) readability, try using the following console method <code class="docutils literal notranslate"><span class="pre">Console.Write</span></code>. How is it different from <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code>?</p>
+<ol class="arabic">
+<li><p class="first">Construct a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that combines two strings together, alternating the characters from each source.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<ol class="last arabic simple">
+<li>If <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">partOne</span> <span class="pre">=</span> <span class="pre">&quot;1234&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">partTwo</span> <span class="pre">=</span> <span class="pre">&quot;5678&quot;</span></code>, then the output will be “15263748”.</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">code1</span> <span class="pre">=</span> <span class="pre">&quot;ABCDEF&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">code2</span> <span class="pre">=</span> <span class="pre">&quot;notyet&quot;</span></code>, then the output will be “AnBoCtDyEeFt”.</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">ka</span> <span class="pre">=</span> <span class="pre">&quot;LoOt&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">blam</span> <span class="pre">=</span> <span class="pre">&quot;oku!&quot;</span></code>, then the output will be <code class="docutils literal notranslate"><span class="pre">&quot;LookOut!&quot;</span></code>.</li>
+</ol>
+</div>
+<p><a class="reference external" href="https://replit.com/&#64;launchcode/LoopStudioPartA-CSharp" target="_blank">Code it at replt.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</li>
+</ol>
+</div>
+<div class="section" id="part-b-put-dinner-together">
+<h2><span class="section-number">9.10.2. </span>Part B (Put dinner together)<a class="headerlink" href="#part-b-put-dinner-together" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">First, initialize variables to store the following arrays.  Remember to use descriptive names.</p>
+<ul>
+<li><p class="first">Protein options:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&quot;chicken&quot;, &quot;pork&quot;, &quot;tofu&quot;, &quot;beef&quot;, &quot;fish&quot;, &quot;beans&quot;}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Grain options:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&quot;rice&quot;, &quot;pasta&quot;, &quot;corn&quot;, &quot;potato&quot;, &quot;quinoa&quot;, &quot;crackers&quot;}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Vegetable options:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&quot;peas&quot;, &quot;green beans&quot;, &quot;kale&quot;, &quot;edamame&quot;, &quot;broccoli&quot;, &quot;asparagus&quot;}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Beverage options:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&quot;juice&quot;, &quot;milk&quot;, &quot;water&quot;, &quot;soy milk&quot;, &quot;soda&quot;, &quot;tea&quot;}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Dessert options</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&quot;apple&quot;, &quot;banana&quot;, &quot;more kale&quot;, &quot;ice cream&quot;, &quot;chocolate&quot;, &quot;kiwi&quot;}
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<p><a class="reference external" href="https://replit.com/&#64;launchcode/LoopStudioPartsBandC-CSharp" target="_blank">Code it at replt.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<ol class="arabic simple" start="2">
+<li>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to assemble 6 meals.<ol class="loweralpha">
+<li>The meals must include one item from each of the source arrays.</li>
+<li>Each ingredient can only be used ONCE.</li>
+<li>Print out each meal.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="part-b-refinements">
+<h2><span class="section-number">9.10.3. </span>Part B (Refinements)<a class="headerlink" href="#part-b-refinements" title="Permalink to this headline">¶</a></h2>
+<p>Update your code from part A to add user input and validation.</p>
+<ol class="arabic simple">
+<li>Using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, ask the user to select the number of meals to assemble.
+Validate the input to make sure it is an integer from 1 - 6.</li>
+<li>Refactor your <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to use the user input to select and print that many meals.</li>
+<li><strong>Bonus Mission:</strong> <em>(Optional)  To enhance your learning, modify your code to:</em><ol class="loweralpha">
+<li>Use string formatting to print something more interesting than a list of “chicken”, “rice”, “peas”, “juice”, “apple” for the meal outputs.</li>
+<li>Create a string array of labels to describe each item in a meal.  Use a nested loop print your each item with the appropriate label.</li>
+<li>Modify your code to check each meal for kale. If present, after the meal output add, “Don’t worry, you can have double chocolate tomorrow.”</li>
+</ol>
+</li>
+</ol>
+<p>Bon appetit!</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> <span class="section-number">9.9. </span>Exercises: Loops</a></li>
+        
+        
+        <li class="next"><a href="../collections-and-flow/index.html"><span class="section-number">10. </span>Control Flow and Collections <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

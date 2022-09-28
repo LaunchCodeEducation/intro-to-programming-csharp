@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12.2. Classes, Objects, and Methods! Oh My! &#8212; Introduction to Programming in C#  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="12.3. The Math Class" href="math-class.html" />
+    <link rel="prev" title="12.1. Classes: A Primer" href="class-type.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">12. </span>Classes, Objects, and Math Class</a></li>
+    <li class="active"><span class="section-number">12.2. </span>Classes, Objects, and Methods! Oh My!</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="classes-objects-and-methods-oh-my">
+<h1><span class="section-number">12.2. </span>Classes, Objects, and Methods! Oh My!<a class="headerlink" href="#classes-objects-and-methods-oh-my" title="Permalink to this headline">¶</a></h1>
+<p>Classes are templates that define <strong>objects</strong>.  The class becomes the type of that object, but is not an object itself.
+It’s like a cookie cutter.  It shapes the cookie, but is not the cookie itself.</p>
+<p>An object is its own entity of whatever type class created it.
+When objects are created, it is often referred to as an <strong>instance of class</strong>.
+We create, modify, manipulate, and store objects in our programs.
+Classes are a way to create many new objects using a single template.</p>
+<p>You have been working with classes and objects since day 1.
+<code class="docutils literal notranslate"><span class="pre">WriteLine()</span></code> is a method of the <code class="docutils literal notranslate"><span class="pre">Console</span></code> class.
+You have initalized string objects, and instantiated new array and <code class="docutils literal notranslate"><span class="pre">List</span></code> objects.</p>
+<p>Classes also contain any rules and methods for the object it creates.
+This is why  <code class="docutils literal notranslate"><span class="pre">List</span></code> methods don’t work on <strong>string</strong> objects.
+C# has many built-in classes, but as a programmer you will want to create your own.
+In order to be able to do that, we need to explore the basics of classes and objects.</p>
+<div class="section" id="what-is-a-class">
+<h2><span class="section-number">12.2.1. </span>What Is A Class?<a class="headerlink" href="#what-is-a-class" title="Permalink to this headline">¶</a></h2>
+<p>A class is a template, or set of blueprints, used to create objects.
+The template dictates what an object of this class requires, as well as how that object behaves.</p>
+<p>To declare a new class, you will need the keyword <code class="docutils literal notranslate"><span class="pre">class</span></code>.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>When working with replit.com, you will need to create a new class in a new file.
+In order for your class to be recognized by <code class="docutils literal notranslate"><span class="pre">MainClass</span></code> in replit, you will need to provide your class its own unique <code class="docutils literal notranslate"><span class="pre">namespace</span></code>.</p>
+<p class="last">We will be moving to a different IDE soon, so any replit.com code examples will be provided to you.</p>
+</div>
+<p>When working in a project with multiple classes, it is common to have a <code class="docutils literal notranslate"><span class="pre">namespace</span></code>.
+A <code class="docutils literal notranslate"><span class="pre">namespace</span></code> connects all classes within a project.
+In this context, a <code class="docutils literal notranslate"><span class="pre">namespace</span></code> can be more for organizational purposes, providing direction to each class within the main project.
+If the <code class="docutils literal notranslate"><span class="pre">namespace</span></code> is not part of the <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">method</span></code> you will have to access it through a <code class="docutils literal notranslate"><span class="pre">using</span></code> statement.
+Just like we did with Collections.
+This tells the compiler to look through any classes within the same <code class="docutils literal notranslate"><span class="pre">namespace</span></code> for definitions and requirements.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Here is an example of two classes:  a new <code class="docutils literal notranslate"><span class="pre">Cat</span></code> class, and the <code class="docutils literal notranslate"><span class="pre">MainClass</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Cat</span></code> class has been created under the <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">Pets</span></code> (as seen in <strong>Line 3</strong>).
+The keyword <code class="docutils literal notranslate"><span class="pre">class</span></code> is used to declare that <code class="docutils literal notranslate"><span class="pre">Cat</span></code> is a class.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Pets</span>
+<span class="p">{</span>
+   <span class="c1">//in the Cat class</span>
+   <span class="k">public</span> <span class="k">class</span> <span class="nc">Cat</span>
+   <span class="p">{</span>
+      <span class="c1">//class attribute</span>
+      <span class="k">public</span> <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Alyce&quot;</span><span class="p">;</span>
+
+      <span class="c1">//class member</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">PetChin</span><span class="p">()</span>
+      <span class="p">{</span>
+         <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Purr&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="k">public</span> <span class="nf">Cat</span><span class="p">()</span>
+      <span class="p">{</span>
+
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/ClassBasics101-CSharp" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="c1">//provide access to class definitions contained within this namespace.</span>
+<span class="k">using</span> <span class="nn">Pets</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MainClass</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span> <span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">Cat</span> <span class="n">myCat</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+
+      <span class="n">myCat</span><span class="p">.</span><span class="n">PetChin</span><span class="p">();</span>
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">myCat</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Purr
+Alyce
+</pre></div>
+</div>
+</div>
+<div class="section" id="instantiating-objects">
+<h3><span class="section-number">12.2.1.1. </span>Instantiating Objects<a class="headerlink" href="#instantiating-objects" title="Permalink to this headline">¶</a></h3>
+<p>When working with classes to create objects, you will see a familiar pattern.
+To delcare a <em>new</em> object of a class you will use the keyword <code class="docutils literal notranslate"><span class="pre">new</span></code> as you have done with <code class="docutils literal notranslate"><span class="pre">Lists</span></code>, arrays, and dictionaries.
+The data type for these objects is the class, which you reference directly.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">//data type                  constructor with possilbe parameters</span>
+  <span class="n">ClassName</span> <span class="n">objectName</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ClassName</span><span class="p">(</span><span class="n">possible</span> <span class="n">parameters</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In our <code class="docutils literal notranslate"><span class="pre">Cat</span></code> class example, we instantiate <code class="docutils literal notranslate"><span class="pre">myCat</span></code> which is a new <code class="docutils literal notranslate"><span class="pre">Cat</span></code> object.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Cat</span> <span class="n">myCat</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="class-constructors">
+<h3><span class="section-number">12.2.1.2. </span>Class Constructors<a class="headerlink" href="#class-constructors" title="Permalink to this headline">¶</a></h3>
+<p>In order to instantiate a new object, we need to know what values are needed, if any.
+To do this, we use a class <strong>constructor</strong>.
+A constructor is a special method that instantiates new objects.
+Just like a method, we pass it arguments that are used to set the attributes, which will also determine behvaiors.</p>
+<p>Constructors can also be parameterless.  We call this the <strong>default constructor</strong>.
+A default constructor is left empty, allowing the object to be created with any attributes initalized manually via dot notation.</p>
+<p>The examples in this section will be using parameterless, or empty, constructors to walkthrough basic concepts of classes.
+We will explore these class members and constuctors deeper in the upcoming chapters.</p>
+<p>In our <code class="docutils literal notranslate"><span class="pre">Cat</span></code> example, the default constructor is on <strong>Line 16</strong>.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nf">Cat</span><span class="p">()</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>This default constructor means that we do not have to provide any arguments in order to create a new <code class="docutils literal notranslate"><span class="pre">Cat</span></code> object.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">//within the Main method</span>
+<span class="n">Cat</span> <span class="n">myCat</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="class-members">
+<h3><span class="section-number">12.2.1.3. </span>Class Members<a class="headerlink" href="#class-members" title="Permalink to this headline">¶</a></h3>
+<p>Class definitions deterimine any <strong>attributes</strong> the object requires, as well as any <strong>behaviors</strong> of the object.
+Attributes are class variables, also called <strong>fields</strong>.  They can be hard coded, or filled in at the time of instantiation.</p>
+<p>Methods are the behaviors or actions your class is able to perform on objects created by that class.
+They belong to the class they are defined in.  This means that you are not able to call methods from one class on another.</p>
+<p>We can refer to the combination of class attributes and methods as <strong>class members</strong>.</p>
+<p>Class members will be initialized when as an object is instantiated.
+This allows you to be able to create multiple unique objects from a single class.</p>
+<p>In our <code class="docutils literal notranslate"><span class="pre">Cat</span></code> class we have defined a string <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute and a <code class="docutils literal notranslate"><span class="pre">PetChin</span></code> method.
+These are available to any object instantiated by the <code class="docutils literal notranslate"><span class="pre">Cat</span></code> class.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">//within the Cat class</span>
+<span class="k">public</span> <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Alyce&quot;</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">void</span> <span class="nf">PetChin</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Purr&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Dot notation is required to access the class members.
+<strong>Line 11</strong> we use dot notation to print the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">myCat</span></code> object.
+In <strong>Line 12</strong> we call the <code class="docutils literal notranslate"><span class="pre">PetChin</span></code> method on the <code class="docutils literal notranslate"><span class="pre">myCat</span></code> object.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">//within the Main method</span>
+<span class="n">Cat</span> <span class="n">myCat</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">myCat</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+<span class="n">myCat</span><span class="p">.</span><span class="n">PetChin</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Alyce</span>
+<span class="n">Purr</span>
+</pre></div>
+</div>
+<p>Since we used the default constructor to create the <code class="docutils literal notranslate"><span class="pre">myCat</span></code> object,
+the attribute <code class="docutils literal notranslate"><span class="pre">name</span></code> will be “Alyce” or exactly what we coded it to be.</p>
+<p>If we wanted to update the name, you would do so like any other variable.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">//within the Main method</span>
+<span class="n">Cat</span> <span class="n">myCat</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+
+<span class="n">myCat</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Porkchop&quot;</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">myCat</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Porkchop</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-multiple-objects">
+<h2><span class="section-number">12.2.2. </span>Creating Multiple Objects<a class="headerlink" href="#creating-multiple-objects" title="Permalink to this headline">¶</a></h2>
+<p>What if we want to create multiple instances of the <code class="docutils literal notranslate"><span class="pre">Cat</span></code> class?
+Classes are templates remember, we can use them to do just that.</p>
+<p>If we want to create multiple instances of the <code class="docutils literal notranslate"><span class="pre">Cat</span></code> class, we need to instantiate more <code class="docutils literal notranslate"><span class="pre">Cat</span></code> objects.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="c1">//provide access to class definitions contained within this namespace.</span>
+<span class="k">using</span> <span class="nn">Pets</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MainClass</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span> <span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">Cat</span> <span class="n">myCat</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+
+      <span class="n">myCat</span><span class="p">.</span><span class="n">PetChin</span><span class="p">();</span>
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">myCat</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+
+
+      <span class="n">Cat</span> <span class="n">hisCat</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">hisCat</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+      <span class="n">hisCat</span><span class="p">.</span><span class="n">PetChin</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Purr
+Alyce
+
+Alyce
+Purr
+</pre></div>
+</div>
+<p>Now we have two <code class="docutils literal notranslate"><span class="pre">Cat</span></code> objects, which have the same class members. But what if <code class="docutils literal notranslate"><span class="pre">hisCat</span></code> has a different name?
+We can update the value of the attribute, just like any other variable.</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Cat</span> <span class="n">hisCat</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+
+<span class="n">hisCat</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Beatrice&quot;</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">hisCat</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+
+<span class="n">hisCat</span><span class="p">.</span><span class="n">PetChin</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Beatrice
+Purr
+</pre></div>
+</div>
+<p>We updated <code class="docutils literal notranslate"><span class="pre">hisCat.name</span></code> to <code class="docutils literal notranslate"><span class="pre">Beatrice</span></code> and we still have access to the method <code class="docutils literal notranslate"><span class="pre">PetChin</span></code>.
+We have two <code class="docutils literal notranslate"><span class="pre">Cat</span></code> objects that have the same class members, though we have changed the values of <code class="docutils literal notranslate"><span class="pre">name</span></code>.
+These objects were created by the same class, but are unique.</p>
+</div>
+<div class="section" id="classes-putting-things-together">
+<h2><span class="section-number">12.2.3. </span>Classes: Putting Things Together<a class="headerlink" href="#classes-putting-things-together" title="Permalink to this headline">¶</a></h2>
+<p>Classes create objects.  Therefore, an object is an <em>instance</em> of a class.
+Classes themselves are templates that contain attributes and methods to define an object.
+Constructors hold parameters that are required in order to instantiate objects.
+However, constructors can be parameterless.</p>
+<p>To access class members, we use dot notation.</p>
+<p>The attributes and methods created inside a class belong to that class.
+If you look at the <a class="reference external" href="https://replit.com/&#64;launchcode/ClassBasics101-CSharp#main.cs" target="_blank">Cat class example<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+There is a Dog class as well.  The Dog class has its own method <code class="docutils literal notranslate"><span class="pre">Bark</span></code>.
+If you tried to call that on a Cat object, an error would be thrown because <code class="docutils literal notranslate"><span class="pre">Bark</span></code> is not part of the Cat class definition.</p>
+<p>This is a very, very simple explanation of classes in C#.  We will learn more in upcoming chapters.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">12.2.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Use the following code block for both questions.</p>
+<div class="last highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">//in the Car class</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Car</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="k">void</span> <span class="nf">RevEngine</span><span class="p">()</span>
+   <span class="p">{</span>
+      <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Vroom! Vroom!&quot;</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">public</span> <span class="nf">Car</span><span class="p">()</span>
+   <span class="p">{</span>
+
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>The <strong>constructor</strong> starts on which line number?</p>
+<ol class="last arabic simple">
+<li>3</li>
+<li>9</li>
+<li>2</li>
+<li>6</li>
+</ol>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>How would we call the method <code class="docutils literal notranslate"><span class="pre">RevEngine</span></code> on the car object, <code class="docutils literal notranslate"><span class="pre">redCar</span></code>, in the Main method?</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">redCar.Car(RevEngine)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">car</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Car().RevEngine;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">redCar.RevEngine();</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">RevEngine(redCar);</span></code></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="class-type.html"><span aria-hidden="true">&larr;</span> <span class="section-number">12.1. </span>Classes: A Primer</a></li>
+        
+        
+        <li class="next"><a href="math-class.html"><span class="section-number">12.3. </span>The <code class="docutils literal notranslate"><span class="pre">Math</span></code> Class <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
