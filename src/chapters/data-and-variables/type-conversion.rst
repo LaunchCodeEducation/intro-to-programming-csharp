@@ -65,7 +65,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which of the following will result in ``Double.System`` when passed to ``GetType``? 
+   Which of the following will result in ``System.Double`` when passed to ``GetType``? 
 
    #. ``'3'``
    #. ``'three'``
