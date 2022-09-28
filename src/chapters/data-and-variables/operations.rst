@@ -291,7 +291,7 @@ Check Your Understanding
 
    What is the value of the following expression?
 
-   *Note:* Using the **^** "carrot" symbol is common short hand for showing exponentiation, but not used in C#.
+   *Note:* Using the **^** "caret" symbol is common short hand for showing exponentiation, but not used in C#.
 
    .. sourcecode:: csharp
 
