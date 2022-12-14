@@ -100,13 +100,13 @@ original string, while others create an new string, which will need to be stored
 <h2><span class="section-number">8.6.1. </span>String Modification<a class="headerlink" href="#string-modification" title="Permalink to this headline">¶</a></h2>
 <p>Use string methods to convert a word into pseudo-pig latin.</p>
 <ol class="loweralpha simple">
-<li>Remove the first three characters from a string and add them to the end.
+<li><p>Remove the first three characters from a string and add them to the end.
 Ex: <code class="docutils literal notranslate"><span class="pre">&quot;LaunchCode&quot;</span></code> becomes <code class="docutils literal notranslate"><span class="pre">&quot;nchCodeLau&quot;</span></code>. Use string interpolation to
-print the original and modified string in a descriptive phrase.</li>
-<li>Modify your code to accept user input. Query the user to enter the
-number of letters that will be relocated.</li>
-<li>Add validation to your code to deal with user inputs that are longer than the
-word. In such cases, default to moving 3 characters. Also, a string interpolation should note the error.</li>
+print the original and modified string in a descriptive phrase.</p></li>
+<li><p>Modify your code to accept user input. Query the user to enter the
+number of letters that will be relocated.</p></li>
+<li><p>Add validation to your code to deal with user inputs that are longer than the
+word. In such cases, default to moving 3 characters. Also, a string interpolation should note the error.</p></li>
 </ol>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/StringandArrayStudio01-CSharp" target="_blank">Code it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
@@ -116,22 +116,22 @@ word. In such cases, default to moving 3 characters. Also, a string interpolatio
 and arrays. Use <strong>delimiters</strong> as reference points to split a string into an
 array, then modify the array and convert it back to a printable string.</p>
 <ol class="loweralpha simple">
-<li>For a given string, use the <code class="docutils literal notranslate"><span class="pre">Contains</span></code> method to check to see if the
-words are separated by commas (<code class="docutils literal notranslate"><span class="pre">,</span></code>), semicolons (<code class="docutils literal notranslate"><span class="pre">;</span></code>) spaces, or colons (<code class="docutils literal notranslate"><span class="pre">:</span></code>).</li>
-<li>If the string uses commas to separate the words, <code class="docutils literal notranslate"><span class="pre">Split</span></code> it into an array,
+<li><p>For a given string, use the <code class="docutils literal notranslate"><span class="pre">Contains</span></code> method to check to see if the
+words are separated by commas (<code class="docutils literal notranslate"><span class="pre">,</span></code>), semicolons (<code class="docutils literal notranslate"><span class="pre">;</span></code>) spaces, or colons (<code class="docutils literal notranslate"><span class="pre">:</span></code>).</p></li>
+<li><p>If the string uses commas to separate the words, <code class="docutils literal notranslate"><span class="pre">Split</span></code> it into an array,
 reverse the entries, and then <code class="docutils literal notranslate"><span class="pre">Join</span></code> the array into a new comma separated
-string. For example, <code class="docutils literal notranslate"><span class="pre">&quot;up,to,code,fun&quot;</span></code> becomes <code class="docutils literal notranslate"><span class="pre">&quot;fun,code,to,up&quot;</span></code>.</li>
-<li>If the string uses semicolons to separate the words, <code class="docutils literal notranslate"><span class="pre">Split</span></code> it into an
+string. For example, <code class="docutils literal notranslate"><span class="pre">&quot;up,to,code,fun&quot;</span></code> becomes <code class="docutils literal notranslate"><span class="pre">&quot;fun,code,to,up&quot;</span></code>.</p></li>
+<li><p>If the string uses semicolons to separate the words, <code class="docutils literal notranslate"><span class="pre">Split</span></code> it into an
 array, alphabetize the entries, and then <code class="docutils literal notranslate"><span class="pre">Join</span></code> the array into a new
 hyphen separated string. For example, <code class="docutils literal notranslate"><span class="pre">&quot;up;to;code;fun&quot;</span></code> becomes
-<code class="docutils literal notranslate"><span class="pre">&quot;code-fun-to-up&quot;</span></code>.</li>
-<li>If the string uses spaces to separate the words, <code class="docutils literal notranslate"><span class="pre">Split</span></code> it into an array,
+<code class="docutils literal notranslate"><span class="pre">&quot;code-fun-to-up&quot;</span></code>.</p></li>
+<li><p>If the string uses spaces to separate the words, <code class="docutils literal notranslate"><span class="pre">Split</span></code> it into an array,
 reverse alphabetize the entries, and then <code class="docutils literal notranslate"><span class="pre">Join</span></code> the array into a new
 space separated string. For example, <code class="docutils literal notranslate"><span class="pre">&quot;to</span> <span class="pre">code</span> <span class="pre">up</span> <span class="pre">fun&quot;</span></code> becomes
-<code class="docutils literal notranslate"><span class="pre">&quot;up</span> <span class="pre">to</span> <span class="pre">fun</span> <span class="pre">code&quot;</span></code>.</li>
-<li>If the string uses “colons” to separate the words, modify your code to produce the same result as <strong>part b</strong>, but to help with reading make sure
+<code class="docutils literal notranslate"><span class="pre">&quot;up</span> <span class="pre">to</span> <span class="pre">fun</span> <span class="pre">code&quot;</span></code>.</p></li>
+<li><p>If the string uses “colons” to separate the words, modify your code to produce the same result as <strong>part b</strong>, but to help with reading make sure
 that the comma spaces (<code class="docutils literal notranslate"><span class="pre">,</span></code> ) are part of the final string.  For example, <code class="docutils literal notranslate"><span class="pre">&quot;up:to:code:fun&quot;</span></code>
-becomes <code class="docutils literal notranslate"><span class="pre">&quot;fun,</span> <span class="pre">code,</span> <span class="pre">to,</span> <span class="pre">up&quot;</span></code>.</li>
+becomes <code class="docutils literal notranslate"><span class="pre">&quot;fun,</span> <span class="pre">code,</span> <span class="pre">to,</span> <span class="pre">up&quot;</span></code>.</p></li>
 </ol>
 <p><a class="reference external" href="https://repl.it/&#64;launchcode/StringandArrayStudio02-CSharp" target="_blank">Code it at repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
@@ -139,23 +139,24 @@ becomes <code class="docutils literal notranslate"><span class="pre">&quot;fun,<
 <h2><span class="section-number">8.6.3. </span>Bonus Mission: Multi-dimensional Arrays<a class="headerlink" href="#bonus-mission-multi-dimensional-arrays" title="Permalink to this headline">¶</a></h2>
 <p>Arrays can store other arrays!</p>
 <ol class="loweralpha simple">
-<li>The cargo hold in our shuttle contains several smaller storage spaces.
-Initialize a two dimensional <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> to store arrays.<ol class="lowerroman">
-<li><code class="docutils literal notranslate"><span class="pre">{&quot;water</span> <span class="pre">bottles&quot;,</span> <span class="pre">&quot;meal</span> <span class="pre">packs&quot;,</span> <span class="pre">&quot;snacks&quot;,</span> <span class="pre">&quot;chocolate&quot;}</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">{&quot;space</span> <span class="pre">suits&quot;,</span> <span class="pre">&quot;jet</span> <span class="pre">packs&quot;,</span> <span class="pre">&quot;tool</span> <span class="pre">belts&quot;,</span> <span class="pre">&quot;thermal</span> <span class="pre">detonators&quot;}</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">{&quot;parrots&quot;,</span> <span class="pre">&quot;cats&quot;,</span> <span class="pre">&quot;moose&quot;,</span> <span class="pre">&quot;alien</span> <span class="pre">eggs&quot;}</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">{&quot;blankets&quot;,</span> <span class="pre">&quot;pillows&quot;,</span> <span class="pre">&quot;eyepatches&quot;,</span> <span class="pre">&quot;alarm</span> <span class="pre">clocks&quot;}</span></code></li>
+<li><p>The cargo hold in our shuttle contains several smaller storage spaces.
+Initialize a two dimensional <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> to store arrays.</p>
+<ol class="lowerroman simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{&quot;water</span> <span class="pre">bottles&quot;,</span> <span class="pre">&quot;meal</span> <span class="pre">packs&quot;,</span> <span class="pre">&quot;snacks&quot;,</span> <span class="pre">&quot;chocolate&quot;}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{&quot;space</span> <span class="pre">suits&quot;,</span> <span class="pre">&quot;jet</span> <span class="pre">packs&quot;,</span> <span class="pre">&quot;tool</span> <span class="pre">belts&quot;,</span> <span class="pre">&quot;thermal</span> <span class="pre">detonators&quot;}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{&quot;parrots&quot;,</span> <span class="pre">&quot;cats&quot;,</span> <span class="pre">&quot;moose&quot;,</span> <span class="pre">&quot;alien</span> <span class="pre">eggs&quot;}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{&quot;blankets&quot;,</span> <span class="pre">&quot;pillows&quot;,</span> <span class="pre">&quot;eyepatches&quot;,</span> <span class="pre">&quot;alarm</span> <span class="pre">clocks&quot;}</span></code></p></li>
 </ol>
 </li>
-<li>Make sure to verify <code class="docutils literal notranslate"><span class="pre">cargoHold's</span></code> structure.</li>
-<li>Query the user to select a cabinet (0-3) in the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code>.</li>
-<li>Use bracket notation and string interpolation to display the contents of
+<li><p>Make sure to verify <code class="docutils literal notranslate"><span class="pre">cargoHold's</span></code> structure.</p></li>
+<li><p>Query the user to select a cabinet (0-3) in the <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code>.</p></li>
+<li><p>Use bracket notation and string interpolation to display the contents of
 the selected cabinet. If the user entered an invalid number, print an
-error message instead.</li>
-<li><em>Bonus to the Bonus</em>: Modify the code to query the user for BOTH a cabinet in
+error message instead.</p></li>
+<li><p><em>Bonus to the Bonus</em>: Modify the code to query the user for BOTH a cabinet in
 <code class="docutils literal notranslate"><span class="pre">cargoHold</span></code> AND a particular item. Use string interpolation to print a
 message about the selected item.  If the user entered an invalid number,
-print an error message instead.</li>
+print an error message instead.</p></li>
 </ol>
 </div>
 </div>

@@ -132,14 +132,14 @@ just that.</p>
 <p>How does C# prevent a programmer from changing the value of a constant?
 Let’s find out. Try running the following code in an editor. What happens?</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">string</span> <span class="n">appName</span> <span class="p">=</span> <span class="s">&quot;Get It Done&quot;</span><span class="p">;</span>
 <span class="n">appName</span> <span class="p">=</span> <span class="s">&quot;Best TODO application Ever!&quot;</span><span class="p">;</span>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>error CS0128: A local variable named `appName&#39; is already defined in this scope
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>error CS0128: A local variable named `appName&#39; is already defined in this scope
 </pre></div>
 </div>
 </div>
@@ -155,12 +155,12 @@ prevents undesired code from executing by throwing an error.</p>
 valid variable name. For example, if we try to declare a variable with a name
 containing a space, C# complains.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span> <span class="n">application</span> <span class="n">name</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>error CS1525: Unexpected symbol `name&#39;, expecting `,&#39;, `;&#39;, or `=
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>error CS1525: Unexpected symbol `name&#39;, expecting `,&#39;, `;&#39;, or `=
 </pre></div>
 </div>
 </div>
@@ -170,14 +170,14 @@ message is saying that the variable name is not valid, or is “unexpected”.</
 for naming variables. Here are a few easy-to-remember guidelines:</p>
 <hr class="docutils" id="index-2" />
 <ol class="arabic simple">
-<li>Use only the characters 0-9, a-z, A-Z, and underscore. In other words, do
-not use special characters or whitespace (space, tab, and so on).</li>
-<li>Do not start a variable name with a number.</li>
-<li>Avoid starting a variable name with an underscore. Doing so is a convention
+<li><p>Use only the characters 0-9, a-z, A-Z, and underscore. In other words, do
+not use special characters or whitespace (space, tab, and so on).</p></li>
+<li><p>Do not start a variable name with a number.</p></li>
+<li><p>Avoid starting a variable name with an underscore. Doing so is a convention
 used by some C# developers to mean something very specific about the
-variable, and should be avoided.</li>
-<li>Do not use <strong>keywords</strong>, which are words reserved by C# for use by
-the language itself. We’ll discuss these in detail in a moment.</li>
+variable, and should be avoided.</p></li>
+<li><p>Do not use <strong>keywords</strong>, which are words reserved by C# for use by
+the language itself. We’ll discuss these in detail in a moment.</p></li>
 </ol>
 <p>Following these guidelines will prevent you from creating illegal variable
 names. While this is important, we should also strive to create good variable
@@ -207,7 +207,8 @@ least. The main problem is that the variable names <code class="docutils literal
 not descriptive. They don’t tell us anything about what they represent, or how
 they will be used.</p>
 <blockquote class="pull-quote">
-<div>Variable names should be descriptive, providing context about the data they contain and how they will be used.</div></blockquote>
+<div><p>Variable names should be descriptive, providing context about the data they contain and how they will be used.</p>
+</div></blockquote>
 <p>Let’s look at an improved version of this program.</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -220,8 +221,8 @@ they will be used.</p>
 </td></tr></table></div>
 <p>With improved variable names, it now becomes clear that the program is calculating the area of a circle of radius 5.75.</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">When considering program readability, think about whether or not your code will make sense to another programmer. It is not enough for code to be readable by only the programmer that originally wrote it.</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>When considering program readability, think about whether or not your code will make sense to another programmer. It is not enough for code to be readable by only the programmer that originally wrote it.</p>
 </div>
 </div>
 <div class="section" id="camel-case-variable-names">
@@ -229,24 +230,24 @@ they will be used.</p>
 <span class="target" id="index-3"></span><p id="index-4">There is one more aspect of naming variables that you should be aware of, and that is conventions used by professional programmers.
 Conventions are not formal rules, but are informal practices adopted by a group.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>In the United States, it is common for two people to greet each other with a handshake. In other countries and cultures, such as some in east Asia, the conventional greeting is to bow.</p>
-<p class="last">Failing to follow a social convention is not a violation of the law, but is considered impolite nonetheless. It is a signal that you are not part of the group, or do not respect its norms.</p>
+<p>Failing to follow a social convention is not a violation of the law, but is considered impolite nonetheless. It is a signal that you are not part of the group, or do not respect its norms.</p>
 </div>
 <p>There are a variety of types of conventions used by different groups of programmers.
 One common type of convention is that programmers that specialize in a specific language will adopt certain variable naming practices.</p>
 <p>In C#, most programmers use the <strong>camel case</strong> style, which stipulates that variable names consist of names or phrases that:</p>
 <ul class="simple">
-<li>are joined together to omit spaces,</li>
-<li>start with a lowercase letter, and</li>
-<li>capitalize each internal word.</li>
+<li><p>are joined together to omit spaces,</p></li>
+<li><p>start with a lowercase letter, and</p></li>
+<li><p>capitalize each internal word.</p></li>
 </ul>
 <p>In the example from the previous section, the descriptor “area of circle” became the variable name <code class="docutils literal notranslate"><span class="pre">areaOfCircle</span></code>.
 This convention is called camel case because the capitalization of internal words is reminiscent of a camel’s humps.
 Another common name for this convention is <strong>lower camel case</strong>, since names start with a lowercase letter.</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Different programming languages often have different variable-naming conventions. For example, in Python the convention is to use all lowercase letters and separate words with underscores, as in <code class="docutils literal notranslate"><span class="pre">area_of_circle</span></code>.</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Different programming languages often have different variable-naming conventions. For example, in Python the convention is to use all lowercase letters and separate words with underscores, as in <code class="docutils literal notranslate"><span class="pre">area_of_circle</span></code>.</p>
 </div>
 <p>We will use the <a class="reference external" href="https://en.wikipedia.org/wiki/Camel_case" target="_blank">lower camel case convention<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> throughout this course, and strongly encourage you to do so as well.</p>
 </div>
@@ -258,24 +259,24 @@ Such words are called <strong>keywords</strong>, or <strong>reserved words</stro
 <p>Any word that is formally part of the C# language syntax is a keyword.
 So far, we have seen only a few keywords: <code class="docutils literal notranslate"><span class="pre">const</span></code>, <code class="docutils literal notranslate"><span class="pre">var</span></code>, and any of the data type words.</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">While <code class="docutils literal notranslate"><span class="pre">Console</span></code> and <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code> may seem like keywords, they are actually slightly different things. They are entities (an system and a method, respectively) that are available by default in most C# environments.</p>
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">Console</span></code> and <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code> may seem like keywords, they are actually slightly different things. They are entities (an system and a method, respectively) that are available by default in most C# environments.</p>
 </div>
 <p>Attempting to use a keyword for anything other than it’s intended use will result in an error.
 To see this, let’s try to name a variable <code class="docutils literal notranslate"><span class="pre">const</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>error CS1525: Unexpected symbol `const&#39;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>error CS1525: Unexpected symbol `const&#39;
 </pre></div>
 </div>
 </div>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">Most code editors will highlight keywords in a different color than variables or other parts of your code. This serves as a visual cue that a given word is a keyword, and can help prevent mistakes.</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Most code editors will highlight keywords in a different color than variables or other parts of your code. This serves as a visual cue that a given word is a keyword, and can help prevent mistakes.</p>
 </div>
 <p>We will not provide the full list of keywords at this time, but rather point them out as we learn about each of them.
 If you are curious, the <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/" target="_blank">full list is available at Microsoft Documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
@@ -283,12 +284,12 @@ If you are curious, the <a class="reference external" href="https://docs.microso
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">4.5.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which is the best keyword to use when you want ot keep the value of a variable fixed?</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">var</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">let</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">const</span></code></li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">var</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">let</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span></code></p></li>
 </ol>
 </div>
 </div>

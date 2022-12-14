@@ -92,10 +92,10 @@ them. In fact, we devoted an entire chapter to
 <a class="reference internal" href="../errors-and-debugging/index.html#errors-and-debugging"><span class="std std-ref">debugging</span></a> earlier in the course.</p>
 <p>Your development process probably looks something like this:</p>
 <ol class="arabic simple">
-<li>Write code</li>
-<li>Run program</li>
-<li>Notice error and investigate</li>
-<li>Repeat these steps until there are no more errors</li>
+<li><p>Write code</p></li>
+<li><p>Run program</p></li>
+<li><p>Notice error and investigate</p></li>
+<li><p>Repeat these steps until there are no more errors</p></li>
 </ol>
 <p id="index-0">But there’s a better way to test your code, using <strong>automated tests</strong>.
 Automated tests actively test your code and help to remove the
@@ -109,9 +109,10 @@ components (or <em>units</em>) of code. These are typically individual functions
 Unit testing provides a better alternative.</p>
 <p>This might sound familiar:</p>
 <blockquote class="pull-quote">
-<div>You write a program and manually test it.
+<div><p>You write a program and manually test it.
 Thinking it is complete, you turn it in only to find that it has a bug
-or use case that you didn’t consider.</div></blockquote>
+or use case that you didn’t consider.</p>
+</div></blockquote>
 <p>The unit testing process helps avoid this by starting with a list of specific, clearly stated
 behaviors that the program should satisfy.
 The behaviors are then converted into automated tests that demonstrate
@@ -121,9 +122,10 @@ program behavior and provide a framework for writing code that <em>really</em> w
 <h2><span class="section-number">20.1.2. </span>Find Regressions<a class="headerlink" href="#find-regressions" title="Permalink to this headline">¶</a></h2>
 <p id="index-1">What about this situation?</p>
 <blockquote class="pull-quote">
-<div>You write feature #1 for a program.
+<div><p>You write feature #1 for a program.
 You then move on to feature #2. After finishing feature #2,
-you realize that your changes broke feature #1.</div></blockquote>
+you realize that your changes broke feature #1.</p>
+</div></blockquote>
 <p>This is frustrating, right? Especially with larger programs,
 adding new features often causes unexpected
 problems in other parts of the code, potentially breaking the entire program.
@@ -142,8 +144,8 @@ A good collection of unit tests can function as a set of <em>statements</em> abo
 the program should behave. You and others can read the tests and
 quickly get an idea of the specifics of program behavior.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p class="last">Your coworker gives you a function that validates phone numbers,
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Your coworker gives you a function that validates phone numbers,
 but doesn’t provide much detail. Does it handle country codes?
 Does it require an area code? Does it allow parentheses around area codes?
 These details would be easily understood if the function had a

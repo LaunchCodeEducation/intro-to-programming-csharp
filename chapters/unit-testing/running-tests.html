@@ -93,11 +93,11 @@ We will walk you through one way to run tests using the built in test runners in
 <h2><span class="section-number">20.4.1. </span>Mac Users: Running Tests<a class="headerlink" href="#mac-users-running-tests" title="Permalink to this headline">¶</a></h2>
 <p>For Mac users, run the <code class="docutils literal notranslate"><span class="pre">CarTests</span></code> project just like you would any other project.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>If the panel does not open once the tests are finished running,
 look for the <em>Test Results</em> panel name on
 the margins of your IDE and open it manually.</p>
-<p class="last">If you can’t find it, search for “Test” in the VS search bar.</p>
+<p>If you can’t find it, search for “Test” in the VS search bar.</p>
 </div>
 </div>
 <div class="section" id="windows-users-running-tests">
@@ -110,14 +110,14 @@ If you don’t already have it docked, you can find it listed in the top <em>Tes
 </div>
 <p>With the panel open, select the <em>Run All Tests</em> option.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>If you see that the test fails to run, either passing or failing,
 you may need to adjust a setting to use 64bit processing.</p>
 <div class="figure align-default" id="id2">
 <img alt="WINDOWS: User selecting x64 option from Test Explorer/Settings/Processor Architecture for AnyCPU Projects in Visual Studio" src="../../_images/vs-windows-process-architecture-setting.png" />
 <p class="caption"><span class="caption-text">WINDOWS: Set Test Explorer to use x64 process</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p class="last">You may also need to update some of the testing packages. Right click on the
+<p>You may also need to update some of the testing packages. Right click on the
 <code class="docutils literal notranslate"><span class="pre">CarTests</span></code> project and select <em>Manage NuGet Packages…</em>. If you see some items
 in the <em>Update</em> section of the panel that opens, run the updates. Close and reopen
 the <em>Team Explorer</em> panel and <em>Visual Studio</em> to ensure the changes are applied.</p>
@@ -144,8 +144,8 @@ argument for <code class="docutils literal notranslate"><span class="pre">gasTan
 <p>This class-specific behavior is a good item to test. Under your second TODO, write a test to verify that the
 constructor sets the <code class="docutils literal notranslate"><span class="pre">gasTankLevel</span></code> field.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">To test the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class, we must make it available to us by adding <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">CarNS;</span></code> to the top of your
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>To test the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class, we must make it available to us by adding <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">CarNS;</span></code> to the top of your
 file. <code class="docutils literal notranslate"><span class="pre">CarNS</span></code> is the <strong>namespace</strong> we have assigned to the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class. Namespaces are used in C# to
 organize code. You’ve seen them before in other <a class="reference internal" href="../collections-and-flow/collections.html#using-statement"><span class="std std-ref">using statements</span></a>.</p>
 </div>
@@ -168,23 +168,23 @@ organize code. You’ve seen them before in other <a class="reference internal" 
 <code class="docutils literal notranslate"><span class="pre">Car</span></code> object, and test that the constructor correctly sets the <code class="docutils literal notranslate"><span class="pre">gasTankLevel</span></code> field.</p>
 <p>We’ve done our best to address <a class="reference internal" href="testing-in-csharp.html#testing-best-practices"><span class="std std-ref">Testing Best Practices</span></a>:</p>
 <ol class="arabic">
-<li><p class="first">The AAAs</p>
+<li><p>The AAAs</p>
 <ol class="arabic simple">
-<li>We <em>arrange</em> the one variable our test requires: <code class="docutils literal notranslate"><span class="pre">test_car</span></code>.</li>
-<li>We <em>act</em> on the <code class="docutils literal notranslate"><span class="pre">Car</span></code> constructor method as well: <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Car(&quot;Toyota&quot;,</span> <span class="pre">&quot;Prius&quot;,</span> <span class="pre">10,</span> <span class="pre">50);</span></code>.</li>
-<li>We <em>assert</em> that the expected value of <code class="docutils literal notranslate"><span class="pre">10</span></code> will equal the actual value returned from getting the
-tank level (<code class="docutils literal notranslate"><span class="pre">test_car.GasTankLevel</span></code>).</li>
+<li><p>We <em>arrange</em> the one variable our test requires: <code class="docutils literal notranslate"><span class="pre">test_car</span></code>.</p></li>
+<li><p>We <em>act</em> on the <code class="docutils literal notranslate"><span class="pre">Car</span></code> constructor method as well: <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Car(&quot;Toyota&quot;,</span> <span class="pre">&quot;Prius&quot;,</span> <span class="pre">10,</span> <span class="pre">50);</span></code>.</p></li>
+<li><p>We <em>assert</em> that the expected value of <code class="docutils literal notranslate"><span class="pre">10</span></code> will equal the actual value returned from getting the
+tank level (<code class="docutils literal notranslate"><span class="pre">test_car.GasTankLevel</span></code>).</p></li>
 </ol>
 </li>
-<li><p class="first">Deterministic</p>
+<li><p>Deterministic</p>
 <p>As it is written, we expect that our test will always pass.</p>
 </li>
-<li><p class="first">Relevant</p>
+<li><p>Relevant</p>
 <p>This is our first real test, so we don’t yet have much to group it with. That said, the test assesses a method
 in <code class="docutils literal notranslate"><span class="pre">Car</span></code> and is situated in a class called <code class="docutils literal notranslate"><span class="pre">CarTests</span></code>, so it meets the minimum requirements or relevancy.
 The next section gives us another attribute to use to help group testing variables.</p>
 </li>
-<li><p class="first">Meaningful</p>
+<li><p>Meaningful</p>
 <p>Our test evaluates a simple field assignment but it is not trivial. The line in the constructor being tested
 is not very complex, but this makes for a good unit test. We want to make sure the basic functionality of our
 class works as we expect.</p>
@@ -192,8 +192,8 @@ class works as we expect.</p>
 </ol>
 <p>Run <code class="docutils literal notranslate"><span class="pre">CarTest</span></code> to see that both tests pass.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">If you want to rerun only one test, right click on its listing in the results pane.</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>If you want to rerun only one test, right click on its listing in the results pane.</p>
 </div>
 </div>
 </div>

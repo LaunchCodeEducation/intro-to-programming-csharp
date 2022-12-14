@@ -108,8 +108,8 @@ This notation implies 2 dimensions, equal in length.
 When initializing, the brackets must be part of your new array.  You may fill in the rows and colums, or leave them empty.
 The code block below has the rows and columns filled in the initializing statement.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -128,8 +128,8 @@ Multidimensional arrays will always be uniform in length no matter how many dime
 For example, a three dimensional array uses the following notation: <code class="docutils literal notranslate"><span class="pre">[2,2,7]</span></code>
 could be read as “two arrays, two rows deep, containing 7 values each”.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">This is not the only way to initialize an multidimensional array, but this is the way the textbook will use.  Microsoft Documentation has other ways for delcaration and initializing, so if this method is not working for you <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays" target="_blank">check them out<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and use your favorite.</p>
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>This is not the only way to initialize an multidimensional array, but this is the way the textbook will use.  Microsoft Documentation has other ways for delcaration and initializing, so if this method is not working for you <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays" target="_blank">check them out<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and use your favorite.</p>
 </div>
 </div>
 <div class="section" id="rank-and-length-properties">
@@ -139,7 +139,7 @@ In this example, 3 rows of 4 values each, so 3 * 4 is 12.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Rank</span></code> is useful when you want to verify the number of dimensions an array contains.  It will return an integer that represents the dimension.
 In the example below, a <code class="docutils literal notranslate"><span class="pre">2</span></code> is returned, which informs you that this array is two dimensional.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -160,7 +160,7 @@ In the example below, a <code class="docutils literal notranslate"><span class="
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>12
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>12
 2
 </pre></div>
 </div>
@@ -179,7 +179,7 @@ This pattern continues for however many dimensions you are working with.</p>
 <h3><span class="section-number">8.4.1.4. </span>Accessing Values In Multiple Dimensions<a class="headerlink" href="#accessing-values-in-multiple-dimensions" title="Permalink to this headline">¶</a></h3>
 <p>If you want to print or work with a specific value, you will need to reference both the row and column inside the <code class="docutils literal notranslate"><span class="pre">[,]</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Use the two dimensional array to print the following shuttleCrews members:  “Mae Jemison”, “Ellen Ochoa”, and “Winston Scott”.</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -203,7 +203,7 @@ This pattern continues for however many dimensions you are working with.</p>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Mae Jemison
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mae Jemison
 Ellen Ochoa
 Winston Scott
 </pre></div>
@@ -226,7 +226,7 @@ It all comes down to accessing those inner arrays in order to manipulate them.
 We will learn how to access these more in the next chapter as we discuss loops.</p>
 <p>For now, we can use many of them and verify the method worked with the help of bracket notation.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Use bracket notation to update “Ori” with “Karl”.</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -248,7 +248,7 @@ We will learn how to access these more in the next chapter as we discuss loops.<
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console OutPut</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Karl
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Karl
 </pre></div>
 </div>
 </div>
@@ -256,9 +256,9 @@ We will learn how to access these more in the next chapter as we discuss loops.<
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">8.4.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the two dimensional index for <code class="docutils literal notranslate"><span class="pre">&quot;Jones&quot;</span></code>?</p>
-<div class="last highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4

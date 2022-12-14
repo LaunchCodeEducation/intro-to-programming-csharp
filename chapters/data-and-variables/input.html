@@ -127,7 +127,8 @@ the same task. For example, the Python syntax is <code class="docutils literal n
 <p>There is a lot going on here behind the scenes, but for now you should follow
 this bit of wisdom:</p>
 <blockquote>
-<div>I turn the key, and it goes.</div></blockquote>
+<div><p>I turn the key, and it goes.</p>
+</div></blockquote>
 <p>Most of us do not need to know all the details about how cars, phones, or
 microwave ovens work. We just know enough to interact with them in our day to
 day lives. Similarly, we do not need to understand how <code class="docutils literal notranslate"><span class="pre">ReadLine</span></code> works
@@ -148,9 +149,9 @@ This means we have to prompt the user.</p>
 </td></tr></table></div>
 <p>When C# evaluates the expression, it follows the instructions:</p>
 <ol class="arabic simple">
-<li>Display <code class="docutils literal notranslate"><span class="pre">Question</span> <span class="pre">text</span></code> on the screen.</li>
-<li>Wait for the user to respond.</li>
-<li>Store the data in the variable <code class="docutils literal notranslate"><span class="pre">input</span></code>.</li>
+<li><p>Display <code class="docutils literal notranslate"><span class="pre">Question</span> <span class="pre">text</span></code> on the screen.</p></li>
+<li><p>Wait for the user to respond.</p></li>
+<li><p>Store the data in the variable <code class="docutils literal notranslate"><span class="pre">input</span></code>.</p></li>
 </ol>
 <p>For our greeting program, we would code <code class="docutils literal notranslate"><span class="pre">Console.WriteLine(&quot;What</span> <span class="pre">is</span> <span class="pre">your</span> <span class="pre">name?&quot;);</span></code>.
 This prints the question for the user.  We follow this question with <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">Console.ReadLine()</span></code>.
@@ -158,7 +159,7 @@ In the console, you will notice the cursor blinking in the line below.  This is 
 presses the Return or Enter key. When this happens, any text entered is
 collected by the ReadLine function and stored in <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
 <p>Let’s play around with the <code class="docutils literal notranslate"><span class="pre">input</span></code> statement. Open the repl.it link below
 and click the “Run” button.</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -166,7 +167,7 @@ and click the “Run” button.</p>
 <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
 </pre></div>
 </td></tr></table></div>
-<p class="repl-link last"><a class="reference external" href="https://repl.it/&#64;launchcode/CSharpInputExamples01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<p class="repl-link"><a class="reference external" href="https://repl.it/&#64;launchcode/CSharpInputExamples01" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
 </div>
 <p>Note that after entering a name, the program does not actually DO anything with
 the information. If we want to print the data as part of a message, we need to
@@ -179,10 +180,10 @@ the data and use it when and where we see fit.</p>
 what happens. Next, add code to prompt the user for a second name. Store the
 response in <code class="docutils literal notranslate"><span class="pre">otherName</span></code>, then print both names using <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code>.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
 <p>Update your code to request a user’s first and last name, then print an
 output that looks like:</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>First name: Elite
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>First name: Elite
 Last name: Coder
 Last, First: Coder, Elite
 </pre></div>
@@ -224,24 +225,25 @@ see what you expected?</p>
 strings</em>, so numbers get concatenated rather than added.  Just like
 “Hello, ” + “World” outputs as <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code>, “7” + “2” outputs as <code class="docutils literal notranslate"><span class="pre">72</span></code>.</p>
 <blockquote>
-<div>In C#, ReadLine entries must be strings!</div></blockquote>
+<div><p>In C#, ReadLine entries must be strings!</p>
+</div></blockquote>
 <p>If we want our program to perform math on the entered numbers, we must recast its type.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
-<ol class="last arabic simple">
-<li>In line 3, Initialize a new int variable to hold your type conversion of num1.</li>
-<li>To convert num1 into your new int varialbe, use <code class="docutils literal notranslate"><span class="pre">Int32.Parse()</span></code>.</li>
-<li>Run the program and examine the result.</li>
-<li>Repeat step 2 for <code class="docutils literal notranslate"><span class="pre">num2</span></code> starting in line 7.</li>
-<li>What happens if a user enters <code class="docutils literal notranslate"><span class="pre">Hi</span></code> instead of a number?</li>
-<li>If you want to work with doubles try it again using <code class="docutils literal notranslate"><span class="pre">Double.Parse()</span></code></li>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<ol class="arabic simple">
+<li><p>In line 3, Initialize a new int variable to hold your type conversion of num1.</p></li>
+<li><p>To convert num1 into your new int varialbe, use <code class="docutils literal notranslate"><span class="pre">Int32.Parse()</span></code>.</p></li>
+<li><p>Run the program and examine the result.</p></li>
+<li><p>Repeat step 2 for <code class="docutils literal notranslate"><span class="pre">num2</span></code> starting in line 7.</p></li>
+<li><p>What happens if a user enters <code class="docutils literal notranslate"><span class="pre">Hi</span></code> instead of a number?</p></li>
+<li><p>If you want to work with doubles try it again using <code class="docutils literal notranslate"><span class="pre">Double.Parse()</span></code></p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">4.9.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is printed when the following program runs?</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -256,15 +258,15 @@ strings</em>, so numbers get concatenated rather than added.  Just like
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">System.String</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">System.Number</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">System.Int32</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&quot;25&quot;</span></code></li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">System.String</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">System.Number</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">System.Int32</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;25&quot;</span></code></p></li>
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is printed when the following program runs?</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -281,11 +283,11 @@ strings</em>, so numbers get concatenated rather than added.  Just like
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">ageNum</span><span class="p">.</span><span class="n">GetType</span><span class="p">());</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">System.String</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">System.Number</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">System.Int32</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">25</span></code></li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">System.String</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">System.Number</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">System.Int32</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">25</span></code></p></li>
 </ol>
 </div>
 </div>

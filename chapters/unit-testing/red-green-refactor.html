@@ -96,11 +96,9 @@ stages. Red refers to test results that fail, while green represents tests that
 pass. The colors refer to test results which are often styled with red for
 failing tests and green for passing tests in many IDEs.</p>
 <ol class="arabic">
-<li><p class="first">Red -&gt; <a class="reference internal" href="tdd.html#red-light"><span class="std std-ref">Write a failing test</span></a>.</p>
-</li>
-<li><p class="first">Green -&gt; <a class="reference internal" href="tdd.html#green-light"><span class="std std-ref">Make it pass by implementing the code</span></a>.</p>
-</li>
-<li><p class="first">Refactor -&gt; Make the code better.</p>
+<li><p>Red -&gt; <a class="reference internal" href="tdd.html#red-light"><span class="std std-ref">Write a failing test</span></a>.</p></li>
+<li><p>Green -&gt; <a class="reference internal" href="tdd.html#green-light"><span class="std std-ref">Make it pass by implementing the code</span></a>.</p></li>
+<li><p>Refactor -&gt; Make the code better.</p>
 <div class="figure align-default" id="id1">
 <img alt="Graphic showing the cycle of phases from red the writing test, green making the test pass, and blue of refactoring code to be better which points back to red." src="../../_images/red-green-refactor.png" />
 <p class="caption"><span class="caption-text">Red, green, refactor cycle.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -112,17 +110,17 @@ that feature is implemented. Since we have a test to verify our code, we can
 change the code with confidence, knowing that any error will be immediately
 identified by the test. Here are a few examples of refactoring:</p>
 <ol class="arabic simple">
-<li>Using different data structures,</li>
-<li>Reducing the number of times needed to loop through an array,</li>
-<li>Moving duplicate logic into a function so it can be reused.</li>
+<li><p>Using different data structures,</p></li>
+<li><p>Reducing the number of times needed to loop through an array,</p></li>
+<li><p>Moving duplicate logic into a function so it can be reused.</p></li>
 </ol>
 <p>The refactor is also done in a TDD process:</p>
 <ol class="arabic simple">
-<li>Decide how to improve the implementation of the feature,</li>
-<li>Change the unit test to use this new idea,</li>
-<li>Run the code to see the test fail,</li>
-<li>Refactor the code to implement the new idea,</li>
-<li>Finally, see the test pass with the refactored design.</li>
+<li><p>Decide how to improve the implementation of the feature,</p></li>
+<li><p>Change the unit test to use this new idea,</p></li>
+<li><p>Run the code to see the test fail,</p></li>
+<li><p>Refactor the code to implement the new idea,</p></li>
+<li><p>Finally, see the test pass with the refactored design.</p></li>
 </ol>
 <p>You might not always need to refactor, but it is always something to consider.
 The red, green, refactor methodology is a cycle for improvement.

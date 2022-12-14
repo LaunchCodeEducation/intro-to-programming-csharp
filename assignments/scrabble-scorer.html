@@ -91,9 +91,9 @@ going to work on Mars rover code already?</p>
 <p>The current Scrabble Scorer program takes in a word and returns its point
 value. The program needs to be rewritten for two reasons:</p>
 <ol class="arabic simple">
-<li>The dictionary used to store the letter point values is inefficient.</li>
-<li>The program should have three scoring algorithms and allow the user to pick
-which one to use.</li>
+<li><p>The dictionary used to store the letter point values is inefficient.</p></li>
+<li><p>The program should have three scoring algorithms and allow the user to pick
+which one to use.</p></li>
 </ol>
 <p>Your updates will make the program more efficient and user friendly.</p>
 <p><strong>Starter Code</strong> can be found <a class="reference external" href="https://github.com/LaunchCodeEducation/Assignment2-ScrabbleScorer-csharp" target="_blank">here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
@@ -101,28 +101,28 @@ Fork the code then <a class="reference internal" href="../chapters/vs-setup/clon
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">The requirements below are what your END assignment will look like.
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The requirements below are what your END assignment will look like.
 This assignment is broken down so you can complete small pieces as you go.
 You need to move sequentially starting at part A below. Please read the
 WHOLE assignment page before starting.</p>
 </div>
 <ol class="arabic simple">
-<li>Create an <code class="docutils literal notranslate"><span class="pre">InitialPrompt</span></code> method that asks the user which scoring
-algorithm to use.</li>
-<li>Create a <code class="docutils literal notranslate"><span class="pre">Transform</span></code> method that takes in the <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code>
-dictionary and <em>returns</em> a <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> dictionary.</li>
-<li>Code three different scoring functions for assigning points to a word.</li>
-<li>Create a <code class="docutils literal notranslate"><span class="pre">ScoringAlgorithms</span></code> method to invoke one of the three scoring methods.</li>
-<li>Create a <code class="docutils literal notranslate"><span class="pre">RunProgram</span></code> method to serve as the starting point for your
-program.</li>
+<li><p>Create an <code class="docutils literal notranslate"><span class="pre">InitialPrompt</span></code> method that asks the user which scoring
+algorithm to use.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">Transform</span></code> method that takes in the <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code>
+dictionary and <em>returns</em> a <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> dictionary.</p></li>
+<li><p>Code three different scoring functions for assigning points to a word.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">ScoringAlgorithms</span></code> method to invoke one of the three scoring methods.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">RunProgram</span></code> method to serve as the starting point for your
+program.</p></li>
 </ol>
 </div>
 <div class="section" id="instructions">
 <h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">As you create your methods, think about where the output is best utilized.  Will it be something a user only needs to read?
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>As you create your methods, think about where the output is best utilized.  Will it be something a user only needs to read?
 Will it become a parameter for another method?  Revisit the <a class="reference internal" href="../chapters/methods/index.html#methods"><span class="std std-ref">Methods chapter</span></a> if you feel unsure.</p>
 </div>
 <div class="section" id="a-initial-prompt">
@@ -187,15 +187,15 @@ Tedious, right?  You can improve this.</p>
 one for each letter. The value of each key will be the Scrabble point value.</p>
 <p>Examples of the new key storage:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">a</span></code> is worth <code class="docutils literal notranslate"><span class="pre">1</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">b</span></code> is worth <code class="docutils literal notranslate"><span class="pre">3</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">c</span></code> is worth <code class="docutils literal notranslate"><span class="pre">3</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">j</span></code> is worth <code class="docutils literal notranslate"><span class="pre">8</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> is worth <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code> is worth <code class="docutils literal notranslate"><span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> is worth <code class="docutils literal notranslate"><span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">j</span></code> is worth <code class="docutils literal notranslate"><span class="pre">8</span></code></p></li>
 </ul>
 <p>In <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code>, the letters themselves are keys, so a <em>single</em> search
 will identify a point value. This is much more efficient than the old method.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Example of <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> dictionary usage.</p>
 <div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Scrabble scoring values for&quot;</span><span class="p">);</span>
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;letter a: {0}&quot;</span><span class="p">,</span> <span class="n">newPointStructure</span><span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="p">]);</span>
@@ -204,7 +204,7 @@ will identify a point value. This is much more efficient than the old method.</p
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Scrabble scoring values for
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Scrabble scoring values for
 letter a:  1
 letter j:  8
 letter z:  10
@@ -217,24 +217,25 @@ clever coding skills to create the new object.</p>
 <div class="section" id="code-the-function">
 <h4>Code the Function<a class="headerlink" href="#code-the-function" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
-<li>Write a <code class="docutils literal notranslate"><span class="pre">Transform</span></code> method that returns a dictionary and has no parameters. Calling
+<li><p>Write a <code class="docutils literal notranslate"><span class="pre">Transform</span></code> method that returns a dictionary and has no parameters. Calling
 <code class="docutils literal notranslate"><span class="pre">Transform()</span></code> will <em>return</em> a dictionary with <em>lowercase</em>
 letters as keys. The value for each key will be the points assigned to that
-letter.</li>
-<li>Initialize an empty <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> dictionary by setting it equal to
-<code class="docutils literal notranslate"><span class="pre">Transform()</span></code>.</li>
-<li>Points to consider while coding <code class="docutils literal notranslate"><span class="pre">Transform()</span></code>:<ol class="loweralpha">
-<li>Recall that <code class="docutils literal notranslate"><span class="pre">foreach</span></code> loops
-<a class="reference internal" href="../chapters/collections-and-flow/dictionary-gradebook.html#kvp-foreach"><span class="std std-ref">iterate over the key/value pairs</span></a> within a dictionary.</li>
-<li>If you need a reminder of how to assign new key/value pairs, review the
+letter.</p></li>
+<li><p>Initialize an empty <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> dictionary by setting it equal to
+<code class="docutils literal notranslate"><span class="pre">Transform()</span></code>.</p></li>
+<li><p>Points to consider while coding <code class="docutils literal notranslate"><span class="pre">Transform()</span></code>:</p>
+<ol class="loweralpha simple">
+<li><p>Recall that <code class="docutils literal notranslate"><span class="pre">foreach</span></code> loops
+<a class="reference internal" href="../chapters/collections-and-flow/dictionary-gradebook.html#kvp-foreach"><span class="std std-ref">iterate over the key/value pairs</span></a> within a dictionary.</p></li>
+<li><p>If you need a reminder of how to assign new key/value pairs, review the
 <a class="reference internal" href="../chapters/collections-and-flow/dictionary.html#initialize-dictionary"><span class="std std-ref">relevant section</span></a> in the
-Control Flow and Collections chapter.</li>
-<li>To access the string of letters within <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code>, use bracket
-notation (<code class="docutils literal notranslate"><span class="pre">oldPointStructure[key]</span></code>).</li>
-<li>To access a particular element within a string,
+Control Flow and Collections chapter.</p></li>
+<li><p>To access the string of letters within <code class="docutils literal notranslate"><span class="pre">oldPointStructure</span></code>, use bracket
+notation (<code class="docutils literal notranslate"><span class="pre">oldPointStructure[key]</span></code>).</p></li>
+<li><p>To access a particular element within a string,
 consider what <a class="reference internal" href="../chapters/strings/strings-as-collections.html#string-chars"><span class="std std-ref">strings are made of</span></a> and
-the various <a class="reference internal" href="../appendices/string-method-examples/index.html#string-method-examples"><span class="std std-ref">string methods</span></a> you can use to access them.</li>
-<li>What about the data types?  Will you need to <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.convert.tochar?view=net-5.0" target="_blank">convert<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> or <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.char.parse?view=net-5.0" target="_blank">parse<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> any of them?</li>
+the various <a class="reference internal" href="../appendices/string-method-examples/index.html#string-method-examples"><span class="std std-ref">string methods</span></a> you can use to access them.</p></li>
+<li><p>What about the data types?  Will you need to <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.convert.tochar?view=net-5.0" target="_blank">convert<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> or <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.char.parse?view=net-5.0" target="_blank">parse<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> any of them?</p></li>
 </ol>
 </li>
 </ol>
@@ -247,18 +248,18 @@ Once all three are working, we are going to create a different method to invoke 
 Read through this section before coding anything.</p>
 <p>Create a <em>separate</em> method for each of the following scoring algorithms.</p>
 <ol class="arabic simple">
-<li><strong>Simple Score:</strong> Define a method that takes a word as a parameter and
-displays a score. Each letter within the word is worth 1 point.</li>
-<li><strong>Bonus Vowels:</strong> Define a method that takes a word as a parameter and
+<li><p><strong>Simple Score:</strong> Define a method that takes a word as a parameter and
+displays a score. Each letter within the word is worth 1 point.</p></li>
+<li><p><strong>Bonus Vowels:</strong> Define a method that takes a word as a parameter and
 displays a score. Each vowel within the word is worth 3 points, and each
-consonant is worth 1 point.</li>
-<li><strong>Scrabble Score:</strong> Define a method that takes a word as a parameter and displays a score.
-The method uses the <em>transformed</em> <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code>.</li>
+consonant is worth 1 point.</p></li>
+<li><p><strong>Scrabble Score:</strong> Define a method that takes a word as a parameter and displays a score.
+The method uses the <em>transformed</em> <code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code>.</p></li>
 </ol>
 <p>Each method should have a way to display the <em>original</em> word and the total value of points.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
-<div class="last highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ScrabbleScorer</span><span class="p">(</span><span class="s">&quot;taxi&quot;</span><span class="p">);</span>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ScrabbleScorer</span><span class="p">(</span><span class="s">&quot;taxi&quot;</span><span class="p">);</span>
 <span class="c1">//Output: Your word: taxi is worth 11</span>
 
 <span class="n">SimpleScorer</span><span class="p">(</span><span class="s">&quot;taxi&quot;</span><span class="p">);</span>
@@ -272,17 +273,19 @@ The method uses the <em>transformed</em> <code class="docutils literal notransla
 <div class="section" id="define-scoringalgorithms-method">
 <h4>Define <code class="docutils literal notranslate"><span class="pre">ScoringAlgorithms</span></code> method<a class="headerlink" href="#define-scoringalgorithms-method" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
-<li>Create a method that will pass the user’s word to the selected scoring method.
-This method will need parameters for which score method they select and the user’s word.</li>
-<li>Use the selected algorithm to determine the score for the word:<ol class="loweralpha">
-<li>If the user enters <code class="docutils literal notranslate"><span class="pre">1</span></code> or an invalid option, use the Scrabble Scorer method.</li>
-<li>If the user enters <code class="docutils literal notranslate"><span class="pre">2</span></code>, use the Simple Score method.</li>
-<li>If the user enters <code class="docutils literal notranslate"><span class="pre">3</span></code>, use the Bonus Vowels method.</li>
+<li><p>Create a method that will pass the user’s word to the selected scoring method.
+This method will need parameters for which score method they select and the user’s word.</p></li>
+<li><p>Use the selected algorithm to determine the score for the word:</p>
+<ol class="loweralpha simple">
+<li><p>If the user enters <code class="docutils literal notranslate"><span class="pre">1</span></code> or an invalid option, use the Scrabble Scorer method.</p></li>
+<li><p>If the user enters <code class="docutils literal notranslate"><span class="pre">2</span></code>, use the Simple Score method.</p></li>
+<li><p>If the user enters <code class="docutils literal notranslate"><span class="pre">3</span></code>, use the Bonus Vowels method.</p></li>
 </ol>
 </li>
-<li>Things to ponder while working on this method:<ol class="loweralpha">
-<li>Think about what each method’s parameter requirements are.</li>
-<li>Think about how to invoke the desired scoring method.</li>
+<li><p>Things to ponder while working on this method:</p>
+<ol class="loweralpha simple">
+<li><p>Think about what each method’s parameter requirements are.</p></li>
+<li><p>Think about how to invoke the desired scoring method.</p></li>
 </ol>
 </li>
 </ol>
@@ -294,8 +297,8 @@ options and passes the user’s word to the selected method.  Looks like we have
 <p>To access a scoring method via <code class="docutils literal notranslate"><span class="pre">ScoringAlgorithms</span></code>,  call it and pass the score option and a test word.
 In our example, we will be using “taxi” as our test word.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
-<div class="last highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Scrabble scoring</span>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Scrabble scoring</span>
 <span class="n">ScoringAlgorithms</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">&quot;taxi&quot;</span><span class="p">);</span>
    <span class="c1">//Output: Your score for &quot;taxi&quot;: 11</span>
 
@@ -315,14 +318,14 @@ In our example, we will be using “taxi” as our test word.</p>
 <h3>D) Tie it All Together<a class="headerlink" href="#d-tie-it-all-together" title="Permalink to this headline">¶</a></h3>
 <p>Define a <code class="docutils literal notranslate"><span class="pre">RunProgram</span></code> method that will do the following when called:</p>
 <ol class="arabic simple">
-<li>Invoke <code class="docutils literal notranslate"><span class="pre">InitialPrompt</span></code> to pick the algorithm.</li>
-<li>Prompt the user to enter a word to score. The prompt should also provide the
-user an option for ending the program.</li>
-<li>When taking in a user’s word, should account for the case.</li>
-<li>Invoke the <code class="docutils literal notranslate"><span class="pre">ScoringAlgorithms</span></code> method chosen by the user with the correct parameters.</li>
-<li>Display the score for the word.</li>
-<li>Repeat steps 2 to 4 until the user ends the program by entering <code class="docutils literal notranslate"><span class="pre">&quot;Stop&quot;</span></code>.
-(This should also be case-insensitive.)</li>
+<li><p>Invoke <code class="docutils literal notranslate"><span class="pre">InitialPrompt</span></code> to pick the algorithm.</p></li>
+<li><p>Prompt the user to enter a word to score. The prompt should also provide the
+user an option for ending the program.</p></li>
+<li><p>When taking in a user’s word, should account for the case.</p></li>
+<li><p>Invoke the <code class="docutils literal notranslate"><span class="pre">ScoringAlgorithms</span></code> method chosen by the user with the correct parameters.</p></li>
+<li><p>Display the score for the word.</p></li>
+<li><p>Repeat steps 2 to 4 until the user ends the program by entering <code class="docutils literal notranslate"><span class="pre">&quot;Stop&quot;</span></code>.
+(This should also be case-insensitive.)</p></li>
 </ol>
 </div>
 </div>
@@ -330,12 +333,12 @@ user an option for ending the program.</li>
 <h2>Test Words<a class="headerlink" href="#test-words" title="Permalink to this headline">¶</a></h2>
 <p>Here are some words you can use to test your code:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">CSharp</span></code> = 13 points using Scrabble, 6 using Simple Score, and 8
-using Bonus Vowels.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Scrabble</span></code> = 14 points using Scrabble, 8 using Simple Score, and 12 using
-Bonus Vowels.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Zox</span></code> = 19 points using Scrabble, 3 using Simple Score, and 5 using Bonus
-Vowels.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CSharp</span></code> = 13 points using Scrabble, 6 using Simple Score, and 8
+using Bonus Vowels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Scrabble</span></code> = 14 points using Scrabble, 8 using Simple Score, and 12 using
+Bonus Vowels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Zox</span></code> = 19 points using Scrabble, 3 using Simple Score, and 5 using Bonus
+Vowels.</p></li>
 </ol>
 <div class="section" id="example-output">
 <span id="id1"></span><h3>Example Output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h3>
@@ -363,23 +366,23 @@ Enter a word to be scored, or &quot;Stop&quot; to quit: stop
 <div class="section" id="bonus-missions">
 <h2>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Currently, the prompts accept ANY input values. The user could enter
+<li><p>Currently, the prompts accept ANY input values. The user could enter
 something <em>other</em> than 1, 2, or 3 when selecting the scoring algorithm, and
 they could enter numbers or symbols when asked for a word. Modify your code
 to reject invalid inputs and then re-prompt the user for the correct
-information.</li>
-<li>Score words spelled with blank tiles by adding <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> to the
-<code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> object. The point value for a blank tile is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</li>
+information.</p></li>
+<li><p>Score words spelled with blank tiles by adding <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> to the
+<code class="docutils literal notranslate"><span class="pre">newPointStructure</span></code> object. The point value for a blank tile is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
 </ol>
 </div>
 <div class="section" id="submitting-your-work">
 <h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Finish the assignment.</li>
-<li><code class="docutils literal notranslate"><span class="pre">commit</span></code> and <code class="docutils literal notranslate"><span class="pre">push</span></code> your work to the repository on your GitHub profile.</li>
-<li>Find the corresponding Canvas assignment on
-<a class="reference external" href="https://learn.launchcode.org/" target="_blank">learn.launchcode.org<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and enter the GitHub URL for your project.</li>
-<li>Find a TA and demo your project for them.</li>
+<li><p>Finish the assignment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commit</span></code> and <code class="docutils literal notranslate"><span class="pre">push</span></code> your work to the repository on your GitHub profile.</p></li>
+<li><p>Find the corresponding Canvas assignment on
+<a class="reference external" href="https://learn.launchcode.org/" target="_blank">learn.launchcode.org<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and enter the GitHub URL for your project.</p></li>
+<li><p>Find a TA and demo your project for them.</p></li>
 </ol>
 </div>
 </div>

@@ -105,20 +105,20 @@ But you also don’t want to leave out important cases.
 A method or program that isn’t well-tested might have bugs
 lurking beneath the surface.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Since we are also focused on <em>unit</em> testing, in this chapter we will
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Since we are also focused on <em>unit</em> testing, in this chapter we will
 generally use the term “unit” to refer to the method or program under consideration</p>
 </div>
 <p>Regardless of the situation, there are three types of test cases you should
 consider: positive, negative and edge cases.</p>
 <ol class="arabic simple">
-<li>A <strong>positive test</strong> verifies expected behavior with valid database</li>
-<li>A <strong>negative test</strong> verifies expected behavior with <em>invalid</em> data.</li>
-<li>An <strong>edge case</strong> is a subset of positive tests, which checks the
-extreme edges of valid values.</li>
+<li><p>A <strong>positive test</strong> verifies expected behavior with valid database</p></li>
+<li><p>A <strong>negative test</strong> verifies expected behavior with <em>invalid</em> data.</p></li>
+<li><p>An <strong>edge case</strong> is a subset of positive tests, which checks the
+extreme edges of valid values.</p></li>
 </ol>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>example</p>
 <p>Suppose we were creating an app that focused on cars.
 We could write tests for certain aspects, number of doors or wheels,
 average milaage, size of gas tank, etc.</p>
@@ -127,10 +127,10 @@ If your engine temperature is above 220 degrees or higher,
 then a light turns on to notify the driver.
 We want to test that the light will turn on, so we can set the
 following values for testing:</p>
-<ol class="last arabic simple">
-<li>Positive test values: <code class="docutils literal notranslate"><span class="pre">221</span></code> and <code class="docutils literal notranslate"><span class="pre">280</span></code></li>
-<li>Negative test values: <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">200</span></code></li>
-<li>Edge case value: <code class="docutils literal notranslate"><span class="pre">220</span></code></li>
+<ol class="arabic simple">
+<li><p>Positive test values: <code class="docutils literal notranslate"><span class="pre">221</span></code> and <code class="docutils literal notranslate"><span class="pre">280</span></code></p></li>
+<li><p>Negative test values: <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">200</span></code></p></li>
+<li><p>Edge case value: <code class="docutils literal notranslate"><span class="pre">220</span></code></p></li>
 </ol>
 </div>
 <p>Considering positive, negative, and edge tests will go a long way
@@ -245,13 +245,13 @@ but rather, to verify that our testing setup is in place.</p>
 This empty test asserts an expected value of <code class="docutils literal notranslate"><span class="pre">10</span></code> to equal an actual value of <code class="docutils literal notranslate"><span class="pre">10</span></code>,
 with an accepted <code class="docutils literal notranslate"><span class="pre">.001</span></code> variance.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>The third argument, called <code class="docutils literal notranslate"><span class="pre">delta</span></code>, is the amount of allowed difference between the
 expected and actual values. If the difference between the two values is within
 that range, then the test still passes.</p>
 <p>This argument is optional for some comparisons and required for others. One
 scenario in which it is required is when comparing doubles.</p>
-<p class="last">Why is it required? Well, that’s kind of a long story. Some number types are
+<p>Why is it required? Well, that’s kind of a long story. Some number types are
 <a class="reference external" href="https://en.wikipedia.org/wiki/Floating-point_arithmetic" target="_blank">floating-point numbers<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
 Due to the nature of their storage, these types carry with them a certain
 degree of
@@ -259,10 +259,10 @@ degree of
 In brief, the <code class="docutils literal notranslate"><span class="pre">delta</span></code> argument ensures we can still reasonably compare two doubles.</p>
 </div>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>Visual Studio can offer info on the parameters of a previously defined function.
 Hover over the function call to see a tooltip:</p>
-<div class="last figure align-default" id="id4">
+<div class="figure align-default" id="id4">
 <img alt="User hovers mouse over a function to see its parameter names" src="../../_images/function-parameters-tooltip.png" />
 <p class="caption"><span class="caption-text">Hover over a function to see its parameters</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
@@ -315,15 +315,15 @@ In the next section, we will explore how to run tests and use the data they prov
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">20.3.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>You are creating a class registration program for your local community center.
 In order to qualify as a class, there must be a minimum of 5 students enrolled, but no more than 30.
 Which of the following numbers would be useful for testing edge cases?</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">38</span></code> and <code class="docutils literal notranslate"><span class="pre">14</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">30</span></code> and <code class="docutils literal notranslate"><span class="pre">5</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">30</span></code> and <code class="docutils literal notranslate"><span class="pre">30</span></code></li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">38</span></code> and <code class="docutils literal notranslate"><span class="pre">14</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">30</span></code> and <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">30</span></code> and <code class="docutils literal notranslate"><span class="pre">30</span></code></p></li>
 </ol>
 </div>
 </div>

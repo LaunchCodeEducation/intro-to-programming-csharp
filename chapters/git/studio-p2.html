@@ -93,8 +93,8 @@ You will push and pull, you will create branches.
 You might merge your changes, and if you might create conflicts,  you will resolve them.</p>
 <p>Good luck!</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">As you go through these steps, you’ll be working with branches. It’s very
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>As you go through these steps, you’ll be working with branches. It’s very
 likely you will make changes to the code only to realize that you did so in the
 wrong branch. When this happens (and it happens to us all) you can use
 <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">stash</span></code> to cleanly move your changes to another branch. Read about how
@@ -102,10 +102,10 @@ to do so in our <a class="reference internal" href="../../appendices/git/stash.h
 </div>
 <div class="section" id="step-7-pull-pilot-s-line-and-add-another-line">
 <h2><span class="section-number">15.8.1. </span>Step 7: Pull Pilot’s Line and Add Another Line<a class="headerlink" href="#step-7-pull-pilot-s-line-and-add-another-line" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
+<dl>
 <dt><strong>Control</strong>:</dt><dd><p>You might notice you don’t have the second line of code in your copy of the project on your computer. Let’s fix that.</p>
 <ol class="arabic">
-<li><p class="first">Go to the terminal and enter this command to <code class="docutils literal notranslate"><span class="pre">pull</span></code> down the updated code into your local git repository. Use the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>.</p>
+<li><p>Go to the terminal and enter this command to <code class="docutils literal notranslate"><span class="pre">pull</span></code> down the updated code into your local git repository. Use the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git pull origin main
 remote: Counting objects: <span class="m">3</span>, <span class="k">done</span>.
 remote: Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">2</span>/2<span class="o">)</span>, <span class="k">done</span>.
@@ -120,8 +120,7 @@ communication-log.sln <span class="p">|</span> <span class="m">1</span> +
 </pre></div>
 </div>
 </li>
-<li><p class="first">Now, in your editor, add a third line to the communication. Then <code class="docutils literal notranslate"><span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">commit</span></code>, and <code class="docutils literal notranslate"><span class="pre">push</span></code> it up.</p>
-</li>
+<li><p>Now, in your editor, add a third line to the communication. Then <code class="docutils literal notranslate"><span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">commit</span></code>, and <code class="docutils literal notranslate"><span class="pre">push</span></code> it up.</p></li>
 </ol>
 </dd>
 </dl>
@@ -130,10 +129,10 @@ wrote, without discussing with them any plans on where the story will go.</p>
 </div>
 <div class="section" id="step-8-do-it-again-pull-change-and-push">
 <h2><span class="section-number">15.8.2. </span>Step 8: Do It Again: Pull, Change, and Push!<a class="headerlink" href="#step-8-do-it-again-pull-change-and-push" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
+<dl>
 <dt><strong>Pilot</strong>:</dt><dd><p>You might notice now <em>you</em> don’t have the third line on your computer.</p>
 <ol class="arabic">
-<li><p class="first">Go to the terminal and enter this command to pull in the changes that Control just made. Use the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>.</p>
+<li><p>Go to the terminal and enter this command to pull in the changes that Control just made. Use the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git pull origin main
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
@@ -148,10 +147,8 @@ communication-log.sln | 1 +
 </pre></div>
 </div>
 </li>
-<li><p class="first">Add a fourth line to the log. Again, be creative, but no planning!</p>
-</li>
-<li><p class="first">Then <code class="docutils literal notranslate"><span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">commit</span></code>, and <code class="docutils literal notranslate"><span class="pre">push</span></code> your change.</p>
-</li>
+<li><p>Add a fourth line to the log. Again, be creative, but no planning!</p></li>
+<li><p>Then <code class="docutils literal notranslate"><span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">commit</span></code>, and <code class="docutils literal notranslate"><span class="pre">push</span></code> your change.</p></li>
 </ol>
 </dd>
 </dl>
@@ -162,22 +159,22 @@ communication-log.sln | 1 +
 <p>This workflow is a common one in team development situations.
 Do professional developers wait for newly pushed changes before
 they start any work? That would be a drag. Instead, branches allow for simultaneous work.</p>
-<dl class="docutils">
+<dl>
 <dt><strong>Pilot</strong>:</dt><dd><p>While Control is working on an addition to the story, make another change.</p>
 <ol class="arabic">
-<li><p class="first">Create a <a class="reference internal" href="branches.html#new-branch"><span class="std std-ref">new branch</span></a>. Recall that a branch is a separate “copy” of the codebase. You can commit to without affecting code in the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+<li><p>Create a <a class="reference internal" href="branches.html#new-branch"><span class="std std-ref">new branch</span></a>. Recall that a branch is a separate “copy” of the codebase. You can commit to without affecting code in the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout -b open-mic
 Switched to a new branch <span class="s1">&#39;open-mic&#39;</span>
 </pre></div>
 </div>
 <p>This command creates a new branch named <code class="docutils literal notranslate"><span class="pre">open-mic</span></code>, and switches your local repository to use that branch.</p>
 </li>
-<li><p class="first">Update the <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.console.foregroundcolor?view=net-6.0" target="_blank">background color of the console<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, and update the <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World!</span></code> statement to something more exciting.:</p>
+<li><p>Update the <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.console.foregroundcolor?view=net-6.0" target="_blank">background color of the console<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, and update the <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World!</span></code> statement to something more exciting.:</p>
 <div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">BackgroundColor</span> <span class="p">=</span> <span class="n">ConsoleColor</span><span class="p">.</span><span class="n">Your</span><span class="p">-</span><span class="n">Choice</span><span class="p">-</span><span class="n">Here</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Stage and <code class="docutils literal notranslate"><span class="pre">commit</span></code> these changes.  Push your changes to the remote repo using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">open-mic</span></code>.
+<li><p>Stage and <code class="docutils literal notranslate"><span class="pre">commit</span></code> these changes.  Push your changes to the remote repo using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">open-mic</span></code>.
 Note that the last command is a bit different than what we’ve used before (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">main</span></code>). The final piece of this command is the name of the branch that we want to push to GitHub.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add .
 $ git commit -m <span class="s1">&#39;Changed background color&#39;</span>
@@ -188,10 +185,10 @@ $ git push origin open-mic
 </ol>
 </dd>
 <dt><strong>Control and Pilot</strong></dt><dd><ol class="arabic simple">
-<li>To verify the new branch has been successfully pushed up in your terminal, pull down the latest main.</li>
-<li>Control, you will need to run the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-a</span></code> to see <em>all</em> branches in this codebase.</li>
-<li>Pilot, run the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>.  Is your new branch in the terminal?</li>
-<li>You can also verify the branch in GitHub, by clicking on the <em>Branches</em> button about the repo code.</li>
+<li><p>To verify the new branch has been successfully pushed up in your terminal, pull down the latest main.</p></li>
+<li><p>Control, you will need to run the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-a</span></code> to see <em>all</em> branches in this codebase.</p></li>
+<li><p>Pilot, run the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>.  Is your new branch in the terminal?</p></li>
+<li><p>You can also verify the branch in GitHub, by clicking on the <em>Branches</em> button about the repo code.</p></li>
 </ol>
 </dd>
 </dl>
@@ -200,49 +197,42 @@ merge it into the main branch.</p>
 </div>
 <div class="section" id="step-10-create-a-pull-request-in-github">
 <h2><span class="section-number">15.8.4. </span>Step 10: Create a Pull Request In GitHub<a class="headerlink" href="#step-10-create-a-pull-request-in-github" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
+<dl>
 <dt><strong>Pilot</strong>:</dt><dd><ol class="arabic">
-<li><p class="first">In your browser, go to the GitHub project and click on <em>Branches</em> and make sure you see the new branch name, <em>open-mic</em>.
+<li><p>In your browser, go to the GitHub project and click on <em>Branches</em> and make sure you see the new branch name, <em>open-mic</em>.
 This option will be located next to the button that says “<strong>main</strong>”.</p>
 <div class="figure align-default">
 <img alt="Location of branches button in GitHub Repo" src="../../_images/branches-loc.png" />
 </div>
 </li>
-<li><p class="first">On the Branches page, click <em>New Pull Request</em> to begin the process of requesting that your changes in the <code class="docutils literal notranslate"><span class="pre">open-mic</span></code>
+<li><p>On the Branches page, click <em>New Pull Request</em> to begin the process of requesting that your changes in the <code class="docutils literal notranslate"><span class="pre">open-mic</span></code>
 branch be incorporated into the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
 <div class="figure align-default">
 <img alt="Location of New Pull Request button on branch view in GitHub" src="../../_images/pr-request.png" />
 </div>
 </li>
-<li><p class="first">Add some text in the description box to let Control know what you did and why.  Click the <strong>Create pull request</strong> button.</p>
+<li><p>Add some text in the description box to let Control know what you did and why.  Click the <strong>Create pull request</strong> button.</p>
 </li>
-<li><p class="first">GitHub will take you to your new pull request.  Now you can wait for Control.</p>
-</li>
+<li><p>GitHub will take you to your new pull request.  Now you can wait for Control.</p></li>
 </ol>
 </dd>
 </dl>
 </div>
 <div class="section" id="step-11-merge-the-pull-request">
 <h2><span class="section-number">15.8.5. </span>Step 11: Merge the Pull Request<a class="headerlink" href="#step-11-merge-the-pull-request" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
+<dl>
 <dt><strong>Control</strong>:</dt><dd><ol class="arabic">
-<li><p class="first">Go to the repo in GitHub. Click on <em>Pull Requests</em>.  It is located above the repo files.</p>
+<li><p>Go to the repo in GitHub. Click on <em>Pull Requests</em>.  It is located above the repo files.</p>
 <div class="figure align-default">
 <img alt="Location of Pull Request button on GitHub repo page" src="../../_images/pullrequests.png" />
 </div>
 </li>
-<li><p class="first">Explore this page to see all the information GitHub shows you about the pull request.</p>
-</li>
-<li><p class="first">Look for the new PR (pull request) from Pilot.  Click on the title of the request.  This will bring you to the PR page.</p>
-</li>
-<li><p class="first">Examine this page, you should see any commits made by Pilot.  Look for verification that you can merge this branch.  You should see a green circle with a check the message “This branch has no conflicts with the base branch”.</p>
-</li>
-<li><p class="first">If you are able to merge, click the button that says “<strong>Merge pull request</strong>”.</p>
-</li>
-<li><p class="first">A textbox will pop up containing a message about this merge.  You can change any of the text if you want.</p>
-</li>
-<li><p class="first">Click “<strong>Confirm merge</strong>”</p>
-</li>
+<li><p>Explore this page to see all the information GitHub shows you about the pull request.</p></li>
+<li><p>Look for the new PR (pull request) from Pilot.  Click on the title of the request.  This will bring you to the PR page.</p></li>
+<li><p>Examine this page, you should see any commits made by Pilot.  Look for verification that you can merge this branch.  You should see a green circle with a check the message “This branch has no conflicts with the base branch”.</p></li>
+<li><p>If you are able to merge, click the button that says “<strong>Merge pull request</strong>”.</p></li>
+<li><p>A textbox will pop up containing a message about this merge.  You can change any of the text if you want.</p></li>
+<li><p>Click “<strong>Confirm merge</strong>”</p></li>
 </ol>
 </dd>
 </dl>
@@ -256,10 +246,10 @@ $ git pull origin main
 </div>
 </div></blockquote>
 <p>Git is able to merge these files on its own.  Your git output will show you the changes in your files.</p>
-<dl class="docutils">
+<dl class="simple">
 <dt><strong>Pilot</strong></dt><dd><ol class="arabic simple">
-<li>Refresh your GitHub and note the changes on your page.  Your pull request will no longer be visible because it has been merged into the main branch.</li>
-<li>Return to your terminal and pull down the new main branch changes using the following command: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>.</li>
+<li><p>Refresh your GitHub and note the changes on your page.  Your pull request will no longer be visible because it has been merged into the main branch.</p></li>
+<li><p>Return to your terminal and pull down the new main branch changes using the following command: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>.</p></li>
 </ol>
 </dd>
 </dl>
@@ -269,9 +259,9 @@ $ git pull origin main
 <div class="section" id="resources">
 <h2><span class="section-number">15.8.6. </span>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://Git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank">Git Branching - Basic Branching and Merging<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li><a class="reference external" href="https://help.Github.com/articles/inviting-collaborators-to-a-personal-repository/" target="_blank">Adding Another Person To Your Repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li><a class="reference external" href="https://help.Github.com/articles/resolving-a-merge-conflict-using-the-command-line/" target="_blank">Resolving Conflicts In the Command Line<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><p><a class="reference external" href="https://Git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank">Git Branching - Basic Branching and Merging<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
+<li><p><a class="reference external" href="https://help.Github.com/articles/inviting-collaborators-to-a-personal-repository/" target="_blank">Adding Another Person To Your Repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
+<li><p><a class="reference external" href="https://help.Github.com/articles/resolving-a-merge-conflict-using-the-command-line/" target="_blank">Resolving Conflicts In the Command Line<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
 </ul>
 </div>
 </div>

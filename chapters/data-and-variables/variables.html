@@ -126,14 +126,14 @@ In the previous section, we discussed data types.</p>
 </pre></div>
 </div>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p>It is allowed in some situations in C# to declare a variable without
 specifying a type by using the keyword <code class="docutils literal notranslate"><span class="pre">var</span></code>, as in
 <code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">&quot;dog&quot;;</span></code>. In this case, C# still assigns a type to <code class="docutils literal notranslate"><span class="pre">x</span></code>
 through inference. It looks and sees that we are assigning <code class="docutils literal notranslate"><span class="pre">x</span></code> the
 value <code class="docutils literal notranslate"><span class="pre">&quot;dog&quot;</span></code>, which is a <code class="docutils literal notranslate"><span class="pre">string</span></code>. Thus, <code class="docutils literal notranslate"><span class="pre">x</span></code> has type <code class="docutils literal notranslate"><span class="pre">string</span></code>
 and attempting to assign <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">42</span></code> will still result in a build error.</p>
-<p class="last">We recommend avoiding use of <code class="docutils literal notranslate"><span class="pre">var</span></code> while you are learning C#. Even
+<p>We recommend avoiding use of <code class="docutils literal notranslate"><span class="pre">var</span></code> while you are learning C#. Even
 after you become more experienced with the language you will still only
 want to use it sparingly and in specific circumstances. Explicitly
 declaring the type of your variables makes for more readable code, in
@@ -148,13 +148,13 @@ This is why you will get an error if you try to run:</p>
 </div>
 <p>An assignment statement must have the name on the left-hand side, and the value on the right-hand side.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>To avoid confusion when reading or writing code, say to yourself:</p>
 <p><code class="docutils literal notranslate"><span class="pre">programmingLanguage</span></code> is assigned <code class="docutils literal notranslate"><span class="pre">'C#'</span></code></p>
 <p>or</p>
 <p><code class="docutils literal notranslate"><span class="pre">programmingLanguage</span></code> gets the value <code class="docutils literal notranslate"><span class="pre">'C#'</span></code>.</p>
 <p>Don’t say:</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">programmingLanguage</span></code> equals <code class="docutils literal notranslate"><span class="pre">'C#'</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">programmingLanguage</span></code> equals <code class="docutils literal notranslate"><span class="pre">'C#'</span></code>.</p>
 </div>
 </div>
 <div class="section" id="evaluating-variables">
@@ -162,12 +162,12 @@ This is why you will get an error if you try to run:</p>
 <p id="index-5">After a variable has been created, it may be used later in a program anywhere a value may be used.
 For example, <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code> prints a value, we can also give <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code> a variable.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>These two examples have the exact same output.</p>
 <div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="last highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span> <span class="n">message</span> <span class="p">=</span> <span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
 </pre></div>
@@ -177,7 +177,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">Consol
 The effect is just as if the value of the variable is substituted for the variable name in the
 code when executed.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -196,7 +196,7 @@ code when executed.</p>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>What&#39;s up, Doc?
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>What&#39;s up, Doc?
 17
 3.14
 </pre></div>
@@ -232,15 +232,15 @@ You’ll notice that we change the value of <code class="docutils literal notran
 For example, we might want to keep track of the number of missed calls on your phone.
 Each time another call is missed, we can arrange to update a variable so that it will always reflect the correct total of missed calls.</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">We only use data type when <em>declaring</em> a variable, that is, when we create it.
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>We only use data type when <em>declaring</em> a variable, that is, when we create it.
 We do NOT use the data type when reassigning the variable to a different value of the same type.</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">4.4.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is printed when the following code executes?</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -251,15 +251,15 @@ We do NOT use the data type when reassigning the variable to a different value o
  <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">day</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="last arabic simple">
-<li>Nothing is printed. A runtime error occurs.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Thursday</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">32.5</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">19</span></code></li>
+<ol class="arabic simple">
+<li><p>Nothing is printed. A runtime error occurs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Thursday</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">32.5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">19</span></code></p></li>
 </ol>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which line is an example of variable initialization? (<em>Note: only one line is such an example.</em>)</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -268,11 +268,11 @@ We do NOT use the data type when reassigning the variable to a different value o
 <span class="n">a</span> <span class="p">=</span> <span class="n">a</span> <span class="p">+</span> <span class="m">3</span><span class="p">;</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="last arabic simple">
-<li>Line 1</li>
-<li>Line 2</li>
-<li>Line 3</li>
-<li>None of the above</li>
+<ol class="arabic simple">
+<li><p>Line 1</p></li>
+<li><p>Line 2</p></li>
+<li><p>Line 3</p></li>
+<li><p>None of the above</p></li>
 </ol>
 </div>
 </div>

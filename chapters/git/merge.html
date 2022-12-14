@@ -99,8 +99,8 @@ This will combine the two branches by pulling our code from <code class="docutil
 Git provides output noting that <code class="docutils literal notranslate"><span class="pre">feature-branch</span></code> merged into the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.
 Once your merge is complete, commit your work.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">Before running the merge command, verify that you are on the branch you want to merge into!</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Before running the merge command, verify that you are on the branch you want to merge into!</p>
 </div>
 <div class="section" id="merge-conflicts">
 <span id="merge-conflict"></span><h2><span class="section-number">15.5.1. </span>Merge Conflicts<a class="headerlink" href="#merge-conflicts" title="Permalink to this headline">¶</a></h2>
@@ -113,14 +113,15 @@ It is waiting for a human to review the issue and decide.</p>
 <p>Your IDE uses symbols to show you the location of any conflicts.
 It will also provide the names of the conflicting branches.</p>
 <p>Some terms and symbols to pay attention to when conflict arrises.</p>
-<dl class="docutils">
-<dt>In Your Terminal:</dt><dd>Git will be the first warning.  <code class="docutils literal notranslate"><span class="pre">CONFLICT</span></code> will appear in your git output.  Usually followed by a location for the error.</dd>
+<dl class="simple">
+<dt>In Your Terminal:</dt><dd><p>Git will be the first warning.  <code class="docutils literal notranslate"><span class="pre">CONFLICT</span></code> will appear in your git output.  Usually followed by a location for the error.</p>
+</dd>
 <dt>In Your IDE:</dt><dd><ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="pre">HEAD</span></code> will appear at the first line of code where a conflict.
-<code class="docutils literal notranslate"><span class="pre">HEAD</span></code> points to the current branch you are on, or the current changes.  Some IDEs will use the branch name instead of <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">=======</span></code> will be the dividing line between the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> branch and the incoming branch.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="pre">branch-name</span></code> contains code from the incoming branch to merge in. This notation is often found below the last line of code.
-This code may also be referred to as the incoming changes.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="pre">HEAD</span></code> will appear at the first line of code where a conflict.
+<code class="docutils literal notranslate"><span class="pre">HEAD</span></code> points to the current branch you are on, or the current changes.  Some IDEs will use the branch name instead of <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=======</span></code> will be the dividing line between the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> branch and the incoming branch.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="pre">branch-name</span></code> contains code from the incoming branch to merge in. This notation is often found below the last line of code.
+This code may also be referred to as the incoming changes.</p></li>
 </ol>
 </dd>
 </dl>
@@ -136,21 +137,21 @@ The best way to deal with a merge conflict is to face it head on and rely on tea
 programmers to want to do everything they can to avoid them.
 Here are some tips on how to avoid a merge conflict:</p>
 <ol class="arabic simple">
-<li>Git has a dry-run option for many commands.
+<li><p>Git has a dry-run option for many commands.
 When a programmer uses that option, Git outputs what WILL happen, but doesn’t DO it.
 With merging in Git, the command to run a dry-run and make sure there aren’t any conflicts is <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--no-commit</span> <span class="pre">--no-ff</span> <span class="pre">&lt;branch&gt;</span></code>.
-<code class="docutils literal notranslate"><span class="pre">--no-commit</span></code> and <code class="docutils literal notranslate"><span class="pre">--no-ff</span></code> tell Git to run the merge without committing the result to the repository.</li>
-<li>Before merging in a branch, you must deal with any uncommitted work that would cause a conflict.
+<code class="docutils literal notranslate"><span class="pre">--no-commit</span></code> and <code class="docutils literal notranslate"><span class="pre">--no-ff</span></code> tell Git to run the merge without committing the result to the repository.</p></li>
+<li><p>Before merging in a branch, you must deal with any uncommitted work that would cause a conflict.
 A programmer can opt to not commit that work and instead <strong>stash</strong> it.
-Using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code> command saves the uncommitted work in the stash and returns the repository to the state at the last commit.</li>
+Using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code> command saves the uncommitted work in the stash and returns the repository to the state at the last commit.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">15.5.2. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">If a programmer is currently on a branch called <code class="docutils literal notranslate"><span class="pre">quiz</span></code> and wants to merge a branch called
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>If a programmer is currently on a branch called <code class="docutils literal notranslate"><span class="pre">quiz</span></code> and wants to merge a branch called
 <code class="docutils literal notranslate"><span class="pre">feature</span></code> into <code class="docutils literal notranslate"><span class="pre">main</span></code>, what steps should they take?</p>
 </div>
 </div>

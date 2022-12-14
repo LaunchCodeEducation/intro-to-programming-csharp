@@ -119,8 +119,8 @@ That type of message does not provide any feedback to your user for a second att
 <p><code class="docutils literal notranslate"><span class="pre">TryParse</span></code> uses booleans and conditionals to verify that the correct input data type has been entered, and then allows
 you to create options based on the data.  This can be a helpful way to prompt the user for the desired data type.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -162,17 +162,17 @@ you to create options based on the data.  This can be a helpful way to prompt th
 In this instance, <code class="docutils literal notranslate"><span class="pre">out</span></code> reassigns our string value for a <em>valid</em> numeric value, which will be stored in the <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> variable in <strong>Line 3</strong>.</p>
 <p>Let’s see how <code class="docutils literal notranslate"><span class="pre">TryParse</span></code> and <code class="docutils literal notranslate"><span class="pre">out</span></code> work.</p>
 <ul class="simple">
-<li><strong>Line 1</strong>, we print the prompt asking the user to provide a temperature reading.</li>
-<li><strong>Line 2</strong>, <code class="docutils literal notranslate"><span class="pre">degreesC</span></code> is initialized once the user puts in their value.</li>
-<li><strong>Line 3</strong>, <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> is declared, but not initialized.</li>
-<li><strong>Line 5</strong>, we take <code class="docutils literal notranslate"><span class="pre">degreesC</span></code> and attempt to parse it into a double.</li>
+<li><p><strong>Line 1</strong>, we print the prompt asking the user to provide a temperature reading.</p></li>
+<li><p><strong>Line 2</strong>, <code class="docutils literal notranslate"><span class="pre">degreesC</span></code> is initialized once the user puts in their value.</p></li>
+<li><p><strong>Line 3</strong>, <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> is declared, but not initialized.</p></li>
+<li><p><strong>Line 5</strong>, we take <code class="docutils literal notranslate"><span class="pre">degreesC</span></code> and attempt to parse it into a double.</p></li>
 </ul>
 <p>If this is <strong>true</strong>, then a lot of things happen.</p>
 <ul class="simple">
-<li>First, since the input is a valid double, <code class="docutils literal notranslate"><span class="pre">TryParse</span></code> will assign the parsed value to <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> via the <code class="docutils literal notranslate"><span class="pre">out</span></code> keyword, thereby initializing it.</li>
-<li>Second, the <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> variable is initialized.</li>
-<li>Third, <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> is used in <strong>Line 7</strong> to initialize <code class="docutils literal notranslate"><span class="pre">degreesK</span></code>.</li>
-<li>Finally, <strong>Line 8</strong> prints our results.</li>
+<li><p>First, since the input is a valid double, <code class="docutils literal notranslate"><span class="pre">TryParse</span></code> will assign the parsed value to <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> via the <code class="docutils literal notranslate"><span class="pre">out</span></code> keyword, thereby initializing it.</p></li>
+<li><p>Second, the <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> variable is initialized.</p></li>
+<li><p>Third, <code class="docutils literal notranslate"><span class="pre">degreesCDouble</span></code> is used in <strong>Line 7</strong> to initialize <code class="docutils literal notranslate"><span class="pre">degreesK</span></code>.</p></li>
+<li><p>Finally, <strong>Line 8</strong> prints our results.</p></li>
 </ul>
 <p>If <strong>Line 5</strong> is <strong>false</strong>, then <code class="docutils literal notranslate"><span class="pre">TryParse</span></code> is <em>not</em> able to assign any values.
 When this happens the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is triggered, and <strong>Line 12</strong> prints.</p>

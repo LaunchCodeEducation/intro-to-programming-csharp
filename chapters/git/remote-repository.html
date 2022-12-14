@@ -103,21 +103,21 @@ Make sure you choose an appropriate username.  Many programming professionals us
 <h3><span class="section-number">15.3.2.1. </span>Terminal and GitHub<a class="headerlink" href="#terminal-and-github" title="Permalink to this headline">¶</a></h3>
 <p>Creating a repo from scratch on your own computer.</p>
 <ol class="arabic simple">
-<li>Create a folder on your computer to hold your codebase.</li>
-<li><code class="docutils literal notranslate"><span class="pre">cd</span></code> into your folder and initialize it with git using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> command.</li>
-<li>Open your IDE and save all your work in your new directory.</li>
-<li><code class="docutils literal notranslate"><span class="pre">commit</span></code> your new project locally.</li>
-<li>Open GitHub and create a new repository.</li>
-<li>On the “Create a New Repository” page, name your repo the same as your folder so that you can stay organized better.</li>
-<li>Keep it public for now</li>
-<li>Don’t check any boxes in the “<strong>Initialize this repository with:</strong>” section since we started this process on our computer.</li>
-<li>Create the repository.</li>
-<li>Select “<strong>…or push an existing repository from the command line</strong>” option.  Copy the code and paste this into your terminal.
+<li><p>Create a folder on your computer to hold your codebase.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> into your folder and initialize it with git using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> command.</p></li>
+<li><p>Open your IDE and save all your work in your new directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commit</span></code> your new project locally.</p></li>
+<li><p>Open GitHub and create a new repository.</p></li>
+<li><p>On the “Create a New Repository” page, name your repo the same as your folder so that you can stay organized better.</p></li>
+<li><p>Keep it public for now</p></li>
+<li><p>Don’t check any boxes in the “<strong>Initialize this repository with:</strong>” section since we started this process on our computer.</p></li>
+<li><p>Create the repository.</p></li>
+<li><p>Select “<strong>…or push an existing repository from the command line</strong>” option.  Copy the code and paste this into your terminal.
 Press the enter key.
-<em>Note:</em>  If you get a note from git to use a different command, type it into the terminal and hit enter.</li>
-<li>Refresh your GitHub page and inspect your new repo.</li>
-<li>Back on your computer, open your IDE and select the folder that contains your repo and start coding.</li>
-<li>Don’t forget to save and commit your changes periodically.</li>
+<em>Note:</em>  If you get a note from git to use a different command, type it into the terminal and hit enter.</p></li>
+<li><p>Refresh your GitHub page and inspect your new repo.</p></li>
+<li><p>Back on your computer, open your IDE and select the folder that contains your repo and start coding.</p></li>
+<li><p>Don’t forget to save and commit your changes periodically.</p></li>
 </ol>
 </div>
 </div>
@@ -133,25 +133,18 @@ The <code class="docutils literal notranslate"><span class="pre">url-here</span>
 <h3><span class="section-number">15.3.3.1. </span>Cloning a Repo<a class="headerlink" href="#cloning-a-repo" title="Permalink to this headline">¶</a></h3>
 <p>Using code from someone else’s computer or repo.</p>
 <ol class="arabic">
-<li><p class="first">Create a folder on your computer to hold your codebase.</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">cd</span></code> into your folder.</p>
-</li>
-<li><p class="first">Open the repo that contains the codebase in GitHub.</p>
-</li>
-<li><p class="first">Look for the button that says <code class="docutils literal notranslate"><span class="pre">Code</span></code> and click on it.</p>
-</li>
-<li><p class="first">On the dropdown menu, copy the link to the codebase.  In this class, we will use the HTTPS code.</p>
-</li>
-<li><p class="first">Back in your terminal, you will use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command followed by the copied link. See the example below:</p>
+<li><p>Create a folder on your computer to hold your codebase.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> into your folder.</p></li>
+<li><p>Open the repo that contains the codebase in GitHub.</p></li>
+<li><p>Look for the button that says <code class="docutils literal notranslate"><span class="pre">Code</span></code> and click on it.</p></li>
+<li><p>On the dropdown menu, copy the link to the codebase.  In this class, we will use the HTTPS code.</p></li>
+<li><p>Back in your terminal, you will use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command followed by the copied link. See the example below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Students-Computer:learning-git student$ git clone https://github.com:username/repo-name.git
 </pre></div>
 </div>
 </li>
-<li><p class="first">Run the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to see what is now in your folder.</p>
-</li>
-<li><p class="first">You will need to <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the project folder to start coding.</p>
-</li>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to see what is now in your folder.</p></li>
+<li><p>You will need to <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the project folder to start coding.</p></li>
 </ol>
 </div>
 <div class="section" id="forking-a-repo">
@@ -159,16 +152,16 @@ The <code class="docutils literal notranslate"><span class="pre">url-here</span>
 <p>Creating a fork allows you to modify codebases without changing the original codebase.
 It is how you worked in replit.  And it is how you will gain access to any starter code in the remainder of this course.</p>
 <ol class="arabic simple">
-<li>Open the repo you wish to fork.</li>
-<li>Locate the <code class="docutils literal notranslate"><span class="pre">Fork</span></code> button.  Currently is in the top right corner of a GitHub repo.</li>
-<li>Click the <code class="docutils literal notranslate"><span class="pre">Fork</span></code> button.  If GitHub asks, make sure you save your fork into your class GitHub account.</li>
-<li>A forked copy of the repo appears in GitHub.</li>
-<li>You need to clone this fork onto your computer to work with its code.</li>
+<li><p>Open the repo you wish to fork.</p></li>
+<li><p>Locate the <code class="docutils literal notranslate"><span class="pre">Fork</span></code> button.  Currently is in the top right corner of a GitHub repo.</p></li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Fork</span></code> button.  If GitHub asks, make sure you save your fork into your class GitHub account.</p></li>
+<li><p>A forked copy of the repo appears in GitHub.</p></li>
+<li><p>You need to clone this fork onto your computer to work with its code.</p></li>
 </ol>
 <p>For more detailed instructions on how to fork, checkout out :ref:this walkthrough&lt;forking&gt;`.</p>
 <div class="admonition-fork-or-clone admonition">
-<p class="first admonition-title">Fork or Clone?</p>
-<p class="last">When working with LaunchCode GitHub repositories, you will want to fork the repository rather than clone it.</p>
+<p class="admonition-title">Fork or Clone?</p>
+<p>When working with LaunchCode GitHub repositories, you will want to fork the repository rather than clone it.</p>
 </div>
 </div>
 </div>
@@ -178,11 +171,11 @@ It is how you worked in replit.  And it is how you will gain access to any start
 Now you need to push your changes up to the remote repo.
 When working with a remote repo, the commit process has five steps:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">message-here</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">main</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">message-here</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">main</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code></p></li>
 </ol>
 <p>The fourth step uses the new command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push...</span></code>.
 This pushes the commit to the remote from the local. <code class="docutils literal notranslate"><span class="pre">origin</span></code> indicates that the commit
@@ -198,8 +191,8 @@ A good practice for creating new features or working collaboratively.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">15.3.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">What is the new command for making a commit to a remote repository?</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is the new command for making a commit to a remote repository?</p>
 </div>
 </div>
 </div>

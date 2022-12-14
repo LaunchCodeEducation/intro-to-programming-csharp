@@ -89,25 +89,27 @@
 <p>Work on these exercises in a new Visual Studio .Net Core console app.
 Name your solution <code class="docutils literal notranslate"><span class="pre">Technology</span></code> and make a project inside of it with the same name.</p>
 <ol class="arabic simple">
-<li><strong>Class design:</strong> Create three classes inside your solution: <code class="docutils literal notranslate"><span class="pre">Computer</span></code>, <code class="docutils literal notranslate"><span class="pre">Laptop</span></code>, and <code class="docutils literal notranslate"><span class="pre">SmartPhone</span></code>.
+<li><p><strong>Class design:</strong> Create three classes inside your solution: <code class="docutils literal notranslate"><span class="pre">Computer</span></code>, <code class="docutils literal notranslate"><span class="pre">Laptop</span></code>, and <code class="docutils literal notranslate"><span class="pre">SmartPhone</span></code>.
 Before you start coding anything inside these classes, diagram how the three classes are going to be related
-to each other. Remember to add properties and methods to your diagram.<ol class="arabic">
-<li>For a parent class: add 3 fields, 2 methods, and a constructor.</li>
-<li>For a child class: add <em>at least</em> 1 additional field and 1 additional method.</li>
-<li>At least one of your fields should be either <code class="docutils literal notranslate"><span class="pre">static</span></code>, <code class="docutils literal notranslate"><span class="pre">readonly</span></code>, or a <code class="docutils literal notranslate"><span class="pre">const</span></code>.</li>
+to each other. Remember to add properties and methods to your diagram.</p>
+<ol class="arabic simple">
+<li><p>For a parent class: add 3 fields, 2 methods, and a constructor.</p></li>
+<li><p>For a child class: add <em>at least</em> 1 additional field and 1 additional method.</p></li>
+<li><p>At least one of your fields should be either <code class="docutils literal notranslate"><span class="pre">static</span></code>, <code class="docutils literal notranslate"><span class="pre">readonly</span></code>, or a <code class="docutils literal notranslate"><span class="pre">const</span></code>.</p></li>
 </ol>
 </li>
-<li><strong>Class implementation:</strong> Implement your design and add unit tests to a new <code class="docutils literal notranslate"><span class="pre">TechnologyTests</span></code> MSTest project.<ol class="arabic">
-<li>Add a new MSTest project to your solution.</li>
-<li>Try to add three MSTests tests per class.</li>
+<li><p><strong>Class implementation:</strong> Implement your design and add unit tests to a new <code class="docutils literal notranslate"><span class="pre">TechnologyTests</span></code> MSTest project.</p>
+<ol class="arabic simple">
+<li><p>Add a new MSTest project to your solution.</p></li>
+<li><p>Try to add three MSTests tests per class.</p></li>
 </ol>
 </li>
-<li><strong>Abstract class design:</strong> Consider the group of classes that you designed. Suppose you have a web program
+<li><p><strong>Abstract class design:</strong> Consider the group of classes that you designed. Suppose you have a web program
 that uses these classes and you need to assign a unique ID to every object created from them.
 Each class should have an <code class="docutils literal notranslate"><span class="pre">id</span></code> field, and no two objects created from any of the classes may have the
 same value for <code class="docutils literal notranslate"><span class="pre">id</span></code>. Create an abstract class, <code class="docutils literal notranslate"><span class="pre">AbstractEntity</span></code>, that contains the behavior for
 assigning and accessing such a unique ID for each class that extends it. Add this class to your <code class="docutils literal notranslate"><span class="pre">Technology</span></code>
-project above, and add <code class="docutils literal notranslate"><span class="pre">AbstractEntity</span></code> to the class hierarchy in the correct place.</li>
+project above, and add <code class="docutils literal notranslate"><span class="pre">AbstractEntity</span></code> to the class hierarchy in the correct place.</p></li>
 </ol>
 </div>
 

@@ -96,19 +96,19 @@ multiple people work on the same code base.</p>
 task, you should have a good idea about how to have two people work on the same
 code at the same time. You will learn how to:</p>
 <ol class="arabic simple">
-<li>Quickly add code in pull + push cycles <em>(Important! This is the fundamental
-process!)</em></li>
-<li>Add a collaborator to a GitHub Project</li>
-<li>Share <em>repositories</em> on GitHub</li>
-<li>Create a <em>branch</em> in Git</li>
-<li>Create a <em>pull request</em> in GitHub</li>
-<li>Resolve merge conflicts (which are not as scary as they sound)</li>
+<li><p>Quickly add code in pull + push cycles <em>(Important! This is the fundamental
+process!)</em></p></li>
+<li><p>Add a collaborator to a GitHub Project</p></li>
+<li><p>Share <em>repositories</em> on GitHub</p></li>
+<li><p>Create a <em>branch</em> in Git</p></li>
+<li><p>Create a <em>pull request</em> in GitHub</p></li>
+<li><p>Resolve merge conflicts (which are not as scary as they sound)</p></li>
 </ol>
 <p>This lesson reinforces:</p>
 <ol class="arabic simple">
-<li>Creating repositories</li>
-<li>Cloning repositories</li>
-<li>Working with Git concepts: Staging, Commits, and Status</li>
+<li><p>Creating repositories</p></li>
+<li><p>Cloning repositories</p></li>
+<li><p>Working with Git concepts: Staging, Commits, and Status</p></li>
 </ol>
 </div>
 <div class="section" id="overview">
@@ -130,8 +130,8 @@ mimic how a real-world collaborative Git workflow can be used within a project.<
 <div class="section" id="step-1-create-a-new-repository">
 <span id="create-new-git-repo"></span><h2><span class="section-number">15.7.3. </span>Step 1: Create a New Repository<a class="headerlink" href="#step-1-create-a-new-repository" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Be careful if you try to use <code class="docutils literal notranslate"><span class="pre">copy/paste</span></code> with the <code class="docutils literal notranslate"><span class="pre">git</span></code> commands! The
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Be careful if you try to use <code class="docutils literal notranslate"><span class="pre">copy/paste</span></code> with the <code class="docutils literal notranslate"><span class="pre">git</span></code> commands! The
 <code class="docutils literal notranslate"><span class="pre">$</span></code> symbols in the screenshots represent the prompts in the terminal.
 They are NOT part of the commands.</p>
 </div>
@@ -153,19 +153,19 @@ Then select the directory to store your files (2).
 Browse for the directory you just created by clicking on the box with the <code class="docutils literal notranslate"><span class="pre">...</span></code> inside (3).</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-setting-up-a-gitignore-file admonition">
-<p class="first admonition-title">Setting Up a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> File</p>
+<p class="admonition-title">Setting Up a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> File</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file is a text file that will contain untracked files or ignored files.
 These are files that will become part of your repo but are not very useful to other developers.
 Placing them in a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file will tell git to skip over them, which will reduce visual clutter in your terminal.</p>
 <p><strong>Mac Users</strong> this is part of your initial configuration.</p>
 <p><strong>Windows Users</strong>: There are a few steps to create a <code class="docutils literal notranslate"><span class="pre">.gitignore</span> <span class="pre">file</span></code>.</p>
 <ol class="arabic">
-<li><p class="first">Select the <strong>Git</strong> tab.  Scroll down to <strong>Settings</strong>.</p>
+<li><p>Select the <strong>Git</strong> tab.  Scroll down to <strong>Settings</strong>.</p>
 <div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/git-settings-tab.png"><img alt="Select the Settings for Git in Visual Studio" src="../../_images/git-settings-tab.png" style="width: 205.2px; height: 241.2px;" /></a>
 </div>
 </li>
-<li><p class="first"><strong>Settings</strong> will open the <strong>Source Control</strong> option.
+<li><p><strong>Settings</strong> will open the <strong>Source Control</strong> option.
 Under <strong>Sorce Control</strong> select <strong>Git Repository Settings</strong> then <strong>General</strong>
 in the right-side pane, look for the <em>Git files</em> section.
 Select <strong>Add</strong> for <strong>Ignore file:</strong>
@@ -175,7 +175,7 @@ Select <strong>OK</strong> to add your new files.</p>
 </div>
 </li>
 </ol>
-<p class="last">Again, this is only one way to create this type of file.
+<p>Again, this is only one way to create this type of file.
 Use it as a starting point, and grow from here.</p>
 </div>
 </div>
@@ -192,13 +192,13 @@ and automatically create a <code class="docutils literal notranslate"><span clas
 </div>
 <div class="section" id="step-2-first-commit">
 <h2><span class="section-number">15.7.4. </span>Step 2: First Commit<a class="headerlink" href="#step-2-first-commit" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
+<dl class="simple">
 <dt><strong>Control</strong></dt><dd><ol class="arabic simple">
-<li>Run your new project to make sure it works.</li>
-<li>Use the terminal to <code class="docutils literal notranslate"><span class="pre">commit</span></code> your new console app.
+<li><p>Run your new project to make sure it works.</p></li>
+<li><p>Use the terminal to <code class="docutils literal notranslate"><span class="pre">commit</span></code> your new console app.
 You can use your stand-alone terminal or use the terminal built-in to your IDE.
-In Visual Studio, the terminal is found in the <strong>View</strong> menu.</li>
-<li>Once in your terminal, <a class="reference internal" href="repositories-and-commits.html#local-commit"><span class="std std-ref">commit</span></a> your project.</li>
+In Visual Studio, the terminal is found in the <strong>View</strong> menu.</p></li>
+<li><p>Once in your terminal, <a class="reference internal" href="repositories-and-commits.html#local-commit"><span class="std std-ref">commit</span></a> your project.</p></li>
 </ol>
 </dd>
 </dl>
@@ -207,94 +207,89 @@ accessible for <strong>Pilot</strong> also. Let’s <code class="docutils litera
 </div>
 <div class="section" id="step-3-share-your-repository-on-github">
 <h2><span class="section-number">15.7.5. </span>Step 3: Share Your Repository On GitHub<a class="headerlink" href="#step-3-share-your-repository-on-github" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
+<dl>
 <dt><strong>Control</strong>:</dt><dd><ol class="arabic">
-<li><p class="first">Go to your GitHub profile in a web browser.
+<li><p>Go to your GitHub profile in a web browser.
 Click on the “<strong>+</strong>” button to add a new repository (called a <em>repo</em> for short).</p>
 <div class="figure align-default" id="id3">
 <img alt="The New Repository link in the dropdown menu at top right on GitHub." src="../../_images/new-repo-button1.png" />
 <p class="caption"><span class="caption-text">The <em>New Repository</em> link is in the dropdown menu at top right on GitHub.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first">Fill in the name and description.</p>
-</li>
-<li><p class="first">Uncheck <em>Initialize this repository with a README</em> and click <em>Create Repository</em>.</p>
+<li><p>Fill in the name and description.</p></li>
+<li><p>Uncheck <em>Initialize this repository with a README</em> and click <em>Create Repository</em>.</p>
 <div class="figure align-default" id="id4">
 <img alt="Creating a new repository in GitHub by filling out the form" src="../../_images/create-repo1.png" />
 <p class="caption"><span class="caption-text">Create a new repository in GitHub</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If you initialize with a README, in the next step Git will refuse to merge
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you initialize with a README, in the next step Git will refuse to merge
 this repo with the local repo. There are ways around that, but it’s faster
 and easier to just create an empty repo here.</p>
 </div>
 </li>
-<li><p class="first">Connect your local repo to GitHub by copying the code for pushing into an existing repo.
+<li><p>Connect your local repo to GitHub by copying the code for pushing into an existing repo.
 Remember, you already initialized and committed your console app.</p>
 <div class="figure align-default">
 <img alt="The page you see after creating an empty repository, with several options." src="../../_images/new-repo-push-main.png" />
 </div>
 </li>
-<li><p class="first">Now go back to your terminal and copy/paste the commands shown in the GitHub instructions. These should be very similar to:</p>
+<li><p>Now go back to your terminal and copy/paste the commands shown in the GitHub instructions. These should be very similar to:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com/your-username/communication-log.git
 $ git branch -M main
 $ git push -u origin main
 </pre></div>
 </div>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>The first time you push up to GitHub, you will be prompted in the terminal
 to enter your account username and password. Do this.</p>
 <p>You will then see a large amount of output that you can safely ignore. The
 final few lines will confirm a successful push. They will look something
 like this:</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>To github.com:your-username/communication-log.git
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>To github.com:your-username/communication-log.git
    c7f97814..54993de3  main -&gt; main
 </pre></div>
 </div>
 </div>
 <p>Notice that if your local branch was named <code class="docutils literal notranslate"><span class="pre">master</span></code> it was automatically changed to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">Unless you’ve set up an SSH key with GitHub, make sure you’ve selected the
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>Unless you’ve set up an SSH key with GitHub, make sure you’ve selected the
 HTTPS clone URL. If you’re not sure whether you have an SSH key, you
 probably don’t.</p>
 </div>
 </li>
-<li><p class="first">Confirm that GitHub has the same version as your local project (file contents match) by refreshing your GitHub page. Click around and see what is there. You can read all your code through GitHub’s web interface.</p>
-</li>
+<li><p>Confirm that GitHub has the same version as your local project (file contents match) by refreshing your GitHub page. Click around and see what is there. You can read all your code through GitHub’s web interface.</p></li>
 </ol>
 </dd>
 </dl>
 </div>
 <div class="section" id="step-4-clone-a-project-from-github">
 <span id="clone-from-git"></span><h2><span class="section-number">15.7.6. </span>Step 4: Clone a Project from GitHub<a class="headerlink" href="#step-4-clone-a-project-from-github" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
+<dl>
 <dt><strong>Pilot</strong>:</dt><dd><ol class="arabic">
-<li><p class="first">Go to Control’s GitHub profile and find the communication-log repo.</p>
-</li>
-<li><p class="first">Click on the green <strong>Code</strong> button. <strong>Clone</strong> the HTTPS (not SSH) url. Copy the url to your clipboard.</p>
-</li>
-<li><p class="first">In your terminal, navigate to your development folder and clone down the repo.</p>
+<li><p>Go to Control’s GitHub profile and find the communication-log repo.</p></li>
+<li><p>Click on the green <strong>Code</strong> button. <strong>Clone</strong> the HTTPS (not SSH) url. Copy the url to your clipboard.</p></li>
+<li><p>In your terminal, navigate to your development folder and clone down the repo.</p>
 <p>The command should look something like this.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/chrisbay/communication-log.git
 </pre></div>
 </div>
 <p>Now you can respond to Control!</p>
 </li>
-<li><p class="first">Open the <code class="docutils literal notranslate"><span class="pre">communication-log.sln</span></code> file in your editor and add your response to mission control. Be creative, the communication can go anywhere! Just don’t ask your partner what you should write.</p>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">communication-log.sln</span></code> file in your editor and add your response to mission control. Be creative, the communication can go anywhere! Just don’t ask your partner what you should write.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">When you open the project folder, you might not be in the same directory as the solution.
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>When you open the project folder, you might not be in the same directory as the solution.
 You want to open the solution or <code class="docutils literal notranslate"><span class="pre">.sln</span></code> file.
 A quick way to do that from the terminal is to <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the folder that is holding the solution
 and then type <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">.sln</span></code> on a Mac and <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">.sln</span></code> in Windows.</p>
 </div>
 </li>
-<li><p class="first">After you finish, <code class="docutils literal notranslate"><span class="pre">commit</span></code> your change.</p>
-</li>
-<li><p class="first">Now we need to <code class="docutils literal notranslate"><span class="pre">push</span></code> up your changes so Control can use them as well.</p>
+<li><p>After you finish, <code class="docutils literal notranslate"><span class="pre">commit</span></code> your change.</p></li>
+<li><p>Now we need to <code class="docutils literal notranslate"><span class="pre">push</span></code> up your changes so Control can use them as well.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin main
 ERROR: Permission to chrisbay/communication-log.git denied to Pilot.
 fatal: Could not read from remote repository.
@@ -311,51 +306,44 @@ and the repository exists.
 </div>
 <div class="section" id="step-5-add-a-collaborator-to-a-github-project">
 <h2><span class="section-number">15.7.7. </span>Step 5: Add A Collaborator To A GitHub Project<a class="headerlink" href="#step-5-add-a-collaborator-to-a-github-project" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
+<dl>
 <dt><strong>Control</strong>:</dt><dd><ol class="arabic">
-<li><p class="first">In your web browser, go to your <code class="docutils literal notranslate"><span class="pre">communication-log</span></code> repo.</p>
-</li>
-<li><p class="first">Click the <em>Settings</em> button</p>
+<li><p>In your web browser, go to your <code class="docutils literal notranslate"><span class="pre">communication-log</span></code> repo.</p></li>
+<li><p>Click the <em>Settings</em> button</p>
 <div class="figure align-default">
 <img alt="Location of Settings button for a GitHub Repo" src="../../_images/settings.png" />
 </div>
 </li>
-<li><p class="first">Click the <em>Collaborators</em> button</p>
+<li><p>Click the <em>Collaborators</em> button</p>
 <div class="figure align-default">
 <img alt="Location of Collaborators button to grant access to GitHub Repo" src="../../_images/add-people.png" />
 </div>
 </li>
-<li><p class="first">Click the green <strong>Add people</strong> button to invite collaborators.</p>
-</li>
-<li><p class="first">Enter in Pilot’s GitHub username.</p>
-</li>
-<li><p class="first">When you see Pilot’s profile, select it and then click <em>Select a collaborator above</em>.</p>
-</li>
-<li><p class="first">You should now see a “Manage access” pane on GitHub.
-Pilot’s username should be visible along with their collaboration status.  At this point, you should see “Pending invite”.</p>
-</li>
+<li><p>Click the green <strong>Add people</strong> button to invite collaborators.</p></li>
+<li><p>Enter in Pilot’s GitHub username.</p></li>
+<li><p>When you see Pilot’s profile, select it and then click <em>Select a collaborator above</em>.</p></li>
+<li><p>You should now see a “Manage access” pane on GitHub.
+Pilot’s username should be visible along with their collaboration status.  At this point, you should see “Pending invite”.</p></li>
 </ol>
 </dd>
 </dl>
 </div>
 <div class="section" id="step-6-join-the-project-and-push">
 <h2><span class="section-number">15.7.8. </span>Step 6: Join the Project and Push<a class="headerlink" href="#step-6-join-the-project-and-push" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
+<dl>
 <dt><strong>Pilot</strong>:</dt><dd><ol class="arabic">
-<li><p class="first">Check your email.  You should receive an email invitation to join this repository.</p>
-</li>
-<li><p class="first">View and accept the invitation.</p>
-</li>
-<li><p class="first">This should take you to Control’s repo.</p>
+<li><p>Check your email.  You should receive an email invitation to join this repository.</p></li>
+<li><p>View and accept the invitation.</p></li>
+<li><p>This should take you to Control’s repo.</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If you don’t see an email (it may take a few minutes to arrive in your inbox),
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you don’t see an email (it may take a few minutes to arrive in your inbox),
 check your Spam folder. If you still don’t have an email, visit the
 repository page for the repo that Control created (ask them for the link), and
 you’ll see a notification at the top of the page.</p>
 </div>
 </li>
-<li><p class="first">Now let’s go enter that command again to <code class="docutils literal notranslate"><span class="pre">push</span></code> up our code.</p>
+<li><p>Now let’s go enter that command again to <code class="docutils literal notranslate"><span class="pre">push</span></code> up our code.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push origin main
 Counting objects: <span class="m">9</span>, <span class="k">done</span>.
 Delta compression using up to <span class="m">4</span> threads.
@@ -372,10 +360,10 @@ To git@github.com:chrisbay/communication-log.git
 </dd>
 </dl>
 <p>Anyone reading the code through GitHub’s browser interface should now see the new second line.</p>
-<dl class="docutils">
+<dl class="simple">
 <dt><strong>Control</strong></dt><dd><ol class="arabic simple">
-<li>If you refresh the collaboration page, the “Pending invitation”
-should disappear once Pilot has accepted the invite.</li>
+<li><p>If you refresh the collaboration page, the “Pending invitation”
+should disappear once Pilot has accepted the invite.</p></li>
 </ol>
 </dd>
 </dl>

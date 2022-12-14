@@ -182,12 +182,12 @@ Without that closing <code class="docutils literal notranslate"><span class="pre
 <p>It prints and there are no more errors.  We did it!  If you notice, you only worked on that first error and all the others
 disappeared.  Just work on one error at a time and test, test, test!  Remember, those messages are your friend.</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Error messages may differ depending on where you run your code. The same program run in a <a class="reference external" href="https://repl.it/" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and other IDEs on your computer will generate slightly different error messages. However, these differences are minor and generally unimportant. The main cause of the error will be reported in the same way.</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Error messages may differ depending on where you run your code. The same program run in a <a class="reference external" href="https://repl.it/" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and other IDEs on your computer will generate slightly different error messages. However, these differences are minor and generally unimportant. The main cause of the error will be reported in the same way.</p>
 </div>
 <p>The same process can be done for warnings and exceptions too.  Don’t be afraid to look around for answers.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>A quick note on Compiler messages.  Sometimes the coordinates of an error are referring to the line <em>above</em>.  This is very common when you leave off an <code class="docutils literal notranslate"><span class="pre">;</span></code>.  Here is a quick example:</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Julie&quot;</span>
@@ -198,7 +198,7 @@ disappeared.  Just work on one error at a time and test, test, test!  Remember, 
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>main.cs(2,4): error CS1525: Unexpected symbol `Console&#39;
 </pre></div>
 </div>
-<p class="last">If you scour <strong>Line 2</strong> for errors, you are going to drive yourself crazy.  Your <strong>Line 2</strong> is correct.  <em>Why</em> does the complier think <code class="docutils literal notranslate"><span class="pre">'Console'</span></code> is a symbol?  If you look at <strong>Line 1</strong>, you’ll see there is no <code class="docutils literal notranslate"><span class="pre">;</span></code> to end the statement, so C# thinks that <strong>Line 2</strong> is part of your inital expression in <strong>Line 1</strong>.</p>
+<p>If you scour <strong>Line 2</strong> for errors, you are going to drive yourself crazy.  Your <strong>Line 2</strong> is correct.  <em>Why</em> does the complier think <code class="docutils literal notranslate"><span class="pre">'Console'</span></code> is a symbol?  If you look at <strong>Line 1</strong>, you’ll see there is no <code class="docutils literal notranslate"><span class="pre">;</span></code> to end the statement, so C# thinks that <strong>Line 2</strong> is part of your inital expression in <strong>Line 1</strong>.</p>
 </div>
 </div>
 <div class="section" id="syntax-highlighting">

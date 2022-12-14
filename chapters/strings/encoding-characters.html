@@ -106,8 +106,8 @@ numbers.</p>
 integer, and vice versa. There are 256 different values a byte may take, each
 of which can be used to represent a decimal integer, from 0 to 255.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">We will not go into binary to decimal number conversion. If you are
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>We will not go into binary to decimal number conversion. If you are
 interested in learning more, there are <a class="reference external" href="https://www.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/decimal-to-binary" target="_blank">many<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> <a class="reference external" href="https://www.youtube.com/watch?v=wPvI19DmWQw" target="_blank">tutorials<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> <a class="reference external" href="https://www.rapidtables.com/convert/number/decimal-to-binary.html" target="_blank">online<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> that can show you the way.</p>
 </div>
 <p>In this way, the bits in a computer can be viewed as integers. If you want to
@@ -137,8 +137,8 @@ whitespace, punctuation, and symbols—are part of the <strong>ASCII</strong> (p
 <em>ask-ee</em>) character encoding. This standard has changed very little since the
 1960s, and it is the foundation of all other commonly-used encodings.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">ASCII stands for American Standard Code for Information Interchange, but
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>ASCII stands for American Standard Code for Information Interchange, but
 most programmers never remember that, so you shouldn’t try to either.</p>
 </div>
 <p>ASCII provides a standard translation of the most commonly-used characters to
@@ -150,15 +150,15 @@ The other integers between 0 and 127 represent symbols, punctuation, and other a
 This scheme is called the <strong>ASCII table</strong>, and rather than replicate it here, we refer you to an <a class="reference external" href="https://www.ascii-code.com/" target="_blank">excellent one online<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <p>In summary, strings are stored in a computer using the following process:</p>
 <ol class="arabic simple">
-<li>Break a string into its individual characters.</li>
-<li>Use a character encoding, such as ASCII, to convert each of the characters
-to an integer.</li>
-<li>Convert each integer to a series of bits using decimal-to-binary integer
-conversion.</li>
+<li><p>Break a string into its individual characters.</p></li>
+<li><p>Use a character encoding, such as ASCII, to convert each of the characters
+to an integer.</p></li>
+<li><p>Convert each integer to a series of bits using decimal-to-binary integer
+conversion.</p></li>
 </ol>
 <div class="admonition-fun-fact admonition">
-<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
-<p class="last">C# uses the UTF-16 encoding, which includes ASCII as a subset. We will rarely need anything outside of its ASCII subset, so we will usually talk about “ASCII codes” in C#.</p>
+<p class="admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p>C# uses the UTF-16 encoding, which includes ASCII as a subset. We will rarely need anything outside of its ASCII subset, so we will usually talk about “ASCII codes” in C#.</p>
 </div>
 </div>
 </div>
@@ -166,7 +166,7 @@ conversion.</li>
 <h2><span class="section-number">7.6.3. </span>Character Encodings in C#<a class="headerlink" href="#character-encodings-in-c" title="Permalink to this headline">¶</a></h2>
 <p>In C#, the character data type, or <strong>char</strong>, is able to handle the integer input of a unicode reference with some implicit type casting and vice versa.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -181,7 +181,7 @@ conversion.</li>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>a
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a
 97
 True
 </pre></div>
@@ -198,7 +198,7 @@ It returns <code class="docutils literal notranslate"><span class="pre">97</span
 <p>In order to use this with string data types, we need to break our string into a character array.  We will discuss arrays and this method in the next chapter.
 For now, we can use single <strong>chars</strong> and <strong>ints</strong> for encoding purposes.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -231,7 +231,7 @@ For now, we can use single <strong>chars</strong> and <strong>ints</strong> for 
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>67
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>67
 32
 83
 104
@@ -243,7 +243,7 @@ For now, we can use single <strong>chars</strong> and <strong>ints</strong> for 
 </div>
 <p>To convert an ASCII code to an actual character, initialize a <strong>char</strong> variable and explicitly cast the value to <strong>char</strong>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -276,7 +276,7 @@ For now, we can use single <strong>chars</strong> and <strong>ints</strong> for 
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>C
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C
 
 S
 h

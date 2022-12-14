@@ -98,7 +98,7 @@ The other version creates a new string by removing characters between the <code 
 </div>
 <p>Both Option 1 and 2 return a new instance of <code class="docutils literal notranslate"><span class="pre">stringName</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">//Option 1</span>
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;LaunchCode&quot;</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="m">4</span><span class="p">));</span>
 
@@ -107,7 +107,7 @@ The other version creates a new string by removing characters between the <code 
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<div class="last highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">//Option 1</span>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="c1">//Option 1</span>
 <span class="n">Laun</span>
 
 <span class="c1">//Option 2</span>
@@ -119,7 +119,7 @@ The other version creates a new string by removing characters between the <code 
 This means that <code class="docutils literal notranslate"><span class="pre">fake.email&#64;launchcode.org</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">fakeemail&#64;launchcode.org</span></code>.
 To remove the <code class="docutils literal notranslate"><span class="pre">.</span></code> before the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol in an email address, we can use the <code class="docutils literal notranslate"><span class="pre">Remove</span></code> and <code class="docutils literal notranslate"><span class="pre">IndexOf</span></code> methods.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span> <span class="n">email</span> <span class="p">=</span> <span class="s">&quot;fake.email@launchcode.org&quot;</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">dotIndex</span> <span class="p">=</span> <span class="n">email</span><span class="p">.</span><span class="n">IndexOf</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
 <span class="kt">string</span> <span class="n">dotFreeEmail</span> <span class="p">=</span> <span class="n">email</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">dotIndex</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
@@ -127,7 +127,7 @@ To remove the <code class="docutils literal notranslate"><span class="pre">.</sp
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>fakeemail@launchcode.org
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fakeemail@launchcode.org
 </pre></div>
 </div>
 </div>

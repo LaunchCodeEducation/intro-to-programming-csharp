@@ -88,8 +88,8 @@
 <h1><span class="section-number">4.1. </span>Values and Data Types<a class="headerlink" href="#values-and-data-types" title="Permalink to this headline">¶</a></h1>
 <p>Programs may be thought of as being made up of two things:</p>
 <ol class="arabic simple">
-<li>Data</li>
-<li>Operations that manipulate data</li>
+<li><p>Data</p></li>
+<li><p>Operations that manipulate data</p></li>
 </ol>
 <p>This chapter focuses primarily on the first of these two fundamental components, data.</p>
 <p id="index-0">Data can be stored in a program in a variety of ways. The most basic unit of data is a value.</p>
@@ -103,7 +103,7 @@ different data types throughout the course, the first three of which are the
 letters. Strings must be enclosed in double quotes.</p>
 <span class="target" id="index-2"></span><p id="index-3">If you are not sure what data type a value falls into, follow the value with <code class="docutils literal notranslate"><span class="pre">GetType</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">((</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">).</span><span class="n">GetType</span><span class="p">());</span>
@@ -112,7 +112,7 @@ letters. Strings must be enclosed in double quotes.</p>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>System.String
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>System.String
 System.Int32
 System.Double
 </pre></div>
@@ -122,12 +122,12 @@ System.Double
 The data type of <code class="docutils literal notranslate"><span class="pre">17</span></code> is assumed <code class="docutils literal notranslate"><span class="pre">int</span></code> because it is a whole number, and <code class="docutils literal notranslate"><span class="pre">3.14</span></code>
 is <code class="docutils literal notranslate"><span class="pre">double</span></code> because of the decimal point.</p>
 <div class="admonition" id="index-4">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Notice that <code class="docutils literal notranslate"><span class="pre">Console.WriteLine((&quot;Hello,</span> <span class="pre">World!&quot;).GetType());</span></code> prints out <code class="docutils literal notranslate"><span class="pre">System.String</span></code> to the console.  The <code class="docutils literal notranslate"><span class="pre">GetType</span></code> method is not printed to the console because the statement <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span> <span class="pre">GetType</span></code> is an <strong>expression</strong>. Briefly, expressions are code segments that are reduced to a value. We will learn more about expressions soon.</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">Console.WriteLine((&quot;Hello,</span> <span class="pre">World!&quot;).GetType());</span></code> prints out <code class="docutils literal notranslate"><span class="pre">System.String</span></code> to the console.  The <code class="docutils literal notranslate"><span class="pre">GetType</span></code> method is not printed to the console because the statement <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span> <span class="pre">GetType</span></code> is an <strong>expression</strong>. Briefly, expressions are code segments that are reduced to a value. We will learn more about expressions soon.</p>
 </div>
 <div class="admonition" id="index-5">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">GetType</span></code> is a C# entity known as an <strong>method</strong>. It carries out some kind of action, which is already built into it.</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">GetType</span></code> is a C# entity known as an <strong>method</strong>. It carries out some kind of action, which is already built into it.</p>
 </div>
 <p>There are data types other than string and number, including object and method, which we will learn about in future chapters.</p>
 <div class="section" id="more-on-strings">
@@ -141,14 +141,14 @@ quotation marks making them strings.</p>
 <p>When you type a large integer value, you might be tempted to use commas between groups of
 three digits, as in <code class="docutils literal notranslate"><span class="pre">42,000</span></code>. This is not a legal integer in C#.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="m">42000</span><span class="p">);</span>
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="m">42</span><span class="p">,</span><span class="m">000</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>42000
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>42000
 error CS1502: ...`System.Console.WriteLine(string, object)&#39; has some invalid arguments
 </pre></div>
 </div>
@@ -169,13 +169,13 @@ the notation is concise, and even the smallest change might mean something quite
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">4.1.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of these is <em>not</em> a data type in C#?</p>
-<ol class="last arabic simple">
-<li>integer</li>
-<li>string</li>
-<li>letter</li>
-<li>object</li>
+<ol class="arabic simple">
+<li><p>integer</p></li>
+<li><p>string</p></li>
+<li><p>letter</p></li>
+<li><p>object</p></li>
 </ol>
 </div>
 </div>

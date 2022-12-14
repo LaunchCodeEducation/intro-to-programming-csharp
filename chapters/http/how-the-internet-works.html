@@ -106,8 +106,8 @@ The client then displays the content of the response.</p>
 <p class="caption"><span class="caption-text">Several clients communicating with a server.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-fun-fact admonition">
-<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
-<p class="last">In the client-server model, the server may sometimes be on the <em>same</em> computer as the client.
+<p class="admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p>In the client-server model, the server may sometimes be on the <em>same</em> computer as the client.
 This is often the case when a programmer is building a web application.
 The in-progress, development version of the application is on their laptop,
 as is their browser that they use to test the app.</p>
@@ -117,37 +117,37 @@ as is their browser that they use to test the app.</p>
 <h2><span class="section-number">25.1.2. </span>Protocols<a class="headerlink" href="#protocols" title="Permalink to this headline">¶</a></h2>
 <p id="index-1">A <strong>protocol</strong> is a standard for communication between computers.
 Most web communication uses <em>three</em> protocols, in fact.</p>
-<table border="1" class="docutils align-default" id="id3">
+<table class="docutils align-default" id="id3">
 <caption><span class="caption-text">Common Web Protocols</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Protocol</th>
-<th class="head">Full Name</th>
-<th class="head">Role</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Protocol</p></th>
+<th class="head"><p>Full Name</p></th>
+<th class="head"><p>Role</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>HTTP</td>
-<td>Hypertext Transfer Protocol</td>
-<td><p class="first">High-level web communication for transferring files and information, including:</p>
-<ul class="last simple">
-<li>Code files that create web sites (HTML, CSS, C Sharp, etc.)</li>
-<li>images and other media</li>
-<li>form submissions</li>
+<tbody>
+<tr class="row-even"><td><p>HTTP</p></td>
+<td><p>Hypertext Transfer Protocol</p></td>
+<td><p>High-level web communication for transferring files and information, including:</p>
+<ul class="simple">
+<li><p>Code files that create web sites (HTML, CSS, C Sharp, etc.)</p></li>
+<li><p>images and other media</p></li>
+<li><p>form submissions</p></li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>TCP/IP</td>
-<td>Transmission Control Protocol / Internet Protocol</td>
-<td>Low-level web communication for transferring small chunks of raw data known as <em>packets</em></td>
+<tr class="row-odd"><td><p>TCP/IP</p></td>
+<td><p>Transmission Control Protocol / Internet Protocol</p></td>
+<td><p>Low-level web communication for transferring small chunks of raw data known as <em>packets</em></p></td>
 </tr>
-<tr class="row-even"><td>DNS</td>
-<td>Domain Name Service</td>
-<td>Translates human-friendly names into server addresses</td>
+<tr class="row-even"><td><p>DNS</p></td>
+<td><p>Domain Name Service</p></td>
+<td><p>Translates human-friendly names into server addresses</p></td>
 </tr>
 </tbody>
 </table>
@@ -179,11 +179,11 @@ individually sent from one location to the next, until arriving at their final
 destination and being reassembled.</p>
 <p>If you want to learn more about this concept, check this out:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://www.techopedia.com/definition/2460/transmission-control-protocolinternet-protocol-tcpip" target="_blank">Techopedia’s Transmission Control Protocol/Internet Protocol (TCP/IP)<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><p><a class="reference external" href="https://www.techopedia.com/definition/2460/transmission-control-protocolinternet-protocol-tcpip" target="_blank">Techopedia’s Transmission Control Protocol/Internet Protocol (TCP/IP)<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
 </ul>
 <div class="admonition-fun-fact admonition">
-<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
-<p class="last">You can think of the Internet as a
+<p class="admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p>You can think of the Internet as a
 <a class="reference external" href="https://www.youtube.com/watch?time_continue=15&amp;v=_cZC67wXUTs" target="_blank">“series of tubes.”<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
 This phrase was used by a U.S. Senator in 2006 and widely mocked. However, we think it’s
 actually a reasonable analogy. TCP/IP allows data to be passed from one tube to another
@@ -201,8 +201,8 @@ the actual server addresses.</p>
 When a message is addressed using a domain name, the corresponding IP address
 must be determined before it can be sent.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p class="last">The IP addresses of <code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code> and <code class="docutils literal notranslate"><span class="pre">mail.google.com</span></code> are <code class="docutils literal notranslate"><span class="pre">104.26.14.63</span></code>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>The IP addresses of <code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code> and <code class="docutils literal notranslate"><span class="pre">mail.google.com</span></code> are <code class="docutils literal notranslate"><span class="pre">104.26.14.63</span></code>
 and <code class="docutils literal notranslate"><span class="pre">142.251.33.197</span></code>, respectively.</p>
 </div>
 <p>The sending computer will attempt to <em>resolve</em> the domain name by looking it
@@ -212,15 +212,15 @@ and there are thousands of them on the Internet. Most internet service providers
 Once the sending computer knows the IP address, it can send the request to the
 correct server.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>It’s easy to look up the IP address of any domain name using freely-available tools.</p>
-<p class="last">Use the popular site <a class="reference external" href="https://mxtoolbox.com/DNSLookup.aspx" target="_blank">MX Toolbox<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to
+<p>Use the popular site <a class="reference external" href="https://mxtoolbox.com/DNSLookup.aspx" target="_blank">MX Toolbox<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to
 look up the IP address of <code class="docutils literal notranslate"><span class="pre">help.launchcode.org</span></code>.
 Does this site live on the same server as <code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code>?</p>
 </div>
 <div class="admonition-fun-fact admonition">
-<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
-<p class="last">Every computer uses the special IP address <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> to
+<p class="admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p>Every computer uses the special IP address <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> to
 refer to <em>itself</em>. This is known as the <strong>loopback address</strong>,
 and it often has the alias <code class="docutils literal notranslate"><span class="pre">localhost</span></code>.
 If you use the loopback address when making a request, the request will be sent to a
@@ -233,12 +233,12 @@ service on the <em>same</em> machine as the client.</p>
 <p id="index-5">When a client requests a resource from a server, it does so using a <strong>uniform resource
 locator (URL)</strong>. URLs are also called <strong>web addresses</strong>.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <p>As a regular user of the Internet, you are already familiar with URLs like these:</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">https://www.launchcode.org</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">https://en.wikipedia.org/wiki/Client–server_model</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">https://duckduckgo.com/?q=c+sharp&amp;t=h_&amp;ia=web</span></code></li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">https://www.launchcode.org</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">https://en.wikipedia.org/wiki/Client–server_model</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">https://duckduckgo.com/?q=c+sharp&amp;t=h_&amp;ia=web</span></code></p></li>
 </ul>
 </div>
 <p>A URL encodes a lot of information about the request,
@@ -251,11 +251,11 @@ client and server to understand what is being requested.</p>
 </div>
 <p>The five components of this URL are:</p>
 <ul class="simple">
-<li>Scheme</li>
-<li>Host</li>
-<li>Port (optional)</li>
-<li>Path (optional)</li>
-<li>Query String (optional)</li>
+<li><p>Scheme</p></li>
+<li><p>Host</p></li>
+<li><p>Port (optional)</p></li>
+<li><p>Path (optional)</p></li>
+<li><p>Query String (optional)</p></li>
 </ul>
 <p>A properly-formed URL must have these components in the <em>exact</em> order shown here.
 Only scheme and host are required.</p>
@@ -286,8 +286,8 @@ though this is not a hard rule. For example, web servers typically use port 80 o
 for regular and encrypted messages, respectively. On the other hand,
 MySQL databases typically use port 3306.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<p class="last">Suppose a server at <code class="docutils literal notranslate"><span class="pre">mydomain.com</span></code> is running both a web server and MySQL database server on the standard ports. Requests to <code class="docutils literal notranslate"><span class="pre">mydomain.com:80</span></code> will be given to the web server, while requests to <code class="docutils literal notranslate"><span class="pre">mydomain:3306</span></code> will be given to the database server.</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Suppose a server at <code class="docutils literal notranslate"><span class="pre">mydomain.com</span></code> is running both a web server and MySQL database server on the standard ports. Requests to <code class="docutils literal notranslate"><span class="pre">mydomain.com:80</span></code> will be given to the web server, while requests to <code class="docutils literal notranslate"><span class="pre">mydomain:3306</span></code> will be given to the database server.</p>
 </div>
 <p>If a port number is not specified, then a default value based on the scheme is used.
 When using <code class="docutils literal notranslate"><span class="pre">http://</span></code> the default port is 80. When using <code class="docutils literal notranslate"><span class="pre">https://</span></code> the default port is 443.</p>
@@ -300,10 +300,10 @@ The path provides information that tells the server <em>what</em> is being reque
 It can consist of a series of names, such as <code class="docutils literal notranslate"><span class="pre">/blog/entries/2018/</span></code>, or it
 can end with an explicit file name, such as <code class="docutils literal notranslate"><span class="pre">/blog/index.html</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>A request to <code class="docutils literal notranslate"><span class="pre">https://www.launchcode.org/blog/</span></code> asks for the resource that lives at the path <code class="docutils literal notranslate"><span class="pre">/blog/</span></code> on the server <code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code>. This resource happens to be the homepage of the LaunchCode blog.</p>
 <p>A request to the (very long) URL below asks for the LaunchCode logo, which lives at the path <code class="docutils literal notranslate"><span class="pre">/assets/dabomb-2080d6e...57f.svg</span></code> (truncated here for space).</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>https://www.launchcode.org/assets/dabomb-2080d6e23ef41463553f203daaa15991fd4c812676d0b098243b4941fcf4b57f.svg
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://www.launchcode.org/assets/dabomb-2080d6e23ef41463553f203daaa15991fd4c812676d0b098243b4941fcf4b57f.svg
 </pre></div>
 </div>
 </div>
@@ -321,9 +321,9 @@ For example, the query string of a <a class="reference external" href="https://d
 </div>
 <p>This query string has <em>three</em> key-value pairs:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">q</span></code> : <code class="docutils literal notranslate"><span class="pre">launchcode</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">atb</span></code> : <code class="docutils literal notranslate"><span class="pre">v167-5__</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">ia</span></code> : <code class="docutils literal notranslate"><span class="pre">web</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q</span></code> : <code class="docutils literal notranslate"><span class="pre">launchcode</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atb</span></code> : <code class="docutils literal notranslate"><span class="pre">v167-5__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ia</span></code> : <code class="docutils literal notranslate"><span class="pre">web</span></code></p></li>
 </ul>
 <p>Notice that these pairs are separated by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> in the query string.</p>
 <p>While the path specifies <em>what</em> the request is asking for, the query
@@ -339,28 +339,28 @@ they aren’t nearly as important as the high-level picture of how we access res
 the internet.</p>
 <p>To tie these ideas together, watch these two videos on URLs and the Internet as a whole:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://www.youtube.com/watch?v=OvF_pnJ6zrY" target="_blank">How Do URLs Work?<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=7_LPdttKXPc" target="_blank">How the Internet Works<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=OvF_pnJ6zrY" target="_blank">How Do URLs Work?<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=7_LPdttKXPc" target="_blank">How the Internet Works<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
 </ul>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">25.1.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">Which protocol is responsible for turning a name like <code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which protocol is responsible for turning a name like <code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code>
 into a server address?</p>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Why is this URL malformed?</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://launchcode.org?city=miami/lc101
 </pre></div>
 </div>
-<ol class="last arabic simple">
-<li>It uses HTTPS when it should use HTTP.</li>
-<li>It doesn’t contain a fragment.</li>
-<li>It doesn’t contain a port.</li>
-<li>The query string comes before the path.</li>
+<ol class="arabic simple">
+<li><p>It uses HTTPS when it should use HTTP.</p></li>
+<li><p>It doesn’t contain a fragment.</p></li>
+<li><p>It doesn’t contain a port.</p></li>
+<li><p>The query string comes before the path.</p></li>
 </ol>
 </div>
 </div>

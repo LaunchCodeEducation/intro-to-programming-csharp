@@ -91,45 +91,45 @@ data types and collection types.  You have also worked with methods before when 
 <a class="reference internal" href="../../appendices/array-method-examples/index.html#array-method-examples"><span class="std std-ref">arrays</span></a>, <a class="reference internal" href="../../appendices/list-method-examples/index.html#list-method-examples"><span class="std std-ref">Lists</span></a> and <a class="reference internal" href="../../appendices/dictionary-method-examples/index.html#dictionary-method-examples"><span class="std std-ref">dictionaries</span></a>.  These methods are built into the C# language and perform a speficic task when you call them.</p>
 <p>This chapter is designed to introduce you to <strong>method signatures</strong>, <strong>method invocations</strong>, and the ability to create your own unique methods.</p>
 <div class="admonition-note admonition" id="static-methods">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>A little caveat before we continue.  Since we have not encountered C# classes at this point,
 we will be working within the <code class="docutils literal notranslate"><span class="pre">MainClass</span></code> in your replit IDE, which limits us to working with <strong>static</strong> methods at this point.
 Static methods belong to the class they are created in, which in this chapter will be the <code class="docutils literal notranslate"><span class="pre">MainClass</span></code>.</p>
 <p>When we learn about classes, we will learn about instance methods
 and be able to compare and contrast them to static methods.
 We will also be able to see a more usages and behaviors of static methods in a non-static environment.</p>
-<p class="last">A wonderful collection of static methods comes from the <code class="docutils literal notranslate"><span class="pre">Math</span></code> class.  The <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.math?view=net-5.0" target="_blank">documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> can be found here, and
+<p>A wonderful collection of static methods comes from the <code class="docutils literal notranslate"><span class="pre">Math</span></code> class.  The <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.math?view=net-5.0" target="_blank">documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> can be found here, and
 an appendix of methods can be found here.</p>
 </div>
 <div class="section" id="what-is-a-method">
 <h2><span class="section-number">11.1.1. </span>What is a Method?<a class="headerlink" href="#what-is-a-method" title="Permalink to this headline">¶</a></h2>
 <p id="index-0">A <strong>method</strong> is a reusable, callable, and customizable piece of code. Methods are created to perform a single task or action.</p>
 <div class="admonition-note admonition" id="index-1">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>In C# or other object oriented programing (OOP) languages, developers use methods because they are assiociated with a class.
 In other languages, you may hear the term <strong>function</strong>.  A function is similar to a method, but it is
 not tied to a class.  Due to the similarity in overall usage, it is common to refer to
 methods as functions and functions as methods.</p>
-<p class="last">A method or a function is typically referring to a block of code that performs a task when called.</p>
+<p>A method or a function is typically referring to a block of code that performs a task when called.</p>
 </div>
 <p>You have been using methods throughout your learning so far, without receiving a full explanation of how methods work.</p>
 <p>You have already become familiar with several functions:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code></li>
-<li>The type conversion methods: <code class="docutils literal notranslate"><span class="pre">Int32.Parse</span></code>,  <code class="docutils literal notranslate"><span class="pre">ToString</span></code> or even <code class="docutils literal notranslate"><span class="pre">GetType</span></code></li>
-<li>Collection methods, such as <code class="docutils literal notranslate"><span class="pre">IndexOf</span></code>,  <code class="docutils literal notranslate"><span class="pre">Join</span></code>, <code class="docutils literal notranslate"><span class="pre">Add</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code></p></li>
+<li><p>The type conversion methods: <code class="docutils literal notranslate"><span class="pre">Int32.Parse</span></code>,  <code class="docutils literal notranslate"><span class="pre">ToString</span></code> or even <code class="docutils literal notranslate"><span class="pre">GetType</span></code></p></li>
+<li><p>Collection methods, such as <code class="docutils literal notranslate"><span class="pre">IndexOf</span></code>,  <code class="docutils literal notranslate"><span class="pre">Join</span></code>, <code class="docutils literal notranslate"><span class="pre">Add</span></code></p></li>
 </ul>
 <p>Each of the methods we have used works in the same way. By typing the methods’s name, followed by parentheses,
 we can <em>invoke</em>, or call, the method, resulting in an action being carried out.
 Sometimes, as with <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code>, we can provide input data between the parentheses, which the method will use to carry out its action.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>The function <code class="docutils literal notranslate"><span class="pre">Console.WriteLine</span></code> prints the provided value or values (the input data).</p>
 <div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, World!
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, World!
 </pre></div>
 </div>
 </div>
@@ -137,7 +137,7 @@ Sometimes, as with <code class="docutils literal notranslate"><span class="pre">
 <em>output</em>. For example, the type conversion methods give back the result of
 converting a value.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Type conversion methods <em>return</em> a value, that can be used by the calling code. Often, we store the return value of a method in a variable.</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">num</span> <span class="p">=</span> <span class="n">Int32</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="s">&quot;42&quot;</span><span class="p">);</span>
@@ -145,7 +145,7 @@ converting a value.</p>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>54
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>54
 </pre></div>
 </div>
 </div>
@@ -170,8 +170,8 @@ factory itself.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">11.1.2. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
-<p class="last">In your own words, explain what a method is.</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>In your own words, explain what a method is.</p>
 </div>
 </div>
 </div>

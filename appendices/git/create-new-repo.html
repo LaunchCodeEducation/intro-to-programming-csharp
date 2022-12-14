@@ -88,38 +88,37 @@
 <div class="section" id="step-1-create-a-new-repository">
 <h2>Step 1: Create a New Repository<a class="headerlink" href="#step-1-create-a-new-repository" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Be careful if you try to use <code class="docutils literal notranslate"><span class="pre">copy/paste</span></code> with the <code class="docutils literal notranslate"><span class="pre">git</span></code> commands! The
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Be careful if you try to use <code class="docutils literal notranslate"><span class="pre">copy/paste</span></code> with the <code class="docutils literal notranslate"><span class="pre">git</span></code> commands! The
 <code class="docutils literal notranslate"><span class="pre">$</span></code> symbols in the screenshots represent to the prompts in the terminal.
 They are NOT part of the commands.</p>
 </div>
 <ol class="arabic">
-<li><p class="first">Navigate to your development folder. Enter the following 3 commands to create a new project.</p>
+<li><p>Navigate to your development folder. Enter the following 3 commands to create a new project.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ mkdir communication-log
 $ cd communication-log
 $ git init
 </pre></div>
 </div>
 </li>
-<li><p class="first">Now that you have a directory, open Visual Studio and <a class="reference internal" href="../../chapters/vs-setup/creating-a-csharp-project.html#create-new-csharp-project"><span class="std std-ref">create a new file</span></a>.</p>
+<li><p>Now that you have a directory, open Visual Studio and <a class="reference internal" href="../../chapters/vs-setup/creating-a-csharp-project.html#create-new-csharp-project"><span class="std std-ref">create a new file</span></a>.</p>
 <div class="figure align-default" id="id1">
 <img alt="Name your solution and select location for your files." src="../../_images/nameAndLocation.png" />
 <p class="caption"><span class="caption-text">Give your solution and project a name (1).  Typically they will have the same name.  Then select the directory to store your files (2).  Browse for the directory you just created.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first">Let’s check that our project works by running it.</p>
+<li><p>Let’s check that our project works by running it.</p>
 <p>You can continue to use your terminal, or you can use the terminal that is part of Visual Studio.
 If you want to use the Visual Studio terminal, it can be found under the <strong>View</strong> tab.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>If your console window does not stay open long enough for you to see your code, try adding the <code class="docutils literal notranslate"><span class="pre">Console.Read()</span></code> below the <code class="docutils literal notranslate"><span class="pre">WriteLine</span></code>.
 This is a piece of code that will keep your terminal window open so you can read what it contains.</p>
-<p class="last">If you can read your terminal window just fine and you haven’t added anything, then ignore this tip.</p>
+<p>If you can read your terminal window just fine and you haven’t added anything, then ignore this tip.</p>
 </div>
 </li>
-<li><p class="first">Once you’ve checked this file in the terminal, let’s stage and commit it.</p>
-</li>
-<li><p class="first">First, check the <code class="docutils literal notranslate"><span class="pre">status</span></code>.</p>
+<li><p>Once you’ve checked this file in the terminal, let’s stage and commit it.</p></li>
+<li><p>First, check the <code class="docutils literal notranslate"><span class="pre">status</span></code>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git status
 On branch master
 
@@ -136,7 +135,7 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
 </pre></div>
 </div>
 </li>
-<li><p class="first">The output shows us that we have three new files that have not been staged yet. Let’s <code class="docutils literal notranslate"><span class="pre">add</span></code>
+<li><p>The output shows us that we have three new files that have not been staged yet. Let’s <code class="docutils literal notranslate"><span class="pre">add</span></code>
 everything in this directory, then check the <code class="docutils literal notranslate"><span class="pre">status</span></code> again.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git add .
 $ git status
@@ -153,7 +152,7 @@ Changes to be committed:
 </pre></div>
 </div>
 </li>
-<li><p class="first">The output tells us that the files are staged. Now let’s <code class="docutils literal notranslate"><span class="pre">commit</span></code>. After
+<li><p>The output tells us that the files are staged. Now let’s <code class="docutils literal notranslate"><span class="pre">commit</span></code>. After
 that, we can see a record of our progress by using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git commit -m &#39;Started communication log.&#39;
 [master (root-commit) e1c1719] Started communication log.
@@ -180,7 +179,7 @@ accessible for others to view. Super important, since that’s how your work wil
 <div class="section" id="step-2-share-your-repository-on-github">
 <h2>Step 2: Share Your Repository On GitHub<a class="headerlink" href="#step-2-share-your-repository-on-github" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Go to your GitHub profile in a web browser. Click on the “+” button to add a new repository (called a <em>repo</em> for short).</li>
+<li><p>Go to your GitHub profile in a web browser. Click on the “+” button to add a new repository (called a <em>repo</em> for short).</p></li>
 </ol>
 <div class="figure align-default" id="id2">
 <img alt="The New Repository link in the dropdown menu at top right on GitHub." src="../../_images/new-repo-button.png" />
@@ -188,16 +187,16 @@ accessible for others to view. Super important, since that’s how your work wil
 </div>
 <p>To create a new repository:</p>
 <ol class="arabic simple">
-<li>Fill in the name and description.</li>
-<li>Uncheck <em>Initialize this repository with a README</em> and click <em>Create Repository</em>.</li>
+<li><p>Fill in the name and description.</p></li>
+<li><p>Uncheck <em>Initialize this repository with a README</em> and click <em>Create Repository</em>.</p></li>
 </ol>
 <div class="figure align-default" id="id3">
 <img alt="Creating a new repository in GitHub by filling out the form" src="../../_images/create-repo.png" />
 <p class="caption"><span class="caption-text">Create a new repository in GitHub</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If you initialize with a README, in the next step Git will refuse to merge
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you initialize with a README, in the next step Git will refuse to merge
 this repo with the local repo. There are ways around that, but it’s faster
 and easier to just create an empty repo here.</p>
 </div>
@@ -213,20 +212,20 @@ $ git push origin master
 </pre></div>
 </div>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>The first time you push up to GitHub, you will be prompted in the terminal
 to enter your account username and password. Do this.</p>
 <p>You will then see a large amount of output that you can safely ignore. The
 final few lines will confirm a successful push. They will look something
 like this:</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>To github.com:chrisbay/communication-log.git
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>To github.com:chrisbay/communication-log.git
    c7f97814..54993de3  master -&gt; master
 </pre></div>
 </div>
 </div>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">Unless you’ve set up an SSH key with GitHub, make sure you’ve selected the
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>Unless you’ve set up an SSH key with GitHub, make sure you’ve selected the
 HTTPS clone URL. If you’re not sure whether you have an SSH key, you
 probably don’t.</p>
 </div>

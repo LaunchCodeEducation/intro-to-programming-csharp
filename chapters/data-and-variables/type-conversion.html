@@ -93,7 +93,7 @@ In this situation, numeric data may be passed to the program as strings and your
 We call these <strong>type conversion</strong> functions.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Int32.Parse</span></code> method can take a string and convert it into an integer whilte <code class="docutils literal notranslate"><span class="pre">Double.Parse</span></code> converts strings into a double. Let’s see this in action:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -104,7 +104,7 @@ We call these <strong>type conversion</strong> functions.</p>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>2345
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2345
 System.Int32
 17
 System.Double
@@ -113,12 +113,12 @@ System.Double
 </div>
 <p>What happens if we attempt to convert a string to a number, and the string doesn’t directly represent a number?</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Int32</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="s">&quot;23bottles&quot;</span><span class="p">));</span>
 </pre></div>
 </div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Unhandled Exception: System.FormatException: Input string was not in a correct format.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Unhandled Exception: System.FormatException: Input string was not in a correct format.
 </pre></div>
 </div>
 </div>
@@ -128,13 +128,13 @@ Examples of such strings are <code class="docutils literal notranslate"><span cl
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">4.3.1. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the following will result in <code class="docutils literal notranslate"><span class="pre">System.Double</span></code> when passed to <code class="docutils literal notranslate"><span class="pre">GetType</span></code>?</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">'3'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'three'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">3.3333</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">33</span></code></li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'3'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'three'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3.3333</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">33</span></code></p></li>
 </ol>
 </div>
 </div>

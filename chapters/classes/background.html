@@ -91,16 +91,19 @@ The examples in that chapter were already built for you in an IDE that was not V
 The goal for this chapter and the next is to provide you with confidence for using Visual Studio to creating classes of your own and populating them as you desire.</p>
 <p>Before we start: There are three different code examples that you will encounter in <em>this</em> chapter.</p>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>The first example is a program called <code class="docutils literal notranslate"><span class="pre">HelloWorldRunner</span></code>.</dt><dd>The book will walk through how to build and modify this program.  We suggest you build along with the book.</dd>
+<li><dl class="simple">
+<dt>The first example is a program called <code class="docutils literal notranslate"><span class="pre">HelloWorldRunner</span></code>.</dt><dd><p>The book will walk through how to build and modify this program.  We suggest you build along with the book.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>The second example will walk through a <code class="docutils literal notranslate"><span class="pre">Student</span></code> class.</dt><dd>This example will be used later in the exercises. We suggest working with this code at the time of the exrcises, using the book as a reference point.</dd>
+<li><dl class="simple">
+<dt>The second example will walk through a <code class="docutils literal notranslate"><span class="pre">Student</span></code> class.</dt><dd><p>This example will be used later in the exercises. We suggest working with this code at the time of the exrcises, using the book as a reference point.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>The last code example is the <code class="docutils literal notranslate"><span class="pre">Temperature</span></code> app you created in the Exceptions chapter.</dt><dd>We will be updating it with concepts from this current chapter.</dd>
+<li><dl class="simple">
+<dt>The last code example is the <code class="docutils literal notranslate"><span class="pre">Temperature</span></code> app you created in the Exceptions chapter.</dt><dd><p>We will be updating it with concepts from this current chapter.</p>
+</dd>
 </dl>
 </li>
 </ul>
@@ -150,11 +153,11 @@ They are listed in alphabetical order.</p>
 class and methods define actions a class can take. We say that fields and
 methods are <strong>members</strong> of a class.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s create a class called <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> with one field, <code class="docutils literal notranslate"><span class="pre">message</span></code>, and one method, <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code>.
 <code class="docutils literal notranslate"><span class="pre">message</span></code> will be a string and have a value of <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">World&quot;</span></code>.
 <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code> will not return a specific value and instead print out the value of <code class="docutils literal notranslate"><span class="pre">message</span></code>.</p>
-<div class="last highlight-c# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -182,8 +185,8 @@ methods are <strong>members</strong> of a class.</p>
 only method is <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code>, which prints the value of the <code class="docutils literal notranslate"><span class="pre">message</span></code> field
 and doesn’t return anything.</p>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Remember, there is no <code class="docutils literal notranslate"><span class="pre">Main</span></code> method inside the <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> class.
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Remember, there is no <code class="docutils literal notranslate"><span class="pre">Main</span></code> method inside the <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> class.
 In order to use our <code class="docutils literal notranslate"><span class="pre">SayHello</span></code> method, we would create a way to invoke it inside the <code class="docutils literal notranslate"><span class="pre">Main</span></code> method.</p>
 </div>
 <p id="index-2">To execute <code class="docutils literal notranslate"><span class="pre">SayHello()</span></code>, we’ll need to create an <strong>instance</strong> of the
@@ -191,8 +194,8 @@ class <code class="docutils literal notranslate"><span class="pre">HelloWorld</s
 an instance of that class.</p>
 <p>Here’s how this might look with our <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> class:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last highlight-c# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-c# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -247,9 +250,9 @@ outside of a class in C#, <code class="docutils literal notranslate"><span class
 within a method) with the same name as a field of the given class. In
 this case, in order to refer to the field, we <em>must</em> use <code class="docutils literal notranslate"><span class="pre">this</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s look at how this works with our <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> class:</p>
-<div class="last highlight-c# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-c# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -286,20 +289,20 @@ this case, in order to refer to the field, we <em>must</em> use <code class="doc
 </td></tr></table></div>
 </div>
 <div class="admonition" id="index-4">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">When a local variable has the same name as a field, we say that the
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>When a local variable has the same name as a field, we say that the
 local variable <strong>shadows</strong> the field. Errors caused by shadowing can be
 tricky to spot, so it’s best to avoid doing this in your code.</p>
 </div>
 <div class="admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If you want to learn more about this subject, check out the documentation on <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/this" target="_blank">using the this keyword<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you want to learn more about this subject, check out the documentation on <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/this" target="_blank">using the this keyword<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">18.1.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>The following code block contains several bugs. Mark all of the lines that contain a bug in the code.</p>
 <div class="highlight-c# notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -320,11 +323,11 @@ tricky to spot, so it’s best to avoid doing this in your code.</p>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="last loweralpha simple">
-<li>line 8</li>
-<li>line 4</li>
-<li>line 7</li>
-<li>line 1</li>
+<ol class="loweralpha simple">
+<li><p>line 8</p></li>
+<li><p>line 4</p></li>
+<li><p>line 7</p></li>
+<li><p>line 1</p></li>
 </ol>
 </div>
 </div>

@@ -112,7 +112,7 @@ so far, you have seen this in action.  In the <code class="docutils literal notr
 other methods or code blocks.  Once we begin to add <em>more</em> classes to our code, this can become an issue.
 When we get to classes, we will discuss how to handle class level scope in more detail. (Hint: think access modifiers).</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -147,7 +147,7 @@ When we get to classes, we will discuss how to handle class level scope in more 
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>6
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>6
 
 error CS0103: The name `sum&#39; does not exist in the current context
 </pre></div>
@@ -166,7 +166,7 @@ If they are class members, it will depend on their access modifiers if we can re
 They are avaliable to any nested code blocks within the method.
 These are commonly referred to as <strong>local variables</strong> as they are confined to one location, the method they were declared in.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -197,7 +197,7 @@ These are commonly referred to as <strong>local variables</strong> as they are c
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>main.cs(11,31): error CS0103: The name `total&#39; does not exist in the current context
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>main.cs(11,31): error CS0103: The name `total&#39; does not exist in the current context
 </pre></div>
 </div>
 </div>
@@ -211,8 +211,8 @@ It only exisits inside that method.</p>
 except block level scope can happen within a method depending on where you declare it.
 Any signature that contains a code block can have scope issues here, such as loops or conditionals.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -275,7 +275,7 @@ won’t be able to find any values and will throw an error.  In fact, the compil
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">11.5.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Identify the level of scope for <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">byHalf</span></code>.</p>
 <div class="highlight-csharp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -302,10 +302,10 @@ won’t be able to find any values and will throw an error.  In fact, the compil
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">byHalf</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="last arabic simple">
-<li>Class scope</li>
-<li>Method scope</li>
-<li>Block scope</li>
+<ol class="arabic simple">
+<li><p>Class scope</p></li>
+<li><p>Method scope</p></li>
+<li><p>Block scope</p></li>
 </ol>
 </div>
 </div>
